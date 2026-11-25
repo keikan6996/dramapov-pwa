@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_148",
+  "lang": "en",
+  "metadata": {
+    "title": "The Last Train Never Stops at Station 9",
+    "subtitle": "I woke up on the 11:55 PM subway to an alert: \"Never answer anyone in a grey coat—and do not look out the window.\"",
+    "genre": "thriller",
+    "tags": [
+      "Subway Horror",
+      "3AM Rules",
+      "Twist"
+    ],
+    "cover_image": "assets/media/covers/story_148.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · Car 4",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "conductor",
+      "name": "Transit Alert",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "stranger",
+      "name": "Grey Coat · Seat 4C",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F172A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Station 9 Alert",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "11:58 PM · You jolt awake on the rattling last subway. The digital sign overhead glitches from \"Central\" to \"STATION 9\".",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "EMERGENCY TRANSIT RULE: If Car 4 enters Station 9, keep eyes on your phone, DO NOT answer anyone in a grey coat, and stay seated until 03:30.",
+          "timestamp_label": "11:58 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Station 9 was bricked shut 15 years ago! Why are the brakes screeching?!",
+          "timestamp_label": "11:58 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[urgent, muffled by sirens] \"{{player_name}}! Can you hear me?! Squeeze my hand or answer your phone—don’t stay on that train!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "He’s wearing a grey coat. Don’t look up.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "The subway doors hiss open onto a pitch-black platform:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e1_free",
+              "label": "Keep your eyes locked on your phone",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Not looking up. Just waiting for the doors to close...",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e1_vip",
+              "label": "Glance at the passenger in Seat 4C",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I looked—he’s wearing a grey reflective rescue jacket, not a normal coat!",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Good. The doors just sealed—Wait, the platform camera shows 6 silhouettes just boarded Car 4!",
+          "timestamp_label": "12:01 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Warning! Do NOT trust the coat’s disguise! The platform camera shows Car 4 is completely empty except shadows!",
+          "timestamp_label": "12:01 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "The carriage lights flicker out for 3 seconds. When they buzz back on, every seat around you is soaking wet.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Grey Coat · Seat 4C",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Stop listening to the automated alert, {{player_name}}! Your pulse is dropping—look at your reflection in the glass!",
+          "timestamp_label": "12:04 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Why is the glass cracked like a spiderweb... and why do I smell diesel smoke?!",
+          "timestamp_label": "12:04 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Six Shadows on Car 4",
+          "teaser_text": "Next: Station 9’s security camera reveals who actually boarded.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "The Platform Camera",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "12:08 AM · The train accelerates into an endless black tunnel. Your phone downloads the Station 9 CCTV frame.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Confirmed: Non-living passengers detected in Car 4. Remain seated. Do NOT let Grey Coat pull you off at the next stop.",
+          "timestamp_label": "12:08 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Look at the CCTV photo—those aren’t ghosts, they’re carrying stretchers and hydraulic cutters!",
+          "timestamp_label": "12:08 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[urgent, metallic crunching] \"YES! We’re cutting through the crushed door of Car 4 right now! Stay awake, {{player_name}}!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Ignore the cutting noise. Sleep until 03:30.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "conductor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Station 9 platform security cam — shadowy silhouettes boarding an otherwise empty carriage.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Your eyelids suddenly feel heavy as lead:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e2_free",
+              "label": "Pinch your arm hard to stay awake",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m awake! Why is Transit Alert telling me to go back to sleep?!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e2_vip",
+              "label": "Ask Grey Coat what happened to the 11:55 train",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Tell me straight—did the 11:55 PM train crash?!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Because \"Transit Alert\" isn’t real—it’s your own shock trying to pull you under! Fight it!",
+          "timestamp_label": "12:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Yes! Car 4 derailed inside Tunnel 9 thirty minutes ago! You’re pinned under Seat 4C—stay with me!",
+          "timestamp_label": "12:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "The train’s rhythmic clatter slows... turning into the unmistakable steady beep of a heart monitor.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Paramedic · Tunnel 9",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "We see your phone screen glowing in the wreckage! Tap anything on your phone so we know you’re still conscious!",
+          "timestamp_label": "12:16 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I’m tapping... why can’t I feel my legs?!",
+          "timestamp_label": "12:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Derailed in Tunnel 9",
+          "teaser_text": "Next: The train tries one last trick to keep you onboard forever.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The False Conductor",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "12:20 AM · Warm golden light floods Car 4. The pain vanishes completely. The Transit Alert chimes softly.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Final Boarding Call: Stay in your seat, {{player_name}}. No pain, no sirens, just a quiet ride home.",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "It feels so warm... maybe I should just close my eyes for 5 minutes...",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "conductor",
+          "duration_sec": 8,
+          "transcript": "[soothing, hypnotic hum] \"Close your eyes, {{player_name}}. Station 9 is the last stop you’ll ever need.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Don’t let the grey-coat medic wake you up.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Your vision narrows into a warm white tunnel:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e3_free",
+              "label": "Fight the warmth and yell for the medic",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "NO! I’m not getting off at Station 9! Pull me out!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e3_vip",
+              "label": "Smash your phone flashlight against the glass",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Flashing my screen right at the rescue cutter—I’m RIGHT HERE!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "WE HEAR YOU! Hang on—we’re lifting the steel beam off your seat on three!",
+          "timestamp_label": "12:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "GOT VISUAL! Your phone light just flashed through the gap—we’re pulling you free NOW!",
+          "timestamp_label": "12:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "CRACK! Cold, real tunnel air rushes into your lungs as bright white rescue floodlights shatter the warm illusion.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Rescue Lead · 1m Away",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Look at your cracked GPS screen—you’re 40 meters underground in Tunnel 9, and we just got your stretcher clear!",
+          "timestamp_label": "12:28 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I can feel the cold air... I’m still alive!",
+          "timestamp_label": "12:28 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Pulled From the Wreckage",
+          "teaser_text": "Next: Your cracked phone GPS confirms how close you came to Station 9.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "40 Meters Underground",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "12:35 AM · Lying on the rescue stretcher, you glance down at the cracked phone clutched in your bruised hand.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Paramedic Mark here—we’re riding the emergency lift up to street level! Your vitals are stabilizing fast.",
+          "timestamp_label": "12:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if the \"Transit Alert\" was my own hallucination, then why is it STILL showing in my real text inbox?!",
+          "timestamp_label": "12:35 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[pausing, uneasy] \"Hold on... let me see your screen. There IS no automated sender called Transit Alert on our city network...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Next time you ride after midnight, don’t fall asleep.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "stranger",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Cracked phone GPS map — signal frozen 40 meters underground inside a sealed maintenance tunnel.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "The emergency elevator reaches street level:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e4_free",
+              "label": "Show the paramedic the unsent alert",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Look! It literally just unsent a warning right in front of us!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e4_vip",
+              "label": "Delete the Station 9 thread immediately",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Deleting that thread forever—I never want to see Station 9 again!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Mark goes pale: \"Two other survivors from Car 4 just showed me the exact same message...\"",
+          "timestamp_label": "12:39 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Mark sighs in relief: \"Good call. Some things down in Tunnel 9 are better left buried.\"",
+          "timestamp_label": "12:39 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "Rain hits your face—real, cold, and alive—as the ambulance doors shut behind you.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Hospital ER · Arrival",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ER intake complete. Minor concussion and bruised ribs—you’re going to make a 100% recovery, {{player_name}}.",
+          "timestamp_label": "12:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Thank you for wearing that grey coat tonight, Mark.",
+          "timestamp_label": "12:43 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Back Above Ground",
+          "teaser_text": "Finale next: One week later, you pass the sealed entrance to Station 9.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Never Ride at 11:55",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "9:10 AM · One week later. Discharged from the hospital, you walk past the subway stairs—taking a cab instead.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Hey {{player_name}}, Mark from rescue! Saw you got discharged—stay off the late-night line, okay?",
+          "timestamp_label": "9:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Promise! Taking cabs for the rest of my life. Did they ever figure out what caused the derailment?",
+          "timestamp_label": "9:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[quiet, serious] \"Official report says a track switch failed... right outside the bricked-up platform of Station 9.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Seat 4C is still reserved for you.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Your cab pulls away from the station entrance:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e5_free",
+              "label": "Turn off subway alerts permanently",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Subway app uninstalled. Never stepping underground at night again.",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e5_vip",
+              "label": "Thank Mark and treat his squad to coffee",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Just sent coffee to Rescue Squad 9—you guys literally pulled me back from death!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Smartest choice you’ve made all year. Enjoy the sunshine!",
+          "timestamp_label": "9:13 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Whole squad says thanks! Stay awake on every ride from now on!",
+          "timestamp_label": "9:13 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "In the cab’s side mirror, the subway entrance shrinks into the morning crowd.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Mark · Rescue 9",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Take care, {{player_name}}! Glad you didn’t follow the wrong rules down there.",
+          "timestamp_label": "9:16 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "If a voice in the dark tells you not to trust the guy in the grey coat—don’t listen.",
+          "timestamp_label": "9:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Off the Last Train",
+          "teaser_text": "You finished \"The Last Train Never Stops at Station 9\"! Explore more 3AM thrillers.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

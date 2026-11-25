@@ -1,0 +1,1018 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_035",
+  "lang": "ko",
+  "metadata": {
+    "title": "누가 가족 톡방에 '번호 000'을 초대했나?",
+    "subtitle": "새벽 12시 1분, 정체불명의 계정이 가족 단톡방에 들어와 내 방 창문에 빨간 동그라미를 쳤다.",
+    "genre": "thriller",
+    "tags": [
+      "단체 채팅방",
+      "귀신의 달",
+      "공포"
+    ],
+    "cover_image": "assets/media/covers/story_035.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (나)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "ally",
+      "name": "Lin 할머니",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "000번",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "초대받지 않은 손님",
+      "start_node_id": "e1_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 12:01 · 귀신의 달 첫날 밤. 가족 단톡방 시스템 알림: \"번호 000 님이 초대 링크를 통해 입장했습니다.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "아무도 번호 000 내보내지 마라!! {{player_name}}, 지금 당장 커튼 쳐! 톡방에서 강퇴하면 대문을 두드린다고!",
+          "timestamp_label": "오전 12:01",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "할머니, 그냥 스팸 봇이겠죠… 잠깐, 정원에서 우리 본가 찍은 사진이 왜 얘한테 있지?!",
+          "timestamp_label": "오전 12:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "제사상 위에 내 밥그릇 놓는 걸 깜빡했더구나.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "아이고 세상에… 할아버지의 연 끊긴 형님 분이시네! 오늘 밤 기일 향 피우는 걸 깜빡했구나!",
+          "timestamp_label": "오전 12:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[타닥거리는 향, 철제 대문 덜컹거리는 소리] ...문 열어다오, {{player_name}}... 집까지 먼 길을 걸어왔단다...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "사촌이 단톡방에서 \"대화상대 내보내기\"를 누릅니다. 앞마당 철제 대문이 거세게 쾅 닫힙니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "제단에서 향 세 개비에 불을 붙인다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 제단에 향 피우고 있어요!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "단톡방 관리자 기록을 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "누가 번호 000 초대했는지 확인 중...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "성냥불을 붙이자—향 세 개비의 연기가 모두 흉조처럼 아래로 둥글게 말려 내려갑니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 그 초대 링크는 11시 59분에 당신의 휴대폰에서 생성되었습니다—화면이 잠겨 있었는데도.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "번호 000이 저절로 톡방에 다시 들어왔어! 그리고 방 이름을 \"대문을 열어라\"로 바꿨어!",
+          "timestamp_label": "오전 12:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "번호 000 (그룹 영상통화)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "화면에는 당신 집의 어두운 뒷마당이 비칩니다—등 뒤의 미닫이 유리문을 향해 성큼성큼 다가오고 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "전화를 거절했습니다. 그 즉시 아래층의 모든 전구가 희미한 주황빛으로 어두워집니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "마당 안까지 들어왔다",
+          "teaser_text": "2화: 젖은 재 발자국이 조상 제단실 바로 밖에서 멈춰 섭니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "잊혀진 자리",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 12:08 · 빗줄기가 마당 지붕을 두드립니다. 바람 한 점 없는데 제단 위 촛불이 거세게 흔들립니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 겁먹지 말고—깨끗한 밥 한 공기와 차 한 잔을 현관 계단에 올려놓고 정중하게 성함을 불러드리렴!",
+          "timestamp_label": "오전 12:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "할머니, 바깥쪽에서 유리문에 김이 서리고 있어요. 누가 김 서린 데에 \"000\"이라고 썼어요!",
+          "timestamp_label": "오전 12:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[현관 마룻바닥 삐걱거리는 소리] ...{{player_name}} 너만이 내 부름에 답해주었구나... 식탁에 내 자리를 차려다오...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "할머니께 가족들을 용서한다고 전해다오.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐—방금 메시지 삭제하기 전에 쓴 거 봤니?! 이제 화내시는 게 아니야, {{player_name}}! 그저 기억해주길 바라신 거였어!",
+          "timestamp_label": "오전 12:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "처마 끝으로 빗물이 쏟아지는 가운데 현관등이 깜빡입니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "현관 계단에 밥과 차를 정성껏 올린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 밖에 음식을 차려놓을게요...",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "가족 단톡방 공지에 그분의 성함을 올린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "단톡방 설명에 큰할아버지 성함을 적을게요...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "문을 살짝 열고 따뜻한 밥그릇을 내려놓은 뒤 고개를 숙여 인사합니다. 울부짖던 바람이 산들바람으로 잦아듭니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 향불이 곧고 밝게 타오릅니다. 번호 000이 하트 이모티콘을 하나 남긴 뒤 조용히 방을 나갑니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "아침 빛이 일찍 찾아옵니다. 현관 계단을 확인하자 찻잔은 깨끗이 비어 있고—철제 대문도 반듯하게 잠겨 있습니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "린 할머니",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "할머니가 나지막이 안도합니다: \"내 꿈에 찾아와서 네게 고맙다고 전하시더구나, {{player_name}}. 다음 귀신의 달엔 절대 잊지 말자구나.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "전화를 거절하고 멋쩍게 웃습니다—휴대폰이 울리며 번호 000이 내년 이맘때로 등록한 캘린더 일정 알림이 뜹니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "내년 7월에 다시 보자꾸나",
+          "teaser_text": "시즌 피날레 · 가족 단톡방에서 조상님의 번호를 절대 지우지 마세요.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "돌아온 빨간 동그라미",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 12:01 · 음력 7월 둘째 날 밤. 번호 000이 가족 톡방에 다시 입장하더니—당신 방문을 찍은 복도 카메라 사진을 올립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 번호 000 톡방에서 내보내지 마! 자꾸 그 계정을 쫓아내는 바람에 큰할아버지가 노하셨단다!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "할머니, 제가 내보낸 거 아니에요—빅터 삼촌이 방금 또 번호 000 강퇴하고 제 탓으로 돌렸어요!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "새벽 3시 복도 캠 · 오전 12:02 당신의 방문 손잡이 주위에 그려진 빨간 동그라미.",
+          "blur_until_tap": true,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "번호 000 님이 다시 단톡방에 참여했습니다. \"빅터 녀석이 내 땅문서를 마룻바닥 밑에 숨겼느니라.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "널 겁주려고 창문에 동그라미를 친 게 아니란다, {{player_name}}. 빅터가 가계도를 위조하기 전엔 그 방이 내 서재였어.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "잠깐… 빅터 삼촌이 10년 전에 과수원을 차지하려고 가족 제단에서 큰할아버지 위패를 지웠던 건가!",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[다급하게 속삭이는 린 할머니] \"내 말 똑똑히 들어라, {{player_name}}! 책상 밑 느슨한 마루 널빤지를 확인해 보렴—큰할아버지가 바로 거길 가리키고 계셔!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "침실 책상 바로 아래에서 차가운 바람이 새어 올라옵니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_lift_board",
+              "label": "책상 밑 느슨한 마루 널빤지를 들어 올린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "할머니, 마룻바닥 밑에서 붉은 밀랍으로 봉인된 양철 상자를 찾았어요!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_reply_000",
+              "label": "가족 톡방에서 번호 000에게 직접 묻는다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 존중",
+              "player_reply_text": "큰할아버지, 듣고 있어요. 빅터 삼촌이 무슨 짓을 했는지 가족 톡방에 다 말씀해 주세요.",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "빅터 앞에서 열지 마라! 당장 내 방으로 가져오렴—그 녀석이 계단으로 올라오고 있어!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "톡방에 있던 사촌들이 죄다 정적에 휩싸였어—게다가 번호 000이 방금 1995년 사진을 올렸어!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "번호 000: \"향불이 다 타기 전에 할머니께 양철 상자를 보여드리거라.\"",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "마룻바닥 아래에서.",
+          "teaser_text": "4화: 밀랍 봉인된 양철 상자 안에 진짜 가족 땅문서가 들어 있습니다—그리고 빅터 삼촌이 방문을 두드립니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "지워진 조상",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 12:18 · 무거운 발소리가 방문 앞에 멈춰 섭니다. 빅터 삼촌이 양철 상자를 내놓으라고 고함칩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "문단속 단단히 해, {{player_name}}! 네 부모님하고 고모 이모들 다 거실로 불렀으니까—모두 앞에서 그 양철 상자를 열어보자꾸나!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "할머니, 양철 상자 안에 1995년 원본 땅문서랑 가족 모닥불 사진이 들어 있어요!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "가족 제단에 내 초상화를 모셔두겠다고 약조했건만, {{player_name}}. 대신 과수원 절반을 팔아치우고 내 이름마저 지워버렸느니라.",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "가족 단톡방: 빅터 삼촌이 방금 읽음 표시를 끄고 아래층으로 뛰어 내려갔습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "들통난 걸 안 게야! 양철 상자 들고 제단실로 내려오렴—다들 기다리고 있단다!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "큰할아버지는 우릴 괴롭히고 싶었던 게 아니라—그저 가족 식탁의 제자리를 되찾고 싶으셨을 뿐이야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[차분하지만 위엄 있는 린 할머니의 목소리] \"이제 내려오너라, {{player_name}}. 오늘 밤 집안 사당을 바로잡자.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "아래층 거실에서 가족들의 목소리가 모이는 가운데 1995년 양철 상자를 쥐고 있습니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_bring_down",
+              "label": "양철 상자를 들고 제단실로 내려간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 내려가요—모두가 이 진짜 1995년 문서를 봐야 해요!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_post_deed",
+              "label": "가족 톡방에 1995년 문서를 바로 올린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 진실",
+              "player_reply_text": "단톡방에 진짜 문서 사진 올렸어요—이제 빅터 삼촌도 못 숨길 거예요!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "빅터가 낚아채려는데 네 아빠가 딱 너희 둘 사이를 가로막아주셨구나!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "거실에 있던 휴대폰이 일제히 울렸어! 빅터가 충격에 열쇠 꾸러미를 떨어뜨렸단다!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "상자 안의 1995년 가족 모닥불 사진을 보세요—할머니 곁에서 환하게 웃고 계신 큰할아버지.",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "제단실.",
+          "teaser_text": "5화: 1995년 사진이 제단 위에 다시 모셔지자, 번호 000이 마지막 메시지를 보냅니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "되찾은 자리",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 12:40 · 할머니가 큰할아버지의 액자 속 1995년 사진을 제단 위에 모시자 거실의 향 연기가 흔들림 없이 곧게 피어오릅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "향 연기 좀 보렴, {{player_name}}—화살처럼 반듯하구나. 큰할아버지께서 드디어 편해지셨어.",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그리고 빅터 삼촌도 군말 없이 과수원 명의를 가족 신탁으로 돌려놓는 서류에 서명했어요.",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "가족 모닥불 · 1995년 — 옛 과수원 언덕에서 린 할머니 곁에 활짝 웃고 계신 큰할아버지.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "번호 000 님이 가족 단톡방에 하트 반응을 남겼습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "내 자리를 지켜주어 고맙다, {{player_name}}. 과수원을 잘 지키고—다시는 가족을 톡방에서 내쫓지 말거라.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "내 방이 벌써 10도는 더 따뜻해진 기분이야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[멀리서 들리는 따뜻하고 인자한 웃음소리] \"잘 자거라, 아가야. 이번 7월에도 평안하길.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "할머니가 제단 앞에서 절을 올릴 향 세 개비를 건네십니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_bow_altar",
+              "label": "향에 불을 붙이고 정중히 절을 올린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "가족의 품으로 돌아오신 걸 환영합니다, 큰할아버지.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_pin_000",
+              "label": "가족 톡방에 번호 000의 메시지를 공지로 고정한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 명예",
+              "player_reply_text": "다시는 아무도 잊지 않도록 단톡방 공지에 메시지를 고정해 두었어요.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "복도 카메라 화면에 있던 빨간 동그라미가 순식간에 사라졌구나.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "번호 000 님이 상태 메시지를 변경했습니다: \"가족을 지켜보는 중.\"",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "바깥의 음력 7월 바람이 따스한 산들바람으로 잦아듭니다.",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "제단의 평화.",
+          "teaser_text": "6화 (최종화): 아침이 화목한 가족 아침 식사를 가져옵니다—그리고 사랑을 담아 차려진 빈 의자 하나.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "아침 식탁의 여분 밥그릇",
+      "start_node_id": "e6_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 8:30 · 식당에 아침 햇살이 가득 찹니다. 가족들이 웃고 떠드는 사이 할머니가 상석에 찻잔 하나를 더 놓으십니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "간밤에 다들 돌처럼 깊게 잤구나, {{player_name}}. 복도 카메라도 밤새 쥐 죽은 듯 고요했고.",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "가족 단톡방 보세요, 할머니—번호 000이 여전히 참여자 목록에 영구 오프라인 상태로 남아 있어요.",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "그대로 두려무나. 살아 있든 떠났든 가족은 영원한 가족이니까.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "가족 단톡방: \"린 할머니 님이 사진을 공유했습니다: 일요일 아침 식사.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "사촌들이 냄비째 다 비우기 전에 얼른 와서 국수 먹으렴!",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "이 고집불통 할미에겐 과분할 만큼 착한 손녀딸이야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[웃으시는 린 할머니] \"휴대폰 내려놓고 젓가락 들거라, {{player_name}}!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "일요일 가족 식탁에서 따뜻한 김이 모락모락 피어오릅니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_join_table",
+              "label": "휴대폰을 내려놓고 아침 식사에 합류한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "가요, 할머니! 제 몫 만두 남겨두세요!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_raise_tea",
+              "label": "제단을 향해 조용히 찻잔을 들어 올린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 전통",
+              "player_reply_text": "큰할아버지와 온 가족을 위하여—언제나 함께.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "제일 큰 그릇에 덜어놓았단다!",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "할머니가 따뜻하게 미소 지으며 손을 토닥여 주십니다.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "번호 000 · 영원한 가족의 일원.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 결코 잊히지 않는 이름.",
+          "teaser_text": "끝 · 가족 단톡방에서 조상님을 지우지 마세요—그저 잘 지내나 안부 보러 오시는 걸 수도 있으니까요.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

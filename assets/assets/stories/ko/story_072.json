@@ -1,0 +1,981 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_072",
+  "lang": "ko",
+  "metadata": {
+    "title": "퇴직금 합의서의 덫",
+    "subtitle": "인사팀이 '후한' 비밀유지계약서에 서명할 시간으로 2시간을 줬다—해고된 엔지니어가 그 문서가 형사 책임을 내게 떠넘긴다고 경고하기 전까지는.",
+    "genre": "romance",
+    "tags": [
+      "기업",
+      "내부 고발자",
+      "스릴러"
+    ],
+    "cover_image": "assets/media/covers/story_072.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "hr_dir",
+      "name": "Brenda (인사 부사장)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "engineer",
+      "name": "Tariq (전 수석 엔지니어)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "counsel",
+      "name": "Maya (법률 고문)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4338CA"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "서명까지 2시간",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 02:00 · 제4회의실. 인사팀이 테이블 너머로 15페이지짜리 퇴직 합의서와 90,000달러 수표를 밀어 줍니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "hr_dir",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "퇴직 및 비밀유지 합의서 — 제안 만료 오늘 오후 4시 정각.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "6개월 치 급여 전액이에요, {{player_name}} 님. 좋은 친구로 남을 수 있게 오후 4시 전에 서명만 해 주세요.",
+          "timestamp_label": "오후 02:01",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "절대 서명하지 마 {{player_name}}!! 12페이지 14B조 읽어 봐! 거기 결함 있는 배터리 배치의 단독 승인 권한이 너한테 있었다고 적혀 있다고!!",
+          "timestamp_label": "오후 02:02",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "대표님, {{player_name}}가 아직 14B조를 눈치채지 못했습니다. 서명만 하면 규제 당국은 경영진이 아니라 저 친구를 표적으로 삼을 겁니다.",
+          "unsent_placeholder": "Brenda님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 12,
+          "transcript": "[다급한 목소리] 오늘 아침 유럽에서 제품 세 대가 과열 폭발했어. 내일 연방 리콜 명령이 떨어질 거야—어제 나를 먼저 자르고 이제 네 서명을 돈으로 사서 네한테 다 뒤집어씌우려는 거야!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "브렌다가 펜을 초조하게 톡톡 두드립니다. 어떻게 수를 두시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_call_counsel",
+              "label": "변호사 검토를 위해 72시간을 요구한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "이 사본 제 노동법 전문 변호사한테 가져갈게요, 브렌다. 특히 14B조요.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_grab_report",
+              "label": "타리크에게 CEO가 서명한 불량 테스트 메모를 받는다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "증거 확보 · 광고 보기",
+              "player_reply_text": "타리크, 지난달에 CEO가 우리 안전 보류 조치를 강제로 묵살한 이메일 나한테 보내줘.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "서명 없이 이 방을 한 발짝이라도 나가는 순간, 90,000달러는 사라지고—보안팀이 당신을 끌어낼 겁니다.",
+          "timestamp_label": "오후 02:06",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "결정적 증거 확보: CEO가 직접 서명한 PDF 메모에는 \"18% 열 폭주 불량률에도 불구하고 해당 배치를 출하하라\"고 적혀 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "보냈어. 게다가 이미 내부고발 전문 변호사 마야까지 연결해 뒀어.",
+          "timestamp_label": "오후 02:07",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "문 밖에 보안 요원 두 명이 대기 중이에요, {{player_name}} 님. 휴대폰을 반납하고 서류에 서명하세요.",
+          "timestamp_label": "오후 02:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "제4회의실에 감금되다",
+          "teaser_text": "2화: 브렌다가 당신의 휴대폰을 뺏으려 손을 뻗습니다—당신이 이미 스피커폰으로 법률 대리인에게 전화를 건 줄도 모른 채.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "제14B조",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 02:14 · 제4회의실. 보안팀이 밖에서 기다리는 가운데 브렌다가 유리문을 가로막습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "사내 규정상 퇴사 시 개인 기기도 점검하게 되어 있습니다. 지금 당장 휴대폰 잠금 푸세요.",
+          "timestamp_label": "오후 02:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "불법 감금은 범죄예요, 브렌다. 그리고 스피커폰 너머 제 내부고발 전문 변호사님과 인사 나누시죠.",
+          "timestamp_label": "오후 02:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 10,
+          "transcript": "[또렷하고 법적인 어조] 저는 {{player_name}} 님의 대리인 마야 린 변호사입니다. 이 통화는 녹음 중입니다. 문에서 물러서지 않으시면 5분 이내에 연방 사법방해 고발장을 접수하겠습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "CEO님—중단하세요!! 상대가 전화에 내부고발 변호사를 붙여놨고 14B조까지 다 알고 있습니다!!",
+          "unsent_placeholder": "Brenda님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "브렌다가 분필처럼 하얗게 질려 뒤로 물러납니다. 다음 행보는?",
+          "options": [
+            {
+              "option_id": "opt_walk_free",
+              "label": "걸어 나가 오늘 당장 안전 보고서를 접수한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "입막음 돈이나 실컷 챙기세요, 브렌다. 오후 5시 전에 안전 규제 당국이 진실을 보게 될 테니까요.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_drop_memo",
+              "label": "18% 불량 강행 CEO 서명 메모를 들이민다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "체크메이트 · 광고 보기",
+              "player_reply_text": "아, 그리고 CEO께 18% 열 폭주 불량을 강제로 승인한 본인 서명 메모도 저희 손에 있다고 전해 주세요.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "고개를 빳빳이 들고 로비를 걸어 나가자 보안팀이 즉시 길을 비켜줍니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "내부고발자 포상 확정: 48시간 이내에 규제 당국이 위험 제품 출하를 중단시키고, CEO를 기소하며, 당신의 체불 보상금과 포상금까지 법적으로 보호합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "완벽한 한 수였어요, {{player_name}} 님. 방금 수많은 생명을 구하고 기업 은폐를 박살 내셨습니다.",
+          "timestamp_label": "오후 02:22",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "오늘 저녁은 내가 살게. 내부고발자 클럽에 온 걸 환영해.",
+          "timestamp_label": "오후 02:25",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "서명하지도, 꺾이지도 않았다",
+          "teaser_text": "카페에서 한 이사회 이사가 당신 테이블로 다가옵니다: \"우리는 CEO를 교체할 겁니다. 타리크 씨와 함께 돌아와서 이 문제를 수습해 주시겠습니까?\"",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "이사회의 제안",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 3:15 · 모퉁이 카페. 당신과 타리크를 복귀시키겠다는 이사회 이사의 제안이 채 가라앉기도 전에 브렌다가 반격합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "{{player_name}} 님, 법무팀이 방금 비밀유지 위반 통지서를 발송했습니다! 타리크와 접촉하신 순간 퇴직금은 무효이고—안전 위반 책임 파일도 규제 당국에 넘길 겁니다!",
+          "timestamp_label": "오후 3:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "지난달에 내가 직접 보고했던 안전 위반 책임을 나한테 뒤집어씌우겠다고요?!",
+          "timestamp_label": "오후 3:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "위변조된 준법 승인서 · 당신이 접근 차단되기 이틀 전 날짜로 안전 면제 서류에 당신의 이니셜이 붙여넣기 되어 있음.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "방금 제가 추출한 PDF 메타데이터 좀 보세요, {{player_name}} 님—브렌다가 어젯밤 오후 11시 42분에 자기 노트북으로 그 준법 서류를 조작했어요!",
+          "timestamp_label": "오후 3:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "규제 당국이 {{player_name}} 탓으로 몰기만 하면 CEO의 300만 달러 황금 낙하산이 통과될 텐데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[빠르게 타자 치는 소리] {{player_name}}!! 우리 둘 다 CEO한테 버그 경고했고 브렌다가 덮으라고 지시했던 변조 불가능한 슬랙 백업 아직 내가 갖고 있어!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "브렌다가 CEO의 300만 달러 퇴직 패키지를 지켜주려고 연방 준법 문서를 위조했습니다! 당신의 반격은?",
+          "options": [
+            {
+              "option_id": "opt_send_board_pdf",
+              "label": "이사회에 위조 PDF 메타데이터를 보낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "마야 변호사님, 방금 뵈었던 이사회 이사님께 브렌다의 오후 11시 42분 메타데이터 추적 기록 곧장 보내 주세요!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_whistleblower_file",
+              "label": "먼저 연방 내부고발자 보호 조치를 접수한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "건드릴 수 없는 힘 · 광고 보기",
+              "player_reply_text": "내부고발자 보호법 아래 연방 규제 기관에 타리크의 슬랙 로그랑 위조된 PDF를 바로 접수하세요!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "이사회 경보: 독립 이사회 의장이 긴급 검토가 끝날 때까지 모든 임원 퇴직금 지급을 즉각 동결합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "연방 보호막 발동: 이제 브렌다나 CEO가 가하는 그 어떤 보복 행위도 자동 연방 중범죄가 됩니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "세상에—방금 그 이사님이 문자 보냈어! CEO 해임 표결을 내일 오전 9시 정각으로 앞당겼대!",
+          "timestamp_label": "오후 3:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "이사회가 해고된 직원 두 명 편을 들 것 같나요? 우리 황금 낙하산 지급 건은 이미 재무팀 대기열에 올라가 있다고요!",
+          "timestamp_label": "오후 3:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "300만 달러 황금 낙하산 송금",
+          "teaser_text": "4화: 자정에 재무팀 송금이 실행되기 전에 브렌다의 긴급 지급을 가로채십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "위조된 승인 서명",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오후 9:40 · 마야의 법률 사무실. 자정 일괄 송금 배치가 실행되기 두 시간 전입니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "마지막 기회예요, {{player_name}} 님. 메타데이터 주장 철회하면 내일 퇴직금 두 배인 현금 18만 달러로 맞춰 드릴게요.",
+          "timestamp_label": "오후 9:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "내부고발 조사 받는 도중에 서면으로 입막음 뇌물을 제안하셨네요, 브렌다.",
+          "timestamp_label": "오후 9:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "캡처 저장 및 타임스탬프 완료! 이제 현직 CEO가 계좌를 털어가기 전에 자정 재무 송금만 막으면 됩니다.",
+          "timestamp_label": "오후 9:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "재무팀에 CEO 강제 승인 토큰 써서 이사회 동결 우회하라고 전해—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "잠깐!! 저자들이 오전 9시 표결 전에 300만 달러 송금 밀어 넣으려고 CEO 강제 승인 토큰을 쓰려 하고 있어!",
+          "timestamp_label": "오후 9:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 8,
+          "transcript": "[전화 거는 소리] 지금 이사회 외부 자문 은행 변호사와 통화 중입니다—위조된 승인 서류랑 뇌물 문자만 팩스로 보내면, 은행이 5분 안에 법인 금고를 잠글 겁니다!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "송금 마감까지 10분 남았습니다! 긴급 은행 지급정지 가처분에 무엇을 넣으시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_send_injunction",
+              "label": "위조된 PDF와 뇌물 문자 캡처를 보낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "둘 다 보내세요—위조된 준법 서류랑 브렌다의 18만 달러 입막음 문자까지 전부요!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_cc_prosecutor",
+              "label": "송금을 막고 지방검찰청에도 사본을 보낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "무자비한 응징 · 광고 보기",
+              "player_reply_text": "송금 잠그고 검찰 화이트칼라 범죄 전담부에도 같이 접수하세요—강제 우회 시도도 직접 해명해 보라고 합시다!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "송금 차단 완료: 법인 거래 은행의 사기 방지 데스크가 4분을 남기고 300만 달러 지급을 정지시킵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "형사 소환장 발부: 은행이 계좌를 동결하고 CEO의 강제 승인 로그를 곧장 검사에게 넘깁니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "황금 낙하산 줄이 방금 뚝 끊겼네요, 브렌다.",
+          "timestamp_label": "오후 9:54",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "재무팀이 방금 송금을 거절했… 잠깐, 왜 준법감시 요원 두 명이 우리 집 앞문을 두드리고 있는 거지?!",
+          "timestamp_label": "오후 9:55",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "심판의 아침",
+          "teaser_text": "5화: 이사회가 차단된 지급 영수증을 검토하고 회사를 바로잡을 열쇠를 당신에게 넘기는 모습을 지켜보십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "황금 낙하산",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 9:00 · 28층 이사회실. 당신과 타리크, 마야가 어안이 벙벙해진 인사팀을 지나 걸어 들어갑니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "이사회가 방금 차단된 300만 달러 송금 영수증을 확인했습니다—그리고 동결을 우회하려던 브렌다의 시도까지요.",
+          "timestamp_label": "오전 9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "차단된 지급 · 퇴임 CEO 및 인사 부사장 앞으로의 3,000,000달러 무단 퇴직금 이체 — 사기방지 데스크에서 중단.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "전 그저 CEO 지시를 따랐을 뿐이에요! 이 회사에 12년을 바쳤단 말이에요!",
+          "timestamp_label": "오전 9:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그리고 고작 12분 만에 무고한 직원을 감옥에 보내려고 내 이니셜을 위조하셨죠.",
+          "timestamp_label": "오전 9:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "징계 해고—퇴직금 제로, 스톡옵션 제로, 거기에 형사 고발까지—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[안도의 한숨을 쉬며] 둘 다 아웃이야—징계 해고 처리됐어! 그리고 이사회가 방금 나한텐 엔지니어링 부사장, 너한텐 최고준법운영책임자(CCOO) 자리를 제안했어!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "C-레벨 임원직 제안을 수락하기 전에, 타협 없는 어떤 개혁 조건을 거시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_ban_forced_nda",
+              "label": "2시간짜리 압박 비밀유지계약(NDA)을 영구 금지한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "복귀하겠습니다—단, 압박식 NDA 관행을 영구 폐지하고 모든 직원에게 법률 검토 기간 14일을 보장한다면요.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_fix_safety_bug",
+              "label": "압박 NDA 금지 + 타리크의 안전 패치를 즉시 배포한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "영웅적 선택 · 광고 보기",
+              "player_reply_text": "압박 NDA를 폐지하고—오늘 바로 투명한 고객 권고문과 함께 타리크의 전면 안전 패치를 승인해 주십시오!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "정책 채택 완료: 점심시간 전에 이사회가 만장일치로 당신의 직원 보호 헌장을 인준합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "대중의 신뢰 회복: 규제 당국이 자발적 공시를 극찬하며—장 마감 무렵 주가가 14% 반등합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "이틀 전 브렌다가 당신 인생 팔아넘기라며 2시간 줬던 거 기억나요? 지금 당신 모습을 보세요.",
+          "timestamp_label": "오전 9:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "공황 상태에서는 절대 서명하지 마라—그리고 항상 유능한 변호사를 단축번호에 저장해 둬라.",
+          "timestamp_label": "오전 9:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "희생양에서 C-레벨 임원으로",
+          "teaser_text": "6화 (최종화): 안전 패치를 배포하고, 사내를 정화하며, 타리크와 함께 재도약을 이끄십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "다시 최고층으로",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "한 달 뒤 · 28층 임원실. 안전 패치는 성공적으로 적용되었고 고객 신뢰도는 역대 최고치를 찍었습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "고객 시스템 100% 무중단 패치 완료! 규제 당국도 표창과 함께 우리 사건 파일을 종결했어!",
+          "timestamp_label": "오후 4:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "결국 버그를 고치는 게 그걸 숨기려고 사람 매수하는 것보다 훨씬 싸고 빨랐네요.",
+          "timestamp_label": "오후 4:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "제 로펌을 독립 윤리 자문사로 선임해 주셔서 감사해요! 제가 지켜보는 한 수상한 NDA는 이제 끝입니다.",
+          "timestamp_label": "오후 4:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "책상 너머로 그 퇴직 합의서 함정을 밀어 넣지 말았어야 했는데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[커피잔 부딪치는 소리] 5분 뒤에 타운홀 미팅 시작이야, 책임자님! 엔지니어 이백 명이 새 운영 원칙 들으려고 기다리고 있어!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "지금 들어가. 새 원칙의 제1규칙: 진실은 은폐보다 빠르게 달린다.",
+          "timestamp_label": "오후 4:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "전사 타운홀 미팅에서 전하는 마지막 약속:",
+          "options": [
+            {
+              "option_id": "opt_open_door",
+              "label": "안전 제보에 대한 보복 제로를 약속한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "여기서 안전 버그를 지적한다고 해고되는 일은 다시는 없을 겁니다—오히려 승진하게 될 겁니다.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_bug_bounty",
+              "label": "사내 '청렴 보너스(Integrity Bonus)' 기금을 출범시킨다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "게임 체인저 · 광고 보기",
+              "player_reply_text": "치명적 위험을 조기에 발견한 직원 누구에게나 포상하는 연간 50만 달러 규모의 청렴 보너스 기금을 출범합니다!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "우레와 같은 박수: 회의실 전체가 기립합니다—공포의 문화는 영원히 사라졌습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "업계의 모범: 전 세계 테크 리더들이 당신의 청렴 보너스 제도를 본뜨고—최고 인재들이 문 앞에 줄을 섭니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "서명하지 않고, 꺾이지 않더니, 이젠 판을 이끌고 계시네요. 전설적입니다.",
+          "timestamp_label": "오후 4:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "그 2시간 타이머 끝나기 전에 문자해 줘서 정말 고마워, {{player_name}}.",
+          "timestamp_label": "오후 4:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 청렴이 최고층을 제패하다",
+          "teaser_text": "퇴직 합의서의 덫을 피하고, 은폐를 폭로했으며, 진실 위에 회사를 다시 세웠습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

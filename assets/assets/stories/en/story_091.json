@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_091",
+  "lang": "en",
+  "metadata": {
+    "title": "Room 409 Doesn’t Exist",
+    "subtitle": "The storm motel handed me key 409—but the elevator skips floor 4, and Room 409 is texting me.",
+    "genre": "thriller",
+    "tags": [
+      "Motel",
+      "Mystery",
+      "Survival"
+    ],
+    "cover_image": "assets/media/covers/story_091.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "clerk",
+      "name": "Front Desk · Pine Inn",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "r409",
+      "name": "GUEST_409",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3B0764"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "The Missing Floor",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "11:32 PM · A highway landslide strands you at the Pine Ridge Inn. You connect to the motel Wi-Fi—and a local intranet chat pops open.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Do NOT use keycard 409, {{player_name}}. Check the elevator buttons—there is no 4th floor.",
+          "timestamp_label": "11:32 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... the elevator only goes 1, 2, 3, and 5! How do you know my name?!",
+          "timestamp_label": "11:33 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "r409",
+          "duration_sec": 8,
+          "transcript": "[hushed whisper, rain pounding] Because I’m locked inside Floor 4 right now! The clerk only hands out 409 cards to solo travelers whose cars have out-of-state plates.",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Everything alright in the hallway, {{player_name}}? Use the brass service stairs behind the ice machine to reach Floor 4.",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "The clerk’s lobby camera pivots directly toward you:",
+          "options": [
+            {
+              "option_id": "opt_091_e1_free",
+              "label": "Walk back to your car & drive off",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Actually I forgot my charger in the car—be right back.",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_091_e1_vip",
+              "label": "Sneak up the service stairs to rescue 409",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "You sprint into the pouring rain—and freeze. All four tires of your car have been cleanly deflated, and the highway gate is padlocked.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "I told you—nobody drives out of Pine Inn! Come up the outside fire ladder to Window 409 before the clerk locks the courtyard!",
+          "timestamp_label": "11:36 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "You slip up the dim service stairs. Floor 4 isn’t a motel hallway—it’s a soundproofed concrete corridor lined with heavy steel doors and biometric locks.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "You actually came up?! Swipe your 409 card on the keypad—it’s the only master card that opens my door from outside!",
+          "timestamp_label": "11:36 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Buyer confirmed for two healthy donors. Sealing Floor 4 stairwell now.",
+          "unsent_placeholder": "Front Desk unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "A heavy magnetic bolt slams shut behind you. At the far end of the corridor, the door to Room 409 clicks open—revealing a dark room.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Inside Floor Four",
+          "teaser_text": "The stairwell is sealed and the clerk just called in a buyer. Whoever is inside Room 409 is your only ally—or the bait.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Checkout Time",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "11:40 PM · Inside Room 409, a bruised woman in a paramedic jacket grabs your arm—just as the hallway speaker buzzes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "clerk",
+          "caller_label": "Front Desk · Pine Inn",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 7,
+          "transcript": "[calm static] Welcome to Floor 4, {{player_name}}. Stay inside Room 409—sleep gas vents in sixty seconds.",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Ignoring my call won’t stop the ventilation system, {{player_name}}. Sleep gas activates in 60 seconds.",
+          "timestamp_label": "11:40 PM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "I’m Mara—I’ve been loosening the laundry chute bolts for two days! Help me pry the grate before the vents hiss!",
+          "timestamp_label": "11:41 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—we also need cell signal to call State Police before they catch us downstairs!",
+          "timestamp_label": "11:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "White mist begins hissing from the ceiling vent:",
+          "options": [
+            {
+              "option_id": "opt_091_e2_free",
+              "label": "Drop down the steel laundry chute",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_091_e2_vip",
+              "label": "Jam the jammer antenna on the window sill",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Signal’s back! Sending our live GPS to 911 right now!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "You and Mara plunge four stories into a pile of damp motel sheets in the basement boiler room—right beside the clerk’s unlocked breaker cabinet.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Pull the red breaker labeled \"CELL JAMMER\"! As soon as it drops, my emergency beacon goes straight to Highway Patrol!",
+          "timestamp_label": "11:43 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "You smash the hidden signal-jammer box outside the window with a metal chair leg. Four bars of 5G flood back—and 911 locks your location before you drop down the chute.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "You broke the jammer?! Pack the van—state troopers are already turning off the interstate!",
+          "timestamp_label": "11:43 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "r409",
+          "text": "Don’t show the police my real ID—I’m not actually a paramedic.",
+          "unsent_placeholder": "GUEST_409 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Blue sirens sweep across the rain-slicked parking lot. You turn to thank Mara—but she’s already vanished into the pine woods, leaving behind a silver key labeled \"ROOM 410.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "The Key To Room 410",
+          "teaser_text": "You survived the hidden fourth floor—but who was Mara really, and what is still locked inside Room 410?",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Hidden Button",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "01:28 AM · Thunder rattles the Pine Inn awning. You slip back into the service elevator holding Mara’s brass key 410.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "You actually came back up, {{player_name}}? Room 410 holds the evidence that got Mara erased from the guest book.",
+          "timestamp_label": "01:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Front Desk! Stop lying—who is Mara, and why does this elevator have a magnetic slot where Floor 4 should be?!",
+          "timestamp_label": "01:28 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/elevator_panel_404.webp",
+          "caption": "Pine Inn Lift Panel · 01:29 AM — Hidden keycard slot unlocks the sealed 4th floor.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 8,
+          "transcript": "[storm rain lashing glass] Listen to me! Mara was an investigative reporter who exposed our county sheriff! He forced the motel owner to seal the 4th floor!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "The service elevator shudders open onto the silent, dust-covered 4th floor:",
+          "options": [
+            {
+              "option_id": "opt_091_e3_free",
+              "label": "Walk straight to Room 410 with key ready",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m on Floor 4 now. Walking to Room 410—stay on the line!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_091_e3_vip",
+              "label": "Check the hidden camera above Room 409",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Floorboards creak beneath your boots. A faint blue laptop glow leaks from under the gap of Room 410.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Knock twice, {{player_name}}. Don’t let the sheriff’s cruiser hear you.",
+          "timestamp_label": "01:28 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "The camera above 409 isn’t recording—its wire runs into Room 410 as Mara’s own early-warning monitor.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... GUEST_409 IS Mara! You’ve been hiding inside Room 410 this whole time!",
+          "timestamp_label": "01:28 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Sheriff’s truck just pulled into Pine Inn’s gravel lot!!",
+          "unsent_placeholder": "Front Desk unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "RED ALERT! Sheriff’s deputy just walked into the lobby asking why the service elevator moved!",
+          "timestamp_label": "01:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Get inside Room 410 right now, {{player_name}}—I’m opening the bolt!",
+          "timestamp_label": "01:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Inside Room 410",
+          "teaser_text": "GUEST_409 is Mara alive—and the corrupt sheriff’s deputy just realized someone unlocked the forbidden 4th floor.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Mara’s Case Files",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "01:39 AM · Mara bolts Room 410 shut behind you. Newspaper clippings and sheriff bribe logs cover the motel desk.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Thank you for answering my texts, {{player_name}}. My cell signal only reaches the roof fire escape—I needed someone to carry this drive out.",
+          "timestamp_label": "01:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Front Desk just warned us the deputy is checking the elevator! Can we both get out the roof hatch?",
+          "timestamp_label": "01:39 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "I told him the lift shorted out in the storm—you have two minutes!",
+          "unsent_placeholder": "Front Desk unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "r409",
+          "duration_sec": 7,
+          "transcript": "[zipper closing on waterproof pouch] Here’s the full state-police upload link! Once we hit the ridge road, we’ll have 5G bars!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Heavy boots echo on the 4th-floor stairwell landing outside:",
+          "options": [
+            {
+              "option_id": "opt_091_e4_free",
+              "label": "Climb onto the storm-slick roof fire escape",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Window open! Follow me onto the fire escape—keep low!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_091_e4_vip",
+              "label": "Leave Room 409’s radio playing as a decoy",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Rain pelts your faces as you and Mara descend the rusted iron ladder down the back pine slope.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "I see you clearing the fence! The deputy is still kicking down Room 409’s door!",
+          "timestamp_label": "01:39 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "The muffled radio draws the deputy straight into empty Room 409—buying you and Mara a clean head start to your car.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Genius! He’s searching an empty room while we’re already at the treeline!",
+          "timestamp_label": "01:39 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Your phone catches two bars of 5G at the ridge—and the clerk texts a photo of the keycard safe receipt.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Take this keycard proof too—it shows the sheriff personally paid to seal Floor 4 six months ago!",
+          "timestamp_label": "01:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "State Police Internal Unit just answered! Send them everything right now!",
+          "timestamp_label": "01:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Ridge Upload",
+          "teaser_text": "You and Mara escaped Pine Inn alive—and the sheriff’s cruiser just spotted your taillights on the ridge road.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Keycard Evidence",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "01:55 AM · Flashing red bars close in through the fog behind your bumper. Your upload progress hits 84%.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Keep driving! Ten more seconds and State Police have the sheriff’s entire bribery ledger AND the Pine Inn seal order!",
+          "timestamp_label": "01:55 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Uploading Front Desk’s keycard log too—95%... 98%... SENT!",
+          "timestamp_label": "01:55 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "clerk",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05",
+          "text": "Master Keycard 410 · Registered to County Sheriff’s off-books account."
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 6,
+          "transcript": "[highway sirens approaching] Four State Trooper cruisers just flew past Pine Inn heading up the ridge toward you! You’re almost there!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "State Trooper floodlights appear over the next crest ahead of you:",
+          "options": [
+            {
+              "option_id": "opt_091_e5_free",
+              "label": "Flash your high beams & pull up to Troopers",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "State Police ahead! We’re pulling right behind their roadblock!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_091_e5_vip",
+              "label": "Live-stream the pursuit to Mara’s paper",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "You brake behind four State Trooper cruisers. The sheriff’s SUV skids to a halt—boxed in by twelve state officers.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "He’s surrounded! Six months trapped on a ghost floor—and he’s finally in cuffs!",
+          "timestamp_label": "01:55 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Mara’s newsroom broadcasts the live standoff on the foggy ridge—turning the sheriff’s arrest into breaking national news.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Room 409 just made the front page, Mara.",
+          "timestamp_label": "01:55 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "r409",
+          "text": "I would’ve never made it off Floor 4 without you, {{player_name}}.",
+          "unsent_placeholder": "GUEST_409 unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "State Troopers just arrived at Pine Inn to unseal Floor 4 officially! Thank you for freeing us from that sheriff.",
+          "timestamp_label": "01:55 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Floor 4 exists again. And this time, the lights stay on.",
+          "timestamp_label": "01:55 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Check-Out Time",
+          "teaser_text": "The corrupt sheriff is arrested on the ridge and Mara is safe—one final morning check-out at Pine Inn.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Floor 4 Unsealed",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "08:30 AM · Rainclouds part over the pine trees. Yellow crime-scene tape flutters gently around the unsealed 4th-floor elevator button.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "My editor just published the full exposé! Three state investigators thanked us for handing over Keycard 410.",
+          "timestamp_label": "08:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Glad you’re out in the sunlight, Mara. No more texting strangers from a phantom room.",
+          "timestamp_label": "08:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Your stay at Pine Inn is officially refunded—plus free waffles for life.",
+          "unsent_placeholder": "Front Desk unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 5,
+          "transcript": "[lobby bell dinging cheerfully] Fresh coffee’s waiting at the front desk whenever you’re ready to check out, {{player_name}}!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "You drop the heavy brass key 409 onto the front counter:",
+          "options": [
+            {
+              "option_id": "opt_091_e6_free",
+              "label": "Leave a 5-star review for the honest clerk",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Five stars for the clerk who risked his neck to warn us. Zero stars for the sheriff.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_091_e6_vip",
+              "label": "Keep Mara’s reporter contact for future tips",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "The clerk grins and hangs Key 409 back on the wooden rack—right beside a shiny new brass tag for Room 410.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Safe drive home, {{player_name}}! Come back in the summer—no storms!",
+          "timestamp_label": "08:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Mara saves her direct press line into your phone and waves as you pull back onto the sunlit mountain highway.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "If you ever find another floor that doesn’t exist, call me first.",
+          "timestamp_label": "08:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "In the rearview mirror, Pine Inn’s neon sign clicks off in the bright morning sun.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Thank you for checking in, {{player_name}}.",
+          "timestamp_label": "08:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Best check-out of my life.",
+          "timestamp_label": "08:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Checked Out",
+          "teaser_text": "Mara is free, the corrupt sheriff is behind bars, and Room 409 finally rests in daylight.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

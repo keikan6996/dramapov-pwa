@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_098",
+  "lang": "ja",
+  "metadata": {
+    "title": "キャビン12：圏外",
+    "subtitle": "猛吹雪で携帯の電波が途絶えた——にもかかわらず、山小屋の4.5メートル外からBluetoothメッシュチャットが開いた。",
+    "genre": "thriller",
+    "tags": [
+      "猛吹雪",
+      "山小屋",
+      "サバイバル"
+    ],
+    "cover_image": "assets/media/covers/story_098.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "cole",
+      "name": "Cole監視員 · 無線",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "btnode",
+      "name": "BT_NODE_01",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0C4A6E"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "4.5メートル先",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後10:52 · 氷点下25℃の猛吹雪。携帯電波ゼロ。オフライン登山アプリが鳴りました：「Bluetoothメッシュでピア接続完了 — 距離：4.5m」",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "玄関ポーチのドアを開けてくれ、{{player_name}}！スノーモービルが吹きだまりで横転した——このままじゃ外で凍死する！",
+          "timestamp_label": "午後10:52",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って…どうして私の名前を知ってるの？！キャビン12は私の名前で予約したのに！",
+          "timestamp_label": "午後10:53",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 7,
+          "transcript": "[ノイズ交じりのVHF無線中継] キャビン12、こちら公園監視員のColeだ！絶対に誰も中に入れるな！2時間前に国道89号線で州刑務所の護送車から囚人が脱走した！",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "btnode",
+          "text": "郵便受けに宿泊者名簿が入ってたんだよ、{{player_name}}。送電線を切る前に今すぐドアの鍵を開けろ。",
+          "unsent_placeholder": "BT_NODE_01がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "霜の降りた玄関ドアを重い拳が激しく叩きました：",
+          "options": [
+            {
+              "option_id": "opt_098_e1_free",
+              "label": "ドアにバリケードを築き火かき棒を構える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cole監視員、奴が今玄関ポーチにいます！キャビン12に援軍を送ってください！",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_098_e1_vip",
+              "label": "タブレットで屋外のトレイルカメラを見る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "重いオーク材のダイニングテーブルを玄関ドアに押し付けます。突然山小屋の明かりが明滅して消えました——奴が外壁のブレーカーボックスを引き剥がしたのです。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "雪上車が12分で到着する！1階の窓から離れて——上のロフトに上がれ！",
+          "timestamp_label": "午後10:55",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "玄関ポーチのトレイルカメラが暗視モードで点灯します。そこにいたのは脱走犯などではなく——公園監視員の制服を着て血を流す女性と、その背後に潜むもう1つの影でした。",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って…私の玄関で血を流しているのが監視員のバッジをつけているなら、無線でCole監視員を名乗っているのは「誰」なの？！",
+          "timestamp_label": "午後10:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "Bluetooth信号表示が変わります：「距離：1.2m — 裏手土間口の窓」。キッチンでガラスの割れる音が響きました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "あいつが本物の監視員の無線を奪ったのよ、{{player_name}}！裏窓から入ってくる——中に入れて！",
+          "timestamp_label": "午後10:56",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "吹雪の中の2つの声",
+          "teaser_text": "1人はあなたを救おうとする監視員。もう1人は脱走囚——そして誰かが今、あなたのキッチンによじ登ってきた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "ホワイトアウト",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午後10:57 · 割れたキッチンの窓から雪が吹き込みます。階下でブーツがガラス片を踏みしめる中、あなたは木製のロフト梯子を駆け上がりました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "cole",
+          "caller_label": "Cole監視員 · VHF",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 7,
+          "transcript": "[荒い息遣い——そして階下と全く同じ反響音] 「ロフトから降りてきな、{{player_name}}。ちょっとストーブを点検しに来ただけだよ」",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "火かき棒を下ろせ、{{player_name}}。車のキーと暖かいコートだけもらえればいい。",
+          "timestamp_label": "午後10:57",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "私は副公園監視員のMaya！這って雪上車まで辿り着いたわ——ロフトの窓から信号拳銃を投げて、あいつをおびき出すから！",
+          "timestamp_label": "午後10:58",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "偽監視員の手がロフト梯子の一番下の段を掴みました！",
+          "timestamp_label": "午後10:58",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "男が登ってくるまであと2秒です：",
+          "options": [
+            {
+              "option_id": "opt_098_e2_free",
+              "label": "木の梯子を蹴り倒して飛び降りる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_098_e2_vip",
+              "label": "ロフトの窓から信号弾を真っ直ぐ撃ち上げる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "信号弾発射！Maya、今すぐ雪上車を発進させて！",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "梁から梯子を蹴り外して男の上に叩き落とし——あなたはロフトの窓からMayaがアイドリングさせている雪上車のすぐ横、深さ2メートルの吹きだまりへ飛び降りました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "乗り込んで！！しっかり掴まって——林道を一気に下って監視員詰所まで突っ切るわよ！",
+          "timestamp_label": "午後11:00",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "真紅の信号弾が谷全体を真昼のように照らし出します。頭上では、州の捜索救助ヘリが眩いサーチライトを真っ直ぐキャビン12に向けました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "見つけてくれた！！吹きだまりに飛び込んで——今ヘリが救助隊を降下させてる！",
+          "timestamp_label": "午後11:00",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "キャビン12は偶然じゃないぞ、{{player_name}}。お前の証言のせいで俺はあの護送車に乗せられたんだ。",
+          "unsent_placeholder": "Cole監視員がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "ホワイトアウトの中を雪上車が轟音で走り去る際、キャビン12の玄関ポーチを振り返り——凍りつきます。戸口に立っていたのは見知らぬ男ではありません。あなたの元ビジネスパートナーでした。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "隠れ家を突き止められた",
+          "teaser_text": "脱獄は偶然ではなかった——彼はキャビン12まであなたを追跡するためにわざと脱走したのだ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "ポーチ突破",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後11:34 · 山小屋の発電機が咳き込んで止まりました。松林を風が唸り抜ける中、BT_NODE_01がキッチンの窓の90センチ外から反応します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "州刑務所で5年間、ずっとお前の証言のことを考えてたぞ、{{player_name}}。湖の焚き火を覚えてるか？",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cole監視員！！奴が今玄関ポーチに来ています！スノーモービルはあとどれくらいですか？！",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "btnode",
+          "image_asset": "assets/media/evidence/lake_bonfire_timestamp.webp",
+          "caption": "Bluetooth転送 · 5年前 — あなたの証言が彼を刑務所送りにした焚き火の夜。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 8,
+          "transcript": "[無線ノイズ、吹き荒れる風音] 倒れた松が第4トレイルを塞いでる——かんじきで向かってる！待て——監視員詰所の内部の誰かがキャビン12の座標を漏らしたぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "凍りついたキッチンの掛け金にブーツが叩きつけられました。即座に反応してください：",
+          "options": [
+            {
+              "option_id": "opt_098_e3_free",
+              "label": "キッチンを塞ぎ艇庫へ抜け出す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "地下室のハッチから艇庫へ向かいます！凍った桟橋のそばで合流しましょう！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_098_e3_vip",
+              "label": "予備のBluetoothスピーカーを囮に点けておく",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "オークのテーブルをキッチンドアに押し当て、山小屋の裏の腰まである深雪へ滑り出ました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "いい判断だ！吹雪の合間を縫って州の救助ヘリが離陸する——動き続けろ！",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "ペアリング済みのBluetoothスピーカーが屋根裏で大音量の通知音を鳴らし——BT_NODE_01を2階へおびき寄せている間に、あなたは地下ドアから鮮やかに脱出しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "屋根裏は空っぽだと？！賢い小細工だな、{{player_name}}——湖へ向かうお前の足跡は見えてるぞ！",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "btnode",
+          "text": "Timberlineロッジの副監視員が、これが終わったら最後にもう1回回収便を出してくれるはずだ。",
+          "unsent_placeholder": "BT_NODE_01がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "待て——奴、今TIMBERLINEロッジって言ったか？！あそこに配属されてるのは俺の副官だ——「あいつ」が内通者だ！",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "凍った湖の上じゃ逃げ場はないぞ、{{player_name}}。Bluetooth到達距離：12メートル、接近中。",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Timberlineの漏洩",
+          "teaser_text": "Timberlineロッジの副監視員があなたの隠れ家を売り渡していた——そしてBT_NODE_01が艇庫へ向かうあなたの足跡を追っている。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "艇庫の罠",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後11:46 · 木製艇庫の下で氷が軋みます。釣り具ロッカーの中で、信号拳銃と落ちていたロッジのキーカードを見つけました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "北の尾根200ヤード地点にいる！奴が桟橋に踏み出したらその信号拳銃を撃て——救助ヘリが今雲を抜けたぞ！",
+          "timestamp_label": "午後11:46",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cole、艇庫の中でTimberlineロッジのマスターパスを見つけたわ！あなたの副官が彼のためにここに物資を隠してたのね！",
+          "timestamp_label": "午後11:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "州警察がすでにTimberlineロッジを包囲して俺の副官を逮捕しようとしてる。",
+          "unsent_placeholder": "Cole監視員がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "btnode",
+          "duration_sec": 6,
+          "transcript": "[ドアの外で氷が割れる音] 信号強度98%だぞ、{{player_name}}。凍死する前に艇庫の掛け金を開けろ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "頭上でローター音が轟く中、艇庫のドアが揺さぶられます。動いてください：",
+          "options": [
+            {
+              "option_id": "opt_098_e4_free",
+              "label": "空へ向けて真っ直ぐ赤い信号弾を撃つ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "信号弾発射！ヘリは艇庫の真上です——Cole、今よ！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_098_e4_vip",
+              "label": "緩んだ桟橋板を蹴って男を雪へ落とす",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "真紅の炎が凍った入江全体を照らし出します！救助ヘリの眩いサーチライトが、桟橋の上に立つBT_NODE_01を真っ直ぐ捉えました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "地面に伏せろ！今、州の戦術部隊が氷の上に懸垂降下している！",
+          "timestamp_label": "午後11:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "腐った杉板を蹴り外し——BT_NODE_01が雪の吹きだまりに転がり落ちた瞬間、ヘリのサーチライトの下でColeが彼に飛びかかりました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "捕まえた！それにこのTimberlineロッジのパスを保管して——脱獄を手助けした共犯者を証明する決定的な証拠よ！",
+          "timestamp_label": "午後11:46",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "州警察官が救助そりに囚人を拘束する中、猛吹雪は渦巻く星空へと晴れ上がりました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "携帯電波なしでカテゴリー3の猛吹雪を耐え抜いたな！そのロッジのキーカードを渡してくれ。",
+          "timestamp_label": "午後11:46",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "[Bluetoothメッシュ切断]",
+          "timestamp_label": "午後11:46",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "夜明けの救助",
+          "teaser_text": "BT_NODE_01は再び鎖に繋がれた——そしてTimberlineロッジのキーカードが汚職副官の運命を決定づける。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Timberlineの証拠",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前0:25 · ベースキャンプの暖かい救助小屋の中で熱いココアを手に指を温めながら、Coleがロッジのパスを調べるのを見守ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "このTimberlineパスのシリアル刻印を見ろ——脱獄の2日前にMiller副官宛てに直接発行されているぞ！",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "つまりキャビン12の場所を漏らしただけじゃなく——艇庫に物資を蓄えて待ち伏せ全体を計画していたのね。",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "cole",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05",
+          "text": "Timberlineロッジパス · 脱獄の48時間前にMiller副官へ発行。"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 6,
+          "transcript": "[無線の電子音] 州警察から確定連絡が入った——TimberlineロッジでMiller副官が自白したそうだ。二人とも最高警備刑務所行きだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "救助ヘリのパイロットが、夜明けとともに街まで直行便で送れると言っています：",
+          "options": [
+            {
+              "option_id": "opt_098_e5_free",
+              "label": "夜明けにヘリで真っ直ぐ文明社会へ戻る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "窓側の席を空けておいて！雪とBluetoothメッシュは一生分味わったわ。",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_098_e5_vip",
+              "label": "先にキャビン12の荷物を取り鍵を閉める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Coleは笑いながら厚手のウールパーカを差し出し——すでにパイロットへ夜明けの席を手配するよう無線連絡を入れていました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "次の休暇はヤシの木があって5Gのアンテナが5本立つ場所を選びなよ。",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "日の出とともに、あなたとColeはスノーモービルでキャビン12へ立ち寄り——荷物を回収して玄関ポーチに綺麗に南京錠を掛けました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "無傷でキャビン12を後にできるなんて。真夜中には思いもしなかったわ。",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "俺の訓練生の半分よりずっと冷静だったぞ、{{player_name}}。",
+          "unsent_placeholder": "Cole監視員がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "嵐は去り、携帯基地局も復旧し始め、山はようやく静けさを取り戻した。",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "猛吹雪の中を歩いて助けに来てくれてありがとう、Cole。",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "電波復旧",
+          "teaser_text": "脱走犯と裏切り者の副官はともに手錠をかけられ——キャビン12の上に澄み渡る夜明けが訪れる。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "アンテナ5本",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前7:45 · 救助ヘリが輝く白松の林の上へ舞い上がります。スマホがチリンと鳴りました——5Gのアンテナが5本満タンに立っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "地上からの無線確認だ！容疑者2人とも連邦拘置所に移送完了したよ。もう脱走の心配はない。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "明瞭に聞こえます、Cole監視員！それと私、Bluetoothは永久にオフにします。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "もし夏にまた戻ってくることがあれば、猛吹雪のないトレイルを案内するよ。",
+          "unsent_placeholder": "Cole監視員がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 5,
+          "transcript": "[心地よく響くヘリのローター音] 気をつけて帰ってね、{{player_name}}！暖かいベッドが待ってるぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "雪の中に小さく遠ざかっていくキャビン12を見下ろしながら：",
+          "options": [
+            {
+              "option_id": "opt_098_e6_free",
+              "label": "Bluetoothをオフにして朝日を楽しむ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bluetoothオフ。コーヒーと朝日オン。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_098_e6_vip",
+              "label": "尾根にいるColeに向かって手を振る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "雪を頂いた峰々が眼下の暖かい谷間へと移り変わる中、黄金色の朝日がヘリのキャビンに満ち溢れます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ようやく世界と繋がったわ。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "陽光に照らされた尾根の下で、ヘリが帰路へ旋回するのをColeが無線機を掲げて凛々しく敬礼で見送っていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "前方に広がるは晴天のみ、{{player_name}}。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "画面には近隣のBluetoothノードはゼロ——表示されているのは街からの「おかえりなさい」のメッセージだけでした。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Cole監視員、通信終了。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "何から何までありがとう、Cole。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · 嵐を抜けて",
+          "teaser_text": "脱走犯と内通者は永久に閉じ込められ、あなたはキャビン12を離れ朝日の中へ無事に飛び立った。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,981 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_072",
+  "lang": "ja",
+  "metadata": {
+    "title": "退職金の罠",
+    "subtitle": "人事部から「寛大な」NDA（秘密保持契約）にサインするよう2時間の期限を突きつけられた――すると解雇されたエンジニアから、それは私に刑事責任を押し付ける罠だと警告が来た。",
+    "genre": "romance",
+    "tags": [
+      "企業ドラマ",
+      "内部告発",
+      "スリラー"
+    ],
+    "cover_image": "assets/media/covers/story_072.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "hr_dir",
+      "name": "Brenda (人事担当VP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "engineer",
+      "name": "Tariq (元リードエンジニア)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "counsel",
+      "name": "Maya (法務顧問)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4338CA"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "署名まであと2時間",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後2:00 · 第4会議室。人事部がテーブル越しに15ページの退職合意書と9万ドルの小切手を滑らせてよこしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "hr_dir",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "退職および秘密保持合意書 — 提示期限：本日午後4:00まで。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "6ヶ月分の満額給与よ、{{player_name}}。円満に別れるためにも午後4時までにサインしてね。",
+          "timestamp_label": "午後2:01",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "絶対にサインするな{{player_name}}！！12ページの第14B条を読め！欠陥バッテリーバッチの単独最終承認権限を「お前」が持っていたと記載されている！",
+          "timestamp_label": "午後2:02",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "ボス、{{player_name}}はまだ第14B条に気づいていません。一度サインすれば、規制当局の追及は経営陣ではなくあちらへ向かいます。",
+          "unsent_placeholder": "Brendaがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 12,
+          "transcript": "[緊迫した声] 今朝ヨーロッパで3台が過熱発火したんだ。明日連邦リコールが発表される――奴らは昨日俺をクビにして、今度は君に罪をなすりつけるために君の署名を買おうとしている！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Brendaが苛立たしげにペン先で机を叩いています。どう切り返しますか？",
+          "options": [
+            {
+              "option_id": "opt_call_counsel",
+              "label": "弁護士による確認のため72時間の猶予を要求",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "このコピーを私の雇用問題弁護士のところへ持ち帰るわ、Brenda。特に第14B条を確認してもらうためにね。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_grab_report",
+              "label": "CEO署名の安全停止解除メモをTariqから入手",
+              "cost_type": "vip_rewarded",
+              "badge_text": "証拠 · 広告視聴",
+              "player_reply_text": "Tariq、先月CEOが私たちの出荷停止判断を強制的に覆したメールを送って。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "サインせずにこの部屋から一歩でも出たら、9万ドルは消えるわ――それに警備員に連行させて退出してもらうから。",
+          "timestamp_label": "午後2:06",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "決定的証拠を入手：「18%の熱暴走不良があるにもかかわらずバッチを出荷せよ」と命じるCEO直筆署名入りのPDFメモ。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "送ったよ。おまけに公益通報専門弁護士のMayaもすでに繋いでおいた。",
+          "timestamp_label": "午後2:07",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "ドアの外に2人の警備員が待機しているわ、{{player_name}}。スマホを差し出して書類にサインしなさい。",
+          "timestamp_label": "午後2:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "第4会議室に閉じ込められて",
+          "teaser_text": "エピソード2：Brendaがあなたのスマホに手を伸ばします――あなたがすでに弁護士にスピーカーフォンで電話していたとも知らずに。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "第14B条",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後2:14 · 第4会議室。外で警備員が待機する中、Brendaがガラス扉の前に立ちはだかりました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "社内規定により退職時には個人端末の検査を行うことになっているの。今すぐスマホのロックを解除しなさい。",
+          "timestamp_label": "午後2:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "不法監禁は犯罪よ、Brenda。それにスピーカーフォンに出ている私の公益通報弁護士に挨拶したらどう？",
+          "timestamp_label": "午後2:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 10,
+          "transcript": "[歯切れのよい法務口調] {{player_name}}の代理人弁護士、Maya Linです。この通話は録音されています。ドアから離れなければ、5分以内に連邦司法妨害罪で提訴します。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "CEO――中止してください！！あちらは公益通報弁護士を通話に繋いでいて、しかも第14B条に気づいています！！",
+          "unsent_placeholder": "Brendaがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "チョークのように青ざめてBrendaが一歩引き下がりました。次の一手は？",
+          "options": [
+            {
+              "option_id": "opt_walk_free",
+              "label": "部屋を出て今日中に安全報告書を提出する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "口止め料は自分で取っておきなさい、Brenda。午後5時前には安全規制当局が真実を知ることになるから。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_drop_memo",
+              "label": "CEOが署名した強制出荷指示メモを見せる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "チェックメイト · 広告視聴",
+              "player_reply_text": "ああ、それとCEOに伝えておいて。18%の熱暴走不良を押し切った本人署名入りのメモもこちらにあるって。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "あなたが胸を張ってロビーを通り抜けると、警備員たちは即座に道を空けました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "公益通報者報奨認定：48時間以内に規制当局が危険製品の出荷を停止してCEOを起訴し、あなたの未払い給与全額と報奨金が法的に保護されました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "見事な立ち回りね、{{player_name}}。命を救い、企業の隠蔽体質を粉砕したわ。",
+          "timestamp_label": "午後2:22",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "今夜のディナーは俺のおごりだ。公益通報者クラブへようこそ。",
+          "timestamp_label": "午後2:25",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "未署名のまま、折れぬ誇り",
+          "teaser_text": "カフェで、取締役会メンバーがあなたのテーブルに歩み寄ってきました。「CEOを交代させる予定です。Tariqさんと一緒に会社を立て直すために戻ってきてくれませんか？」",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "取締役会の提案",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後3:15 · 角のカフェ。あなたとTariqを呼び戻すという取締役からの提案が落ち着く間もなく、Brendaが反撃を仕掛けてきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "{{player_name}}、今法務部から秘密保持違反の通告書を送達させたわ！Tariqと話したことで退職金は無効――それに安全違反ファイルは規制当局に提出するから！",
+          "timestamp_label": "午後3:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "先月私が「報告した」安全違反の罪を、私に着せようっていうの！？",
+          "timestamp_label": "午後3:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "改ざんされたコンプライアンス承認書 · あなたが締め出される2日前の日付の安全免除書に貼り付けられたあなたのイニシャル。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "今私が抽出したPDFのメタデータを見て、{{player_name}}――Brendaが昨夜午後11:42に「彼女自身の」ノートパソコンでそのコンプライアンスシートを編集しているわ！",
+          "timestamp_label": "午後3:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "規制当局が{{player_name}}を責めさえすれば、CEOの300万ドル退職金（ゴールデン・パラシュート）の送金が完了する――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[激しいタイピング音] {{player_name}}！私たち二人がCEOにバグを警告し、Brendaがそれを隠蔽するよう命じた改ざん不可能なSlackバックアップをまだ持ってる！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "CEOの300万ドル報酬を守るため、Brendaが連邦コンプライアンス書類を偽造しました！あなたの一手は？",
+          "options": [
+            {
+              "option_id": "opt_send_board_pdf",
+              "label": "偽造PDFのメタデータを取締役会へ送る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Mayaさん、午後11:42のBrendaのメタデータ記録を、さっき会ったばかりの取締役会メンバーへそのまま転送して！",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_whistleblower_file",
+              "label": "まず連邦公益通報者保護を申請する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "無敵 · 広告視聴",
+              "player_reply_text": "TariqのSlackログと偽造PDFを、公益通報者保護盾のもとで連邦規制当局へ直接提出しましょう！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "取締役会アラート：独立議長は緊急審査が完了するまで、即座にすべての役員退職金送金を凍結しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "連邦保護発動：今後BrendaやCEOによるいかなる報復行為も、自動的に連邦重罪となります！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "うわっ――今取締役会メンバーからメッセージが来た！CEO解任決議を明日の午前9時に繰り上げたって！",
+          "timestamp_label": "午後3:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "取締役会が2人の元社員の味方をするとでも思ってるの？私たちのゴールデン・パラシュートはもう財務部門で送金待機に入ってるんだから！",
+          "timestamp_label": "午後3:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "300万ドルの退職金送金",
+          "teaser_text": "エピソード4：真夜中に財務送金が完了する前に、Brendaの駆け込み報酬を差し止めましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "偽造された承認署名",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後9:40 · Mayaの法律事務所。真夜中の銀行送金バッチが処理される2時間前。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "最後のチャンスよ、{{player_name}}。メタデータの主張を取り下げるなら、明日現金で退職金を倍額の18万ドルにしてあげるわ。",
+          "timestamp_label": "午後9:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "公益通報調査を受けている最中に、文字で口止め料を提示してきたわね、Brenda。",
+          "timestamp_label": "午後9:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "スクショとタイムスタンプを保存完了！あとは退任間近のCEOが口座を空にする前に、真夜中の財務送金を止めるだけね。",
+          "timestamp_label": "午後9:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "CEOの強制承認トークンを使って取締役会の凍結を迂回するよう財務部に伝えろ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "待って！午前9時の決議の前に300万ドルの送金を強行するため、CEOの強制承認トークンを使おうとしてる！",
+          "timestamp_label": "午後9:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 8,
+          "transcript": "[電話を掛ける音] 今まさに取締役会の外部銀行顧問弁護士と繋がってる――偽造承認書と賄賂テキストをFAXすれば、5分で銀行が法人金庫をロックしてくれるわ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "送金締切まであと10分！緊急の銀行差し止め請求に何を含めますか？",
+          "options": [
+            {
+              "option_id": "opt_send_injunction",
+              "label": "偽造PDF＋賄賂スクショを送信する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "両方送って――偽造されたコンプライアンスシートと、Brendaの18万ドル口止め料テキストの両方を！",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_cc_prosecutor",
+              "label": "送金停止＋地方検事局にもCC送信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "容赦ゼロ · 広告視聴",
+              "player_reply_text": "送金を差し止めた上で、検察庁の知能犯対策課にもCCを送るわ――強制突破しようとした理由を検事に説明してもらいましょう！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "送金阻止：4分の余裕を残して、法人銀行の詐欺対策窓口が300万ドルの支払いを緊急停止しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "刑事召喚状：銀行は口座を凍結し、CEOの強制突破試行ログをそのまま検察庁へ引き渡しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あなたのゴールデン・パラシュートは今しがた紐が切れたわよ、Brenda。",
+          "timestamp_label": "午後9:54",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "財務が送金を却下したって……待って、なんで今うちの玄関のドアを2人のコンプライアンス調査官が叩いてるの！？",
+          "timestamp_label": "午後9:55",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "清算の朝",
+          "teaser_text": "エピソード5：阻止された支払明細を取締役会が確認し、あなたに会社を立て直す鍵を手渡す瞬間を見届けましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "ゴールデン・パラシュート",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前9:00 · 28階役員会議室。呆然とする人事部の横を通り過ぎ、あなた、Tariq、Mayaの3人が歩み入ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "取締役会はたった今、阻止された300万ドルの送金明細と――彼らの凍結命令を突破しようとしたBrendaの企てを確認したわ。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "阻止された支払 · 退任CEOおよび人事VP宛ての3,000,000ドルの無断退職金送金 — 詐欺対策窓口により停止。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "私はCEOの指示に従っていただけよ！この会社に12年間も尽くしてきたのよ！",
+          "timestamp_label": "午前9:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "そしてたった12分間で、罪のない社員を刑務所に送るために私のイニシャルを偽造したのよね。",
+          "timestamp_label": "午前9:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "懲戒解雇――退職金ゼロ、株式ゼロ、おまけに刑事告発――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[安堵の吐息] 二人とも追放だ――懲戒解雇！そして取締役会は今、俺にエンジニアリングVPを、そして{{player_name}}には最高コンプライアンス・執行責任者（CCOO）の座を提示してきたぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "経営幹部（Cスイート）就任を受諾する前に、どんな譲れない改革を要求しますか？",
+          "options": [
+            {
+              "option_id": "opt_ban_forced_nda",
+              "label": "2時間限定の圧力NDAを永久に禁止する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "戻ります――ただし、圧力釜のような即決NDAを永久に廃止し、全社員に法的確認のため14日間の猶予を与えることが条件です。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_fix_safety_bug",
+              "label": "圧力NDA禁止＋Tariqの安全修正を即時出荷",
+              "cost_type": "vip_rewarded",
+              "badge_text": "英雄的 · 広告視聴",
+              "player_reply_text": "圧力NDAを廃止し――さらに今日中に透明な顧客告知とともにTariqの完全な安全パッチを出荷する許可を出してください！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "方針採択：昼食前に、取締役会は全会一致であなたの従業員保護憲章を承認しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "世間の信頼獲得：規制当局は自発的な情報開示を称賛し――取引終了の鐘が鳴る頃には株価は14%反発しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "2日前、Brendaに2時間以内に人生を売り渡すサインを迫られていたのを覚えてる？今のあなたを見てみて。",
+          "timestamp_label": "午前9:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "パニックの中で絶対にサインしないこと――そしていつでも優秀な弁護士を短縮ダイヤルに入れておくことだね。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "身代わりから経営幹部へ",
+          "teaser_text": "エピソード6（フィナーレ）：安全パッチを出荷し、社内を浄化し、Tariqとともに大逆転の経営を率いましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "最上階への帰還",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "1ヶ月後 · 28階役員スイート。安全パッチは無事稼働し、顧客からの信頼は過去最高に達しています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "顧客システムの100%にダウンタイムゼロでパッチ適用完了！規制当局も今、称賛の言葉とともに調査ファイルを閉じたって！",
+          "timestamp_label": "午後4:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "結局のところ、バグを直す方が、隠すために人を買収するよりずっと安くて早かったんだね。",
+          "timestamp_label": "午後4:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "それに私の事務所を独立倫理顧問として起用してくれてありがとう！私が見張っている限り、もう怪しいNDAは一切なしよ。",
+          "timestamp_label": "午後4:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "あの退職金の罠をテーブルに押し出すべきではなかった――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[コーヒーカップの触れ合う音] 5分後に全社集会が始まるよ、チーフ！200人のエンジニアが新しい行動指針を聞くのを待ちわびてる！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今行くよ。新しい行動指針のルール第1条：真実は隠蔽工作よりも速く伝わる。",
+          "timestamp_label": "午後4:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "全社集会での締めの約束：",
+          "options": [
+            {
+              "option_id": "opt_open_door",
+              "label": "安全報告に対する報復ゼロを約束する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ここで安全上のバグを指摘しても、もう二度とクビにはなりません――むしろ昇進の対象になります。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_bug_bounty",
+              "label": "社内インテグリティ・ボーナス基金を設立",
+              "cost_type": "vip_rewarded",
+              "badge_text": "逆転の一手 · 広告視聴",
+              "player_reply_text": "重大なリスクを早期に発見したあらゆる社員に報いる、年間50万ドルの「誠実性（インテグリティ）ボーナス基金」を設立します！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "割れんばかりの拍手：会場全員が総立ちになり――恐怖の企業文化は永遠に消え去りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "業界の模範：世界中のテック企業リーダーたちがあなたの誠実性ボーナス制度を模倣し――優秀な人材があなたの会社の門前へ殺到しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "未署名のまま、折れることなく、今や会社を動かしている。まさに伝説ね。",
+          "timestamp_label": "午後4:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "あの2時間タイマーが切れる前に君に連絡して本当によかったよ、{{player_name}}。",
+          "timestamp_label": "午後4:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 誠実さがフロアを制す",
+          "teaser_text": "あなたは退職金の罠をかわし、隠蔽工作を暴き、真実の上に会社を築き直しました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

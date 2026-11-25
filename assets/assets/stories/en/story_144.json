@@ -1,0 +1,1338 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_144",
+  "lang": "en",
+  "metadata": {
+    "title": "The Baby Monitor Picked Up My Own Voice",
+    "subtitle": "I’m downstairs alone—so why is the nursery monitor playing my own voice singing a lullaby upstairs?",
+    "genre": "thriller",
+    "tags": [
+      "Psychological",
+      "Unreliable",
+      "Twist"
+    ],
+    "cover_image": "assets/media/covers/story_144.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "husband",
+      "name": "Owen · Husband",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "sister",
+      "name": "Tessa · Sister",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "The Lullaby Upstairs",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:12 AM · You’re warming milk in the kitchen when the baby monitor app pings: \"Audio detected in Nursery.\"",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Hey {{player_name}}, I’m stuck at the office late. Did you take your sleep meds yet?",
+          "timestamp_label": "2:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen, stop! Listen to the nursery monitor—MY OWN VOICE is singing upstairs while I’m in the kitchen!",
+          "timestamp_label": "2:12 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "husband",
+          "duration_sec": 8,
+          "transcript": "[crackling nursery feed—your voice humming] \"Hush now, don’t let Mommy open the basement door... Mommy forgot...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "Turn the monitor off right now! It’s just an audio loop glitch!",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Your heart hammers as the lullaby repeats:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e1_free",
+              "label": "Text Tessa to come over right now",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tessa, please come over! Someone is playing my voice in the nursery!",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e1_vip",
+              "label": "Check the nursery audio recording date",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Wait—this audio file wasn’t recorded tonight. It’s looped from a Bluetooth speaker!",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Tessa texts back: \"{{player_name}}?! I’ve been knocking on your gate for 3 weeks—Owen told me you moved to a clinic!\"",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Tessa texts back: \"Wait—why is Owen keeping you locked in that house?! I’m calling the police!\"",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "Footsteps pace softly above the kitchen ceiling—right inside the locked nursery.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "husband",
+          "caller_label": "Owen · Calling",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Do NOT go upstairs, {{player_name}}! Take the blue pill on the counter and wait for me!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Why did you tell my sister I was in a clinic, Owen?! What is inside that nursery?!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Blue Pill on the Counter",
+          "teaser_text": "Next: You spit out the pill—and realize why the nursery door is bolted from the outside.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Empty Crib",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:21 AM · You dump the blue pills down the sink. Your head clears for the first time in weeks.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}}, stay on text with me! I’m driving over right now—do NOT open the door for Owen!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I just unlocked the nursery door... Tessa, there’s a hidden Bluetooth speaker taped under the crib!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "husband",
+          "duration_sec": 8,
+          "transcript": "[angry, car engine roaring] \"Put the speaker back, {{player_name}}! I’m 5 minutes away—don’t make me call the doctor!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "She wasn’t supposed to wake up before the estate signing tomorrow.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "The nursery closet is padlocked with a heavy steel clasp:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e2_free",
+              "label": "Ask Tessa why Owen mentioned an estate signing",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tessa, he just unsent a message about an \"estate signing tomorrow\"!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e2_vip",
+              "label": "Pry the closet latch with a butter knife",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I pried the closet open—there’s a stack of stamped legal folders inside!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "OH MY GOD! {{player_name}}, our father’s trust matures tomorrow—Owen is trying to declare you mentally incompetent!",
+          "timestamp_label": "2:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Photograph every page! He’s been drugging you and looping your own voice to make you look psychotic!",
+          "timestamp_label": "2:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "Headlights sweep across the nursery blinds. Owen’s sedan rolls silently into the driveway—headlights killed.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "sister",
+          "caller_label": "Tessa · 3 Mins Away",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Wait—someone ELSE just stepped out of the hallway behind you on the nursery cam! Look at the doorway!",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I thought I was alone in the house... who has been living in the guest wing?!",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Not Alone in the House",
+          "teaser_text": "Next: The night-vision hallway cam catches the intruder outside the nursery.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Night-Vision Shadow",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:30 AM · Your baby monitor app switches to night-vision infrared. A tall silhouette stands dead-still in the corridor.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Lock the nursery door and shove the crib against it! Police are following my car right now!",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "It’s not Owen—Owen is still downstairs unlocking the front door! Who is upstairs with me?!",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "husband",
+          "duration_sec": 8,
+          "transcript": "[cold, smooth voice—not a loving husband at all] \"Stop screaming, {{player_name}}. Nurse Clara is just bringing your evening dose.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "Make sure she signs before her sister gets past the gate.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n05b_img"
+        },
+        {
+          "id": "e3_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Night-vision hallway feed at 02:31 — a motionless figure waiting outside the nursery door.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "The doorknob twists slowly from the corridor:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e3_free",
+              "label": "Climb out onto the porch roof",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m opening the window onto the porch roof—don’t hang up!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e3_vip",
+              "label": "Record Owen’s confession through the door",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "My phone is recording everything you say, Owen! Who are you really?!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Stay low on the roof shingles! I can see your gate from the road—honking my horn now!",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Keep him talking! Every word he admits goes straight to the police!",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "The nursery door splinters open—just as blue police sirens light up the wet driveway below.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "husband",
+          "caller_label": "Owen · Panicking",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Wait—if you hand those papers to your sister, I’ll tell them you burned the hospital files!",
+          "timestamp_label": "2:36 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You slipped up, Owen. I never had a baby in this house... and you’re not even my husband!",
+          "timestamp_label": "2:36 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Not My Husband",
+          "teaser_text": "Next: The truth about the man pretending to be Owen.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Fake Wedding Photo",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:40 AM · You sprint down the fire escape into Tessa’s arms as two officers sprint into the house.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Catch your breath, {{player_name}}! Wait—why did you call that man your husband?!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "What?! Owen and I have been married for 2 years—look at the ring on my finger!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[shocked, gripping your shoulders] \"{{player_name}}, you were NEVER married! Owen is the probate lawyer our father fired 6 months ago!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "She’s remembering too fast. Delete the basement backup.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Your memory fractures like cracked glass:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e4_free",
+              "label": "Check my own phone gallery for wedding photos",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Every single photo of \"Owen\" in my phone is dated within the last 14 days!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e4_vip",
+              "label": "Tell the officers to search the basement",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Officers! Check the basement—he just unsent a message about deleting a backup!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "He staged the whole house, planted a fake nursery, and drugged you with memory-blocking sedatives!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Officers just breached the basement door—they found a whole audio console looping your voice!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "An officer emerges from the porch holding a silver laptop and a forged guardianship file.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "husband",
+          "caller_label": "Owen · Burner Line",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "You think you won? Check the basement monitor—your \"sister\" isn’t the only one who signed that guardianship order!",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "What is he talking about, Tessa...? Why did you just go pale?",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "A Second Signature",
+          "teaser_text": "Next: The forged legal document exposes a second betrayer.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Basement Console",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:50 AM · Police tape stretches across your front porch. Inside the patrol car, your phone vibrates with an alert from the basement console.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "He’s lying to divide us, {{player_name}}! He forged my signature on the guardianship transfer!",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Then why did Owen’s laptop auto-sync a voice memo of YOU talking to him last Tuesday?!",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "husband",
+          "duration_sec": 8,
+          "transcript": "[recorded phone call] \"Listen Owen, keep her sedated until Friday—if she remembers the baby monitor wasn’t fake, we both go to prison!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "sister",
+          "text": "Don’t play the rest of that recording in front of the police.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Tessa reaches swiftly for your phone:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e5_free",
+              "label": "Hand the phone straight to the sergeant",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Officer, take my phone! There’s a full conspiracy recording on here!",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e5_vip",
+              "label": "Play the rest of the recording on speaker",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Let everyone hear what you and Owen did to me!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "No! {{player_name}}, stop—I only did it because Owen threatened to expose our father’s debt!",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Turn it off!! The sergeant is calling for a second pair of handcuffs!",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "Wait—the recording keeps playing. Behind Tessa’s voice, a faint baby cry echoes from the basement vent.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "husband",
+          "caller_label": "Owen · Under Arrest",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Check the legal document in the nursery closet, {{player_name}}. Ask your sister why there’s a nursery in the first place.",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... the nursery wasn’t staged... what did you two do with my child?!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Guardianship Order",
+          "teaser_text": "Next: The stamped legal document reveals the horrifying truth.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "The Forged Guardianship",
+      "start_node_id": "e6_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3:02 AM · Under the patrol car dome light, the officer lays the stamped legal document across the hood.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "I’m sorry, {{player_name}}! Your baby is safe—we sent her to a private nanny across town so the trust would pass to me!",
+          "timestamp_label": "3:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You drugged me, hired a fake husband, and looped my own lullaby to drive me insane?!",
+          "timestamp_label": "3:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[sobbing in handcuffs] \"Owen said if you thought you were hallucinating your own voice, the court would sign over the estate by noon!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "The nanny’s address is written on page 4 of the trust annex.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n05b_img"
+        },
+        {
+          "id": "e6_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Stamped guardianship & estate transfer document hidden inside the nursery closet.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "The police sergeant asks for your next instruction:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e6_free",
+              "label": "Give officers the nanny’s address immediately",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Page 4 has the address! Please send a unit to get my baby right now!",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e6_vip",
+              "label": "Freeze the family trust account first",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Send a unit for my baby AND freeze the trust transfer before sunrise!",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Two patrol units just left for the nanny’s house! Tessa collapses in the backseat crying.",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "The estate bank officer confirmed the freeze—and two patrol units are already at the nanny’s door!",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "Twenty minutes later, your phone rings—a female officer is holding your sleeping baby on video call.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "sister",
+          "caller_label": "Police Station · Update",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Your daughter is completely unharmed, {{player_name}}. Wait—the nanny said someone ELSE just tried to pick her up 10 minutes ago!",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Who?! Both Owen and Tessa are in handcuffs right here!",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Third Accomplice",
+          "teaser_text": "Next: The \"Nurse Clara\" from the dark corridor is still loose.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "Nurse Clara’s Escape",
+      "start_node_id": "e7_n01",
+      "default_ambient": "rain_night",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "3:28 AM · Rain hammers the precinct windows. You hold your daughter tight while detectives trace the third suspect.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Nurse Clara wasn’t working for me, {{player_name}}—she’s the one who installed the baby monitor!",
+          "timestamp_label": "3:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "What?! Then why did the monitor play MY voice saying \"Mommy forgot\"?",
+          "timestamp_label": "3:28 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[whispering nervously] \"Because Clara is the woman whose identity your father’s firm erased 10 years ago—she’s been watching the nursery feed from across the street!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "She still has live access to your home smart-locks.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "Your smart-home app pings: \"Nursery Camera — Live Viewer Connected\":",
+          "options": [
+            {
+              "option_id": "opt_story_144_e7_free",
+              "label": "Let police trace the viewer’s live IP",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Detective, she’s logged into my nursery camera RIGHT NOW—trace her IP!",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e7_vip",
+              "label": "Speak into the app to bait her into talking",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I know you’re watching, Clara. The police are already tracing your signal.",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "IP locked! She’s sitting in a white van parked 2 blocks from the police station!",
+          "timestamp_label": "3:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "She panicked and dropped the feed—and pinged the exact cell tower 2 blocks away!",
+          "timestamp_label": "3:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "Three patrol cars peel out of the precinct lot with sirens screaming.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09_call"
+        },
+        {
+          "id": "e7_n09_call",
+          "type": "incoming_call",
+          "caller_id": "husband",
+          "caller_label": "Precinct Desk · Dispatch",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e7_n10",
+          "on_decline_node_id": "e7_n10"
+        },
+        {
+          "id": "e7_n10",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Suspect Clara apprehended in the white van! Officers recovered the master Bluetooth transmitter and your stolen keys.",
+          "timestamp_label": "3:36 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e7_n11"
+        },
+        {
+          "id": "e7_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "It’s finally over... all three of them are behind bars.",
+          "timestamp_label": "3:36 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n12_cliff"
+        },
+        {
+          "id": "e7_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "All Three Caught",
+          "teaser_text": "Finale next: One last voice note waits in your nursery app’s archive.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "The Real Lullaby",
+      "start_node_id": "e8_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "4:15 AM · Back at a safe hotel, you unplug the old baby monitor forever—and find one unedited clip recorded by YOU before the drugging began.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "My lawyer says I’m facing 12 years, {{player_name}}. I never meant for you to get hurt.",
+          "timestamp_label": "4:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n03"
+        },
+        {
+          "id": "e8_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You stole my child and tried to lock me in a psych ward for money. Don’t ever text me again.",
+          "timestamp_label": "4:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e8_n04"
+        },
+        {
+          "id": "e8_n04",
+          "type": "voice_note",
+          "sender_id": "player",
+          "duration_sec": 8,
+          "transcript": "[your own clear voice, recorded 3 weeks ago] \"If you’re hearing this, {{player_name}}, don’t take the blue pills. Trust no one. Check the nursery closet.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "narrator",
+          "text": "You left yourself that clue before the sedatives wiped your memory.",
+          "style": "banner",
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "Dawn breaks over the quiet hotel room:",
+          "options": [
+            {
+              "option_id": "opt_story_144_e8_free",
+              "label": "Block Tessa & Owen permanently",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Numbers blocked. My daughter and I are starting fresh.",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "opt_story_144_e8_vip",
+              "label": "Save the voice note as evidence for court",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Forwarding my original voice note to the prosecutor now.",
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "narrator",
+          "text": "Your daughter yawns softly in your arms. No more monitors, no more lies.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "narrator",
+          "text": "Prosecutor confirmed receipt—Owen, Tessa, and Clara face maximum sentences without bail.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n08_merge",
+          "type": "narrator",
+          "text": "You delete the baby monitor app from your phone. The silence in the room feels warm and real.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e8_n09_call"
+        },
+        {
+          "id": "e8_n09_call",
+          "type": "incoming_call",
+          "caller_id": "sister",
+          "caller_label": "Blocked Contact · Ignored",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e8_n10",
+          "on_decline_node_id": "e8_n10"
+        },
+        {
+          "id": "e8_n10",
+          "type": "narrator",
+          "text": "Estate trust fully restored to {{player_name}}. Police protection detail stationed outside.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e8_n11"
+        },
+        {
+          "id": "e8_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I left myself a lifeline—and I finally listened.",
+          "timestamp_label": "4:22 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e8_n12_cliff"
+        },
+        {
+          "id": "e8_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Awake at Dawn",
+          "teaser_text": "You finished \"The Baby Monitor Picked Up My Own Voice\"! Explore more psychological thrillers.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

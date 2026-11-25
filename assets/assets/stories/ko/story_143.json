@@ -1,0 +1,3024 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_143",
+  "lang": "ko",
+  "metadata": {
+    "title": "타워 13 야간 근무 수칙",
+    "subtitle": "규칙 #1: 새벽 3시 이후에는 절대 13층 인터폰을 받지 말 것. 규칙 #4: 건물에 왜 입주자가 없는지 절대 묻지 말 것.",
+    "genre": "thriller",
+    "tags": [
+      "새벽 3시 규칙",
+      "경비원",
+      "반전"
+    ],
+    "cover_image": "assets/media/covers/story_143.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · 경비원",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "supervisor",
+      "name": "Miller 반장",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "dispatch",
+      "name": "911 지령실",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    },
+    {
+      "id": "developer",
+      "name": "Victor Kade · 건물주",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "새벽 3시의 네 가지 규칙",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 2:55 · 타워 13에서의 첫 야간 근무. 로비에 젖은 잿냄새가 희미하게 감돕니다. 상관에게서 필수 야간 근무 수칙 문자가 옵니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "이거 외워, {{player_name}}: (1) 절대 13층 인터폰 받지 마. (2) 로비 문은 사슬 걸어 잠가. (3) 4번 카메라가 비어 보여도 절대 줌 당기지 마.",
+          "timestamp_label": "오전 2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "알겠습니다, 반장님. 잠깐—규칙 4는 뭔가요? 그리고 왜 지금 13층에서 엘리베이터가 내려오고 있죠?",
+          "timestamp_label": "오전 2:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[잡음, 다급함] \"엘리베이터 문에서 떨어져! 만약 빨간 코트 입은 여자가 내리면, 책상만 내려다보면서 30까지 세!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "규칙 4: 계단 옆 소방 점검 명판을 절대 확인하지 말 것.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "딩. 오전 3시 00분에 엘리베이터 문이 미끄러지듯 열립니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e1_free",
+              "label": "책상만 내려다보며 30까지 세기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "1... 2... 3... 내 책상 바로 앞에서 연기 냄새가 나.",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e1_vip",
+              "label": "대신 로비 거울 흘끗 보기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "거울 힐끗 봤는데—엘리베이터 안은 텅 비어 있고, 젖은 발자국만 있어요!",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "잘했어. 엘리베이터 종이 다시 울릴 때까지 고개 들지 마. 13층 인터폰 불빛이 빨개졌니?",
+          "timestamp_label": "오전 2:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "보지 말라고 했잖아! 이제 저 여자가 네가 깨어 있는 걸 알아챘어—경비실 유리문 잠가!",
+          "timestamp_label": "오전 2:58",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "지직. 13층 인터폰 버튼이 진홍색으로 번쩍입니다. 다급한 목소리가 로비 스피커를 뒤흔듭니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Miller 반장 · 긴급",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "통화 버튼 누르지 마! 모니터에서 4번 카메라 봐—복도가 여전히 비어 있는지 말해줘!",
+          "timestamp_label": "오전 3:01",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "4번 카메라는 완전히 비어 있어요... 저 끝 비상구 문만 세차게 흔들리고 있는 것 빼곤!",
+          "timestamp_label": "오전 3:01",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "13층에 누군가 갇혀 있다",
+          "teaser_text": "다음 화: 4번 카메라에 잠긴 계단실 문을 두드리는 존재가 포착됩니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "4번 카메라 오류",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 3:04 · 화재 경보기가 한 번 삑 울리더니 꺼집니다. 책상 위 모니터가 4번 카메라 화면에서 멈춰버립니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "4번 카메라 스크린샷 나한테 보내, {{player_name}}. 무슨 일이 있어도 경비실 밖으로 나가지 마.",
+          "timestamp_label": "오전 3:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "지금 보냅니다—그런데 왜 CCTV 타임스탬프가 오늘 밤이 아니라 2020년으로 떠 있죠?!",
+          "timestamp_label": "오전 3:04",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[경찰 무전 잡음] \"타워 13 인근 순찰차에 알립니다: 철거 예정 폐건물 로비 경비실에서 오신고 911 신호가 잡혔습니다. 내부에 무단 침입자가 없는지 확인 바랍니다.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "무전 무시해. 도로 쪽 전파 간섭일 뿐이야.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "03:05 4번 카메라 — 인터폰을 통해 필사적인 문 두드리는 소리가 울리는 가운데, 13층 복도는 텅 비어 있다.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "허리춤의 경찰 무전기가 다시 지직거립니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e2_free",
+              "label": "Miller 반장에게 왜 경찰이 여기를 폐건물이라고 부르는지 묻기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "반장님, 왜 경찰 지령실에서 타워 13이 폐쇄된 철거 건물이라고 하죠?!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e2_vip",
+              "label": "경찰 지령실에 직접 응답하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "지령실, 저는 지금 타워 13 로비에서 근무 중인 야간 경비원입니다!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "시청 옛날 대장을 보고 있는 거야! 이제 딴소리 말고 로비 문 확인해—밖에 누가 와 있어!",
+          "timestamp_label": "오전 3:07",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "그 무전기 내려놔! 걔들이랑 말 섞으면 새벽 4시 전에 근무 루프가 깨진다고!",
+          "timestamp_label": "오전 3:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "차가운 손바닥이 경비실 유리를 쾅 내리칩니다. 유리창 위로 그을음 묻은 시커먼 손자국이 천천히 아래로 흘러내립니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911 지령실 · 회신 전화",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "선생님, 타워 13은 6년 전 11월 25일에 전소됐습니다! 계단실이 쇠사슬로 잠겨 있어서 열두 명이 숨졌다고요!",
+          "timestamp_label": "오전 3:11",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "쇠사슬로 잠겨 있었다고요...? 잠깐—묵직한 철제 자물쇠 열쇠가 지금 내 허리띠에 걸려 있는데...",
+          "timestamp_label": "오전 3:11",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "허리띠의 자물쇠 열쇠",
+          "teaser_text": "다음 화: 당신은 마침내 그을린 소방 명판에 적힌 규칙 4를 읽게 됩니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "드러난 규칙 4",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 3:15 · 로비 형광등이 깜빡이며 꺼집니다. 붉은 비상구 표시등이 벽을 핏빛으로 물들입니다.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "지령실 말 듣지 마, {{player_name}}! 새벽 4시까지만 경비실에 버티면 급여 다 받을 수 있어!",
+          "timestamp_label": "오전 3:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "왜 내 손가락에서 연기 냄새가 나죠, 반장님? 그리고 왜 제 출입증 날짜가 6년 전으로 찍혀 있죠?!",
+          "timestamp_label": "오전 3:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[잡음과 함께 갈라지는 목소리] \"네가 근무 중에 잠들었으니까, {{player_name}}! 노숙자들 못 들어오게 비상구 문에 사슬을 채워놓고는—13층에 불이 났을 때 풀어주는 걸 깜빡했잖아!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "그 화재 이후 매일 밤 넌 똑같은 이 근무를 서고 있는 거야.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "엘리베이터 문 아래로 짙은 잿빛 연기가 스며 나오기 시작합니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e3_free",
+              "label": "자물쇠 열쇠를 낚아채고 13층으로 달려가기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 계단실 열쇠 풀 거야—설령 6년이 늦었더라도!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e3_vip",
+              "label": "지령실에 전화해 사고 보고서에 내 이름이 있는지 확인하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "지령실, 2020년 타워 13 화재 보고서 확인해주세요—거기 제 이름도 올라 있나요?!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "지령실 무전이 울립니다: \"순찰차가 울타리 쳐진 부지로 진입 중입니다—녹슨 계단실 근처엔 가지 마세요!\"",
+          "timestamp_label": "오전 3:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "선생님... 선생님 성함은 로비 쪽에서 13층 문을 열려다 숨진 야간 경비원으로 올라 있습니다...",
+          "timestamp_label": "오전 3:19",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "불투명한 로비 유리창 너머로 열두 개의 실루엣이 나타납니다—아무도 움직이지 않고, 모두가 당신의 경비실을 향해 서 있습니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Miller 반장 · 잡음",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "로비 보안 모니터 봐, {{player_name}}. 저분들은 널 해치려는 게 아니야—네가 마침내 사슬을 풀어주길 기다리고 있을 뿐이야.",
+          "timestamp_label": "오전 3:23",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "1번 카메라로 다 보여요... 열두 그림자가 유리창 바로 밖에 서 있어요...",
+          "timestamp_label": "오전 3:23",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "유리창 밖의 열두 그림자",
+          "teaser_text": "다음 화: 1번 카메라에 경비실을 둘러싼 실루엣들이 포착됩니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "열두 개의 실루엣",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 3:28 · 보안 모니터가 하얗게 번쩍입니다. 로비 카메라 화면에 열두 개의 검은 실루엣이 미동도 없이 서 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "순찰 대원들이 외부 울타리 밖에 도착했습니다! 전소된 로비 안에서 움직이는 손전등 불빛이 보인답니다—선생님이십니까?!",
+          "timestamp_label": "오전 3:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "네! 계단실 사슬이 아직 잠겨 있다고 전해주세요—제가 지금 풀고 있어요!",
+          "timestamp_label": "오전 3:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[온화하게 울려 퍼지며] \"주머니에서 황동 열쇠를 꺼내, {{player_name}}. 경비실 밖으로 걸어 나와. 규칙 2를 깨.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "나도 그 열둘 중 하나야, {{player_name}}. 난 널 용서해.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "오전 3시 29분 로비 보안 카메라 — 쇠사슬이 감긴 계단실 문 앞에 얼어붙은 듯 서 있는 검은 실루엣들.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "당신의 손이 계단실 문에 걸린 차가운 철제 자물쇠를 움켜쥡니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e4_free",
+              "label": "열쇠를 돌려 쇠사슬 떨어뜨리기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "사슬 풀렸어! 문 열렸어—이제 다들 나가셔도 돼요!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e4_vip",
+              "label": "먼저 13층 인터폰으로 사과하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "계단을 잠가둬서 정말 죄송합니다. 지금 당장 열고 있어요!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "지령실 보고: \"세상에—로비 안쪽에 감겨 있던 녹슨 쇠사슬이 저절로 바닥에 툭 떨어졌습니다! 잡은 사람이 아무도 없는데!\"",
+          "timestamp_label": "오전 3:32",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "지령실 보고: \"대원들이 낡은 인터폰이 딸깍 꺼지는 소리를 듣자마자—계단실 문이 활짝 열렸답니다!\"",
+          "timestamp_label": "오전 3:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "철컹. 무거운 쇠사슬이 콘크리트 바닥에 떨어집니다. 13층에서 따뜻한 바람이 내려와 로비의 마지막 연기 자취까지 싹 씻어냅니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Miller 반장 · 근무 종료",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "로비 시계를 봐, {{player_name}}. 드디어 오전 3시 59분을 지났어. 네 근무는 끝났어.",
+          "timestamp_label": "오전 3:36",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "실루엣들이 사라졌어... 그리고 마침내 유리창에 아침 햇살이 닿고 있어.",
+          "timestamp_label": "오전 3:36",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "오전 4시 00분 근무 완료",
+          "teaser_text": "다음 화 피날레: 동틀 녘 경찰들이 경비 데스크 위에서 발견한 것.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "오전 4시 00분의 안식",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 4:00 · 순찰 대원 두 명이 잠금 풀린 폐허 타워 13의 정문을 통해 안으로 들어섭니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "911 출동 일지: \"로비 이상 무. 그을린 경비 책상 위에 낡은 황동 자물쇠 열쇠 한 개가 반듯하게 놓여 있음.\"",
+          "timestamp_label": "오전 4:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그분들이 보실 수 있게 계단실 문은 열어둔 채로 받쳐 놓아주세요.",
+          "timestamp_label": "오전 4:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[차분한 경찰 무전] \"알겠습니다. 잠깐—책상 위 금 간 근무일지에 재로 새로 쓴 글씨가 있습니다: 근무 완료 — 04:00.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "문을 열어줘서 고마워, {{player_name}}.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "13층 엘리베이터에서 마지막 종소리가 울려 퍼집니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e5_free",
+              "label": "경비원 배지 내려놓기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "내 마지막 야간 근무를 마치고 서명합니다.",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e5_vip",
+              "label": "4번 카메라 영구 종료하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "4번 카메라 오프라인. 이제 새벽 3시 수칙도 끝이야.",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "타워 13 위로 첫 여명이 밝아오는 가운데 대원들이 비어 있는 경비 책상을 향해 거수경례를 합니다.",
+          "timestamp_label": "오전 4:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "모니터 화면이 영구적으로 꺼졌고—다시는 타워 13에서 911 유령 신고가 들어오지 않았습니다.",
+          "timestamp_label": "오전 4:03",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "6년 만에 처음으로 계단실 문이 아침 공기를 향해 활짝 열려 있습니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911 지령실 · 신호 종료",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "시스템 기록 마감: 타워 13 야간 근무 이상 징후가 오전 4시 05분부로 해결되었습니다.",
+          "timestamp_label": "오전 4:05",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "열두 명의 발소리가 햇살 속으로 멀어집니다. 이제야 집으로 돌아갈 수 있습니다.",
+          "timestamp_label": "오전 4:05",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "오전 4시 06분 · 열세 번째 이름",
+          "teaser_text": "2막 시작: 열두 개의 실루엣이 떠났다—하지만 2020년 명단엔 열세 명이 적혀 있었고, 엘리베이터가 방금 지하 2층(B2)으로 추락하듯 내려갔다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "오전 4시 06분: 열세 번째 이름",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 4:06 · 로비 시계가 정상으로 돌아온 지 1분 만에, 망가진 엘리베이터가 굉음을 내며 되살아납니다—붉은 층수 표시기가 1층을 지나 곧장 B2로 떨어집니다.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "잠깐—순찰 대원들이 아직 타워 13을 안 나갔습니다! 책상 위 황동 열쇠가 저절로 미끄러져 떨어졌고, 엘리베이터가 지하 2층 B2로 내려갔어요!",
+          "timestamp_label": "오전 4:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "왜 루프가 안 끝난 거죠?! 열두 실루엣이 계단실에서 걸어 나갔는데—아직 저 아래에 뭐가 더 남아 있는 거죠?!",
+          "timestamp_label": "오전 4:07",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[계단실 메아리에 찢기는 소리] \"{{player_name}}, 들어! 희생자 열둘만 떠났어—2020년 명단엔 열세 명이 있었거든! 그리고 열세 번째 사람은 그날 밤 살아서 걸어 나갔어!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "규칙 #5: 철거 전에 건물주가 지하 2층(B2) 화재 자료 금고에 절대 닿지 못하게 하라.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "검은 디젤 차량 헤드라이트가 타워 13의 외곽 울타리를 뚫고 들어옵니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e6_free",
+              "label": "지령실에 번호판 없는 밴들이 도착했다고 경고하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지령실! 검은 밴 두 대가 방금 뒤쪽 작업용 출입문 사슬을 끊고 들어왔어요!",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e6_vip",
+              "label": "Miller 반장에게 13번째 사람이 누구인지 묻기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "반장님, 그 불길 속에서 걸어 나온 놈이 누구고—왜 저한테 누명을 씌운 거죠?!",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원 두 명이 방금 철거 조끼를 입은 남자 셋이 지하 2층(B2) 작업 경사로로 몰래 내려가는 걸 목격했습니다!",
+          "timestamp_label": "오전 4:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Victor Kade—타워 13 소유주인 그 억만장자 개발업자야! 네가 그 계단실 사슬 잠근 게 아니야, {{player_name}}—1,800만 달러 방화 보험금을 타내려고 그놈이 바깥에서 사슬을 채운 거라고!",
+          "timestamp_label": "오전 4:09",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "그을린 로비 책상 위에 시커멓게 탄 마그네틱 키카드 한 장이 놓여 있고, 그 옆에는 방금 긁힌 글씨가 보입니다: \"규칙 #5: B2를 지켜라.\"",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911 지령실 · 명단 경보",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "타워 13 발파 철거가 오전 6시 00분 정각으로 잡혀 있습니다! 해 뜨기 전에 Kade가 B2 금고를 태워버리면 방화 증거는 한 조각도 없이 영영 사라집니다!",
+          "timestamp_label": "오전 4:11",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11_cliff"
+        },
+        {
+          "id": "e6_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "규칙 #5: B2를 지켜라",
+          "teaser_text": "다음 화: 그을린 B2 키카드가 Kade가 진실을 파묻은 숨겨진 지하 층을 엽니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "지하 층 키카드",
+      "start_node_id": "e7_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "오전 4:15 · 로비 바닥 아래에서 무거운 발소리가 울리는 가운데 순찰 대원들이 경비 책상에 남겨진 그을린 마그네틱 카드를 촬영합니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원들이 선생님 책상에서 키카드를 주웠습니다—\"타워 13 · B2 자료 금고\"라고 찍혀 있네요. 폐쇄된 건물에 왜 내화 자료 금고가 있죠?",
+          "timestamp_label": "오전 4:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "건물의 블랙박스 CCTV 서버랑 소방 점검 일지가 전부 지하 2층 B2로 직결돼 있거든요!",
+          "timestamp_label": "오전 4:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[낮고 쇠가 울리는 소리] \"불 나기 전에 금고 라커 13번에 백업 DVR 테이프를 숨겨뒀어. 대원들한테 엘리베이터 타지 말라고 해—Kade가 승강로 케이블을 조작해 뒀어.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "청소조한테 13번 라커에 테르밋 부어서 녹여버리고 B2 계단 봉쇄하라고 전해.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n05_img"
+        },
+        {
+          "id": "e7_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "로비 책상에서 발견된 그을린 B2 마스터 키카드 — 지하 화재 감사 금고로 들어가는 강제 출입 권한이 담겨 있다.",
+          "timestamp_label": "오전 4:18",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "대원들이 녹슨 계단실과 윙윙거리는 작업용 리프트 사이에 서 있습니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e7_free",
+              "label": "콘크리트 계단실로 내려가라고 지시하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "엘리베이터 절대 타지 마세요! 동쪽 콘크리트 계단으로 B2 내려가세요!",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e7_vip",
+              "label": "로비 비상 스프링클러 밸브 가동시키기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "대원들한테 먼저 로비 벽장 안 빨간 B2 스프링클러 휠부터 돌리라고 하세요!",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "신의 한 수였습니다! 대원들이 엘리베이터 앞을 지나친 지 2초 만에, 리프트 케이블이 끊어지면서 승강로 바닥으로 곤두박질쳤어요!",
+          "timestamp_label": "오전 4:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "B2 비상 스프링클러가 자료실 바닥을 침수시키고 있습니다—이제 저 아래에서 테르밋에 불 붙이긴 틀렸네요!",
+          "timestamp_label": "오전 4:21",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "로비 인터폰에서 차갑고 교양 있는 목소리가 지직거리며 흘러나오는 순간, 타워 13 아래 콘크리트를 뒤흔드는 굉음이 울립니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09"
+        },
+        {
+          "id": "e7_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "6년이 지나서도 아직 경비원 놀이나 하고 있나, {{player_name}}? 내 지하실에서 순찰 경찰들 치워—이 건물은 오전 6시에 무너진다.",
+          "timestamp_label": "오전 4:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n10_cliff"
+        },
+        {
+          "id": "e7_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "건물주의 등장",
+          "teaser_text": "다음 화: Victor Kade가 B2 방폭문을 잠가버리고—보안 모니터에 규칙 #6이 나타납니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "규칙 #6: 수면을 주시하라",
+      "start_node_id": "e8_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "오전 4:27 · 노출된 전선관을 따라 불꽃이 튀는 가운데 무릎 높이까지 차오른 빗물과 스프링클러 물이 지하 2층 B2에 고입니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원들이 B2 층계참에 도착했지만, 육중한 강철 방폭문이 안에서 전자석으로 잠겨 있습니다! 어떻게 우회하죠?",
+          "timestamp_label": "오전 4:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e8_n03"
+        },
+        {
+          "id": "e8_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "방폭문 왼쪽으로 1.8미터 지점에 수동 소방도끼 비상 해제 함이 있어요—야간 경비원만 네 자리 비밀번호를 압니다!",
+          "timestamp_label": "오전 4:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e8_n04"
+        },
+        {
+          "id": "e8_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[다급한 잡음] \"규칙 #6, {{player_name}}: 지하 변압기에 전기가 살아 있는 동안엔 절대 방폭문 열지 마! Kade가 문 밖 물웅덩이에 고압 전선을 던져놨어!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "그 물웅덩이에 한 발만 디디면 지원군 오기 전에 경찰들 싹 감전사하겠군.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "B2 밖 어두운 발목 깊이 물 위로 푸른 전기 스파크가 물결칩니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e8_free",
+              "label": "발을 디디기 전에 멈추라고 지령실에 외치기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "멈춰요! 물에 살아 있는 고압 전선이 있어요—도로 쪽 주 차단기부터 내리세요!",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e8_vip",
+              "label": "대원들을 마른 세탁물 슈트 통로로 우회시키기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "침수된 문 건너뛰고—계단실 위 마른 환기 덕트를 기어 통과하세요!",
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원이 물웅덩이 5센티 앞에서 멈춰 섰습니다! 한전 긴급팀이 방금 도로 주 전원을 끊어서—물속 전기가 완전히 죽어 안전합니다!",
+          "timestamp_label": "오전 4:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원들이 마른 환기 덕트를 타고 Kade의 망보던 놈 등 뒤로 딱 떨어졌습니다—고용된 처리반 한 명 이미 수갑 찼습니다!",
+          "timestamp_label": "오전 4:31",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n08_merge",
+          "type": "narrator",
+          "text": "어두운 B2 복도에서 붙잡힌 처리반의 손전등이 바닥을 굴러가며—하얀색 \"13\"이 페인트칠 된 강철 문을 비춥니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e8_n09"
+        },
+        {
+          "id": "e8_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "저게 13번 금고야! 저 안에 Kade가 우리를 죽이기 이틀 전에 서명한 위조 소방 점검 증명서가 들어 있어.",
+          "timestamp_label": "오전 4:33",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e8_n10_cliff"
+        },
+        {
+          "id": "e8_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "고압선 물웅덩이의 덫",
+          "teaser_text": "다음 화: Kade의 발파 타이머가 카운트다운을 시작하고—타워의 낡은 원내 방송 시스템이 깨어납니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 9
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "title": "발파 카운트다운",
+      "start_node_id": "e9_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e9_n01",
+          "type": "narrator",
+          "text": "오전 4:38 · 지하 2층 B2의 모든 지지 기둥에서 작은 초록색 LED가 깜빡입니다—발파 폭약이 한 시간 일찍 배선되어 있습니다.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n02"
+        },
+        {
+          "id": "e9_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "비상! 발파 철거 업체 말로는 오전 6시 00분 이전엔 누구도 폭약 기폭 배선을 승인한 적 없답니다—Kade 일당이 불법으로 기둥에 폭약을 연결했어요!",
+          "timestamp_label": "오전 4:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e9_n03"
+        },
+        {
+          "id": "e9_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "대원들 머리 위로 타워 13을 무너뜨리고—40톤 잔해 밑에 13번 금고까지 영영 파묻어버릴 셈이에요!",
+          "timestamp_label": "오전 4:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e9_n04"
+        },
+        {
+          "id": "e9_n04",
+          "type": "voice_note",
+          "sender_id": "developer",
+          "duration_sec": 9,
+          "transcript": "[인터폰 너머 차가운 비웃음] \"건물 내파 붕괴까지 60분 남았네, 경비원. 친구들한테 13번 금고 포기하고 도망치라 해—철거 폐건물이야 무너져도 아무도 신경 안 쓰니까.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n05"
+        },
+        {
+          "id": "e9_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "금고 키패드 비밀번호는 화재 발생 날짜야: 1125.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e9_n06_choice"
+        },
+        {
+          "id": "e9_n06_choice",
+          "type": "choice",
+          "prompt": "폭발물 처리반 도착까지는 15분 남았고, 대원들 바로 앞에는 13번 금고 강철 문이 있습니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e9_free",
+              "label": "지금 지령실에 1125 금고 코드 알려주기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "B2 키카드 긁고 1125 누르세요—Kade가 도망치기 전에 보관 상자 꺼내야 해요!",
+              "next_node_id": "e9_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e9_vip",
+              "label": "폭발물 처리반에 무선 기폭 주파수 차단 지시하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "타워 13 주변에 전파 방해기 배치하세요—Kade가 폭약 조기 기폭 못 하게 막아야 해요!",
+              "next_node_id": "e9_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e9_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "13번 금고 열렸습니다! 대원들이 방금 \"2020년 11월 · KADE HOLDINGS\" 라벨이 붙은 내화 철제 서류 가방을 꺼냈어요!",
+          "timestamp_label": "오전 4:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "이동식 전파 방해 차량이 방금 울타리 앞에 도착했습니다! 타워 13 일대의 모든 무선 기폭 주파수가 완전히 차단됐습니다!",
+          "timestamp_label": "오전 4:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n08_merge",
+          "type": "narrator",
+          "text": "철제 서류 가방 안에는 2020년 11월 23일부터 내화 플라스틱에 밀봉된 채 손상되지 않고 빳빳한 서류 철 하나가 들어 있습니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n09"
+        },
+        {
+          "id": "e9_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "맨 위 문서 스캔본 지금 바로 보냅니다—{{player_name}} 씨, 2020년 소방안전 보고서의 당신 서명이 위조됐습니다!",
+          "timestamp_label": "오전 4:44",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e9_n10_cliff"
+        },
+        {
+          "id": "e9_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "위조된 서명",
+          "teaser_text": "다음 화: 13번 금고 안의 법적 문서가 1,800만 달러 규모의 방화 공모를 폭로합니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 10
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "title": "1,800만 달러짜리 보험 증권",
+      "start_node_id": "e10_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e10_n01",
+          "type": "narrator",
+          "text": "오전 4:48 · 13번 금고 안 손전등 불빛 아래서 대원들이 위조된 점검 서류와 3배로 불린 보험 증권을 촬영합니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e10_n02"
+        },
+        {
+          "id": "e10_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "이 특별 약관을 보세요, {{player_name}} 씨: Kade는 11월 23일에 타워 13 화재 보험금을 3배로 올렸고—계단실 사슬은 \"정기 정비\" 때문이라며 당신의 경비 일지를 위조했습니다.",
+          "timestamp_label": "오전 4:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e10_n03"
+        },
+        {
+          "id": "e10_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "6년 내내 잠든 내 탓인 줄 알았는데... 내가 그 열두 분을 가둔 게 아니었어요! Kade가 로비 내 커피에 수면제를 타고 자기 손으로 문에 사슬을 채운 거였어요!",
+          "timestamp_label": "오전 4:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e10_n04"
+        },
+        {
+          "id": "e10_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 10,
+          "transcript": "[따뜻하고 단호한 목소리] \"넌 소방도끼로 그 자물쇠를 부수려다 죽었어, {{player_name}}. 이제 온 도시가 진실을 알게 될 거야.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n05"
+        },
+        {
+          "id": "e10_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "방해 전파가 내 리모컨을 막는다면, 내가 직접 1번 기둥 수동 도화선에 불 붙이면 그만이지.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e10_n05_img"
+        },
+        {
+          "id": "e10_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "13번 금고 화재보험 특약 — 타워 13 화재 48시간 전 위조된 경비원 서명을 첨부해 체결된 1,800만 달러 규모 보험 증권.",
+          "timestamp_label": "오전 4:51",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n06_choice"
+        },
+        {
+          "id": "e10_n06_choice",
+          "type": "choice",
+          "prompt": "Kade가 수동 조명탄을 들고 방금 지하실로 다시 숨어들었습니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e10_free",
+              "label": "대원들에게 즉시 1번 기둥을 경계하라고 경고하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "방해 전파 우회하려 1번 기둥 수동 도화선 쪽으로 가고 있어요!",
+              "next_node_id": "e10_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e10_vip",
+              "label": "위조 보험 증권을 검사들에게 실시간 업로드하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "폭발이 일어나도 못 지우게 지금 당장 그 보험 증권 스캔본 클라우드로 동기화하세요!",
+              "next_node_id": "e10_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e10_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원들이 1번 기둥 쪽으로 급선회했습니다—지하실 안개 너머로 Kade의 붉은 조명탄 불빛이 보입니다!",
+          "timestamp_label": "오전 4:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "경찰서 서버에 업로드 및 공증 완료! 타워 13이 무너지더라도 Kade는 끝장났습니다!",
+          "timestamp_label": "오전 4:54",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n08_merge",
+          "type": "narrator",
+          "text": "지하 2층 B2 건너편, 1번 기둥 위 낡은 형광등이 깜빡이며—Kade의 앞길을 가로막고 서 있는 그을린 제복 차림의 키 큰 인영을 비춥니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e10_n09"
+        },
+        {
+          "id": "e10_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "무슨—Miller?! 넌 6년 전에 13층에서 죽었잖아! 물러서!!",
+          "timestamp_label": "오전 4:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n10_cliff"
+        },
+        {
+          "id": "e10_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Miller 반장의 저지",
+          "teaser_text": "다음 화: 공황에 빠진 Kade가 침수된 발전기 터널 더 깊은 곳으로 도망치다—규칙 #7을 정면으로 마주합니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 11
+        }
+      ]
+    },
+    {
+      "episode_number": 11,
+      "title": "방화범의 비밀 장부",
+      "start_node_id": "e11_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e11_n01",
+          "type": "narrator",
+          "text": "오전 5:00 · 대원들이 13번 금고의 두 번째 서류 철을 확보하는 동안 Kade는 물속에 조명탄을 떨어뜨리고 지하 배수 터널 쪽으로 내뺍니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n02"
+        },
+        {
+          "id": "e11_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "추격전 중에 Kade가 서류 가방을 떨어뜨렸습니다! 안에는 화재 다음 날 아침 방화 청부업자에게 45만 달러를 지급한 암호화 은행 영수증이 들어 있어요!",
+          "timestamp_label": "오전 5:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e11_n03"
+        },
+        {
+          "id": "e11_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "어디로 도망쳤죠?! 그 배수 터널은 거리로 통하는 길이 아니에요—잠긴 보일러 구덩이로 곧장 되돌아가게 돼 있어요!",
+          "timestamp_label": "오전 5:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e11_n04"
+        },
+        {
+          "id": "e11_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[무전 잡음, 무거운 군화 소리] \"폭발물 처리반이 방금 도착해서 1번 기둥을 해체 중입니다! 대원 둘이 Kade의 젖은 발자국을 따라 보일러 구덩이로 추적 중입니다!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n05"
+        },
+        {
+          "id": "e11_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "보일러 제어함 안쪽에 두 번째 수동 기폭 장치가 배선돼 있어.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e11_n06_choice"
+        },
+        {
+          "id": "e11_n06_choice",
+          "type": "choice",
+          "prompt": "Kade가 전송 취소한 메시지를 포착했습니다—보일러실 안 예비 기폭 장치로 가고 있습니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e11_free",
+              "label": "폭발물 처리반에 보일러 전선관 절단 요청하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "처리반에 보일러 함으로 이어지는 노란 전선관 끊어버리라고 하세요!",
+              "next_node_id": "e11_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e11_vip",
+              "label": "원격으로 보일러실 전자석 잠금장치 걸어 잠그기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "경비 책상에 있는 파란 보일러 잠금 스위치 누르세요—안에 가둬버리게!",
+              "next_node_id": "e11_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e11_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "폭발물 전문가가 방금 노란 전선관을 잘랐습니다—B2의 발파 폭약 12개 전원이 영구 차단됐어요!",
+          "timestamp_label": "오전 5:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "철컥! 강철 보일러 문이 Kade 등 뒤로 쾅 닫혔습니다—도망칠 데 없이 유리창을 두드리고 있습니다!",
+          "timestamp_label": "오전 5:05",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n08_merge",
+          "type": "narrator",
+          "text": "녹슨 보일러실 안쪽에서 붉은 인터폰 불빛이 깜빡이며—당신의 경비 콘솔로 직접 연결을 걸어옵니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e11_n09"
+        },
+        {
+          "id": "e11_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "이 보일러 문 열어, {{player_name}}! 원하는 액수만 말해—100만, 500만 달러—연기가 다시 몰려오기 전에 여기서 나 좀 꺼내줘!",
+          "timestamp_label": "오전 5:07",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e11_n10_cliff"
+        },
+        {
+          "id": "e11_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "보일러 구덩이에 갇히다",
+          "teaser_text": "다음 화: Kade가 죽은 인터폰으로 전화를 걸어—자신이 누명을 씌웠던 남자의 목소리와 대면합니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 12
+        }
+      ]
+    },
+    {
+      "episode_number": 12,
+      "title": "인터폰 자백",
+      "start_node_id": "e12_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e12_n01",
+          "type": "narrator",
+          "text": "오전 5:10 · 실제가 아니면서도—틀림없이 2020년 11월 25일의 냄새가 나는 연기가 보일러실 문 아래로 피어오르기 시작합니다.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n02"
+        },
+        {
+          "id": "e12_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "우리 대원들이 보일러실 밖에서 바디캠으로 전부 녹화 중입니다! Kade가 계속 말하게 만드세요—자백 전체를 테이프에 담아야 합니다!",
+          "timestamp_label": "오전 5:10",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e12_n03"
+        },
+        {
+          "id": "e12_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "왜 13층 계단실에 사슬을 채웠어, Kade?! 보험금이 필요했다 쳐도 왜 죄 없는 입주자 열두 명을 안에 가뒀냐고?!",
+          "timestamp_label": "오전 5:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e12_n04"
+        },
+        {
+          "id": "e12_n04",
+          "type": "voice_note",
+          "sender_id": "developer",
+          "duration_sec": 10,
+          "transcript": "[기침, 공황 상태] \"Miller 반장이 내 가짜 구조안전진단 보고서를 찾아냈기 때문이야! 13층 서류랑 함께 건물이 타버리지 않으면 내가 징역 20년을 살 판이었다고!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n05"
+        },
+        {
+          "id": "e12_n05",
+          "type": "unsent_message",
+          "sender_id": "dispatch",
+          "text": "한 마디도 빠짐없이 경찰 바디캠 네 대에 수정처럼 또렷이 녹화됐습니다.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e12_n06_choice"
+        },
+        {
+          "id": "e12_n06_choice",
+          "type": "choice",
+          "prompt": "Kade가 살려달라고 비명을 지르며 보일러실 유리를 주먹으로 내리칩니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e12_free",
+              "label": "방화 청부업자 이름도 불게 만들기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "11월 26일에 누구한테 45만 달러 보냈어?! 이름 말해!",
+              "next_node_id": "e12_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e12_vip",
+              "label": "왜 소방 명판에 내 이름으로 누명 씌웠는지 묻기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "그리고 6년 동안 시에서 날 탓하게 내 야간 일지까지 조작한 거지?!",
+              "next_node_id": "e12_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e12_n07a",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Ray Mercer—내 철거 현장 반장이야! 13층에 인화성 물질 부은 것도 그놈이야! 나도 증언할 테니까 이 문만 열어줘!",
+          "timestamp_label": "오전 5:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n07b",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "그래! 불 난 뒤에 네 경비 일지 바꿔치기했어! 넌 사슬 풀려고 했지—절대 졸지 않았어! 그러니까 제발 여기서 나 좀 꺼내줘!",
+          "timestamp_label": "오전 5:14",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n08_merge",
+          "type": "narrator",
+          "text": "보일러 인터폰이 마지막으로 한 번 울리는 순간, 날카로운 쉬이익 소리가 환영 같던 연기를 잠재웁니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n09_call"
+        },
+        {
+          "id": "e12_n09_call",
+          "type": "incoming_call",
+          "caller_id": "developer",
+          "caller_label": "Victor Kade · 보일러 인터폰",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e12_n10",
+          "on_decline_node_id": "e12_n10"
+        },
+        {
+          "id": "e12_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "완전한 자백에 현장 반장 이름까지 확보했습니다! 가방에서 방금 해독한 송금 영수증도 확인해 보세요.",
+          "timestamp_label": "오전 5:16",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e12_n11_cliff"
+        },
+        {
+          "id": "e12_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "녹화된 자백",
+          "teaser_text": "다음 화: 해독된 은행 송금 내역이 Kade와 철거 현장 반장 둘 다를 꼼짝 못 하게 옭아맵니다—그리고 그 현장 반장은 아직 밖에서 예비 중장비를 몰고 있습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 13
+        }
+      ]
+    },
+    {
+      "episode_number": 13,
+      "title": "다음 날 아침의 송금",
+      "start_node_id": "e13_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e13_n01",
+          "type": "narrator",
+          "text": "오전 5:19 · 대원들이 보일러 구덩이 밖에서 Kade에게 수갑을 채우는 동안 지령실에서 해독된 11월 26일 송금 확인서를 보내옵니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e13_n02"
+        },
+        {
+          "id": "e13_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "확인됐습니다: 2020년 11월 26일 오전 8시 12분에 Ray Mercer의 유령 계좌로 45만 달러가 이체됐어요. 잠깐—Mercer가 바로 지금 정문 밖 철거 트럭에 앉아 있는 그 현장 반장입니다!",
+          "timestamp_label": "오전 5:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e13_n03"
+        },
+        {
+          "id": "e13_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kade 체포된 걸 눈치채기 전에 막아요! 저 철거 트럭으로 로비를 들이받으면 주 지지대 기둥이 무너져 버려요!",
+          "timestamp_label": "오전 5:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e13_n04"
+        },
+        {
+          "id": "e13_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[무전 너머 타이어 마찰음] \"전 대원, 외곽선 돌파! 철거 현장 반장이 방금 수갑 찬 Kade를 보고—대형 트럭을 후진해 남쪽 출입구 쪽으로 돌진하고 있습니다!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "지하 2층(B2)에 있는 대원들 밖으로 빼—남쪽 기둥은 2020년 화재 때 이미 금이 가 있다고.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e13_n05_img"
+        },
+        {
+          "id": "e13_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "해독된 2020년 11월 26일 송금 확인서 — Kade Holdings에서 철거 현장 반장 Ray Mercer에게 45만 달러가 지급되었다.",
+          "timestamp_label": "오전 5:22",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n06_choice"
+        },
+        {
+          "id": "e13_n06_choice",
+          "type": "choice",
+          "prompt": "육중한 철거 트럭이 유리 로비 27미터 앞에서 디젤 엔진을 굉음과 함께 밟습니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e13_free",
+              "label": "지령실에 정문에 차량 차단 스파이크 깔라고 말하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 당장 남쪽 진입로에 순찰대 스파이크 벨트 펼쳐요!",
+              "next_node_id": "e13_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e13_vip",
+              "label": "로비의 강철 방화 셔터 내리기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "로비 경비실에서 수동 강철 방화 셔터 내리세요—남쪽 기둥을 막아야 해요!",
+              "next_node_id": "e13_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e13_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "스파이크 벨트가 뒷바퀴 네 개를 전부 찢어놨습니다! 트럭이 남쪽 기둥 3미터 앞에서 꺾여 멈춰 섰어요—대원들이 운전석에서 Mercer를 끌어내고 있습니다!",
+          "timestamp_label": "오전 5:25",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "강철 방화 셔터가 딱 맞춰 내려앉았습니다—Mercer의 범퍼가 통철판에 부딪혀 찌그러지는 사이 순찰 차량들이 사방에서 포위했어요!",
+          "timestamp_label": "오전 5:25",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n08_merge",
+          "type": "narrator",
+          "text": "금속이 삐걱거리다 조용해집니다. 하지만 지하 2층 B2 아래에서는 기묘하게 차가운 바람이 침수된 자료실 복도 쪽으로 잡아당기듯 불어옵니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e13_n09"
+        },
+        {
+          "id": "e13_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "범인 둘 다 수갑 찼는데... 왜 4번 카메라의 시계는 아직도 오전 3시 59분에 멈춰 있는 거지, {{player_name}}?",
+          "timestamp_label": "오전 5:27",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e13_n10_cliff"
+        },
+        {
+          "id": "e13_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "여전히 오전 3시 59분에 멈춘 시계",
+          "teaser_text": "3막 시작: 지하 2층 B2 안에 마지막 존재 하나가 남아 있고—규칙 #7이 그와 마주하길 요구합니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 14
+        }
+      ]
+    },
+    {
+      "episode_number": 14,
+      "title": "끝나지 않은 근무",
+      "start_node_id": "e14_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e14_n01",
+          "type": "narrator",
+          "text": "오전 5:30 · Kade와 Mercer 모두 밖에서 순찰차에 태워졌지만, 로비 모니터가 깜빡이며 다시 지하 2층 B2를 비춥니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e14_n02"
+        },
+        {
+          "id": "e14_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "열두 명의 입주자는 새벽빛 속으로 걸어 나갔어, {{player_name}}. 모든 소방 일지도 정리됐지. 왜 타워 13이 아직 놓아주지 않는지 알겠니?",
+          "timestamp_label": "오전 5:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e14_n03"
+        },
+        {
+          "id": "e14_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "잠깐... 13층에 갇힌 게 열두 명이고, Miller 반장님도 그중 한 명이었다면... 아직 뒤에 남겨진 열세 번째 이름은 누구죠?",
+          "timestamp_label": "오전 5:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e14_n04"
+        },
+        {
+          "id": "e14_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[나지막하고 부드럽게 울리는 소리] \"계단실 옆 그을린 황동 명판을 봐, {{player_name}}. 열두 입주자는 13층에서 숨졌고—경비원 한 명은 로비에서 숨을 거뒀지.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n05"
+        },
+        {
+          "id": "e14_n05",
+          "type": "unsent_message",
+          "sender_id": "dispatch",
+          "text": "검시관이 B2 잔해 슈트에서 야간 경비원의 배지를 끝내 수거하지 못했었습니다.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e14_n06_choice"
+        },
+        {
+          "id": "e14_n06_choice",
+          "type": "choice",
+          "prompt": "4번 카메라가 B2 침수된 복도에 절반쯤 파묻힌 빛바랜 경비 배지 쪽으로 천천히 줌인합니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e14_free",
+              "label": "지령실에 B2에서 배지를 회수해달라고 부탁하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "B2 아래에 마지막 물건 하나가 남았어요—계단실 배수구 옆에 제 황동 경비 배지가 있어요.",
+              "next_node_id": "e14_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e14_vip",
+              "label": "4번 카메라로 배지 뒷면 확인하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "그 배지 뒷면을 확대해 주세요—안쪽에 제 딸 사진이 테이프로 붙어 있어요.",
+              "next_node_id": "e14_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e14_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "알겠습니다, 선생님. 대원 한 명이 철거 전에 선생님 배지를 모셔 나오려고 지금 B2 배수구 쪽으로 다시 내려가고 있습니다.",
+          "timestamp_label": "오전 5:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원이 찾았습니다—뒷면 코팅된 사진이 화재에도 전혀 손상되지 않았어요. 조심스럽게 품고 나옵니다.",
+          "timestamp_label": "오전 5:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n08_merge",
+          "type": "narrator",
+          "text": "갑자기, 침수된 B2 천장이 신음하듯 울립니다—트럭 충돌 여파로 금이 간 콘크리트 들보가 머리 위에서 휘어지기 시작합니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e14_n09"
+        },
+        {
+          "id": "e14_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "B2 대원 매몰! 천장 콘크리트 판이 동쪽 계단실을 막아버렸습니다—물이 차오르는데 아래에 갇혔어요!",
+          "timestamp_label": "오전 5:36",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n10_cliff"
+        },
+        {
+          "id": "e14_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "붕괴 아래 갇히다",
+          "teaser_text": "다음 화: Miller 반장이 규칙 #7을 전하며 전화를 겁니다—타워 13이 무너지기 전 갇힌 대원을 구할 마지막 기회입니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 15
+        }
+      ]
+    },
+    {
+      "episode_number": 15,
+      "title": "규칙 #7: 절대 동료를 버리지 마라",
+      "start_node_id": "e15_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e15_n01",
+          "type": "narrator",
+          "text": "오전 5:38 · 먼지가 지하 2층 B2를 메웁니다. 터진 배관에서 물이 쏟아져 나오는 가운데 당신의 배지를 쥔 젊은 순찰 대원이 무너진 석조 잔해 뒤에 발이 묶였습니다.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n02"
+        },
+        {
+          "id": "e15_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "구조대가 그 콘크리트 판을 절단하는 데 20분이나 걸리는데—대원 말로는 B2 물이 이미 가슴까지 찼답니다!",
+          "timestamp_label": "오전 5:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e15_n03"
+        },
+        {
+          "id": "e15_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "당황하지 말라고 전하세요! 13번 금고 안에 거리 보도블록 철제 격자판으로 곧장 올라가는 잊혀진 설비 통로 해치가 있어요!",
+          "timestamp_label": "오전 5:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e15_n04"
+        },
+        {
+          "id": "e15_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[차분하고 B2 전체에 울리는 목소리] \"칠흑 같은 먼지 때문에 놈 눈엔 그 해치가 안 보여, {{player_name}}! 네가 침수된 복도를 한 걸음씩 안내해줘야 해!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n05"
+        },
+        {
+          "id": "e15_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "이것이 바로 네가 6년을 기다려 온 마지막 근무의 완수야.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e15_n06_choice"
+        },
+        {
+          "id": "e15_n06_choice",
+          "type": "choice",
+          "prompt": "어둡고 침수된 복도에서 갇힌 대원의 손전등이 배터리 5%로 깜빡거립니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e15_free",
+              "label": "B2 비상구 표시등을 깜빡여 길 비춰주기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "천장의 초록색 비상구 화살표를 보세요—제가 깜빡이는 불빛마다 따라오세요!",
+              "next_node_id": "e15_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e15_vip",
+              "label": "3번 기둥부터 걸음 수 세어 안내하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "3번 기둥을 짚고 왼쪽으로 열두 걸음 가세요—바로 거기가 열린 13번 금고 문이에요!",
+              "next_node_id": "e15_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e15_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "믿을 수가 없어요—꺼져 있던 비상구 화살표가 순서대로 하나씩 불이 켜지고 있습니다! 대원이 13번 금고 쪽으로 곧장 헤치고 나아가고 있어요!",
+          "timestamp_label": "오전 5:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "왼쪽으로 열두 걸음—손이 방금 열린 13번 금고 강철 문틀에 닿았습니다! 마른 자료 선반 위로 기어오르고 있어요!",
+          "timestamp_label": "오전 5:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n08_merge",
+          "type": "narrator",
+          "text": "낮은 진동이 건물 기초를 흔드는 가운데 경비 콘솔을 통해 Miller 반장의 목소리가 울려 퍼집니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n09_call"
+        },
+        {
+          "id": "e15_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Miller 반장 · 규칙 #7",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e15_n10",
+          "on_decline_node_id": "e15_n10"
+        },
+        {
+          "id": "e15_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "13번 금고 위 보도블록 격자 뚜껑이 바깥에서 녹슬어 붙어 있어—지령실에 지금 당장 격자판에 견인 사슬 걸라고 전해!",
+          "timestamp_label": "오전 5:44",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e15_n11_cliff"
+        },
+        {
+          "id": "e15_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "녹슨 보도블록 격자판",
+          "teaser_text": "다음 화: 2차 천장 붕괴와 맞서며 대원을 새벽 공기 속으로 끌어올리는 사투.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 16
+        }
+      ]
+    },
+    {
+      "episode_number": 16,
+      "title": "차오르는 물",
+      "start_node_id": "e16_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e16_n01",
+          "type": "narrator",
+          "text": "오전 5:46 · 도로 구조대가 13번 금고 위 보도블록 격자판을 찾아내고 철제 창살에 무거운 윈치 케이블을 겁니다.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "medium",
+          "next_node_id": "e16_n02"
+        },
+        {
+          "id": "e16_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "윈치 걸었습니다! 잠깐—13번 금고 안 대원이 3미터 아래 사다리 발판들이 떨어져 나가서 해치까지 손이 안 닿는답니다!",
+          "timestamp_label": "오전 5:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e16_n03"
+        },
+        {
+          "id": "e16_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그 격자판이 뜯어지는 즉시 수직 통로로 구조용 하네스부터 내려보내세요—그리고 철제 자료 캐비닛 위로 올라가 있으라고 하세요!",
+          "timestamp_label": "오전 5:47",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e16_n04"
+        },
+        {
+          "id": "e16_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[유압 윈치가 팽팽히 당겨지는 소리] \"격자판이 움직입니다—콰직! 열렸어요! 지금 바로 조명 달린 구조 로프를 아래로 내리고 있습니다!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n05"
+        },
+        {
+          "id": "e16_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "그가 수직 통로를 빠져나갈 때까지 강철 문틀을 단단히 붙잡고 버텨, {{player_name}}.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e16_n06_choice"
+        },
+        {
+          "id": "e16_n06_choice",
+          "type": "choice",
+          "prompt": "대원이 하네스를 채우는 순간 13번 금고 위 두 번째 콘크리트 보가 갈라집니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e16_free",
+              "label": "구조팀에 윈치 최고 속도로 끌어올리라고 말하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 끌어올려요! 북쪽 천장 보가 무너지고 있어요!",
+              "next_node_id": "e16_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e16_vip",
+              "label": "배지를 조끼 안쪽에 잘 넣으라고 외치기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "단단히 걸고 꽉 잡아요—어둠 쪽은 돌아보지 마세요!",
+              "next_node_id": "e16_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e16_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "윈치 최고 속도—지하 금고가 등 뒤로 무너지기 딱 2초 전에 대원이 보도블록 턱을 빠져나왔습니다!",
+          "timestamp_label": "오전 5:50",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "인도 위로 빠져나와 기침하고 있지만 살아 있습니다, 그리고 가슴에 선생님의 황동 경비 배지를 꼭 쥐고 있습니다!",
+          "timestamp_label": "오전 5:50",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n08_merge",
+          "type": "narrator",
+          "text": "휘익. 맑은 아침 바람의 따뜻한 돌풍이 계단실 밖으로 불어 나오며—마지막 남은 젖은 재 냄새까지 씻어갑니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e16_n09"
+        },
+        {
+          "id": "e16_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "잠깐... 금고 카메라가 꺼지기 직전에, 어두운 복도에서 마지막 프레임 한 장을 저장했습니다.",
+          "timestamp_label": "오전 5:52",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e16_n10_cliff"
+        },
+        {
+          "id": "e16_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "새벽 속으로 끌어올려지다",
+          "teaser_text": "다음 화: 마지막 B2 카메라 프레임에 대원이 탈출할 때까지 무너지는 들보를 붙들고 있던 존재가 찍혀 있습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 17
+        }
+      ]
+    },
+    {
+      "episode_number": 17,
+      "title": "4번 카메라의 마지막 프레임",
+      "start_node_id": "e17_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e17_n01",
+          "type": "narrator",
+          "text": "오전 5:54 · 지휘 차량 화면에서, 지령실이 지하 2층 B2가 완전히 어두워지기 전 녹화된 마지막 2초를 재생합니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e17_n02"
+        },
+        {
+          "id": "e17_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "대원들이 할 말을 잃었습니다, {{player_name}} 씨. 그 마지막 복도 캡처에서 비상문 옆을 지키고 서 있는 그림자를 보세요.",
+          "timestamp_label": "오전 5:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e17_n03"
+        },
+        {
+          "id": "e17_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "오늘 밤 제 근무 중엔 아무도 죽지 않았어요. 단 한 명도요.",
+          "timestamp_label": "오전 5:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e17_n04"
+        },
+        {
+          "id": "e17_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[조용하고 깊은 경의가 담긴 목소리] \"선생님이 살려낸 대원이 방금 황동 배지의 이름을 읽고는—서장님께 선생님의 사후 시민 영웅 훈장을 상신해달라고 요청하고 있습니다.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "로비 시계가 방금 03:59에서 05:56으로 넘어갔어.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e17_n05_img"
+        },
+        {
+          "id": "e17_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "지하 2층 B2에서 보관된 마지막 프레임 — 구조 로프가 통로를 빠져나갈 때까지 자리를 지키고 서 있는 홀로 된 경비원의 실루엣.",
+          "timestamp_label": "오전 5:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n06_choice"
+        },
+        {
+          "id": "e17_n06_choice",
+          "type": "choice",
+          "prompt": "사이렌 소리가 잦아들며 타워 13 위로 아침 하늘이 밝은 호박색으로 물듭니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e17_free",
+              "label": "지령실에 가족에게 배지를 돌려달라고 부탁하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "제 황동 배지랑—그 안의 사진은—제 딸한테 돌려주세요.",
+              "next_node_id": "e17_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e17_vip",
+              "label": "열세 이름 모두를 기리는 추모 명판 요청하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "새 추모 명판에는 입주자 열두 분—그리고 Miller 반장님 이름을 먼저 꼭 올려주세요.",
+              "next_node_id": "e17_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e17_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "구조된 대원이 오늘 아침 선생님의 명예를 회복하는 공식 서한과 함께 따님께 직접 전해드리겠다고 약속했습니다.",
+          "timestamp_label": "오전 5:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "시장실이 이미 이 부지에 햇살 비치는 추모 공원 조성을 승인했습니다—열세 명 모두의 이름이 청동으로 새겨집니다.",
+          "timestamp_label": "오전 5:58",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n08_merge",
+          "type": "narrator",
+          "text": "6년 만에 처음으로 타워 13 내부의 진홍빛 비상등이 깜빡이며 꺼지고—자연스러운 황금빛 햇살이 그 자리를 대신합니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e17_n09"
+        },
+        {
+          "id": "e17_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "일곱 가지 규칙이 모두 끝났어, {{player_name}}. 자—나와 함께 앞쪽 유리문을 지나 걸어 나가자.",
+          "timestamp_label": "오전 5:59",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e17_n10_cliff"
+        },
+        {
+          "id": "e17_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "일곱 가지 규칙 완료",
+          "teaser_text": "다음 화: 오전 6시 00분 정각, 타워 13이 깨끗이 철거되고—정의가 Victor Kade의 운명을 봉인합니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 18
+        }
+      ]
+    },
+    {
+      "episode_number": 18,
+      "title": "오전 6시 00분: 폐허 정리",
+      "start_node_id": "e18_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e18_n01",
+          "type": "narrator",
+          "text": "오전 6:00 · 모든 경찰관이 울타리 밖으로 물러나고 Kade의 방화 증거가 안전하게 보관되자, 시 철거반이 현장을 정리합니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e18_n02"
+        },
+        {
+          "id": "e18_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "뉴스 취재진이 외곽에서 생방송 중입니다: Victor Kade와 Ray Mercer가 방금 1급 방화 살인 12건 혐의로 기소됐습니다!",
+          "timestamp_label": "오전 6:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e18_n03"
+        },
+        {
+          "id": "e18_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "더 이상 비밀 금고도, 위조된 경비 일지도 없고—다시는 아무도 그 건물에서 새벽 3시 근무를 설 필요가 없겠네요.",
+          "timestamp_label": "오전 6:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e18_n04"
+        },
+        {
+          "id": "e18_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[군중의 먼 박수 소리] \"소방서장님이 방금 카메라 앞에서 진실을 낭독하셨습니다: 타워 13의 야간 경비원은 13층을 구하려다 영웅적으로 순직했다고요.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n05"
+        },
+        {
+          "id": "e18_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "보석 기각. 법원이 보험 자산 1,800만 달러 전액을 동결했습니다.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e18_n06_choice"
+        },
+        {
+          "id": "e18_n06_choice",
+          "type": "choice",
+          "prompt": "건물이 해체되기 전, 비어 있는 로비 책상 위로 마지막으로 햇살이 쏟아집니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e18_free",
+              "label": "오전 6시 02분에 근무일지에 퇴근 서명하기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "근무일지 기재 마감: 근무 완료, 경계 이상 무, 인명 피해 제로.",
+              "next_node_id": "e18_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e18_vip",
+              "label": "햇살 비치는 문간에서 Miller 반장에게 거수경례하기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "반장님과 함께 야간 근무를 서서 영광이었습니다.",
+              "next_node_id": "e18_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e18_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "네가 쓴 일지 중에 가장 반듯한 글씨야, {{player_name}}. 페이지 위 잿자국까지 마침내 다 지워졌구나.",
+          "timestamp_label": "오전 6:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "나도 마찬가지야, 경비원. 열두 가족이 마침내 정의를 얻었고—너도 마침내 네 이름을 되찾았어.",
+          "timestamp_label": "오전 6:03",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n08_merge",
+          "type": "narrator",
+          "text": "로비의 마지막 인터폰 스피커가 부드럽게 딸깍 꺼지며—바깥 아침 새들의 지저귐만 남깁니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e18_n09"
+        },
+        {
+          "id": "e18_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "911 지령실이 타워 13 채널을 영구 보관 처리합니다. 구조된 대원의 마지막 작별 인사를 대기합니다.",
+          "timestamp_label": "오전 6:05",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e18_n10_cliff"
+        },
+        {
+          "id": "e18_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "새벽에 회복된 이름",
+          "teaser_text": "다음 화: 구조된 대원이 타워 13의 경비원을 기리며 마지막 무전을 보냅니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 19
+        }
+      ]
+    },
+    {
+      "episode_number": 19,
+      "title": "마지막 교신 종료",
+      "start_node_id": "e19_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e19_n01",
+          "type": "narrator",
+          "text": "오전 6:12 · 길 건너편에서, 구조된 대원이 순찰 밴 옆에 서서 점점 높아지는 햇빛 아래 윤이 나는 당신의 황동 배지를 쥐고 있습니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n02"
+        },
+        {
+          "id": "e19_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "통신사가 이 번호를 영구 말소하기 전에 그 대원이 마지막으로 타워 13 회선에 직접 연결해달라고 요청했습니다.",
+          "timestamp_label": "오전 6:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e19_n03"
+        },
+        {
+          "id": "e19_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "B2에서 정말 잘 버텼다고 전해주세요—그리고 불 났을 땐 절대 엘리베이터 타지 말라는 말도 꼭 기억하라고요.",
+          "timestamp_label": "오전 6:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e19_n04"
+        },
+        {
+          "id": "e19_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[따뜻하고 단단한 젊은 목소리] \"비상구 화살표 불 밝혀주셔서 감사했습니다, 선배님. 지금 당장 따님께 배지 직접 전해드리러 운전 중입니다. 편히 쉬십시오.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n05"
+        },
+        {
+          "id": "e19_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "우리 가족들은 이제 진정한 의미에서 11월 25일을 절대 잊지 못할 거야.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e19_n06_choice"
+        },
+        {
+          "id": "e19_n06_choice",
+          "type": "choice",
+          "prompt": "무전기 배터리 표시등이 따뜻한 황금빛으로 부드럽게 사그라집니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e19_free",
+              "label": "답장: \"내 몫까지 이 도시를 잘 지켜줘\"",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "내 몫까지 야간 순찰 잘 지켜줘, 후배. 타워 13은 교신 종료합니다.",
+              "next_node_id": "e19_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e19_vip",
+              "label": "답장: \"내 딸에게 내가 자랑스럽게 여긴다고 전해줘\"",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "내 딸에게 내가 한순간도 곁을 떠난 적 없다고 전해주세요. 교신 종료합니다.",
+              "next_node_id": "e19_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e19_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "수신 양호, 타워 13. 오늘 밤 이 관할 구역의 모든 경비원과 경찰관이 당신께 경례합니다.",
+          "timestamp_label": "오전 6:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "토씨 하나 안 빼고 그대로 전달했습니다. 따님께서 그 훈장을 자랑스레 가슴에 다실 겁니다.",
+          "timestamp_label": "오전 6:16",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n08_merge",
+          "type": "narrator",
+          "text": "맑은 마지막 종소리 하나가 햇살 가득한 아침 공기를 가로질러 울려 퍼집니다.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e19_n09_call"
+        },
+        {
+          "id": "e19_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911 지령실 · 명예 교신 종료",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e19_n10",
+          "on_decline_node_id": "e19_n10"
+        },
+        {
+          "id": "e19_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "타워 13 야간 근무 주파수가 오전 6시 18분부로 영구 퇴역했습니다. 그동안의 헌신에 감사드립니다, {{player_name}} 님.",
+          "timestamp_label": "오전 6:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e19_n11_cliff"
+        },
+        {
+          "id": "e19_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "주파수 영구 퇴역",
+          "teaser_text": "다음 화 대단원: 1년 뒤, 타워 13이 서 있던 자리의 청동 추모 공원을 햇살이 따뜻하게 비춥니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 20
+        }
+      ]
+    },
+    {
+      "episode_number": 20,
+      "title": "햇살 가득한 추모 공원",
+      "start_node_id": "e20_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e20_n01",
+          "type": "narrator",
+          "text": "오전 9:00 · 1년 뒤. 타워 13의 그을린 폐허가 솟아 있던 자리에, 화창한 공원 속 하얀 꽃들이 산들바람에 흔들립니다.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n02"
+        },
+        {
+          "id": "e20_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "추모 일지 기록: 맑은 하늘 아래 오늘 아침 청동 명판 제막식이 열렸습니다. 열세 개의 이름—단 한 분도 빠짐없이 햇살 속에서 기려졌습니다.",
+          "timestamp_label": "오전 9:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n03"
+        },
+        {
+          "id": "e20_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "쇠사슬도, 잠긴 계단실도, 새벽 3시 수칙도 없이—오직 맑은 공기와 탁 트인 하늘뿐이네요.",
+          "timestamp_label": "오전 9:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n04"
+        },
+        {
+          "id": "e20_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[새소리, 부드러운 바람] \"따님분이 방금 청동 명판 옆에 하얀 백합 열두 송이와 작은 황동 열쇠 하나를 놓으셨습니다—기쁜 눈물 속에 미소 지으시면서요.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n05"
+        },
+        {
+          "id": "e20_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Victor Kade는 이번 주에 13연속 종신형을 선고받았어.",
+          "unsent_placeholder": "전송 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e20_n06_choice"
+        },
+        {
+          "id": "e20_n06_choice",
+          "type": "choice",
+          "prompt": "청동 추모 명판에 새겨진 열세 개의 이름 위로 햇살이 반짝입니다:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e20_free",
+              "label": "아침 산들바람이 마지막 페이지를 넘기도록 두기",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "길고 길었던 밤이 끝났다. 13층의 모든 영혼이 마침내 집으로 돌아갔다.",
+              "next_node_id": "e20_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e20_vip",
+              "label": "이 도시를 위해 마지막 조용한 축복 남기기",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "이 도시의 모든 야간 경비원이 무사히 동트는 아침 집으로 돌아가기를.",
+              "next_node_id": "e20_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e20_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "더 이상 잡음도, 경보도 없이—아침 햇살 속 평온뿐이야.",
+          "timestamp_label": "오전 9:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "공원 앞을 지나는 모든 순찰차가 아침마다 조용히 경례의 경적을 울립니다. 영원히 잊지 않겠습니다.",
+          "timestamp_label": "오전 9:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n08_merge",
+          "type": "narrator",
+          "text": "나무 사이로 부드러운 웃음소리가 번져 나가는 가운데 황금빛 햇살이 돌벤치를 따뜻하게 감쌉니다.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n09"
+        },
+        {
+          "id": "e20_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "근무 완료. 열세 이름 기억함. 좋은 아침, 도시여.",
+          "timestamp_label": "오전 9:05",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "light",
+          "next_node_id": "e20_n10_cliff"
+        },
+        {
+          "id": "e20_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "근무 영구 완료",
+          "teaser_text": "\"타워 13 야간 근무 수칙\" 20개 에피소드를 모두 완주하셨습니다! 서재에서 더 숨 막히는 스릴러를 만나보세요.",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1012 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_039",
+  "lang": "en",
+  "metadata": {
+    "title": "The Shadow on the Peephole",
+    "subtitle": "Building chat at 2:50 AM: \"During tonight’s blackout, DO NOT look through your peephole if someone knocks.\"",
+    "genre": "thriller",
+    "tags": [
+      "Blackout",
+      "3AM",
+      "Apartment"
+    ],
+    "cover_image": "assets/media/covers/story_039.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Apt 8C)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#52525B"
+    },
+    {
+      "id": "ally",
+      "name": "Elena (Apt 8A)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Hallway Knock",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Don’t Look Through the Glass",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:50 AM · Citywide blackout. Emergency exit signs cast a faint red glow down the 8th-floor hallway.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "EVERYONE ON FLOOR 8: DO NOT LOOK THROUGH YOUR PEEPHOLE!! If it sees your eye behind the lens, it knows you’re home!",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Elena, what’s going on?! Someone just knocked softly on my door twice…",
+          "timestamp_label": "2:51 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "I can see your phone light under the door.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Tape over your peephole right now and stay silent! It’s going door to door down Floor 8!",
+          "timestamp_label": "2:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[soft knuckle tapping, muffled voice] ...{{player_name}}? Power’s out… just checking if you need candles...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "The shadow blocks the thin red line of hallway light beneath your front door.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Press a sticky note over the peephole",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Covering the peephole silently...",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Slide your phone camera under the door gap",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Peeking under the door with my camera...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Your fingers brush the cold brass lens—and something exhales sharply on the other side, inches from your face.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: There are NO shoes outside your door—only two bare pale hands pressed flat on the carpet, peering back under the gap.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Wait… the knocking at your front door just stopped! Did it move on to 8D?!",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Unknown · Inside Apt 8C",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Two soft knocks echo on the call—coming from the INSIDE of your bedroom closet door.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "You decline. Instantly, the knocking resumes—not on your front door, but from inside your own closet.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "It Wasn’t Outside",
+          "teaser_text": "Episode 2: The closet door handle clicks slowly in the dark.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Lights Out on Floor 8",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:56 AM · Your battery drops to 4%. Across the dark bedroom, the closet louver slats creak open one inch.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, I just checked my door cam battery backup! Nobody EVER walked past 8C—check if your balcony window was open!",
+          "timestamp_label": "2:56 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Elena, it’s inside my closet! I’m backing toward my front door right now!",
+          "timestamp_label": "2:57 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "CAM 08 · 02:56:40 AM — Hallway outside Apt 8C is clear.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Don’t unlock the front door. I’m waiting in the hall too.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The building backup generator kicks on in 30 seconds! Hold on—grab your flashlight and aim it straight at the closet!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "A pale silhouette slides out of the closet as your battery hits 2%.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Bolt into the hallway toward Apt 8A",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Running to your door right now!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Strobe your phone flash at the shadow",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Blinding it with the flash!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "You yank the door open just as the hallway generator roars on—flooding Floor 8 in blinding white light.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The shadow recoils with a hiss and dissolves into thin air as the ceiling lights snap back on.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Power is fully restored. Elena meets you in the bright hallway—both of you staring at your wide-open front door.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Elena (Standing Beside You)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Elena points to your peephole: \"Why is the sticky note on the OUTSIDE of your door now, {{player_name}}?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "You step closer to the door. Scratched into the brass peephole ring are three fresh words: \"SEE YOU SOON.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Never Look Through",
+          "teaser_text": "Season Finale · The power grid flickers once—just a warning for tomorrow night.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Blackout Pattern",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:58 AM · Floor 8 plunges into pitch darkness again. Your battery backup router blinks green.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}! My battery-powered doorbell cam caught a frame right before the breaker tripped!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Send it now—and keep your deadbolt chained. Nobody in this building has a scheduled repair at 3 AM.",
+          "timestamp_label": "2:59 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CAM 08 · 02:57:54 AM — Someone in a building vest taping over 8C’s peephole.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "He’s holding a brass master key ring! Wait—that’s the exact vest the night janitor wears!",
+          "timestamp_label": "3:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "8C is awake. Switch to the stairwell panel and cut their Wi-Fi.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Soft scratching starts right outside your apartment door lock.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Jam a wooden chair under the door handle",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bracing the chair under the lock!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Check the building’s maintenance log app",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking the maintenance log app...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "The handle twists sharply, hits the chair back, and stops dead in silence.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Three other floors had \"power surges\" this month—every single one ended with an empty safe.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "He’s moving toward the service elevator! If he reaches the lobby, he’ll wipe the main DVR!",
+          "timestamp_label": "3:01 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[metal keys jingling, muffled whisper] ...Floor 8 is blown. Grab the drive from the security desk and bounce...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Elena, call 911 on speaker. I’m taking the fire stairs to cut him off at the elevator.",
+          "timestamp_label": "3:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Trapped Between Floors",
+          "teaser_text": "Episode 4: The service elevator doors groan open on Floor 4—and someone is waiting inside.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Master Key Ring",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "3:06 AM · Emergency exit signs bathe the concrete stairwell in dim red light as you sprint down.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, stop! The night guard just texted the building group—he says HE’S locked in the basement!",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Then the guy in the maintenance vest isn’t staff at all. He stole the guard’s keycard.",
+          "timestamp_label": "3:07 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Tell the driver to pull up to the alley exit. Two minutes.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Wait—why did the hallway knocking sound like it came from INSIDE Apartment 8B earlier?!",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 11,
+          "transcript": "[heavy breathing on building intercom] ...You should’ve stayed behind your peephole, {{player_name}}. Now you’ve seen my face...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "The stairwell door to Floor 4 clicks unlocked from the hallway side.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Pull the red fire alarm on the wall",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pulling the fire alarm now!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Snap a burst photo through the wire glass",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Capturing his face through the glass...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Deafening sirens erupt across every floor, forcing doors open and flooding the hall with backup strobes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Your photo catches a barcode badge—he’s a former security installer fired for cloning keyfobs.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Every neighbor on Floor 4 is waking up! He bolted back into the service elevator!",
+          "timestamp_label": "3:09 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "You ruined a six-month job! I’m cutting the elevator brake line if you follow me!",
+          "timestamp_label": "3:09 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "He’s bluffing—the service elevator has an auto-lock override from the lobby panel.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Override Code 404",
+          "teaser_text": "Episode 5: The elevator display glitches to a dead floor as the alarm strobes flash.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Floor 404 Lockout",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "3:14 AM · You reach the lobby security desk and free the tied-up night guard from the supply closet.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’m watching the lobby from the mezzanine, {{player_name}}! The elevator stopped dead between Floor 2 and 1!",
+          "timestamp_label": "3:14 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good. Let’s see him explain that master key ring to the cops when the doors open.",
+          "timestamp_label": "3:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "Service Elevator Panel · 3:15 AM — Emergency lock engaged, car halted mid-shaft.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Open the shaft doors! I’m suffocating in here—I’ll drop the stolen envelopes!",
+          "timestamp_label": "3:16 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Delete the alley plate number from the dispatch chat before cops pull the tower.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "A dark sedan idles in the back alley, its headlights flashing twice for the intruder.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Lock the alley fire exit from inside",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bolting the alley exit shut!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Read the tenant list in his dropped bag",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking the list in his bag...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "The steel crossbar slams down—trapping the getaway driver outside just as patrol cars block the alley.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Apt 8B wasn’t empty—the accomplice rented it last week as a staging room for the Floor 8 heist.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[police megaphone outside, sirens wailing] ...Driver of the black sedan, step out with your hands visible!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "They got the getaway driver! And the fire crew just arrived to pry the service elevator open!",
+          "timestamp_label": "3:17 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hold tight, Elena. Tell Floor 8 the lights are coming back on.",
+          "timestamp_label": "3:18 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Lights Back On",
+          "teaser_text": "Episode 6 Finale: The elevator doors pry open—and the man behind the peephole finally loses his mask.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Daylight on Floor 8",
+      "start_node_id": "e6_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3:24 AM · Power surges back across the building. Warm fluorescent lights flood the lobby as firefighters crank open the lift.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Fine! I cloned the master fobs when I installed the panels! Just get me out of this box!",
+          "timestamp_label": "3:24 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tell that to the detective holding your doorbell cam footage.",
+          "timestamp_label": "3:25 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "I hid the copied fobs inside the false ceiling of Apt 8B.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 9,
+          "transcript": "[handcuffs clicking, lobby chatter] ...Two suspects in custody, master keycards recovered. Floor 8 is all clear...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I can’t believe the \"ghost knocking\" was just them testing which doors had chain locks during blackouts!",
+          "timestamp_label": "3:26 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "The building manager offers to replace every Floor 8 lock before sunrise.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Hand over the doorbell cam stills",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sending the camera stills to police.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Inspect the false ceiling in Apt 8B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Showing detectives Apt 8B’s ceiling...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Detectives link the pair to four downtown high-rise burglaries and close the entire ring in one night.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: Police recover thirty cloned keyfobs and a ledger of five other buildings they planned to hit next.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "You literally saved the whole floor tonight, {{player_name}}. Still keeping my peephole covered though!",
+          "timestamp_label": "3:27 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Smart move, Elena. Get some sleep—no more 3 AM knocks.",
+          "timestamp_label": "3:28 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "Floor 8 falls quiet at last, bathed in steady hallway light until morning.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Safe Behind the Lock",
+          "teaser_text": "The blackout burglary ring is dismantled, and Floor 8 sleeps safely again.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

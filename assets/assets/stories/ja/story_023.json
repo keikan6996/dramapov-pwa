@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_023",
+  "lang": "ja",
+  "metadata": {
+    "title": "午前3時07分の配達員",
+    "subtitle": "フード配達員からメッセージが届いた――『外に置き配しました。カーテンの後ろにいる白い服の女性は誰ですか？』",
+    "genre": "thriller",
+    "tags": [
+      "午前3時",
+      "配達",
+      "ホラー"
+    ],
+    "cover_image": "assets/media/covers/story_023.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (あなた)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "ally",
+      "name": "Leo (配達員)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "注文#4409 サポート",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "頼んだはずのない注文",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前3時07分 · 雷鳴が5階のワンルームを揺らします。配達アプリの通知音が鳴りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "やあ{{player_name}}、門に麺を掛けておいたよ。カーテンの後ろの同居人に、俺をじっと睨むのをやめるよう言っといてくれ。",
+          "timestamp_label": "午前3:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って――今夜は何も注文してない。それに私、完全に一人暮らしよ。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "彼女が今まさにあなたのベランダの鍵を開けています。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "からかうなよ！注文は『あなた』の名前で現金払いだ――5階からくしゃくしゃのお札を落としてきたんだぞ！",
+          "timestamp_label": "午前3:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[激しい雨音、スクーターのエンジン音] ……待て、注文確定の時の通話録音を聴いてみてくれ――これ『あなた』の声だぞ……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "ガラス戸は閉まっているはずなのに、ベランダのレースカーテンが内側にふわりと揺れました。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "彼女が落としたお札がどんなものか聞く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "彼女が落としたお札ってどんなの？",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "注文確認音声のフルデータを再生する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "音声ファイルの全編を送って！",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Leoから震える文字で返信が来ます。『本物のお金じゃない、{{player_name}}……冥銭（あの世の紙幣）だ。角が焦げてる』",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：麺を注文するあなた自身の眠そうな声の下で、もう一つの声が囁いていました。『2杯。1つは生きている人の分』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "おい、俺はもう走り去るぞ、健闘を祈る――待て、なんで門からビニール袋が『消えてる』んだ？！",
+          "timestamp_label": "午前3:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "配達自動音声通話",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "機械的な声が読み上げます。『ご注文が受領されました……あなたのキッチンの中で』。隣の部屋でスプーンがカチャンと鳴りました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "通話を切ると、即座に冷たいスープと湿った線香の匂いが寝室のドアの下から漂ってきました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "二人分の夕食",
+          "teaser_text": "エピソード2：テーブルの上に湯気の立つ丼が2つ置かれ――椅子が1脚、引き出されています。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "二膳の箸",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前3時13分 · 寝室のドアを少しだけ開けます。小さなテーブルの上の2つの丼から湯気が立ち上り、一膳の箸が真っ直ぐ突き立てられていました。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}！GPSがバグってこの路地から出られないんだ。どの角を曲がっても、あなたのベランダの真下に戻ってくる！",
+          "timestamp_label": "午前3:13",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo、キッチンに丼が2つあるの。お供えみたいに箸が真っ直ぐ立ててある！",
+          "timestamp_label": "午前3:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[麺をすする音、水滴の落ちる音] ……温かいうちに食べて、{{player_name}}。お客さんに失礼な真似はしないで……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "彼女はあなたに背中を向けて椅子に座っています。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "この通りを思い出した！5年前、ここで鍵のかかった5階の部屋で女の子が餓死したんだ。絶対にその食べ物に触るな！",
+          "timestamp_label": "午前3:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "彼女が振り向き始め、タイル張りの床を椅子がゆっくりと擦る音が響きます。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "お供えの丼をテーブルから叩き落とす",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "テーブルをひっくり返してやる！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "敬意を込めて一礼し丼を差し出す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "一礼して下がります……",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "丼が砕け散り――タイルの上にこぼれ落ちたのは麺ではなく、長く濡れた黒髪の束でした。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：冷たい空気が和らぎます。玄関の鍵が開くと同時に、かすかなため息が『覚えていてくれてありがとう』と囁きました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "あなたが階段室へ飛び出したまさにその瞬間、街灯がチカチカと点き直します。スマホに最終のアプリ領収書が届きました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Leo (配達員)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Leoが荒い息を吐きます。『路地から抜け出せた！アプリを見てみろ――彼女があなたのアカウントで星5つのレビューを残してる。「また明日3時07分にね」だって』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "拒否してアプリを確認すると、毎晩午前3時07分に新しい定期注文が自動予約されていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "注文予約：午前3時07分",
+          "teaser_text": "シーズンフィナーレ · キャンセルボタンは灰色で押せません。彼女はすでに明日の分をお腹を空かせて待っています。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "午前3時07分の定期配達",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前3時01分 · 翌日の夜。配達アプリを削除したはずなのに玄関のチャイムが鳴り――Leoからパニックの連絡が入ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、俺は配車依頼を拒否しようとしたんだ、誓って！アプリが俺のバイクのGPSをロックして、勝手にあなたの門まで誘導したんだ！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo、ポーチより先に踏み込まないで！廊下のカメラが、白い服の女が『内側』から私のドアの鍵を開けるところを映したの！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "午前3時04分 廊下カメラ · ドアチェーンのすぐ後ろに立つ白い服の青白い人影。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "注文#4409 サポート：『配達員が早く到着しました。午前3時07分前に丼を2つご用意ください』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "彼女は1999年の銀貨で支払いました、{{player_name}}。注文#4409をキャンセルした配達員は全員、高速道路で姿を消しています。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "待て――伝票の配達先住所を見てくれ。あなたの部屋番号じゃない――昔ここで焼け落ちた区画の番地だ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Leoのマイクに唸る風音] 「通りの向かいに停めてる、{{player_name}}！袋はマットに置いて――絶対にチェーンロックを開けるな！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "時計が午前3時06分を指します。玄関ドアの内側から足音が近づいてきます。",
+          "options": [
+            {
+              "option_id": "opt_e3_slide_chopsticks",
+              "label": "ドアの下の隙間から2膳の箸を差し入れる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "隙間から箸を滑らせた――Leo、エンジンを止めないで！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_fire_escape",
+              "label": "キッチンの非常階段から外へ降りる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 脱出",
+              "player_reply_text": "幽霊と食事なんてごめんよ！非常階段を降りてあなたのバイクへ向かう！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "彼女が箸を拾い上げた！今のうちに裏階段から飛び出して！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "飛び降りろ――路地をヘッドライトで照らしてる！後ろに飛び乗れ！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "注文#4409 ステータス更新：『お客様が席を離れました。新しいGPS位置を追跡中……』",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "注文はまだ進行中。",
+          "teaser_text": "エピソード4：Leoのバイクで3マイル離れても、配達トラッカーのピンはじりじりと近づき続けます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "1999年のレシート",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前3時25分 · 高速道路の高架下に停車中。Leoが保温バッグから黄ばんだ紙のレシートを取り出します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "伝票の店名を見てくれ、{{player_name}}。『蓮華麺家』だ。その店は1999年に全焼した――花嫁が遅れる婚約者を待っていたまさにその夜に。",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……婚約者の列車が遅れていたから、彼女は午前3時07分に二人分の夕食を注文し続けていたの？！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "彼は二度と家に戻らなかったのです、{{player_name}}。今夜こそ彼が扉をくぐって帰ってくることを願い、彼女は毎晩2杯の麺を注文しています。",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Leoの配達アプリが大きく鳴ります。『配達員がルートを外れています。直ちに蓮華跡地へ戻ってください』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "スマホの画面が勝手にひび割れた――そして地図のピンが、2ブロック先の古い踏切を指している！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "もし彼女が、Leoを婚約者の手紙を届ける使者だと思えば、ようやくそれを届けられるかもしれない。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[サポート回線上のノイズ混じりの女性の声] 「彼は3時07分の列車に乗っていますか？どうか、夕食を忘れたわけじゃないと言って……」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "注文#4409が真に完了するまで、配達アプリは止まりません。",
+          "options": [
+            {
+              "option_id": "opt_e4_check_station",
+              "label": "二人で古い踏切までバイクを走らせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "古い踏切へ行こう、Leo。そこで何が待っているか確かめよう。",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_reply_support",
+              "label": "注文#4409 サポートへ優しく返信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 共感",
+              "player_reply_text": "彼はあなたを忘れていません。メッセージをどこへ届けたらいいか教えてください。",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "しっかり掴まって！霧の境界線のすぐ先に古い切符売り場がある！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "赤い警告バナーが柔らかな金色に変わった……彼女が俺たちのGPSを導いている！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Leoのひび割れたスマホ画面を見てください――GPSのピンが廃駅の7番ロッカーで固定されました。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "7番ロッカー。",
+          "teaser_text": "エピソード5：錆びた駅ロッカーの中に眠っていたのは、1999年の日付が入った未配達の手紙でした。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "届かなかった手紙",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前3時50分 · 霧が廃ホームを覆います。Leoが7番ロッカーをこじ開け、封印された封筒を取り出しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "あなたのアパートの古い番地宛てだ！指輪とメモが入ってる。『嵐に足止めされた――夜明けに待っていてくれ』",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "だから彼女は午前3時07分に注文し続けていたんだ……どうして彼が帰ってこなかったのか知らなかったから。",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "ひび割れたスマホのGPS · 0.4マイル先のあなたの玄関へ真っ直ぐ戻るルートを再計算。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "注文#4409 サポート：『荷物が見つかりました。注文を永久に終了するため配達を完了してください』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "玄関まで乗せていくよ、{{player_name}}。温かい麺の横に封筒を置いて――決して彼女を直視するな。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "手が震えているけど、これが俺がこのルートで行う最後の配達になる気がする。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[優しく震えるため息] 「見つけてくれたのね……どうか玄関先に置いておいて」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "玄関ポーチに着きました。ガラスの向こうで白いカーテンが揺れています。",
+          "options": [
+            {
+              "option_id": "opt_e5_leave_letter",
+              "label": "料理の袋の横に封筒をそっと置く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "玄関先に置きました。彼は決してあなたを忘れていませんでしたよ。",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_read_aloud",
+              "label": "下がる前に最後の一行を声に出して読む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 平穏",
+              "player_reply_text": "『夜明けに待っていてくれ』。彼は最後まであなたを愛していました。",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "カーテンがすっと下りた……そしてアプリがついに『配達完了』と鳴ったぞ！",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ポーチのマットに白い花びらが1枚ひらりと舞い落ちます。冷たい空気が一瞬で消え去りました！",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "注文#4409 · 評価：星5つ。『彼を家に連れ帰ってくれてありがとう』",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "配達完了。",
+          "teaser_text": "エピソード6（フィナーレ）：静かな通りに朝が訪れ――午前3時07分の配達員はもう夜勤を恐れる必要がなくなりました。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "夜明けの五つ星",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前6時15分 · 朝の光が角の麺屋を温めます。Leoが幽霊抜きの、本物の熱いスープ麺を2杯おごってくれました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今朝配車履歴を確認したんだ、{{player_name}}。注文#4409は完全に消えて――ひび割れてたGPS画面も元通り動くようになった。",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私の部屋のカーテンも、日の出から1ミリも動いてないよ。二人とも夜勤を生き延びたみたいね。",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "実は1時間前に夜の配達はやめたんだ。昼の便専門に切り替えたよ。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "スマホが震えます――『蓮華麺家』から最後の0ドル領収書が届きました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "領収書の一番下のメモを見て。『もう待つ必要はありません。温かいうちに召し上がれ』",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "正直なところ、{{player_name}}、午前3時07分に君のメッセージを無視しなくて本当によかったと思ってる。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[温かく笑いながら] 「今度深夜に麺を頼む時は、直接俺にメッセージしてくれ――午前0時前に自分で届けるから」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "朝の陽光の中、朝食の丼から温かい湯気が立ち上ります。",
+          "options": [
+            {
+              "option_id": "opt_e6_toast_bowls",
+              "label": "Leoと箸を合わせて乾杯する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "約束ね、Leo。これからは昼間の配達限定で。",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_tip_big",
+              "label": "星5つのチップを残して微笑む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 温もり",
+              "player_reply_text": "街で一番勇敢な配達員に星5つ。朝食は私のおごりよ。",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "人生で一番クレイジーな夜の後に食べる、最高の朝食だ。",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "約束だ！また近所で会おうな、{{player_name}}。",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "注文#4409 サポート · アカウント永久閉鎖。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · ついに届けられた想い。",
+          "teaser_text": "THE END · もう午前3時07分のノックは来ません――あるのは温かい麺と澄んだ朝の空だけ。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

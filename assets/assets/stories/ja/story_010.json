@@ -1,0 +1,1017 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_010",
+  "lang": "ja",
+  "metadata": {
+    "title": "Uberに置き忘れた結婚指輪",
+    "subtitle": "午前2時10分に配車ドライバーからメッセージが届いた――『奥様、ご主人が後部座席に指輪を置いていきました――わざとです』。",
+    "genre": "romance",
+    "tags": [
+      "浮気",
+      "午前2時",
+      "どんでん返し"
+    ],
+    "cover_image": "assets/media/covers/story_010.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#EF4444"
+    },
+    {
+      "id": "driver",
+      "name": "Leo (配車ドライバー)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "lucas",
+      "name": "Lucas (夫)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "午前2時10分の遺失物",
+      "start_node_id": "e1_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2時10分 · 共有の配車アカウントを使っているLucas。担当ドライバーから遺失物通知が飛び込みます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "こんにちは{{player_name}}様、先ほどご主人をベルベット・ラウンジでお降ろししました。後部座席でプラチナの結婚指輪を外して置いていかれましたよ。",
+          "timestamp_label": "午前2:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って――ベルベット・ラウンジ？！Lucasは今夜病院の救命救急で徹夜勤務だって言っていたのに！",
+          "timestamp_label": "午前2:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "手術着は着ておられませんでしたよ、奥様。それに膝の上に乗っていた金髪の女性が笑って、指輪を置いていくよう言っていました。",
+          "timestamp_label": "午前2:12",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "driver",
+          "text": "必要でしたら車内ドライブレコーダーに一部始終が映っていますよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "やあベイビー、今夜ERが大忙しだよ。手洗い中に指輪をなくしちゃって――心配しないで、警備員が探してくれてるから！❤️",
+          "timestamp_label": "午前2:13",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "driver",
+          "duration_sec": 7,
+          "transcript": "[ウインカーのカチカチという音] あのね、去年妹が浮気されたんです。お宅から5分のところにいます――指輪とドラレコ映像をお届けしましょうか？",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "choice",
+          "prompt": "Lucasが人生最悪の嘘を送ってきました。どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_get_clip",
+              "label": "ドライバーに200ドル渡して映像を受け取る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "はい、両方とも門の前まで持ってきてください。現金で200ドルのチップをお渡しします。",
+              "next_node_id": "e1_n09a"
+            },
+            {
+              "option_id": "opt_vip_ride",
+              "label": "ドライバーにベルベット・ラウンジへ送らせる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 待ち伏せ",
+              "player_reply_text": "5分後に門の前で拾ってください――ベルベット・ラウンジへ引き返します。",
+              "next_node_id": "e1_n09b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09a",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "お金は結構ですよ、奥様。今お宅の前に停めます――その女性が誰か見たら驚きますよ。",
+          "timestamp_label": "午前2:16",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n09b",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "すぐ向かいます、奥様。メーターは倒しません――この乗車はサービスです。",
+          "timestamp_label": "午前2:16",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "cliffhanger",
+          "headline": "ドラレコは嘘をつかない。",
+          "teaser_text": "エピソード2：ドライブレコーダーの映像を一時停止したあなたは――夫とキスしている女の正体に気づきます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "午前2時40分の帰還",
+      "start_node_id": "e2_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2時40分 · ベルベット・ラウンジのVIPブースに座るあなた――その真正面に、Lucasとあなたの義妹（義姉）の親友が座っていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "やあLucas。結婚指輪を見つけたよ。後ろを振り向いて。",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "なんだって――{{player_name}}？！スマホをしまえ！ラウンジ中の前で騒ぎを起こすな！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "落ち着いて。騒ぎになんてしないわ。ただ、私のクレジットカードで4000ドルのドン・ペリニヨンをどうやって払うつもりか知りたいだけよ。",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "lucas",
+          "text": "待て――カード請求を見たのか？！頼む、今すぐカードを止めないでくれ、ウェイターが目の前に立ってるんだ！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "lucas",
+          "duration_sec": 7,
+          "transcript": "[汗だくでスマホに囁く声] {{player_name}}、頼む！彼女と同僚の前でカードが決済拒否されたら俺はおしまいだ！家に帰ろう！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "ウェイターがLucasのテーブルにカード決済端末を持ってきました。",
+          "options": [
+            {
+              "option_id": "opt_decline_card",
+              "label": "彼がカードをかざした瞬間に凍結する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "さあタッチして、Lucas。画面が赤く変わるのを見てなさい。",
+              "next_node_id": "e2_n08a"
+            },
+            {
+              "option_id": "opt_vip_drop_ring",
+              "label": "グラスに指輪を落としカードを凍結する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 圧倒的勝利",
+              "player_reply_text": "ほらあなたの指輪――4000ドルのツケを払うために質に入れなさい。私たちは終わりよ。",
+              "next_node_id": "e2_n08b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08a",
+          "type": "narrator",
+          "text": "ピッ！『カード利用不可』。金髪の女は即座にバッグを掴むと、一度も振り返らずブースから出ていきました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n08b",
+          "type": "narrator",
+          "text": "端末に『決済拒否』が点滅すると同時に、プラチナの指輪がシャンパングラスに音を立てて落ちます。VIP席中のスマホが一斉に録画を始めました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n09",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "正面ドアのすぐ外でエアコンを効かせて待っていますよ、{{player_name}}様。ご自宅へ帰る準備はよろしいですか？",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "cliffhanger",
+          "headline": "ドライバーには星5つ。夫にはゼロ。",
+          "teaser_text": "エピソード3：ベルベット・ラウンジからLeoの車で立ち去る中、Lucasがパニックになり――そしてあなたはLeoの本当の正体を知ります。",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "ドラレコの真実",
+      "start_node_id": "e3_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2時55分 · ベルベット・ラウンジを離れるLeoの静かな黒いセダンの車内。Lucasからの着信通知でスマホが鳴り止みません。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "{{player_name}}、車のドアを開けろ！！警備員があの4000ドルのボトルの担保に俺の腕時計を取り上げたぞ！！",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "image",
+          "sender_id": "driver",
+          "image_asset": "assets/media/evidence/generic_ring_closeup.webp",
+          "caption": "ダッシュボードトレイ · ベルベット・ラウンジのバレー半券の横に置かれたLucasのプラチナ結婚指輪。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お義妹（お義姉）の親友に割り勘してもらえば、Lucas。あら残念――もう逃げ出しちゃったみたいね！",
+          "timestamp_label": "午前2:57",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "lucas",
+          "text": "もし病院の理事会にラウンジの動画を見られたら、俺は外科フェローシップをクビになる！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "奥様、今夜ご主人にすぐ気づいた本当の理由をまだお伝えしていませんでしたね。先週火曜日の2本目の映像をよくご覧ください。",
+          "timestamp_label": "午前2:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "driver",
+          "duration_sec": 11,
+          "transcript": "[落ち着いた揺るぎない声] 2週間前、私はLucasを病院からホテルまで乗せたんです――浮気だけじゃない、あなたの家の権利書を母親名義に書き換える話を得意げにしていました。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "私はただの夜勤ドライバーじゃないんです、{{player_name}}様。非番の私立探偵ですよ――妹の事件も、まさに同じ一族が相手だったんです。",
+          "timestamp_label": "午前3:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Leoが今、Lucasがあなたの家の名義変更を企んでいると明かしました。どう動きますか？",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Leoに郡の不動産登記ログを調べさせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ不動産登記簿を確認して――私の家には指一本触れさせないわ！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Leoを雇いLucasの不倫網を丸ごと暴く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "ドラレコの全アーカイブを引き出して、今夜中にLucasの嘘を終わらせましょう！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "すでに調べました――昨日の午後、委任状を使って名義書換申請を提出しています！",
+          "timestamp_label": "午前3:01",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "narrator",
+          "text": "VIP展開：Leoのアーカイブにより、Lucasが病院のチャリティー旅費資金に高級ホテルの週末滞在3回分を請求していたことも発覚します！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "{{player_name}}、頼むからカードのロックを解除してくれ！ソファで寝るし、あいつとも縁を切るから、警察だけは呼ばせないでくれ！",
+          "timestamp_label": "午前3:02",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "ご安心ください、奥様。最初の目的地は24時間対応の公証役場です――日の出前に彼の委任状を取り消しましょう。",
+          "timestamp_label": "午前3:03",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n13_end"
+        },
+        {
+          "id": "e3_n13_end",
+          "type": "cliffhanger",
+          "headline": "ただのドライバーではない",
+          "teaser_text": "エピソード4：ホテルロビーの防犯映像が、Lucasの『医学学会』も真っ赤な嘘だったことを証明します。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 4,
+          "cta_label": "エピソード4をプレイ"
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "午前2時18分のチェックイン",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前3時40分 · 裁判所向かいの24時間営業ダイナー。LeoがノートPCを開き、認証済みのホテルログをボックス席のテーブルに滑らせます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "委任状は正式に失効させました。さあ、先月Lucasが『医学学会』に行っていたと称するホテルのコネから送られてきた映像をご覧ください。",
+          "timestamp_label": "午前3:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "image",
+          "sender_id": "driver",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "ホテルロビー防犯カメラ · 午前2時18分 — あなたの義妹（義姉）の親友とペントハウススイートにチェックインするLucas。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "シカゴで循環器学の論文発表だって言ってたのに！家から文字通り10マイルのところにいたのね！",
+          "timestamp_label": "午前3:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "lucas",
+          "text": "待て――なんで母さんから、家の名義変更がキャンセルされたって電話が来たんだ？！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "{{player_name}}、お前鍵を交換した上に共有貯金まで凍結したのか？！午前4時に俺はどこへ行けばいいんだよ？！",
+          "timestamp_label": "午前3:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "driver",
+          "duration_sec": 9,
+          "transcript": "[落ち着いてコーヒーを啜りながら] ベルベット・ラウンジの駐車場で寝ればいいと伝えてやりましょう。ところで、義妹さんからなぜ親友が泣いているのかと連絡が来ていますよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "これ以上俺に恥をかかせるな！母さんが起きる前に帰ってきて大人同士で話し合おう！",
+          "timestamp_label": "午前3:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Lucasは締め出されて取り乱しています。どう返事をしますか？",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "午前2時18分のホテルロビーのスクショを送る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "スマホを確認して、Lucas――午前2時18分の素敵な『医学学会』ね。",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "義妹にもその映像を送りつける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "あなただけに見せる理由がある？あなたの妹（姉）にも親友の忠誠心を見せてあげるわ！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "どうやってホテルの防犯映像を手に入れた？！あのドライバーは一体何者なんだ？！",
+          "timestamp_label": "午前3:46",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "narrator",
+          "text": "VIP展開：義妹が家族グループチャットで大爆発――一族全員の前でLucasと元親友の二人を徹底的に吊るし上げます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "見事な一手です、{{player_name}}様。それと私の探偵回線に誰から電話があったと思います？病院の倫理委員会の局長ですよ。",
+          "timestamp_label": "午前3:47",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうやらLucasのER勤務は、永久にキャンセルされそうね。",
+          "timestamp_label": "午前3:48",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n13_end"
+        },
+        {
+          "id": "e4_n13_end",
+          "type": "cliffhanger",
+          "headline": "午前4時の締め出し",
+          "teaser_text": "エピソード5：朝を迎え――病院と裁判所の両方でLucasの嘘が崩壊します。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5,
+          "cta_label": "エピソード5をプレイ"
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "日の出の清算",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前8時20分 · 玄関ポーチの外。タクシーで乗り付けたLucasの前に、荷造りされた彼のスーツケースが私道に整然と並んでいます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "俺のスーツを芝生の上に放り出したのか？！それに病院からも経費監査の間停職処分を食らったぞ！！",
+          "timestamp_label": "午前8:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "チャリティー資金で甘い週末旅行を決済して、私の家まで盗もうとしたのよ、Lucas。停職だけで済んで運が良かったと思えば。",
+          "timestamp_label": "午前8:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "おはようございます、{{player_name}}様。先ほどあなたの弁護士に公証済みの委任状取消書と離婚請願書を届けてきました。",
+          "timestamp_label": "午前8:22",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "lucas",
+          "text": "バーの勘定の半分すら払おうとしない女のために、5年間の結婚生活を捨ててしまった……",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "{{player_name}}、頼む――家も渡すし協議離婚にもサインする、だから医師会にだけはドラレコを渡さないでくれ！",
+          "timestamp_label": "午前8:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "driver",
+          "duration_sec": 10,
+          "transcript": "[セダンに寄りかかりながら] あなたの判断次第です、{{player_name}}様。今日中にすべての共有資産を譲渡するか、午前9時に倫理委員会が全ファイルを受け取るか。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "そのタクシーのボンネットの上でサインするまで、持ち時間は10分よ、Lucas。",
+          "timestamp_label": "午前8:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Lucasが和解書類の上にペンを構えています。どうしますか？",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "家の権利放棄に署名させ立ち去らせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "権利放棄書にサインして、荷物を掴んで、二度と戻ってこないで。",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "署名に加えチャリティー資金も全額返還させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "家を譲渡し、さらに今日中に病院のチャリティーへ1セント残らず返還しなさい！",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "lucas",
+          "text": "書いた！サインしたぞ！家も持っていけ、指輪も持っていけ――だから行かせてくれ！",
+          "timestamp_label": "午前8:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "narrator",
+          "text": "VIP展開：近所中が彼のスーツケースをタクシーに積み込む姿を見守る中、Lucasはすべてを譲渡し賠償金を送金します！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "今年見た中で一番鮮やかなノックアウトですよ、{{player_name}}様。",
+          "timestamp_label": "午前8:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ありがとう、Leo。本当に――今夜の乗車料金、いくらお支払いすればいい？",
+          "timestamp_label": "午前8:28",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n13_end"
+        },
+        {
+          "id": "e5_n13_end",
+          "type": "cliffhanger",
+          "headline": "芝生の上の荷物",
+          "teaser_text": "エピソード6：1週間後――まっさらな白紙、淹れたてのコーヒー、そして乗る価値のあるドライブ。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 6,
+          "cta_label": "エピソード6をプレイ"
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "星5つの新生活",
+      "start_node_id": "e6_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前10時05分 · 陽当たりの良い角のカフェ。家の権利書は100%あなたのものとなり、Lucasの離婚届も提出済み。外からLeoがメッセージを送ってきます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "おはようございます、{{player_name}}さん。ドラレコも緊急事態もなし――ただ後部座席に忘れられた傘をお返ししに来ました。",
+          "timestamp_label": "午前10:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "傘1本のためだけにわざわざここまで運転してきてくれたの、探偵さん？",
+          "timestamp_label": "午前10:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "はい、白状します。このカフェのクロワッサンが街一番だと聞いたもので――それに、あなたが元気にしているか確かめたくて。",
+          "timestamp_label": "午前10:07",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "driver",
+          "text": "正直、あのベルベット・ラウンジのブースであなたがどれほど凛として勇敢だったか、ずっと忘れられずにいました。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "ところで、Lucasの妹さんから兄の分をと謝罪のフルーツバスケットが届きましたよ――彼女は結婚式から元親友の招待も取り消したそうです。",
+          "timestamp_label": "午前10:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "voice_note",
+          "sender_id": "driver",
+          "duration_sec": 9,
+          "transcript": "[温かな笑い声] あの乗車、チップ0ドルでしたよね。だから厳密には、まだコーヒー1杯分の借りがありますよ、{{player_name}}さん。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "中に入って、Leo。窓際の席をもう取ってあるわ。",
+          "timestamp_label": "午前10:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "真新しい朝が目の前に広がっています。シーズンフィナーレを選んでください！",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Leoにコーヒーをおごり自由に乾杯する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "コーヒーは私のおごり――新しい始まりと、嘘つきゼロの毎日に乾杯！",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "金曜のちゃんとしたディナーにLeoを誘う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "今はコーヒー、そして金曜日はディナー――完全に非番でね、Leo！",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "人生最高の星5つ評価ですね、{{player_name}}さん。今入ります。",
+          "timestamp_label": "午前10:11",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "narrator",
+          "text": "VIPフィナーレ：カフェのドアを押し開けて微笑むLeo――午前2時の遺失物メッセージが、思いがけない最高の新章へと繋がりました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "なくした結婚指輪が、人生で一番幸運な拾い物になるなんて誰が思ったかしら？",
+          "timestamp_label": "午前10:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "text",
+          "sender_id": "driver",
+          "text": "メーターは永久にオフですよ、{{player_name}}さん。太陽の光を楽しみましょう。",
+          "timestamp_label": "午前10:13",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n13_end"
+        },
+        {
+          "id": "e6_n13_end",
+          "type": "cliffhanger",
+          "headline": "星5つの自由",
+          "teaser_text": "シーズンフィナーレ完結 · 一晩で浮気男を切り捨て、輝かしい新章へと踏み出しました。",
+          "sfx": "ting",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "cta_label": "シーズン完結"
+        }
+      ]
+    }
+  ]
+}

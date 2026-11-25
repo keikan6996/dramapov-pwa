@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_086",
+  "lang": "en",
+  "metadata": {
+    "title": "Smart Home Override",
+    "subtitle": "My thermostat climbed to 108°F, the smart locks sealed shut, and the speakers are playing my secrets.",
+    "genre": "thriller",
+    "tags": [
+      "Smart Home",
+      "Hacker",
+      "Trapped"
+    ],
+    "cover_image": "assets/media/covers/story_086.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "owen",
+      "name": "Owen · HomeSec",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "root",
+      "name": "ROOT_ADMIN",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#064E3B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Thermal Lockdown",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "10:41 PM · HOME OS ALERT: All perimeter deadbolts engaged. Storm shutters lowered. Heating set to MAX (108°F).",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen!! Your smart home app locked me inside my own house and cranked the furnace to 108 degrees!",
+          "timestamp_label": "10:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Checking your hub now, {{player_name}}... Wait, my technician credentials were just revoked! Someone is logged in as ROOT_ADMIN from inside your garage.",
+          "timestamp_label": "10:42 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "root",
+          "duration_sec": 7,
+          "transcript": "[echoing through your living room speakers] \"Remember last Tuesday, {{player_name}}? You promised nobody would ever find out what happened on Highway 9.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "That’s a recording from my bedroom! You’ve been bugging my smart speakers?!",
+          "timestamp_label": "10:43 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "The air is scorching. Sweat stings your eyes. What do you do?",
+          "options": [
+            {
+              "option_id": "opt_086_e1_free",
+              "label": "Smash the main breaker box in the hall",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m killing the main power—let’s see your smart locks hold without electricity!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_086_e1_vip",
+              "label": "Ask Owen for the factory reset pin",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Owen, give me the hardware override code before I pass out!",
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "You flip the master breaker. The lights die—then a green backup battery hums to life. Fail-secure locks stay bolted tight.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Solar battery wall is at 98%, {{player_name}}. Now you’re cooking in the dark.",
+          "timestamp_label": "10:45 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Hold the pinhole behind the hallway thermostat for 5 seconds and type 9941! Wait—it’ll unlock the garage door TOO!",
+          "timestamp_label": "10:45 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "You punch 9941. Every deadbolt clicks open at once—including the heavy steel door leading to the dark garage.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "My sister was the cyclist you left on Highway 9, {{player_name}}. Time to confess.",
+          "unsent_placeholder": "ROOT_ADMIN unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Wait... the garage motion sensor just tripped! Someone is walking up the interior stairs right now!",
+          "timestamp_label": "10:46 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "The Door To The Garage",
+          "teaser_text": "The house isn’t just hacked—it’s a courtroom. And ROOT_ADMIN just stepped inside the kitchen.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Manual Override",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "10:48 PM · You crouch behind the upstairs railing. Downstairs, every smart TV flickers on to show Highway 9 dashcam footage.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "owen",
+          "caller_label": "Owen · HomeSec",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[sirens faint] {{player_name}}, I bypassed the window shutter on the master balcony! It’s open two feet—climb out onto the oak branch!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "I forced the master balcony shutter open! Get out onto the roof NOW—police are 4 minutes away!",
+          "timestamp_label": "10:48 PM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Look closer at the dashcam timestamp, {{player_name}}. I know you weren’t driving. Tell me who was—and I let you walk.",
+          "timestamp_label": "10:49 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You installed my smart home last month... Wait. That voice on the speakers—",
+          "timestamp_label": "10:49 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Footsteps climb the stairs slowly. Make your call:",
+          "options": [
+            {
+              "option_id": "opt_086_e2_free",
+              "label": "Bolt for the master balcony shutter",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_086_e2_vip",
+              "label": "Send the real driver’s name to ROOT_ADMIN",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "It was my fiancé’s car! He took my phone so I couldn’t call 911!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "You slide under the balcony shutter into cool night air—and freeze. Owen’s HomeSec van is parked directly beneath you, laptop glowing on the hood.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Climb down, {{player_name}}. I only wanted to scare the truth out of you—my sister is still in a coma.",
+          "timestamp_label": "10:51 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "The footsteps on the stairs stop dead. All storm shutters instantly rise, flooding the house with cool night breeze.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Your fiancé’s car? Funny—he just pulled into your driveway.",
+          "timestamp_label": "10:51 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "Don’t let him inside—I just uploaded the bedroom audio to the police.",
+          "unsent_placeholder": "Owen unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Headlights sweep across the living room wall. A key turns in the front lock—and your fiancé calls out your name from the foyer.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "The Real Culprit Walks In",
+          "teaser_text": "Owen was ROOT_ADMIN all along—and now the police, the hacker, and your fiancé are about to collide in your living room.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Thermal Lock",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:42 PM · The thermostat hits 110°F. Sweat stings your eyes as sirens wail at the end of your driveway.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Surprise, {{player_name}}. You thought Owen was helping you—while he was holding the master admin key.",
+          "timestamp_label": "11:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen?! Why did you lock me inside my own smart house?!",
+          "timestamp_label": "11:42 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "Garage Side Cam · 11:41 PM — Owen plugging a hardware bypass dongle into the hub."
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[breathing hard through intercom] Your fiancé paid me $30,000 to fake a \"mental breakdown\" tonight so he could void your equity share!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "The smart speakers start blasting fake screaming audio to trick the arriving police:",
+          "options": [
+            {
+              "option_id": "opt_086_e3_free",
+              "label": "Smash the hallway smart-speaker hub",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Shut that speaker off! The cops are going to think I lost my mind!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_086_e3_vip",
+              "label": "Record Owen’s intercom confession live",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "You swing a brass lamp into the wall hub. The fake audio dies in a shower of sparks!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Cute. Too bad the front deadbolt is still locked until the police break it down.",
+          "timestamp_label": "11:42 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Your phone captures every word of Owen naming your fiancé and the $30,000 bribe—timestamped and backed up to cloud.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Got your whole confession on tape, Owen! Open the garage door or you go down for felony entrapment!",
+          "timestamp_label": "11:42 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "Your fiancé is pulling into the driveway right now—he has the forged prenup in his briefcase.",
+          "unsent_placeholder": "Owen unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Wait—if you promise to tell the cops I cooperated, I’ll unlock the basement breaker panel right now!",
+          "timestamp_label": "11:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Too late to negotiate. Your fiancé just walked onto the front porch with the officers.",
+          "timestamp_label": "11:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Porch Lie",
+          "teaser_text": "Your fiancé is telling the police you had a breakdown—while Owen holds the only cloud backup of the $30,000 setup.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Hidden Addendum",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:49 PM · You race down to the cool basement as officers knock loudly on the sealed front door upstairs.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "I popped the garage mag-lock! Grab my tablet off the workbench—the whole chat thread with your fiancé is open!",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... why is there a PDF titled \"Emergency Asset Transfer\" in his messages?!",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "Initiating remote factory wipe on Owen’s workbench tablet...",
+          "unsent_placeholder": "ROOT_ADMIN unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 7,
+          "transcript": "[panicked] Turn on Airplane Mode on the tablet! Your fiancé has the remote-wipe password—he’s erasing the proof!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "A red \"REMOTE WIPE IN 5 SECONDS\" banner flashes across Owen’s tablet:",
+          "options": [
+            {
+              "option_id": "opt_086_e4_free",
+              "label": "Flip Airplane Mode immediately",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Airplane Mode ON! The wipe aborted—I’ve got every message!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_086_e4_vip",
+              "label": "AirDrop the PDF straight to your phone",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "The progress bar freezes at 2%. The entire chat log—and the forged contract—remain intact on the screen.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Yes!! Now throw the main basement breaker so the front door unlocks for the cops!",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "The signed PDF lands on your phone one second before the tablet blanks out—complete with your fiancé’s IP and forged notary stamp.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wipe the tablet all you want—the forged contract is already on MY phone!",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "You heave the heavy red breaker lever down. Every smart lock in the house clicks open in unison.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Go upstairs and show the sergeant! I’m turning myself in right behind you.",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "[SMART HOME HUB OFFLINE — MANUAL OVERRIDE]",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Living Room Collision",
+          "teaser_text": "The smart locks are dead, the forged contract is in your hand—and you’re about to walk upstairs to face your fiancé and the police.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Signed In Forgery",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "11:56 PM · Cool night air floods the foyer. Your fiancé freezes mid-sentence as you step up from the basement calm and unshaken.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "It’s true, officer! I’m the HomeSec tech—he hired me to lock the doors and crank the heat to 110 degrees!",
+          "timestamp_label": "11:56 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Officer, before he tells you I had a breakdown, please look at the contract he paid Owen $30,000 to enforce.",
+          "timestamp_label": "11:56 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Forged Equity Transfer · Created tonight using a stolen e-signature.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 6,
+          "transcript": "[police radio crackling] Check the back pocket of his jacket, officer—he’s still carrying the second bypass key fob!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Your fiancé lunges toward your phone to grab the evidence. React:",
+          "options": [
+            {
+              "option_id": "opt_086_e5_free",
+              "label": "Step back behind the lead officer",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Don’t touch me! Every word of this is already backed up to my lawyer’s cloud!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_086_e5_vip",
+              "label": "Drop your engagement ring on the foyer table",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Two officers intercept your fiancé instantly—and pull the HomeSec bypass fob straight from his pocket.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "That’s the fob! He can’t talk his way out of this now.",
+          "timestamp_label": "11:56 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "The diamond ring rings sharply against the marble console as handcuffs click shut around your fiancé’s wrists.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wedding’s off. Enjoy the precinct holding cell.",
+          "timestamp_label": "11:56 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "System log archived for District Attorney.",
+          "unsent_placeholder": "ROOT_ADMIN unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "They’re putting him in the cruiser. I’m heading to the station to sign my full confession.",
+          "timestamp_label": "11:56 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tell the truth, Owen. It’s the only thing that’ll save you now.",
+          "timestamp_label": "11:56 PM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Factory Reset",
+          "teaser_text": "Your fiancé is arrested for conspiracy and forgery—now it’s time to reclaim your house on your own terms.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Manual Keys Only",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "09:15 AM · Sunlight pours into the quiet living room. A locksmith finishes bolting heavy brass deadbolts onto every door.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "My lawyer said the DA gave me a reduced plea because I handed over the tablet. I’m truly sorry for everything, {{player_name}}.",
+          "timestamp_label": "09:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Just stay out of people’s smart homes, Owen. You got lucky tonight.",
+          "timestamp_label": "09:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "HomeSec fired me and refunded your full installation.",
+          "unsent_placeholder": "Owen unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 5,
+          "transcript": "[distant street traffic] Oh—and the locksmith left the old smart hub in a cardboard box by your curb. Smash it if it makes you feel better.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "You stand over the unplugged smart hub on the porch. Final move:",
+          "options": [
+            {
+              "option_id": "opt_086_e6_free",
+              "label": "Toss the entire smart hub in the bin",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "No cloud locks, no listening speakers. Just brass keys and peace.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_086_e6_vip",
+              "label": "Set the thermostat manually to a crisp 68°F",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "The hub clatters into the recycling bin. Your house is completely silent—and 100% yours.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Deed is solely in my name. Best housewarming gift ever.",
+          "timestamp_label": "09:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Cool air hums gently from the vents as you lock the brass deadbolt with a solid, analog click.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Try overriding a piece of solid brass, ROOT_ADMIN.",
+          "timestamp_label": "09:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Your phone buzzes with a message from your attorney: the restraining order is permanent and the asset fraud charges stuck.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Deleting your contact now. Wishing you a quiet house, {{player_name}}.",
+          "timestamp_label": "09:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Goodbye, Owen.",
+          "timestamp_label": "09:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · House Reclaimed",
+          "teaser_text": "The smart-home trap is dismantled, your fiancé is facing felony charges, and your home belongs only to you.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

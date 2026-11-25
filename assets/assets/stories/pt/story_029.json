@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_029",
+  "lang": "pt",
+  "metadata": {
+    "title": "O AirBnB Com o Sótão Trancado",
+    "subtitle": "A anfitriã mandou uma regra que esqueceu: \"Se o sótão ranger depois da 1h, apague todas as luzes e finja dormir.\"",
+    "genre": "thriller",
+    "tags": [
+      "Cabana",
+      "AirBnB",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_029.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Hóspede)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "ally",
+      "name": "Margo (Anfitriã)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "Hóspede Anterior",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Regra da Casa #7",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "01h04 · Galhos de pinheiro chicoteiam as janelas da cabana na tempestade da serra. Acima da sua cama, tábuas de madeira gemem.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Oi {{player_name}}, mil desculpas pela mensagem tarde! Esqueci a Regra #7: se o alçapão do sótão ranger depois da 1h, apague todas as luzes e NÃO olhe para cima.",
+          "timestamp_label": "01:04",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Como assim?! Por que tem algo se mexendo num sótão trancado?! Tem algum invasor aí em cima?",
+          "timestamp_label": "01:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Não é uma pessoa. E isso odeia telas claras.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Abaixe o brilho da tela agora! E faça o que fizer, NÃO abra o livro de hóspedes de couro no criado-mudo.",
+          "timestamp_label": "01:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[alçapão de madeira correndo devagar, sussurro rouco] ...Está acordada aí embaixo, {{player_name}}? Assine o livro de hóspedes...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "A escada do sótão desce cinco centímetros do alçapão do teto.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Se esconder sob o cobertor e apagar a tela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Me escondendo debaixo das cobertas...",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Abrir o livro de hóspedes de couro",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Olhando o livro de hóspedes...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Pés descalços batem suave no tapete ao lado da sua cama. Algo fareja o ar bem acima da colcha.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: As últimas doze páginas estão cheias com a SUA letra—todas datadas de amanhã: \"Eu nunca fiz check-out.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Espera—por que o app da fechadura inteligente acabou de avisar que a porta da cabana trancou POR DENTRO?",
+          "timestamp_label": "01:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Telefone Fixo da Cabana (Ramal do Sótão)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Uma voz trêmula alerta: \"Margo aluga esta cabana para alimentá-lo! Corra antes que o alçapão abra todo!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa. Na hora, um bilhete escorrega de dentro do livro de hóspedes: \"Margo não é a anfitriã. Olhe a foto do anúncio dela.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Horário de Check-Out: Nunca",
+          "teaser_text": "Episódio 2: A escada do sótão bate com força até o chão.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Escada do Sótão",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "01h12 · A escada de madeira assenta sobre as tábuas do piso. Névoa gelada de pinho desce pela abertura escura.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Fique bem na cama, {{player_name}}. Hóspedes cinco estrelas nunca saem antes do nascer do sol.",
+          "timestamp_label": "01:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você mentiu para mim! Você sabia o que havia lá em cima quando aceitou minha reserva!",
+          "timestamp_label": "01:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[degraus rangendo na descida] ...Um degrau... dois degraus... não acenda a luz da varanda, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "A chave reserva do carro está presa com fita sob o vaso da varanda.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Deixei uma chave reserva do portão sob a samambaia da varanda—Espera, eu não digitei isso! Volte para dentro!",
+          "timestamp_label": "01:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "Uma sombra alcança o último degrau da escada. A porta de vidro da varanda fica a três metros.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Quebrar a porta de vidro com uma cadeira",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Saindo pela varanda!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Queimar o livro de hóspedes na lareira",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Queimando o livro de hóspedes agora mesmo!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "O vidro explode na chuva. Você dispara pela trilha lamacenta—ouvindo um guincho desumano ecoar do sótão.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Chamas azuis devoram as páginas. A figura se dissolve em cinzas e a tranca da frente abre sozinha.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Você alcança a estrada principal e faz sinal para uma caminhonete passando. Seu celular vibra com uma avaliação automática da reserva.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Margo (Anfitriã)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Margo ri gélida: \"Você esqueceu sua jaqueta na cabana, {{player_name}}. Vamos guardá-la no sótão para a próxima vez.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa e checa o app de reservas—o anúncio da cabana sumiu, substituído por \"404: Imóvel Incendiado em 1994.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "5 Estrelas · Assombraria de Novo",
+          "teaser_text": "Final da Temporada · Seu app de reservas acabou de cobrar no cartão por mais uma noite.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Cobrada Por Mais Uma Noite",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "01h12 · Seu app de reservas acabou de estender sua estadia por uma noite—e o teclado da porta da frente trocou o PIN.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, eu não cobrei seu cartão! Alguém entrou na minha conta de anfitriã usando o roteador Wi-Fi de dentro do sótão!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Margo, achei um cartão de acesso reserva colado com fita debaixo da mesa da cozinha—e o alçapão do sótão acabou de destravar!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "Cartão de Acesso Oculto · Gravado \"Manutenção do Sótão — Não Entregar a Hóspedes.\"",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "CREC. CREC. Passos pesados param bem acima da sua cama.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Apague as luzes e finja dormir, {{player_name}}. Eu só fico até o nascer do sol.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Espera—isso não é fantasma. Tem alguém morando no meu sótão entre as reservas!",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[sussurro desesperado de Margo] \"Não suba a escada! Tem um invasor real aí em cima—estou ligando para o xerife agora!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "A escada do sótão começa a deslizar para baixo no corredor.",
+          "options": [
+            {
+              "option_id": "opt_e3_lock_bedroom",
+              "label": "Trancar o quarto e sair pela janela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou destravando a janela do térreo—diga ao xerife que estou na varanda!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_jam_ladder",
+              "label": "Travar a escada do sótão e cortar energia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Esperto",
+              "player_reply_text": "Calcei uma cadeira sob a escada e desliguei as luzes—ele está preso lá em cima!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Corra direto para a estrada principal! Os policiais estão a seis minutos!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Genial! Agora saia para a entrada da garagem—não fique sob o mesmo teto!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Espera—a luz do armário do quarto acabou de acender. Tem um segundo alçapão dentro do armário!",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "O Segundo Alçapão.",
+          "teaser_text": "Episódio 4: Presa na encosta enevoada, você descobre como o \"Hóspede Anterior\" sabia todas as regras da casa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Perseguidor Cinco Estrelas",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "01h28 · Névoa de pinheiros envolve a varanda da cabana. Margo chega na caminhonete com uma lanterna pesada.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Entre na cabine, {{player_name}}! Espera—meu celular acabou de mostrar o perfil real de reserva dele de seis meses atrás. Ele é o empreiteiro que construiu aquele sótão!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele construiu um vão secreto atrás do armário para morar sem pagar aluguel e roubar cartões dos hóspedes?!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Você deixou sua bolsa no balcão da cozinha, {{player_name}}. Volte para dentro e deixe uma avaliação 5 estrelas.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Uma figura escura aparece na janela do sótão lá em cima—segurando sua chave reserva do carro.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Não se mexa! A viatura do xerife acabou de virar na estrada de cascalho—faróis subindo a colina!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Eu devia ter trocado o código-mestre da fechadura inteligente quando demiti ele no outono passado.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[gritos abafados vindos da cabana] \"Ninguém toma minha cabana! Eu construí estas paredes!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Ele desce correndo a escada do sótão rumo à trilha de pinheiros dos fundos.",
+          "options": [
+            {
+              "option_id": "opt_e4_flash_highbeams",
+              "label": "Jogar o farol alto da caminhonete na trilha",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Piscando os faróis altos! Policiais—ele está indo para a trilha dos pinheiros!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_lock_smartdoor",
+              "label": "Travar a tranca inteligente pelo aplicativo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Bloqueio",
+              "player_reply_text": "Usei o código do cartão reserva para trancar a porta dos fundos!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Os policiais viram ele no facho de luz! Estão cercando ele no riacho!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ele deu de cara direto na porta dos fundos trancada—os policiais acabaram de algemá-lo no deck!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Espera—antes de levarem ele, olhe a foto do corredor do sótão que o policial acabou de tirar.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Pego no Deck.",
+          "teaser_text": "Episódio 5: Dentro do esconderijo no sótão, policiais descobrem chaves roubadas de hóspedes de uma dúzia de cabanas.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "O Esconderijo do Sótão",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "01h55 · Luzes azuis da viatura banham a cabana enevoada enquanto policiais escoltam o invasor até o carro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Você não vai acreditar no que acharam lá em cima, {{player_name}}—uma parede inteira de cartões reservas roubados e roteadores de dez aluguéis!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Então toda mensagem assustadora da \"Regra da Casa #7\" era ele tentando impedir hóspedes de olharem para cima?!",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Escada do Sótão · Porta sombria de passagem escondida atrás do falso painel de roupas de cama.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Notificação do App de Reservas: \"Reembolso integral emitido + US$ 500 de crédito de segurança.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sinto muitíssimo, {{player_name}}. Vou lacrar aquele sótão de vez e colocar você no hotel 5 estrelas do centro.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Se não tivesse visto aquele cartão de acesso debaixo da mesa, ninguém teria pegado ele.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[suspiro aliviado de Margo] \"Os policiais recuperaram sua bolsa e chave do carro intactas. Pegue suas malas—vamos sair desta mata.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "O policial devolve a chave do seu carro na varanda.",
+          "options": [
+            {
+              "option_id": "opt_e5_pack_fast",
+              "label": "Pegar as malas e ir para o hotel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Peguei tudo. Vamos para um hotel com zero sótãos!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_leave_review",
+              "label": "Brincar sobre sua futura avaliação 1 estrela",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Sagacidade",
+              "player_reply_text": "Sorte sua que gosto de você, Margo—senão aquele sótão levava 1 estrela!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Suíte no hotel já está paga—com recepção de verdade e segurança.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Haha! Justo—eu incluo café grátis pelo resto da vida!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "A viatura desaparece descendo a colina dos pinheiros. O sótão finalmente está vazio.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Check-Out Concluído.",
+          "teaser_text": "Episódio 6 (Final): Sol da manhã sobre o vale—e uma avaliação final hilária.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Cinco Estrelas Por Sobreviver",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "08h30 · Sol da montanha entra no seu quarto de hotel no centro quando waffles quentes chegam pelo serviço de quarto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Bom dia, {{player_name}}! O xerife ligou—o empreiteiro confessou todas as dez invasões. Todo anfitrião do vale deve a você.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Só garanta que vai emparedar aquela escada do sótão antes do próximo hóspede reservar.",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Já contratei uma equipe certificada para derrubar a parede falsa e instalar trancas de aço.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "App de Reservas: \"Como foi sua estadia? Deixe uma avaliação para Cabana Pine Ridge.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Por favor pegue leve na minha nota de anfitriã—juro que os waffles que mandei são cinco estrelas!",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Falando sério agora, obrigada por manter a cabeça fria ontem à noite.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[rindo calorosa] \"Da próxima vez que visitar as montanhas, fique no hotel—e o jantar é por minha conta!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Seu celular aguarda sua avaliação final.",
+          "options": [
+            {
+              "option_id": "opt_e6_five_stars",
+              "label": "Deixar uma avaliação 5 estrelas irônica",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "5 Estrelas: Ótima vista das montanhas, reviravolta inesquecível à meia-noite.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_toast_waffles",
+              "label": "Curtir os waffles e silenciar o aplicativo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Relaxar",
+              "player_reply_text": "Waffles nota 10, Margo. Até a próxima viagem—sem sótãos!",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Haha, melhor avaliação que vou emoldurar na vida!",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Boa viagem de volta, {{player_name}}!",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Hóspede Anterior · Conta Banida Permanentemente.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Check-Out Seguro.",
+          "teaser_text": "FIM · Sempre confira a trava do sótão antes de apagar as luzes.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

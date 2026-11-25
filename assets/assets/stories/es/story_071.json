@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_071",
+  "lang": "es",
+  "metadata": {
+    "title": "La Subasta de la Tía",
+    "subtitle": "No había pasado una semana del entierro de la abuela cuando la Tía Margaret puso a subasta mi anillo heredado de jade.",
+    "genre": "romance",
+    "tags": [
+      "Herencia",
+      "Reliquia Familiar",
+      "Familia"
+    ],
+    "cover_image": "assets/media/covers/story_071.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "aunt",
+      "name": "Tía Margaret",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7E22CE"
+    },
+    {
+      "id": "appraiser",
+      "name": "Sr. Chen (Valuador)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "cousin",
+      "name": "Lucas (Primo)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Lote #14",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "10:05 AM · Seis días después del funeral de la Abuela. Un valuador de bienes que conociste una vez te escribe urgente.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}, tu Tía Margaret acaba de listar un brazalete de jade imperial como Lote #14 a la 1 PM... grabado por dentro con TUS iniciales.",
+          "timestamp_label": "10:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Tía Margaret! ¡¿Por qué está el brazalete de jade de la abuela en un catálogo de subastas?! ¡Me lo dejó a mí!",
+          "timestamp_label": "10:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "¡Lucas, adelanta la subasta al mediodía y esconde la caja de terciopelo azul antes de que llegue {{player_name}}!",
+          "unsent_placeholder": "Tía Margaret anuló el envío de un mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "No seas codiciosa, {{player_name}}. Sin un inventario por escrito, todo en la casa de la abuela pertenece a la albacea del patrimonio... yo.",
+          "timestamp_label": "10:08 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 11,
+          "transcript": "[en voz baja] Tu abuela visitó mi tienda hace tres meses. Registró el certificado de procedencia de ese brazalete directamente a tu nombre... y dejó una copia en mi bóveda.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "La subasta privada empieza en 90 minutos. ¿Cómo la detienes?",
+          "options": [
+            {
+              "option_id": "opt_get_cert",
+              "label": "Toma certificado y corre a la casa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Guarde ese certificado, Sr. Chen! Paso a recogerlo en diez minutos.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_bring_police",
+              "label": "Levanta alerta de robo con policía",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Redada · Ver Anuncio",
+              "player_reply_text": "Vender bienes registrados sin consentimiento de la dueña es robo mayor. Llevemos a un detective.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Certificado en mano. Ninguna casa de subastas seria tocará el Lote #14 en cuanto vean este sello.",
+          "timestamp_label": "10:12 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "ESCOLTA POLICIAL LISTA: Como el jade imperial está valuado en $180,000, la unidad de Delitos Patrimoniales asigna dos oficiales de inmediato.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "Oye {{player_name}}, cálmate... mamá solo necesitaba efectivo para cubrir la renta de mi restaurante. ¡No hagas un escándalo!",
+          "timestamp_label": "10:14 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Las pujas empiezan al mediodía en punto. Ni te molestes en venir—los guardias de la entrada tienen orden de no dejarte pasar.",
+          "timestamp_label": "10:16 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "A la Una, A las Dos...",
+          "teaser_text": "Episodio 2: El subastador levanta el mazo por el Lote #14... justo cuando las puertas de la mansión se abren de par en par.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "El Mejor Postor",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "12:08 PM · Sala Principal de la Abuela. Cuerdas de terciopelo, veinte coleccionistas ricos. El mazo flota sobre el Lote #14.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "¡Vendido en $195,000! Espera—¡¿quién dejó pasar a {{player_name}} por el portón delantero?!",
+          "timestamp_label": "12:08 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Congelen la venta! Cualquiera que compre el Lote #14 está comprando propiedad robada documentada.",
+          "timestamp_label": "12:09 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "cousin",
+          "text": "¡¡Mamá, el comprador de la primera fila está retirando su cheque!!",
+          "unsent_placeholder": "Lucas anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 10,
+          "transcript": "[con autoridad] Damas y caballeros, inspeccionen el borde interior con una lupa. Lleva las iniciales de {{player_name}} y mi transferencia registral notarizada de hace tres meses.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "La Tía Margaret suelta la caja de terciopelo en pánico. ¿Cuál es tu veredicto?",
+          "options": [
+            {
+              "option_id": "opt_reclaim_jade",
+              "label": "Recupera el brazalete y destitúyela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entrega el brazalete, Tía Margaret. Y mi abogado está pidiendo hoy mismo destituirte como albacea.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_check_safe",
+              "label": "Abre el fondo falso de la caja azul",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bóveda Oculta · Ver Anuncio",
+              "player_reply_text": "Espera—la abuela me dijo que esta caja azul tiene un doble fondo de terciopelo. Veamos qué más casi vendiste.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Los coleccionistas salen disgustados. Deslizas el frío brazalete de jade de la abuela a salvo en tu muñeca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "ESCRITURA OCULTA HALLADA: ¡Escondida bajo el forro de terciopelo está la escritura original de la mansión de la abuela... cedida exclusivamente a {{player_name}}!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "No... ¡no! ¡¿Te dejó toda la casa a ti?! ¡No tenemos adónde ir!",
+          "timestamp_label": "12:15 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Empaca tus letreros de subasta, Tía Margaret. La casa de la abuela cierra por negocios.",
+          "timestamp_label": "12:17 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Reliquia Recuperada",
+          "teaser_text": "Dentro de la escritura de la mansión hay una nota manuscrita de la Abuela: \"Cuídate de quien pregunte por la caja fuerte del sótano.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "La Nota del Sótano",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:48 PM · Mansión de la Abuela. La advertencia escrita a mano de la Abuela sobre la caja fuerte del sótano cobra vida de pronto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "¡{{player_name}}, despierta! ¡Mi teléfono acaba de recibir una alerta de movimiento del sótano de la mansión—y el auto de mamá no está en nuestra entrada!",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La Abuela escribió literalmente: \"Cuídate de quien pregunte por la caja fuerte del sótano.\" ¡La Tía Margaret está allá abajo AHORA MISMO!",
+          "timestamp_label": "11:49 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "cousin",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CAM MOVIMIENTO SÓTANO · 11:46 PM — Una silueta cargando una linterna hacia la bóveda de piedra de la Abuela.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "¡{{player_name}}, acabo de terminar de revisar tu anillo de jade bajo luz UV! ¡La banda interior no es adorno—es una combinación grabada de 6 dígitos para caja fuerte!",
+          "timestamp_label": "11:51 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Más vale que este cerrajero perfore el dial antes de medianoche o mi comprador se retira—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[pasos sobre grava] ¡Voy entrando por la reja lateral de la mansión ahora! ¡Hay una camioneta blanca de cerrajería estacionada tras los setos—mamá de verdad contrató a alguien para taladrar la caja fuerte!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Margaret intenta taladrar la bóveda de la Abuela. ¿Cómo la detienes?",
+          "options": [
+            {
+              "option_id": "opt_call_police_manor",
+              "label": "Llama a la policía por allanamiento",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Soy la dueña legal en la escritura de la mansión... ¡llamando a la policía por robo activo ahora mismo!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_trigger_alarm",
+              "label": "Suena la alarma y cierra el sótano",
+              "cost_type": "vip_rewarded",
+              "badge_text": "In Fraganti · Ver Anuncio",
+              "player_reply_text": "Lucas, enciende los reflectores del sótano y dispara la alarma de la mansión... ¡mantenla ahí hasta que llegue la policía!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "SIRENAS AFUERA: El cerrajero suelta su taladro y sale corriendo cuando los faros de la patrulla barren el patio.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "LUCES CEGADORAS: Los reflectores se encienden de golpe, sorprendiendo a la Tía Margaret con una palanca junto a la caja fuerte intacta de la Abuela.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "¡¿Llamaste a la policía contra tu propia tía?! ¡Solo estaba revisando si había humedad en el sótano!",
+          "timestamp_label": "11:58 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Nadie revisa humedad con un taladro de punta de diamante para cajas fuertes a medianoche, Margaret. Nos vemos en el sótano mañana... vamos a abrirla como se debe.",
+          "timestamp_label": "11:59 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "¿Qué Hay Dentro de la Bóveda de la Abuela?",
+          "teaser_text": "Episodio 4: Usa el código UV oculto del anillo de jade para abrir la caja fuerte del sótano... y descubre por qué Margaret estaba desesperada.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Segunda Valuación",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10:00 AM · Sótano de la Mansión. Con testigo policial presente, marcas los 6 dígitos escondidos dentro de tu anillo de jade.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "¡CLIC! ¡La puerta de la bóveda se abrió! Santo cielo… {{player_name}}, ¡¿sabes qué hay dentro de esa caja de palo de rosa?!",
+          "timestamp_label": "10:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Un colgante de jade imperial haciendo juego, un libro de escrituras antiguas—y una carta dirigida a mí!",
+          "timestamp_label": "10:01 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "Espera—¡¿por qué hay un catálogo privado de subastas metido en la bolsa de mamá con una foto de ESE colgante exacto?!",
+          "timestamp_label": "10:02 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Ya tomé un anticipo de $150,000 del coleccionista extranjero por ese colgante—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "¡Cielos santos! ¡Este juego de jade imperial es calidad de museo—valuado en $1.4 MILLONES! ¡Por eso Margaret intentó robarte el anillo primero!",
+          "timestamp_label": "10:04 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[papeles desdoblándose] {{player_name}}, la carta de la Abuela dice que Tía Margaret recibió un depósito ilegal de un corredor clandestino de subastas el mes pasado... ¡ANTES siquiera de que la Abuela falleciera!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Margaret amenaza con alegar que la Abuela estaba senil a menos que entregues el colgante. ¿Tu jugada?",
+          "options": [
+            {
+              "option_id": "opt_read_letter",
+              "label": "Lee en voz alta la carta notarizada",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "La Abuela hizo que su médico Y su notario certificaran esta carta... sabía que intentarías venderlo antes de su funeral.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_expose_broker",
+              "label": "Denuncia la preventa ilegal al gremio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jaque Mate · Ver Anuncio",
+              "player_reply_text": "¡Sr. Chen, mande el reporte de allanamiento al sótano y el recibo de preventa directo al Gremio Internacional de Subastas!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "SIN PALABRAS: Margaret se desploma sobre una caja de vinos mientras el Sr. Chen sella el juego de jade en un maletín blindado de valuación.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "EN LISTA NEGRA: El corredor cancela el trato de inmediato ¡y le exige a Margaret de vuelta su anticipo de $150K!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Vendiste la reliquia de tu propia madre mientras aún respiraba, Tía Margaret.",
+          "timestamp_label": "10:12 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "¡Tengo un contrato de consignación firmado! ¡Si no entrego ese colgante antes de las 5 PM me quitarán mi casa!",
+          "timestamp_label": "10:13 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Sale a la Luz el Contrato de Consignación",
+          "teaser_text": "Episodio 5: Inspecciona el contrato de consignación falsificado que firmó Margaret... con TU nombre en él.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "La Trampa de la Consignación",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:15 PM · Galería de Valuación del Sr. Chen. El corredor de subastas acaba de mandar por fax el contrato que firmó Margaret.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}, mira la última línea de este contrato de consignación—¡Margaret falsificó TU firma como copropietaria!",
+          "timestamp_label": "2:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "appraiser",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "CONSIGNACIÓN FALSIFICADA · Venta sin autorización de Juego de Jade Imperial ($1.4M) con firma falsificada de la heredera.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "¡Por favor {{player_name}}, solo confirma la firma para que no me arresten! ¡Te daré la mitad del dinero de la subasta!",
+          "timestamp_label": "2:17 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Falsificaste mi nombre para vender el alma de la Abuela por dinero. Ni en sueños, Margaret.",
+          "timestamp_label": "2:18 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Lucas ni siquiera contesta mis llamadas ya, estoy completamente sola—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[suspirando hondo] {{player_name}}, acabo de dar a la policía mi declaración confirmando que mamá practicó tu firma en la mesa de nuestra cocina. Haz lo correcto... protege el legado de la Abuela.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "La casa de subastas anula el contrato y pregunta qué quieres hacer con el juego de jade de $1.4M.",
+          "options": [
+            {
+              "option_id": "opt_bank_vault",
+              "label": "Guarda el jade en la bóveda familiar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sellen el anillo y el colgante juntos en una bóveda bancaria privada... se quedan en nuestra familia para siempre.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_museum_loan",
+              "label": "Préstalo al Museo en honor a Abuela",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Legado Inmortal · Ver Anuncio",
+              "player_reply_text": "Mantengan la propiedad en nuestra familia... ¡y presten el juego al Museo de la Ciudad con una placa en honor a la Abuela!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "PRESERVADO PARA SIEMPRE: El Sr. Chen registra la reliquia en el registro familiar protegido... intocable por cualquier corredor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "HONOR DE MUSEO: El curador acepta de inmediato con seguro total... el nombre de la Abuela brillará por generaciones.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Tu abuela eligió exactamente a la guardiana correcta, {{player_name}}.",
+          "timestamp_label": "2:26 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "El corredor de mamá retiró el gravamen de su casa después de que ella entregó sus joyas para pagarle... y enfrenta libertad condicional por la falsificación.",
+          "timestamp_label": "2:27 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Legado de la Abuela a Salvo",
+          "teaser_text": "Episodio 6 (Final): Reabre la mansión de la Abuela con Lucas y devela la reliquia de jade en su honor.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "La Bóveda de la Abuela",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Un Mes Después · Galería del Patrimonio Urbano. Cálidos reflectores iluminan una vitrina de terciopelo con el nombre de la Abuela.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "¡Más de doscientos invitados vinieron a ver la exposición de Jade Imperial esta noche, {{player_name}}! Tu abuela estaría radiante.",
+          "timestamp_label": "7:00 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Se siente justo verlo celebrado en lugar de escondido en un sótano oscuro... o rematado por codicia.",
+          "timestamp_label": "7:01 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "Gracias por seguir invitándome esta noche, {{player_name}}. Después de todo lo que hizo mamá, casi esperaba que nos cortaras a los dos.",
+          "timestamp_label": "7:02 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Vi la foto del periódico de la exposición de jade—la Abuela tenía razón sobre {{player_name}}—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 8,
+          "transcript": "[aplausos suaves] ¡El director del museo te está llamando al podio para decir unas palabras sobre tu abuela!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Subiendo ahora. Lucas, ven a pararte a mi lado... tú también ayudaste a salvar esto.",
+          "timestamp_label": "7:06 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Tu dedicatoria de cierre desde el podio de la galería:",
+          "options": [
+            {
+              "option_id": "opt_dedicate_grandma",
+              "label": "Dedica la muestra a la Abuela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "La Abuela me enseñó que las verdaderas reliquias no se miden en quilates... se miden en la integridad de quien las custodia.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_manor_library",
+              "label": "Abre la mansión como salón cultural",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Legado Vivo · Ver Anuncio",
+              "player_reply_text": "¡Y este otoño, Lucas y yo abrimos los jardines de la mansión de la Abuela como biblioteca patrimonial gratuita para jóvenes artesanos!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "APLAUSOS DE PIE: La galería resuena con ovaciones mientras el jade reluce suavemente bajo el cristal.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "TRIBUTO VIVO: El Sr. Chen dona en el acto toda su colección de consulta sobre antigüedades para tu nueva biblioteca.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "La Abuela nos está sonriendo desde arriba esta noche, {{player_name}}.",
+          "timestamp_label": "7:12 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Una obra maestra de jade... y una heredera aún más noble.",
+          "timestamp_label": "7:13 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Guardiana Del Jade",
+          "teaser_text": "Frustraste la subasta de medianoche, abriste la bóveda de la Abuela y honraste su legado por generaciones.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

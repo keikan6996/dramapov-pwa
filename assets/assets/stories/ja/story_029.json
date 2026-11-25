@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_029",
+  "lang": "ja",
+  "metadata": {
+    "title": "鍵付きの屋根裏部屋がある民泊",
+    "subtitle": "ホストが伝え忘れたルールを送ってきた――『午前1時以降に屋根裏が軋んだら、照明をすべて消して寝たふりをしてください』。",
+    "genre": "thriller",
+    "tags": [
+      "山小屋",
+      "民泊",
+      "ホラー"
+    ],
+    "cover_image": "assets/media/covers/story_029.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (宿泊客)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "ally",
+      "name": "Margo (ホスト)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "前の宿泊客",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "ハウスルール #7",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前1時04分 · 山の嵐の中、松の枝が山小屋の窓を叩きつけます。あなたのベッドの上で、木の板がギシッと鳴りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "こんにちは{{player_name}}さん、夜分に申し訳ありません！ルール7を伝え忘れていました。午前1時過ぎに屋根裏のハッチが軋んだら、明かりをすべて消して『絶対に』上を見ないでください。",
+          "timestamp_label": "午前1:04",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "はあ？！どうして鍵のかかった屋根裏で何かが動いてるんですか？！誰か不法占拠してるんですか？",
+          "timestamp_label": "午前1:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "人間ではない。そしてそいつは明るい画面を嫌う。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今すぐスマホの画面の明るさを下げてください！そして何があっても、ナイトテーブルの上の革表紙のゲストブックだけは絶対に開かないで。",
+          "timestamp_label": "午前1:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[木製ハッチがゆっくり開く音、しゃがれた囁き声] ……下で起きているのかい、{{player_name}}？ゲストブックに記帳して……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "天井のハッチから屋根裏のハシゴが数センチ下がってきます。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "布団に潜り画面を暗くする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "掛け布団の中に隠れます……",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "革表紙のゲストブックをぱっと開く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "ゲストブックを確認します……",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "あなたのベッドの横のラグに、裸足の足音が鈍く着地しました。何かが掛け布団のすぐ上で空気を嗅いでいます。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：最後の12ページが『あなたの』筆跡で埋め尽くされており――すべて明日の日付でこう書かれていました。『一度もチェックアウトしなかった』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "待って――スマートロックのアプリから、山小屋のドアが『内側』から施錠されたって通知が来たんですけど？！",
+          "timestamp_label": "午前1:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "山小屋固定電話（屋根裏内線）",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "震える声が警告します。『Margoはこの小屋を貸し出してそいつに餌を与えてるんだ！ハッチが全開になる前に逃げろ！』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否すると、即座にゲストブックの下から一枚のメモが滑り出てきます。『Margoはホストじゃない。彼女の掲載写真を見てみろ』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "チェックアウト時刻：永遠になし",
+          "teaser_text": "エピソード2：屋根裏のハシゴが床まで一気に叩き下ろされます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "屋根裏のハシゴ",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前1時12分 · 木製のハシゴが床板にどんと下ります。暗い開口部から冷たい松の霧が流れ落ちてきました。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "そのままベッドから動かないで、{{player_name}}さん。五つ星のゲストは日の出前には決して帰りませんよ。",
+          "timestamp_label": "午前1:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "嘘をついたわね！私の予約を受けた時から、上に何が潜んでいるか知っていたくせに！",
+          "timestamp_label": "午前1:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[軋みながら降りてくるハシゴの音] ……1段……2段……ポーチの電気は点けないで、{{player_name}}……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "車のスペアキーはポーチの植木鉢の下にテープで貼ってある。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ポーチのシダ植物の下に門のスペアキーを置いてあります――待って、今のは私が打っていません！中へ戻ってください！",
+          "timestamp_label": "午前1:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "影がハシゴの一番下の段に降り立ちました。ポーチのガラス扉まであと10フィートです。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "椅子でポーチのガラス扉を叩き割る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ポーチから突き破って脱出します！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "暖炉で革のゲストブックを燃やす",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "今すぐゲストブックを燃やします！",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "雨の中にガラスが砕け散ります。あなたは泥だらけの小道を駆け下ります――屋根裏から人間離れした絶叫が響き渡るのを聞きながら。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：青い炎がページを呑み込みます。人影は灰となって霧散し、玄関の補助錠が勝手にカチリと解錠されました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "幹線道路まで辿り着き、通りかかったトラックを停めたあなた。スマホが自動送信の宿泊レビュー通知で鳴ります。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Margo (ホスト)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Margoが冷たくくすくす笑います。『山小屋にジャケットをお忘れですよ、{{player_name}}さん。次回のために屋根裏に保管しておきますね』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否して予約アプリを確認すると――山小屋のページは消滅し、代わりに『404：1994年に焼失した物件』と表示されていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "星5つ · また取り憑かれたい",
+          "teaser_text": "シーズンフィナーレ · 予約アプリがあなたのカードに、もう1泊分の料金を勝手に請求しました。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "もう1泊分の追加請求",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前1時12分 · 予約アプリが勝手に滞在を1泊延長し――玄関ドアのテンキーの暗証番号が変わりました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}さん、私がカードに請求したんじゃありません！誰かが屋根裏のWi-Fiルーター内から私のホストアカウントにログインしたんです！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Margoさん、キッチンのテーブルの裏にテープで貼られた予備のアクセスカードキーを見つけました――そして屋根裏のハッチの掛け金が今カチリと外れました！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "隠されたアクセスカード · 刻印：『屋根裏保守用 — ゲストには渡さないこと』。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "ギシッ。ギシッ。重い足音があなたのベッドの真上で止まります。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "照明を消して寝たふりをしろ、{{player_name}}。俺がいるのは日の出までだ。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "待って――これ幽霊なんかじゃない。予約と予約の間に誰かが私の屋根裏に勝手に住み着いていたんだ！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Margoの取り乱した小声] 「ハシゴを登らないでください！上に本物の不法侵入者がいます――今すぐ保安官を呼びます！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "屋根裏のハシゴが廊下へゆっくりと滑り降り始めます。",
+          "options": [
+            {
+              "option_id": "opt_e3_lock_bedroom",
+              "label": "寝室に鍵をかけ窓から外へ出る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "1階の窓の鍵を外しました――保安官にポーチにいると伝えて！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_jam_ladder",
+              "label": "ハシゴを固定しブレーカーを落とす",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · スマート",
+              "player_reply_text": "ハシゴの下に椅子を挟んで電気を消しました――奴を上に閉じ込めました！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "真っ直ぐ幹線道路まで走ってください！保安官代理はあと6分で着きます！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "天才です！さあ外の車寄せに出てください――同じ屋根の下に留まってはいけません！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "待って――寝室のクローゼットの電気が今点いたぞ。クローゼットの中に2つ目のハッチがあるんだ！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "2つ目のハッチ。",
+          "teaser_text": "エピソード4：霧深い丘の中腹に追い詰められたあなたは、なぜ『前の宿泊客』がすべてのハウスルールを知っていたのかを知ります。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "五つ星のストーカー",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前1時28分 · 松の霧が山小屋のポーチを包みます。大型の懐中電灯を手にしたMargoがトラックで駆けつけました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "運転席に乗って、{{player_name}}さん！待って――スマホに半年前の彼の本物の予約プロフィールが通知されたわ。あいつ、あの屋根裏を作った施工業者よ！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "タダで住み着いてゲストのカードを盗むために、クローゼットの裏に秘密の床下空間を作ったっていうんですか？！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "キッチンのカウンターに財布を忘れたぞ、{{player_name}}。中に戻ってきて星5つのレビューを書け。",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "2階の屋根裏の窓に黒い人影が現れます――あなたの車のスペアキーを握りしめていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "動かないで！保安官のパトカーが砂利道に曲がったわ――ヘッドライトが丘を上がってくる！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "去年の秋にあいつをクビにした時、スマートロックのマスターコードを変えておくべきだった。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[小屋の中からくぐもった叫び声] 「俺の小屋を誰にも渡すものか！この壁を建てたのは俺なんだ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "男が屋根裏の階段を駆け下り、裏手の松林の小道へ向かって逃げ出します。",
+          "options": [
+            {
+              "option_id": "opt_e4_flash_highbeams",
+              "label": "トラックのハイビームを小道へ向ける",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ハイビームを当てます！保安官の方――奴は松林の小道へ向かってます！",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_lock_smartdoor",
+              "label": "アプリからスマートロックを施錠する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 封鎖",
+              "player_reply_text": "予備アクセスカードのコードを使って裏口をデッドボルト施錠しました！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "保安官代理が光の中で彼を捉えたわ！小川の手前で退路を断ってる！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "施錠された裏口に激突した――保安官代理がデッキの上で彼に手錠をかけたわ！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "待って――連行される前に、保安官が今撮ったばかりの屋根裏廊下の写真を見てください。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "デッキでの現行犯逮捕。",
+          "teaser_text": "エピソード5：屋根裏の隠れ家から、十数軒の山小屋の盗まれたゲスト用カードキーが発見されます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "屋根裏の隠れ家",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前1時55分 · 青いパトライトが霧の山小屋を照らす中、保安官代理たちが不法占拠者をパトカーへと連行します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "上で何が見つかったか信じられないはずよ、{{player_name}}さん――10軒の貸別荘から盗み出したスペアカードキーとルーターが壁一面に並んでいたわ！",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "じゃああの気味の悪い『ハウスルール7』のメッセージは全部、ゲストが上を見ないようにさせるための工作だったんですね？！",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "屋根裏階段 · 偽装リネンパネルの裏に隠された薄暗い床下空間の扉。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "予約アプリ通知：『全額返金処理完了 ＋ 500ドル安全補償クレジット付与』。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "本当に申し訳ありませんでした、{{player_name}}さん。あの屋根裏は永久に塞いで、あなたにはダウンタウンの5つ星ロッジを用意させていただきます。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "テーブルの下のアクセスカードを見つけてくれなかったら、誰も奴を捕まえられなかった。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Margoの安堵のため息] 「保安官がお財布も車の鍵も無傷で回収してくれたわ。荷物を掴んで――この森から出ましょう」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "ポーチで保安官代理があなたに車の鍵を返してくれます。",
+          "options": [
+            {
+              "option_id": "opt_e5_pack_fast",
+              "label": "荷物を掴んでロッジへと向かう",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "全部揃いました。屋根裏部屋がゼロのホテルへ行きましょう！",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_leave_review",
+              "label": "これから書く星1つレビューの冗談を言う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 機転",
+              "player_reply_text": "私がMargoさんのこと気に入ってて助かりましたね――じゃなきゃあの屋根裏は星1つでしたよ！",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ロッジのスイートは支払い済みです――ちゃんとしたフロントと警備員つきでね。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "あはは、ごもっともだわ――生涯コーヒー無料特典をお付けします！",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "パトカーが松の丘を下って消えていきます。屋根裏はついに空っぽになりました。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "チェックアウト完了。",
+          "teaser_text": "エピソード6（フィナーレ）：谷に朝の陽光が差し込み――そして愉快な最後のレビューを投稿します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "生還の五つ星",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前8時30分 · ダウンタウンのホテルの部屋に山の朝日が差し込み、ルームサービスから焼きたてのワッフルが届きます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "おはよう、{{player_name}}さん！保安官から電話があって、あの施工業者が10件すべての侵入を自白したそうよ。谷中のホストがあなたに感謝してるわ。",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "次のゲストが予約する前に、あの屋根裏のハシゴをレンガで塞ぐのだけは忘れないでくださいね。",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "すでに認定業者を手配して、偽装壁を撤去して鋼鉄製のロックを取り付けさせる手はずよ。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "予約アプリ：『ご滞在はいかがでしたか？パインリッジ・キャビンのレビューを投稿してください』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "どうか私のホスト評価はお手柔らかに――送ったワッフルは本物の五つ星だと誓いますから！",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "でも本当に、昨夜は冷静に対処してくれてありがとうございました。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[温かく笑いながら] 「今度山へ来る時はロッジに泊まってくださいね――ディナーは私のおごりですから！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "スマホがあなたの最後のレビュー投稿を待っています。",
+          "options": [
+            {
+              "option_id": "opt_e6_five_stars",
+              "label": "お茶目な星5つ『アクション』レビューを書く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "星5つ：素晴らしい山の眺めと、忘れられない真夜中のどんでん返し。",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_toast_waffles",
+              "label": "ワッフルを味わい予約アプリをミュートする",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 余裕",
+              "player_reply_text": "ワッフル10点満点でした、Margoさん。また次の旅行で――屋根裏なしで！",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "はは、額縁に入れて飾る最高のレビューだわ！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "気をつけて運転して帰ってくださいね、{{player_name}}さん！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "前の宿泊客 · アカウント永久停止。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · 安全なチェックアウト。",
+          "teaser_text": "THE END · 明かりを消す前には、必ず屋根裏の掛け金を確認しましょう。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

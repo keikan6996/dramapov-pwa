@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_086",
+  "lang": "pt",
+  "metadata": {
+    "title": "Invasão da Casa Inteligente",
+    "subtitle": "Meu termostato subiu para 42 °C, as fechaduras inteligentes selaram tudo e as caixas de som estão tocando meus segredos.",
+    "genre": "thriller",
+    "tags": [
+      "Casa Inteligente",
+      "Hacker",
+      "Preso"
+    ],
+    "cover_image": "assets/media/covers/story_086.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "owen",
+      "name": "Owen · Seg. Residencial",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "root",
+      "name": "ROOT_ADMIN",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#064E3B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Bloqueio Térmico",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "22h41 · ALERTA HOME OS: Todas as trancas perimetrais travadas. Venezianas de tempestade baixadas. Aquecimento no MÁXIMO (42 °C).",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen!! Seu aplicativo de casa inteligente me trancou dentro da minha própria casa e botou o aquecedor a 42 graus!",
+          "timestamp_label": "22:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Checando sua central agora, {{player_name}}... Espera, minhas credenciais de técnico acabaram de ser revogadas! Alguém está logado como ROOT_ADMIN de dentro da sua garagem.",
+          "timestamp_label": "22:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "root",
+          "duration_sec": 7,
+          "transcript": "[ecoando pelas caixas de som da sala] \"Lembra da terça-feira passada, {{player_name}}? Você prometeu que ninguém jamais descobriria o que houve na Rodovia 9.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Essa é uma gravação do meu quarto! Você instalou escuta nas minhas caixas inteligentes?!",
+          "timestamp_label": "22:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "O ar está escaldante. O suor arde nos seus olhos. O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_086_e1_free",
+              "label": "Quebrar o quadro de disjuntores no hall",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Vou cortar a energia principal — quero ver suas trancas inteligentes segurarem sem eletricidade!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_086_e1_vip",
+              "label": "Pedir a Owen o PIN de restauração",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Owen, me dê o código de destravamento físico antes que eu desmaie!",
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Você desliga o disjuntor geral. As luzes morrem — então uma bateria reserva verde zune ganhando vida. Trancas de segurança permanecem firmes.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "O banco de baterias solares está em 98%, {{player_name}}. Agora você está cozinhando no escuro.",
+          "timestamp_label": "22:45",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Segure o furinho atrás do termostato do corredor por 5 segundos e digite 9941! Espera — isso vai destrancar a porta da garagem TAMBÉM!",
+          "timestamp_label": "22:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "Você digita 9941. Todas as trancas abrem com um clique de uma vez — inclusive a pesada porta de aço levando à garagem escura.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "Minha irmã era a ciclista que você abandonou na Rodovia 9, {{player_name}}. Hora de confessar.",
+          "unsent_placeholder": "ROOT_ADMIN apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Espera... o sensor de movimento da garagem acabou de disparar! Tem alguém subindo a escada interna agora mesmo!",
+          "timestamp_label": "22:46",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "A Porta Para a Garagem",
+          "teaser_text": "A casa não foi só hackeada — virou um tribunal. E ROOT_ADMIN acabou de pisar na cozinha.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Comando Manual",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "22h48 · Você se agacha atrás do corrimão do andar de cima. Lá embaixo, toda TV inteligente pisca ligando para mostrar imagens de câmera veicular da Rodovia 9.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "owen",
+          "caller_label": "Owen · HomeSec",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[sirenes distantes] {{player_name}}, burlei a veneziana da janela da varanda máster! Abriu sessenta centímetros — saia pelo galho do carvalho!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Forcei a abertura da veneziana da varanda máster! Saia para o telhado AGORA — a polícia está a 4 minutos!",
+          "timestamp_label": "22:48",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Olhe mais de perto o horário da câmera veicular, {{player_name}}. Sei que não era você dirigindo. Me diga quem era — e eu deixo você ir.",
+          "timestamp_label": "22:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você instalou minha casa inteligente mês passado... Espera. Essa voz nas caixas de som—",
+          "timestamp_label": "22:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Passos sobem a escada devagar. Tome sua decisão:",
+          "options": [
+            {
+              "option_id": "opt_086_e2_free",
+              "label": "Correr para a veneziana da suíte máster",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_086_e2_vip",
+              "label": "Mandar o nome do motorista a ROOT_ADMIN",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Era o carro do meu noivo! Ele tomou meu celular para eu não ligar para o 190!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Você desliza sob a veneziana da varanda para o ar fresco da noite — e congela. A van HomeSec de Owen está estacionada bem abaixo de você, com o notebook brilhando no capô.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Desça, {{player_name}}. Só queria arrancar a verdade de você no susto — minha irmã ainda está em coma.",
+          "timestamp_label": "22:51",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Os passos na escada estacam na hora. Todas as venezianas de tempestade sobem imediatamente, inundando a casa com brisa fresca da noite.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "root",
+          "text": "O carro do seu noivo? Engraçado — ele acabou de entrar na garagem da sua casa.",
+          "timestamp_label": "22:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "Não deixe ele entrar — acabei de subir o áudio do quarto para a polícia.",
+          "unsent_placeholder": "Owen apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Faróis varrem a parede da sala de estar. Uma chave gira na fechadura da frente — e seu noivo chama seu nome do saguão.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "O Verdadeiro Culpado Entra",
+          "teaser_text": "Owen era ROOT_ADMIN o tempo todo — e agora a polícia, o hacker e seu noivo estão prestes a colidir na sua sala de estar.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Tranca Térmica",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "23h42 · O termostato bate 43 °C. O suor arde nos seus olhos quando sirenes uivam na entrada da garagem.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Surpresa, {{player_name}}. Você achou que o Owen estava te ajudando — enquanto ele segurava a chave mestra de admin.",
+          "timestamp_label": "23:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen?! Por que você me trancou dentro da minha própria casa inteligente?!",
+          "timestamp_label": "23:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "Câmera Lateral da Garagem · 23h41 — Owen plugando um adaptador físico de desvio na central."
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[respirando pesado pelo interfone] Seu noivo me pagou US$ 30.000 para simular um \"surto psicótico\" hoje à noite para ele poder anular sua parte acionária!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "As caixas inteligentes começam a tocar áudios falsos de gritos para enganar a polícia que chega:",
+          "options": [
+            {
+              "option_id": "opt_086_e3_free",
+              "label": "Quebrar a central das caixas de som",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Desliga essa caixa! A polícia vai achar que eu perdi a cabeça!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_086_e3_vip",
+              "label": "Gravar ao vivo a confissão de Owen",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Você acerta um abajur de latão contra a central da parede. O áudio falso morre numa chuva de faíscas!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Bonitinho. Pena que a tranca principal da frente continua fechada até a polícia arrombar.",
+          "timestamp_label": "23:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Seu celular capta cada palavra de Owen citando seu noivo e a propina de US$ 30.000 — com hora marcada e salvo na nuvem.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tenho toda a sua confissão gravada, Owen! Abra a porta da garagem ou vai responder por cárcere privado qualificado!",
+          "timestamp_label": "23:42",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "Seu noivo está estacionando agora mesmo — ele está com o pacto antenupcial falsificado na pasta.",
+          "unsent_placeholder": "Owen apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Espera — se você prometer dizer à polícia que eu cooperei, destranco o quadro de disjuntores do porão agora mesmo!",
+          "timestamp_label": "23:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "Tarde demais para negociar. Seu noivo acabou de subir na varanda da frente com os policiais.",
+          "timestamp_label": "23:42",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "A Mentira na Varanda",
+          "teaser_text": "Seu noivo está dizendo à polícia que você teve um surto — enquanto Owen guarda o único backup na nuvem da armação de US$ 30.000.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Aditivo Oculto",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "23h49 · Você corre para o porão fresco enquanto policiais batem alto na porta da frente lacrada lá em cima.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Abri a trava magnética da garagem! Pegue meu tablet da bancada — toda a conversa com seu noivo está aberta!",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... por que tem um PDF chamado \"Transferência Emergencial de Bens\" nas mensagens dele?!",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "Iniciando limpeza remota de fábrica no tablet da bancada de Owen...",
+          "unsent_placeholder": "ROOT_ADMIN apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 7,
+          "transcript": "[em pânico] Ligue o Modo Avião no tablet! Seu noivo tem a senha de limpeza remota — ele está apagando a prova!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Um aviso vermelho \"LIMPEZA REMOTA EM 5 SEGUNDOS\" pisca na tela do tablet de Owen:",
+          "options": [
+            {
+              "option_id": "opt_086_e4_free",
+              "label": "Ativar o Modo Avião imediatamente",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Modo Avião LIGADO! A limpeza abortou — tenho todas as mensagens!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_086_e4_vip",
+              "label": "Mandar o PDF via AirDrop ao seu celular",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "A barra de progresso congela em 2%. Todo o histórico do chat — e o contrato falsificado — permanecem intactos na tela.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "ISSO!! Agora puxe o disjuntor geral do porão para a porta da frente destrancar para a polícia!",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "O PDF assinado cai no seu celular um segundo antes de o tablet apagar — completo com o IP do seu noivo e o carimbo falsificado de cartório.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Limpe o tablet o quanto quiser — o contrato falsificado já está no MEU celular!",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Você baixa a pesada alavanca vermelha do disjuntor. Toda fechadura inteligente da casa estala aberta em uníssono.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Suba e mostre ao sargento! Estou me entregando logo atrás de você.",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "[CENTRAL INTELIGENTE OFFLINE — COMANDO MANUAL]",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Colisão na Sala de Estar",
+          "teaser_text": "As fechaduras inteligentes morreram, o contrato falsificado está na sua mão — e você está prestes a subir para encarar seu noivo e a polícia.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Assinado em Falsificação",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "23h56 · Ar fresco da noite inunda o saguão. Seu noivo congela no meio da frase quando você sobe do porão calma e firme.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "É verdade, policial! Sou o técnico da HomeSec — ele me contratou para trancar as portas e subir o calor para 43 graus!",
+          "timestamp_label": "23:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Policial, antes que ele diga que tive um surto, por favor olhe o contrato que ele pagou US$ 30.000 ao Owen para forçar.",
+          "timestamp_label": "23:56",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Transferência Patrimonial Falsificada · Criada hoje à noite usando assinatura digital roubada.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 6,
+          "transcript": "[rádio policial chiando] Reviste o bolso de trás do casaco dele, policial — ele ainda está carregando a segunda chave eletrônica de desvio!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Seu noivo avança para o seu celular tentando agarrar a prova. Reaja:",
+          "options": [
+            {
+              "option_id": "opt_086_e5_free",
+              "label": "Recuar para trás do policial principal",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Não encoste em mim! Cada palavra disto já está salva na nuvem do meu advogado!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_086_e5_vip",
+              "label": "Largar o anel de noivado na mesa do hall",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Dois policiais interceptam seu noivo na hora — e puxam o controle de desvio da HomeSec direto do bolso dele.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Esse é o controle! Ele não tem mais como sair dessa agora.",
+          "timestamp_label": "23:56",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "O anel de diamante tilinta agudo contra o aparador de mármore quando algemas fecham nos pulsos do seu noivo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Casamento cancelado. Aproveite a cela da delegacia.",
+          "timestamp_label": "23:56",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "Registro do sistema arquivado para a Promotoria Distrital.",
+          "unsent_placeholder": "ROOT_ADMIN apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Estão colocando ele na viatura. Estou indo para a delegacia assinar minha confissão completa.",
+          "timestamp_label": "23:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Conte a verdade, Owen. É a única coisa que vai te salvar agora.",
+          "timestamp_label": "23:56",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Restauração de Fábrica",
+          "teaser_text": "Seu noivo foi preso por associação criminosa e falsificação — agora é hora de retomar sua casa nos seus próprios termos.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Somente Chaves Manuais",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "09h15 · A luz do sol inunda a sala de estar silenciosa. Um chaveiro termina de instalar trancas pesadas de latão em cada porta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Meu advogado disse que o promotor me deu acordo reduzido porque entreguei o tablet. Sinto muito mesmo por tudo, {{player_name}}.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Apenas fique longe das casas inteligentes dos outros, Owen. Você teve sorte hoje.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "A HomeSec me demitiu e devolveu 100% da sua instalação.",
+          "unsent_placeholder": "Owen apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 5,
+          "transcript": "[trânsito distante na rua] Ah — e o chaveiro deixou a antiga central inteligente numa caixa de papelão na calçada. Quebre se te fizer sentir melhor.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Você para diante da central inteligente desligada na varanda. Jogada final:",
+          "options": [
+            {
+              "option_id": "opt_086_e6_free",
+              "label": "Jogar toda a central inteligente no lixo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sem trancas na nuvem, sem caixas ouvindo. Apenas chaves de latão e paz.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_086_e6_vip",
+              "label": "Ajustar o termostato manualmente a 20 °C",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "A central cai com barulho na lixeira reciclável. Sua casa está completamente silenciosa — e 100% sua.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A escritura está somente no meu nome. Melhor presente de casa nova de todos.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Ar fresco zune suave pelas saídas enquanto você gira a tranca de latão com um clique firme e analógico.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tente burlar um pedaço de latão maciço, ROOT_ADMIN.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Seu celular vibra com uma mensagem do seu advogado: a medida protetiva é permanente e as acusações de fraude patrimonial foram aceitas.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Apagando seu contato agora. Desejo a você uma casa silenciosa, {{player_name}}.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Adeus, Owen.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Casa Retomada",
+          "teaser_text": "A armadilha da casa inteligente foi desmontada, seu noivo responde por crimes graves e seu lar pertence apenas a você.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

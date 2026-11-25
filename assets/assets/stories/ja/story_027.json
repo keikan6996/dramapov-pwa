@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_027",
+  "lang": "ja",
+  "metadata": {
+    "title": "B病棟の夜勤看護師",
+    "subtitle": "14番ベッドからナースコールが鳴った。14番ベッドは2019年の火災以来、ずっと空き室のはずなのに。",
+    "genre": "thriller",
+    "tags": [
+      "病院",
+      "夜勤",
+      "ホラー"
+    ],
+    "cover_image": "assets/media/covers/story_027.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (看護師)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "ally",
+      "name": "Patel医師 (救命救急)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "14号室ナースコール",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "14番ベッドが呼んでいる",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2時52分 · B病棟は死んだように静まり返っています。突然、14号室の上の赤いランプが点灯し、3回チャイムが鳴りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、中央タブレットに14番ベッドの呼び出しが表示されているぞ。配線の誤作動だと言ってくれ。",
+          "timestamp_label": "午前2:52",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "14号室は外から南京錠で施錠されています、先生。すりガラス越しに赤いランプが光っているのが見えます。",
+          "timestamp_label": "午前2:53",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "点滴が空になった。交換しに来て。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "絶対にその部屋の鍵を開けるな！警備が来るまで待て――システム上で14番ベッドの患者カルテが勝手に自動更新されたぞ！",
+          "timestamp_label": "午前2:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[心電図の平坦な警告音、喘ぐような息遣い] ……{{player_name}}看護師……すごく苦しいの……ドアを開けて……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "鍵のかかった扉の向こうで、重いストレッチャーがタイルの上を擦って動く音がします。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "ナースコール盤を強制リセットする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "コール盤の電源を落とします！",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "更新された14番ベッドのカルテを開く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "患者カルテを確認します……",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "盤の電源は落ちました――それなのに14号室の中ではナースコールがますます速く鳴り続けています。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：患者氏名：{{player_name}}。入院日時：今夜 午前3時00分。容態：危篤。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警備が応答しない！しかもB病棟行きのエレベーターが勝手に保守点検モードでロックされたぞ！",
+          "timestamp_label": "午前2:56",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "14号室インターホン",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "かすれた声が囁きます。『火事の時、私の拘束ベルトを外し忘れたわね、看護師さん。今度はあなたの番よ』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否すると、14号室の鋼鉄の南京錠が真っ二つに弾け飛び、床に落ちました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "14号室が開いた",
+          "teaser_text": "エピソード2：B病棟に煙の匂いが流れ込み――扉が大きく押し開かれます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "B病棟コード・ブラック",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2時58分 · 濃い灰色の煙がリノリウムの床を這います。14号室から無人の車椅子がゆっくりと転がり出てきました。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "2人の警備員と一緒に非常階段を駆け上がっている！薬品庫の中に鍵をかけて隠れろ、{{player_name}}！",
+          "timestamp_label": "午前2:58",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "車椅子が私のデスクのすぐ前で止まりました。車輪が濡れた黒い煤の跡を残しています。",
+          "timestamp_label": "午前2:59",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[酸素マスクのシューという音] ……脈を測って、{{player_name}}……どうして誰も私の脈を見てくれないの？……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "ガラスの薬品棚に映った姿を見てみなさい。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "4階の踊り場まで来た――待て、B病棟への階段扉が灼熱のように熱い！取っ手に触れない！",
+          "timestamp_label": "午前3:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "時計が午前3時00分を打ちます。病院の照明が深紅に点滅しました。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "火災報知器のスプリンクラーレバーを引く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "火災報知器を作動させます！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "車椅子に新しい患者リストバンドを置く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "14番ベッドの退院タグを書きます……",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "天井から冷たい水が降り注ぎます。煙が音を立てて消え――無人の車椅子が横倒しに崩れ落ちました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：あなたが『もうお家に帰っていいですよ』と囁くと、熱気が一瞬で消え去り、階段室の扉がカチリと開きました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Patel医師がずぶ濡れになってB病棟へ飛び込んできます。14号室の扉は再び閉まっており――南京錠も元通り掛かっていました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Patel医師 (救命救急)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Patel医師があなたの手首を凝視します。『{{player_name}}……いつから14番ベッドの患者用リストバンドを着けていたんだ？』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "自分の手首を見下ろすと――真新しい白い病院用バンドがきつく巻かれていました。『14番ベッド — {{player_name}}』。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "午前3時00分 退院",
+          "teaser_text": "シーズンフィナーレ · プラスチック製のリストバンドには留め具がありません。切り外すことはできないのです。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "外れないリストバンド",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前3時08分 · 腕に巻かれたプラスチックの患者用リストバンドには留め具がなく――真新しいインクで『B病棟 · 14番ベッド』と印字されています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、医療用ハサミで切ろうとするな――手首を傷つけるぞ！今すぐERのトリアージデスクへ降りてこい！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Patel先生、エレベーターがER階に降りてくれません！どの階のボタンを押してもB病棟に戻されてしまいます！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "B病棟廊下 · 14号室の外に立つ、焼け焦げた病衣姿の黒い人影。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "ナースコールシステム：『14番ベッド · 最優先コードブルー。{{player_name}}看護師、至急出動せよ』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "2019年に警報が鳴った時、あなたは私を見捨てた。どうして誰も私のカルテを見てくれないの？",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "待て――2019年の火災は事故じゃなかった。誰かが外から14号室に鍵をかけたんだ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[インターホン越しに煙で咳き込む声] 「14番ベッドに留められたカルテを見て……慰霊碑に私の本当の名前は載っていない」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "焼け焦げた廊下が前方に続いています。14号室の扉が半開きになっていました。",
+          "options": [
+            {
+              "option_id": "opt_e3_enter_room14",
+              "label": "カルテを確認しに14号室へ足を踏み入れる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "14号室の中に入ります、Patel先生――チャットを繋いだままにしてください！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_pull_records",
+              "label": "Patel医師に2019年火災記録を引かせる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 調査",
+              "player_reply_text": "私が戸口を確認している間に、今すぐ2019年のB病棟火災記録を引っ張り出してください！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "スマホのライトをぶれさせるな！そのクリップボードに挟まっているものの写真を送ってくれ！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "見つけたぞ！病院長が14号室の欠陥酸素バルブを承認し――しかもその患者のDNAカルテを隠蔽していたんだ！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "腕のリストバンドが温かさを帯びます。14号室の剥き出しのスプリングの上で、金属製のクリップボードが鈍く光っていました。",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "葬られたカルテ。",
+          "teaser_text": "エピソード4：2019年の酸素バルブ隠蔽工作は、今も病院理事会で働くある人物を真っ直ぐ指し示していました。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "コード・ブラック隠蔽工作",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前3時20分 · 14号室の中にはかすかな煙の匂いが残っています。焦げたクリップボードを持ち上げると――中に法医学DNA報告書が挟まっていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "2019年のアーカイブをスキャンしたぞ、{{player_name}}！14番ベッドの患者は、遺族が理事会を訴えられないよう『身元不明の女性（ジェーン・ドゥ）』として登録されていたんだ！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Patel先生、DNA一致結果は2019年の時点で印刷されてた――それを病院長がこの封鎖病棟の中に隠していたんですね！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "誰にも私の本当の名前を見られないように、彼がこの病棟の扉に鍵をかけたのよ、{{player_name}}。警察に渡して。",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "階段室から重い足音が響きます――夜間監督官が今、B病棟のカメラを無効化しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "夜間監督官は病院長の弟（兄）だ！お前がB病棟にカードキーで入ったのを把握してる――備品室に隠れろ！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "このDNAカルテを持ったまま見つかったら、今夜B病棟でまた『事故』が起きるぞ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[優しく唸るコールベル] 「リネンラックの裏にある業務用ダムウェーターがERへ直通しているよ、{{player_name}}」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "14号室のドアの下の隙間を、懐中電灯の光が横切ります。",
+          "options": [
+            {
+              "option_id": "opt_e4_send_photo",
+              "label": "DNAカルテを撮影しPatel医師へ送信する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今カルテを送ります――奴がWi-Fiを切る前に州委員会へアップロードしてください！",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_trigger_alarm",
+              "label": "B病棟の火災報知器を引きERを呼ぶ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 大胆",
+              "player_reply_text": "火災報知器を引きます！病院中の人間をここに呼び寄せましょう！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "受け取った！全ページバックアップ完了――今すぐ階段室へ向かえ、警備を連れて上がる！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "スプリンクラーと警報が作動したぞ！ERの警備隊がB病棟へ駆け上がってる――持ちこたえろ！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "今あなたが送った法医学報告書を見て――その患者の姉妹は、まさにこの街の現役の看護師よ。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "暴かれたB病棟。",
+          "teaser_text": "エピソード5：警備隊がB病棟へ殺到し、病院長による2019年の隠蔽工作が崩壊します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "特定された患者",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前3時42分 · 点滅する赤いライトがB病棟を照らし、病院の警備員が扉の前で夜間監督官を取り押さえます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警備が奴を確保したぞ、{{player_name}}！それにDNA報告書は今、郡検視官へ直接送信した！",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Patel先生……私の手首を見てください！プラスチックの患者リストバンドが勝手にパチンと開いて外れました！",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "法医学DNA報告書 · 2019年B病棟火災 — 14番患者はElena Parkと正式に身元特定。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "14号室ナースコール：7年ぶりにランプが消灯しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "煙の匂いが完全に消えたな。君がElena Parkに自分の名前を返してあげたんだ、{{player_name}}。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "ERで12年働いてきたが、今夜のようなことは一度も見たことがない。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[澄んだ安らかな声] 「ナースコールに出てくれてありがとう、{{player_name}}看護師さん。妹（姉）に、私は大丈夫だって伝えて」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "B病棟の廊下が温かく静かな空気に包まれる中、あなたは外れたリストバンドを拾い上げます。",
+          "options": [
+            {
+              "option_id": "opt_e5_log_discharge",
+              "label": "カルテにElenaの正式な退院を記録する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "尊厳ある退院処理完了。安らかに眠って、Elena。",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_call_sister",
+              "label": "今すぐElenaの姉妹へ連絡するよう頼む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 決着",
+              "player_reply_text": "警察の手続きが終わり次第、一緒に彼女の姉妹へ電話をかけましょう。",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "君がこれから署名する中で、最も意義深いカルテ記載になるな。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "すでに検視官の連絡員に電話をかけている。日の出までにはご家族に知らされるはずだ。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "ERの休憩室へ降りて――あなたのシフトは正式に終了よ。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "コール消灯。",
+          "teaser_text": "エピソード6（フィナーレ）：日の出とともにB病棟はついに平穏を取り戻し――夜勤に一人のヒーローが誕生します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "朝の回診",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前6時20分 · ERロビーに朝日が差し込みます。慰霊碑の前で、Elenaの姉妹が涙ながらにあなたを抱きしめました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "病院長は1時間前に辞任したよ、{{player_name}}。州の捜査官が彼の執務室を封印した。",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "それとナースステーションの後ろのB病棟モニターを見てください――14番ベッドが完全に消灯しています。",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "7年間の沈黙が、たった一晩の夜勤で終わったな。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "ナースコールシステム：『全ベッド異常なし。気をつけてお帰りください、{{player_name}}』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "次の3日間は休みなさい――医師の命令だ。君は十分それに値する働きをした。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "この病院に在籍した中で、最高の夜勤看護師だ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[温かく誇らしげな声] 「帰ってちゃんと眠りなさい、{{player_name}}。朝の回診は私が引き受けたから」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "あなたは退勤打刻をし、澄んだ朝の空気の中へと一歩踏み出します。",
+          "options": [
+            {
+              "option_id": "opt_e6_clock_out",
+              "label": "退勤して家に帰りぐっすり眠る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "また木曜日に、Patel先生。もう幽霊コールはなしですね！",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_place_ribbon",
+              "label": "B病棟の慰霊碑に白いリボンを結ぶ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 名誉",
+              "player_reply_text": "Elenaのために白いリボンを残しました。おやすみなさい、Patel先生。",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ゆっくり眠れよ、ヒーロー。",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "彼女はもう二度と忘れられることはない。しっかり休みなさい。",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "14号室ナースコール · 永久に停止完了。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · 安らかに眠れ、14番ベッド。",
+          "teaser_text": "THE END · 暗闇からの呼び出しの中には、ただ応えてくれる勇敢な誰かを待っているだけのものもあるのです。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

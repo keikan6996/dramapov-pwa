@@ -1,0 +1,1040 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_084",
+  "lang": "ko",
+  "metadata": {
+    "title": "옷 안감 속의 에어태그",
+    "subtitle": "\"오후 6시 4분부터 알 수 없는 에어태그가 당신과 함께 이동 중입니다.\" 그때 지하철 두 좌석 건너편의 낯선 자가 문자를 쓰기 시작한다.",
+    "genre": "thriller",
+    "tags": [
+      "스토커",
+      "지하철",
+      "위치 추적기"
+    ],
+    "cover_image": "assets/media/covers/story_084.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#EA580C"
+    },
+    {
+      "id": "liam",
+      "name": "Liam · 오빠",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "seat4b",
+      "name": "4B 좌석",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3F3F46"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "당신과 함께 이동 중",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오후 10:12 · 위치 추적 알림: 오후 6시 4분부터 알 수 없는 에어태그가 당신과 함께 이동 중입니다. 탭하여 사운드 재생.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "오빠, 나 막차 레드라인 지하철 탔는데 방금 내 폰에 나랑 같이 움직이는 미지의 에어태그가 떴어!",
+          "timestamp_label": "오후 10:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "지금 당장 코트 주머니랑 백팩 지퍼 다 뒤져봐! 절대 빈 역에서 내리지 마, {{player_name}}.",
+          "timestamp_label": "오후 10:13",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "narrator",
+          "text": "당신이 '사운드 재생'을 누릅니다. 찢어진 안감 속에 깔끔하게 꿰매진 코트 밑단 안에서 희미한 금속성 삐 소리가 진동합니다. 경고음을 죽이기 위해 스피커에 구멍이 뚫려 있습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "seat4b",
+          "text": "코트는 자리에 두고 내려, {{player_name}}. 누가 그 추적기 값을 댔는지 알고 싶지 않을 테니까.",
+          "unsent_placeholder": "4B 좌석 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "통로 건너편의 회색 모자를 쓴 남자가 창문 비침을 통해 당신과 눈이 마주칩니다:",
+          "options": [
+            {
+              "option_id": "opt_084_e1_free",
+              "label": "에어태그를 뜯어내 쓰레기통에 버린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "다음 역에서 추적기 버리고 다른 칸으로 옮길게.",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_084_e1_vip",
+              "label": "먼저 에어태그 NFC 시리얼 번호를 스캔한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "오크 역에서 출입문이 치익 열립니다. 당신이 승강장에 에어태그를 던집니다—하지만 회색 모자를 쓴 남자는 그것을 따라 내리지 않습니다. 대신 당신이 옮겨 탄 새 객차로 따라 들어옵니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "그건 그냥 미끼였어, {{player_name}}. 왼쪽 운동화 밑창 확인해 봐.",
+          "timestamp_label": "오후 10:16",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "당신이 하얀 원반에 휴대폰을 갖다 댑니다. NFC 화면에 소유자의 가려진 전화번호가 뜹니다—마지막 네 자리는 8842. 친오빠 Liam의 옛날 번호입니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "오빠… 왜 이 에어태그가 끝자리가 8842인 번호로 등록되어 있는 거야?!",
+          "timestamp_label": "오후 10:16",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "voice_note",
+          "sender_id": "liam",
+          "duration_sec": 8,
+          "transcript": "[공포에 질린 숨소리] {{player_name}}, 내 말 잘 들어! 내 예전 유심이 해지 안 됐어—내가 돈 빌린 사채업자들이 그걸 복제한 거야! 기차에 탄 그놈은 네가 아니라, 널 이용해서 날 찾으려는 거야!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "종점까지 두 정거장 남았다. Liam한테 내가 자기 여동생 데리고 접선 장소로 간다고 전해.",
+          "timestamp_label": "오후 10:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "노선의 끝",
+          "teaser_text": "어두운 차량기지 터널로 진입하며 열차 브레이크가 비명을 지릅니다—그리고 4호차의 조명이 깜빡이며 꺼집니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "선로 변경",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오후 10:21 · 급행열차가 깜빡이는 출구 표지판 하나만 켜진 텅 빈 콘크리트 승강장, 하버 터미널에 정차합니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "liam",
+          "caller_label": "Liam · 오빠",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "liam",
+          "duration_sec": 9,
+          "transcript": "[엔진 굉음] 하버 터미널에서 두 블록 앞이야! 왼쪽에 있는 빨간 비상문 레버를 당겨—중앙 개찰구로 나가지 마, 거기 그놈들 밴이 세워져 있어!",
+          "audio_asset": null,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "절대 중앙 개찰구로 나가지 마! 그놈들 검은 밴이 밖에서 기다리고 있어! 왼쪽 점검 계단으로 나와!",
+          "timestamp_label": "오후 10:21",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "도망치지 마, {{player_name}}. 네 오빠가 건드려선 안 될 패밀리 돈 20만 달러를 훔쳤어. 조용히 밴으로 걸어 나와.",
+          "timestamp_label": "오후 10:22",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "난 당신들한테 빚진 거 없어! 가까이 오지 마!",
+          "timestamp_label": "오후 10:22",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "당신 뒤쪽 타일 복도를 따라 달려오는 발소리가 들립니다:",
+          "options": [
+            {
+              "option_id": "opt_084_e2_free",
+              "label": "역사 화재 경보기를 울린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_084_e2_vip",
+              "label": "반대편 열차 안으로 신발을 던져 버린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": "북행 급행열차나 실컷 쫓아가 봐!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "당신이 빨간 경보 발신기를 부숴버립니다. 스프링클러에서 물이 쏟아지고, 전자 잠금장치가 모든 비상구를 해제하며, 철도 경찰 사이렌이 에스컬레이터 아래로 울려 퍼집니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "잘했어! 옆 골목에서 너 보여—지금 당장 조수석으로 타!",
+          "timestamp_label": "오후 10:24",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "당신이 왼쪽 운동화를 벗어 닫히는 북행 열차 문 틈으로 날려 보냅니다. 당신이 점검 출구로 몸을 숙이는 사이 4B 좌석의 추적기가 시속 50마일로 멀어집니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "영리한 수법이네. 아쉽게도 Liam 차에도 이미 추적기를 붙여뒀지만.",
+          "timestamp_label": "오후 10:24",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "당신이 Liam의 차 문을 쾅 닫고 비에 젖은 도로로 내달립니다. 대시보드 위에는 지퍼가 열린 가죽 더플백이 놓여 있습니다—표시 없는 현금 뭉치와 당신의 사진이 붙은 여권이 가득 들어 있습니다.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "여권은 아직 보지 마, {{player_name}}. 자정 전에 국경을 넘어야 해—고속도로 위에서 다 설명할게.",
+          "timestamp_label": "오후 10:25",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "두 번째 여권",
+          "teaser_text": "Liam은 단순히 돈만 빚진 게 아니었습니다—이미 당신을 위한 새 신분까지 위조해 두었습니다. 그리고 두 대의 헤드라이트가 방금 당신들 뒤로 고속도로에 진입했습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "19번 출구의 매복",
+      "start_node_id": "e3_n01",
+      "default_ambient": "rain",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 7:48 · 빗물에 미끄러운 고속도로 위로 검은 세단 두 대가 바짝 따라붙습니다. Liam이 헤드라이트를 끄고 19번 출구로 급선회합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "도박 빚만 진 게 아니니까! 그놈들 회계사가 장부 파묻는 걸 내가 찍었거든—근데 놈들은 네가 그 USB를 갖고 있다고 생각하고 있어!",
+          "timestamp_label": "오후 07:48",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "왜 글러브 박스에 내 사진 붙은 위조 여권이 있는 거야, 오빠?! 지금 당장 말해!",
+          "timestamp_label": "오후 07:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "seat4b",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "실시간 추적기 알림 · 오후 7:49 — Liam의 트렁크 안에서 두 번째 에어태그 활성화됨."
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "seat4b",
+          "duration_sec": 7,
+          "transcript": "[가까이서 굉음을 내는 엔진] 지하철에서 첫 번째 에어태그 버린 건 귀여웠어, {{player_name}}. 네 오빠가 스페어타이어를 절대 확인 안 한다는 게 아쉽네.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "빗속 저 앞쪽에 도로 계량소가 불을 밝히고 있습니다. 빠르게 움직이십시오:",
+          "options": [
+            {
+              "option_id": "opt_084_e3_free",
+              "label": "출발 대기 중인 대형 트럭 뒤에 차를 숨긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "저 화물 트럭 뒤로 차 대! 지금 당장 두 번째 에어태그 뜯어내야 해!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_084_e3_vip",
+              "label": "지나가는 대형 트레일러에 에어태그를 붙여버린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Liam이 쏟아지는 빗속에서 트렁크를 열고 스페어타이어 수납 공간에서 하얀 원반을 뽑아냅니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "찾았어! 부숴버려—잠깐, 내가 예약해 둔 모텔 쪽에서 내 폰에 알림이 왔어!",
+          "timestamp_label": "오후 07:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "당신이 남행 대형 트럭 범퍼에 에어태그를 찰싹 붙여버립니다—검은 세단 두 대를 정반대 고속도로로 20마일이나 헛걸음하게 만듭니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "잠깐… 왜 신호가 남쪽으로 시속 80마일로 달리고 있지?! 놈들이 태그를 바꿔치기했어!",
+          "timestamp_label": "오후 07:48",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "liam",
+          "text": "어제 네 코트 밑단에 USB를 꿰매 넣었어. 날 미워하지 마.",
+          "unsent_placeholder": "Liam 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "네 코트 왼쪽 주머니 안감 확인해 봐, {{player_name}}! 암호화된 USB가 안에 꿰매져 있어!",
+          "timestamp_label": "오후 07:48",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "고속도로에서 잔머리 꽤나 썼네. 우린 이미 파인크레스트 모텔에 있는 네 오빠 은신처 안으로 들어왔어.",
+          "timestamp_label": "오후 07:48",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "안감 속에 꿰매진 비밀",
+          "teaser_text": "범죄 조직의 장부는 밤새 당신의 코트 안에 숨겨져 있었습니다—그리고 4B 좌석은 방금 Liam의 은신처를 급습했습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "코트 밑단의 비밀",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오후 8:02 · 24시간 식당 부스 안에서 당신이 코트 주머니 솔기를 뜯어내 작은 무광 스틸 USB를 꺼냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "너무 당황해서 그랬어! 어제 놈들이 내 아파트 열쇠를 훔쳐 갔거든—주 검찰청에 닿을 때까지 네가 들고 있는 게 더 안전할 줄 알았어!",
+          "timestamp_label": "오후 08:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "나한테 말도 없이 내 등에 과녁을 그려놨다고?! 그래서 4B 좌석이 기차까지 따라온 거잖아!",
+          "timestamp_label": "오후 08:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "seat4b",
+          "text": "모텔에서 Liam의 예비 폰을 찾았다. 식당 와이파이 로그 뽑아.",
+          "unsent_placeholder": "4B 좌석 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "seat4b",
+          "duration_sec": 7,
+          "transcript": "[모텔 창문을 두드리는 빗소리] 커피 맛있어, {{player_name}}? 네 오빠 클라우드 백업이 방금 9번 국도 식당에서 잡혔거든.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "4B 좌석이 9번 국도 식당에 도착하기까지 2분 남았습니다:",
+          "options": [
+            {
+              "option_id": "opt_084_e4_free",
+              "label": "주 경찰청 형사 직통 번호로 전화한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "더는 도망 안 쳐. 계량소에서 만나자고 주 경찰청 형사님께 연락할 거야!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_084_e4_vip",
+              "label": "식당 키오스크에서 USB 내용을 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Ruiz 형사가 신호 두 번 만에 전화를 받고—9번 국도를 향해 사복 순찰차 두 대를 급파합니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "다행이다! Ruiz 형사는 저 조직을 잘 알아—우리가 살아서 그 USB를 넘기기만 하면 놈들은 끝장이야!",
+          "timestamp_label": "오후 08:02",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "USB를 열자 뇌물을 받은 항만 관리들의 스프레드시트와—파인크레스트 모텔 열쇠 옆에 놓인 4B 좌석의 실제 얼굴 사진이 뜹니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "4B 좌석은 고용된 깡패가 아니야—항만 세관 감독관이라고! 얼굴이랑 배지 번호까지 다 확보했어!",
+          "timestamp_label": "오후 08:02",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "식당의 네온사인 창문 너머로 헤드라이트 불빛이 번쩍입니다. 당신과 Liam은 주방 뒷문을 통해 젖은 자갈 주차장으로 빠져나갑니다.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "쓰레기통 뒤로 몸 낮춰! 그놈이 방금 내 모텔 방에서 찍은 사진을 보냈어!",
+          "timestamp_label": "오후 08:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "Liam, 네 매트리스 밑에서 뭘 찾았는지 봐라. 이제 숨을 곳은 없다.",
+          "timestamp_label": "오후 08:02",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "모텔의 증거",
+          "teaser_text": "4B 좌석이 Liam의 은신처를 털고 9번 국도까지 추적해 왔습니다—경찰 순찰차는 아직 4분 거리입니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "사이렌까지 4분",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오후 8:11 · 빗방울이 양철 차양을 두드리는 가운데 식당 뒷문으로 4B 좌석의 실루엣이 걸어 나옵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "포장도로 위에 스틸 USB 내려놔, {{player_name}}. 그러면 네 오빠 손가락은 열 개 다 온전하게 걸어 나갈 수 있을 거야.",
+          "timestamp_label": "오후 08:11",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "당신은 유령이 아니라 세관 감독관이잖아. 주 경찰이 고속도로 봉쇄하기 전에 지금 물러나.",
+          "timestamp_label": "오후 08:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "seat4b",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "파인크레스트 모텔 열쇠 · Liam의 위조 여권 서류 옆에서 발견됨.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "liam",
+          "duration_sec": 6,
+          "transcript": "[자갈 밟는 소리] {{player_name}}, 내가 주유기 쪽으로 우회해서 포위할게! 네 차 열쇠 던져—그자를 투광등 아래로 끌어낼게!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "코트 안쪽에 손을 넣은 채 4B 좌석이 한 걸음 다가옵니다. 선택하십시오:",
+          "options": [
+            {
+              "option_id": "opt_084_e5_free",
+              "label": "내 차의 비상 경보음을 울린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금이야, 오빠! 투광등 켜!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_084_e5_vip",
+              "label": "물웅덩이에 가짜 플래시 드라이브를 던진다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "경적이 울부짖고 비상등이 번쩍입니다. 4B 좌석이 움찔하는 바로 그 순간—사복 순찰차 두 대가 자갈 주차장으로 굉음을 내며 들이닥칩니다!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "주 경찰이다! 무기 버려, 4B 좌석! 넌 포위됐어!",
+          "timestamp_label": "오후 08:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "진흙탕 속 가짜 드라이브를 향해 몸을 날리던 4B 좌석이—Ruiz 형사 전술팀의 눈부신 헤드라이트 속으로 정면으로 뛰어듭니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "드라이브 잘못 잡았네, 감독관님. 진짜는 Ruiz 형사님 손에 직접 넘어갈 거거든.",
+          "timestamp_label": "오후 08:11",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "seat4b",
+          "text": "항만 장부 불태워—9번 국도에서 정체 들켰다.",
+          "unsent_placeholder": "4B 좌석 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "그놈 자갈밭에 무릎 꿇었어! 우리가 진짜 해냈어, {{player_name}}!",
+          "timestamp_label": "오후 08:11",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "seat4b",
+          "text": "이 항만 커넥션 윗선이 얼마나 높은지 너희는 상상도 못 할 거야…",
+          "timestamp_label": "오후 08:11",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "노선의 끝",
+          "teaser_text": "4B 좌석이 수갑을 찼습니다—이제 당신과 Liam은 조직의 장부를 어떻게 넘기고 뒷감당을 해낼지 결정해야 합니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "추적기는 이제 그만",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오후 8:45 · Ruiz 형사가 스틸 USB를 증거품 봉투에 밀봉하는 가운데 두 개의 종이컵에 담긴 식당 커피에서 김이 피어오릅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "내 사정 때문에 널 끌어들여서 미안해, {{player_name}}. 그 위조 여권은 이제 태워버려도 돼.",
+          "timestamp_label": "오후 08:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "나한테 새 겨울 코트도 하나 사줘야 해. 내 코트 안감에 커다란 구멍 났잖아.",
+          "timestamp_label": "오후 08:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "liam",
+          "text": "Ruiz 형사가 내가 증언하면 완전 면책권을 주겠대—드디어 집으로 갈 수 있어.",
+          "unsent_placeholder": "Liam 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "liam",
+          "duration_sec": 6,
+          "transcript": "[잦아드는 빗소리, 부드러운 웃음] Ruiz 형사가 방금 확인해 줬어—그 장부를 근거로 항만 관리 여섯 명을 체포했대. 이제 도망 안 쳐도 돼.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Ruiz 형사가 지하철에서 나온 부서진 에어태그를 당신에게 건넵니다. 당신의 마지막 선택:",
+          "options": [
+            {
+              "option_id": "opt_084_e6_free",
+              "label": "내 본명을 되찾고 이 도시에 남는다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "가짜 여권 뒤에 숨지 않을 거예요. 우리가 끝까지 맞섰다는 걸 그 조직 놈들도 알게 하죠.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_084_e6_vip",
+              "label": "Liam에게 앞으로 평생 비밀을 만들지 않겠다는 약속을 받아낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "일주일 만에 항만 밀수 조직 사건이 전국 뉴스 1면을 장식하고—당신의 지하철 출퇴근길은 마침내 다시 평온해집니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "네가 자랑스러워, 꼬맹아. 세상에서 제일 든든한 파트너였어.",
+          "timestamp_label": "오후 08:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Liam이 위조 여권을 식당 쓰레기통에 던져 넣고 어머니의 이름을 걸고 맹세합니다: 다신 거짓말하지 않겠다고.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "오늘 밤부터 비밀 제로. 약속해.",
+          "timestamp_label": "오후 08:45",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "당신의 휴대폰 알림창은 완전히 깨끗합니다—알 수 없는 액세서리도, 등 뒤를 밟는 발소리도 없습니다.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "liam",
+          "text": "자, 이제 집으로 가자. 운전은 내가 할게—이번엔 제한 속도 딱 지킬 거니까.",
+          "timestamp_label": "오후 08:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "좋아. 그리고 트렁크는 텅 비워둬.",
+          "timestamp_label": "오후 08:45",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "시즌 최종화 · 신호 해제",
+          "teaser_text": "4B 좌석은 감옥에 갔고, 항만 범죄 조직은 와해되었으며, 에어태그의 악몽은 9번 국도에서 막을 내렸습니다.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

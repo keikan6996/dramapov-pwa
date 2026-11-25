@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_079",
+  "lang": "ja",
+  "metadata": {
+    "title": "招かれざる相続人",
+    "subtitle": "私はThorne邸の目立たないお世話係だった——大富豪の女主人亡き後の午前1時、弁護士から「全株式の51%があなたに遺贈された」とメッセージが届くまでは。",
+    "genre": "romance",
+    "tags": [
+      "遺産相続",
+      "億万長者",
+      "急展開"
+    ],
+    "cover_image": "assets/media/covers/story_079.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "attorney",
+      "name": "Sterling氏 (弁護士)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "heir",
+      "name": "Celeste (長女)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9D174D"
+    },
+    {
+      "id": "butler",
+      "name": "Edgar (執事長)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "午前1時の召喚",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前1:04 · 億万長者の女主人Eleanor Thorneが亡くなった夜。あなたは使用人棟でスーツケースに荷物を詰めています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "{{player_name}}さん、荷造りは絶対にやめてください。奥様の封印された遺言証書には、Thorneホールディングス51%の支配株主として「あなた」が指名されています。",
+          "timestamp_label": "午前1:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "51%ですって？！Sterling先生、何かの間違いでは——私はただお庭の手入れをして、毎晩本を読んで差し上げていただけですよ！",
+          "timestamp_label": "午前1:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Edgar、朝7時に{{player_name}}のスーツケースを濡れた砂利道に放り出して、弁護士が来る前にすべての鍵を交換しておきなさい！",
+          "unsent_placeholder": "Celesteがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "もうあなたの世話は必要ないわ、{{player_name}}。朝7時きっかりに鍵をキッチンのカウンターに置いて出て行きなさい。",
+          "timestamp_label": "午前1:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 12,
+          "transcript": "[温かく敬意のこもった声] 奥様はあなた宛てに個人的な音声の手紙を残されました、{{player_name}}様。実の子供たちは3年間一度も顔を見せなかったのに——最期の息を引き取るまで寄り添ったのはあなただけだったと仰っていましたよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Celesteは午前7時に引っ越し業者を連れてあなたを追い出しに来ます。どう迎えますか？",
+          "options": [
+            {
+              "option_id": "opt_wait_foyer",
+              "label": "Sterling弁護士と大玄関で静かに待つ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Edgar、朝7時に奥様がお好きだったアールグレイを淹れてください。Sterling先生には大玄関にいるとお伝えして。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_read_clause",
+              "label": "Celesteが外された理由を弁護士に聞く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "待ってください、Sterling先生——奥様はCelesteさんの取り分を外した具体的な理由を残されていたのですか？",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "かしこまりました、{{player_name}}様。真の相続人様にお仕えできますことは私の誉れでございます。",
+          "timestamp_label": "午前1:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "秘密条項：Thorne夫人は生前、Celesteがカジノ開発業者へ一族の屋敷を極秘裏に売却しようとしていた事実を突き止めていたのです！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "署名済みの事前売買契約書は私の鞄の中にあります。Celesteお嬢様は母親に見抜かれていたことを全く知りません。",
+          "timestamp_label": "午前1:13",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "今鍵屋を連れて正門に着いたところよ。私の敷地からとっとと消えていなさいよ、{{player_name}}。",
+          "timestamp_label": "午前6:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "鍵の交換",
+          "teaser_text": "第2話：Celesteが鍵屋にドアの鍵交換を命じる——そしてあなたは、どの鍵を変えるべきか静かに指示を出す。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "支配権51%",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前7:02 · 大玄関ホール。ブランド物のヒールを鳴らして入ってきたCelesteが、優雅にお茶を飲むあなたを激怒して指差します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "よくも母の椅子に座れるわね？！Edgar、警備員を呼んで{{player_name}}を不法侵入で逮捕させなさい！",
+          "timestamp_label": "午前7:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "それはお控えになった方がよろしいかと、Celeste様。本日午前0時をもって、この屋敷とThorneホールディングスの51%は法的に{{player_name}}様の所有となりました。",
+          "timestamp_label": "午前7:03",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "私の弁護士に電話して！！今すぐ判断能力喪失を理由に遺言の無効を申し立てるように言いなさい！！",
+          "unsent_placeholder": "Celesteがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 9,
+          "transcript": "[丁寧かつ容赦ない口調] 奥様は法的な異議申し立てを見越しておられました、Celeste様。3名の独立した医師による判断能力の証明を映像で残しておられます。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Celesteが怒りで震えています。新しい主としての威厳をどう示しますか？",
+          "options": [
+            {
+              "option_id": "opt_keep_locks",
+              "label": "鍵屋に彼女の門扉コード変更を命じる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ちょうどよかったわ、鍵屋さんを連れてきてくれて。正門の暗証番号を変更して——彼女の鍵も登録解除して。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_expose_casino",
+              "label": "秘密のカジノ事前売却契約を暴く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "徹底反撃 · 広告を見る",
+              "player_reply_text": "それと、お母様はあなたが裏で署名したカジノ売却契約を見ていらしたわ。それが取り分0%の理由よ。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Edgarは礼儀正しくCelesteにコートを差し出し、車寄せへと続く重厚なオークの扉を開け放ちます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "完全崩壊：カジノへの裏切りを知ったCelesteの弟妹たちは、即座に一族の取締役会から彼女を追放する決議を行いました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "あの役員室で1週間も生き残れるわけがないわよ、{{player_name}}！あいつらに生きたまま食い殺されるわ！",
+          "timestamp_label": "午前7:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私の心配はいらないわ、Celeste。お母様がご自身の知識をすべて私に教えてくださったから。",
+          "timestamp_label": "午前7:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "新しき相続人万歳",
+          "teaser_text": "Sterling弁護士が静かに身を寄せて囁きます。「もう1つお伝えすることが、{{player_name}}様。遺言書の裏に封印された出生証明書をご覧ください——Eleanor様は単なる雇用主ではありませんでした」",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "封印された証明書",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後2:15 · Thorne邸の図書室。遺言書の裏に蝋で封印されていた出生証明書が、あなたの手の中でかすかに震えています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "母方の欄をよくお読みください、{{player_name}}様。女主人Eleanor様は慈善で51%を遺されたのではありません——あなたは奥様の実のお孫様なのです。",
+          "timestamp_label": "午後2:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "えっ…私の母は、24年前に姿を消したEleanor様の次女だったのですか？！",
+          "timestamp_label": "午後2:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "attorney",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "封印された血縁記録 · 母系孫DNA一致率99.96% — 6か月前にEleanorにより鑑定済み。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Eleanor様はあなたがご奉公に来られた最初の週に、お母様のロケットペンダントにお気づきになりました、{{player_name}}様。真実を告げる前に、あなたのお人柄を見極めたかったのです。",
+          "timestamp_label": "午後2:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "あの使用人が私の妹の娘だと証明されたら、屋敷すべてを失うことになる——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 8,
+          "transcript": "[切迫した小声] {{player_name}}様、Celeste様がパントリーで私を待ち伏せしました！法廷でEleanor様が認知症だったと偽証すれば現金20万ドルを払うと持ちかけてきたのです！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "CelesteがEdgarを買収して遺言を争おうとしています！どう対抗しますか？",
+          "options": [
+            {
+              "option_id": "opt_record_bribe",
+              "label": "Edgarに話を合わせさせ賄賂を録音",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Edgar、「考えておきます」と答えて次の申し出をボイスメモに録音してください——Sterling先生からそのまま裁判官へ提出します。",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_release_dna",
+              "label": "親族グループにDNA鑑定書を公開",
+              "cost_type": "vip_rewarded",
+              "badge_text": "正体暴露 · 広告を見る",
+              "player_reply_text": "Sterling先生、管財人たちに封印されたDNA報告書を共有してください——実の姪を「使用人」と呼んだ理由をCelesteに説明させましょう！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "罠にかかる：5分後、Celesteは20万ドルの賄賂条件をそのまま文面でEdgarに送りつけてきました！",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "屋敷激震：管財人たちは捜査が完了するまで、即座にCelesteの49%の議決権代理を凍結しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Sterlingがどんな偽の検査書類を振りかざそうと関係ない！今夜差し止め命令を申請するわ——それに西棟の書斎には誰一人立ち入らせない！",
+          "timestamp_label": "午後2:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "なぜCeleste様は西棟の書斎を開けられるのをあれほど恐れておられるのでしょう？あそこにはEleanor様が2002年の一族信託台帳を保管しておられたはずですが…",
+          "timestamp_label": "午後2:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "西棟の秘密",
+          "teaser_text": "第4話：なぜCelesteは夜明け前に2002年の台帳を燃やそうと必死なのか、その理由を突き止めろ。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "遺言の異議申し立て",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後11:50 · Thorne邸。屋敷の上に雷鳴が轟く中、Celesteの差し止め訴訟の脅しが暗闇に影を落とします。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "現金50万ドルを受け取って今夜中に立ち去りなさい、{{player_name}}。あなたはこの屋敷にふさわしく育っていない——役員たちに食い物にされるだけよ。",
+          "timestamp_label": "午後11:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あなたが小遣いをせびりにしか来なかった間、私は3年間ずっと祖母の枕元に寄り添っていたわ、Celeste。どこにも行くつもりはないわ。",
+          "timestamp_label": "午後11:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "{{player_name}}様、2002年に関するEleanor様の私的メモを拝見しました：Celeste様の亡き夫が、あなたのお母様を屋敷から追い出すために勘当状を偽造したのです！",
+          "timestamp_label": "午後11:52",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "西棟の金庫にある私の2002年の手紙が見つかったら、私の49%まで没収されてしまう——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "警報です！西棟廊下の動体センサーが反応しました——誰かがEleanor様の私室書斎の鍵をピッキングしています！",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 8,
+          "transcript": "[窓を叩く雨音] {{player_name}}様、Celeste様です！ライターを持って、壁金庫から2002年の台帳を引きずり出しています！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Celesteが西棟で2002年の証拠を燃やそうとしています！どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_rush_west_wing",
+              "label": "廊下の照明を点けて現行犯で押さえる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Edgar、主照明を点けて書斎のドアを開けて——屋敷の防犯カメラの前で現行犯を押さえるわ！",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_seal_wing_call",
+              "label": "西棟を封鎖しSterling弁護士を呼ぶ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "チェックメイト · 広告を見る",
+              "player_reply_text": "西棟の玄関を封鎖してSterling先生にビデオ通話をつないで！彼女の放火未遂の一部始終を目撃させるの！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "現行犯逮捕：眩いシャンデリアの明かりが一斉に点灯し、Celesteは台帳の数センチ先にライターを構えたまま凍りつきました！",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "法廷証人の生目撃：Sterling弁護士が取り乱すCelesteの様子をリアルタイムで録画し、遺言の全額没収条項が発動しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ライターを下ろしなさい、Celeste叔母さん。お祖母様は亡くなる数週間前に、すでにビデオ遺言を残されていたのよ。",
+          "timestamp_label": "午前0:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "ビ…ビデオ遺言ですって？！嘘よ——2002年のことを知っているはずがない！",
+          "timestamp_label": "午前0:03",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "西棟の真夜中",
+          "teaser_text": "第5話：防犯映像の影とEleanor最期のビデオを突きつけ、Celesteの権利主張を永遠に終わらせろ。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "西棟の真夜中",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前10:00 · 屋敷の大サロン。管財人たちが西棟の防犯アラート映像とEleanor最期のビデオを見守っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "管財人の皆様、こちらが午後11時54分の西棟防犯カメラ映像です——そしてこちらが{{player_name}}様のお母様が嵌められた証拠となる無傷の2002年台帳です。",
+          "timestamp_label": "午前10:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "butler",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "西棟カメラ · 23:54 — 2002年台帳を焼却するため女主人Eleanorの封印書斎へ侵入するCeleste。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "待って——私の49%まで奪うつもりなの？！これからどうやって生きていけっていうのよ？！",
+          "timestamp_label": "午前10:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "第8条項に基づき、証人への贈賄または遺産記録の破棄を試みた相続人は、自動的に全持ち分を筆頭相続人へ没収されます。",
+          "timestamp_label": "午前10:03",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "この屋敷のために20年間画策してきたのに、たった一晩で100%すべてを失うなんて——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "attorney",
+          "duration_sec": 8,
+          "transcript": "[優しく響くビデオ音声] 「愛しい{{player_name}}、見返りなどないと思っていた頃から私に尽くしてくれたね。今、この屋敷のすべてと——お前の母の名誉を、お前に託します」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Thorne家の資産100%が今あなたの掌中にあります！Celesteにどんな処遇を下しますか？",
+          "options": [
+            {
+              "option_id": "opt_modest_stipend",
+              "label": "少額の生活費を与え屋敷から退去させる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "日没までに屋敷を出て行って、Celeste。二度と母の名誉を傷つけないという条件で、質素なアパート代だけは出してあげる。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_zero_mercy_heir",
+              "label": "100%没収を執行し母の名誉を回復する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "真の女帝 · 広告を見る",
+              "player_reply_text": "第8条項通り全額没収を執行します——そして母の肖像画を本来あるべき大サロンへ戻してください！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "気高き力：最古参の管財人たちまでもが、あなたの静かな気品に感銘を受けて深く頭を垂れます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "正義の回復：EdgarがEleanorの隣にあなたの母の肖像画を掲げる中、Celesteは無言で去っていきました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "使用人たちが皆、再び笑顔を取り戻しましたよ、{{player_name}}お嬢様。本当の意味で、おかえりなさいませ。",
+          "timestamp_label": "午前10:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ありがとう、Edgar。それから——もう二度と私を「お世話係」と呼ばないでね。",
+          "timestamp_label": "午前10:13",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Thorne家の新たな伝説が始まる",
+          "teaser_text": "第6話（最終話）：Thorne家のトップの座につき、Eleanorと母の双方に敬意を捧げよう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Thorne家の遺産",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "1か月後 · 屋敷のバラ園。芝生の上でランタンが揺らめき、屋敷に再び温もりと光が満ちています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "今午後、異議申し立てゼロで検認手続きが正式に完了しました、{{player_name}}様。Thorne邸は100%あなたのものです。",
+          "timestamp_label": "午後6:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "誰にも気づかれない静かなお世話係から、大サロンで母の名誉を回復する日まで…まだ夢を見ているみたい。",
+          "timestamp_label": "午後6:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Eleanor様がお母様のために植えられたバラが今朝ちょうど花開きましたよ——この24年間で一番の美しさです。",
+          "timestamp_label": "午後6:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "お祖母様の言う通りだったのかもしれない——{{player_name}}の方がずっと相応しい相続人だった——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 8,
+          "transcript": "[柔らかな弦楽の調べ] 20名の使用人全員が中庭に集まり、新たな屋敷の女主人{{player_name}}様へ祝杯を捧げようとしております！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今すぐ下りていきます——今夜は、使用人の皆さんも私と同じメインテーブルに座ってくださいね。",
+          "timestamp_label": "午後6:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Thorne家の当主としての最初の公式布告：",
+          "options": [
+            {
+              "option_id": "opt_staff_pension",
+              "label": "Edgarと全スタッフの退職基金を倍増する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "お祖母様を支えてくれたEdgarと忠実なすべてのスタッフの退職年金を倍増します！",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_caretaker_grant",
+              "label": "介護者支援の奨学金財団を設立する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "黄金の心 · 広告を見る",
+              "player_reply_text": "スタッフの年金を倍増し、さらに世界中の陰の功労者を支える「Eleanor Thorne介護者財団」を設立します！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "深き忠誠：Edgarは目に涙を浮かべて深く一礼します——この屋敷が再び冷酷さに支配されることは二度とないでしょう。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "愛される遺産：Sterling弁護士がグラスを掲げます。「Eleanor様は王冠を継ぐに相応しい真の女王をお選びになりましたな」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "Thorne邸の正当なる相続人よ、永遠に。",
+          "timestamp_label": "午後6:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "おかえりなさいませ、{{player_name}}お嬢様。",
+          "timestamp_label": "午後6:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "完結 · 正当なる王冠",
+          "teaser_text": "あなたは隠された出生の秘密を解き明かし、深夜の妨害工作を阻止し、一族の名誉を取り戻した。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

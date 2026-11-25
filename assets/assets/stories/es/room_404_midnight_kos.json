@@ -1,0 +1,2986 @@
+{
+  "schema_version": "1.1",
+  "story_id": "room_404_midnight_kos",
+  "lang": "es",
+  "metadata": {
+    "title": "Habitación 404: Pensión de Medianoche",
+    "subtitle": "La casera advirtió: nunca respondas si la Habitación 404 escribe después de medianoche. Esta noche, envió una nota de voz.",
+    "genre": "thriller",
+    "tags": [
+      "Terror",
+      "3 AM",
+      "Embrujado"
+    ],
+    "cover_image": "assets/media/covers/room_404_midnight_kos.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Tú)",
+      "side": "right",
+      "avatar": "assets/media/avatars/claire.webp",
+      "bubble_color_hex": "#10B981"
+    },
+    {
+      "id": "landlady",
+      "name": "Casera Marni",
+      "side": "left",
+      "avatar": "assets/media/avatars/vanessa.webp",
+      "bubble_color_hex": "#3F3F46"
+    },
+    {
+      "id": "neighbor",
+      "name": "Raka (Hab. 403)",
+      "side": "left",
+      "avatar": "assets/media/avatars/marcus.webp",
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "room404",
+      "name": "Habitación 404",
+      "side": "left",
+      "avatar": "assets/media/avatars/unknown_v.webp",
+      "bubble_color_hex": "#4C0519"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "No Respondas Después de Medianoche",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "12:04 AM · Tu primera noche en la Habitación 405 de la tranquila pensión del 4to piso. Una lluvia intensa azota la ventana del pasillo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Bienvenida a tu nueva habitación, {{player_name}}. Una regla de la casa: si 'Habitación 404' te escribe después de medianoche, NO respondas.",
+          "timestamp_label": "12:04 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¿por qué? ¿No vive una estudiante en la Habitación 404 justo al lado?",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "La Habitación 404 lleva sellada desde que la chica desapareció en 2022. No asustes a la nueva inquilina.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next": "e1_n05",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Solo un viejo número de bromas, querida. Ponle seguro al cerrojo y duerme un poco.",
+          "timestamp_label": "12:06 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "narrator",
+          "text": "2:17 AM · Tres golpes lentos sacuden la delgada pared entre tú y la Habitación 404. La pantalla de tu teléfono brilla helada.",
+          "style": "system_alert",
+          "ambient": "heartbeat",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 7,
+          "transcript": "[Estática y respiración húmeda] ...{{player_name}}... ¿por qué tomaste mi cuarto? Abre la puerta... hace demasiado frío en el pasillo...",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next": "e1_n08_choice",
+          "next_node_id": "e1_n08_choice"
+        },
+        {
+          "id": "e1_n08_choice",
+          "type": "choice",
+          "prompt": "¡Algo rasguña la perilla de tu puerta! ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "opt_e1_neighbor",
+              "label": "Escribir al vecino del 403 por ayuda",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Raka! ¿Estás despierto? ¡Hay algo afuera de la Habitación 405!",
+              "next_node_id": "e1_n09_free"
+            },
+            {
+              "option_id": "opt_e1_peephole",
+              "label": "Revisar la cámara del pasillo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09_free",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡{{player_name}}, aléjate de la puerta! ¡Puedo oír uñas raspando por el pasillo ahora mismo!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n09_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: Abres el enlace de cámara para huéspedes del edificio. El pasillo del 4to piso está completamente vacío… ¡pero una sombra oscura está parada justo detrás de tu cortina!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10_vip"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El pasillo está vacío... ¡los golpes vienen de ADENTRO de mi habitación!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Puedo oír latir tu corazón, {{player_name}}. No confíes en los vivos aquí. Mira detrás de tu espejo de pared.",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "¿Qué Se Oculta Detrás del Espejo?",
+          "teaser_text": "Episodio 2: Las luces del pasillo se apagan a las 2:31 AM… y lo que descubres detrás del espejo lo cambia todo.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Detrás del Espejo Roto",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:31 AM · El foco del techo estalla y muere. Solo la linterna de tu teléfono ilumina el espejo roto de la pared.",
+          "style": "time_skip",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡¿{{player_name}}, estás bien?! ¡Se acaba de botar la pastilla de luz en todo el 4to piso!",
+          "timestamp_label": "2:31 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Habitación 404 me dijo que revisara detrás de mi espejo. Hay un panel de madera suelto escondido aquí...",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "Si {{player_name}} encuentra el teléfono de esa chica detrás del espejo, la policía reabrirá el caso del incendio por fuga de gas de la Habitación 404 en 2022.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next": "e2_n05",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Oh Dios... ¡la casera sabe lo que hay detrás de este espejo! ¡Esa chica no desapareció!",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 8,
+          "transcript": "[Susurro claro y lloroso] Por favor, {{player_name}}... el teléfono estrellado detrás del espejo guarda el video de quién me encerró. Envíalo antes de las 3 AM...",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next": "e2_n07_choice",
+          "next_node_id": "e2_n07_choice"
+        },
+        {
+          "id": "e2_n07_choice",
+          "type": "choice",
+          "prompt": "¡Pasos pesados resuenan subiendo las escaleras del 4to piso! ¡Actúa rápido!",
+          "options": [
+            {
+              "option_id": "opt_e2_escape",
+              "label": "Tomar el viejo móvil y correr al 403",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Tengo el teléfono! ¡Abre la Habitación 403, Raka!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "opt_e2_video",
+              "label": "Ver primero el video oculto de 2022",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Arrancas el teléfono polvoriento del hueco en la pared y corres por el pasillo en penumbra hacia la Habitación 403.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_free"
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡Rápido! Mi puerta está abierta—espera, ¿por qué sube la casera por las escaleras con una llave maestra?!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: El video de 2022 se reproduce… NO es la casera arrastrando a la chica a la Habitación 404. ¡Es un tipo sonriente sosteniendo un llavero de latón de la Habitación 403!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_vip"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No puede ser... ¡el asesino del video es Raka de la Habitación 403! ¡Y le acabo de decir que encontré el teléfono!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_merge"
+        },
+        {
+          "id": "e2_n11_merge",
+          "type": "voice_note",
+          "sender_id": "neighbor",
+          "duration_sec": 6,
+          "transcript": "[Llave girando despacio en tu cerradura] Sal de ahí, {{player_name}}. ¿Por qué tuviste que mirar detrás del espejo? Pudimos haber sido tan buenos vecinos...",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next": "e2_n12_end",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Verdadero Asesino Vive al Lado...",
+          "teaser_text": "Episodio 3: El panel del ascensor se ilumina en el Piso 4… aunque el cuarto piso está sellado.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "La Bitácora del Cuarto Piso",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:42 AM · Pasillo de la pensión. Una corriente helada se cuela bajo tu puerta cuando suena tu teléfono.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡{{player_name}}, pon la cadena! ¡Raka nunca fue estudiante… él vivía en la 403 la noche del incendio por fuga de gas de la 404 en 2022!",
+          "timestamp_label": "2:42 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "image",
+          "sender_id": "room404",
+          "image_asset": "assets/media/evidence/elevator_panel_404.webp",
+          "caption": "Panel del Ascensor (2:41 AM): El botón \"4\" brilla en rojo… presionado desde dentro de un hueco vacío.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¡¿la Habitación 404 manda fotos desde el ascensor?! ¡¿Quién sigue aquí arriba conmigo?!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "neighbor",
+          "text": "Marni le pagó a la policía para registrar la Habitación 404 como accidente y no perder su permiso del edificio.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡No escuches a la Casera Marni, {{player_name}}! ¡Revisa el espejo roto: escondió ahí detrás la libreta de la chica muerta!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 10,
+          "transcript": "[Susurro hueco, goteo de agua] \"La Habitación 403 tiene la llave de repuesto... Me vigilaba a través de la pared...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡¿Por qué desapareció mi llave maestra de mi escritorio?! ¡Raka, aléjate de la puerta de {{player_name}}!",
+          "timestamp_label": "2:48 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Pasos pesados se detienen justo entre la 403 y la 404. ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Revisar la libreta oculta tras el espejo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estoy leyendo la libreta ahora mismo… quiero saber quién murió en la 404.",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Grabar el pasillo por la rendija de puerta",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": "Cámara grabando: voy a atrapar en video a quien tenga esa llave maestra.",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Lee la página 9... Se llamaba Sari. Encontró una mirilla perforada desde la Habitación 403.",
+          "timestamp_label": "2:48 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "narrator",
+          "text": "GIRO VIP: ¡Tu video capta a Raka limpiando pintura rojo sangre de una llave maestra de latón: la llave exacta de la 404!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¿Estás despierta, {{player_name}}? La luz de tu pasillo se acaba de apagar...",
+          "timestamp_label": "2:51 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡OH DIOS! ¡Cortó el interruptor del pasillo! ¡Quédate adentro!",
+          "timestamp_label": "2:51 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n13_end"
+        },
+        {
+          "id": "e3_n13_end",
+          "type": "cliffhanger",
+          "headline": "Pasos en la Habitación 403...",
+          "teaser_text": "Episodio 4: Una sombra desliza una llave bajo tu puerta… y la pared entre la 403 y la 404 se abre.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Pasos en la Habitación 403",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "3:15 AM · Oscuridad total en el Piso 4. Solo la pantalla de tu teléfono ilumina el estrecho cuarto de pensión.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "Abre la puerta, {{player_name}}. La Casera Marni viene subiendo con una palanca… ¡estoy tratando de salvarte!",
+          "timestamp_label": "3:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "image",
+          "sender_id": "landlady",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Pasillo del Piso 4 (3:14 AM): Una silueta permanece inmóvil afuera de tu puerta sosteniendo una llave de latón.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Los dos se culpan mutuamente… y alguien literalmente está abriendo mi cerrojo!",
+          "timestamp_label": "3:18 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "neighbor",
+          "text": "Solo trabé la 404 durante la fuga de gas porque Sari me debía dinero… ¡no quería que el incendio la matara!",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "ÉL TRABÓ MI PUERTA CERRADA DURANTE EL INCENDIO POR FUGA DE GAS DE 2022. ME OYÓ SUPLICAR DURANTE UNA HORA.",
+          "timestamp_label": "3:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "landlady",
+          "duration_sec": 11,
+          "transcript": "[Jadeando en las escaleras] ¡Llamé a la policía! Llegan en cinco minutos… empuja tu escritorio contra la pared del ropero: ¡hay una escotilla oculta desde la 403!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "Demasiado tarde, {{player_name}}. El panel del ropero ya está abierto.",
+          "timestamp_label": "3:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "¡La puerta del ropero cruje hacia adentro! ¿Cuál es tu jugada en una fracción de segundo?",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Empujar el pesado escritorio contra el ropero",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Hoy no! El escritorio está bien trabado… ¡la policía ya casi llega!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Mostrar el relicario de plata de Sari",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": "Mira lo que hallé detrás del espejo, Raka: ¡el relicario de Sari con tu huella!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡Déjenme salir! ¡La puerta de la 403 se acaba de cerrar de golpe sola!",
+          "timestamp_label": "3:21 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "narrator",
+          "text": "GIRO VIP: El relicario hiela la habitación… ¡las luces parpadean con violencia y la puerta de la Habitación 404 se abre de golpe detrás de él!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "La policía está en el portón. No lo dejes escapar por las escaleras de incendios.",
+          "timestamp_label": "3:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡Tengo la cinta de la cámara del pasillo! ¡Encuéntrame junto a las escaleras!",
+          "timestamp_label": "3:24 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n13_end"
+        },
+        {
+          "id": "e4_n13_end",
+          "type": "cliffhanger",
+          "headline": "La Cinta de Medianoche...",
+          "teaser_text": "Episodio 5: La grabación de seguridad del pasillo de la noche en que murió Sari por fin se reproduce… exponiendo toda la verdad.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "La Cinta de Medianoche",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "4:04 AM · El descanso de las escaleras. La Casera Marni te entrega una tarjeta SD polvorienta mientras las sirenas aúllan afuera.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Tenía demasiado miedo de entregar esto el año pasado. Mira lo que hizo Raka a las 2:04 AM.",
+          "timestamp_label": "4:04 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "landlady",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Cámara Archivada 4F (2022): Raka clavando una cuña bajo la puerta de la Habitación 404 durante la fuga de gas antes de escabullirse a la 403.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¿Trabó su puerta por fuera?! Eso no fue un accidente… ¡fue asesinato!",
+          "timestamp_label": "4:07 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "Guardé silencio porque amenazó con incendiar toda la pensión.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡Dame esa tarjeta SD, {{player_name}}! ¡Nadie le va a creer a una historia de fantasmas!",
+          "timestamp_label": "4:07 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 12,
+          "transcript": "[Voz clara y con eco] \"El ascensor está abierto, Raka. Entra y diles a los oficiales por qué trabaste mi puerta.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡¿Quién está reproduciendo ese audio?! ¡PÁRENLO! ¡Mi teléfono no se apaga!",
+          "timestamp_label": "4:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Raka se lanza por la tarjeta SD en las escaleras. ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Lanzar la tarjeta SD al oficial abajo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Oficial, atrape! ¡Todo lo de la noche en que murió la Habitación 404 está en esta tarjeta!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Enviar el video a cada inquilino primero",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": "Demasiado tarde para destruirlo: ¡cada inquilino y oficial en las escaleras acaba de recibir el video!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡El oficial la atrapó! ¡Raka, se acabó!",
+          "timestamp_label": "4:10 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "narrator",
+          "text": "GIRO VIP: ¡Diez teléfonos suenan al unísono en las escaleras… Raka cae de rodillas totalmente derrotado!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡No quise matarla! ¡Díganle a la Habitación 404 que deje de escribirme!",
+          "timestamp_label": "4:13 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Espera hasta el amanecer, {{player_name}}. Una última cosa antes de irme.",
+          "timestamp_label": "4:13 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n13_end"
+        },
+        {
+          "id": "e5_n13_end",
+          "type": "cliffhanger",
+          "headline": "Amanecer Sobre el Cuarto Piso",
+          "teaser_text": "Episodio 6 (Final de Temporada): La primera luz rompe sobre la pensión… y la Habitación 404 envía un último mensaje.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Amanecer Sobre el Cuarto Piso",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "5:45 AM · Luz dorada del sol baña el pasillo del cuarto piso. La policía se lleva a Raka esposado.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Los detectives sellaron la Habitación 403 como escena del crimen. Siento no haber hablado antes, {{player_name}}.",
+          "timestamp_label": "5:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sari por fin tiene justicia. Eso es todo lo que siempre quiso cuando escribía después de medianoche.",
+          "timestamp_label": "5:45 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Gracias por responderme cuando todos los demás cerraron sus puertas con llave.",
+          "timestamp_label": "5:48 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "Te voy a reembolsar todo el año de renta y remodelar el Piso 4 en un jardín conmemorativo.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Mi madre vive a dos pueblos de distancia. Por favor dale el relicario de plata.",
+          "timestamp_label": "5:48 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 8,
+          "transcript": "[Brisa suave de mañana, campanilla dulce] \"Adiós, {{player_name}}. Puedes dormir en paz esta noche.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Mira el chat de Habitación 404... El contacto acaba de desaparecer de tu teléfono.",
+          "timestamp_label": "5:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "El sol de la mañana entibia el pasillo vacío. ¡Elige tu Final de Temporada!",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Dejar flores blancas en la 404 y seguir",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Descansa en paz, Sari. Tu verdad por fin es libre.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Entregar hoy el relicario a mamá de Sari",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": "Tomo el primer tren para llevarle el relicario de Sari —y justicia— a su mamá.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "El pasillo se siente cálido otra vez por primera vez en tres años.",
+          "timestamp_label": "5:52 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "narrator",
+          "text": "FINAL VIP: La madre de Sari llora de gratitud mientras sostiene el relicario… y tu teléfono nunca vuelve a vibrar a medianoche.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Buen viaje, {{player_name}}. Rompiste la maldición del Cuarto Piso.",
+          "timestamp_label": "5:55 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La Habitación 404 por fin está en silencio. Buenos días.",
+          "timestamp_label": "5:55 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n13_end"
+        },
+        {
+          "id": "e6_n13_end",
+          "type": "cliffhanger",
+          "headline": "Un Segundo Relicario Bajo la Habitación 404...",
+          "teaser_text": "Acto 2 · Episodio 7: Justo cuando el chat desaparece al amanecer, Habitación 404 parpadea de nuevo… Raka no actuó solo en 2022.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "El Segundo Relicario",
+      "start_node_id": "e7_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "10:15 AM · La luz del sol entibia el Piso 4 mientras empacas. De pronto, el hilo borrado de Habitación 404 reaparece arriba de tu pantalla.",
+          "style": "time_skip",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "No te vayas todavía, {{player_name}}. Levanta la tabla suelta del piso bajo la ventana de la Habitación 404… hay un segundo relicario de 2018.",
+          "timestamp_label": "10:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Informe Municipal de Incendios 2018 · Inquilina de Habitación 404 Desaparecida Tras \"Fuga Accidental de Gas\" — Caso Cerrado Sin Autopsia.",
+          "blur_until_tap": false,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¡¿otra chica murió en la Habitación 404 CUATRO años antes que Sari?! ¡¿Y falló dos veces la misma tubería de gas?!",
+          "timestamp_label": "10:17 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "{{player_name}}, querida, por favor sal de la Habitación 404. Las tablas del piso se están pudriendo… deja que la policía se encargue de papeles viejos.",
+          "timestamp_label": "10:18 AM",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "La Casera Marni observa desde la puerta de las escaleras. ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "e7_opt_free",
+              "label": "Esconder el informe de 2018 en tu mochila",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Solo estoy agarrando mi paraguas, Casera Marni.",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "e7_opt_vip",
+              "label": "Revisar nombre del beneficiario en pág. 2",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Bien. Cierra con llave y descansa… ya pasaste por suficiente, {{player_name}}.",
+          "timestamp_label": "10:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: La página dos lista una póliza de seguro de vida falsificada a nombre de la inquilina… ¡y la única beneficiaria es LA CASERA MARNI!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08"
+        },
+        {
+          "id": "e7_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Un momento... ¿por qué Marni tenía tanta prisa por sellar el Piso 4 y mandarme lejos con un reembolso total de renta?",
+          "timestamp_label": "10:22 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e7_n09"
+        },
+        {
+          "id": "e7_n09",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Raka trabó mi puerta en pánico, {{player_name}}... pero él nunca abrió la válvula de gas del sótano.",
+          "timestamp_label": "10:23 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n10_end"
+        },
+        {
+          "id": "e7_n10_end",
+          "type": "cliffhanger",
+          "headline": "¿Quién Abrió la Válvula de Gas?",
+          "teaser_text": "Episodio 8: Vuelve la lluvia al anochecer… y la Habitación 404 llama a tu teléfono con una revelación aterradora.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "La Válvula Sin Marcar",
+      "start_node_id": "e8_n01",
+      "default_ambient": "rain",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "4:40 PM · Nubes de tormenta oscurecen las ventanas de la pensión. Tu pantalla destella en rojo con una llamada entrante imposible.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Voy al mercado, {{player_name}}. No toques la puerta del sótano… las tuberías siguen goteando.",
+          "timestamp_label": "4:40 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e8_n03_call"
+        },
+        {
+          "id": "e8_n03_call",
+          "type": "incoming_call",
+          "caller_id": "room404",
+          "caller_label": "Habitación 404 (Llamada Entrante)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e8_n04_ans",
+          "on_decline_node_id": "e8_n04_dec"
+        },
+        {
+          "id": "e8_n04_ans",
+          "type": "narrator",
+          "text": "Entre estática crepitante, Sari susurra con urgencia: \"El gas no se fugó por accidente. ¡Marni giró la válvula roja del sótano a las 2:00 AM!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n04_dec",
+          "type": "narrator",
+          "text": "Rechazas. Un escalofriante mensaje de voz se transcribe al instante: \"Marni abrió la válvula de gas del sótano en 2018 Y en 2022.\"",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No puede ser... ¡Marni lloró en las escaleras y me entregó la tarjeta SD! ¡¿Por qué incriminaría a Raka si ella también era culpable?!",
+          "timestamp_label": "4:42 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "Oyes sonar un candado abajo por las escaleras del sótano. ¡Actúa rápido!",
+          "options": [
+            {
+              "option_id": "e8_opt_free",
+              "label": "Escribir a Marni y probar su coartada ya",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Casera Marni, ¿quién vivía en la Habitación 404 allá por 2018?",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "e8_opt_vip",
+              "label": "Fotografiar la válvula de gas recién aceitada",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¿2018? Nadie, querida… el cuarto estaba vacío como bodega. ¿Por qué preguntas?",
+          "timestamp_label": "4:44 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: Al asomarte por la rejilla del sótano, ves marcas frescas de llave inglesa en el tubo de gas de la Habitación 404… ¡y una caja metálica de dinero!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08"
+        },
+        {
+          "id": "e8_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Te está mintiendo en la cara, {{player_name}}. Pregúntale a Raka qué vio en las escaleras del sótano esa noche.",
+          "timestamp_label": "4:45 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n09"
+        },
+        {
+          "id": "e8_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nunca pensé que diría esto... Necesito escuchar la versión de Raka.",
+          "timestamp_label": "4:46 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n10_end"
+        },
+        {
+          "id": "e8_n10_end",
+          "type": "cliffhanger",
+          "headline": "La Aliada Se Vuelve Sospechosa...",
+          "teaser_text": "Episodio 9: Llega un mensaje del abogado de Raka… y hace volar por los aires la coartada de la Casera Marni.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 9
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "title": "Confesión Desde Detención",
+      "start_node_id": "e9_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e9_n01",
+          "type": "narrator",
+          "text": "7:20 PM · La lluvia tamborilea contra la Habitación 405. Tu teléfono suena con un mensaje verificado retransmitido por el abogado de Raka.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e9_n02"
+        },
+        {
+          "id": "e9_n02",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "{{player_name}}, merezco la cárcel por trabar la puerta de la 404 cuando Sari amenazó con reportar mi deuda. ¡Pero JURO que nunca toqué el gas!",
+          "timestamp_label": "7:20 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n03"
+        },
+        {
+          "id": "e9_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¿Entonces por qué se llenó de gas la Habitación 404 mientras tú estabas en el pasillo, Raka?!",
+          "timestamp_label": "7:21 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n04"
+        },
+        {
+          "id": "e9_n04",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡Porque Marni ya estaba en el sótano! ¡Me ofreció borrar mi deuda de renta si guardaba silencio sobre el incendio de 2018!",
+          "timestamp_label": "7:22 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n05"
+        },
+        {
+          "id": "e9_n05",
+          "type": "voice_note",
+          "sender_id": "neighbor",
+          "duration_sec": 11,
+          "transcript": "[Teléfono del centro de detención] ¡Escúchame! ¡Marni falsificó firmas de inquilinas en anexos de seguros de vida: cobró pólizas por AMBAS chicas de la Habitación 404!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e9_n06_choice"
+        },
+        {
+          "id": "e9_n06_choice",
+          "type": "choice",
+          "prompt": "¿Puedes confiar en el hombre que encerró a Sari en 2022?",
+          "options": [
+            {
+              "option_id": "e9_opt_free",
+              "label": "Exigir prueba bancaria del pago a Marni",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Si Marni cobró dinero de seguros, muéstrame dónde está la prueba.",
+              "next_node_id": "e9_n07a"
+            },
+            {
+              "option_id": "e9_opt_vip",
+              "label": "Preguntar por qué dio la tarjeta SD de 2022",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": "¿Por qué me entregó la tarjeta SD si era culpable?",
+              "next_node_id": "e9_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e9_n07a",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "Fotografié su recibo bancario en su escritorio el año pasado antes de que lo escondiera… te lo reenvío a tu teléfono ahora.",
+          "timestamp_label": "7:25 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n08"
+        },
+        {
+          "id": "e9_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: Raka revela que Marni te dio la tarjeta SD editada para echarle toda la culpa de la muerte a él… ¡y así la policía nunca registraría el sótano!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n08"
+        },
+        {
+          "id": "e9_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Me usó a MÍ para arrestar a Raka y cerrar el caso para siempre...",
+          "timestamp_label": "7:27 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n09"
+        },
+        {
+          "id": "e9_n09",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¿{{player_name}}? ¿Sigues despierta allá arriba? Te traje té tibio de jengibre.",
+          "timestamp_label": "7:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e9_n10_end"
+        },
+        {
+          "id": "e9_n10_end",
+          "type": "cliffhanger",
+          "headline": "No Bebas el Té...",
+          "teaser_text": "Episodio 10: Los pasos de Marni se detienen afuera de la Habitación 405… justo cuando la foto de la transferencia bancaria de Raka llega a tu pantalla.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 10
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "title": "La Transferencia del Seguro",
+      "start_node_id": "e10_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e10_n01",
+          "type": "narrator",
+          "text": "9:15 PM · Por la mirilla, la Casera Marni sonríe con calidez sosteniendo una taza de cerámica humeante. Tu teléfono vibra.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e10_n02"
+        },
+        {
+          "id": "e10_n02",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "Asegúrate de que el depósito del desarrollador quede acreditado esta noche antes de que queme la libreta de 2018.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "unsent",
+          "haptic": "heavy",
+          "next_node_id": "e10_n03"
+        },
+        {
+          "id": "e10_n03",
+          "type": "image",
+          "sender_id": "neighbor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Confirmación de Transferencia · Pago de Seguro de Vida por $185,000 — Abonado a Marni Subagio, 14 días después de la muerte de Sari.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n04"
+        },
+        {
+          "id": "e10_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¿Ciento ochenta y cinco mil dólares?! ¡Y acaba de anular un mensaje sobre quemar la libreta de 2018!",
+          "timestamp_label": "9:15 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n05"
+        },
+        {
+          "id": "e10_n05",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "No abras la puerta, {{player_name}}. Puso pastillas para dormir en ese té… igual que hizo conmigo.",
+          "timestamp_label": "9:16 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n06_choice"
+        },
+        {
+          "id": "e10_n06_choice",
+          "type": "choice",
+          "prompt": "Marni toca suavemente en la Habitación 405. ¿Cómo juegas esto?",
+          "options": [
+            {
+              "option_id": "e10_opt_free",
+              "label": "Fingir estar dormida y guardar silencio",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e10_n07a"
+            },
+            {
+              "option_id": "e10_opt_vip",
+              "label": "Confrontarla tras la puerta por el dinero",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": "Quédate con el té, Marni. Acabo de ver la transferencia del seguro por $185,000.",
+              "next_node_id": "e10_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e10_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Oh, ¿ya dormida? Que descanses, querida. Esta noche va a estar muy tranquila.",
+          "timestamp_label": "9:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08"
+        },
+        {
+          "id": "e10_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡La taza de cerámica se hace añicos contra los azulejos del pasillo… la dulce máscara de Marni estalla en pura furia!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08"
+        },
+        {
+          "id": "e10_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Tengo que salir de esta pensión ahora mismo y llevar este comprobante bancario directo a la policía!",
+          "timestamp_label": "9:20 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n09"
+        },
+        {
+          "id": "e10_n09",
+          "type": "narrator",
+          "text": "CLANG. Abajo, el pesado portón de hierro de entrada se cierra de golpe… seguido por el rechinido seco de una cadena de acero.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e10_n10_end"
+        },
+        {
+          "id": "e10_n10_end",
+          "type": "cliffhanger",
+          "headline": "El Portón de Hierro Se Cierra Desde Afuera...",
+          "teaser_text": "Episodio 11: Llega la medianoche en el Piso 4… y el olor a queroseno sube por el cubo de las escaleras.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 11
+        }
+      ]
+    },
+    {
+      "episode_number": 11,
+      "title": "El Pasillo Frío",
+      "start_node_id": "e11_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e11_n01",
+          "type": "narrator",
+          "text": "12:08 AM · Vuelve la medianoche a la pensión. Un olor penetrante a queroseno se filtra por debajo del marco de tu puerta.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e11_n02"
+        },
+        {
+          "id": "e11_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡El portón delantero está cerrado con cadena! ¡Y las luces del pasillo acaban de parpadear y apagarse!",
+          "timestamp_label": "12:08 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n03"
+        },
+        {
+          "id": "e11_n03",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 10,
+          "transcript": "[Susurro urgente sobre estática] ¡{{player_name}}! ¡Está echando queroseno junto a las escaleras para simular un incendio eléctrico! ¡No bajes corriendo por las escaleras!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n04"
+        },
+        {
+          "id": "e11_n04",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Debiste aceptar el reembolso de la renta e irte esta mañana, {{player_name}}. Las inquilinas curiosas nunca duran en el Piso 4.",
+          "timestamp_label": "12:10 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n05"
+        },
+        {
+          "id": "e11_n05",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "Oye: ¡hay una vieja escalera de servidumbre escondida detrás del ropero en la Habitación 404! ¡Lleva directo al cuarto de calderas!",
+          "timestamp_label": "12:11 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n06_choice"
+        },
+        {
+          "id": "e11_n06_choice",
+          "type": "choice",
+          "prompt": "¡Chispas naranjas sisean al final del pasillo! ¡Elige rápido!",
+          "options": [
+            {
+              "option_id": "e11_opt_free",
+              "label": "Entrar a la 404 y revisar el ropero",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Entro a la Habitación 404 ahora mismo!",
+              "next_node_id": "e11_n07a"
+            },
+            {
+              "option_id": "e11_opt_vip",
+              "label": "Activar primero la manguera del pasillo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e11_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e11_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Estoy dentro de la Habitación 404… ¡el aire está helado y el panel trasero del ropero ya está sin pestillo!",
+          "timestamp_label": "12:13 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n08"
+        },
+        {
+          "id": "e11_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡Disparar la manguera contra incendios inunda el descanso de las escaleras, empapando el rastro de queroseno de Marni y dejándola atrapada en el Piso 3!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n08"
+        },
+        {
+          "id": "e11_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Mira la señal de la cámara del pasillo que te acabo de enviar, {{player_name}}. No está sola en el Piso 3.",
+          "timestamp_label": "12:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n09"
+        },
+        {
+          "id": "e11_n09",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡Sal ya, {{player_name}}! ¡Tengo la llave maestra de todos los cuartos aquí arriba!",
+          "timestamp_label": "12:16 AM",
+          "typing_delay_ms": 700,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e11_n10_end"
+        },
+        {
+          "id": "e11_n10_end",
+          "type": "cliffhanger",
+          "headline": "Humo Bajo la Habitación 404...",
+          "teaser_text": "Episodio 12: La cámara del pasillo carga… mostrando a quién más le pagó Marni para incendiar el edificio.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 12
+        }
+      ]
+    },
+    {
+      "episode_number": 12,
+      "title": "El Pasillo Vacío",
+      "start_node_id": "e12_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e12_n01",
+          "type": "narrator",
+          "text": "1:14 AM · Agachada dentro de la Habitación 404, miras fijamente la tenue señal de cámara brillando en tu teléfono.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e12_n02"
+        },
+        {
+          "id": "e12_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¡¿por qué el pasillo está completamente vacío si oigo pasos justo afuera?!",
+          "timestamp_label": "1:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n03"
+        },
+        {
+          "id": "e12_n03",
+          "type": "image",
+          "sender_id": "room404",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "Cámara Piso 4 (1:14 AM) · Pasillo vacío salvo por un humo pálido que se cuela bajo el umbral sellado.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n04"
+        },
+        {
+          "id": "e12_n04",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Puso en bucle la cámara del pasillo… igual que hizo la noche en que morí. Está parada justo afuera de la 405.",
+          "timestamp_label": "1:16 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n05"
+        },
+        {
+          "id": "e12_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Cuarto vacío... lista. Entraste a la 404, ¿verdad, {{player_name}}?",
+          "timestamp_label": "1:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n06_choice"
+        },
+        {
+          "id": "e12_n06_choice",
+          "type": "choice",
+          "prompt": "¡Una llave maestra de latón se desliza en el cerrojo de la Habitación 404!",
+          "options": [
+            {
+              "option_id": "e12_opt_free",
+              "label": "Escabullirte tras la escotilla del ropero",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cerrando el panel oculto detrás de mí… ¡en silencio!",
+              "next_node_id": "e12_n07a"
+            },
+            {
+              "option_id": "e12_opt_vip",
+              "label": "Trabar una silla bajo la perilla de puerta",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e12_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e12_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La escotilla se cierra de golpe justo cuando la puerta de la Habitación 404 se abre de par en par.",
+          "timestamp_label": "1:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n08"
+        },
+        {
+          "id": "e12_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡La perilla trabada parte su llave maestra de latón justo dentro de la cerradura… dejando a Marni encerrada afuera en el pasillo lleno de humo!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n08"
+        },
+        {
+          "id": "e12_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡Pequeña rata! ¡¿Crees que esconderte en el cuarto de una chica muerta te va a salvar?!",
+          "timestamp_label": "1:21 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n09"
+        },
+        {
+          "id": "e12_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mi teléfono está sonando... Marni me está llamando desde el otro lado de la pared.",
+          "timestamp_label": "1:22 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e12_n10_end"
+        },
+        {
+          "id": "e12_n10_end",
+          "type": "cliffhanger",
+          "headline": "El Verdadero Rostro de la Casera",
+          "teaser_text": "Episodio 13: La Casera Marni deja caer por completo su dulce farsa… y lo confiesa todo en una línea en vivo.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 13
+        }
+      ]
+    },
+    {
+      "episode_number": 13,
+      "title": "La Llamada Confesional",
+      "start_node_id": "e13_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e13_n01",
+          "type": "narrator",
+          "text": "1:32 AM · Dentro del estrecho descanso de servicio detrás de la Habitación 404, el polvo flota denso bajo el haz de tu linterna.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e13_n02"
+        },
+        {
+          "id": "e13_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sigue grabando... si confiesa en esta llamada, está acabada.",
+          "timestamp_label": "1:32 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n03_call"
+        },
+        {
+          "id": "e13_n03_call",
+          "type": "incoming_call",
+          "caller_id": "landlady",
+          "caller_label": "Casera Marni (Llamada Entrante)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e13_n04_ans",
+          "on_decline_node_id": "e13_n04_dec"
+        },
+        {
+          "id": "e13_n04_ans",
+          "type": "narrator",
+          "text": "La voz de Marni destila veneno: \"¡Este edificio está sobre un terreno de un millón de dólares! Dos 'accidentes' despejaron a los inquilinos… ¡y esta noche cierra el trato!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n04_dec",
+          "type": "narrator",
+          "text": "Rechazas. Llega un furioso mensaje de voz: \"Soborné al inspector de incendios en 2018 y en 2022… ¡no vas a frenar mi negocio inmobiliario!\"",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Entrega las escrituras de 2018 y abriré el portón delantero ahora mismo, {{player_name}}.",
+          "timestamp_label": "1:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n06_choice"
+        },
+        {
+          "id": "e13_n06_choice",
+          "type": "choice",
+          "prompt": "¡Acabas de grabar su confesión completa en audio! ¿Siguiente jugada?",
+          "options": [
+            {
+              "option_id": "e13_opt_free",
+              "label": "Guardar audio y bajar escaleras de servicio",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bajo al cuarto de calderas del sótano por la libreta.",
+              "next_node_id": "e13_n07a"
+            },
+            {
+              "option_id": "e13_opt_vip",
+              "label": "Subir la confesión a la nube ahora mismo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e13_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e13_n07a",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Sigue la corriente fría escaleras abajo por los peldaños de madera, {{player_name}}. Su caja metálica está detrás de la caldera.",
+          "timestamp_label": "1:36 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n08"
+        },
+        {
+          "id": "e13_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: Tu respaldo en la nube se sincroniza justo antes de que el sótano mate tu señal… ¡y envía una copia automática a la línea policial!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n08"
+        },
+        {
+          "id": "e13_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Veo la caldera del sótano brillando en naranja al pie de las escaleras.",
+          "timestamp_label": "1:38 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n09"
+        },
+        {
+          "id": "e13_n09",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Date prisa, {{player_name}}… se dio cuenta de que la escotilla de servicio está abierta. Está bajando por las escaleras principales para atraparte.",
+          "timestamp_label": "1:39 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n10_end"
+        },
+        {
+          "id": "e13_n10_end",
+          "type": "cliffhanger",
+          "headline": "Carrera al Cuarto de Calderas",
+          "teaser_text": "Episodio 14: Al final de la escalera oculta yace la caja metálica que guarda el diario real de Sari y cada póliza falsificada.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 14
+        }
+      ]
+    },
+    {
+      "episode_number": 14,
+      "title": "La Escalera Oculta",
+      "start_node_id": "e14_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e14_n01",
+          "type": "narrator",
+          "text": "1:48 AM · Estrechos peldaños de madera crujen bajo tus tenis. El agua gotea sin cesar por los muros de concreto del sótano.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e14_n02"
+        },
+        {
+          "id": "e14_n02",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Mantente agachada, {{player_name}}. Detrás del calentador de agua oxidado hay un nicho de ladrillo… ahí escondió mi diario.",
+          "timestamp_label": "1:48 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n03"
+        },
+        {
+          "id": "e14_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Encontré el nicho! Hay una caja metálica oxidada sellada con cinta y cera roja.",
+          "timestamp_label": "1:49 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e14_n04"
+        },
+        {
+          "id": "e14_n04",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 9,
+          "transcript": "[Voz suave y temblorosa] Adentro están las pólizas de seguro de vida falsificadas para mí, la inquilina de 2018 y... una en blanco con TU nombre.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e14_n05"
+        },
+        {
+          "id": "e14_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Te atrapé, {{player_name}}. Disfruta el sótano.",
+          "timestamp_label": "1:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e14_n06_choice"
+        },
+        {
+          "id": "e14_n06_choice",
+          "type": "choice",
+          "prompt": "¡La pesada puerta de acero del sótano se cierra de golpe hacia el marco!",
+          "options": [
+            {
+              "option_id": "e14_opt_free",
+              "label": "Tomar la caja y correr hacia la puerta",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Tengo la caja metálica… no me encierres aquí abajo!",
+              "next_node_id": "e14_n07a"
+            },
+            {
+              "option_id": "e14_opt_vip",
+              "label": "Arrojar una llave inglesa al marco de puerta",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e14_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e14_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El cerrojo de acero golpea al cerrarse una fracción de segundo antes de que llegue… ¡estoy encerrada dentro del cuarto de calderas!",
+          "timestamp_label": "1:54 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n08"
+        },
+        {
+          "id": "e14_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: La llave inglesa dobla el pestillo lo justo para dejar una rendija de un centímetro para respirar… ¡evitando que el cuarto quede sellado herméticamente!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n08"
+        },
+        {
+          "id": "e14_n08",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡{{player_name}}, escucha! ¡Si corta las luces del sótano, va por el distribuidor principal de gas después!",
+          "timestamp_label": "1:56 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n09"
+        },
+        {
+          "id": "e14_n09",
+          "type": "narrator",
+          "text": "El único foco desnudo arriba estalla… y un fuerte siseo metálico resuena por las tuberías oscuras.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n10_end"
+        },
+        {
+          "id": "e14_n10_end",
+          "type": "cliffhanger",
+          "headline": "Acto 3: La Trampa del Sótano",
+          "teaser_text": "Episodio 15: 2:05 AM — Atrapada en el cuarto de calderas a oscuras con la misma fuga de gas que mató a la Habitación 404.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 15
+        }
+      ]
+    },
+    {
+      "episode_number": 15,
+      "title": "La Bóveda del Cuarto de Calderas",
+      "start_node_id": "e15_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e15_n01",
+          "type": "narrator",
+          "text": "2:05 AM · Oscuridad total en el cuarto de calderas inundado. La pantalla de tu teléfono ilumina tres pólizas de seguro falsificadas dentro de la caja metálica.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e15_n02"
+        },
+        {
+          "id": "e15_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Ya había redactado una póliza con MI nombre! ¡Se suponía que yo sería el tercer \"accidente\" en el Piso 4!",
+          "timestamp_label": "2:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e15_n03"
+        },
+        {
+          "id": "e15_n03",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Esta noche no, {{player_name}}. No dejaré que se lleve otra alma en esta casa.",
+          "timestamp_label": "2:06 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e15_n04"
+        },
+        {
+          "id": "e15_n04",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "Dile al desarrollador que el edificio estará vacío a las 3 AM; la fuga de gas ya está corriendo.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "unsent",
+          "haptic": "heavy",
+          "next_node_id": "e15_n05"
+        },
+        {
+          "id": "e15_n05",
+          "type": "narrator",
+          "text": "Un olor penetrante a huevo podrido llena el aire del sótano. Se te cierra la garganta.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e15_n06_choice"
+        },
+        {
+          "id": "e15_n06_choice",
+          "type": "choice",
+          "prompt": "¡El gas sale a chorros de la tubería principal! ¿Qué haces primero?",
+          "options": [
+            {
+              "option_id": "e15_opt_free",
+              "label": "Atar tu bufanda mojada sobre boca y nariz",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cubriéndome la cara… ¡¿dónde está la llave de paso de emergencia?!",
+              "next_node_id": "e15_n07a"
+            },
+            {
+              "option_id": "e15_opt_vip",
+              "label": "Fotografiar cada póliza falsa en la caja",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e15_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e15_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Cinco minutos y estarás dormida para siempre, {{player_name}}. Igual que Sari.",
+          "timestamp_label": "2:09 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08"
+        },
+        {
+          "id": "e15_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡Tu flash captura cada firma falsificada y la huella del pulgar de Marni… y la caja esconde una llave de latón de repuesto para la rejilla del callejón!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08"
+        },
+        {
+          "id": "e15_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Apenas puedo respirar aquí abajo... ¡Raka, dime cómo cerrar esta línea de gas!",
+          "timestamp_label": "2:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n09"
+        },
+        {
+          "id": "e15_n09",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Mantén firme tu teléfono, {{player_name}}. Estoy manteniendo viva tu señal desde el Piso 4.",
+          "timestamp_label": "2:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e15_n10_end"
+        },
+        {
+          "id": "e15_n10_end",
+          "type": "cliffhanger",
+          "headline": "Cinco Minutos de Aire Restantes...",
+          "teaser_text": "Episodio 16: Compitiendo contra el gas ascendente en total oscuridad para hallar la válvula oculta de cierre de emergencia.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 16
+        }
+      ]
+    },
+    {
+      "episode_number": 16,
+      "title": "La Válvula de Gas",
+      "start_node_id": "e16_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e16_n01",
+          "type": "narrator",
+          "text": "2:20 AM · Mareada por los vapores, barres con la linterna de tu teléfono un laberinto de tubos de hierro oxidado.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e16_n02"
+        },
+        {
+          "id": "e16_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Hay cuatro válvulas rojas en esta pared! ¡Si giro la equivocada, inundará el cuarto más rápido!",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n03"
+        },
+        {
+          "id": "e16_n03",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "¡No toques la fila de arriba! ¡La llave de corte de toda la casa es la rueda de latón corroída junto al desagüe del piso!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e16_n04"
+        },
+        {
+          "id": "e16_n04",
+          "type": "voice_note",
+          "sender_id": "neighbor",
+          "duration_sec": 10,
+          "transcript": "[Gritando con claridad] ¡Gírala EN SENTIDO HORARIO tres vueltas completas! ¡Usa la manga de tu chamarra para que el óxido no te corte las manos!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e16_n05"
+        },
+        {
+          "id": "e16_n05",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Estoy justo a tu lado, {{player_name}}. Empuja… ¡gírala con todo lo que tienes!",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e16_n06_choice"
+        },
+        {
+          "id": "e16_n06_choice",
+          "type": "choice",
+          "prompt": "¡La rueda de latón está oxidada y dura! ¡Se te nubla la vista!",
+          "options": [
+            {
+              "option_id": "e16_opt_free",
+              "label": "Apoyar botas en pared y jalar en sentido reloj",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Se mueve: ¡una, dos, TRES vueltas! ¡El siseo se detuvo!",
+              "next_node_id": "e16_n07a"
+            },
+            {
+              "option_id": "e16_opt_vip",
+              "label": "Enganchar el tubo como palanca para cerrarla",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e16_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e16_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡El siseo muere al instante! ¡Aire frío y fresco entra desde la ventilación del callejón!",
+          "timestamp_label": "2:25 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08"
+        },
+        {
+          "id": "e16_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡El tubo cierra de golpe la válvula principal en dos segundos… y hace vibrar las tuberías de radiadores de todo el edificio como una campana de alarma!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08"
+        },
+        {
+          "id": "e16_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Espera... ¡¿por qué dejó de girar el medidor de gas?! ¡¿Quién te está ayudando allá abajo?!",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n09"
+        },
+        {
+          "id": "e16_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El cerrojo de la puerta del sótano se desliza hacia atrás... Marni está parada en lo alto de las escaleras con un encendedor.",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n10_end"
+        },
+        {
+          "id": "e16_n10_end",
+          "type": "cliffhanger",
+          "headline": "Sombra en lo Alto de las Escaleras",
+          "teaser_text": "Episodio 17: Marni enciende su encendedor… justo cuando la Habitación 404 hace una última llamada para despertar a todo el edificio.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 17
+        }
+      ]
+    },
+    {
+      "episode_number": 17,
+      "title": "El Encendedor en las Escaleras",
+      "start_node_id": "e17_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e17_n01",
+          "type": "narrator",
+          "text": "2:35 AM · Pasos pesados se detienen en lo alto de las escaleras del sótano. Una diminuta llama amarilla parpadea en la oscuridad.",
+          "style": "banner",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e17_n02"
+        },
+        {
+          "id": "e17_n02",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Escalera del Sótano (2:35 AM) · Casera Marni recortada en la puerta sosteniendo un encendedor de latón.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n03_call"
+        },
+        {
+          "id": "e17_n03_call",
+          "type": "incoming_call",
+          "caller_id": "room404",
+          "caller_label": "Habitación 404 (Interfono del Edificio)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e17_n04_ans",
+          "on_decline_node_id": "e17_n04_dec"
+        },
+        {
+          "id": "e17_n04_ans",
+          "type": "narrator",
+          "text": "La voz de Sari retumba por CADA altavoz de pasillo en los cuatro pisos: \"¡DESPIERTEN! ¡MARNI ESTÁ INCENDIANDO EL EDIFICIO! ¡REVISEN EL SÓTANO!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n04_dec",
+          "type": "narrator",
+          "text": "Incluso rechazada, la llamada toma el intercomunicador de la pensión: ¡el grito con eco de Sari despierta de golpe a cada inquilino de los Pisos 1 al 4!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡¡APAGUEN ESO!! ¡¿Cómo habla una chica muerta por mi intercomunicador?!",
+          "timestamp_label": "2:36 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n06_choice"
+        },
+        {
+          "id": "e17_n06_choice",
+          "type": "choice",
+          "prompt": "¡Los inquilinos gritan arriba! ¡Marni levanta el encendedor en pánico!",
+          "options": [
+            {
+              "option_id": "e17_opt_free",
+              "label": "Arrojar la cubeta de agua escaleras arriba",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Suelta el encendedor, Marni… todo el edificio está despierto!",
+              "next_node_id": "e17_n07a"
+            },
+            {
+              "option_id": "e17_opt_vip",
+              "label": "Cegarla con el estrobo de tu linterna",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e17_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e17_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡El agua salpica el escalón superior… apagando su encendedor en el acto!",
+          "timestamp_label": "2:38 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e17_n08"
+        },
+        {
+          "id": "e17_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡Cegada por el estrobo, Marni tropieza hacia atrás y deja caer su llavero maestro directo escaleras abajo hasta tus manos!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n08"
+        },
+        {
+          "id": "e17_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Los inquilinos del Piso 1 acaban de oír sirenas, {{player_name}}. ¡Ve… termina esta pesadilla!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e17_n09"
+        },
+        {
+          "id": "e17_n09",
+          "type": "narrator",
+          "text": "Hombros pesados golpean contra la puerta del sótano desde el lado del pasillo mientras los vecinos corren a sacarte!",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e17_n10_end"
+        },
+        {
+          "id": "e17_n10_end",
+          "type": "cliffhanger",
+          "headline": "El Cuarto Piso Despierta",
+          "teaser_text": "Episodio 18: Los inquilinos abren la puerta del sótano… y Marni huye hacia el callejón trasero empapado por la lluvia.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 18
+        }
+      ]
+    },
+    {
+      "episode_number": 18,
+      "title": "El Cuarto Piso Despierta",
+      "start_node_id": "e18_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e18_n01",
+          "type": "narrator",
+          "text": "2:46 AM · Tres vecinos abren a la fuerza la puerta del sótano y te sacan al aire fresco del pasillo.",
+          "style": "banner",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e18_n02"
+        },
+        {
+          "id": "e18_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡No dejen escapar a Marni! ¡Está corriendo hacia el callejón trasero con su caja de dinero!",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n03"
+        },
+        {
+          "id": "e18_n03",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡Quítense de mi camino! ¡Esta pensión me pertenece a MÍ!",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n04"
+        },
+        {
+          "id": "e18_n04",
+          "type": "voice_note",
+          "sender_id": "player",
+          "duration_sec": 8,
+          "transcript": "[Sin aliento, corriendo] ¡La policía ya está en el callejón principal! ¡Todos bloqueen el portón delantero: tengo la caja de seguros de 2018 y 2022!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e18_n05"
+        },
+        {
+          "id": "e18_n05",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Está atrapada entre el muro del callejón y las luces de las patrullas, {{player_name}}. No sueltes mi diario.",
+          "timestamp_label": "2:49 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n06_choice"
+        },
+        {
+          "id": "e18_n06_choice",
+          "type": "choice",
+          "prompt": "¡Marni se abalanza sobre ti en el patio mojado por la caja metálica!",
+          "options": [
+            {
+              "option_id": "e18_opt_free",
+              "label": "Esquivar y lanzar la caja al oficial líder",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Oficial, atrape! ¡Cada póliza falsificada está adentro!",
+              "next_node_id": "e18_n07a"
+            },
+            {
+              "option_id": "e18_opt_vip",
+              "label": "Poner la confesión de Marni a todo volumen",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e18_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e18_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "¡¡NO!! ¡Dame esa caja… esos papeles son privados!",
+          "timestamp_label": "2:51 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08"
+        },
+        {
+          "id": "e18_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: ¡La propia voz de Marni confesando las fugas de gas de 2018 y 2022 resuena por todo el patio frente a seis oficiales!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08"
+        },
+        {
+          "id": "e18_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Se acabó, Marni. Ambos casos de la Habitación 404 están completamente abiertos ahora.",
+          "timestamp_label": "2:53 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e18_n09"
+        },
+        {
+          "id": "e18_n09",
+          "type": "narrator",
+          "text": "Luces rojas y azules bañan el patio mientras los oficiales se interponen entre tú y la temblorosa casera.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n10_end"
+        },
+        {
+          "id": "e18_n10_end",
+          "type": "cliffhanger",
+          "headline": "La Última Medianoche",
+          "teaser_text": "Episodio 19: Las esposas se cierran en el portón de hierro… y la verdad del Cuarto Piso por fin queda asentada en actas.",
+          "sfx": "gasp",
+          "ambient": "horror_whisper",
+          "haptic": "heavy",
+          "next_episode_number": 19
+        }
+      ]
+    },
+    {
+      "episode_number": 19,
+      "title": "La Última Medianoche",
+      "start_node_id": "e19_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e19_n01",
+          "type": "narrator",
+          "text": "3:08 AM · La lluvia golpetea suavemente sobre los techos de las patrullas. Los detectives fotografían la caja metálica, el informe de incendios de 2018 y la válvula de gas aceitada.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n02"
+        },
+        {
+          "id": "e19_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Inquilina malagradecida... ¡te di un techo sobre tu cabeza!",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n03"
+        },
+        {
+          "id": "e19_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Intentaste convertir la Habitación 404 en una trampa mortal tres veces por dinero del seguro. Cuéntaselo al juez.",
+          "timestamp_label": "3:09 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n04"
+        },
+        {
+          "id": "e19_n04",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "Los detectives acaban de notificar a mi abogado: están acusando a Marni de doble homicidio e incendio provocado. Gracias por escuchar de verdad, {{player_name}}.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n05"
+        },
+        {
+          "id": "e19_n05",
+          "type": "narrator",
+          "text": "Los oficiales guían a Marni hacia la parte trasera de la patrulla. Por primera vez en años, el frío opresivo se disipa del cuarto piso.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n06_choice"
+        },
+        {
+          "id": "e19_n06_choice",
+          "type": "choice",
+          "prompt": "El detective principal pregunta si quieres entregar el diario de Sari como Prueba A.",
+          "options": [
+            {
+              "option_id": "e19_opt_free",
+              "label": "Dar copias y guardar original para su mamá",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aquí tiene escaneos completos; su madre merece el diario real.",
+              "next_node_id": "e19_n07a"
+            },
+            {
+              "option_id": "e19_opt_vip",
+              "label": "Pedir que quiten sello a la 404 al alba",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e19_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e19_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "Esto no se acaba... ¡mis abogados me sacarán para mediodía!",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08"
+        },
+        {
+          "id": "e19_n07b",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: El detective asiente con solemnidad: \"Con su confesión en audio y la transferencia bancaria, nunca verá la libertad bajo fianza.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08"
+        },
+        {
+          "id": "e19_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Espera el amanecer una última vez, {{player_name}}. Ambas por fin podemos descansar.",
+          "timestamp_label": "3:14 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n09"
+        },
+        {
+          "id": "e19_n09",
+          "type": "narrator",
+          "text": "Las patrullas se alejan por el callejón mojado, dejando la pensión envuelta en una suave quietud previa al alba.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e19_n10_end"
+        },
+        {
+          "id": "e19_n10_end",
+          "type": "cliffhanger",
+          "headline": "Amanece Sobre el Cuarto Piso...",
+          "teaser_text": "Episodio 20 (Gran Final): La mañana rompe clara y cálida… y la Habitación 404 envía un último y pacífico adiós.",
+          "sfx": "ting_soft",
+          "ambient": "none",
+          "haptic": "light",
+          "next_episode_number": 20
+        }
+      ]
+    },
+    {
+      "episode_number": 20,
+      "title": "El Pasillo Tranquilo",
+      "start_node_id": "e20_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e20_n01",
+          "type": "narrator",
+          "text": "7:00 AM · Una pálida luz dorada de sol se derrama por el pasillo del cuarto piso. La lluvia ha cesado por completo.",
+          "style": "time_skip",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n02"
+        },
+        {
+          "id": "e20_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ambos relicarios —el de 2018 y el de 2022— están a salvo con sus familias. Y el negocio inmobiliario de Marni fue anulado por la ciudad.",
+          "timestamp_label": "7:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n03"
+        },
+        {
+          "id": "e20_n03",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "El pasillo ya no está frío, {{player_name}}. Gracias por quedarte hasta que salió toda la verdad.",
+          "timestamp_label": "7:02 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n04"
+        },
+        {
+          "id": "e20_n04",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 7,
+          "transcript": "[Cálido canto de aves matutino, campanilla suave] \"Adiós, {{player_name}}. Ninguna de las dos sigue atrapada en la Habitación 404.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n05"
+        },
+        {
+          "id": "e20_n05",
+          "type": "narrator",
+          "text": "Ante tus ojos, el chat de Habitación 404 cambia a \"Archivado Para Siempre\". Una brisa suave agita las cortinas blancas.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n06_choice"
+        },
+        {
+          "id": "e20_n06_choice",
+          "type": "choice",
+          "prompt": "El taxi de mudanza toca el claxon suavemente afuera del portón soleado. ¡Elige tu Gran Final!",
+          "options": [
+            {
+              "option_id": "e20_opt_free",
+              "label": "Dejar dos lirios blancos en 404 y partir",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Descansen tranquilas, las dos. Buenos días.",
+              "next_node_id": "e20_n07a"
+            },
+            {
+              "option_id": "e20_opt_vip",
+              "label": "Ir hoy al homenaje con la mamá de Sari",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Giro Secreto",
+              "player_reply_text": null,
+              "next_node_id": "e20_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e20_n07a",
+          "type": "narrator",
+          "text": "Colocas dos lirios blancos frescos junto a la puerta abierta de la Habitación 404 y bajas hacia la mañana luminosa.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n08"
+        },
+        {
+          "id": "e20_n07b",
+          "type": "narrator",
+          "text": "FINAL VIP: La madre de Sari y la hermana de la inquilina de 2018 te abrazan llorando en el homenaje: \"Les devolviste sus nombres a nuestras hijas.\"",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e20_n08"
+        },
+        {
+          "id": "e20_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El Cuarto Piso por fin está en paz. Hora de comenzar un capítulo completamente nuevo.",
+          "timestamp_label": "7:08 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n09"
+        },
+        {
+          "id": "e20_n09",
+          "type": "narrator",
+          "text": "Sales por el portón de hierro abierto hacia la calle soleada. La medianoche nunca volverá a tocar a tu puerta.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n10_end"
+        },
+        {
+          "id": "e20_n10_end",
+          "type": "cliffhanger",
+          "headline": "La Habitación 404 Por Fin Es Libre.",
+          "teaser_text": "Gran Final Completo · Expusiste la conspiración de la Casera Marni, sobreviviste a la trampa de gas del sótano y liberaste a cada alma del Cuarto Piso.",
+          "sfx": "ting_soft",
+          "ambient": "none",
+          "haptic": "light",
+          "next_episode_number": null,
+          "cta_label": "Serie Completa"
+        }
+      ]
+    }
+  ]
+}

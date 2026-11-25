@@ -1,0 +1,1013 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_060",
+  "lang": "en",
+  "metadata": {
+    "title": "The 4:00 AM Group Call",
+    "subtitle": "Five startup founders were dragged into a 4 AM chat when their CTO vanished with the seed-round keys—except he never left the office.",
+    "genre": "mystery",
+    "tags": [
+      "Startup",
+      "Cyber",
+      "Office"
+    ],
+    "cover_image": "assets/media/covers/story_060.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You · COO)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "dev",
+      "name": "Devon (CEO)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "asha",
+      "name": "Asha (Head of Security)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "kyle",
+      "name": "Kyle (CFO)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Cold Wallet Alert",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "4:02 AM · Exec Channel \"#FOUNDERS-WARROOM\". A $2.4M treasury transfer was just queued—and CTO Eric isn’t answering.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "Everyone online NOW. Eric’s hardware key just signed a $2.4M transfer to an offshore wallet!",
+          "timestamp_label": "4:02 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "Wait—multi-sig needs TWO keys! Who signed the second approval?!",
+          "timestamp_label": "4:03 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "It’s still pending in the 15-minute timelock. Asha, where did Eric’s key ping from?",
+          "timestamp_label": "4:03 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Not from his apartment. The IP address is our 19th-floor server room RIGHT NOW.",
+          "timestamp_label": "4:04 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "kyle",
+          "text": "Eric couldn’t have swiped in, I left his spare badge on—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "Kyle?! Why did you have Eric’s spare office badge?!",
+          "timestamp_label": "4:05 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "voice_note",
+          "sender_id": "asha",
+          "duration_sec": 9,
+          "transcript": "[elevator ding] {{player_name}}, I just got off on Floor 19! The server room glass is fogged—and Eric is slumped against the rack inside!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Twelve minutes left on the $2.4M timelock! What do you do first?",
+          "options": [
+            {
+              "option_id": "opt_freeze",
+              "label": "Trigger the emergency treasury freeze",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Initiating COO emergency wallet freeze and calling 911 to Floor 19!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_signer2",
+              "label": "Inspect which founder signed Key #2",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Pulling the cryptographic audit for Key #2 right now!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "FREEZE FAILED: Someone revoked your COO admin permissions 4 minutes ago.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "SIGNATURE LOG: Key #2 wasn’t Kyle’s—it was signed by DEVON’S biometric token at 4:01 AM.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "{{player_name}}, I got Eric out—he was locked in with a sedated coffee! And someone just cut Floor 19’s Wi-Fi!",
+          "timestamp_label": "4:08 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "6 Minutes Until The $2.4M Wire Clears",
+          "teaser_text": "Episode 2: The second signer is still inside the building—waiting in the stairwell.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Floor 19 Lockdown",
+      "start_node_id": "e2_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "4:10 AM · 19th Floor Lobby. Backup batteries hum while the transfer countdown ticks below 5 minutes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "I’m pulling into the lobby garage! Building security says Devon swiped into the elevator at 3:45 AM!",
+          "timestamp_label": "4:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Devon, you’re not at home. You drugged Eric’s espresso and used your CEO key to sign the wire.",
+          "timestamp_label": "4:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "The startup was dead anyway, {{player_name}}! Investors were pulling our Series A tomorrow morning!",
+          "timestamp_label": "4:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "dev",
+          "text": "In four minutes the offshore wallet clears and I’m on the—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "asha",
+          "duration_sec": 9,
+          "transcript": "[typing fast] {{player_name}}! Eric just woke up—he says if we physically unplug the fiber uplink in Rack 3, the timelock aborts automatically!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "Security and police just hit Floor 19! Devon’s running for the server room!",
+          "timestamp_label": "4:13 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "01:10 left on the wire transfer! How do you stop it?",
+          "options": [
+            {
+              "option_id": "opt_pull_fiber",
+              "label": "Pull the yellow fiber uplink in Rack 3",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Asha, yank the yellow fiber line in Rack 3 RIGHT NOW!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_honeypot",
+              "label": "Activate Eric’s hidden honeypot redirect",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Genius · Watch Ad",
+              "player_reply_text": "Flipping Eric’s dead-man switch—rerouting the $2.4M to escrow!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Rack 3 goes dark with 18 seconds to spare. The wire aborts—and police cuff Devon right outside the glass.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Devon’s phone pings \"TRANSFER COMPLETE\"—until he sees the recipient is the federal escrow account. Police tackle him in the hall.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Every cent of the $2.4M is safe, and Eric’s headed to the ER for a checkup. We did it, {{player_name}}.",
+          "timestamp_label": "4:18 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "Wait… the lead investor just texted me. Series A wasn’t being pulled because of Devon—someone leaked our source code last week.",
+          "timestamp_label": "4:19 AM",
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "One Commit Was Pushed From Floor 19",
+          "teaser_text": "Asha’s terminal flashes a git audit alert—the code leak came from an SSH key registered to Kyle’s laptop.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Stolen SSH Key",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "4:24 AM · Security War Room. Devon is in police custody, but Asha’s terminal still flashes red.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Kyle, don’t move a muscle. Your SSH key pushed our core engine to an external Git mirror last Tuesday at 2:14 AM.",
+          "timestamp_label": "4:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You told us Series A was collapsing because of Devon. Were you the one who leaked our code, Kyle?",
+          "timestamp_label": "4:25 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "asha",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "LOBBY CAM 02 · Tuesday 02:09 AM — Someone swiping Kyle’s spare badge into the elevator.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "Zoom in on the wrist! That’s not me—I was in Boston with my sister! That person is wearing a platinum watch!",
+          "timestamp_label": "4:26 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "dev",
+          "text": "If they check who paid for that Git mirror, my bail deal is dead—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "asha",
+          "duration_sec": 10,
+          "transcript": "[keyboards clacking] {{player_name}}, Devon’s burner phone is still synced to the office cloud! There’s a message from an investor partner telling him to frame Kyle!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Devon is texting from the cruiser! How do you trap the real buyer?",
+          "options": [
+            {
+              "option_id": "opt_trace_ip",
+              "label": "Trace the Git mirror billing card",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Asha, pull the billing metadata on that external Git mirror right now.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_clone_cloud",
+              "label": "Download Devon’s encrypted cloud chat",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Deep Intel · Watch Ad",
+              "player_reply_text": "Mirror Devon’s entire cloud backup before his lawyer wipes it!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "BILLING MATCH: The server was paid via a corporate shell owned by Apex Ventures—our lead Series A rival.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "CLOUD DUMP COMPLETE: You recover a signed $1.8M buyout promise from Apex Ventures if our Series A dies by 8 AM.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "I knew I wasn’t crazy! Devon cloned my laptop during last week’s board dinner!",
+          "timestamp_label": "4:31 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Wait… the lead investor just moved our Series A termination call up to 6:00 AM!",
+          "timestamp_label": "4:32 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "90 Minutes To Save The Company",
+          "teaser_text": "Episode 4: A second insider inside the investor syndicate is trying to kill your term sheet before sunrise.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Shadow Commit",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "4:48 AM · Floor 19 Glass Room. Coffee cups shake as the 6 AM investor deadline looms.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "One phone call before booking, {{player_name}}. Drop the criminal charges and I’ll tell you which board observer bought the code.",
+          "timestamp_label": "4:48 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You drugged Eric and tried to steal $2.4M. You have zero leverage left, Devon.",
+          "timestamp_label": "4:49 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Eric just texted from the ER! He hid a cryptographic watermark inside our engine—any rival running it pings our server!",
+          "timestamp_label": "4:50 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "dev",
+          "text": "No way Eric watermarked the compiled binary, Apex already deployed—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "HAHA! He just gave it away! Apex already deployed our stolen build on their staging cluster!",
+          "timestamp_label": "4:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "asha",
+          "duration_sec": 9,
+          "transcript": "[alert chime] Bingo! Watermark beacon just lit up! IP resolves straight to Apex Ventures’ portfolio company in Palo Alto!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "You have live proof Apex is running your stolen code! Next move?",
+          "options": [
+            {
+              "option_id": "opt_notify_counsel",
+              "label": "Send forensic packet to lead VC",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Package the watermark beacon and send it straight to our lead VC’s general counsel.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_trigger_killswitch",
+              "label": "Trigger Eric’s remote audit banner",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Boss Move · Watch Ad",
+              "player_reply_text": "Asha, fire Eric’s read-only audit ping—stamp our copyright across Apex’s live demo!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "LEAD VC REPLY: \"Hold everything. We’re pulling Apex out of the syndicate and investigating immediately.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "LIVE HIT: Apex’s morning demo screen flashes \"STOLEN PROPRIETARY CODE — CASE #404\" in front of their own LPs!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Now we just need the money trail linking Devon to the Apex partner before the 6 AM call.",
+          "timestamp_label": "4:58 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "I just found a hidden escrow invoice in Devon’s deleted drafts—scheduled to clear at 5:30 AM!",
+          "timestamp_label": "4:59 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "The $1.8M Kickback Wire",
+          "teaser_text": "Episode 5: Intercept the shell-company payout before Apex’s partner erases the last link.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Offshore Wire",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "5:18 AM · Executive War Room. Twelve minutes before the kickback clears.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "Look at the routing ledger I pulled from our corporate bank portal—Devon used our own legal retainer code to disguise it!",
+          "timestamp_label": "5:18 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "kyle",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "WIRE RECEIPT · $1,800,000 from Apex Holdings LLC → Devon’s Cayman Trust (Ref: Code Handover).",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "Wait—how did you get into my Cayman trust receipts?! My lawyer said that portal was sealed!",
+          "timestamp_label": "5:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Because you forwarded the confirmation to your company email when you thought you’d be on a plane by 4:30.",
+          "timestamp_label": "5:21 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "dev",
+          "text": "Tell Victoria at Apex to cancel the wire, if the feds see her name—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "asha",
+          "duration_sec": 8,
+          "transcript": "[printer humming] Just uploaded the wire receipt, CCTV clip, and watermark log to the federal cyber-crimes portal. Case number assigned!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "The 6 AM Series A call starts in 5 minutes. How do you open?",
+          "options": [
+            {
+              "option_id": "opt_present_audit",
+              "label": "Present the full forensic report",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sharing the complete forensic dossier with every investor on the call right now.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_renegotiate_up",
+              "label": "Demand a higher Series A valuation",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Power Play · Watch Ad",
+              "player_reply_text": "If a rival risked prison to steal our engine, our valuation just went up 20%.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "BOARD CHAT: The lead partner goes silent for ten seconds—then cancels the termination motion on the spot.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "LEAD PARTNER: \"Bold, {{player_name}}. Send the revised term sheet—we’re increasing our allocation.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "They bought it! And the board wants an emergency vote to remove Devon as CEO before markets open.",
+          "timestamp_label": "5:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "You can’t vote me out—I still hold the founder super-voting shares!",
+          "timestamp_label": "5:36 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Final Board Vote",
+          "teaser_text": "Episode 6 (Finale): Trigger the bad-leaver clause, reclaim the company, and greet the sunrise as CEO.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Sunrise Term Sheet",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:12 AM · Floor 19 Glass Room. First sunlight hits the server racks as the emergency board vote begins.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "dev",
+          "text": "Check the charter, {{player_name}}. Without my signature, you can’t strip my founder shares!",
+          "timestamp_label": "6:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Read Section 9.4, Devon. Felony embezzlement automatically converts super-voting shares to zero and triggers immediate forfeiture.",
+          "timestamp_label": "6:13 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Police arrest warrant and the Cayman wire receipt are attached to the board resolution. Zero loopholes.",
+          "timestamp_label": "6:14 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "dev",
+          "text": "Please {{player_name}}, if you forfeit my equity I have nothing left—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "kyle",
+          "duration_sec": 8,
+          "transcript": "[cheers in background] Motion passed UNANIMOUSLY! Devon is out—and the board just voted {{player_name}} in as CEO!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "First act as CEO: Eric gets full recovery leave, and Asha’s security team gets triple the budget.",
+          "timestamp_label": "6:18 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "The Series A wire is ready to sign. How do you close the war room?",
+          "options": [
+            {
+              "option_id": "opt_sign_series_a",
+              "label": "Sign the Series A & thank the team",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Signed and sealed. Breakfast is on me—let’s go pick Eric up from the hospital.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_equity_bonus",
+              "label": "Grant Devon’s forfeited shares to team",
+              "cost_type": "vip_rewarded",
+              "badge_text": "True Leader · Watch Ad",
+              "player_reply_text": "Redistributing Devon’s forfeited equity pool directly to Eric, Asha, Kyle, and our engineers.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "SERIES A CLOSED: $18M lands in the company treasury. The startup that almost died at 4 AM is unstoppable.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "LEGENDARY FOUNDER: Word spreads across Silicon Valley—top engineers flood your inbox before noon.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "asha",
+          "text": "Eric just saw the news from his hospital bed—he says he’s already patching Rack 3 from his tablet.",
+          "timestamp_label": "6:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "kyle",
+          "text": "From 4 AM meltdown to Series A legend. Best COO—sorry, best CEO—in the city.",
+          "timestamp_label": "6:25 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINALE · New Dawn on Floor 19",
+          "teaser_text": "You saved the $2.4M treasury, exposed the corporate conspiracy, and led your startup into its brightest chapter.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_061",
+  "lang": "id",
+  "metadata": {
+    "title": "Tambahan Wasiat Palsu",
+    "subtitle": "Dua jam sebelum pembacaan wasiat Kakek, tambahan wasiat yang ditandatangani saat beliau koma bocor ke chat keluarga.",
+    "genre": "romance",
+    "tags": [
+      "Warisan",
+      "Pengkhianatan",
+      "Keluarga"
+    ],
+    "cover_image": "assets/media/covers/story_061.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "lawyer",
+      "name": "Arthur Vance (Pengacara Warisan)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "uncle",
+      "name": "Paman Victor",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "nurse",
+      "name": "Perawat Clara",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Lampiran Tak Disengaja",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09:15 · Grup Chat Warisan. Dua jam sebelum pembacaan wasiat Kakek di Hotel Grand Sterling.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Tambahan Wasiat Akhir — 100% saham Hotel Sterling dialihkan ke Victor Sterling. Ditandatangani 14 Okt.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tunggu sebentar. 14 Okt? Kakek jatuh koma tanggal 11 Okt. Bagaimana beliau menandatangani itu?",
+          "timestamp_label": "09:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Arthur dasar bodoh, salah chat!! Hapus sebelum {{player_name}} menangkap layar tanggalnya!",
+          "unsent_placeholder": "Paman Victor menarik pesan",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Jangan dramatis, {{player_name}}. Arthur cuma salah mengetik tanggal salinan administrasi. Tunjukkan sedikit rasa hormat hari ini.",
+          "timestamp_label": "09:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "narrator",
+          "text": "DM PRIBADI · Perawat Clara (perawat ICU Kakek) baru mengirimimu pesan suara.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 14,
+          "transcript": "[berbisik] {{player_name}}, pada malam 14 Okt pamanmu menyuap penjaga malam untuk mematikan kamera ICU selama dua belas menit. Dia menekan pulpen ke tangan kakekmu yang terkulai lemas.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n08"
+        },
+        {
+          "id": "n08",
+          "type": "choice",
+          "prompt": "Pembacaan wasiat dimulai 90 menit lagi. Langkahmu?",
+          "options": [
+            {
+              "option_id": "opt_download_meta",
+              "label": "Simpan metadata PDF & tetap tenang",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Mengerti, Clara. Jaga log ICU tetap aman. Aku yang akan mengurus Victor.",
+              "next_node_id": "n09_free"
+            },
+            {
+              "option_id": "opt_unlock_cctv",
+              "label": "Tarik rekaman cadangan CCTV lorong",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Tunggu—apakah kamera lift lorong tetap menyala malam itu?",
+              "next_node_id": "n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "n09_free",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Aku sudah memotret grafik tanda vital ICU yang membuktikan beliau dibius tepat pada menit itu.",
+          "timestamp_label": "09:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_merge"
+        },
+        {
+          "id": "n09_vip",
+          "type": "narrator",
+          "text": "BUKTI RAHASIA: Kamera lift menangkap Paman Victor berjalan keluar dari Ruang ICU 402 bersama Pengacara Warisan pukul 02:14!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n10_vip"
+        },
+        {
+          "id": "n10_vip",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Mengirimkanmu klip terenkripsinya sekarang. Victor tak tahu koridor itu punya lensa kedua.",
+          "timestamp_label": "09:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_merge"
+        },
+        {
+          "id": "n11_merge",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Omong-omong, {{player_name}}, satpam diperintahkan menyita semua ponsel sebelum masuk ruang baca. Sampai ketemu sebentar lagi.",
+          "timestamp_label": "09:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n12_end"
+        },
+        {
+          "id": "n12_end",
+          "type": "cliffhanger",
+          "headline": "Ponsel Disita di Depan Pintu",
+          "teaser_text": "Episode 2: Victor mengira dia membungkammu—sampai kamu menyerahkan amplop tersegel dari Kakek ke notaris.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Ruang Baca",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "11:02 · Perpustakaan Puri Sterling. Dua belas kerabat duduk dalam hening. Kamu menyelipkan tablet sekali pakai ke dalam blazermu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Kita sekarang akan melaksanakan tambahan wasiat 14 Oktober. Seluruh saham pengendali beralih sepenuhnya ke Victor.",
+          "timestamp_label": "11:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Beban yang berat, sungguh. {{player_name}}, kau boleh menyimpan jam saku kakekmu sebagai kenang-kenangan.",
+          "timestamp_label": "11:04",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Murah hati sekali, Paman. Sebelum kita tanda tangan, bisakah Arthur menjelaskan kenapa monitor jantung Kakek mendatar dalam sedasi tiga hari sebelum tanda tangan itu?",
+          "timestamp_label": "11:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "lawyer",
+          "text": "Victor, batalkan! Notaris sedang melihat stempel waktu rumah sakit!",
+          "unsent_placeholder": "Arthur Vance menarik pesan",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 11,
+          "transcript": "[telepon speaker] Ini Clara, Kepala Perawat ICU. Saya di luar bersama pejabat pengadilan warisan daerah dan log akses ICU tanpa suntingan.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Victor menggapai melintasi meja untuk merebut kertas itu. Bagaimana kamu menuntaskannya?",
+          "options": [
+            {
+              "option_id": "opt_open_doors",
+              "label": "Buka pintu untuk pejabat pengadilan warisan",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sentuh kertas itu dan itu jadi perusakan barang bukti di hadapan dua belas saksi.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_play_grandpa",
+              "label": "Putar video rahasia ranjang Kakek",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Langkah Jitu · Tonton Iklan",
+              "player_reply_text": "Sebenarnya, biar Kakek sendiri yang memberi tahu semua siapa yang beliau pergoki menggelapkan uang bulan lalu.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Pejabat pengadilan warisan melangkah masuk. Arthur langsung menjatuhkan tas kerjanya dan meminta kekebalan hukum.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "VIDEO KAKEK: 'Jika Victor mengajukan kertas bertanggal lewat 1 Oktober, cabut seluruh bagiannya dan angkat {{player_name}} sebagai Ketua.'",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Rekaman itu deepfake! Aku yang membangun separuh hotel-hotel ini!",
+          "timestamp_label": "11:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}, aku menyimpan wasiat asli di saku mantelku. Kau memiliki 68% Grup Sterling.",
+          "timestamp_label": "11:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Pewaris Sah Menduduki Kursi Ketua",
+          "teaser_text": "Victor digiring keluar dengan borgol—tapi klausul tersembunyi di wasiat asli menyebut pewaris kedua yang tak pernah ditemui siapa pun.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Klausul Tersembunyi",
+      "start_node_id": "e3_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "14:15 · Perpustakaan Puri. Paman Victor sudah pergi, tapi adendum bersegel lilin tergeletak di meja Arthur.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}, Kakek berpesan padaku membuka Klausul 12 hanya jika Victor mencoba menggugat wasiat. Baca ini baik-baik.",
+          "timestamp_label": "14:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Pewaris kedua? Tak seorang pun di keluarga pernah menyebut ada orang lain.",
+          "timestamp_label": "14:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "KLAUSUL TERSEGEL 12 · \"30% Vance Holdings diwariskan kepada anak yang diusir putraku Victor dari rumah ini pada tahun 2004.\"",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Tunggu… malam sebelum kakekmu jatuh koma, seorang wanita muda menjenguk kamarnya! Beliau memberinya jam saku peraknya!",
+          "timestamp_label": "14:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Kalau Arthur membuka Klausul 12 mereka bakal tahu kenapa aku menyuap rumah sakit—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 9,
+          "transcript": "[berbisik] {{player_name}}, aku masih menyimpan foto buku tamu pengunjung malam itu! Kakek bilang dia cucunya juga—putri rahasia Victor sendiri!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Pengacara Victor baru saja mengajukan pembekuan darurat atas Klausul 12! Apa yang kamu lakukan?",
+          "options": [
+            {
+              "option_id": "opt_find_heir",
+              "label": "Lacak pengunjung dari log Clara",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Clara, kirimi aku detail buku tamu pengunjung. Kalau dia keluarga, dia berhak tahu kebenarannya.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_audit_2004",
+              "label": "Tarik pembayaran RS Victor 2004",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Berkas Rahasia · Tonton Iklan",
+              "player_reply_text": "Arthur, tarik pencairan dana perwalian 2004—mari lihat apa yang dibayar Victor untuk menghapusnya.",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "KECOCOKAN DITEMUKAN: Pengunjung itu Elena, perawat anak yang tinggal enam belas kilometer jauhnya—yang tak pernah meminta sepeser pun.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "CATATAN BRANKAS: Victor memalsukan tanda tangan adiknya pada 2004 untuk mencoret anak itu dari daftar keluarga.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Aku sudah menemukan alamatnya. Dia bersedia menemui kita di gerbang puri pukul 17:00.",
+          "timestamp_label": "14:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Sudah bayar jaminan. Jangan berani-berani membiarkan penipu itu melewati gerbang ayahku, {{player_name}}.",
+          "timestamp_label": "14:25",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Victor Bebas dengan Jaminan",
+          "teaser_text": "Episode 4: Victor berpacu mencegat pewaris kedua sebelum dia mencapai puri.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Pewaris Kedua",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "16:40 · Jalan Masuk Puri. Hujan mengguyur saat sedan hitam Victor memblokir gerbang besi.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Pikirkanlah, {{player_name}}. Kalau dia membuktikan dirinya pewaris, KAU juga kehilangan 30% harta warisan! Berpihaklah padaku dan kita bagi 70/30!",
+          "timestamp_label": "16:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kau memalsukan tambahan wasiat saat Kakek koma, dan sekarang mau aku mengkhianati keinginan terakhirnya juga?",
+          "timestamp_label": "16:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Awas! Detektif swasta Victor baru menyudutkannya di luar apotek! Dia ketakutan!",
+          "timestamp_label": "16:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Suruh sopir menawarinya $50.000 tunai untuk menandatangani surat pelepasan hak sekarang—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Surat pelepasan itu pemaksaan ilegal! Aku mengirim keamanan puri dan polisi ke apotek sekarang juga.",
+          "timestamp_label": "16:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 9,
+          "transcript": "[hujan & pintu mobil membanting] Dia sudah masuk mobilku! Dia aman—dan membawa jam saku perak Kakek berisi kartu micro-SD tersembunyi di balik tutupnya!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Clara baru tiba membawa kartu micro-SD tersembunyi! Apa langkahmu?",
+          "options": [
+            {
+              "option_id": "opt_play_video",
+              "label": "Putar video Kakek di perpustakaan",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Buka pintu perpustakaan dan putar rekaman Kakek di layar utama—biarkan Victor mendengarnya.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_stream_board",
+              "label": "Siarkan videonya ke dewan warisan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Skakmat · Tonton Iklan",
+              "player_reply_text": "Sambungkan dewan warisan dan wali keluarga ke siaran sebelum menekan putar!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "SUARA KAKEK: \"Jika Victor melawan wasiat ini, cabut tunjangan perwalian 5% terakhirnya dan serahkan kunci kepada kedua cucu perempuanku.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "REAKSI DEWAN: Setiap wali amanat menyaksikan Victor memucat saat Kakek menyebutnya pencuri di depan kamera.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sudah berakhir, Victor. Kakek memprediksi setiap trik yang bakal kau coba.",
+          "timestamp_label": "16:52",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Video tak membuktikan apa pun tanpa DNA terverifikasi pengadilan! Kalian bakal menghabiskan lima tahun di pengadilan warisan!",
+          "timestamp_label": "16:53",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Pembuktian DNA",
+          "teaser_text": "Episode 5: Satu amplop lab tersegel akan mengakhiri perang hukum Victor selamanya.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Darah dan Tinta",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "10:05 · Ruang Tunggu Pengadilan Warisan. Kurir laboratorium tersegel baru saja tiba.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Kakek sudah menyerahkan sampel pembandingnya ke lab pengadilan tiga bulan lalu. Hasil perbandingannya baru keluar!",
+          "timestamp_label": "10:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "TERVERIFIKASI LAB PENGADILAN · 99,98% Kecocokan Kakek-Cucu. Rantai penjagaan disegel oleh Hakim Harlan.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Mustahil! Beliau terlalu sakit tiga bulan lalu untuk mengunjungi lab!",
+          "timestamp_label": "10:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Perawat Clara membawa teknisi pengadilan ke sisi ranjangnya selagi kau sibuk memalsukan tambahan wasiatmu.",
+          "timestamp_label": "10:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Tunggu—kalau hakim melihat pelanggaran jaminanku di apotek aku langsung masuk balik—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 8,
+          "transcript": "[pintu ruang sidang terbuka] Petugas pengadilan baru membawa rekaman dashcam apotek ke meja hakim. Jaminan Victor sebentar lagi dicabut!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Hakim bertanya apakah kamu ingin memberlakukan klausul penalti penuh terhadap Victor.",
+          "options": [
+            {
+              "option_id": "opt_enforce_clause",
+              "label": "Berlakukan klausul anti-gugat Kakek",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Ya, Yang Mulia. Berlakukan klausul anti-gugat sesuai bunyi hurufnya.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_reclaim_loans",
+              "label": "Tarik juga pinjaman warisan $2 juta-nya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Keadilan Total · Tonton Iklan",
+              "player_reply_text": "Berlakukan klausulnya—dan tagih pinjaman perusahaan $2 juta tak terbayar yang disembunyikan Victor sejak 2019.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "PUTUSAN HAKIM: Gugatan Victor ditolak permanen dan jaminannya dicabut di tempat.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "SITA ASET DIKABULKAN: Pengadilan membekukan penthouse mewah dan kapal pesiar Victor untuk melunasi harta keluarga.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Palu diketuk! Sidang warisan ditutup. Kedua pewaris resmi disahkan.",
+          "timestamp_label": "10:18",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Sepupumu menangis bahagia di luar ruang sidang—dia ingin mengembalikan jam saku Kakek padamu.",
+          "timestamp_label": "10:19",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Tanda Tangan Terakhir di Puri",
+          "teaser_text": "Episode 6 (Tamat): Duduki kursi ketua wanita dan bangun kembali warisan keluarga bersama-sama.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Segel Ketua Wanita",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "18:00 · Konservatorium Puri. Lentera hangat berpendar saat buku besar keluarga terbuka ke halaman baru.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Semua akta, saham hak suara, dan kunci perwalian telah dialihkan, {{player_name}}. Vance Holdings resmi milikmu untuk dipimpin.",
+          "timestamp_label": "18:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Terima kasih, Arthur. Dan Clara—tak satu pun dari ini akan bertahan tanpa keberanianmu.",
+          "timestamp_label": "18:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Aku cuma menepati janjiku pada kakekmu. Beliau tahu kamu punya hati lebih kuat daripada siapa pun di ruangan itu.",
+          "timestamp_label": "18:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Bilang ke {{player_name}} aku minta maaf, mungkin dia masih mau menjenguk—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 8,
+          "transcript": "[denting gelas] Sepupumu baru menandatangani piagam kemitraan—dia mau mendanai sayap rumah sakit anak atas nama Kakek dengan bagian 30%-nya!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dan aku akan menyamai setiap dolar dari yayasan utama. Kakek pasti tersenyum sekarang.",
+          "timestamp_label": "18:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Satu gestur terakhir untuk menghormati warisan Kakek:",
+          "options": [
+            {
+              "option_id": "opt_keep_watch",
+              "label": "Berbagi jam & sambut dia pulang",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Simpan jamnya—dan pindahlah ke sayap timur. Rumah ini akhirnya terasa seperti keluarga lagi.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_name_clara_director",
+              "label": "Angkat Clara menjadi Direktur Yayasan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Berhati Emas · Tonton Iklan",
+              "player_reply_text": "Clara, maukah kamu memimpin Yayasan Medis Vance? Tak ada yang lebih pantas darimu.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "RUMAH DIPULIHKAN: Untuk pertama kalinya dalam dua puluh tahun, tawa menggema di lorong-lorong puri.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "WARISAN DIPERBESAR: Clara menerima sambil berlinang air mata—bersama-sama kalian mengubah dinasti tua menjadi kekuatan kebaikan.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Aku tak akan pernah melupakan malam ini, {{player_name}}. Kau menang tanpa pernah menjadi kejam seperti Victor.",
+          "timestamp_label": "18:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Hidup para pewaris sah. Lampu perpustakaan tetap menyala malam ini.",
+          "timestamp_label": "18:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "TAMAT · Dinasti yang Sah",
+          "teaser_text": "Kamu membongkar tambahan wasiat palsu, menyatukan pewaris sejati, dan mengambil alih warisan dengan terhormat.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

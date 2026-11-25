@@ -1,0 +1,3024 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_143",
+  "lang": "ja",
+  "metadata": {
+    "title": "Tower 13の夜勤ルール",
+    "subtitle": "ルール1：午前3時以降、13階のインターホンには絶対に出ないこと。ルール4：なぜこのビルに入居者が一人もいないのか、絶対に尋ねないこと。",
+    "genre": "thriller",
+    "tags": [
+      "午前3時のルール",
+      "警備員",
+      "急展開"
+    ],
+    "cover_image": "assets/media/covers/story_143.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · 警備員",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "supervisor",
+      "name": "Chief Miller",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "dispatch",
+      "name": "911指令室",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    },
+    {
+      "id": "developer",
+      "name": "Victor Kade · オーナー",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "午前3時の4つのルール",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2:55 · Tower 13での初めての深夜勤務。ロビーからは微かに濡れた灰の匂いが漂ってきます。上司から必須の夜間ルールが送られてきました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "これを暗記しろ、{{player_name}}。(1) 13階のインターホンには絶対に出るな。(2) ロビーの扉には鎖を掛けておけ。(3) カメラ4が無人に見えても、絶対にズームするな。",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "了解しました、Chief。待ってください――ルール4は何ですか？それにどうして今、エレベーターが13階から降りてきているんですか？",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[ノイズ、切迫した声]「エレベーターの扉から離れろ！もし赤いコートを着た女が出てきたら、机だけを見つめて30まで数えろ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "ルール4：階段横の消防検査プレートを絶対に見るな。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "チーン。午前3時ちょうどにエレベーターの扉が開きます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e1_free",
+              "label": "机を見つめて30まで数える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "1……2……3……机のすぐ目の前から煙の匂いがします。",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e1_vip",
+              "label": "代わりにロビーの鏡をチラッと見る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "鏡を見ましたが――エレベーターは空です、濡れた足跡だけが残っています！",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "よし。エレベーターが再び鳴るまで顔を上げるな。13階のインターホンランプが赤くなったか？",
+          "timestamp_label": "午前2:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "見るなと言ったはずだ！今お前が起きているとお前の存在に気づかれたぞ――警備室のガラスに鍵を掛けろ！",
+          "timestamp_label": "午前2:58",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "ジジッ。13階のインターホンボタンが真紅に点滅します。ロビーのスピーカーを必死な声が震わせました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chief Miller · 緊急",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "通話ボタンは絶対に押すな！モニターのカメラ4を見て――廊下はまだ無人のままか教えろ！",
+          "timestamp_label": "午前3:01",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "カメラ4は完全に無人です……ただ、突き当たりの非常口ドアが激しくガタガタ揺れています！",
+          "timestamp_label": "午前3:01",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "13階に誰かが閉じ込められている",
+          "teaser_text": "次回：鍵の掛かった階段ドアを叩いている何者かをカメラ4が捉えます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "カメラ4の異常",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前3:04 · 火災報知器が一度だけピッと鳴り、沈黙します。デスクのモニターがカメラ4でフリーズしました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "カメラ4のスクリーンショットを送ってくれ、{{player_name}}。何があっても警備室から出るなよ。",
+          "timestamp_label": "午前3:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今送ります――どうして防犯カメラのタイムスタンプが今夜じゃなく「2020年」になってるんですか！？",
+          "timestamp_label": "午前3:04",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[警察無線のノイズ]「Tower 13付近の巡回各隊へ：使用禁止ビルのロビー警備室から誤報の911発信あり。不法侵入者がいないか確認せよ。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "無線を無視しろ。通りからのただの混信だ。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "03:05のカメラ4――インターホン越しに必死なノック音が響き続ける中、無人の13階廊下。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "腰のベルトの警察無線が再びザッと鳴ります：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e2_free",
+              "label": "なぜ警察が使用禁止と言ったかMillerに聞く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chief、どうして警察指令室はTower 13を使用禁止ビルと言ったんですか！？",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e2_vip",
+              "label": "警察指令室へ直接返信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "指令室、こちらTower 13ロビー内で勤務中の夜間警備員です！",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "奴らは古い市の登記簿を見ているだけだ！喋るのはやめてロビーのドアを確認しろ――誰か外にいるぞ！",
+          "timestamp_label": "午前3:07",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "その無線を置け！奴らと話したら午前4時前にシフトのループが壊れてしまう！",
+          "timestamp_label": "午前3:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "冷たい掌が警備室のガラスをバンと叩きました。ガラスの上を、煤で真っ黒な手形がゆっくりと滑り落ちていきます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911指令室 · 折り返し",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "もしもし、Tower 13は6年前の11月25日に全焼しています！階段室が鎖で閉められていたため、12人が亡くなっているんですよ！",
+          "timestamp_label": "午前3:11",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "鎖で閉められていた……？待って――今まさに「俺の」ベルトに重い鉄製の南京錠の鍵がぶら下がっている……",
+          "timestamp_label": "午前3:11",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ベルトの南京錠の鍵",
+          "teaser_text": "次回：焦げた消防プレートに書かれたルール4をついに読みます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "明かされたルール4",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前3:15 · ロビーの蛍光灯が明滅して消え去ります。赤い非常口誘導灯が壁を血のような赤色に染め上げました。",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "指令室の言うことを聞くな、{{player_name}}！午前4時まで警備室に留まれば給料が出るんだぞ！",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうして俺の指が煙臭いんですか、Chief？それにどうして俺の職員証の日付が6年前になってるんですか！？",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[ノイズで途切れ途切れの声]「勤務中に居眠りしたからだよ、{{player_name}}！お前は不法侵入者よけに非常階段に鎖を掛け――13階が出火した時、鍵を開け忘れたんだ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "あの火事の日から毎晩、お前はずっとこのまったく同じシフトを繰り返している。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "濃い灰色の煙がエレベーターの扉の下から流れ出し始めます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e3_free",
+              "label": "南京錠の鍵を掴んで13階へ走る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "6年遅すぎたとしても――今すぐ階段室の鍵を開ける！",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e3_vip",
+              "label": "報告書に自分の名があるか指令室へ確認する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "指令室、2020年のTower 13火災報告書を確認してくれ――俺の名前が載ってるか！？",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "指令室からの通信が入ります。「パトカーがフェンスで囲まれた敷地に到着しつつあります――錆びた階段室からは離れてください！」",
+          "timestamp_label": "午前3:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "もしもし……お名前は、ロビーから13階の鍵を開けようとして亡くなった夜間警備員として記録されています……",
+          "timestamp_label": "午前3:19",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "曇りガラスのロビー扉の向こうに12体のシルエットが浮かび上がります――誰一人動かず、全員があなたの警備室の方を向いています。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chief Miller · ノイズ",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "ロビーの防犯モニターを見てみろ、{{player_name}}。彼らはお前を傷つけようとしているんじゃない――お前がついにあの鎖を外すのを待っているんだ。",
+          "timestamp_label": "午前3:23",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "カメラ1で見える……ガラスのすぐ外に12の影が立っている……",
+          "timestamp_label": "午前3:23",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ガラス越しの12の影",
+          "teaser_text": "次回：警備室を取り囲むシルエットをカメラ1が捉えます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "12のシルエット",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前3:28 · 防犯モニターが真っ白に明滅します。12の黒いシルエットがロビーの映像上で微動だにせず立っています。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "巡回警官が外周フェンスの外に到着しました！焼け落ちたロビーの中で懐中電灯の光が動いているのが見えるそうですが――あなたですか！？",
+          "timestamp_label": "午前3:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "はい！階段室の鎖がまだ掛かったままだと伝えてください――今開けるところです！",
+          "timestamp_label": "午前3:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[穏やかに反響する声]「ポケットから真鍮の鍵を取り出せ、{{player_name}}。警備室から一歩外へ出るんだ。ルール2を破れ。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "その12人のうちの一人が俺だよ、{{player_name}}。お前を許している。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "03:29のロビー防犯カメラ――鎖に繋がれた階段ドアの前に凍りついたように佇む黒いシルエット。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "階段室の扉に掛かった冷たい鉄の南京錠にあなたの手が触れます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e4_free",
+              "label": "鍵を回して鉄の鎖を外し落とす",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "鎖を外したぞ！ドアは開いた――みんなもう外へ出られる！",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e4_vip",
+              "label": "まず13階のインターホン越しに謝罪する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "階段に鍵を掛けてしまって本当に申し訳なかった。今すぐ開ける！",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "指令室が報告します。「うわっ――ロビーの中の錆びた鎖がひとりでに床に落ちました！誰も触れていません！」",
+          "timestamp_label": "午前3:32",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "指令室が報告します。「警官たちが古いインターホンの切れる音を聞き――そして階段室のドアが勢いよく開きました！」",
+          "timestamp_label": "午前3:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "ガシャン！重い鎖がコンクリートに落ちます。13階から温かな風が吹き降りてきて、ロビーの煙の痕跡をすべて洗い流していきました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chief Miller · 勤務終了",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "ロビーの時計を見てみろ、{{player_name}}。ついに午前3時59分を超えたぞ。お前のシフトは終わりだ。",
+          "timestamp_label": "午前3:36",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "影たちが消えた……そしてついに朝日がガラスに触れている。",
+          "timestamp_label": "午前3:36",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "午前4:00 勤務完了",
+          "teaser_text": "次回結末：夜明けに警察が警備デスクの上で見つけたもの。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "午前4:00の解放",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前4:00 · 2人の巡回警官が、鍵の外された廃墟Tower 13の正面扉から中へ足を踏み入れます。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "911記録：「ロビー異常なし。焦げた警備デスクの上にアンティークな真鍮の南京錠用鍵が1本、整然と置かれている。」",
+          "timestamp_label": "午前4:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "彼らのために階段室のドアを開け放したままにしておいてやってくれ。",
+          "timestamp_label": "午前4:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[落ち着いた警察無線]「了解。待て――デスクのひび割れた警備日誌に灰で書かれた真新しい追記がある。『勤務完了 ― 04:00』。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "ドアの鍵を開けてくれてありがとう、{{player_name}}。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "13階のエレベーターから最後の1回だけのチャイムが響きます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e5_free",
+              "label": "警備員のバッジをデスクに置く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "最後の夜勤から退勤する。",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e5_vip",
+              "label": "カメラ4の電源を永遠に切る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "カメラ4オフライン。午前3時のルールはもう終わりだ。",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Tower 13の上に最初の夜明けの光が差す中、警官たちは無人の警備デスクへ敬礼を捧げました。",
+          "timestamp_label": "午前4:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "モニターは永久に暗転し――それ以来、Tower 13からの架空の911通報は二度と起きませんでした。",
+          "timestamp_label": "午前4:03",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "6年ぶりに、階段室の扉が朝の空気に向かって開かれました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911指令室 · 通信終了",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "システム記録終了：Tower 13夜勤異常事案、04:05をもって解決。",
+          "timestamp_label": "午前4:05",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "12人分の足音が昼の光の中へ遠ざかっていく。ようやく俺も家に帰れる。",
+          "timestamp_label": "午前4:05",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "午前4:06 · 13番目の名前",
+          "teaser_text": "第2幕開始：12のシルエットは去った――しかし2020年の名簿には「13人」が記載されており、エレベーターは今B2階へ降下しました。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "午前4:06：13番目の名前",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前4:06 · ロビーの時計が更新された1分後、廃墟のエレベーターが唸りを上げて息を吹き返し――赤い表示が1階を通り越して一気にB2階へと落ちました。",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "待ってください――うちの巡回警官はまだTower 13を出ていません！デスクの真鍮の鍵がひとりでに滑り落ち、エレベーターが地下2階（B2）へ降下したそうです！",
+          "timestamp_label": "午前4:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうしてループが終わらないんだ！？12体のシルエットは階段室から歩いて出て行ったはずだ――まだ下に何が残っている！？",
+          "timestamp_label": "午前4:07",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[階段室の反響に混じるノイズ声]「{{player_name}}、聞け！12人の犠牲者は去った――2020年の名簿に載っていたのは『13人』だったからだ！そして13番目の人物はその夜、生きて歩いて外へ出たんだ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "ルール5：解体前に建物のオーナーを絶対に地下2階（B2）耐火保管庫へ近づけさせるな。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "黒いディーゼル車のヘッドライトがTower 13の外周フェンスを切り裂いて入ってきます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e6_free",
+              "label": "不審なバンが侵入したと指令室へ警告",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "指令室！黒いバン2台が今裏の搬入門の鎖を切断して侵入しました！",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e6_vip",
+              "label": "13番目の人物が誰かChief Millerに尋ねる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "Chief、火事から生きて出ていったのは誰なんです――そしてなぜ俺に罪を着せたんですか！？",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "うちの警官2人が、解体作業用ベストを着た男3人が搬入スロープを通って地下2階（B2）へ降りていくのを目撃しました！",
+          "timestamp_label": "午前4:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Victor Kade――Tower 13を所有していた億万長者の開発業者だ！お前が階段に鎖を掛けたんじゃない、{{player_name}}――1800万ドルの放火保険金を手にするために、奴が外から鎖を掛けたんだ！",
+          "timestamp_label": "午前4:09",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "焦げたロビーデスクの上で、黒く煤けた磁気カードキーが、彫られたばかりの新たな文字の横に置かれています。「RULE #5: GUARD B2（ルール5：B2を守れ）」",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911指令室 · 名簿警告",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Tower 13の爆破解体は午前6時00分に予定されています！夜明け前にKadeがB2保管庫を焼き払えば、放火の証拠は一片残らず永遠に消えてしまいます！",
+          "timestamp_label": "午前4:11",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11_cliff"
+        },
+        {
+          "id": "e6_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "ルール5：B2を守れ",
+          "teaser_text": "次回：煤けたB2カードキーが、Kadeが真実を葬り去った隠し地下階を開きます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "地下階のカードキー",
+      "start_node_id": "e7_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "午前4:15 · ロビーの床の下から重い足音が響く中、巡回警官たちが警備デスクに残された焦げた磁気カードを写真に収めます。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警官があなたのデスクからカードキーを拾いました――「TOWER 13 · B2 ARCHIVE VAULT（B2アーカイブ保管庫）」と刻印されています。なぜ使用禁止のビルに耐火保管庫があるんです？",
+          "timestamp_label": "午前4:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "建物のブラックボックス防犯サーバーと消防検査記録が、地下2階（B2）へ直結配線されているからです！",
+          "timestamp_label": "午前4:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[低い金属の唸り]「火事の前に、俺はバックアップのDVRテープを13番保管庫ロッカーの中に隠した。エレベーターには乗るなと警官に伝えろ――Kadeが昇降路のケーブルに細工した。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "清掃員たちに13番ロッカーへテルミット剤を流し込ませて、B2階段を封鎖しろ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n05_img"
+        },
+        {
+          "id": "e7_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "ロビーデスクで発見された焦げたB2マスターカードキー――地下の火災監査保管庫への強制解錠権限を持つ。",
+          "timestamp_label": "午前4:18",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "警官たちは錆びた階段室と唸る業務用リフトの間で待機しています：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e7_free",
+              "label": "コンクリートの階段室を降りるよう指示する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "エレベーターには絶対に乗らないで！東側のコンクリート階段からB2へ降りてください！",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e7_vip",
+              "label": "ロビーの非常スプリンクラー弁を作動させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "先にロビーの物入れにある赤いB2スプリンクラーのハンドルを回させてください！",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "賢明な指示でした！警官たちがエレベーターの横を通り過ぎた2秒後、リフトのケーブルが切れてピットの底へ真っ逆さまに墜落しました！",
+          "timestamp_label": "午前4:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "B2の非常スプリンクラーがアーカイブ階を水浸しにしました――これで下では誰もテルミットに点火できません！",
+          "timestamp_label": "午前4:21",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "Tower 13の地下のコンクリートを轟音が揺さぶる中、ロビーのインターホンがノイズを立てて冷たく上品な声を響かせました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09"
+        },
+        {
+          "id": "e7_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "6年経ってもまだ夜間警備員ごっこかい、{{player_name}}？巡回警官を俺の地下室から遠ざけておけ――このビルは午前6時に崩落するんだ。",
+          "timestamp_label": "午前4:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n10_cliff"
+        },
+        {
+          "id": "e7_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "オーナーの到来",
+          "teaser_text": "次回：Victor KadeがB2の防爆扉をロックし――防犯モニターに「ルール6」が浮かび上がります。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "ルール6：水位に気をつけろ",
+      "start_node_id": "e8_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "午前4:27 · むき出しの電線管に沿って火花が踊る中、膝の深さまでの雨水とスプリンクラーの水が地下2階（B2）一面に溜まります。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警官たちがB2の踊り場に到達しましたが、重い鋼鉄製の防爆扉が内側から磁気ロックされています！どうやって突破すればいいですか？",
+          "timestamp_label": "午前4:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e8_n03"
+        },
+        {
+          "id": "e8_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "防爆扉の6フィート左に手動消火斧バイパスボックスがあります――夜間警備員だけがその4桁の暗証番号を知っています！",
+          "timestamp_label": "午前4:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e8_n04"
+        },
+        {
+          "id": "e8_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[切迫したノイズ]「ルール6だ、{{player_name}}。地下変圧器が通電している間は絶対に防爆扉を開けるな！Kadeが外の水溜まりに高圧ケーブルを投げ込んだぞ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "あの水溜まりに一歩踏み込めば、応援が着く前に警官どもは黒焦げだ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "B2の外の暗い足首までの水面を青い放電が走ります：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e8_free",
+              "label": "踏み出す前に停止するよう指令室へ叫ぶ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "止まって！水中に通電ケーブルがあります――先に通り側の主ブレーカーを落として！",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e8_vip",
+              "label": "乾いた洗濯物用シュート経由で迂回させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "浸水した扉は迂回して――階段室の上にある乾いた換気ダクトを這って通ってください！",
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警官が水溜まりの2インチ手前でピタリと止まりました！電力班が通り側の主電源を遮断――水は完全に無害で安全です！",
+          "timestamp_label": "午前4:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警官たちが乾いた換気ダクトからKadeの見張り役の真後ろへ降り立ち――雇われた清掃員1人をすでに手錠で確保しました！",
+          "timestamp_label": "午前4:31",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n08_merge",
+          "type": "narrator",
+          "text": "暗いB2廊下の内部で、確保された清掃員の懐中電灯が床を転がり――白い文字で「13」と書かれた鋼鉄の扉を照らし出しました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e8_n09"
+        },
+        {
+          "id": "e8_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "あれが13番保管庫だ！あの中に、俺たちを殺す2日前にKadeが署名した偽造消防検査証明書が入っている。",
+          "timestamp_label": "午前4:33",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e8_n10_cliff"
+        },
+        {
+          "id": "e8_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "感電水溜まりの罠",
+          "teaser_text": "次回：Kadeの解体タイマーがカウントダウンを始め――ビルの古い館内放送システムが目を覚まします。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 9
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "title": "解体カウントダウン",
+      "start_node_id": "e9_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e9_n01",
+          "type": "narrator",
+          "text": "午前4:38 · 地下2階（B2）のすべての支柱で小さな緑色のLEDが点滅します――解体用爆薬が1時間早く配線されているのです。",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n02"
+        },
+        {
+          "id": "e9_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "緊急事態！解体請負業者は午前6時00分前に発破薬へ通電するよう誰も許可していないと言っています――Kadeの仲間が違法に支柱へ仕掛けたんです！",
+          "timestamp_label": "午前4:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e9_n03"
+        },
+        {
+          "id": "e9_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "警官たちの上からTower 13を崩落させて、40トンの瓦礫の下に13番保管庫ごと生き埋めにするつもりなんだ！",
+          "timestamp_label": "午前4:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e9_n04"
+        },
+        {
+          "id": "e9_n04",
+          "type": "voice_note",
+          "sender_id": "developer",
+          "duration_sec": 9,
+          "transcript": "[インターホン越しの冷たい笑い声]「構造爆破解体まであと60分だぞ、警備員。お前の仲間たちに13番保管庫を諦めて逃げろと伝えろ――取り壊し予定のビルなんて誰も惜しまんよ。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n05"
+        },
+        {
+          "id": "e9_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "保管庫のテンキー暗証番号は火事の日付、1125だ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e9_n06_choice"
+        },
+        {
+          "id": "e9_n06_choice",
+          "type": "choice",
+          "prompt": "爆発物処理班の到着まであと15分、そして13番保管庫の鋼鉄扉は警官たちの目の前にあります：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e9_free",
+              "label": "今すぐ1125の保管庫コードを指令室へ伝える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "B2カードキーをかざして1125を押して――Kadeが逃げる前に保管箱を確保してください！",
+              "next_node_id": "e9_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e9_vip",
+              "label": "爆処班に無線起爆を妨害させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "Tower 13周辺に電波妨害車を展開して――Kadeに爆薬を早期起爆させないで！",
+              "next_node_id": "e9_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e9_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "13番保管庫が開きました！警官たちがたった今「NOV 2020 · KADE HOLDINGS」とラベル付けされた耐火スチール製アタッシュケースを引き出しました！",
+          "timestamp_label": "午前4:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "移動妨害車両が今フェンスに到着しました！Tower 13周辺の無線起爆周波数はすべて完全に遮断されています！",
+          "timestamp_label": "午前4:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n08_merge",
+          "type": "narrator",
+          "text": "スチール製アタッシュケースの中には、2020年11月23日から耐火プラスチックに封じられたまま、折れ目一つないきれいなファイルが入っていました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n09"
+        },
+        {
+          "id": "e9_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "今すぐ一番上の書類のスキャンを送ります――{{player_name}}さん、2020年の消防安全報告書のあなたの署名は「偽造」されていました！",
+          "timestamp_label": "午前4:44",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e9_n10_cliff"
+        },
+        {
+          "id": "e9_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "偽造された署名",
+          "teaser_text": "次回：13番保管庫内の法的書類が、1800万ドルの放火陰謀を暴き出します。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 10
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "title": "1800万ドルの保険証券",
+      "start_node_id": "e10_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e10_n01",
+          "type": "narrator",
+          "text": "午前4:48 · 13番保管庫内で懐中電灯の光を当てながら、警官たちが偽造検査書類と3倍に増額された保険証書を撮影します。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e10_n02"
+        },
+        {
+          "id": "e10_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "この特約を見てください、{{player_name}}さん。Kadeは11月23日にTower 13の火災保険額を3倍に引き上げ――階段の鎖を「定期点検」とするあなたの警備日誌を偽造していたんです。",
+          "timestamp_label": "午前4:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e10_n03"
+        },
+        {
+          "id": "e10_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "6年間ずっと居眠りした自分を責め続けていたのに……俺があの12人を閉じ込めたんじゃなかったんだ！Kadeが俺のロビーのコーヒーに睡眠薬を混ぜて、自分でドアに鎖を掛けたんだ！",
+          "timestamp_label": "午前4:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e10_n04"
+        },
+        {
+          "id": "e10_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 10,
+          "transcript": "[温かく毅然とした声]「お前は消防斧で奴の南京錠を叩き割ろうとして死んだんだよ、{{player_name}}。今、街全体が真実を知ることになる。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n05"
+        },
+        {
+          "id": "e10_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "妨害電波でリモコンが効かないなら、1番柱の手動導火線に自分で火を着けてやる。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e10_n05_img"
+        },
+        {
+          "id": "e10_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "13番保管庫火災保険特約――偽造された警備員署名とともにTower 13火災の48時間前に締結された1800万ドル保険契約。",
+          "timestamp_label": "午前4:51",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n06_choice"
+        },
+        {
+          "id": "e10_n06_choice",
+          "type": "choice",
+          "prompt": "Kadeが手動発煙筒を手にこっそり地下室へ舞い戻りました：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e10_free",
+              "label": "直ちに1番柱を警護するよう警官へ警告",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "奴は妨害電波を迂回しようとしています――1番柱の手動導火線に向かっています！",
+              "next_node_id": "e10_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e10_vip",
+              "label": "検察官へ偽造保険契約をライブ送信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "爆破されても消されないよう、今すぐその保険証書スキャンをクラウド同期して！",
+              "next_node_id": "e10_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e10_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警官たちが1番柱へ方向転換しました――地下の霧の中にKadeの赤い発煙筒の光が見えています！",
+          "timestamp_label": "午前4:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警察署サーバーへアップロードおよび公証完了！たとえTower 13が崩壊しても、Kadeは終わりです！",
+          "timestamp_label": "午前4:54",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n08_merge",
+          "type": "narrator",
+          "text": "地下2階（B2）の向こう、1番柱の上の古い蛍光管が明滅し――Kadeの行く手を塞ぐ焦げた制服姿の背の高い人影を照らし出しました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e10_n09"
+        },
+        {
+          "id": "e10_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "なんだ――Millerだと！？お前は6年前に13階で死んだはずだ！寄るな！！",
+          "timestamp_label": "午前4:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n10_cliff"
+        },
+        {
+          "id": "e10_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Chief Millerの仁王立ち",
+          "teaser_text": "次回：パニックになったKadeは浸水した発電機トンネルの奥へと逃げ込み――そのまま「ルール7」へと飛び込みます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 11
+        }
+      ]
+    },
+    {
+      "episode_number": 11,
+      "title": "放火犯の帳簿",
+      "start_node_id": "e11_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e11_n01",
+          "type": "narrator",
+          "text": "午前5:00 · 警官たちが13番保管庫の2冊目のファイルを確保する中、Kadeは水の中に発煙筒を取り落とし、地下排水トンネルへと走り出しました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n02"
+        },
+        {
+          "id": "e11_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "追跡中にKadeがブリーフケースを落としました！中には火災の翌朝に放火請負業者へ45万ドルを支払った暗号化銀行領収書が入っています！",
+          "timestamp_label": "午前5:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e11_n03"
+        },
+        {
+          "id": "e11_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "奴はどこへ逃げたんですか！？あの排水トンネルは通りには続いていません――鍵の掛かったボイラーピットへ真っすぐ戻るループ構造です！",
+          "timestamp_label": "午前5:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e11_n04"
+        },
+        {
+          "id": "e11_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[無線の雑音、重いブーツ音]「爆発物処理班が今到着し、1番柱の解除作業中！2人の警官がKadeの濡れた足跡を追ってボイラーピットに入っています！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n05"
+        },
+        {
+          "id": "e11_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "ボイラー制御盤の中に2つ目の手動起爆装置を配線してある。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e11_n06_choice"
+        },
+        {
+          "id": "e11_n06_choice",
+          "type": "choice",
+          "prompt": "あなたはKadeの送信取り消しメッセージを捉えました――ボイラー室の予備起爆装置を狙っています：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e11_free",
+              "label": "ボイラー電線管を切断するよう爆処班へ警告",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ボイラー盤に繋がっている黄色い電線管を切断するよう爆処班に伝えて！",
+              "next_node_id": "e11_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e11_vip",
+              "label": "ボイラー室の磁気ロックを遠隔で作動させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "警備デスクの青いボイラー施錠スイッチを押せ――奴を中に閉じ込める！",
+              "next_node_id": "e11_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e11_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "爆処技術員が黄色い電線管を切断しました――B2にある12個すべての解体用爆薬が永久に無力化されました！",
+          "timestamp_label": "午前5:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "ガシャン！Kadeの背後で鋼鉄製のボイラー扉が勢いよく閉まり――逃げ場を失った奴がガラスを叩きまくっています！",
+          "timestamp_label": "午前5:05",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n08_merge",
+          "type": "narrator",
+          "text": "錆びたボイラー室の中で赤いインターホンランプが点滅し――あなたの警備コンソールへ直接ダイヤルしてきました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e11_n09"
+        },
+        {
+          "id": "e11_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "このボイラーのドアを開けろ、{{player_name}}！言い値で払う――100万でも500万でも――煙が戻ってくる前にここから出してくれ！",
+          "timestamp_label": "午前5:07",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e11_n10_cliff"
+        },
+        {
+          "id": "e11_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "ボイラーピットに閉じ込められて",
+          "teaser_text": "次回：死んでいるはずのインターホンでKadeが助けを求め――自分が陥れた男の声と対峙します。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 12
+        }
+      ]
+    },
+    {
+      "episode_number": 12,
+      "title": "インターホン越しの自白",
+      "start_node_id": "e12_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e12_n01",
+          "type": "narrator",
+          "text": "午前5:10 · 本物ではない――それでいて紛れもなく2020年11月25日の匂いのする煙が、ボイラー室の扉の下から這い出し始めます。",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n02"
+        },
+        {
+          "id": "e12_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "うちの警官たちがボイラー室の外ですべてをボディカメラに録画しています！Kadeに喋らせ続けて――完全な自白をテープに収めたいんです！",
+          "timestamp_label": "午前5:10",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e12_n03"
+        },
+        {
+          "id": "e12_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうして13階の階段室に鎖を掛けたんだ、Kade！？保険金が欲しかったとしても、なぜ12人もの罪のない入居者を中に閉じ込めた！？",
+          "timestamp_label": "午前5:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e12_n04"
+        },
+        {
+          "id": "e12_n04",
+          "type": "voice_note",
+          "sender_id": "developer",
+          "duration_sec": 10,
+          "transcript": "[咳き込み、パニックになって]「Chief Millerが俺の偽装構造検査を見つけたからだ！13階のファイルごと建物が燃えなければ、俺は懲役20年で刑務所行きだったんだよ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n05"
+        },
+        {
+          "id": "e12_n05",
+          "type": "unsent_message",
+          "sender_id": "dispatch",
+          "text": "一字一句、4台の警察ボディカメラにくっきりと記録されました。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e12_n06_choice"
+        },
+        {
+          "id": "e12_n06_choice",
+          "type": "choice",
+          "prompt": "Kadeがボイラー室のガラスに拳を叩きつけながら慈悲を乞います：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e12_free",
+              "label": "放火請負業者の名前も吐かせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "11月26日に誰へ45万ドルを振り込んだ！？名前を言え！",
+              "next_node_id": "e12_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e12_vip",
+              "label": "火災プレートで俺に罪を着せた理由を問う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "それに6年間市が俺を責めるように、俺の夜間日誌まで偽造したのか！？",
+              "next_node_id": "e12_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e12_n07a",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Ray Mercer――俺の解体現場監督だ！奴が13階に助燃剤を撒いたんだ！奴に不利な証言をするから、頼む、このドアを開けてくれ！",
+          "timestamp_label": "午前5:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n07b",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "そうだ！火事の後にお前の警備日誌をすり替えた！お前は鎖を開けようとした――一度も寝てなんかいなかった！だからここから出してくれ！",
+          "timestamp_label": "午前5:14",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n08_merge",
+          "type": "narrator",
+          "text": "鋭いシューッという音とともに幻の煙が消え、ボイラーのインターホンが最後にもう一度鳴りました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n09_call"
+        },
+        {
+          "id": "e12_n09_call",
+          "type": "incoming_call",
+          "caller_id": "developer",
+          "caller_label": "Victor Kade · ボイラーインターホン",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e12_n10",
+          "on_decline_node_id": "e12_n10"
+        },
+        {
+          "id": "e12_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "完全な自白と現場監督の名前の両方を確保しました！彼のブリーフケースから今解読した送金領収書を見てください。",
+          "timestamp_label": "午前5:16",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e12_n11_cliff"
+        },
+        {
+          "id": "e12_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "録音された自白",
+          "teaser_text": "次回：解読された銀行送金がKadeと解体現場監督の両方を追い詰めます――その男はまだ外の予備重機の中にいます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 13
+        }
+      ]
+    },
+    {
+      "episode_number": 13,
+      "title": "翌朝の送金",
+      "start_node_id": "e13_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e13_n01",
+          "type": "narrator",
+          "text": "午前5:19 · 警官たちがボイラーピットの外でKadeに手錠をかける中、指令室が解読された11月26日の送金確認書を送ってきます。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e13_n02"
+        },
+        {
+          "id": "e13_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "確定しました。2020年11月26日午前8時12分、Ray Mercerのダミー口座へ45万ドルが着金しています。待って――Mercerは今まさにゲートの外の解体トラックに座っている現場監督です！",
+          "timestamp_label": "午前5:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e13_n03"
+        },
+        {
+          "id": "e13_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kadeが逮捕されたと気づかれる前に奴を止めてください！あの大型解体トラックをロビーへ突っ込ませたら、主柱が折れてしまいます！",
+          "timestamp_label": "午前5:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e13_n04"
+        },
+        {
+          "id": "e13_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[無線越しのタイヤの悲鳴]「全隊、外周突破！解体監督がKadeの逮捕を目撃したようです――大型重機を南入口へ向かってバックさせています！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "警官たちを地下2階（B2）から退避させろ――南側の梁は2020年の火事ですでにひび割れている。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e13_n05_img"
+        },
+        {
+          "id": "e13_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "解読された2020年11月26日送金確認書――Kade Holdingsから解体監督Ray Mercerへの45万ドル支払い。",
+          "timestamp_label": "午前5:22",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n06_choice"
+        },
+        {
+          "id": "e13_n06_choice",
+          "type": "choice",
+          "prompt": "大型解体トラックがガラス張りロビーの30ヤード手前でディーゼルエンジンを吹かします：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e13_free",
+              "label": "ゲートにスパイクベルトを展開するよう伝える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ南側前庭を横切って警察のスパイクベルトを敷設して！",
+              "next_node_id": "e13_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e13_vip",
+              "label": "ロビーの鋼鉄製防火シャッターを下ろす",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "警備室の手動鋼鉄製防火シャッターを落とせ――南の柱を守るんだ！",
+              "next_node_id": "e13_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e13_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "スパイクベルトが後輪4本すべてを切り裂きました！重機は南柱の10フィート手前で横滑りして停止――警官たちが運転台からMercerを引きずり出しています！",
+          "timestamp_label": "午前5:25",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "鋼鉄製防火シャッターが間一髪で降りきりました――Mercerのバンパーは分厚い鉄板にぶつかって潰れ、巡回部隊が包囲しました！",
+          "timestamp_label": "午前5:25",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n08_merge",
+          "type": "narrator",
+          "text": "金属が軋み、やがて静まりました。それでも地下2階（B2）では、不思議な冷たい風が浸水したアーカイブ廊下の方へと流れていきます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e13_n09"
+        },
+        {
+          "id": "e13_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "二人の殺人犯はどちらも手錠を掛けられた……なのに、どうしてカメラ4の時計はまだ午前3時59分で止まったままなんだ、{{player_name}}？",
+          "timestamp_label": "午前5:27",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e13_n10_cliff"
+        },
+        {
+          "id": "e13_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "今も止まったままの03:59",
+          "teaser_text": "第3幕開始：地下2階（B2）にはまだ最後の1つの存在が残っており――そして「ルール7」があなたにそれと向き合うよう求めます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 14
+        }
+      ]
+    },
+    {
+      "episode_number": 14,
+      "title": "終わっていないシフト",
+      "start_node_id": "e14_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e14_n01",
+          "type": "narrator",
+          "text": "午前5:30 · 外でKadeとMercerの両名がパトカーへ収容されたにもかかわらず、ロビーのモニターが再び地下2階（B2）へと切り替わります。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e14_n02"
+        },
+        {
+          "id": "e14_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "12人の入居者は夜明けへと歩いていった、{{player_name}}。すべての火災記録は晴れた。なぜTower 13がまだ手放そうとしないか分かるか？",
+          "timestamp_label": "午前5:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e14_n03"
+        },
+        {
+          "id": "e14_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……もし13階で閉じ込められた入居者が12人で、Chief Millerもその一人だったのなら……残された「13番目の名前」は誰なんですか？",
+          "timestamp_label": "午前5:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e14_n04"
+        },
+        {
+          "id": "e14_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[優しく、静かに反響して]「階段横の焦げた真鍮プレートを見てみろ、{{player_name}}。13階で12人の入居者が死に――そしてロビーで1人の夜間警備員が死んだんだ。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n05"
+        },
+        {
+          "id": "e14_n05",
+          "type": "unsent_message",
+          "sender_id": "dispatch",
+          "text": "検視官はB2の瓦礫シュートからその夜間警備員のバッジを一度も回収できていません。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e14_n06_choice"
+        },
+        {
+          "id": "e14_n06_choice",
+          "type": "choice",
+          "prompt": "カメラ4がゆっくりとB2の浸水した廊下に半分埋もれた変色した警備バッジへとズームします：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e14_free",
+              "label": "B2からバッジを回収するよう指令室に頼む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "B2に最後の忘れ物があります――階段室排水口のそばにある私の真鍮の警備バッジです。",
+              "next_node_id": "e14_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e14_vip",
+              "label": "カメラ4でバッジの裏面を確認する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "そのバッジの裏面を拡大してください――内側に私の娘の写真がテープで貼られています。",
+              "next_node_id": "e14_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e14_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "了解しました。警官1人が解体前にあなたのバッジを持ち帰るため、今B2の排水口へ降りていきます。",
+          "timestamp_label": "午前5:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "警官が見つけました――裏面のラミネート加工された写真は火災の跡ひとつなく無傷です。大切に手に持っています。",
+          "timestamp_label": "午前5:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n08_merge",
+          "type": "narrator",
+          "text": "突然、浸水したB2の天井が唸りを上げました――トラックの衝突でひび割れていたコンクリートの梁が頭上で歪み始めます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e14_n09"
+        },
+        {
+          "id": "e14_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "B2で警官が負傷！天井のスラブが東側階段室を塞いでしまいました――水位が上がる中、中に閉じ込められています！",
+          "timestamp_label": "午前5:36",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n10_cliff"
+        },
+        {
+          "id": "e14_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "崩落の下に閉じ込められて",
+          "teaser_text": "次回：Chief Millerがルール7とともに呼びかけます――Tower 13が崩れ落ちる前に閉じ込められた警官を救う最後のチャンスです。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 15
+        }
+      ]
+    },
+    {
+      "episode_number": 15,
+      "title": "ルール7：絶対に仲間を残すな",
+      "start_node_id": "e15_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e15_n01",
+          "type": "narrator",
+          "text": "午前5:38 · 地下2階（B2）に粉塵が立ち込めます。破裂した配管から水が噴き出す中、あなたのバッジを握った若い巡回警官が崩れ落ちた石材の裏に閉じ込められました。",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n02"
+        },
+        {
+          "id": "e15_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "救助隊がそのコンクリート塊を切り開くには20分かかります――しかも警官によるとB2の水位はすでに胸の高さまで来ているそうです！",
+          "timestamp_label": "午前5:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e15_n03"
+        },
+        {
+          "id": "e15_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "パニックにならないよう伝えてください！13番保管庫の中に、通りの歩道グレーチング（鉄格子）へ真っすぐ登れる忘れられた点検ハッチがあります！",
+          "timestamp_label": "午前5:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e15_n04"
+        },
+        {
+          "id": "e15_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[B2中に響き渡る落ち着いた声]「真っ暗な粉塵で彼はハッチが見えないんだ、{{player_name}}！浸水した廊下を通して、一歩ずつ彼を誘導してやらなきゃならない！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n05"
+        },
+        {
+          "id": "e15_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "これこそがお前が6年間、終わらせるのを待っていたシフトだ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e15_n06_choice"
+        },
+        {
+          "id": "e15_n06_choice",
+          "type": "choice",
+          "prompt": "暗い浸水廊下で、閉じ込められた警官の懐中電灯が電池5%で明滅しています：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e15_free",
+              "label": "道を照らすためB2の誘導灯を点滅させる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "天井の緑色の非常口矢印を見て――私が点滅させる光を全部追って！",
+              "next_node_id": "e15_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e15_vip",
+              "label": "3番柱からの歩数を数えて彼を誘導する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "3番柱に触って、左へ曲がって12歩――すぐそこに13番保管庫の開いた扉があるわ！",
+              "next_node_id": "e15_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e15_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "信じられない――死んでいたはずの非常口矢印が順番に1つずつ点灯しました！彼は13番保管庫へ真っすぐ水を掻き分けて進んでいます！",
+          "timestamp_label": "午前5:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "左へ12歩――彼の手が13番保管庫の開いた鉄枠に触れました！乾いたアーカイブ棚の上へよじ登っています！",
+          "timestamp_label": "午前5:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n08_merge",
+          "type": "narrator",
+          "text": "低い地響きが基礎を揺らす中、警備コンソールにChief Millerの声が響き渡りました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n09_call"
+        },
+        {
+          "id": "e15_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chief Miller · ルール7",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e15_n10",
+          "on_decline_node_id": "e15_n10"
+        },
+        {
+          "id": "e15_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "13番保管庫の上の歩道グレーチングが外側から錆びついて開かない――今すぐ牽引チェーンをグレーチングに引っ掛けるよう指令室に伝えろ！",
+          "timestamp_label": "午前5:44",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e15_n11_cliff"
+        },
+        {
+          "id": "e15_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "錆びついた歩道グレーチング",
+          "teaser_text": "次回：二度目の天井崩落と競争しながら、夜明けの空気の中へ警官を引き上げます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 16
+        }
+      ]
+    },
+    {
+      "episode_number": 16,
+      "title": "迫り上がる水位",
+      "start_node_id": "e16_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e16_n01",
+          "type": "narrator",
+          "text": "午前5:46 · 地上の救助隊が13番保管庫真上の歩道グレーチングを見つけ、鉄の格子に太いウインチケーブルを引っ掛けました。",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "medium",
+          "next_node_id": "e16_n02"
+        },
+        {
+          "id": "e16_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "ウインチを掛けました！待ってください――13番保管庫の中の警官が、10フィート下の梯子の段が折れ飛んでいてハッチに届かないと言っています！",
+          "timestamp_label": "午前5:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e16_n03"
+        },
+        {
+          "id": "e16_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "グレーチングが外れた瞬間に立て坑へ救助用ハーネスを降ろして――そして鋼鉄製のアーカイブ棚の上に登るよう伝えてください！",
+          "timestamp_label": "午前5:47",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e16_n04"
+        },
+        {
+          "id": "e16_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[油圧ウインチの軋む音]「グレーチングが動く――バキッ！開いた！今すぐ彼へ向けて照明付き救助ロープを降ろします！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n05"
+        },
+        {
+          "id": "e16_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "彼が立て坑を抜け出すまで、鋼鉄製のドア枠をしっかり押さえておけ、{{player_name}}。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e16_n06_choice"
+        },
+        {
+          "id": "e16_n06_choice",
+          "type": "choice",
+          "prompt": "警官がハーネスに身を固定したまさにその時、13番保管庫の上で2本目のコンクリート梁に亀裂が入ります：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e16_free",
+              "label": "救助隊にウインチ全速力で引き上げさせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ引き上げて！北側の天井梁が崩れ落ちようとしています！",
+              "next_node_id": "e16_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e16_vip",
+              "label": "ベストの内側にバッジをしまうよう叫ぶ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "しっかり固定して掴まって――闇の下を見返さないで！",
+              "next_node_id": "e16_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e16_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "ウインチ全速力――背後の地下保管庫が崩落する2秒前に、彼は歩道の縁を抜け出しました！",
+          "timestamp_label": "午前5:50",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "歩道の上に出てきました――咳き込んでいますが無事で、あなたの真鍮の警備バッジを胸にしっかり抱えています！",
+          "timestamp_label": "午前5:50",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n08_merge",
+          "type": "narrator",
+          "text": "ゴオオオ。澄み切った朝の清々しい突風が階段室から吹き抜け――濡れた灰の最後の匂いを運び去りました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e16_n09"
+        },
+        {
+          "id": "e16_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "待ってください……保管庫カメラがオフラインになる直前、暗い廊下の最後の1フレームを保存していました。",
+          "timestamp_label": "午前5:52",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e16_n10_cliff"
+        },
+        {
+          "id": "e16_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "夜明けへの救出",
+          "teaser_text": "次回：最後のB2カメラ画像が、警官が脱出するまで崩れる梁を支えていたのが誰かを映し出します。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 17
+        }
+      ]
+    },
+    {
+      "episode_number": 17,
+      "title": "カメラ4の最後のフレーム",
+      "start_node_id": "e17_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e17_n01",
+          "type": "narrator",
+          "text": "午前5:54 · 指揮バンのモニターで、指令室が地下2階（B2）が暗転する直前に記録された最後の2秒間を再生します。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e17_n02"
+        },
+        {
+          "id": "e17_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "うちの警官たちが言葉を失っています、{{player_name}}さん。その最後の廊下映像で、非常口の横に立っている影を見てください。",
+          "timestamp_label": "午前5:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e17_n03"
+        },
+        {
+          "id": "e17_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今夜、俺のシフトで死んだ人間は一人もいない。一人もな。",
+          "timestamp_label": "午前5:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e17_n04"
+        },
+        {
+          "id": "e17_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[静かで深い敬意を込めた声]「あなたが救った警官がたった今、真鍮のバッジに刻まれた名前を読み上げました――そして署長に、あなたへの死後市民勇気勲章を推薦してほしいと頼んでいます。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "ロビーの時計が03:59から05:56へと進みました。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e17_n05_img"
+        },
+        {
+          "id": "e17_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "地下2階（B2）からの最終保存フレーム――救助ハーネスが立て坑を抜け出すまで見張り続ける孤独な警備員のシルエット。",
+          "timestamp_label": "午前5:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n06_choice"
+        },
+        {
+          "id": "e17_n06_choice",
+          "type": "choice",
+          "prompt": "サイレンが静まっていく中、Tower 13の上の朝の空が明るい琥珀色に染まります：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e17_free",
+              "label": "家族のもとへバッジを返すよう指令室に頼む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "私の真鍮のバッジ――そして内側の写真を、娘に返してやってください。",
+              "next_node_id": "e17_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e17_vip",
+              "label": "13人全員の名を刻む記念碑の設置を求める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "新しい記念プレートにはまず12人の入居者――そしてChief Millerの名を必ず刻んでください。",
+              "next_node_id": "e17_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e17_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "救出された警官が、今朝あなたのお嬢様へ直接届けると約束しました――あなたの名誉を回復する公式書簡と一緒に。",
+          "timestamp_label": "午前5:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "市長室がすでにこの敷地に日当たりの良い追悼庭園を造ることを承認しました――13人全員の名前が青銅で称えられます。",
+          "timestamp_label": "午前5:58",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n08_merge",
+          "type": "narrator",
+          "text": "6年ぶりにTower 13の中の真紅の非常灯が消え――自然な黄金色の昼光が代わりに満ちていきます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e17_n09"
+        },
+        {
+          "id": "e17_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "7つのルールはすべて終わったぞ、{{player_name}}。さあ――俺と一緒に表のガラスを抜けて外へ歩こう。",
+          "timestamp_label": "午前5:59",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e17_n10_cliff"
+        },
+        {
+          "id": "e17_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "全7つのルール完了",
+          "teaser_text": "次回：午前6時00分ちょうどにTower 13はきれいに解体され――正義がVictor Kadeの運命を封印します。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 18
+        }
+      ]
+    },
+    {
+      "episode_number": 18,
+      "title": "午前6:00：廃墟の撤去",
+      "start_node_id": "e18_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e18_n01",
+          "type": "narrator",
+          "text": "午前6:00 · すべての警官がフェンスの外へ退避し、Kadeの放火証拠も安全に保管された後、市の解体班が現場の撤去を行います。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e18_n02"
+        },
+        {
+          "id": "e18_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "報道陣が規制線から生中継しています。Victor KadeとRay Mercerがたった今、12件の第1級放火殺人罪で起訴されました！",
+          "timestamp_label": "午前6:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e18_n03"
+        },
+        {
+          "id": "e18_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう秘密の保管庫も、偽造された警備日誌もない――そして二度と誰にもあのビルで午前3時00分のシフトをさせることはない。",
+          "timestamp_label": "午前6:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e18_n04"
+        },
+        {
+          "id": "e18_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[群衆からの遠くの拍手]「消防署長が今カメラの前で真実を読み上げました。『Tower 13の夜間警備員は13階を救おうとして亡くなった英雄であった』と。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n05"
+        },
+        {
+          "id": "e18_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "保釈却下。1800万ドルの保険資産はすべて裁判所により凍結。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e18_n06_choice"
+        },
+        {
+          "id": "e18_n06_choice",
+          "type": "choice",
+          "prompt": "構造物が解体される前、空の警備デスクを最後にもう一度陽光が満たします：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e18_free",
+              "label": "午前6時02分に日誌へ退勤署名する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "日誌記載終了：勤務完了、外周安全、犠牲者ゼロ。",
+              "next_node_id": "e18_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e18_vip",
+              "label": "陽の当たる戸口でChief Millerに敬礼する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "一緒に夜勤ができて光栄でした、Chief。",
+              "next_node_id": "e18_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e18_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "これまでお前が書いた中で一番きれいな日誌だな、{{player_name}}。ページの灰までついに消え去ったよ。",
+          "timestamp_label": "午前6:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "こちらこそだ、警備員。12家族についに正義がもたらされ――そしてお前もついに自分の名前を取り戻したな。",
+          "timestamp_label": "午前6:03",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n08_merge",
+          "type": "narrator",
+          "text": "ロビー最後のインターホンスピーカーが優しくカチッと切れ――外の小鳥のさえずりだけが残りました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e18_n09"
+        },
+        {
+          "id": "e18_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "911指令室、Tower 13チャンネルをアーカイブ中。救出された警官からの最後の通信をお待ちください。",
+          "timestamp_label": "午前6:05",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e18_n10_cliff"
+        },
+        {
+          "id": "e18_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "夜明けに晴れた汚名",
+          "teaser_text": "次回：救出された警官が、Tower 13の警備員を称える最後の連絡を入れます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 19
+        }
+      ]
+    },
+    {
+      "episode_number": 19,
+      "title": "最後の退勤報告",
+      "start_node_id": "e19_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e19_n01",
+          "type": "narrator",
+          "text": "午前6:12 · 太陽が高く昇る中、通りの向こうで救出された警官が磨かれたあなたの真鍮バッジを手にパトカーの横に立っています。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n02"
+        },
+        {
+          "id": "e19_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "キャリアが番号を廃止する前に、最後にもう一度だけTower 13回線へ直接繋いでほしいとあの警官が頼んでいます。",
+          "timestamp_label": "午前6:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e19_n03"
+        },
+        {
+          "id": "e19_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "B2では見事だったと伝えてくれ――それと火災の時は絶対にエレベーターに乗るなとな。",
+          "timestamp_label": "午前6:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e19_n04"
+        },
+        {
+          "id": "e19_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[温かく落ち着いた若い声]「あの誘導矢印を照らしてくださってありがとうございました。今すぐお嬢様のところへバッジをお届けに向かいます。どうか安らかにお休みください。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n05"
+        },
+        {
+          "id": "e19_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "私たちの家族が11月25日を忘れることは決してない――これからはすべて正しい意味で。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e19_n06_choice"
+        },
+        {
+          "id": "e19_n06_choice",
+          "type": "choice",
+          "prompt": "無線の電池表示が温かな黄金色の光へと柔らかくフェードアウトしていきます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e19_free",
+              "label": "返信：「俺の代わりにこの街を見守ってくれ」",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "俺の代わりに夜勤を見守ってくれよ、坊主。Tower 13、通信を終了する。",
+              "next_node_id": "e19_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e19_vip",
+              "label": "返信：「娘に誇りに思っていると伝えてくれ」",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "娘に、お父さんは一度も見守るのをやめなかったと伝えてくれ。通信終了。",
+              "next_node_id": "e19_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e19_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "了解、Tower 13。今夜この地区のすべての警備員と警官があなたに敬礼を捧げています。",
+          "timestamp_label": "午前6:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "一言一句そのままお伝えしました。きっと誇りを持ってあの勲章を胸に着けられるはずです。",
+          "timestamp_label": "午前6:16",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n08_merge",
+          "type": "narrator",
+          "text": "陽光に満ちた朝の空気の中、最後のチャイムが澄み切って鳴り響きました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e19_n09_call"
+        },
+        {
+          "id": "e19_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "911指令室 · 名誉の通信終了",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e19_n10",
+          "on_decline_node_id": "e19_n10"
+        },
+        {
+          "id": "e19_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Tower 13夜勤周波数、午前6時18分をもって永久退役。これまでのご勤務に感謝します、{{player_name}}さん。",
+          "timestamp_label": "午前6:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e19_n11_cliff"
+        },
+        {
+          "id": "e19_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "退役した周波数",
+          "teaser_text": "グランドフィナーレ次回：1年後、かつてTower 13が立っていた場所の青銅追悼庭園を陽光が温めます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 20
+        }
+      ]
+    },
+    {
+      "episode_number": 20,
+      "title": "陽だまりの追悼庭園",
+      "start_node_id": "e20_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e20_n01",
+          "type": "narrator",
+          "text": "午前9:00 · 1年後。かつてTower 13の焼け跡がそびえ立っていた場所では、明るい陽光あふれる公園で白い花々が揺れています。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n02"
+        },
+        {
+          "id": "e20_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "追悼記録：今朝、澄み切った青空の下で青銅プレートが除幕されました。13の御名前――お一人おひとりが太陽の光の中で称えられています。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n03"
+        },
+        {
+          "id": "e20_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "鎖も、閉ざされた階段室も、午前3時00分のルールもない――ただ新鮮な空気と開かれた空だけだ。",
+          "timestamp_label": "午前9:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n04"
+        },
+        {
+          "id": "e20_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[小鳥のさえずり、穏やかな風]「お嬢様がたった今、青銅プレートの横に12本の白いユリと小さな真鍮の鍵を供えました――嬉し涙を浮かべて微笑みながら。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n05"
+        },
+        {
+          "id": "e20_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "今週、Victor Kadeに13回連続の終身刑が言い渡されたよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e20_n06_choice"
+        },
+        {
+          "id": "e20_n06_choice",
+          "type": "choice",
+          "prompt": "青銅の記念碑に刻まれた13の名前に陽光が煌めきます：",
+          "options": [
+            {
+              "option_id": "opt_story_143_e20_free",
+              "label": "朝のそよ風に最後のページをめくらせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "長い夜は終わった。13階のすべての魂が、ついに家へ帰ったんだ。",
+              "next_node_id": "e20_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e20_vip",
+              "label": "街へ最後の静かな祈りを残す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "この街のすべての夜間警備員が、無事に夜明けの家へ帰れますように。",
+              "next_node_id": "e20_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e20_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "もうノイズも警報もない――ただ朝の光の中の安らぎだけだ。",
+          "timestamp_label": "午前9:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "公園の前を通るすべてのパトカーが、静かな朝の敬礼を送っています。決して忘れられることはありません。",
+          "timestamp_label": "午前9:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n08_merge",
+          "type": "narrator",
+          "text": "木々の間を柔らかな笑い声が抜けていく中、黄金色の陽光が石のベンチを温かく照らしています。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n09"
+        },
+        {
+          "id": "e20_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "勤務完了。13の名前は記憶された。おはよう、この街。",
+          "timestamp_label": "午前9:05",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "light",
+          "next_node_id": "e20_n10_cliff"
+        },
+        {
+          "id": "e20_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "勤務永久完了",
+          "teaser_text": "『Tower 13の夜勤ルール』全20話を完走しました！ライブラリでさらにスリリングな物語を体験しましょう。",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

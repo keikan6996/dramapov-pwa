@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_078",
+  "lang": "en",
+  "metadata": {
+    "title": "The Phantom Promotion",
+    "subtitle": "After 2 years doing the Director's job, the VP promoted his 24-year-old nephew—and told me to hand over my VIP clients.",
+    "genre": "romance",
+    "tags": [
+      "Office",
+      "Nepotism",
+      "Comeback"
+    ],
+    "cover_image": "assets/media/covers/story_078.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#4F46E5"
+    },
+    {
+      "id": "nephew",
+      "name": "Tyler (VP’s Nephew)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "vp",
+      "name": "Mr. Vance (VP Sales)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "client",
+      "name": "Ms. Kapoor (VIP Client)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Train Your Replacement",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09:30 AM · Company-wide email drops: \"Welcome our new Account Director—Tyler Vance!\" Your phone pings.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Hey {{player_name}}! Uncle said you’re super organized. Send me all your VIP client phone numbers and renewal decks by noon, k?",
+          "timestamp_label": "09:31 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mr. Vance, you put in writing last December that hitting $4M revenue guaranteed me the Director seat. I hit $5.2M.",
+          "timestamp_label": "09:32 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Haha don’t worry Tyler, {{player_name}} is way too loyal to ever quit—they’ll do all the hard work while you take the title.",
+          "unsent_placeholder": "Mr. Vance unsent a message",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Let’s be a team player, {{player_name}}. Tyler brings \"fresh executive energy.\" Hand over the Kapoor $3M renewal at 2 PM.",
+          "timestamp_label": "09:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 11,
+          "transcript": "[warm, sharp] {{player_name}}, I just saw the press release. Who is this Tyler kid? My contract renewal is with YOU—if you're leaving, tell me where you're going.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "A rival firm offered you VP Sales last week. What do you do before 2 PM?",
+          "options": [
+            {
+              "option_id": "opt_accept_rival",
+              "label": "Sign the rival VP offer & prep resignation",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Ms. Kapoor, let’s have coffee after 2 PM. I have exciting news about my next chapter.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_let_tyler_sink",
+              "label": "Let Tyler run the 2 PM compliance Q&A solo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Mastermind · Watch Ad",
+              "player_reply_text": "Actually, Ms. Kapoor—ask Tyler about the EU data compliance addendum at 2 PM. Watch what happens.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Count me in. And I’ll pause signing my $3M renewal until after our coffee.",
+          "timestamp_label": "09:39 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "TRAP SET: Ms. Kapoor smiles and agrees—AND you sign the rival VP offer with a 45% pay bump at 11:00 AM!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Oh, this 2 PM meeting is going to be pure theater. See you soon, VP {{player_name}}.",
+          "timestamp_label": "11:15 AM",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Yo {{player_name}}, I didn’t read the slides lol—just sit next to me and whisper the answers if Kapoor asks anything hard.",
+          "timestamp_label": "01:55 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "The $3 Million Handover",
+          "teaser_text": "Episode 2: Mr. Vance introduces Tyler as the \"genius\" behind the account—and you slide your resignation across the table.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "No Longer Too Loyal",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "02:02 PM · Client Boardroom. Ms. Kapoor sits across from Mr. Vance and Tyler.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Ms. Kapoor, our new Director Tyler will personally oversee your $3M renewal starting today!",
+          "timestamp_label": "02:02 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Wonderful. Tyler, walk me through how you’re restructuring our Tier-3 SLA penalties under the new EU regulation.",
+          "timestamp_label": "02:03 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "{{player_name}} HELP!! What the heck is an SLA?! Answer for me!!",
+          "unsent_placeholder": "Tyler unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Uh... we’ll totally synergize the... cloud vibes? {{player_name}}, jump in!",
+          "timestamp_label": "02:05 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Mr. Vance glares at you to rescue his nephew. Drop the mic.",
+          "options": [
+            {
+              "option_id": "opt_resign_now",
+              "label": "Hand over your resignation & stand up",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sorry, Tyler—I’m not qualified to answer for a Director. Here is my immediate resignation, Mr. Vance.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_take_client",
+              "label": "Announce your VP role & watch Kapoor follow",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Mic Drop · Watch Ad",
+              "player_reply_text": "Actually, I start Monday as VP at Meridian Group. Enjoy the fresh executive energy, Mr. Vance.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Ms. Kapoor closes her pen immediately: \"Without {{player_name}}, we are putting this $3M contract out to bid.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "CLIENT WALKOUT: Ms. Kapoor stands up beside you: \"Send me Meridian’s proposal Monday morning, {{player_name}}!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "WAIT! {{player_name}}! I’ll match their offer! I’ll make YOU Director right now!",
+          "timestamp_label": "02:09 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 7,
+          "transcript": "[laughing in the elevator] Best business meeting I have attended all year. Drinks on me!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Know Your Worth",
+          "teaser_text": "By Friday, four more of your former teammates text asking if Meridian is hiring—and Mr. Vance is summoned to an emergency board review.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Cease-and-Desist",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "9:10 AM · Meridian Offices. Four former teammates want to join you—and Mr. Vance just sent a legal threat.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "{{player_name}}, our legal team just filed a non-solicit cease-and-desist against you! You illegally poached Ms. Kapoor and my sales staff!",
+          "timestamp_label": "9:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nice try, Mr. Vance. Ms. Kapoor called Meridian herself after Tyler missed her launch deadline—and I never signed a non-solicit.",
+          "timestamp_label": "9:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "client",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "BOGUS LEGAL THREAT · Unsigned draft non-compete attached by Vance—contradicted by Ms. Kapoor’s termination notice.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Oh, this is rich! Vance emailed my CFO claiming YOU were fired for \"performance issues\"—so I just forwarded his email straight to his Board Chair!",
+          "timestamp_label": "9:13 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Uncle Vance I accidentally deleted the Q4 client renewal sheet—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[laughing] {{player_name}}, wait till you hear this—Tyler just sent my team a rival client’s confidential pricing deck by mistake! He CC’d the entire distribution list!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Vance’s emergency board review starts at 11 AM! How do you respond to his cease-and-desist?",
+          "options": [
+            {
+              "option_id": "opt_send_truth",
+              "label": "Reply with Meridian’s counsel & zero fear",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Meridian’s general counsel just replied: drop the defamation email by noon or we sue YOU for tortious interference.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_commission_audit",
+              "label": "Also demand your 2 years of unpaid bonuses",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Receipts Ready · Watch Ad",
+              "player_reply_text": "Since we’re involving HR and the Board, let’s also audit the $64,000 in Director commissions you withheld from me over two years!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "LEGAL BACKFIRE: Vance’s own company lawyer orders him to retract the cease-and-desist immediately!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "BOMBSHELL ADDED: The Board Chair adds your $64K commission claim directly to Vance’s 11 AM review agenda!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Hey {{player_name}}… any chance you can still send me those client onboarding templates? Uncle Vance is yelling at me.",
+          "timestamp_label": "9:22 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sorry Tyler—those templates come with a Director’s salary. Good luck at the 11 AM review.",
+          "timestamp_label": "9:23 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Where Did Your Commissions Go?",
+          "teaser_text": "Episode 4: Discover who actually pocketed the $64,000 in bonuses your team earned.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Unpaid Commissions",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10:50 AM · Meridian Glass Office. Ten minutes before Mr. Vance faces the Board.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Hold on, {{player_name}}! If you drop the commission audit before 11 AM, I’ll authorize a $15K goodwill payout right now!",
+          "timestamp_label": "10:50 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Funny how a man who claimed I had \"performance issues\" suddenly wants to pay me $15K to stay quiet.",
+          "timestamp_label": "10:51 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Guess what your old payroll friend just leaked to the Board? Vance reclassified your $64K Director commissions as a \"Signing Bonus\"—for TYLER!",
+          "timestamp_label": "10:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "If the Chair sees Tyler’s $64K signing bonus came from {{player_name}}’s deals—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Wait—Uncle Vance, you told me that $64K bonus was standard for new Directors! I already spent half of it on a watch and a lease!",
+          "timestamp_label": "10:54 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[door clicking open] My CFO just got off the phone with their Board Chair—they suspended Vance’s corporate card AND pulled the full commission ledger into the 11 AM meeting!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "The Board Chair calls you directly asking for your written statement! What do you include?",
+          "options": [
+            {
+              "option_id": "opt_submit_deals",
+              "label": "Submit 2 years of signed client deal logs",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sending every signed VIP contract, email trail, and the exact commission formula Vance promised me.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_include_teammates",
+              "label": "Include your 4 teammates’ withheld bonuses",
+              "cost_type": "vip_rewarded",
+              "badge_text": "True Director · Watch Ad",
+              "player_reply_text": "Submitting my deal logs PLUS the withheld Q3 bonuses owed to all four teammates who carried Vance’s department!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "OPEN AND SHUT: The Board verifies every deal within minutes—confirming Vance diverted your bonuses to his nephew.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "FULL RESTITUTION: The Board orders immediate back-pay for YOU and all four teammates—taken straight from Vance’s exit package!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You promoted nepotism over merit, Mr. Vance. Now enjoy the board review.",
+          "timestamp_label": "11:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Security just walked into the conference room… Tyler, why did you admit spending the bonus in writing?!",
+          "timestamp_label": "11:06 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Nepotism Ledger",
+          "teaser_text": "Episode 5: Watch the commission payout land in your account as Meridian hands you your own division.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Board Review",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "3:30 PM · Meridian Conference Room. Your phone chimes with a bank alert—and four familiar faces walk in.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Breaking news from your old tower: Mr. Vance was fired FOR CAUSE at noon—and Tyler was escorted out right behind him!",
+          "timestamp_label": "3:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "BACK-PAY CLEARED · $64,000 withheld Director commissions wired in full per Board restitution order.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Are you satisfied?! Twenty years of my reputation gone in one afternoon!",
+          "timestamp_label": "3:32 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You built that reputation on my two years of unpaid work and destroyed it yourself the second you handed my seat to your nephew.",
+          "timestamp_label": "3:33 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Now I have to return the leased BMW and pay back the signing bonus—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[smiling] Even better news, {{player_name}}! My board just approved DOUBLING our annual contract with Meridian—strictly under YOUR new division!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Meridian’s CEO promotes you to VP of Enterprise Sales! Who do you hire first?",
+          "options": [
+            {
+              "option_id": "opt_hire_four",
+              "label": "Hire all 4 loyal former teammates",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Signing offer letters for all four of my former teammates right now—with transparent commission tiers!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_hire_plus_equity",
+              "label": "Hire all 4 + add team revenue-share",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Elite VP · Watch Ad",
+              "player_reply_text": "Bring all four aboard with 20% raises AND a shared quarterly revenue pool—nobody ever gets skipped again!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "DREAM TEAM REUNITED: All four accept on the spot—bringing zero drama and 100% elite execution.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "UNSTOPPABLE DIVISION: Your new team closes $4M in pipeline before the end of the first month!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "From phantom promotion to real VP in one week. Best comeback I’ve ever witnessed!",
+          "timestamp_label": "3:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Know your worth—and never train your own replacement for free.",
+          "timestamp_label": "3:43 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Real VP Takes The Floor",
+          "teaser_text": "Episode 6 (Finale): Kick off Meridian’s biggest quarter with Ms. Kapoor and your reunited dream team.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "The New VP",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "One Month Later · Meridian Sky Lounge. Your new VP nameplate shines as Q1 numbers hit 180% of target.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Our rollout with your new team finished TEN days early! Best partnership we’ve ever signed, VP {{player_name}}!",
+          "timestamp_label": "5:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Easy when you have the real team doing the work—and getting paid what they actually earned.",
+          "timestamp_label": "5:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Uh… hey {{player_name}}, I saw Meridian is hiring entry-level sales reps. Any chance—",
+          "timestamp_label": "5:32 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Three recruiters turned me down after the board review leaked—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[bursting into laughter] Did Tyler seriously just apply to work UNDER you?! Frame that text message right next to your VP award!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Already sent him the standard public careers link. Merit only in this department.",
+          "timestamp_label": "5:36 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Your closing toast at the Meridian Q1 celebration:",
+          "options": [
+            {
+              "option_id": "opt_toast_merit",
+              "label": "Toast to merit, respect & zero nepotism",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "To never waiting for permission to claim the seat you already earned!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_open_salaries",
+              "label": "Publish transparent promotion bands for all",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Culture Icon · Watch Ad",
+              "player_reply_text": "And starting today, every role in my division has clear, written promotion metrics—no phantom promises ever again!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "STANDING TOAST: Your four teammates and Ms. Kapoor raise their glasses as the skyline lights up.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "TOP EMPLOYER: Your division’s retention hits 100%, and top closers across the city beg to join your roster.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Cheers to the real Director—now VP—{{player_name}}!",
+          "timestamp_label": "5:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Just getting started, Ms. Kapoor. Let’s double Q2 too.",
+          "timestamp_label": "5:43 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINALE · Worth Every Penny",
+          "teaser_text": "You walked away from a phantom promotion, reclaimed your commissions, and built an unstoppable division.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

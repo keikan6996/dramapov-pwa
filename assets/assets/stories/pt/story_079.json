@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_079",
+  "lang": "pt",
+  "metadata": {
+    "title": "A Herdeira Não Convidada",
+    "subtitle": "Eu era a cuidadora discreta da propriedade Thorne — até o advogado da matriarca mandar mensagem à 1h da manhã: \"Ela deixou 51% para você.\"",
+    "genre": "romance",
+    "tags": [
+      "Herança",
+      "Bilionário",
+      "Reviravolta"
+    ],
+    "cover_image": "assets/media/covers/story_079.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "attorney",
+      "name": "Sr. Sterling (Advogado)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "heir",
+      "name": "Celeste (Filha Mais Velha)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9D174D"
+    },
+    {
+      "id": "butler",
+      "name": "Edgar (Mordomo-Chefe)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "A Convocação da 1h da Manhã",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "01h04 · A noite seguinte ao falecimento da matriarca bilionária Eleanor Thorne. Você está arrumando sua mala na ala dos funcionários.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "{{player_name}}, NÃO arrume as malas. A escritura lacrada do espólio de Madame Thorne nomeia VOCÊ herdeira controladora de 51% da Thorne Holdings.",
+          "timestamp_label": "01:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "51%?! Sr. Sterling, deve haver um engano — eu só cuidava do jardim dela e lia para ela toda noite!",
+          "timestamp_label": "01:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Edgar, jogue as malas de {{player_name}} no cascalho molhado às 7h e troque todas as fechaduras antes que o advogado chegue!",
+          "unsent_placeholder": "Celeste apagou uma mensagem",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Seus serviços não são mais necessários, {{player_name}}. Deixe suas chaves no balcão da cozinha às 07h00 em ponto.",
+          "timestamp_label": "01:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 12,
+          "transcript": "[caloroso, respeitoso] A Madame deixou uma carta em áudio privada para você, {{player_name}}. Ela disse que os próprios filhos não apareceram uma única vez em três anos — só você ficou até o último suspiro dela.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Celeste está chegando às 7h com equipe de mudança para despejar você. Como você a recebe?",
+          "options": [
+            {
+              "option_id": "opt_wait_foyer",
+              "label": "Esperar calma no saguão com Sterling",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Edgar, prepare o Earl Grey favorito da Madame para as 7h. Diga ao Sr. Sterling que estarei no saguão.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_read_clause",
+              "label": "Perguntar a Sterling o corte de Celeste",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Espera, Sr. Sterling — a Madame deixou um motivo específico para cortar a parte da Celeste?",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Agora mesmo, {{player_name}}. Será uma honra servir à verdadeira herdeira.",
+          "timestamp_label": "01:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "CLÁUSULA SECRETA: Madame Thorne descobriu que Celeste tentou vender escondido a propriedade da família a um incorporador de cassino enquanto Madame ainda estava viva!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "O pré-contrato assinado está na minha pasta. Celeste não faz ideia de que a mãe a flagrou.",
+          "timestamp_label": "01:13",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Chegando aos portões agora com os chaveiros. É bom você já estar fora da MINHA propriedade, {{player_name}}.",
+          "timestamp_label": "06:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Trocando as Fechaduras",
+          "teaser_text": "Episódio 2: Celeste ordena aos chaveiros que troquem as portas — e você calmamente diz a eles quais fechaduras trocar.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "51% de Controle Acionário",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "07h02 · Grande Saguão. Celeste entra estalando saltos de grife, apontando furiosa para você tomando chá.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Como ousa sentar na cadeira da minha mãe?! Edgar, chame a segurança e prenda {{player_name}} por invasão!",
+          "timestamp_label": "07:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "Eu não faria isso, senhorita Celeste. A partir da meia-noite, esta propriedade e 51% da Thorne Holdings pertencem legalmente a {{player_name}}.",
+          "timestamp_label": "07:03",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Ligue para o meu advogado!! Mande ele contestar o testamento por incapacidade mental agora mesmo!!",
+          "unsent_placeholder": "Celeste apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 9,
+          "transcript": "[educado, letal] A Madame previu contestação judicial, senhorita Celeste. Ela teve três médicos independentes atestando a lucidez dela em vídeo.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Celeste treme de fúria. Como você afirma sua nova autoridade?",
+          "options": [
+            {
+              "option_id": "opt_keep_locks",
+              "label": "Mandar chaveiros trocarem o código DELA",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Que bom que trouxe chaveiros, Celeste. Troquem o código do portão principal — e recolham a chave dela.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_expose_casino",
+              "label": "Revelar o pré-contrato secreto do cassino",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Devastar · Ver Anúncio",
+              "player_reply_text": "Além disso, sua mãe viu o pré-contrato do cassino que você assinou pelas costas dela. Foi por isso que recebeu 0%.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Edgar entrega educadamente o casaco a Celeste e abre as grandes portas de carvalho para a entrada de carros.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "COLAPSO TOTAL: Os irmãos mais novos de Celeste ficam sabendo da traição do cassino e votam na hora para tirá-la do conselho familiar também!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Você não sobrevive uma semana naquela sala do conselho, {{player_name}}! Vão te devorar viva!",
+          "timestamp_label": "07:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não se preocupe comigo, Celeste. Sua mãe me ensinou tudo o que sabia.",
+          "timestamp_label": "07:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Vida Longa à Nova Herdeira",
+          "teaser_text": "Sr. Sterling se inclina baixo: \"Mais uma coisa, {{player_name}}. Olhe a certidão de nascimento lacrada no verso do testamento — Eleanor não era apenas sua patroa.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "A Certidão Lacrada",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "14h15 · Biblioteca da Propriedade Thorne. A certidão de nascimento lacrada com cera do verso do testamento treme na sua mão.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "Leia a linha materna com atenção, {{player_name}}. A matriarca Eleanor não deixou 51% para você por caridade — você é neta biológica dela.",
+          "timestamp_label": "14:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera… minha mãe era a filha mais nova de Eleanor que desapareceu há vinte e quatro anos?!",
+          "timestamp_label": "14:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "attorney",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "REGISTRO DE PARENTESCO LACRADO · Compatibilidade de DNA de 99,96% como neta materna — Verificada por Eleanor há seis meses.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Eleanor reconheceu o medalhão da sua mãe na primeiríssima semana em que você veio cuidar dela, {{player_name}}. Ela queria ver o seu coração antes de te contar.",
+          "timestamp_label": "14:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Se aquela cuidadora provar que é filha da minha irmã, eu perco a propriedade inteira—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 8,
+          "transcript": "[sussurro urgente] {{player_name}}, Celeste acabou de me encurralar na despensa! Ela me ofereceu US$ 200.000 em espécie para jurar no tribunal que Lady Eleanor sofria de demência quando assinou o testamento!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Celeste está tentando subornar Edgar e contestar o testamento! Como você contra-ataca?",
+          "options": [
+            {
+              "option_id": "opt_record_bribe",
+              "label": "Fazer Edgar fingir e gravar o suborno",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Edgar, diga a ela que vai \"pensar\" e grave a próxima oferta dela em áudio — Sterling entrega direto ao juiz.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_release_dna",
+              "label": "Postar o exame de DNA no grupo familiar",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Revelação Real · Ver Anúncio",
+              "player_reply_text": "Sr. Sterling, compartilhe o laudo lacrado de DNA com os curadores — deixem Celeste explicar por que chamava a própria sobrinha de \"a empregada\"!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "ISCA FISGADA: Cinco minutos depois, Celeste envia por mensagem a Edgar os termos exatos do suborno de US$ 200 mil preto no branco!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "TERREMOTO NO ESPÓLIO: Os curadores congelam imediatamente a procuração de 49% de votos de Celeste aguardando investigação!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Não me importa que papel falso de laboratório o Sterling balance por aí! Vou entrar com liminar hoje à noite — e ninguém toca no escritório da Ala Oeste!",
+          "timestamp_label": "14:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Por que Celeste tem tanto pavor de alguém abrir o escritório da Ala Oeste? Foi lá que Lady Eleanor guardou o livro fiduciário da família de 2002…",
+          "timestamp_label": "14:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Segredo da Ala Oeste",
+          "teaser_text": "Episódio 4: Descubra por que Celeste está desesperada para queimar o livro de 2002 antes do amanhecer.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "A Contestação do Testamento",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "23h50 · Mansão Thorne. Trovões rolam sobre a propriedade enquanto a ameaça de liminar de Celeste paira no escuro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Pegue US$ 500.000 em dinheiro vivo e vá embora hoje à noite, {{player_name}}. Você não foi criada para esta propriedade — o conselho vai te engolir viva.",
+          "timestamp_label": "23:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Passei três anos ao lado da cama da Vovó enquanto você só aparecia para pedir mesada, Celeste. Não vou a lugar nenhum.",
+          "timestamp_label": "23:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "{{player_name}}, acabei de revisar as anotações privadas de Eleanor sobre 2002: o falecido marido de Celeste falsificou a carta de deserdação da sua mãe para expulsá-la da propriedade!",
+          "timestamp_label": "23:52",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Se acharem minha carta de 2002 no cofre da Ala Oeste eu perco meus 49% também—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "ALERTA! O sensor de movimento do corredor da Ala Oeste acabou de disparar — alguém acabou de abrir a fechadura do escritório particular de Lady Eleanor!",
+          "timestamp_label": "23:54",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 8,
+          "transcript": "[chuva martelando o vidro] {{player_name}}, é a Celeste! Ela está com um isqueiro e tirando o livro de 2002 do cofre da parede agora mesmo!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Celeste está prestes a queimar a prova de 2002 na Ala Oeste! O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_rush_west_wing",
+              "label": "Acender as luzes do corredor e encarar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Edgar, acenda os lustres principais e destranque a porta do escritório — flagre ela em pleno ato na câmera de segurança da mansão!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_seal_wing_call",
+              "label": "Trancar a Ala Oeste + chamar Sterling",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Xeque-Mate · Ver Anúncio",
+              "player_reply_text": "Tranque o saguão da Ala Oeste e faça chamada de vídeo ao vivo com o Sr. Sterling para ele testemunhar cada segundo da tentativa de incêndio!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "FLAGRADA EM PLENO ATO: Lustres cegantes se acendem — Celeste congela com o isqueiro a dois centímetros do livro!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "TESTEMUNHA JURÍDICA AO VIVO: Sr. Sterling grava o pânico de Celeste em vídeo ao vivo — acionando a cláusula de perda total do espólio!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Abaixe o isqueiro, Tia Celeste. A Vovó já gravou um testamento em vídeo semanas antes de partir.",
+          "timestamp_label": "00:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Um… testamento em vídeo?! Não — ela não podia saber sobre 2002!",
+          "timestamp_label": "00:03",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Meia-Noite na Ala Oeste",
+          "teaser_text": "Episódio 5: Apresente a gravação da segurança e o vídeo final de Eleanor para encerrar de vez a reivindicação de Celeste.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Meia-Noite na Ala Oeste",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "10h00 · Grande Salão da Propriedade. Os curadores assistem ao alerta de segurança da Ala Oeste e ao vídeo final de Eleanor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Aqui está o quadro da segurança da Ala Oeste das 23h54, Curadores — além do livro intacto de 2002 provando como a mãe de {{player_name}} foi incriminada.",
+          "timestamp_label": "10:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "butler",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "CÂMERA ALA OESTE · 23h54 — Celeste invadindo o escritório lacrado da Matriarca Eleanor para queimar o livro de 2002.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "heir",
+          "text": "Espera — vocês vão tirar meus 49% também?! Para onde eu deveria ir?!",
+          "timestamp_label": "10:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "Pela Cláusula 8, tentar subornar testemunha ou destruir registros do espólio transfere automaticamente a cota do beneficiário para a herdeira principal.",
+          "timestamp_label": "10:03",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Passei vinte anos tramando por esta casa e perdi 100% dela em uma noite—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "attorney",
+          "duration_sec": 8,
+          "transcript": "[áudio do vídeo ecoando suave] \"Minha queridíssima {{player_name}}, você cuidou de mim quando achava que não lhe devia nada. Agora toda esta propriedade — e o bom nome de sua mãe — pertencem a você.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "100% da Propriedade Thorne agora repousam em suas mãos! Que destino você decide para Celeste?",
+          "options": [
+            {
+              "option_id": "opt_modest_stipend",
+              "label": "Despejá-la com uma modesta pensão mensal",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Deixe a propriedade até o pôr do sol, Celeste. Darei a você uma modesta ajuda de moradia — com a condição de nunca mais contestar o nome da Mamãe.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_zero_mercy_heir",
+              "label": "Aplicar confisco total e limpar nome da Mãe",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Matriarca Real · Ver Anúncio",
+              "player_reply_text": "Apliquem o confisco total pela Cláusula 8 — e pendurem o retrato da minha mãe de volta no Grande Salão onde pertence!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "PODER COM ELEGANÇA: Até os curadores mais antigos inclinam a cabeça em respeito à sua dignidade serena.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "JUSTIÇA RESTAURADA: Celeste parte em silêncio enquanto Edgar pendura o retrato de sua mãe ao lado do de Eleanor.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Os funcionários estão todos sorrindo de novo, Senhorita {{player_name}}. Bem-vinda ao lar — de verdade.",
+          "timestamp_label": "10:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Obrigada, Edgar. E por favor — nunca mais me chame de \"a cuidadora\".",
+          "timestamp_label": "10:13",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Legado Thorne Começa",
+          "teaser_text": "Episódio 6 (Final): Assuma seu lugar de direito à frente da propriedade Thorne e honre Eleanor e sua mãe.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "O Legado Thorne",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Um Mês Depois · Jardim das Rosas da Mansão. Lanternas cintilam pelo gramado quando a propriedade reabre ao calor humano e à luz.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "Inventário encerrado oficialmente hoje à tarde com zero objeções, {{player_name}}. A Propriedade Thorne é 100% sua.",
+          "timestamp_label": "18:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Da cuidadora discreta que ninguém notava até honrar o nome da minha mãe no Grande Salão… ainda parece um sonho.",
+          "timestamp_label": "18:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "As rosas que Lady Eleanor plantou para sua mãe acabaram de desabrochar hoje de manhã — mais luminosas do que nunca em vinte e quatro anos.",
+          "timestamp_label": "18:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "heir",
+          "text": "Talvez a Vovó tivesse razão — {{player_name}} sempre foi a melhor herdeira—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "butler",
+          "duration_sec": 8,
+          "transcript": "[cordas suaves tocando] Todos os vinte funcionários estão reunidos no pátio para brindar à nova Senhora da Mansão, {{player_name}}!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Descendo agora mesmo — e hoje à noite, os funcionários sentam À mesa principal comigo.",
+          "timestamp_label": "18:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Seu primeiro decreto oficial como chefe da Propriedade Thorne:",
+          "options": [
+            {
+              "option_id": "opt_staff_pension",
+              "label": "Dobrar a aposentadoria de Edgar e equipe",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dobrando os fundos de aposentadoria de Edgar e de cada funcionário leal que cuidou da Vovó!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_caretaker_grant",
+              "label": "Lançar Fundação de Bolsas a Cuidadores",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Coração de Ouro · Ver Anúncio",
+              "player_reply_text": "Dobrando a previdência da equipe E lançando a Fundação Eleanor Thorne de Cuidadores para apoiar heróis silenciosos em toda parte!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "LEALDADE PROFUNDA: Edgar faz reverência com olhos marejados — esta propriedade jamais conhecerá crueldade outra vez.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "LEGADO AMADO: Sr. Sterling ergue a taça — \"Eleanor escolheu uma verdadeira rainha para carregar sua coroa.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "attorney",
+          "text": "Vida longa à legítima herdeira da Mansão Thorne.",
+          "timestamp_label": "18:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "butler",
+          "text": "Bem-vinda ao lar, Senhorita {{player_name}}.",
+          "timestamp_label": "18:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · A Coroa Legítima",
+          "teaser_text": "Você revelou seu direito oculto de nascimento, impediu a sabotagem da meia-noite e devolveu a honra à sua família.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

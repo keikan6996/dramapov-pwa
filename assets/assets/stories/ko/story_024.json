@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_024",
+  "lang": "ko",
+  "metadata": {
+    "title": "4호선의 마지막 열차",
+    "subtitle": "친구가 지하철 4호선은 오전 12시 30분에 막차가 끊겼다고 문자를 보냈다. 그런데 나는 지금 그 열차에 타고 있다.",
+    "genre": "thriller",
+    "tags": [
+      "지하철",
+      "새벽 3시",
+      "초자연"
+    ],
+    "cover_image": "assets/media/covers/story_024.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (나)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "ally",
+      "name": "Sam (절친)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "4호선 차장",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#450A0A"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "다음 역: Ashwood",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 2:19 · 지하철 객차가 끝없는 검은 터널 속을 흔들리며 달립니다. 다른 모든 승객은 눈을 감은 채 미동도 없이 앉아 있습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 너 어디야? 나 중앙역에서 기다리고 있는데—역무원이 4호선은 2시간 전에 운행 종료됐대.",
+          "timestamp_label": "오전 2:19",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "뭐?! 나 지금 문자 그대로 4호선 '타고' 있는데. LED 안내판이 방금 \"Ashwood 역\"으로 바뀌었어.",
+          "timestamp_label": "오전 2:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "문이 열릴 때 절대 눈을 뜨지 마.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ashwood 역은 1998년에 불타 없어졌잖아!! 터널도 폐쇄했단 말이야! {{player_name}}, 당장 비상 브레이크 잡아당겨!",
+          "timestamp_label": "오전 2:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[선로 긁히는 굉음, 속삭임의 합창] ...1998년행 열차에 탑승하신 걸 환영합니다... 승차권 검사하겠습니다, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "승객들이 일제히 눈을 뜨더니—모두 당신의 좌석을 향해 고개를 돌립니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "다음 칸으로 달려 도망친다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "앞쪽 객차로 이동하는 중!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "주머니 속에 들어 있는 종이 승차권을 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "잠깐, 내 주머니에 종이 승차권이 있는데...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "미닫이문을 쾅 밀고 뛰어듭니다—앞쪽 객차는 검게 그을린 나무 벤치만 제외하면 완전히 텅 비어 있습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 승차권에 찍힌 날짜는 오늘이 아닙니다. 정확히 당신의 생년월일이 찍혀 있고—\"편도\"라고 적혀 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "네 GPS 위치 점이 도시 지도에서 방금 사라졌어! 지금 속도 줄이고 있다고 말해 줘!",
+          "timestamp_label": "오전 2:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "차장 안내 인터폰",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "잡음이 지지직거립니다: \"종착역, Ashwood. 승차권을 찢은 승객만 열차에 계속 머물 수 있습니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "전화를 거절합니다. 즉시 객차 천장 스피커에서 음성이 울려 퍼집니다: \"3호차 승차권 검표 시작합니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "열차 문이 열리고 있다",
+          "teaser_text": "2화: 바깥에 회색 재로 뒤덮인 승강장이 나타나고—누군가 손전등을 들고 기다리고 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Ashwood 승강장",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 2:25 · 열차가 쉬이익 소리를 내며 멈춰 섭니다. 열린 문 사이로 그을음이 날려 들어옵니다. 역 시계 바늘이 거꾸로 돌아갑니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 옛날 신문 기사 읽고 있어! 통근객 열두 명이 그 열차에서 실종됐는데—승강장에 발을 내디딘 사람은 아무도 못 돌아왔대!",
+          "timestamp_label": "오전 2:25",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "불에 탄 제복을 입은 차장이 통로를 걸어 나한테 다가오고 있어. 손에 검표 펀치를 들고 있어.",
+          "timestamp_label": "오전 2:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[금속 펀치 딸깍거리는 소리] ...열차에서 내려, {{player_name}}. 네가 내릴 역은 20년 전이었잖아...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "문 닫히는 안내음이 울릴 때까지 눈을 감아.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "그 사람 얼굴 쳐다보지 마! 생존자 게시판에서 봤던 얘기 기억해—열차가 다시 움직일 때까지 자는 척하라고 했어!",
+          "timestamp_label": "오전 2:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "차장이 당신의 좌석 옆에 멈춰 섭니다. 차가운 연기가 폐부를 채웁니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "눈을 꼭 감고 숨을 참는다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "눈 감았어. 미동도 안 하고 버티는 중...",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "1998년 승차권을 반으로 찢어 버린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "지금 승차권 찢고 있어!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "화상을 입은 손이 당신의 뺨 몇 센티미터 앞 허공에 멈춥니다. 문 닫힘 알림음이 울리고—열차가 어둠 속으로 덜컹거리며 출발합니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 손가락 사이에서 종이가 따뜻한 재로 변합니다. 차장이 한 번 고개를 숙여 인사하고, 형광등이 다시 환한 백색 빛으로 켜집니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "밝은 역명판이 스쳐 지나갑니다: 중앙역(CENTRAL STATION). 당신이 벌떡 일어나자—객차는 깨끗하고 텅 비어 있습니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Sam (절친)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Sam이 숨을 헐떡입니다: \"살아 있어서 천만다행이야! 잠깐—왜 네 코트 등판에 시커먼 그을음 손자국이 찍혀 있어?!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "환한 승강장으로 걸어 나온 당신은—휴대폰 배경화면이 Ashwood 역 사진으로 바뀌어 있는 것을 발견합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "승강장 틈을 주의하세요",
+          "teaser_text": "시즌 피날레 · 교통카드 이용 내역에 아직도 진행 중인 여정 하나가 떠 있습니다: 목적지 미상.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "목적지 미상",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 2:18 · Ashwood 승강장을 벗어나 계단을 뛰어 올라갔지만—개찰구 너머는 다시 똑같은 지하철 객차 안으로 이어집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 네 실시간 위치가 방금 지하 10킬로미터 밑으로 찍혔어! 4호선엔 그 정도로 깊은 터널 자체가 없는데!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sam, 모든 출구가 4호차 안으로 루프 돌아서 연결돼! 게다가 다른 승객들이 전부 1980년대 코트를 입고 있어!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Ashwood 터널 · 어두운 승강장 먼 끝자락을 가로막고 서 있는 키 큰 차장의 실루엣.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "안내 방송 알림음: \"자리에 착석해 주십시오. 유효 처리되지 않은 승차권을 소지한 승객은 하차할 수 없습니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "개찰구에 수명이 다한 교통카드를 찍었군, {{player_name}}. 이제 종착역에 닿을 때까지 이 열차를 타야만 해.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "1987년에 4호선 심야 급행열차가 홍수 때 실종되자—시가 Ashwood 역을 영구 봉쇄했대.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[날카로운 금속성 열차 마찰음] \"다음 역: 구 Ashwood 수문. 무임승차자 전원은 맨 앞 칸으로 이동하십시오.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "열차가 침수된 칠흑 같은 터널 속으로 가속합니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_cord",
+              "label": "비상 브레이크 손잡이를 잡아당긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "빨간 비상줄 당겼어—Sam, 계속 통화 연결해 둬!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_walk_front",
+              "label": "앞쪽으로 걸어가 차장과 정면으로 마주한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 두려움 없는 선택",
+              "player_reply_text": "직접 차장 만나러 1호차 운전실로 가는 중이야!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "브레이크가 비명 지르며—점검용 벽감 근처에서 열차가 느려졌어! 초록색 비상구 불빛을 찾아봐!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "조심해! 방금 1987년 시 기록보관소 자료 찾았는데—그 차장님 수동 문 열려고 애쓰다 돌아가신 분이래!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "앞쪽 운전실 창문을 봐. 차장이 황동 비상 열쇠를 들어 보이고 있어.",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "전방 1호차.",
+          "teaser_text": "4화: 운전실 안에서, 당신은 왜 1987년 급행열차가 아직도 지상을 찾아 헤매고 있는지 알게 됩니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "1987년 급행열차",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 2:29 · 1호차 미닫이문을 힘껏 열어젖힙니다. 녹슨 제어 콘솔 위로 물방울이 뚝뚝 떨어집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "신문 스크랩 찾았어, {{player_name}}! 1987년 홍수로 전자식 문이 고장 나서—차장님한테 터널 차단기를 내려줄 '운전실 바깥' 사람이 필요했던 거야!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "잠깐... 날 가두려는 게 아니야! 선로 옆 빛나는 점검 터널을 손가락으로 가리키고 계셔!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "39년 동안 이 루프를 맴돌았네, {{player_name}}. 4번 표지판에 있는 지상 차단기를 내려서 우리가 역에 닿을 수 있게 해 주게.",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "열차가 \"차단기 함 4(BREAKER BOX 4)\"라고 적힌 녹슨 철제 사다리 옆에 끼이익 멈춰 섭니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "90초 동안 운전실 문을 열어 두겠네. 휴대폰 떨어뜨리지 말고—밖에 있는 친구 안내를 잘 따르라고!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "차단기만 작동하면, 터널 투광등이 켜지면서 지상으로 올라가는 진짜 계단이 보일 거야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[거칠고 다급한 목소리] \"루프가 초기화되기 전까지 90초 남았네, {{player_name}}! 점검 통로로 올라가게!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "제3궤조 주변으로 물이 차오르며 터널 조명이 깜빡입니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_climb_catwalk",
+              "label": "철제 사다리를 타고 점검 통로 위로 전력 질주한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "점검 통로 올라왔어! Sam, 어떤 레버가 지상 차단기야?!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_grab_key",
+              "label": "먼저 차장의 황동 열쇠부터 받아 쥔다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 완벽한 대비",
+              "player_reply_text": "황동 열쇠 주세요—제가 차단기 함 잠금 풀게요!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "맨 왼쪽에 있는 파란색 손잡이 레버! 똑바로 아래로 잡아당겨!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "그 황동 열쇠로 비상 계단 해치도 열 수 있어! 뛰어!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "휴대폰 GPS가 갑자기 튀더니—네가 지금 메인 스트리트 바로 밑에 서 있다고 표시돼!",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "남은 시간 90초.",
+          "teaser_text": "5화: 차단기 함이 눈앞에 보이자마자 터널 물이 불어나고—GPS 화면에 금이 갑니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "4번 표지판",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 2:40 · 아래쪽 점검 통로에 얼음장 같은 물이 찰랑이는 가운데 녹슨 차단기 함에 도달합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "나 지금 메인 스트리트 네 바로 위 도로에 서 있어, {{player_name}}! 내 운동화 밑에서 철제 격자 뚜껑 덜컹거리는 소리 다 들려!",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sam! 차단기 레버가 녹슬어서 안 내려가—온몸 체중 다 실어서 매달리고 있어!",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "금 간 휴대폰 GPS · 머리 위 3.6미터 지점 메인 스트리트 비상 탈출구에 신호 고정됨.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "철컥! 무거운 철제 레버가 내려앉습니다. 터널 전체를 따라 눈부신 백색 투광등이 일제히 켜집니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "1호차 전자식 문이 방금 열렸어! 아래를 봐—1987년 승객들이 마침내 환하고 마른 승강장으로 내리고 있어!",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "고맙네, {{player_name}}. 우리의 길었던 퇴근길이 마침내 끝났어.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[따뜻하게 울려 퍼지는 안내 차임벨] \"종착역에 도착했습니다. 발밑을 조심하시고—빛 속으로 올라가십시오.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "머리 위 비상 탈출구 해치가 큰 딸깍 소리와 함께 잠금 해제됩니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_climb_hatch",
+              "label": "Sam의 목소리를 향해 사다리를 기어오른다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "격자 뚜껑 열어 줘, Sam—나 바로 네 밑에 있어!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_salute_train",
+              "label": "먼저 차장에게 작별 인사를 건넨다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 존중",
+              "player_reply_text": "편히 쉬세요, 차장님. 집으로 데려다주셔서 감사합니다.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "내 손 잡아! 꽉 잡았어—위로 끌어올릴게!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "차장님이 모자 챙을 들어 인사하자 열차가 황금빛 속으로 사라졌어! 자, 어서 올라와!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "등 뒤로 철제 격자가 쾅 닫히며 당신은 메인 스트리트의 젖은 아스팔트 위로 굴러 나옵니다.",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "지상 도착.",
+          "teaser_text": "6화 (피날레): 무사히 지상으로 올라온 당신의 교통카드에 마지막 메시지 하나가 찍힙니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "노선의 끝",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 5:55 · 첫 동녘 빛이 지하철 출입구를 비추는 가운데 인도 위에서 Sam이 따뜻한 커피 한 잔을 건넵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "교통공단에서 밤사이 기이한 전력 급증으로 4호선에 있던 옛날 1987년 계전기가 저절로 복구됐다고 발표했대. 아무도 설명 못 한대.",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "내 교통 앱 봐 봐, Sam. 그 \"목적지 미상\" 탑승 기록이 드디어 정상 종료됐어.",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "운행 완료 · 요금: $0.00 · 상태: 안전 귀가.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "첫차 아침 열차가 격자 아래로 경쾌하게 지나갑니다—밝고, 우렁차고, 지극히 평범한 모습으로.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "딱 하나만 약속해 줘, {{player_name}}? 자정 넘으면 무조건 택시 타.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "네 GPS가 땅속으로 사라지는 걸 지켜보다가 진짜 심장마비 걸릴 뻔했단 말이야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[안도의 웃음] \"자, 오늘 집 현관 앞까지 바래다줄게. 오늘은 지하철 출입 금지야.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "도시가 깨어나며 아침 출근객들이 곁을 스쳐 지나갑니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_take_cab",
+              "label": "다시는 자정 넘어 지하철을 타지 않겠다고 맹세한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "약속할게, Sam. 이제부터 밤 11시 넘으면 무조건 택시만 탈래.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_keep_ticket",
+              "label": "황동 열쇠를 행운의 부적으로 간직한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 유품",
+              "player_reply_text": "이 황동 열쇠 평생 간직할 거야. 아침 먹으러 가자.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이번 주 들어 내린 최고의 결정이야.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "대신 절대 개찰구에 갖다 대진 마! 밥 먹으러 가자.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "4호선 차장 · 영구 근무 종료.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 무사 귀가.",
+          "teaser_text": "THE END · 1987년 심야 급행열차가 마침내 종착역에 다다랐습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

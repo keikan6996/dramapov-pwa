@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_058",
+  "lang": "en",
+  "metadata": {
+    "title": "The Pawnshop Watch Serial",
+    "subtitle": "Our missing uncle’s vintage watch appeared on a resale app—and the reflection in the photo matches a cousin’s kitchen.",
+    "genre": "mystery",
+    "tags": [
+      "Family",
+      "Missing",
+      "Photo Clue"
+    ],
+    "cover_image": "assets/media/covers/story_058.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "diana",
+      "name": "Cousin Diana",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#EC4899"
+    },
+    {
+      "id": "ricky",
+      "name": "Cousin Ricky",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "aunt_mei",
+      "name": "Aunt Mei",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Reflection In The Glass",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "8:30 PM · Family Chat \"LIN COUSINS\". Uncle Ray vanished three weeks ago without taking his passport.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "Guys, stop everything. I just found Uncle Ray’s gold Omega watch listed on QuickSell for $6,500.",
+          "timestamp_label": "8:30 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "aunt_mei",
+          "text": "Are you sure it’s his? Thousands of watches look the same.",
+          "timestamp_label": "8:31 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Look at the engraving on the caseback in Photo 3. Serial #4819-R. That’s Uncle Ray’s.",
+          "timestamp_label": "8:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ricky",
+          "text": "Whoa—zoom in on the glass reflection. Those green mosaic tiles look like… Aunt Mei’s kitchen?!",
+          "timestamp_label": "8:32 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt_mei",
+          "text": "Ricky shut up, I told you Ray left it to pay the—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "Aunt Mei?! You HAVE Uncle Ray’s watch?! You told the police he wore it the night he disappeared!",
+          "timestamp_label": "8:33 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "voice_note",
+          "sender_id": "aunt_mei",
+          "duration_sec": 9,
+          "transcript": "[whispering] {{player_name}}, don’t call the cops yet! Ray mailed me that watch from a bus station two days ago with a note saying \"SELL IT, DON’T LOOK FOR ME.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "The QuickSell listing just vanished! What do you check?",
+          "options": [
+            {
+              "option_id": "opt_postmark",
+              "label": "Ask Aunt Mei for the package postmark",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Send a photo of the postmark and shipping label right now, Aunt Mei!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_seller_id",
+              "label": "Trace the QuickSell seller account handle",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Clue · Watch Ad",
+              "player_reply_text": "Wait—I screenshotted the seller handle before it deleted!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "SHIPPING LABEL: The package wasn’t mailed from a bus station—it was dropped off locally 10 minutes from RICKY’S apartment.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "SELLER TRACE: The QuickSell account is linked to RICKY’S backup email—and he listed Uncle Ray’s watch 20 minutes ago.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "{{player_name}}, I just drove past Uncle Ray’s closed bakery—the upstairs light is ON!",
+          "timestamp_label": "8:37 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "Someone’s Inside Uncle Ray’s Bakery",
+          "teaser_text": "Episode 2: Ricky’s car is parked in the back alley—and a second shadow moves behind the curtains.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Upstairs At The Bakery",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "8:42 PM · Outside Lin Family Bakery. The \"CLOSED\" sign hangs crooked in the rain.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Diana, stay in your car. Ricky, we know you’re upstairs—answer the chat.",
+          "timestamp_label": "8:42 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "ricky",
+          "text": "Fine! Come up the side stairs. Just don’t bring the police—Uncle Ray is RIGHT HERE.",
+          "timestamp_label": "8:43 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "aunt_mei",
+          "text": "WHAT?! Ray’s been hiding above his own bakery for three weeks?!",
+          "timestamp_label": "8:43 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "ricky",
+          "duration_sec": 10,
+          "transcript": "[hushed] {{player_name}}, he’s not hurt—he’s hiding from the guy who bought our block! Someone forged Uncle Ray’s signature on the bakery deed!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "unsent_message",
+          "sender_id": "diana",
+          "text": "Uncle Ray never even read the refinance papers I brought—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Diana… you’re the real estate agent who drew up the bakery refinance papers.",
+          "timestamp_label": "8:45 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Diana’s car headlights just flashed toward the alley! What do you do?",
+          "options": [
+            {
+              "option_id": "opt_guard_ray",
+              "label": "Lock the bakery stairs & call Detective Cho",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Locking the side door—Detective Cho is on his way to take Ray’s statement!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_expose_deed",
+              "label": "Send the forged deed scan to Aunt Mei",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Proof · Watch Ad",
+              "player_reply_text": "Aunt Mei, check your phone—Diana forged Ray’s signature on page 9!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Uncle Ray steps into the hallway unharmed, clutching the original notarized deed as police pull into the alley.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Aunt Mei’s car blocks Diana’s bumper at the alley exit just as patrol lights illuminate the wet pavement.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "ricky",
+          "text": "Uncle Ray’s safe and the deed fraud is exposed! Sorry I lied about the watch, {{player_name}}—he asked me to sell it for legal fees.",
+          "timestamp_label": "8:50 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "Ask Uncle Ray why he really hid from the developer—he didn’t just lose the bakery, he owes them $400,000.",
+          "timestamp_label": "8:51 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "A Black Envelope Under The Flour Sack",
+          "teaser_text": "Uncle Ray pulls you aside: \"They didn’t want the bakery for the land, {{player_name}}. They wanted what’s buried under the cellar oven.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Under the Cellar Oven",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "9:40 PM · Flour dust floats in the beam of your flashlight as Uncle Ray leads you and Aunt Mei beneath the bakery’s brick cellar oven.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "{{player_name}}, I opened the black envelope under the flour sack! There’s Grandmother’s heirloom ring and an original 1978 property deed!",
+          "timestamp_label": "9:40 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—if Uncle Ray hid the real deed under the cellar oven, then how did Ricky list the bakery for a dawn foreclosure auction?!",
+          "timestamp_label": "9:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "diana",
+          "image_asset": "assets/media/evidence/generic_ring_closeup.webp",
+          "caption": "Black Envelope Contents · 9:41 PM — Grandmother’s ring beside the unrecorded 1978 deed.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "aunt_mei",
+          "text": "Ricky stole your uncle’s vintage watch to pawn it—and used a fake power of attorney to sign the bakery over to his loan shark!",
+          "timestamp_label": "9:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "ricky",
+          "text": "Meet the loan shark at the bakery back door in ten minutes. Get the oven safe open before Ray talks.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Metal scrapes against the cellar alley window—Ricky and a stranger are trying to force the latch.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Bolt cellar door and guard oven bricks",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bolting the cellar door right now!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Read note inside Grandmother’s ring box",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Unfolding the note in the ring box...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "The iron deadbolt slides home just as Aunt Mei pulls a waterproof tin from behind the loose oven brick.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The note reveals Ricky’s loan shark is actually the rival developer who tried to buy Aunt Mei’s block three times!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "{{player_name}}, Ricky’s loan shark isn’t just collecting gambling debt—he’s the developer who wants to bulldoze the whole street!",
+          "timestamp_label": "9:43 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "ricky",
+          "duration_sec": 9,
+          "transcript": "[cellar door rattling, Ricky pleading] ...Aunt Mei! {{player_name}}! Just hand over the 1978 deed and they’ll wipe my debt—I swear I’ll pay you back!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Never, Ricky. We’re calling the estate lawyer and police right now.",
+          "timestamp_label": "9:44 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "The Brick Compartment",
+          "teaser_text": "Episode 4: Inside the tin beneath the oven lies a family document Ricky never knew existed.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Tin Beneath the Brick",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "9:50 PM · Warm oven bricks radiate faint heat as Aunt Mei lifts the lid off the rusted tin while Ricky hammers on the cellar door.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "{{player_name}}, look at the notarized family heirship & DNA record inside! Grandmother left the bakery exclusively to Aunt Mei and Uncle Ray—Ricky has ZERO legal claim!",
+          "timestamp_label": "9:50 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "That’s why Ricky stole the pawnshop watch—he tried to prove Uncle Ray had vanished so he could fake the probate filing!",
+          "timestamp_label": "9:51 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "ricky",
+          "text": "Tell the developer to bring the crowbar. They’re stalling for cops.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "aunt_mei",
+          "text": "Oh my god—Diana just spotted the developer’s black van blocking the bakery front shutter!",
+          "timestamp_label": "9:52 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "aunt_mei",
+          "duration_sec": 11,
+          "transcript": "[wood splintering, Aunt Mei firm] ...You gambled away your own future, Ricky, not this family’s bakery! Put the crowbar down!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "The cellar door hinge groans while the bakery’s flour-delivery chute leads straight up to the street.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Send Diana up the chute to flag police",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Diana, take the tin up to the police!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Photo heirship file and fake auction note",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Photographing the heirship & auction proof...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Diana scrambles up the delivery hatch and flags down a passing patrol cruiser right outside the awning.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Your side-by-side photo proves the foreclosure notary signature was forged—turning Ricky’s \"auction\" into felony fraud.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "Sirens out front! Two patrol cars just boxed in the developer’s van!",
+          "timestamp_label": "9:53 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "ricky",
+          "text": "Stop! Don’t arrest me—the developer forced me to sign the fake power of attorney!",
+          "timestamp_label": "9:53 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tell the sergeant, Ricky. And give Uncle Ray his vintage watch back.",
+          "timestamp_label": "9:54 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Boxed In at Dawn",
+          "teaser_text": "Episode 5: The hidden heirship document shatters the fraudulent auction before sunrise.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The True Heirs",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "10:02 PM · Patrol lights cast red and blue streaks across the bakery’s glass display case as officers handcuff the developer.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "{{player_name}}, the pawnshop owner just brought back Uncle Ray’s watch after seeing our police report—and look at the heirship file!",
+          "timestamp_label": "10:02 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "One hundred percent airtight. Aunt Mei and Uncle Ray own every brick of this bakery.",
+          "timestamp_label": "10:03 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "diana",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Estate Heirship & DNA Verification · 1978 Will — Confirms sole ownership by Aunt Mei & Uncle Ray.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "ricky",
+          "text": "I’m sorry, Aunt Mei... I got in too deep with the tables. I’ll testify against the developer for everything.",
+          "timestamp_label": "10:04 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "ricky",
+          "text": "The developer’s lawyer already forged two other elderly deeds on this block.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "The estate attorney arrives to formally cancel the dawn foreclosure auction.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Sign as witness to cancel the fake auction",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Signing to cancel the fake auction!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Report developer’s other forged deeds",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Giving detectives the block-wide lead...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "With one stamp from the emergency court clerk, the fraudulent foreclosure is permanently voided.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Detectives raid the developer’s office at dawn, saving two neighboring family shops from the exact same foreclosure scam.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "diana",
+          "duration_sec": 10,
+          "transcript": "[Uncle Ray’s warm voice, watch ticking] ...My vintage watch is back on my wrist, and the ovens stay hot! Cinnamon rolls for the whole precinct, {{player_name}}!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "Aunt Mei is already kneading dough for the morning rush—we actually saved the bakery, {{player_name}}!",
+          "timestamp_label": "10:05 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Never underestimate a kitchen reflection in a resale app photo.",
+          "timestamp_label": "10:06 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Ovens Stay Warm",
+          "teaser_text": "Episode 6 Finale: Dawn smells like fresh sourdough as the family bakery opens its doors to the whole neighborhood.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Fresh Out of the Oven",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "7:00 AM · Golden morning sun warms the bakery awning as neighbors line up down the block for Aunt Mei’s famous buns.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ricky",
+          "text": "Hey {{player_name}}... I’m checking into a rehab program after my bail hearing. Tell Aunt Mei I’ll earn back her trust someday.",
+          "timestamp_label": "7:00 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Keep your word this time, Ricky. Family is worth more than any debt.",
+          "timestamp_label": "7:01 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "ricky",
+          "text": "The crooked notary who stamped the fake auction lost his license this morning.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "aunt_mei",
+          "duration_sec": 9,
+          "transcript": "[Aunt Mei laughing warmly] ...{{player_name}}! Diana! Stop texting and come get your warm custard tarts before the neighborhood eats them all!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "aunt_mei",
+          "text": "Uncle Ray put the vintage watch in a glass display right next to the cash register—never leaving the bakery again.",
+          "timestamp_label": "7:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Aunt Mei hands you the very first box of pastries from the morning batch.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Share the warm box with Diana and Uncle Ray",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sharing the first batch with family!",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Frame a copy of the 1978 family deed",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Framing the 1978 family deed...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Laughter fills the little bakery as four decades of family history roll safely into the future.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: The neighborhood association names Aunt Mei’s bakery a protected local landmark—untouchable by any developer forever.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "diana",
+          "text": "Best cousin detective team ever, {{player_name}}.",
+          "timestamp_label": "7:03 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Pass a custard tart, Diana.",
+          "timestamp_label": "7:04 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "Through the steamy shop window, the OPEN sign glows bright against the morning street.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Legacy Saved",
+          "teaser_text": "Uncle Ray’s watch is home, the fake auction is crushed, and the family bakery rises again.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

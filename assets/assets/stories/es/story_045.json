@@ -1,0 +1,1008 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_045",
+  "lang": "es",
+  "metadata": {
+    "title": "Turno Nocturno en el Piso 14",
+    "subtitle": "Una interna del hospital desapareció durante un apagón... y su nota de voz llegó desde adentro del elevador de carga detenido.",
+    "genre": "mystery",
+    "tags": [
+      "Hospital",
+      "Turno Nocturno",
+      "Suspenso"
+    ],
+    "cover_image": "assets/media/covers/story_045.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Tú)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "priya",
+      "name": "Dra. Priya",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "grant",
+      "name": "Enfermera Grant",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "keller",
+      "name": "Dr. Keller",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Generador de Respaldo",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:18 AM · Grupo de Turno \"ST. JUDE ALA 14\". Luces rojas de emergencia zumban tras un apagón de 90 segundos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "¿Alguien ha visto a la interna Nora? Su localizador está sobre el escritorio de enfermería.",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Bajó a farmacia por el goteo de insulina del Cuarto 1408 justo antes de que se cortara la luz.",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera—el Cuarto 1408 fue dado de alta a las 6 PM. ¿Por qué Nora pediría un goteo de insulina para un cuarto vacío?",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Le dije que revisara el registro de auditoría de expedientes, no la farmacia—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "¿Dr. Keller? ¿Qué auditoría de expedientes? Nadie nos avisó de ninguna auditoría.",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "grant",
+          "duration_sec": 10,
+          "transcript": "[estática, voz apagada de fondo] ¡{{player_name}}, estoy junto al Elevador de Carga B! ¡Nora está golpeando la compuerta—dice que alguien cortó el teléfono de emergencia!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "NO fuercen manualmente las puertas de carga. Mantenimiento ya va en camino.",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Nora está atrapada entre los pisos 13 y 14. ¿Qué revisas primero?",
+          "options": [
+            {
+              "option_id": "opt_pry_door",
+              "label": "Ayuda a Grant a forzar la puerta",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Olvídate de esperar—Grant, toma la palanca del cuarto de suministros!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_audit_file",
+              "label": "Abre la terminal abierta de Nora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Evidencia · Ver Anuncio",
+              "player_reply_text": "¡Espera, Nora dejó su terminal iniciada en el expediente del Cuarto 1408!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "Abren las puertas de acero seis pulgadas. La mano pálida de Nora desliza una hoja de receta doblada por la rendija.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "ALERTA DE AUDITORÍA: Tres frascos de sedante restringido fueron facturados al Cuarto 1408 vacío usando el usuario del DR. KELLER... hace cinco minutos.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, el generador se volvió a apagar... y la puerta de la escalera quedó con seguro.",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Cable del Elevador Acaba de Crujir",
+          "teaser_text": "Episodio 2: Alguien está adentro del cuarto de máquinas del elevador en la azotea.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Frascos Desaparecidos",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:26 AM · Pasillo del Ala 14. Las luces de respaldo bañan el corredor en carmesí.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "¡Subimos a Nora por la rendija! Está golpeada pero respirando.",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Bien. Ahora dígannos quién accionó el paro manual en Carga B.",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "He estado abajo en triaje de urgencias todo el tiempo. Revisen las cámaras.",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 11,
+          "transcript": "[susurrando rápido] ¡{{player_name}}, revisé seguridad! ¡Alguien usó el gafete del Dr. Keller en la azotea—pero la estatura en CCTV es mucho más baja que Keller!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n06",
+          "type": "unsent_message",
+          "sender_id": "grant",
+          "text": "Nora vio los frascos en mi casillero, solo tomé prestado el gafete de Keller—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grant… estás parado justo junto a Nora ahora mismo. Aléjate de ella.",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Grant busca el carro de paro. ¿Cómo intervienes?",
+          "options": [
+            {
+              "option_id": "opt_code_blue",
+              "label": "Activa la alarma Código Azul",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Activando la alarma Código Azul del pasillo ahora mismo!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_block_exit",
+              "label": "Traba las puertas magnéticas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Trampa · Ver Anuncio",
+              "player_reply_text": "¡Bloqueando las salidas magnéticas del ala desde la consola de enfermería!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Las alarmas inundan el Ala 14. Seis agentes de seguridad irrumpen por las puertas dobles antes de que Grant llegue a la escalera.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Las cerraduras magnéticas caen con un golpe sordo. Grant deja caer los frascos robados sobre el piso de linóleo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Buen trabajo, {{player_name}}. Seguridad tiene detenido a Grant.",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Espera… Nora me acaba de dar el papel de su bolsillo. Grant no vendió esos frascos en la calle—se los llevaba al antiguo paciente del Cuarto 1408.",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Cuarto 1408 Nunca Fue Dado de Alta",
+          "teaser_text": "Los papeles de alta eran falsos... y el nombre real del paciente está en la junta directiva del hospital.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Anulación del Cubo de Carga",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:18 AM · Generadores rojos de respaldo zumban por el Piso 14 mientras tú y la Dra. Priya corren al panel del elevador de carga.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "¡{{player_name}}, el enfermero Grant encontró el expediente real del miembro de la junta! ¡El Cuarto 1408 sufrió una reacción fatal al fármaco de prueba del Dr. Keller!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Y la interna desaparecida lo sorprendió cambiando los tres frascos—así que Keller detuvo el elevador de carga con ella adentro!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "Panel de Carga 14 · 2:19 AM — Anulación manual bloqueada con gafete de médico adjunto superior.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Puedo puentear el relé de servicio desde enfermería, {{player_name}}, ¡pero el gafete de Keller sigue marcando señal en el Piso 14!",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Limpia el registro de farmacia del Lote 404 antes de que se reinicie el generador.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "El interfono junto a las puertas detenidas de carga crepita suavemente.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Usa el intercom y calma a la interna",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Aguanta! ¡Estamos puenteando la cerradura ya!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Abre auditoría Lote 404 en la tablet",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Revisando auditoría de farmacia del Lote 404...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Su voz temblorosa responde al otro lado: todavía tiene uno de los frascos cambiados escondido en el bolsillo de su filipina.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: El Dr. Keller falsificó datos de seguridad del Lote 404 para asegurar una compra biotecnológica de $40M programada para las 9 AM.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "¡Keller viene por el pasillo del ala este ahora mismo! ¡Esconde la tableta!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "keller",
+          "duration_sec": 9,
+          "transcript": "[cables del elevador crujiendo, interna jadeando] ...¡{{player_name}}, también cortó el ventilador—por favor apúrense, falta el aire!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grant, jala la liberación manual del freno ahora. Yo mantengo a Keller lejos del panel.",
+          "timestamp_label": "2:22 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Sin Aire",
+          "teaser_text": "Episodio 4: El Dr. Keller sale de las sombras sosteniendo una tarjeta maestra y una jeringa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Lote 404",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:25 AM · Tubos fluorescentes parpadean en lo alto mientras el Dr. Keller bloquea el pasillo afuera del elevador de carga.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "¡Aléjate, Keller! ¡El enfermero Grant ya liberó el relé del freno—el elevador se está moviendo!",
+          "timestamp_label": "2:25 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ríndase, Dr. Keller. Sabemos que el Cuarto 1408 nunca fue dado de alta y sabemos lo del Lote 404.",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Digan a seguridad del hospital que hay una fuga del ala psiquiátrica en el Piso 14. Detengan a la interna.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "¡Está intentando que seguridad nos encierre en el ala para confiscar el frasco cambiado!",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "keller",
+          "duration_sec": 11,
+          "transcript": "[voz calma y helada por el altavoz del pasillo] ...Piénsalo bien, {{player_name}}. Una palabra mía y ninguno de ustedes vuelve a ejercer medicina...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "Las puertas de carga se abren con un estremecimiento seis pulgadas mientras botas de seguridad resuenan desde la escalera.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Traba las puertas con el carro rojo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Trancando el carro de paro en las puertas!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Toma el reporte real del Lab 14B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Agarrando el reporte real de toxicología...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Tú y Priya abren las puertas de par en par y sacan a salvo a la interna tosiendo hacia el Piso 14.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: La hoja real de laboratorio prueba que el Lote 404 causó el paro cardíaco del Cuarto 1408... y lleva la firma directa de autorización de Keller.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "¡Llegó seguridad—espera, el jefe de seguridad es primo de Priya! ¡No se está tragando la mentira psiquiátrica de Keller!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "¡No toquen ese reporte de laboratorio! ¡Son datos confidenciales de ensayo!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ya no, Keller. Es la Prueba A.",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "La Hoja Real de Laboratorio",
+          "teaser_text": "Episodio 5: El reporte de toxicología sin editar destroza la compra de $40M de Keller de un solo vistazo.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Toxicología Sin Sello",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:33 AM · La energía principal del hospital ruge al volver, inundando el Piso 14 con cruda luz blanca mientras seguridad rodea a Keller.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "¡{{player_name}}, escaneé la hoja real de laboratorio! ¡Mandando copias a la junta médica y a la policía municipal ahora mismo!",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Asegúrate de que el frasco escondido de la interna entre directo en una bolsa sellada de evidencia.",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "priya",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Toxicología y Coincidencia de ADN · Cuarto 1408 — Compuesto no aprobado Lote 404 confirmado.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "¡No tienen idea de cuántas vidas habría salvado ese fármaco! ¡Un mal lote no debería arruinar el trabajo de mi vida!",
+          "timestamp_label": "2:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Devuelvan el anticipo de la compra antes de que auditores federales congelen mis cuentas.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "Seguridad del hospital pregunta quién debe custodiar el frasco del Lote 404 hasta que lleguen los detectives.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Séllalo con Priya y seguridad",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sellando el frasco con tres testigos.",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Llama a la familia del 1408",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Notificando a la familia del 1408 ahora...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Tres firmas van en la etiqueta de cadena de custodia, haciendo imposible la defensa de Keller.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: La familia del presidente de la junta llega con el abogado del hospital... y suspende de inmediato la licencia de Keller ahí mismo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 10,
+          "transcript": "[radio policial en vestíbulo, voz firme] ...Investigadores de Homicidios y FDA llegando a Entrada de Urgencias. Mantengan el Piso 14...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Los signos vitales de la interna están normales—está tomando agua y agradeciéndote sin parar, {{player_name}}.",
+          "timestamp_label": "2:36 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El peor turno nocturno de mi vida, Grant. Qué bueno que no ignoramos esa nota de voz.",
+          "timestamp_label": "2:37 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Licencia Revocada",
+          "teaser_text": "Episodio 6 Final: Para la ronda de la mañana, el encubrimiento del Piso 14 ya es noticia de primera plana.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Ronda de la Mañana",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "7:10 AM · El sol matinal entibia la cafetería del hospital mientras detectives escoltan al Dr. Keller por el vestíbulo principal.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Tiraste a la basura un avance de cuarenta millones de dólares, {{player_name}}. Recuérdalo.",
+          "timestamp_label": "7:10 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Encerraste a una interna aterrada en un cubo sin aire para ocultar un fármaco letal. Dormiré tranquilo.",
+          "timestamp_label": "7:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "El CEO de la biotecnológica supo de la toxicidad del Lote 404 hace dos semanas.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 9,
+          "transcript": "[voz de la interna, agradecida y firme] ...Gracias por volver por mí, {{player_name}}. Jamás vuelvo a subirme sola a un elevador de carga...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "El jefe de medicina acaba de mandar correo: el Piso 14 tendrá auditorías completas de seguridad y ustedes tres recibirán menciones honoríficas.",
+          "timestamp_label": "7:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Un investigador de la FDA pregunta si notaron a alguien más presionando al Dr. Keller.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Entrega los turnos del Piso 14",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entregando nuestros registros completos de turno.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Delata al CEO de la biotecnológica",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Dando a la FDA la pista del CEO...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "La FDA frena el despliegue del Lote 404 en todo el país antes de que un solo paciente externo reciba una dosis.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "EPÍLOGO SECRETO: Alguaciles federales allanan la sede de la biotecnológica por la tarde, procesando al CEO junto con Keller.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "El espresso más cargado de la cafetería va por mi cuenta, {{player_name}}. ¿Listo para marcar salida?",
+          "timestamp_label": "7:13 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Más que listo, Dra. Priya. Vámonos a casa.",
+          "timestamp_label": "7:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "El indicador del elevador de carga brilla en verde firme en el Piso 14... abierto, iluminado y seguro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Turno Completado",
+          "teaser_text": "El encubrimiento del Piso 14 termina, la interna está a salvo y el Lote 404 es retirado de todas las salas.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

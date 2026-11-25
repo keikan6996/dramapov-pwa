@@ -1,0 +1,978 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_068",
+  "lang": "es",
+  "metadata": {
+    "title": "La Coartada del Hijo Favorito",
+    "subtitle": "Mi hermano chocó borracho la camioneta de la empresa... y Mamá quiere que YO cargue el delito para salvar su beca.",
+    "genre": "romance",
+    "tags": [
+      "Familia",
+      "Chivo Expiatorio",
+      "Justicia"
+    ],
+    "cover_image": "assets/media/covers/story_068.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "mom",
+      "name": "Mamá",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#6B21A8"
+    },
+    {
+      "id": "brother",
+      "name": "Kevin (Hermano)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "guard",
+      "name": "Ray (Guardia)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Cargar la Culpa",
+      "start_node_id": "n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "01:45 AM · Sirenas aúllan a dos cuadras. Tu teléfono suena sin parar: es Mamá.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "{{player_name}}, ve al cruce de la Calle 4 AHORA. Kevin chocó contra un sedán estacionado en la camioneta de reparto de papá y corrió a casa.",
+          "timestamp_label": "01:45 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "Dile a la policía que TÚ ibas manejando y te dio pánico. ¡Si a Kevin le ponen un cargo por conducir ebrio, pierde su beca de MBA!",
+          "timestamp_label": "01:46 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Un choque con fuga es un DELITO GRAVE, Mamá! ¿Quieres que arruine toda mi vida porque Kevin tomó y manejó?!",
+          "timestamp_label": "01:47 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "Hermano jaja mamá está haciendo que {{player_name}} cargue el paquete, ¡nos vemos mañana en la casa de playa!",
+          "unsent_placeholder": "Kevin anuló el envío de un mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 11,
+          "transcript": "[urgente] Oye {{player_name}}, soy Ray de la caseta del almacén. Vi a Kevin bajar tambaleándose de la camioneta en nuestra cámara HD. No le mientas a la policía—ya nos pidieron la grabación.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Mamá está entrando al estacionamiento de la comisaría con Kevin. ¿Tu jugada?",
+          "options": [
+            {
+              "option_id": "opt_refuse_firm",
+              "label": "Niégate y guarda el audio de Ray",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "No voy a ir a prisión por Kevin. Y hay grabación en HD de él huyendo.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_send_footage",
+              "label": "Pide a Ray subir el clip HD a la nube",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Justicia · Ver Anuncio",
+              "player_reply_text": "Ray, sube ese clip a un enlace seguro ahora mismo antes de que mamá intente borrarlo.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "¡Si no entras a esa comisaría en diez minutos, empaca tus cosas y nunca vuelvas a llamarme Madre!",
+          "timestamp_label": "01:51 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "GRABACIÓN ASEGURADA: El clip en la nube de Ray también muestra a Kevin tirando una botella a los arbustos... ¡y a mamá diciéndole que limpie el volante!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "Enlace enviado. Siempre has sido el único honesto en esa familia, {{player_name}}.",
+          "timestamp_label": "01:52 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "Ándale {{player_name}}, ni siquiera tienes una gran carrera que perder. ¡Solo firma la declaración!",
+          "timestamp_label": "01:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "El Vestíbulo de la Comisaría",
+          "teaser_text": "Episodio 2: Mamá ya le dijo al sargento que TÚ eras el conductor... ahora cruzas las puertas de la estación.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Se Acabó el Chivo Expiatorio",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "02:10 AM · Vestíbulo de la Comisaría. El sargento de guardia levanta la vista cuando entras. Mamá te agarra de la manga.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "¡Gracias a Dios que viniste! Oficial, este es {{player_name}}—ya está listo para confesar el choque.",
+          "timestamp_label": "02:10 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Oficial, yo estaba dormido en mi departamento al otro lado de la ciudad. El registro de mi cerradura inteligente y el timbre de mi vecino lo prueban.",
+          "timestamp_label": "02:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "¡¡Mamá están sacando un alcoholímetro!! ¡¡Diles que tomé DESPUÉS de llegar a casa!!",
+          "unsent_placeholder": "Kevin anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "mom",
+          "duration_sec": 9,
+          "transcript": "[siseando] ¡Cómo te atreves a traicionar a tu propio hermano! ¡Estás fuera de la casa esta noche!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "El oficial pregunta si tienes alguna prueba de quién conducía la camioneta.",
+          "options": [
+            {
+              "option_id": "opt_show_video",
+              "label": "Muestra el video HD de Kevin",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sí, Oficial. Aquí está el clip de seguridad del almacén con hora exacta de la 1:32 AM.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_show_texts",
+              "label": "Entrega su mensaje presumiendo también",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Toda la Verdad · Ver Anuncio",
+              "player_reply_text": "Y aquí está Kevin presumiendo hace diez minutos que mamá me obligaba a cargar con la culpa.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "El oficial ve diez segundos de grabación, hace sonar sus esposas y camina hacia Kevin.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "DOBLE CARGO: Kevin es arrestado por choque con fuga... ¡y mamá recibe citatorio por presentar denuncia policial falsa!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "¡{{player_name}} por favor diles que paren! ¡Lo voy a perder todo!",
+          "timestamp_label": "02:17 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tomaste tu decisión cuando giraste la llave, Kevin. Y yo me cansé de ser el tapete de esta familia.",
+          "timestamp_label": "02:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Cadenas Rotas",
+          "teaser_text": "Afuera de la comisaría, tu Papá por fin te llama: \"Vi el video. Mañana pongo la empresa a tu nombre... no al de Kevin.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "La Grabación del Garaje",
+      "start_node_id": "e3_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "8:10 AM · Oficina de Logística de la Empresa. La promesa de papá de traspasarte la empresa desata una tormenta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "¡Envenenaste la mente de tu padre contra su propio hijo! ¡Dile que no quieres la empresa ahora mismo, {{player_name}}!",
+          "timestamp_label": "8:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Papá vio el video de seguridad él mismo, Mamá. Kevin chocó la camioneta borracho e intentó meterme a MÍ en la cárcel por ello.",
+          "timestamp_label": "8:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "guard",
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "CAM GARAJE 01 · 01:14 AM — Kevin tambaleándose hacia el asiento del conductor con una botella en la mano."
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "Ojo, {{player_name}}—¡Kevin acaba de aparecer en la caseta de seguridad ofreciéndome $2,000 en efectivo por borrar el respaldo original del servidor!",
+          "timestamp_label": "8:13 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "Si el ajustador de seguros ve ese clip HD mi beca y licencia están—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 8,
+          "transcript": "[llaves tintineando] No te preocupes—¡grabé su intento de soborno en mi cámara corporal y entregué la USB directo al abogado de tu papá!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Mamá corre hacia la notaría para frenar el traspaso de Papá. ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "opt_warn_dad",
+              "label": "Avisa a Papá y cambia firma al bufete",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Acabo de escribirle a papá—movemos la firma del traspaso a la sala cerrada de juntas de su abogado corporativo.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_audit_petty_cash",
+              "label": "Revisa de dónde sacó $2K en efectivo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Ojo Clínico · Ver Anuncio",
+              "player_reply_text": "Espera—Kevin no tiene ni un quinto. ¡Ray, revisa la caja fuerte de la empresa! ¿De dónde sacó $2,000 en efectivo a las 8 AM?!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "JUGADA SEGURA: Papá llega temprano con el notario corporativo... bloqueando por completo la emboscada de mamá.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "ROBO ATRAPADO: Kevin saqueó el sobre de efectivo de combustible de los choferes con la llave del escritorio de mamá... ¡sumando abuso de confianza a su cuenta!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "Ok la regué, ¿vale?! Solo dile a papá que pagaré la camioneta de mi mesada—¡no arruines todo mi futuro!",
+          "timestamp_label": "8:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "No te preocupes, Kevin. Tu padre todavía tiene que firmar la renovación bancaria anual... y metí otra cosa en su carpeta.",
+          "timestamp_label": "8:21 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Documento Cambiado",
+          "teaser_text": "Episodio 4: Mamá intenta engañar a Papá para que firme un poder notarial oculto a nombre de Kevin.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Votación Familiar Urgente",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:05 AM · Oficina de Papá. Mamá deja una taza caliente de té junto a una pila de \"formularios bancarios rutinarios.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "Quédate fuera de la oficina de tu padre, {{player_name}}. Solo está firmando renovaciones rutinarias de nómina.",
+          "timestamp_label": "11:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Acabas de admitir en este chat que metiste otro documento en su carpeta, Mamá.",
+          "timestamp_label": "11:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "¡Vi a mamá imprimiendo un \"Poder Notarial Irrevocable\" de 3 páginas en la copiadora de recepción hace diez minutos!",
+          "timestamp_label": "11:07 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "En cuanto papá firme la página 3 puedo congelar el traspaso de empresa de {{player_name}}—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "¡Ray, ocúpate de tu propia caseta o estás despedido! ¡Sigo siendo copropietaria de esta oficina!",
+          "timestamp_label": "11:09 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 8,
+          "transcript": "[tocando fuerte] ¡Muy tarde, señora! ¡Su papá me acaba de pedir que le lleve sus lentes de lectura—y está leyendo la Página 3 palabra por palabra ahora mismo!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Papá se congela con la pluma en el aire. ¿Cómo intervienes?",
+          "options": [
+            {
+              "option_id": "opt_walk_in_calm",
+              "label": "Entra y muestra el chat a Papá",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Papá, no firmes la página 3... lee lo que Mamá y Kevin acaban de escribir en nuestro chat familiar.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_keep_evidence",
+              "label": "Fotografía la página 3 antes de romper",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jugada Pro · Ver Anuncio",
+              "player_reply_text": "¡Espera papá—no la rompas todavía! Deja que tu abogado fotografíe la página 3 para que nadie impugne jamás el traspaso.",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "TRUENO SILENCIOSO: Papá lee el chat, parte en dos el poder notarial falsificado y lo tira al cesto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "REGISTRO BLINDADO: El abogado registra el intento de fraude... bloqueando cualquier demanda futura de mamá o Kevin.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Durante veinte años cargué con esta familia mientras Kevin recibía cada pretexto. Eso termina hoy.",
+          "timestamp_label": "11:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "Papá me acaba de decir que estoy fuera de la nómina Y que tengo que cubrir turnos en almacén para pagar la camioneta…",
+          "timestamp_label": "11:17 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Rendición de Cuentas Por Fin",
+          "teaser_text": "Episodio 5: Concluye el traspaso de la empresa y expón toda la verdad del papeleo sin leer.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "El Papeleo Sin Leer",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:30 PM · Oficina del Abogado Corporativo. El traspaso oficial de acciones aguarda un último sello.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "Aquí está la copia escaneada de esa página 3 cambiada para tu expediente legal, {{player_name}}. Limpia como un silbato.",
+          "timestamp_label": "2:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "guard",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "PÁGINA 3 CAMBIADA · Traspaso irrevocable oculto otorgando a Kevin 100% del control — atrapado antes de firmarse.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "¡Bien! ¡Quédate toda la empresa! ¡Solo no esperes que aparezca en tu cena de celebración!",
+          "timestamp_label": "2:32 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nunca te pedí que me eligieras sobre Kevin, Mamá. Solo te pedí que dejaras de sacrificarme por él.",
+          "timestamp_label": "2:33 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "mom",
+          "text": "Tal vez tu padre tenga razón—consentí a Kevin hasta que no pudo sostenerse solo—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "brother",
+          "duration_sec": 8,
+          "transcript": "[bajo, humilde] Oye {{player_name}}… devolví los $2,000 al sobre de combustible y me entregué por la multa de conducir ebrio. Ya dejé de esconderme detrás de ti.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Ahora eres 100% Director General. ¿Cuál es tu primera orden ejecutiva?",
+          "options": [
+            {
+              "option_id": "opt_promote_ray",
+              "label": "Asciende a Ray a Jefe de Seguridad",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Primera firma como Director General: ¡Ray es oficialmente Jefe de Seguridad y Flotilla con un aumento del 40%!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_kevin_probation",
+              "label": "Asciende a Ray y prueba a Kevin",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Verdadero Líder · Ver Anuncio",
+              "player_reply_text": "Ray sube a Jefe de Seguridad... y Kevin recibe UN turno honesto de nivel inicial. Cero favores, ganado como todos los demás.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "LEALTAD PREMIADA: Ray sonríe de oreja a oreja mientras todo el equipo del almacén estalla en aplausos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "CRECIMIENTO REAL: Por primera vez en su vida, Kevin se pone un chaleco de seguridad y checa tarjeta a las 6 AM en punto.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "El mejor jefe que esta empresa haya tenido jamás, {{player_name}}. ¡Gracias!",
+          "timestamp_label": "2:40 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Papá se jubila el próximo viernes... asegurémonos de que esta empresa prospere los próximos treinta años.",
+          "timestamp_label": "2:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "La Nueva Firma",
+          "teaser_text": "Episodio 6 (Final): Corta el listón de la nueva flotilla y sal para siempre de la sombra del hijo favorito.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "La Nueva Firma",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Tres Meses Después · Patio Logístico. Seis camionetas eléctricas de reparto recién salidas brillan bajo el sol matinal.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "¡Cero incidentes de seguridad en 90 días seguidos—y nuestros ingresos del Q3 acaban de romper el récord de la empresa, Jefe!",
+          "timestamp_label": "8:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Resulta que reglas justas y trabajo duro vencen al favoritismo todas y cada una de las veces.",
+          "timestamp_label": "8:31 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "Terminé de cargar la Bahía 4 temprano, Jefe. Además… ayer pagué la última mensualidad de la camioneta dañada.",
+          "timestamp_label": "8:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mom",
+          "text": "Hoy llevo el almuerzo a la oficina si {{player_name}} tiene tiempo—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "mom",
+          "duration_sec": 8,
+          "transcript": "[suave, sincera] {{player_name}}… estuve equivocada. Ver a Kevin por fin madurar... y ver lo que construiste... perdóname por no ver tu fuerza antes.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gracias por decirlo, Mamá. Los límites se quedan... pero mi puerta está abierta para almorzar.",
+          "timestamp_label": "8:36 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "¿Cómo cierras tu primer trimestre como Director General?",
+          "options": [
+            {
+              "option_id": "opt_team_bonus",
+              "label": "Comparte utilidades con todo el equipo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Emitiendo hoy un bono de participación de utilidades del 15% para cada chofer, cargador y despachador!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_expand_branch",
+              "label": "Bono + anuncia Sucursal #2",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Imperio · Ver Anuncio",
+              "player_reply_text": "Bonos de utilidades para todos... ¡y el próximo mes abrimos nuestro segundo centro regional!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "VÍTORES DE PIE: El patio logístico resuena con aplausos... esto ya no es solo un negocio familiar, es una potencia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "IMPARABLE: Papá se seca una lágrima de orgullo desde la orilla mientras guías la empresa hacia una nueva era.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "Cadenas rotas, récords pulverizados. ¡Orgulloso de trabajar para ti, {{player_name}}!",
+          "timestamp_label": "8:42 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "Nos vemos en el almuerzo, hermano. Traigo sillas extra.",
+          "timestamp_label": "8:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Nunca Más El Chivo Expiatorio",
+          "teaser_text": "Te negaste a cargar la culpa, te libraste del favoritismo tóxico y levantaste una empresa próspera.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

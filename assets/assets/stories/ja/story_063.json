@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_063",
+  "lang": "ja",
+  "metadata": {
+    "title": "真夜中に盗まれた企画書",
+    "subtitle": "午前8:55、私の指導役だった上司が、午前2時に私が仕上げた看板企画書をCEOへメールした――私の名前を消し去って。",
+    "genre": "romance",
+    "tags": [
+      "オフィス",
+      "裏切り",
+      "逆転劇"
+    ],
+    "cover_image": "assets/media/covers/story_063.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "mentor",
+      "name": "Rachel (チームリーダー)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7E22CE"
+    },
+    {
+      "id": "ceo",
+      "name": "Sterling氏 (CEO)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F172A"
+    },
+    {
+      "id": "ally",
+      "name": "Dev (ITセキュリティ)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#047857"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "役員会議室まであと5分",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前8:55 · ITセキュリティからのSlack DM。第4四半期のメリディアン重要プレゼン開始まであと5分です。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、今すぐ役員用ドライブを見てくれ。Rachelが君の午前2:14のスライドをダウンロードして、1枚目から君の名前を消し、君のリサーチを「不完全」と呼ぶ注釈を付け加えたぞ。",
+          "timestamp_label": "午前8:55",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あの財務モデルを作るのに3週間もかけたのに。彼女は数式ひとつ書いていないのに！",
+          "timestamp_label": "午前8:56",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "mentor",
+          "text": "{{player_name}}を会議の招待から外しておいた。Sterlingが承認さえすれば、VPの座は私のもの。",
+          "unsent_placeholder": "Rachelがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "ねえ{{player_name}}、この会議は休んで少し休息を取りなよ！私たちのコンセプトは私がSterling社長にプレゼンしておくから。",
+          "timestamp_label": "午前8:57",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[小声] ガラス壁のそばに立ってる。9枚目の感度分析表の計算が理解できていないせいで、彼女、完全に言葉に詰まってるよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "役員会議室の扉は10歩先です。どう反撃しますか？",
+          "options": [
+            {
+              "option_id": "opt_walk_in",
+              "label": "ライブのバックアップモデルを持って入る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "休む必要はないわ、Rachel。Sterling社長がお求めになったリアルタイム価格計算モデルを持ってきたから。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_audit_trail",
+              "label": "CEOに編集履歴ログを送信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "プロの一手 · 広告視聴",
+              "player_reply_text": "Dev、タイムスタンプ付きのクラウド編集ログを書き出してSterling社長のiPadに送って。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "あなたがガラス扉を押し開けると、Rachelの笑顔は言葉の途中で凍りつきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "CEOアラート：Sterling社長のiPadが鳴りました――午前2:14の編集の98%が{{player_name}}によるもので、午前8:51にあなたの名前を削除した単一の編集がRachelによるものだと示されています。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "{{player_name}}、どうぞ中へ。Rachel、9枚目のスライドはそのままで――非常に具体的な質問がある。",
+          "timestamp_label": "午前9:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "Rachel、セルF42の14%の解約率調整について説明したまえ。手元のメモを見ずにな。",
+          "timestamp_label": "午前9:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "役員会議室の死んだような沈黙",
+          "teaser_text": "エピソード2：ブレザーの下で冷や汗をかくRachel――そして彼女はあなたが予想もしなかった妨害バグの罪をあなたに着せようとします。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "セルF42",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前9:05 · 6人の役員が待っています。Rachelはテーブルの下で必死にスマホをタップしています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "今すぐF42が何を意味するかメッセージで送りなさい！さもないと顧客データを漏洩したって人事部に報告するわよ！",
+          "timestamp_label": "午前9:05",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あなたの「オリジナル作品」を鑑賞するのに忙しくてそれどころじゃないわ、Rachel。",
+          "timestamp_label": "午前9:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "mentor",
+          "text": "いいわ、ならあなたがわざとそこに偽の数字を入れたとSterlingに言ってやる。",
+          "unsent_placeholder": "Rachelがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "ceo",
+          "duration_sec": 11,
+          "transcript": "[落ち着いた氷のように冷たい声] Rachel、君がこのスライドを書いたのなら、なぜ今私にF42を「税還付」だと説明したんだ？それは実際にはメリディアン社のエンタープライズ割引階層のはずだが。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "Sterling社長、午前2時に{{player_name}}が私の承認なしにスライドを改ざんしたんです！",
+          "timestamp_label": "午前9:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Sterling社長があなたを真っすぐ見つめています。どうやって商談をまとめますか？",
+          "options": [
+            {
+              "option_id": "opt_live_demo",
+              "label": "クリッカーを受け取り本物のモデルを発表",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "社長、クリッカーをお借りできますか？すべての変数を記憶だけでご説明いたします。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_screen_mirror",
+              "label": "画面に彼女の脅迫メッセージを投影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "容赦ない反撃 · 広告視聴",
+              "player_reply_text": "それと、2分前にこのテーブルの下からRachelが私に送ってきたメッセージもご覧になりたいかもしれません。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "あなたはきっかり4分で完璧にすべての数字を説明し切りました。2人の取締役が思わず拍手を送りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "80インチ画面に投影：人事部を使ってあなたを陥れると脅すRachelのメッセージが、彼女の背後に巨大な文字で映し出されました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "伝説だな。人事部がもうRachelの退職手続き書類を印刷してるぞ。",
+          "timestamp_label": "午前9:12",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "Rachel、人事部へ行きなさい。{{player_name}}、午後の予定を空けておきたまえ――君がディレクター代理としてメリディアン案件を率いるのだ。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "ゴーストライターからディレクターへ",
+          "teaser_text": "荷物を箱に詰めながら、Rachelがあなたに囁きました。「Sterlingが味方だと思ってるの？前四半期に誰が私のボーナスを承認したか調べてみなさいよ」",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "ロビーでの囁き",
+      "start_node_id": "e3_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前11:15 · ディレクター室。新しいネームプレートの温もりも冷めやらぬうちに、Rachelの別れ際の言葉が胸に響きます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、頼まれた通り第3四半期の役員ボーナス承認記録を引き出した。これを聞く前に椅子に座ったほうがいい。",
+          "timestamp_label": "午前11:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sterling社長についてのRachelの話は本当だったの？",
+          "timestamp_label": "午前11:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "第3四半期役員報酬 · Rachelへの帳簿外ボーナス75,000ドル — Sterling CEO単独による承認。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "これでわかったでしょ。自分の持株会社の名前で特許を出願できるように、あの看板企画書からあなたの名前を削れと私に命じたのはSterlingなのよ！",
+          "timestamp_label": "午前11:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "午後の取締役会電話会議の前に、必ずITにDevの監査アクセス権を無効化させろ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 9,
+          "transcript": "[激しいタイピング音] うわっ！Sterlingが今俺の管理者アカウントをロックしようとした！彼のクラウドドライブから特許出願下書きをすでに書き出しておいて大正解だったよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "SterlingがIPO前にあなたの看板知的財産を盗もうとしています！次の一手は？",
+          "options": [
+            {
+              "option_id": "opt_team_rachel",
+              "label": "RachelにSterlingからの指示メールを頼む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Rachel、もしSterlingがあなたをトカゲの尻尾切りにしたのなら、盗難を命じたメールを送って。",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_patent_lock",
+              "label": "午前2時の原本ファイルにタイムスタンプ証明",
+              "cost_type": "vip_rewarded",
+              "badge_text": "法的防衛 · 広告視聴",
+              "player_reply_text": "Dev、私の午前2時のコミットログにハッシュ証明をつけて、緊急の知的財産著作者通知を提出して！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "Rachelがアーカイブを転送：投資家ロードショーの前にあなたの名前を削除するよう命じる、Sterlingからの直接のメールが3通ありました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "知財保全完了：特許庁はSterlingの個人名義の出願を、会社資産の不正流用疑惑として差し止めました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "{{player_name}}、10分後に役員会議室へ来なさい。新しい契約書を確認する必要があるから、ノートパソコンを持ってくるように。",
+          "timestamp_label": "午前11:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "サインしちゃダメ！その「ディレクター契約書」の14ページ目には、遡及適用の知的財産権放棄条項が埋め込まれてるの！",
+          "timestamp_label": "午前11:25",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "14ページ目の罠",
+          "teaser_text": "エピソード4：取締役会が到着する前に、Sterlingは日付を遡らせた知財権放棄書にあなたの署名を取り付けようとします。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "遡及日付の署名",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前11:36 · 30階役員会議室。Sterlingはマホガニーのテーブル越しに分厚い革のフォルダを滑らせてよこしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "ごく通常のディレクター就任手続き書類だよ、{{player_name}}。昼食前に人事部が君の昇給を処理できるように14ページ目に署名したまえ。",
+          "timestamp_label": "午前11:36",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "おかしいですね――なぜ「通常の昇給」で、私の看板アーキテクチャの権利をSterling Private Holdings LLCへ譲渡することになるのですか？",
+          "timestamp_label": "午前11:37",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "その部屋で持ちこたえて！取締役会議長が予定より早く到着して、今エレベーターで30階に上がってきてる！",
+          "timestamp_label": "午前11:38",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "くそっ、もし議長が14ページ目のあのLLCの名前を見たら――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "印刷したメールを持ってロビーにいるわ。一言言ってくれれば、このまま議長のアシスタントに手渡すから。",
+          "timestamp_label": "午前11:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 8,
+          "transcript": "[小声] {{player_name}}、今Sterlingが遠隔で君の仕事用ノートパソコンにデータ消去コマンドを飛ばした――ファイアウォールでブロックしたよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Sterlingがテーブルから14ページ目を奪い返そうと手を伸ばしました！どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_snap_photo",
+              "label": "14ページ目を撮影して取締役会に送る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "遅すぎましたよ、Sterling。14ページ目の高解像度スキャンはたった今、議長の受信箱に届きましたから。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_project_screen",
+              "label": "14ページ目とメールを壁画面へ投影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "容赦ない反撃 · 広告視聴",
+              "player_reply_text": "Dev、私の画面を80インチの会議室スクリーンにミラーリングして――役員フロア全員にお披露目しましょう！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "役員会議室の扉が開く：タブレットを手に議長が歩み入り――真っすぐSterlingを見据えました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "瞬時に大騒動：取締役会全員が入室すると同時に、Sterlingによる7万5000ドルの口止め料送金が高さ3メートルの画面に映し出されました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お帰りなさいませ、議長。IPO監査に向けた予定外の議題がございます。",
+          "timestamp_label": "午前11:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "これは解雇されたマネージャーと若手アナリストが共謀した中傷だ！警備員、この部屋から全員を追い出せ！",
+          "timestamp_label": "午前11:47",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "議長の前での直接対決",
+          "teaser_text": "エピソード5：1通の偽造された知的財産譲渡書類が、誰が恥をかいて30階を去ることになるのかを決めます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "役員会議室の待ち伏せ",
+      "start_node_id": "e5_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前11:52 · 30階役員会議室。議長が片手を上げると、扉の前で警備員たちは足を止めました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今すぐ取締役会の共有ドライブに元の特許不正流用出願書類を直接アップロードするよ！",
+          "timestamp_label": "午前11:52",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "遡及日付の知財権譲渡 · 看板企画の権利をSterling Private Holdings LLCへ譲渡（取締役会承認なしの署名）。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "待て――あれは予備的な節税対策の下書きだ！私は提出などしていない！",
+          "timestamp_label": "午前11:54",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "特許庁の受領タイムスタンプは、あなたが昨日の午後4:12に出願したことを示していますよ――Rachelが私の企画書を盗む10時間も前に。",
+          "timestamp_label": "午前11:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "もし議長が外部の弁護士を呼んだら、私の株式パッケージ全体が無効になる――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "mentor",
+          "duration_sec": 8,
+          "transcript": "[エレベーターの開く音] 今役員会議室に向かっているわ、{{player_name}}。宣誓の上で証言する――あなたの名前を葬ればVPにするとSterlingが約束したの。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "議長はその場でSterlingを停職処分にし、あなたの方を向きました。何を要求しますか？",
+          "options": [
+            {
+              "option_id": "opt_lead_roadshow",
+              "label": "自ら看板IPOピッチの指揮を執る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "実際にそれを築き上げた本物のチームと一緒に、明日の投資家ロードショーを私に率いさせてください。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_equity_stake",
+              "label": "創業者知財株式の付与と基調講演を要求",
+              "cost_type": "vip_rewarded",
+              "badge_text": "重役 · 広告視聴",
+              "player_reply_text": "基調講演は私が務めます――そしてIPO前に、私の名義での発明者株式付与を認めていただきたいです。",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "議長：「承認します。基調講演はあなたのものです、{{player_name}}――そしてDev君はセキュリティ担当VPに昇進させましょう」",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "取締役会承認：議長はその場であなたの発明者株式付与契約に署名しました――IPO時の評価額は250万ドルに相当します。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警備が今段ボール箱を持たせてSterlingを連れ出したよ。これぞ因果応報だね！",
+          "timestamp_label": "午後12:03",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "許される資格がないことはわかってる、{{player_name}}。せめて最後にひとつだけ正しいことをさせてくれてありがとう。",
+          "timestamp_label": "午後12:04",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "明日のスポットライトはあなたのもの",
+          "teaser_text": "エピソード6（フィナーレ）：1枚目のスライドに太字で刻まれた自分の名前とともに、IPOのステージに立ちましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "本物の基調講演",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前9:00 · グランド・ボールルーム IPOロードショー。1枚目のスライドがステージを照らし出す中、400人の投資家が待ち構えています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "スライドロック完了、バックアップ検証済み、妨害工作ゼロ。あのスクリーンに高さ3メートルで{{player_name}}の名前が映ってるぞ！",
+          "timestamp_label": "午前8:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "2日前の真夜中に私の名前は消された。でも今日、この会場全体は私たちのものだよ。",
+          "timestamp_label": "午前8:59",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "mentor",
+          "text": "自宅からライブ配信を見てるわ。圧倒してきてね、{{player_name}}ディレクター。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "彼女の質疑応答の間に株価が18%も急騰するなんて信じられん――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 8,
+          "transcript": "[割れんばかりの拍手] スタンディングオベーションだ！主幹事団が今IPOの応募倍率を4倍増額させたぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あのスライドに注ぎ込んだ真夜中の時間すべてが、今10倍になって報われたね。",
+          "timestamp_label": "午前9:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "舞台裏で記者たちがあなたを取り囲み、誰がこの逆転劇の原動力だったのか尋ねています。どう答えますか？",
+          "options": [
+            {
+              "option_id": "opt_credit_team",
+              "label": "Devとすべての深夜の開発者たちを称える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "この栄誉はDevと、これまで影に隠れてきたすべての開発者たちのものです。もう二度と隠させません。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_transparency_pledge",
+              "label": "透明なクレジット台帳方針の開始を発表",
+              "cost_type": "vip_rewarded",
+              "badge_text": "先見の明 · 広告視聴",
+              "player_reply_text": "本日より、当社のすべての企画書と特許には改ざん不可能な著作者クレジットを明記します。",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "一面の見出し：あなたのスピーチはLinkedInでバイラル拡散し――社内の士気は過去最高に達しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "業界の新基準：ビジネス誌各紙はあなたを倫理的テック・リーダーシップの新たな顔として称賛しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "議長から今メッセージが来たよ：君の角部屋オフィスは30階にアップグレードされるって。",
+          "timestamp_label": "午前9:50",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "まずはお祝いをしよう――そして今夜は、誰も午前0時を過ぎてまで残業しないこと。",
+          "timestamp_label": "午前9:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 太字で刻まれた名前",
+          "teaser_text": "あなたは真夜中の企画盗難を阻止し、腐敗したCEOを追放し、歴史的なIPOを成功に導きました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

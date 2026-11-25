@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_021",
+  "lang": "pt",
+  "metadata": {
+    "title": "O 13º Andar Não Existe",
+    "subtitle": "O elevador parou no 13º andar às 02h14. Meu prédio só tem doze andares.",
+    "genre": "thriller",
+    "tags": [
+      "3h da Manhã",
+      "Elevador",
+      "Sobrenatural"
+    ],
+    "cover_image": "assets/media/covers/story_021.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Você)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Hector (Vigia Noturno)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "Interfone do Saguão",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Botão 13 Acendeu",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02h14 · O elevador dá um solavanco e para. O LED vermelho pisca além do 12 e trava no 13.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, estou vendo a Cabine B parada no meu monitor. Por que apertou a chave de serviço?",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não encostei em nada! As portas acabaram de abrir para um corredor escuro. Tem alguém acenando para mim.",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Ótimo. Saia para eu finalmente poder ir embora.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Fique dentro da cabine! NÃO atravesse a soleira. Aperte Fechar Porta agora mesmo.",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[zumbido fluorescente, passos lentos] ...Por que está encarando, {{player_name}}? Você mora neste andar agora...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "As portas recusam fechar. Ar gelado invade o elevador.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Apertar o alarme vermelho de emergência",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou esmurrando o sino de alarme!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Iluminar o 13º andar com o flash do celular",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Ligando minha lanterna...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "O alarme toca—não no poço, mas bem atrás da figura no corredor escuro.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Cada porta de apartamento no 13º andar tem uma placa de latão—todas gravadas com o SEU nome.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Espera... o telefone da portaria está tocando sozinho. Olhe a câmera do saguão.",
+          "timestamp_label": "02:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Guarita do Saguão",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Uma voz desesperada ofega: \"Aqui é o Hector! Alguém roubou meu celular vinte minutos atrás—com quem você está trocando mensagem?!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa. Um recado transcreve na hora: \"Aqui é o Hector—estou trancado no saguão! NÃO sou eu mandando mensagem!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Então Quem Estava Mandando Mensagem?",
+          "teaser_text": "Episódio 2: A figura no 13º andar ergue um celular brilhando—e sorri.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "O Décimo Terceiro Morador",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02h18 · As luzes do elevador morrem. Só o brilho do celular no corredor ilumina o rosto da figura.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Não devia ter atendido o telefone do saguão, {{player_name}}. Agora tenho que entrar.",
+          "timestamp_label": "02:18",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Para trás! Quem é você?! Por que está com o celular do Hector?!",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CÂM 13 · 02:18:55 — Corredor diante da Cabine B.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Olhe no espelho atrás de você. Já estou lá dentro.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estou preso no 13º andar desde 2011. O prédio só me deixa sair se alguém ficar no meu lugar.",
+          "timestamp_label": "02:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "As portas de metal fecham rangendo—prendendo a sombra gélida lá dentro com você.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Forçar o alçapão do teto para abrir",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou subindo pelo teto!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Estilhaçar o painel LED do 13º andar",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Quebrando o painel agora!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Você empurra o alçapão para cima—e dedos gélidos envolvem seu pulso vindos do poço escuro acima.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Faíscas voam e o elevador despenca—direto para o Térreo. Atrás do painel quebrado há uma foto desbotada de desaparecido de 2011 do Hector.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "O elevador apita suave. As portas abrem para um saguão claro e vazio—exceto que todo relógio marca 02h14.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Hector (Vigia Noturno)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Um sussurro oco ecoa: \"Bem-vinda ao lar, {{player_name}}. Aproveite o 13º andar.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você aperta recusar, mas a ligação completa mesmo assim. Atrás de você, o botão 13 do elevador brilha vermelho intenso.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Próxima Parada: Para Sempre",
+          "teaser_text": "Final da Temporada · As portas do saguão estão fechadas com tijolos. Só o elevador está esperando.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Saguão Emparedado",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02h28 · O elevador dá um tranco descendo de novo, mas quando as portas se abrem, tijolos maciços de concreto lacram o saguão.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, fique dentro da cabine! Estou batendo no vidro do saguão pelo lado de fora—o térreo inteiro sumiu atrás de tijolos!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector, o painel acabou de acender de novo—não é 13 desta vez. Diz \"B4\" e as portas não abrem!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "Painel do Elevador · 13º andar e código de serviço oculto brilhando em vermelho às 02h29.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "A lâmpada fluorescente do teto pisca e apaga. Um vento frio sobe pelas grades do piso.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Aperte 13 de novo, {{player_name}}. Você esqueceu de devolver a chave que pegou do Morador 13.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Em 1998 um morador morreu preso entre o 12º andar e o telhado—a administração lacrou o poço.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[estática chiando no interfone] \"Todo prédio esconde um andar desaparecido, {{player_name}}. Só o turno da noite sabe o porquê.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "O elevador começa a subir sozinho rumo ao poço lacrado.",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_stop",
+              "label": "Puxar a trava vermelha de parada de emergência",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou puxando o freio de emergência—Hector, chame os bombeiros!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_press_alarm",
+              "label": "Segurar chave de serviço e abrir alçapão",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Fuga",
+              "player_reply_text": "Achei a trava do alçapão do teto! Estou subindo para o poço!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "O freio arrebentou?! Segure no corrimão—estou arrombando a porta de manutenção do saguão!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Esperta! Tem uma escada parafusada na parede oeste do poço—suba rumo ao 12º andar!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Tarde demais. As luzes do poço acabaram de morrer—e algo está descendo lá de cima atrás de você.",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Algo no Poço.",
+          "teaser_text": "Episódio 4: Presa entre andares na escuridão total, você descobre por que o 13º andar foi apagado das plantas.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Planta de 1998",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02h35 · Você se agarra à escada de aço no poço escuro enquanto Hector puxa o livro de registros de 1998 do prédio.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Achei a planta antiga na guarita! O 13º andar não era superstição—era uma cobertura ilegal lacrada depois de um incêndio!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector, há uma porta bem ao lado da escada! Alguém riscou \"NÃO CONFIE NO VIGIA\" no aço!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Pergunte a Hector por que ele ainda carrega a chave de latão do 13º andar no cinto, {{player_name}}.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "O facho da sua lanterna pega um buraco de fechadura de latão ao lado da porta enferrujada.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Não dê ouvidos a essa coisa! Essa chave me foi entregue pelo dono—juro que nunca abri!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Espera... por que minha própria assinatura está no registro de vistoria de 1998? Eu nem fui contratado antes de 2020...",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[sussurrando pelos dutos] \"Ele não foi contratado em 2020, {{player_name}}. Olhe a foto do crachá do vigia.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "O interfone afirma que Hector está preso no turno da noite desde 1998.",
+          "options": [
+            {
+              "option_id": "opt_e4_question_hector",
+              "label": "Exigir que Hector mande a foto do crachá",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hector, tire uma foto do seu crachá de segurança agora mesmo.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_open_door",
+              "label": "Forçar e abrir a porta enferrujada do 13º",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Coragem",
+              "player_reply_text": "Estou chutando a porta do 13º andar para abrir—preciso da verdade eu mesma.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Meu crachá diz... 1998?! Não, é impossível—por que não consigo lembrar de sair deste prédio?!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Espera—o corredor lá dentro está iluminado por luminárias âmbar! E tem um espelho no final!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Bem-vinda ao lar, {{player_name}}. Olhe a sombra parada no fim do corredor.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "O Corredor Esquecido.",
+          "teaser_text": "Episódio 5: Um quadro de segurança do 13º andar revela o rosto de quem lacrou o poço.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Corredor de Cinzas",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02h44 · Cinzas flutuam preguiçosas pelo ar do 13º andar quando seu celular recebe uma imagem arquivada de segurança.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Eu me lembro agora, {{player_name}}! Tentei resgatar a garota do 13A durante o incêndio—e o proprietário travou o elevador para esconder as irregularidades!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector... isso significa que você é uma das pessoas que nunca conseguiram sair?!",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Corredor do 13º Andar · Sombra parada ao lado do Apto 13A—segurando a chave-mestra de latão.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "A campainha do elevador toca atrás de você. As portas abrem para um saguão claro e normal—por trinta segundos.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Pegue o livro-caixa do Apto 13A e corra para o elevador, {{player_name}}. Conte aos vivos o que realmente aconteceu aqui!",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Se a verdade vier à tona, podemos finalmente bater o ponto final neste prédio para sempre.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[calmo, ecoando] \"Pegue o laudo do incêndio, {{player_name}}. Deixe a chave de latão no chão—e nunca olhe para trás.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "O portal para o saguão real fecha em dez segundos.",
+          "options": [
+            {
+              "option_id": "opt_e5_grab_ledger",
+              "label": "Pegar o livro chamuscado e disparar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Peguei o livro! Estou correndo para a cabine!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_promise_hector",
+              "label": "Prometer a Hector que vai expor o dono",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Justiça",
+              "player_reply_text": "Juro que vou expor todos eles, Hector. Descanse agora!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "VAI! Não deixe as portas fecharem sem você!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Obrigado, {{player_name}}. Pela primeira vez em vinte e oito anos, meu turno acabou.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "O elevador desce suave até o 1º andar. Lá fora, o amanhecer finalmente rompe.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "A Última Descida.",
+          "teaser_text": "Episódio 6 (Final): Saindo para a luz da manhã, você segura a única prova de que o 13º andar existiu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Turno Concluído",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06h05 · Fita da polícia cruza o saguão do prédio enquanto detetives ensacam o livro chamuscado de 1998.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Os detetives acharam a parede lacrada atrás do 12º andar, {{player_name}}. Cada nome no laudo do incêndio finalmente vai descansar em paz.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera—Hector?! Como você ainda está me mandando mensagem se o vigia da manhã acabou de bater o ponto?!",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Só uma última mensagem antes de meu sinal sumir. Olhe o painel do elevador.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Você olha de volta para o elevador: o Botão 13 sumiu—substituído por aço liso e contínuo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "O dono do prédio acabou de ser preso no aeroporto. Obrigado por não nos deixar no escuro.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Adeus, {{player_name}}. Vá pelas escadas da próxima vez.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[caloroso, sumindo na estática] \"Boa noite do turno da madrugada, {{player_name}}. Você está segura agora.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "A tela do celular pisca enquanto a conversa de Hector começa a se arquivar sozinha.",
+          "options": [
+            {
+              "option_id": "opt_e6_say_goodbye",
+              "label": "Agradecer a Hector antes de o sinal sumir",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Descanse em paz, Hector. Você salvou minha vida hoje à noite.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_leave_flowers",
+              "label": "Deixar flores brancas na guarita do vigia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Tributo",
+              "player_reply_text": "Deixei flores na mesa do saguão para você e para o 13A. Adeus.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Mensagem entregue · Visualizada às 06h07.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Mensagem entregue · Uma brisa morna passa pela guarita vazia do vigia.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sistema: \"Interfone do Saguão\" desconectou permanentemente.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Apenas Doze Andares.",
+          "teaser_text": "FIM · O prédio finalmente tem doze andares de novo—e o vigia noturno voltou para casa.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_080",
+  "lang": "ja",
+  "metadata": {
+    "title": "リークされた大型合併",
+    "subtitle": "4億ドルの合併案件が「私」の透かし入りで流出した——私のパソコンのパスワードを知っているのは、ライバル銀行に勤める婚約者だけ。",
+    "genre": "romance",
+    "tags": [
+      "企業",
+      "裏切り",
+      "スリラー"
+    ],
+    "cover_image": "assets/media/covers/story_080.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "fiance",
+      "name": "Ethan (婚約者)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "chair",
+      "name": "Park会長",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "sec",
+      "name": "Elena (コンプライアンス担当)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4C1D95"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "透かしの痕跡",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前8:05 · すべての取引画面に速報が点滅します。4億ドルの大型合併案が一夜にしてリークされ、株価が22%急落しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "{{player_name}}、社員証が凍結されました。メディアに流出したPDFにはあなたの見えない電子透かしが入っており、午前2時14分にあなたの自宅IPからダウンロードされています。",
+          "timestamp_label": "午前8:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "午前2時14分？！熟睡していたはずよ！昨夜私のアパートにいた他の人間といえば…Ethanしかいない。",
+          "timestamp_label": "午前8:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "ボス、うちの空売り取引で800万ドル確定しました！ご心配なく——電子透かしは俺じゃなく{{player_name}}を指していますから。",
+          "unsent_placeholder": "Ethanがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "ベイビー、今株価の暴落を見たよ！！大丈夫か？！コンプライアンス部に聞かれたら、パソコンがハッキングされたに違いないって言えよ！",
+          "timestamp_label": "午前8:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "chair",
+          "duration_sec": 10,
+          "transcript": "[氷のように冷たい声] {{player_name}}、午前10時に連邦規制当局が到着する。午前2時14分に他の誰かが君のパソコンを触ったと証明できなければ、インサイダー取引容疑で起訴されるぞ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "刑務所行きが現実になるまであと90分。どの証拠を引っ張り出しますか？",
+          "options": [
+            {
+              "option_id": "opt_router_log",
+              "label": "自宅ルーターとUSB転送履歴を調べる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Elena、午前2時14分の私のパソコンのUSBデバイスシリアルログを確認して——メール送信じゃないはず！",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_watch_bio",
+              "label": "スマートウォッチの睡眠データと室内の映像を確認",
+              "cost_type": "vip_rewarded",
+              "badge_text": "科学捜査 · 広告を見る",
+              "player_reply_text": "私のスマートウォッチは午後11時から午前6時まで深いレム睡眠を記録してる——それに寝室の防犯カメラがデスクも映してるわ！",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "待って…ファイルはEthanの勤務先であるライバル銀行Apex Bankに登録された暗号化USBにコピーされているわ！",
+          "timestamp_label": "午前8:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "HD映像確保：午前2時13分、リビングのカメラにEthanがあなたのパスワードを打ち込み、合併PDFをコピーしてほくそ笑む姿が鮮明に映っていました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "信じられない…Ethanは800万ドルの空売りのために、自分の婚約者を身代わりの盾にしたのね！",
+          "timestamp_label": "午前8:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "今すぐ君の会社のロビーに行って支えるよ、ベイビー。俺が着くまでコンプライアンス部には一言も話すなよ！",
+          "timestamp_label": "午前8:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "罠に歩み寄る男",
+          "teaser_text": "第2話：Ethanが優しい婚約者のふりをして緊急役員聴聞会に現れる——連邦捜査官の目の前に。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "緊急聴聞会",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前10:00 · 第1役員室。Park会長、コンプライアンス担当、そして2人のSEC捜査官があなたとEthanの向かいに座っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Park会長、{{player_name}}は大きなストレスを抱えていました。おそらく寝ぼけて草案を誤送信してしまったのでしょう——どうか寛大な処分をお願いします。",
+          "timestamp_label": "午前10:01",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "よくも私を悪者に仕立て上げてくれたわね、Ethan。午前2時13分に私のパソコンで何をしていたのか、捜査官に説明しなさいよ。",
+          "timestamp_label": "午前10:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "今すぐApexの取引ログを削除しろ！！{{player_name}}がUSBのことを知ってる！！",
+          "unsent_placeholder": "Ethanがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "sec",
+          "duration_sec": 10,
+          "transcript": "[毅然とした声] 手遅れよ、Ethan。SECはすでにApex銀行に召喚状を出し、そのUSBシリアル番号があなたの社員バッジと直結していることを突き止めたわ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Ethanが椅子を蹴倒して飛び上がりました。最後の一撃を食らわせてください。",
+          "options": [
+            {
+              "option_id": "opt_drop_ring",
+              "label": "婚約指輪をテーブル越しに滑らせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "指輪はお返しするわ、Ethan。どうせ連邦刑務所ではアクセサリーをつけられないものね。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_play_cam",
+              "label": "SECの前で午前2時13分の映像を再生する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "4K証拠 · 広告を見る",
+              "player_reply_text": "皆さん、4億ドルの合併ファイルを盗みながら私のカメラに向かって微笑む彼の姿をご覧ください。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "静まり返った役員室で、2人の連邦捜査官がEthanの背後に歩み寄り、黙秘権を告知しました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "合併防衛成功：規制当局が違法な空売りを停止して株価を回復させ、Ethanとそのマネージングディレクターの双方を起訴しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "君の社員証はパートナー権限付きで完全復旧したぞ、{{player_name}}。会社を救ってくれて感謝する。",
+          "timestamp_label": "午前10:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ランチの前にあの4億ドルの合併を成立させましょう、会長。",
+          "timestamp_label": "午前10:10",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "契約成立、裏切り者は手錠に",
+          "teaser_text": "ガラス扉の向こうへ連行される際、Ethanはあなたに向かって戦慄の言葉を口パクで残す。「俺だけがお前の会社からApexに協力してたと思うなよ？」",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "2人目の内通者",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後4:40 · コンプライアンス特別室。Ethanは連邦拘置所に勾留されました——しかし、彼の不吉な別れの言葉は真実でした。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "{{player_name}}！Ethanはハッタリを言っていたわけじゃなかったわ！彼が逮捕された10分後、うちのタワー内部の誰かが最新の4億ドル合併評価シートを書き出したの！",
+          "timestamp_label": "午後4:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "50階であの評価シートの閲覧権限を持っているのはたった4人…誰がアクセスしたの？！",
+          "timestamp_label": "午後4:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sec",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "Ethanのコートから押収 · Apex銀行VIPスイートキーカード — 「50階 財務担当VP」と共同登録済み。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "調印ディナーを待て！午後7時前にApex銀行が我々の最終対抗提示額を知れば、5,000万ドル下回る条件で出し抜かれてしまう！",
+          "timestamp_label": "午後4:43",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "{{player_name}}に伝えろ、2人目の内通者はPark会長の真正面に座っている——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "sec",
+          "duration_sec": 8,
+          "transcript": "[囁き声] {{player_name}}、Apexホテルのキーカード使用時刻とうちのビルの入退館記録を照合したところ、その1時間に50階を出た役員はたった1人だけだったわ：Victor Han副社長よ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Park会長との調印ディナーは90分後に始まります！どうやって2人目の内通者を罠にかけますか？",
+          "options": [
+            {
+              "option_id": "opt_canary_numbers",
+              "label": "資料に偽の4億3,500万ドルの罠価格を仕込む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Park会長、VPの共有フォルダにだけ4億3,500万ドルの偽評価額をアップロードしてください——もしディナーでApexが4億3,600万ドルを提示したら現行犯です！",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_track_burner",
+              "label": "罠価格＋使い捨て携帯のGPSを追跡する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "二重スパイ · 広告を見る",
+              "player_reply_text": "4億3,500万ドルの偽情報を仕込み、さらにElenaのチームにディナー会場付近のホテルWi-Fiを拾う使い捨て携帯をすべて捕捉させましょう！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "カナリアの罠設置完了：Park会長が鋭く微笑みます。「見事だ、{{player_name}}。奴がどれほど早く餌に食いつくか見ものだな」",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "完全監視：12分後、VPが偽ファイルをダウンロードし——その直後、未登録の使い捨て携帯が化粧室から電波を発信しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "1日に2度も4億ドルの案件を救ってくれたな、{{player_name}}。午後6時30分きっかりにプライベートクラブで落ち合おう。",
+          "timestamp_label": "午後4:52",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "弁護士が1通だけ送信を許してくれた：3か月前に俺を引き込んだのはVictorだ。俺だけが罪を被ってあいつが逃げ切るのだけは許すな。",
+          "timestamp_label": "午後4:53",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "調印ディナーの罠",
+          "teaser_text": "第4話：2人目の内通者がすでにApex銀行へメールを打っているプライベートクラブへ乗り込め。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "ホテルのキーカード",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後6:40 · 役員専用プライベートクラブ。クリスタルグラスが鳴り響く中、Apexの使者がマホガニーのテーブル越しに薄笑いを浮かべています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "信じられん——Apexの使者が「ちょうど4億3,600万ドル」の対抗買収案を差し出してきたぞ！カナリアの罠が完璧に決まったな！",
+          "timestamp_label": "午後6:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "つまり、うちのVPがここ1時間以内に4億3,500万ドルの偽ファイルをそのままApexへ流したということですね。",
+          "timestamp_label": "午後6:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "捕まえたわ！使い捨て携帯がクラブのテラスから偽PDFを送信した直後、私と鉢合わせしてSIMトレイを叩き割ろうとしたのよ！",
+          "timestamp_label": "午後6:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "連邦検察に伝えてくれ、刑を軽くしてくれるならVictorに不利な証言をすると——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Apexの使者は冷や汗をかいているぞ——我々の本当の役員会承認上限が4億ドルだとも知らず、4億3,500万ドルが本気だと思い込んでいる！",
+          "timestamp_label": "午後6:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "sec",
+          "duration_sec": 8,
+          "transcript": "[警備員の足音] クラブの警備がプランターの中から割れた使い捨て携帯を回収したわ——しかもGPSログがApexのホテルスイートと今夜のテラスの両方に直結してる！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "割れた使い捨て携帯を手に入れ、Apexの現行犯を押さえました！どうやって合併を成立させますか？",
+          "options": [
+            {
+              "option_id": "opt_expose_table",
+              "label": "スパイ行為を暴きApexを失格にする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Park会長、その使い捨て携帯とホテルのキーカードをテーブルに出してください——汚れたApexの入札を今すぐ失格にしましょう！",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_discount_close",
+              "label": "Apexを排除し1,500万ドルの値引きを勝ち取る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ウォール街の鮫 · 広告を見る",
+              "player_reply_text": "売却先にApexの産業スパイ行為を暴露し——今夜3億8,500万ドルの全額現金で即決契約を提示しましょう！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "売却先役員会が震撼：売却先の会長は即座にApexを失格とし、Park会長と3億9,500万ドルで独占契約に署名しました！",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "10年に一度のディール：規制当局の追及を避けたい売却先がその場でサインし、Park会長に1,500万ドルの利益をもたらしました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "今、クラブの玄関に元VPを連行する連邦捜査官が到着したよ。まるで外科手術のような鮮やかさだったぞ、{{player_name}}。",
+          "timestamp_label": "午後6:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "今すぐ割れた使い捨て携帯のGPS解析報告書をSECへアップロードするわ！",
+          "timestamp_label": "午後6:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "クラブに落ちていた使い捨て携帯",
+          "teaser_text": "第5話：GPS解析の証拠を確定させ、2人の裏切り者が連邦の裁きを受ける瞬間を見届けよ。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "クラブの使い捨て携帯",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午後8:15 · タワー50階。4億ドルの合併契約書のインクがようやく乾きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "鑑識が割れた使い捨て携帯から完全なGPSと通話履歴を抽出したわ——Victor、Ethan、Apexの密会が1分単位ですべて地図上に記録されている。",
+          "timestamp_label": "午後8:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "sec",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "携帯解析結果 · 割れた携帯のGPSがApex VIPスイート（月曜）とプライベートクラブ・テラス（18:41）に一致。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "弁護士が言うには、Victorに不利な証言をすれば厳重警備刑務所行きは免れるかもしれないって…{{player_name}}、俺は君を愛するのをやめたことなんてない。ただ欲に目が眩んだだけなんだ。",
+          "timestamp_label": "午後8:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私が寝ている間にパソコンのパスワードを盗み、重罪のリーク文書に「私」の透かしを入れたのよ、Ethan。そんなの愛じゃない——ただの裏切りよ。",
+          "timestamp_label": "午後8:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "彼女のパソコンを開いたあの夜を、これからの5年間ずっと後悔し続けるんだろうな——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "chair",
+          "duration_sec": 8,
+          "transcript": "[シャンパンを注ぐ音] {{player_name}}、たった今5分間の役員会投票で決まったぞ：空席になった財務・M&A担当VPのポスト——君が望むなら「君のもの」だ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Park会長から50階のVPの座を提示されました！どう受け入れますか？",
+          "options": [
+            {
+              "option_id": "opt_accept_vp",
+              "label": "VPに就任しディールルームの安全を強化",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "お受けします、会長——最初の仕事としてElenaとディールルームのセキュリティを再構築し、二度とリークを起こさせません。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_partner_track",
+              "label": "VP就任＋合併成約1%のボーナスを要求",
+              "cost_type": "vip_rewarded",
+              "badge_text": "大型取引 · 広告を見る",
+              "player_reply_text": "VPの座をお引き受けし、Elenaとセキュリティを強化します——それと今回救った金額に対する標準の1%ディール救済ボーナスもいただけますか！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "新体制誕生：Park会長がグラスを掲げます。「50階で最も切れ者のディールメーカーに乾杯！」",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "会長が豪快に笑います。「すでにマネージングディレクター並みの交渉術だな！承認しよう——ボーナスに加えてMDへの昇進ファストトラックも約束する！」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "朝9時には冤罪の容疑者だったのに、夜8時にはM&A担当VPね。ビジネススクールの教科書に載るわよ！",
+          "timestamp_label": "午後8:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "それと、パソコンのパスワードをランダムな24文字に変更するわ——それに左手の薬指も清々しいほど自由なままにしておく。",
+          "timestamp_label": "午後8:27",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "署名と封印完了",
+          "teaser_text": "第6話（最終話）：Park会長の隣で合併成立の取引開始ベルを鳴らし、最強の未来へと踏み出せ。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "署名と封印",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "1週間後 · 金融取引所の鐘の演壇。4億ドルの合併が正式に成立し、無数のカメラのフラッシュが焚かれます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "取引開始のベルまであと2分だ、{{player_name}}VP。合併成立を受けてすでに市場は11%高騰しているぞ！",
+          "timestamp_label": "午前9:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "取引所のティッカーに両社の統合ロゴが映し出されるのを見るのは、世界最高の気分ですね。",
+          "timestamp_label": "午前9:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "司法省からの続報よ：Apex銀行は企業スパイ行為で2,500万ドルの罰金を支払い、VictorとEthanは二人とも有罪を認めたわ。",
+          "timestamp_label": "午前9:29",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "ニュースで彼女が取引所の鐘を鳴らすのを見ている——俺はすべてを失った——",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "chair",
+          "duration_sec": 8,
+          "transcript": "[鳴り響く鐘の音と大歓声] 合併成立！カメラの中央に立て、{{player_name}}——すべてのフラッシュを浴びる権利が君にはある！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Elenaも演壇に呼びましょう——私たちはチームですから。",
+          "timestamp_label": "午前9:34",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "経済番組のキャスターが、4億ドルの合併を成立させた最大の教訓を尋ねてきました：",
+          "options": [
+            {
+              "option_id": "opt_quote_trust",
+              "label": "信頼は勝ち取るもの、すべての透かしを検証せよ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "誠実さを守り、あらゆる痕跡を検証し、決して他人の嘘に自分の名前の透かしを使わせないことです。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_women_finance",
+              "label": "ボーナスをM&A女性支援基金に寄付する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "圧倒的実力 · 広告を見る",
+              "player_reply_text": "そして成約ボーナスの一部を、M&Aとコンプライアンス分野を目指す若手女性の育成フェローシップに寄付します！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "見出しを飾る名言：あなたのインタビュー映像は正午前に金融メディア全体でトレンド入りしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "金融界のアイコン：Park会長があなたの寄付額と同額を上乗せし、50階におけるあなたの伝説が不動のものとなりました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "大型案件は成立、裏切り者は逮捕、未来は無敵。今夜は飲みに行きましょう、VP！",
+          "timestamp_label": "午前9:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "タワーの頂点へようこそ、{{player_name}}。",
+          "timestamp_label": "午前9:41",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "完結 · ディールルームの女王",
+          "teaser_text": "あなたは電子透かしの冤罪を晴らし、2人の内通者を暴き、自らの手で4億ドルの合併を成し遂げた。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

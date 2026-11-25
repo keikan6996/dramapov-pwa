@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_095",
+  "lang": "ja",
+  "metadata": {
+    "title": "偽の救急隊員",
+    "subtitle": "霧の濃い山道で事故に遭った直後、911に電話する前に救急車が到着した——だが911は「近くに配備車両はない」と告げた。",
+    "genre": "thriller",
+    "tags": [
+      "サバイバル",
+      "偽物",
+      "墜落事故"
+    ],
+    "cover_image": "assets/media/covers/story_095.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "disp",
+      "name": "911 · 第4部隊",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "emt",
+      "name": "EMT-00",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#450A0A"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "出動記録なし",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後11:08 · パイン・パス・ハイウェイ。濃霧の中、あなたのセダンがガードレールに突っ込みました。911に発信する前に、背後から点滅する赤い回転灯が近づいてきます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "[緊急テキスト] もしもし911、私は無事です——18マイル標識の所にすごく早く救急車が着きました！",
+          "timestamp_label": "午後11:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "今すぐドアをロックしてください！郡指令室は今夜パイン・パスに救急車を「ゼロ台」しか出動させていません！最寄りの車両でも22キロ先にいます！",
+          "timestamp_label": "午後11:09",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[切迫したタイピング] 車の中から出ないでください、{{player_name}}！窓を絶対に開けず——救急車の側面に書かれた車両番号を見て私に送ってください！",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "ドアの鍵を開けて、{{player_name}}。額から出血してる——手当てさせてくれ。",
+          "unsent_placeholder": "EMT-00がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "曇った運転席の窓を、手袋をはめた手が軽くノックしました：",
+          "options": [
+            {
+              "option_id": "opt_095_e1_free",
+              "label": "ドアをロックしたままエンジンをかけ直す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "バンに車両番号がない——塗りつぶされてる！車のエンジンを再始動してみます！",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_095_e1_vip",
+              "label": "ハイビームを点滅させ男の顔を撮影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "スターターが弱々しく唸り——止まりました。ラジエーターが蒸気を噴き上げます。外では「救急隊員」が医療バッグに手を伸ばし、重い窓ガラス割りハンマーを取り出しました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "州警察がパイン・パスを急行中です——持ちこたえて！奴を怯ませるためにクラクションを鳴らし続けて！",
+          "timestamp_label": "午後11:11",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "眩しさに怯んだ男をフロントガラス越しにはっきりと撮影します——そして頬のギザギザの傷跡に見覚えがありました。彼は32キロ手前のガソリンスタンドにいたレッカー車の運転手だったのです。",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ガソリンスタンドで私のブレーキラインを切ったのはこいつだ！！だから18マイル標識で車がスリップしたんだ！",
+          "timestamp_label": "午後11:11",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "クラクションをやめろ、{{player_name}}。この霧の中で誰にも聞こえやしないよ。",
+          "timestamp_label": "午後11:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "バキィッ！運転席の窓ガラスに白いクモの巣状のヒビが広がります。男は2撃目のためにハンマーを振り上げました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "残り一撃",
+          "teaser_text": "ガラスは次の一撃には耐えられない——そして本物の州警察はまだ山道の6分下にいる。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "霧の中へ",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午後11:13 · センターコンソールを乗り越えて助手席側のドアを押し開け、あなたは霧の立ち込める松林の谷間へ転がり落ちました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "disp",
+          "caller_label": "911 · 第4部隊",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[無線の雑音] 木立の中で身を低くして、{{player_name}}！懐中電灯は絶対に使わないで——7号パトカーが今15マイル標識を通過しました！",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "画面の明るさをゼロにして！7号パトカーがあなたの5キロ下にいます——サイレンの方角へ「下り」に向かって走って！",
+          "timestamp_label": "午後11:13",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "道路に戻って来い、{{player_name}}。助手席に財布を落としてるぞ——お前の住所はもう割れてるんだ。",
+          "timestamp_label": "午後11:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って…あいつの救急車、キーが挿さったまま道路でアイドリングしてるじゃない！",
+          "timestamp_label": "午後11:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "男の懐中電灯の光があなたの9メートル上を横切りました：",
+          "options": [
+            {
+              "option_id": "opt_095_e2_free",
+              "label": "警察のサイレンの方へ坂を駆け降りる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "サイレンが聞こえます！今、排水溝沿いに坂を下りてます！",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_095_e2_vip",
+              "label": "引き返して奴の偽救急車を奪う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "17マイル標識のアスファルトへ飛び出し、7号パトカーの眩いパトライトの目の前に辿り着きました。坂の上では偽救急車のタイヤが悲鳴を上げ、霧の奥へと逃走していきます。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "7号パトカーがあなたの保護を確認しました！パイン・パスの両端に検問所が設置されています！",
+          "timestamp_label": "午後11:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "男が木立を探している間に、あなたは救急車の運転席に飛び乗ってドアをロックし、待機中の警察の検問線へとアクセル全開で突っ込みました——後部荷台に奴の証拠一式を乗せたまま。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "ちょっと待って——容疑者自身の救急車を奪ってきたんですか？！警察官が今、グローブボックスから行方不明者の身分証の束を発見しました！",
+          "timestamp_label": "午後11:17",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "運転免許証はまだ俺が持ってるぞ、{{player_name}}。帰宅した時にまた会おう。",
+          "unsent_placeholder": "EMT-00がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "パトカーの中で保温ブランケットに包まれていると、警察無線がザッと鳴りました。「容疑者はパイン渓谷へ徒歩で逃走——武装しており行方不明」",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "住所を握られた",
+          "teaser_text": "18マイル標識では生き延びた——だが偽の救急隊員はあなたの財布と自宅の鍵を持って霧の中へ消えた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "自宅の防衛線",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2:24 · 本物のパトカーの中で保温ブランケットに包まれていると、あなたのスマホに自宅アパート廊下からの動体検知アラートが届きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：{{player_name}}、盗まれた救急車に緊急手配を出しましたが——最寄りのパトカーでもあなたのアパートまでまだ12分かかります！",
+          "timestamp_label": "午前2:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう私のドアの前にいる！！スマートドアベルが奪われた私の合鍵を使うEMT-00を映してる！",
+          "timestamp_label": "午前2:24",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "アパート廊下カメラ · 午前2:24 — 玄関の鍵を開けて侵入するEMT-00。"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "emt",
+          "duration_sec": 7,
+          "transcript": "[玄関ドアが開く音] 素敵なアパートだな、{{player_name}}。車のドラレコのSDカードをどこにバックアップしたか教えれば、大人しく出て行ってやる。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00がドラレコのバックアップを探して机を荒らしています。反応してください：",
+          "options": [
+            {
+              "option_id": "opt_095_e3_free",
+              "label": "アパートの火災報知器を遠隔作動させる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "110デシベルの廊下サイレンを味わいなさい、EMT-00！今頃住人全員が目を覚ますわよ！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_095_e3_vip",
+              "label": "事故前にドラレコが何を撮ったか確認する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "スマートアラームのサイレンが廊下に轟き渡り——EMT-00は悪態をついて手ぶらのまま階段室へと飛び出しました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：近隣住民から911通報が入りました！警官がオーク通りを西へ猛スピードで逃げる白い救急車を目撃しています！",
+          "timestamp_label": "午前2:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "クラウド上のドラレコ映像が読み込まれます：あなたの事故の10分前、黒いセダンが山道で自転車の男性をはねて走り去っており——その運転手はVance判事でした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "指令室！私のドラレコが事故の10分前にVance判事のひき逃げを撮影してた——だからEMT-00は私を口封じしようとしたんです！",
+          "timestamp_label": "午前2:24",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "アパートにバックアップドライブはなし。ナンバープレートを付け替えるため古い診療所へ戻る。",
+          "unsent_placeholder": "EMT-00がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：今の送信取り消しメッセージ見ましたか？！待って——盗まれた財布の中に予備のスマホを入れっぱなしにしていたんですね！",
+          "timestamp_label": "午前2:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "クラウドの映像を諦めろ、{{player_name}}。現職の判事を敵に回すのは得策じゃないぞ。",
+          "timestamp_label": "午前2:24",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ドラレコの目撃者",
+          "teaser_text": "あなたのドラレコは現職判事のひき逃げを録画していた——そして財布の隠し追跡機が今、EMT-00の潜伏先を捉えた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "廃診療所",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前2:39 · パトカーの中で「財布を探す」アプリを開きます。3キロ東の地点で青い点が規則正しく脈打っていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：了解！ハイウェイパトロールのパトカー3台をMercy診療所へ急行させ、あなたのドラレコ映像を州検察官へ転送します！",
+          "timestamp_label": "午前2:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "指令室、盗まれた財布のリアルタイム位置が出ました！国道7号線沿いの廃業したMercy診療所の裏手に停まっています！",
+          "timestamp_label": "午前2:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "Vance判事から電話だ——日の出前に救急車を燃やして始末しろと命じられた。",
+          "unsent_placeholder": "EMT-00がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[警察無線の雑音] 第4部隊、Mercy診療所に現着！裏の車庫に廃車の救急車を確認——容疑者がガソリンを撒いています！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00があなたの財布を入れたまま盗難救急車に火をつけようとしています：",
+          "options": [
+            {
+              "option_id": "opt_095_e4_free",
+              "label": "サイレンを消して第4部隊に突入させる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "サイレンを切って、マッチを擦る前に裏の車庫へ突入するよう伝えて！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_095_e4_vip",
+              "label": "財布の警告音を大音量で鳴らして驚かせる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "3台のパトカーが無音で敷地に滑り込み、一斉に投光器を点灯——ガソリン携行缶を持ったままのEMT-00をその場に釘付けにしました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：容疑者を拘束！火災なし、救急車も無傷で確保——あなたの財布も回収しました！",
+          "timestamp_label": "午前2:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "助手席からあなたの財布の90デシベル追跡アラームが甲高く鳴り響き——EMT-00が気を取られた隙に第4部隊がアスファルトへ組み伏せました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今まで買った中で最高の29ドルの財布トラッカーだわ！",
+          "timestamp_label": "午前2:39",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "救急車のグローブボックスの中から、警官たちはVance判事からの不在着信で光り続ける使い捨て携帯を押収しました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：州検察官がたった今Vance判事に対する緊急逮捕状を発付しました——それにはねられた自転車の男性も郡総合病院で命を取り留めています！",
+          "timestamp_label": "午前2:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "[EMT-00の端末は証拠品として押収されました]",
+          "timestamp_label": "午前2:39",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "追跡ロック",
+          "teaser_text": "救急車に火をつける直前でEMT-00は逮捕された——そしてあなたのGPS軌跡が汚職判事を鉄格子の向こうへ送った。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "コード・スリー",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前3:15 · 郡警察署で、第4部隊の主任指令員がドラレコの静止画の横にあなたの財布の正確なGPS軌跡を印刷します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：すべてが繋がりました——18マイル標識、廊下カメラ、そしてMercy診療所。Vance判事も先ほど自宅で自首しました。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "山道ではねられた自転車の方はどうなりましたか？私のドラレコのタイムスタンプが間に合いましたか？",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "disp",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "GPS回収ログ · 午前2:39にMercy診療所で盗難救急車を特定。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[温かく安堵した声] はい！あなたの通報から20分後に「本物の」救急車が彼に到着しました——完全に回復する見込みだそうです！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "州検察官があなたのクラウド版ドラレコ動画を証拠1号として提出させてほしいと頼んできました：",
+          "options": [
+            {
+              "option_id": "opt_095_e5_free",
+              "label": "即座に証人宣誓供述書に署名する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "署名・認証しました。あいつらが二度と18マイル標識の近くを運転できないようにしてください。",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_095_e5_vip",
+              "label": "帰宅前にアパートの鍵交換を要請する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "検察官が力強くあなたの手を握ります——ドラレコ映像と使い捨て携帯の通話履歴の双方が揃い、立件は盤石です。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：今夜あなたは2つの命を救いました——あなた自身と、あの自転車の男性の命を。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "第4部隊が警護のパトカーをアパートの外に待機させ、緊急鍵屋が真新しいデッドボルトを取り付ける間見守ってくれました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "新しい鍵、戻ってきた財布、そして手錠をかけられた2人の犯人。ようやく安心できたわ。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "霧の山から誘導した中で、これまでで最高の通報者でした。",
+          "unsent_placeholder": "911 · 第4部隊がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：お車は安全な保管場へ牽引され、本物のパトカーがあなたを自宅までお送りする準備ができています。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "助けが必要な時に応答してくれてありがとう、第4部隊。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "本物の救助",
+          "teaser_text": "EMT-00とVance判事はともに手錠をかけられ、被害者は回復に向かっており、朝の光がついに山の霧を晴らす。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "開けた前方の道",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前9:00 · 澄み渡る陽光が山の峠道を乾かします。あなたはマグカップのお茶と真新しいアパートの鍵を手にしてソファに腰掛けました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊指令室：おはようございます、{{player_name}}！1時間前にVance判事の職務停止処分が正式に下されました。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "おはようございます、第4部隊！あいつらが路上からいなくなったと思ったら、打撲した肋骨の痛みもずっと良くなった気がします。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "自転車の男性のご家族から、あなた宛ての花束が指令センターに届きましたよ！",
+          "unsent_placeholder": "911 · 第4部隊がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 5,
+          "transcript": "[陽気な朝の無線音] いつでも側面の車両番号を確認してくださいね、{{player_name}}。これからも安全にお過ごしください！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "新しい家の鍵と朝のニュース速報に目を落とします：",
+          "options": [
+            {
+              "option_id": "opt_095_e6_free",
+              "label": "郡総合病院に回復中の被害者を見舞う",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今日の午後、郡総合病院に立ち寄って彼に挨拶してこようと思います。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_095_e6_vip",
+              "label": "次の車にはデュアルクラウド型ドラレコを積む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "その日の午後、陽光差し込む病院のロビーで被害者の家族全員があなたを抱きしめました——あなたが偽の救急車に乗らなかったことに心から感謝して。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "いつだって自分の直感を信じて——そして必ず911で確認することね。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "ランチの前に前後2カメラのクラウドドラレコを注文します——たった1つの小さなレンズが汚職判事を失脚させたのですから。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊も大賛成です！安全運転で、{{player_name}}。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "18マイル標識を覆っていた霧は完全に消え去りました。残るのは真っ青な空だけです。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "第4部隊、通信終了します。お元気で、{{player_name}}。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "了解、通信終了です、第4部隊。",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · 安全な港",
+          "teaser_text": "EMT-00とVance判事は法の裁きを受け、自転車の男性は生き延び、18マイル標識の悪夢は終わりを告げた。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

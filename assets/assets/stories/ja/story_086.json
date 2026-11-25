@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_086",
+  "lang": "ja",
+  "metadata": {
+    "title": "スマートホーム乗っ取り",
+    "subtitle": "サーモスタットが42℃まで急上昇し、スマートロックが密閉され、スピーカーが私の秘密を再生し始めた。",
+    "genre": "thriller",
+    "tags": [
+      "スマートホーム",
+      "ハッカー",
+      "監禁"
+    ],
+    "cover_image": "assets/media/covers/story_086.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "owen",
+      "name": "Owen · HomeSec担当",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "root",
+      "name": "ROOT_ADMIN",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#064E3B"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "高温ロックダウン",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後10:41 · HOME OS警告：外周すべてのデッドボルト施錠。防風シャッター降下。暖房を最大（42℃）に設定。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen！！あんたのスマートホームアプリが私を自分の家に閉じ込めて、暖房を42℃まで上げてるんだけど！",
+          "timestamp_label": "午後10:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "今ハブを確認してる、{{player_name}}…待て、俺の技術者権限がたった今剥奪された！誰かがガレージの中からROOT_ADMINとしてログインしてるぞ。",
+          "timestamp_label": "午後10:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "root",
+          "duration_sec": 7,
+          "transcript": "[リビングのスピーカーから響き渡る声] 「先週の火曜を覚えているか、{{player_name}}？9号線で起きたことは誰にも知られないと約束したな」",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私の寝室の録音じゃない！スマートスピーカーに盗聴器を仕込んでたの？！",
+          "timestamp_label": "午後10:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "空気が焼けつくように熱く、汗が目に入ります。どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_086_e1_free",
+              "label": "廊下のメインブレーカーボックスを叩き壊す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "主電源を落とすわ——電気なしでそのスマートロックが持つか見てやろうじゃない！",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_086_e1_vip",
+              "label": "Owenに工場出荷時リセットPINを聞く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "Owen、意識を失う前にハードウェア強制解除コードを教えて！",
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "主ブレーカーを落とします。照明が消え——直後、緑色のバックアップバッテリーが唸りを上げて起動しました。通電時施錠維持型のロックは固く閉ざされたままです。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "ソーラー蓄電池は残り98%だ、{{player_name}}。これで暗闇の中で蒸し焼きだな。",
+          "timestamp_label": "午後10:45",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "廊下のサーモスタットの裏のピンホールを5秒間長押しして「9941」と入力しろ！待て——それを使うとガレージのドアも開いちまうぞ！",
+          "timestamp_label": "午後10:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "「9941」と入力します。すべてのデッドボルトが一斉にカチリと解錠されました——暗いガレージへ続く重い鋼鉄製の扉も含めて。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "9号線にお前が置き去りにした自転車の女性は俺の妹だ、{{player_name}}。自白する時間だぞ。",
+          "unsent_placeholder": "ROOT_ADMINがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "待て…ガレージの動体センサーが反応した！誰かが今、屋内階段を上ってきてるぞ！",
+          "timestamp_label": "午後10:46",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "ガレージへの扉",
+          "teaser_text": "家はただハッキングされたのではない——法廷なのだ。そしてROOT_ADMINが今まさにキッチンへ足を踏み入れた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "手動オーバーライド",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午後10:48 · あなたは2階の手すりの後ろに身を潜めます。階下ではすべてのスマートテレビが点灯し、9号線のドライブレコーダー映像を映し出しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "owen",
+          "caller_label": "Owen · HomeSec担当",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[微かなサイレン音] {{player_name}}、主寝室バルコニーの窓シャッターをバイパスして開けた！60センチ開いてる——オークの木の枝へ這い出ろ！",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "主寝室バルコニーのシャッターを強制開放した！今すぐ屋根に出ろ——警察はあと4分で着く！",
+          "timestamp_label": "午後10:48",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "root",
+          "text": "ドラレコのタイムスタンプをよく見ろ、{{player_name}}。お前が運転していなかったことは知っている。誰が運転していたか言え——そうすれば見逃してやる。",
+          "timestamp_label": "午後10:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "先月うちのスマートホームを設置したのはあんたよね…待って。スピーカーから聞こえたあの声——",
+          "timestamp_label": "午後10:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "足音がゆっくりと階段を上ってきます。決断してください：",
+          "options": [
+            {
+              "option_id": "opt_086_e2_free",
+              "label": "主寝室バルコニーのシャッターへ走る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_086_e2_vip",
+              "label": "ROOT_ADMINに本当の運転手の名を教える",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "婚約者の車だったの！911に通報できないよう彼が私のスマホを取り上げたのよ！",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "バルコニーのシャッターの下を潜り抜けて涼しい夜気の中へ出ますが——その場で凍りつきます。あなたの真下にOwenのHomeSecのバンが停まっており、ボンネットの上でノートPCが光っていました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "降りて来い、{{player_name}}。ただ脅して真実を吐かせたかっただけなんだ——妹はまだ昏睡状態なんだよ。",
+          "timestamp_label": "午後10:51",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "階段の足音がぴたりと止まりました。すべての防風シャッターが一斉に上がり、家の中に涼しい夜風が吹き込みます。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "root",
+          "text": "婚約者の車だと？滑稽だな——ちょうど奴が車寄せに入ってきたぞ。",
+          "timestamp_label": "午後10:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "奴を家に入れるな——今寝室の音声データを警察に送信した。",
+          "unsent_placeholder": "Owenがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "ヘッドライトがリビングの壁を横切ります。玄関の鍵が回り——玄関ホールから婚約者があなたの名前を呼びました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "真犯人が歩いてくる",
+          "teaser_text": "最初からROOT_ADMINはOwenだった——そして今、警察とハッカーとあなたの婚約者がリビングで鉢合わせようとしている。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "サーマルロック",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後11:42 · サーモスタットは43℃に達しました。車寄せの端でサイレンが鳴り響く中、汗が目に染みます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "root",
+          "text": "驚いたか、{{player_name}}。Owenが助けてくれていると思い込んでいただろうが——マスター管理者キーを握っていたのは奴だ。",
+          "timestamp_label": "午後11:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen？！どうして私を自分のスマートハウスに閉じ込めたの？！",
+          "timestamp_label": "午後11:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "ガレージ側面カメラ · 午後11:41 — ハブにハードウェア・バイパスドングルを差し込むOwen。"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[インターホン越しの荒い息] 君の婚約者が今夜「精神錯乱」を装って君の持分を無効にできるよう、俺に3万ドル払ったんだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "到着する警察を欺くため、スマートスピーカーが偽の絶叫音声を大音量で流し始めました：",
+          "options": [
+            {
+              "option_id": "opt_086_e3_free",
+              "label": "廊下のスマートスピーカーハブを叩き壊す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "そのスピーカーを止めなさい！警察が私が発狂したと思い込むじゃない！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_086_e3_vip",
+              "label": "インターホン越しのOwenの自白を録音する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "真鍮製のランプを壁のハブに叩きつけます。火花が散って偽の音声が途絶えました！",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "やるな。だが残念なことに、玄関のデッドボルトは警察が蹴破るまでロックされたままだぞ。",
+          "timestamp_label": "午後11:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "あなたのスマホはOwenが婚約者の名前と3万ドルの賄賂を語る一言一句をすべて録音し、タイムスタンプ付きでクラウドへバックアップしました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "自白は全部録音したわよ、Owen！ガレージのドアを開けないと重罪の監禁罪で捕まるわよ！",
+          "timestamp_label": "午後11:42",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "婚約者が今車寄せに入ってきた——ブリーフケースの中に偽造した婚前契約書を持ってるぞ。",
+          "unsent_placeholder": "Owenがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "待って——警察に俺が協力したと伝えてくれるなら、今すぐ地下のブレーカーパネルのロックを解除する！",
+          "timestamp_label": "午後11:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "交渉には遅すぎるな。お前の婚約者はもう警官たちを連れて玄関ポーチに上がってきたぞ。",
+          "timestamp_label": "午後11:42",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "玄関ポーチの嘘",
+          "teaser_text": "婚約者は警察にあなたが錯乱したと吹き込んでいる——一方でOwenは、3万ドルの罠を証明する唯一のクラウドバックアップを握っていた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "隠された追加条項",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後11:49 · 階上で警官たちが封鎖された玄関ドアを激しくノックする中、あなたは涼しい地下室へ駆け下ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "ガレージの電磁ロックを外した！作業台から俺のタブレットを掴め——婚約者とのチャット履歴が全部開いたままだ！",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って…なんで彼のメッセージに「緊急資産譲渡」ってタイトルのPDFがあるの？！",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "Owenの作業台タブレットに対し、遠隔工場出荷時消去を開始…",
+          "unsent_placeholder": "ROOT_ADMINがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 7,
+          "transcript": "[パニック声] タブレットを機内モードにしろ！君の婚約者が遠隔消去パスワードを持ってる——証拠を消そうとしてるんだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Owenのタブレットに赤いバナー「5秒後に遠隔消去」が点滅しました：",
+          "options": [
+            {
+              "option_id": "opt_086_e4_free",
+              "label": "即座に機内モードをオンにする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "機内モードON！消去は中断された——すべてのメッセージを確保したわ！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_086_e4_vip",
+              "label": "PDFを自分のスマホにAirDropする",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "進捗バーが2%で停止します。チャット履歴全体と偽造契約書が無傷で画面に残りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "よし！！今すぐ地下のメインブレーカーを落として警察のために玄関ドアを開けてくれ！",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "タブレットが真っ白になる1秒前に、署名済みPDFがあなたのスマホに届きました——婚約者のIPアドレスと偽造公証印まで完璧に揃っています。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "いくらでもタブレットを初期化しなさい——偽造契約書はもう「私の」スマホの中よ！",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "重い赤いブレーカーレバーを思い切り引き下げます。家中のあらゆるスマートロックが一斉にカチリと解錠されました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "上に上がって巡査部長に見せてくれ！俺もすぐ後ろから自首しに行く。",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "[スマートホームハブ オフライン — 手動強制解除]",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "リビングの衝突",
+          "teaser_text": "スマートロックは無効化され、偽造契約書はこの手にある——そしてあなたは今、婚約者と警察が待つ階上へ上がろうとしている。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "偽造された署名",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午後11:56 · 玄関ホールに涼しい夜気が流れ込みます。あなたが落ち着いた足取りで地下から上がってくると、婚約者は言葉の途中で凍りつきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "本当なんです、警官さん！俺はHomeSecの技術者で——ドアをロックして暖房を43℃に上げるよう彼に雇われたんです！",
+          "timestamp_label": "午後11:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "警官さん、彼が私を錯乱していたと主張する前に、Owenに3万ドル払って強制執行させようとした契約書をご覧ください。",
+          "timestamp_label": "午後11:56",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "偽造株式譲渡契約書 · 盗まれた電子署名を使い今夜作成。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 6,
+          "transcript": "[警察無線のノイズ] 警官さん、彼のジャケットの後ろポケットを確認してください——まだ2つ目のバイパスキーフォブを持ってるはずです！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "婚約者が証拠を奪おうとあなたのスマホに飛びかかってきます。反応してください：",
+          "options": [
+            {
+              "option_id": "opt_086_e5_free",
+              "label": "主任警官の後ろに下がる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "触らないで！これの一言一句、すでに弁護士のクラウドにバックアップ済みよ！",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_086_e5_vip",
+              "label": "玄関台のテーブルに婚約指輪を置く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "2人の警官が即座に婚約者を取り押さえ——彼のポケットからHomeSecのバイパスフォブを直接抜き取りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "そのフォブだ！もう言い逃れはできないぞ。",
+          "timestamp_label": "午後11:56",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "婚約者の手首に手錠がカチリと嵌められる中、ダイヤの指輪が大理石のコンソール上で甲高い音を立てました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "結婚は中止よ。留置場の狭い独房を楽しんでね。",
+          "timestamp_label": "午後11:56",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "システムログは地方検事局提出用にアーカイブされました。",
+          "unsent_placeholder": "ROOT_ADMINがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "奴がパトカーに乗せられたよ。俺も署に行って完全な自供書に署名してくる。",
+          "timestamp_label": "午後11:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "真実を話しなさい、Owen。今あなたを救えるのはそれだけよ。",
+          "timestamp_label": "午後11:56",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "工場出荷時リセット",
+          "teaser_text": "婚約者は共謀罪と文書偽造罪で逮捕された——今こそ、自らのルールで自分の家を取り戻す時だ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "アナログ鍵だけの生活",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前9:15 · 静かなリビングに朝日が差し込みます。鍵屋がすべてのドアに重厚な真鍮製デッドボルトを取り付け終えました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "弁護士によると、タブレットを提出したおかげで検事局が減刑取引を認めてくれたそうだ。本当に何もかもすまなかった、{{player_name}}。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう二度と他人のスマートホームには手を出さないことね、Owen。今夜は運が良かったわよ。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "HomeSecはクビになったし、君の設置費用も全額返金したよ。",
+          "unsent_placeholder": "Owenがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 5,
+          "transcript": "[遠くの街の交通音] ああ——それと鍵屋が古いスマートハブを道端の段ボール箱に残しておいたって。気が晴れるなら叩き壊してくれ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "あなたは玄関ポーチに置かれた電源の抜けたスマートハブを見下ろします。最後の行動です：",
+          "options": [
+            {
+              "option_id": "opt_086_e6_free",
+              "label": "スマートハブを丸ごとゴミ箱に捨てる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "クラウドロックも盗聴スピーカーもなし。真鍮の鍵と平和だけで十分よ。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_086_e6_vip",
+              "label": "サーモスタットを手動で涼しい20℃に設定する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "ハブがリサイクルゴミ箱にガシャンと落ちます。あなたの家は完全に静寂を取り戻し——そして100%あなたのものになりました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "登記簿の名義は私だけ。最高の引っ越し祝いだわ。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "重厚なアナログのクリック音とともに真鍮製デッドボルトを施錠すると、通気口から心地よい涼風が優しく流れてきました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "無垢の真鍮をハッキングできるものならやってみなさい、ROOT_ADMIN。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "弁護士からのメッセージでスマホが鳴ります：接近禁止命令は恒久化され、資産詐欺の罪状も確定したとのことです。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "これで連絡先を削除するよ。穏やかな家での暮らしを願ってる、{{player_name}}。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "さようなら、Owen。",
+          "timestamp_label": "午前9:15",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · 自宅奪還",
+          "teaser_text": "スマートホームの罠は解体され、婚約者は重罪に問われ、あなたの家はあなただけのものになった。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

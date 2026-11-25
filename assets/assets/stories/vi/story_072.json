@@ -1,0 +1,981 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_072",
+  "lang": "vi",
+  "metadata": {
+    "title": "Cái Bẫy Hợp Đồng Thôi Việc",
+    "subtitle": "Nhân sự cho tôi 2 tiếng ký gói bồi thường hậu hĩnh—rồi kỹ sư bị đuổi cảnh báo đó là giấy nhận tội thay CEO.",
+    "genre": "romance",
+    "tags": [
+      "Công sở",
+      "Cạm bẫy",
+      "Đấu trí"
+    ],
+    "cover_image": "assets/media/covers/story_072.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "hr_dir",
+      "name": "Chị Nga (GĐ Nhân sự)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "engineer",
+      "name": "Anh Sơn (Cựu kỹ sư)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "counsel",
+      "name": "Luật sư Trâm",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4338CA"
+    },
+    {
+      "id": "narrator",
+      "name": "Người dẫn chuyện",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Hai Tiếng Để Đặt Bút",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "14:00 · Phòng họp số 4. Giám đốc Nhân sự đẩy bản thỏa thuận dài 15 trang cùng gói bồi thường 6 tháng lương qua bàn.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "hr_dir",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Thỏa thuận Chấm dứt & Bảo mật — Hiệu lực đến đúng 16:00 hôm nay.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Sáu tháng lương trọn gói đấy {{player_name}}. Ký trước 4 giờ chiều để đôi bên chia tay êm đẹp nhé.",
+          "timestamp_label": "14:01",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "ĐỪNG KÝ {{player_name}} ƠI!! Đọc trang 12, Điều 14B ngay! Nó ghi BẠN là người duy nhất ký duyệt lô sản phẩm lỗi đấy!",
+          "timestamp_label": "14:02",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Sếp ơi, {{player_name}} chưa để ý Điều 14B đâu. Nó ký xong là thanh tra sẽ gõ đầu nó thay ban giám đốc.",
+          "unsent_placeholder": "Chị Nga đã thu hồi một tin nhắn",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 12,
+          "transcript": "[khẩn cấp] Sáng nay ba lô hàng bên châu Âu phát nổ vì quá nhiệt. Mai có lệnh thu hồi—hôm qua họ đuổi anh, nay họ mua chữ ký của em để đổ vỏ!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Chị Nga gõ bút sốt ruột chờ bạn ký. Bạn ứng biến thế nào?",
+          "options": [
+            {
+              "option_id": "opt_call_counsel",
+              "label": "Yêu cầu 72 giờ để luật sư riêng thẩm định",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Em cần mang bản này cho luật sư lao động xem, chị Nga. Nhất là Điều 14B.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_grab_report",
+              "label": "Lấy báo cáo lỗi có chữ ký ép xuất của CEO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bằng Chứng · Xem QC",
+              "player_reply_text": "Anh Sơn gửi ngay email tháng trước CEO ép bỏ qua cảnh báo an toàn cho em.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Bước ra khỏi phòng này mà chưa ký thì gói bồi thường bị hủy ngay—và bảo vệ sẽ áp giải em ra cổng.",
+          "timestamp_label": "14:06",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "CHỨNG CỨ THÉP: Bản ghi nhớ có chữ ký trực tiếp của CEO chỉ đạo \"Vẫn xuất hàng bất chấp tỷ lệ lỗi nhiệt 18%.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Đã gửi. Anh cũng nối máy sẵn với Luật sư Trâm chuyên bảo vệ người tố cáo rồi.",
+          "timestamp_label": "14:07",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Hai bảo vệ đang đứng ngoài cửa rồi {{player_name}}. Giao điện thoại đây và ký vào giấy đi.",
+          "timestamp_label": "14:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Bị Bao Vây Trong Phòng Họp Số 4",
+          "teaser_text": "Tập 2: Chị Nga vươn tay định giật điện thoại—không biết bạn đã bật loa ngoài nối thẳng tới Luật sư.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Điều Khoản 14B",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "14:14 · Phòng họp số 4. Chị Nga chặn cửa kính trong khi bảo vệ đứng chờ bên ngoài.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Quy định công ty cho phép kiểm tra thiết bị khi nghỉ việc. Mở khóa điện thoại ra ngay.",
+          "timestamp_label": "14:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Giam giữ người trái phép là phạm pháp đấy chị Nga. Chào luật sư của em đang nghe loa ngoài đi.",
+          "timestamp_label": "14:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 10,
+          "transcript": "[đanh thép] Tôi là Luật sư Trâm, đại diện pháp lý của {{player_name}}. Cuộc gọi đang được ghi âm. Bước tránh khỏi cửa ngay hoặc tôi báo công an trong năm phút.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Sếp ơi hủy kế hoạch!! Nó có luật sư bảo vệ người tố cáo đang nghe máy VÀ biết Điều 14B rồi!!",
+          "unsent_placeholder": "Chị Nga đã thu hồi một tin nhắn",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Chị Nga tái mặt lùi lại. Bước đi tiếp theo của bạn?",
+          "options": [
+            {
+              "option_id": "opt_walk_free",
+              "label": "Bước ra ngoài và nộp báo cáo an toàn ngay",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Giữ lấy tiền bịt miệng đi chị Nga. Thanh tra an toàn sẽ nhận hồ sơ trước 5 giờ chiều.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_drop_memo",
+              "label": "Đưa bản chỉ đạo ép xuất hàng có chữ ký CEO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Chiếu Tướng · Xem QC",
+              "player_reply_text": "À, nhắn CEO là chúng tôi giữ bản chỉ đạo có chữ ký ông ta ép xuất lô hàng lỗi nhiệt 18%.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Bảo vệ lập tức tránh đường khi bạn hiên ngang bước qua đại sảnh.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "CHIẾN THẮNG TUYỆT ĐỐI: Trong 48 giờ, cơ quan chức năng thu hồi lô hàng lỗi, khởi tố CEO và bảo vệ toàn bộ quyền lợi cho bạn!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Xuất sắc quá {{player_name}}. Bạn vừa cứu nhiều người và đánh sập cả một màn che đậy.",
+          "timestamp_label": "14:22",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Tối nay anh khao bữa tối. Chào mừng gia nhập hội những người không chịu khuất phục.",
+          "timestamp_label": "14:25",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Không Ký Thỏa Hiệp, Không Khuất Phục",
+          "teaser_text": "Tại quán cà phê, một thành viên Hội đồng Quản trị bước tới: \"Chúng tôi sắp thay CEO. Hai bạn có muốn quay lại chấn chỉnh công ty không?\"",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Lời Mời Từ Hội Đồng",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "15:15 · Quán cà phê góc phố. Lời mời quay lại từ Hội đồng Quản trị vừa dứt thì chị Nga tung đòn trả đũa.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "{{player_name}}, pháp chế vừa gửi thư cảnh báo vi phạm bảo mật! Gặp gỡ anh Sơn là mất sạch trợ cấp—và công ty sẽ chuyển hồ sơ sự cố an toàn sang thanh tra!",
+          "timestamp_label": "15:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Chị định đổ tội sự cố an toàn mà chính TÔI đã báo cáo tháng trước lên đầu tôi sao?!",
+          "timestamp_label": "15:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "BIÊN BẢN NGHIỆM THU BỊ SỬA · Chữ ký tắt của bạn bị dán giả lên giấy bỏ qua lỗi an toàn.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Xem dữ liệu gốc file PDF chị vừa trích xuất đi {{player_name}}—bà Nga tự sửa biên bản đó trên laptop RIÊNG lúc 23:42 đêm qua!",
+          "timestamp_label": "15:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Thanh tra mà đổ lỗi cho {{player_name}} là gói bồi thường 70 tỷ của CEO thông qua ngay—",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[tiếng gõ phím] {{player_name}} ơi! Anh vẫn giữ bản sao lưu tin nhắn nội bộ lúc hai anh em mình cảnh báo lỗi—và chính bà Nga ra lệnh giấu nhẹm!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Bà Nga làm giả biên bản an toàn để bảo vệ gói thôi việc 70 tỷ của CEO! Bạn làm gì?",
+          "options": [
+            {
+              "option_id": "opt_send_board_pdf",
+              "label": "Gửi ngay dữ liệu gốc file giả cho Hội đồng",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chị Trâm gửi thẳng dữ liệu chỉnh sửa lúc 23:42 của bà Nga cho thành viên Hội đồng vừa gặp!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_whistleblower_file",
+              "label": "Nộp đơn bảo vệ người tố giác lên thanh tra trước",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bất khả xâm phạm · Xem QC",
+              "player_reply_text": "Nộp luôn nhật ký Slack của anh Sơn và file giả lên cơ quan thanh tra theo diện bảo vệ người tố giác!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "HỘI ĐỒNG BÁO ĐỘNG: Chủ tịch độc lập lập tức phong tỏa mọi lệnh chi thôi việc lãnh đạo để điều tra khẩn.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "LÁ CHẮN PHÁP LÝ BẬT SÁNG: Mọi hành vi trả đũa của bà Nga hay CEO lập tức trở thành trọng tội!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Ồ—thành viên Hội đồng vừa nhắn cho anh! Họ đẩy phiên bỏ phiếu bãi nhiệm CEO lên 9 giờ sáng mai!",
+          "timestamp_label": "15:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Cô tưởng Hội đồng nghe lời hai nhân viên sắp nghỉ à? Gói bồi thường thôi việc của bọn tôi đã xếp lệnh chi ở kho bạc rồi!",
+          "timestamp_label": "15:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Lệnh Chi Chiếc Dù Vàng 70 Tỷ",
+          "teaser_text": "Tập 4: Chặn đứng lệnh chi vội của bà Nga trước khi kho bạc giải ngân lúc nửa đêm.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Biên Bản Ký Giả",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "21:40 · Văn phòng Luật sư Trâm. Còn hai tiếng trước khi lô chuyển khoản nửa đêm tự chạy.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Cơ hội cuối cùng nhé {{player_name}}. Rút đơn khiếu nại file kia đi, mai chị tăng gấp đôi trợ cấp lên 4 tỷ tiền mặt.",
+          "timestamp_label": "21:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Chị vừa nhắn tin đề nghị hối lộ bịt miệng ngay giữa lúc đang bị thanh tra đấy, chị Nga.",
+          "timestamp_label": "21:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Đã chụp màn hình lưu vi bằng! Giờ mình chỉ cần chặn lệnh chi nửa đêm trước khi ông CEO rút sạch quỹ.",
+          "timestamp_label": "21:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Bảo phòng tài chính vượt lệnh phong tỏa bằng mã quyền của CEO ngay—",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "KHOAN ĐÃ! Họ đang dùng mã vượt quyền của CEO để đẩy lệnh 70 tỷ đi trước phiên họp 9 giờ sáng!",
+          "timestamp_label": "21:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 8,
+          "transcript": "[tiếng bấm số] Chị đang gọi thẳng luật sư ngân hàng của Hội đồng—gửi ngay biên bản giả và tin nhắn hối lộ là ngân hàng khóa két doanh nghiệp trong năm phút!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Còn mười phút trước giờ chốt lệnh! Bạn gửi gì vào lệnh phong tỏa ngân hàng?",
+          "options": [
+            {
+              "option_id": "opt_send_injunction",
+              "label": "Gửi biên bản giả + ảnh tin nhắn hối lộ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Gửi cả hai—biên bản giả chữ ký VÀ tin nhắn bà Nga dụ hối lộ 4 tỷ!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_cc_prosecutor",
+              "label": "Khóa lệnh chi + gửi luôn Viện Kiểm Sát",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Không khoan nhượng · Xem QC",
+              "player_reply_text": "Khóa lệnh chuyển tiền VÀ gửi thẳng phòng án kinh tế—để họ tự giải trình hành vi vượt lệnh phong tỏa!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "CHẶN LỆNH THÀNH CÔNG: Bộ phận chống gian lận ngân hàng khóa lệnh chi 70 tỷ khi chỉ còn bốn phút.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "LỆNH TRIỆU TẬP: Ngân hàng phong tỏa tài khoản và bàn giao nhật ký vượt quyền thẳng cho cơ quan điều tra.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Chiếc dù vàng của chị vừa đứt dây rồi, chị Nga.",
+          "timestamp_label": "21:54",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Kho bạc vừa từ chối lệnh chuyển… khoan, sao có hai nhân viên thanh tra đang gõ cửa nhà tôi?!",
+          "timestamp_label": "21:55",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Buổi Sáng Thanh Trừng",
+          "teaser_text": "Tập 5: Chứng kiến Hội đồng xem biên lai lệnh chi bị chặn và trao cho bạn quyền vực dậy công ty.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Chiếc Dù Vàng",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "09:00 · Phòng họp tầng 28. Bạn, anh Sơn và Luật sư Trâm bước ngang qua phòng Nhân sự đang chết lặng.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Hội đồng vừa xem biên lai lệnh chi 70 tỷ bị chặn—và hành vi bà Nga cố vượt lệnh phong tỏa.",
+          "timestamp_label": "09:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "LỆNH CHI BỊ CHẶN · 70 tỷ tiền thôi việc trái phép cho CEO & GĐ Nhân sự — Đã bị ngân hàng phong tỏa.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Tôi chỉ làm theo chỉ đạo của CEO thôi! Tôi đã cống hiến mười hai năm cho công ty này!",
+          "timestamp_label": "09:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Và chỉ trong mười hai phút chị giả chữ ký tắt của tôi để đẩy nhân viên vô tội vào tù.",
+          "timestamp_label": "09:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Sa thải vì vi phạm nghiêm trọng—không trợ cấp, mất sạch cổ phiếu, lại còn bị chuyển hồ sơ điều tra—",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[thở phào nhẹ nhõm] Cả hai người đó bị SA THẢI hết rồi! Và Hội đồng vừa mời anh làm Phó GĐ Kỹ thuật, còn EM làm Giám đốc Vận hành & Tuân thủ!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Trước khi nhận ghế Giám đốc, bạn yêu cầu cải tổ điều gì không thể thương lượng?",
+          "options": [
+            {
+              "option_id": "opt_ban_forced_nda",
+              "label": "Cấm vĩnh viễn kiểu ép ký NDA trong 2 tiếng",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tôi sẽ quay lại—với điều kiện xóa bỏ vĩnh viễn trò ép ký NDA trong 2 tiếng và cho nhân viên 14 ngày nhờ luật sư xem xét.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_fix_safety_bug",
+              "label": "Cấm ép NDA + phát hành ngay bản vá an toàn",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Chuẩn mực · Xem QC",
+              "player_reply_text": "Bỏ ép ký NDA VÀ duyệt ngay bản vá an toàn của anh Sơn kèm thông báo minh bạch cho khách hàng hôm nay!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "BAN HÀNH CHÍNH SÁCH: Hội đồng thông qua Hiến chương Bảo vệ Nhân viên ngay trước giờ trưa.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "GIÀNH TRỌN NIỀM TIN: Thanh tra khen ngợi sự minh bạch chủ động—cổ phiếu tăng vọt 14% cuối phiên.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Nhớ hai hôm trước bà Nga cho em đúng 2 tiếng để ký giấy nhận tội thay không? Nhìn em bây giờ kìa.",
+          "timestamp_label": "09:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Đừng bao giờ ký khi đang hoảng loạn—và luôn giữ số luật sư giỏi trong máy.",
+          "timestamp_label": "09:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Từ Vật Tế Thần Lên Ghế Lãnh Đạo",
+          "teaser_text": "Tập 6 (Tập cuối): Tung bản vá an toàn, làm sạch bộ máy và dẫn dắt công ty hồi sinh cùng anh Sơn.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Trở Lại Tầng Cao Nhất",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Một tháng sau · Văn phòng tầng 28. Bản vá an toàn đã vận hành trơn tru và niềm tin khách hàng lập đỉnh mới.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "100% hệ thống khách hàng đã vá xong không một giây gián đoạn! Thanh tra vừa khép hồ sơ kèm thư khen ngợi!",
+          "timestamp_label": "16:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hóa ra sửa lỗi vừa rẻ vừa nhanh hơn hẳn chuyện đi bịt miệng nhân viên.",
+          "timestamp_label": "16:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Cảm ơn em đã mời văn phòng chị làm cố vấn đạo đức độc lập! Dưới mắt chị đừng hòng còn hợp đồng gài bẫy nào.",
+          "timestamp_label": "16:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Đáng lẽ mình không bao giờ nên đẩy cái hợp đồng gài bẫy đó qua bàn—",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[tiếng cụng ly cà phê] Hội nghị toàn công ty còn năm phút nữa bắt đầu Sếp ơi! Hai trăm kỹ sư đang chờ nghe định hướng mới!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Vào ngay đây. Quy tắc số 1 của bộ máy mới: sự thật luôn đi nhanh hơn mọi âm mưu che giấu.",
+          "timestamp_label": "16:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Lời cam kết cuối cùng của bạn trước toàn thể nhân viên:",
+          "options": [
+            {
+              "option_id": "opt_open_door",
+              "label": "Cam kết bảo vệ tuyệt đối người báo lỗi",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Từ hôm nay, phát hiện lỗi an toàn không bao giờ khiến bạn mất việc—mà sẽ giúp bạn được ghi nhận.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_bug_bounty",
+              "label": "Mở quỹ thưởng Trung Thực cho nhân viên báo lỗi",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Đột phá · Xem QC",
+              "player_reply_text": "Công ty lập quỹ thưởng Trung Thực 12 tỷ mỗi năm cho bất kỳ ai phát hiện sớm rủi ro nghiêm trọng!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "VỖ TAY NHƯ SẤM: Cả hội trường đứng dậy hưởng ứng—văn hóa sợ hãi chính thức chấm dứt.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "HÌNH MẪU TOÀN NGÀNH: Doanh nghiệp khắp nơi học hỏi mô hình của bạn—nhân tài lũ lượt đầu quân.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Không ký thỏa hiệp, không khuất phục, và giờ làm chủ cuộc chơi. Quá đỉnh.",
+          "timestamp_label": "16:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "May mà hôm đó anh nhắn kịp cho em trước khi hết 2 tiếng đồng hồ, {{player_name}}.",
+          "timestamp_label": "16:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "KẾT THÚC · Chính Trực Lên Ngôi",
+          "teaser_text": "Bạn đã tránh được cái bẫy thôi việc, lật tẩy âm mưu che giấu và dựng lại công ty bằng sự trung thực.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

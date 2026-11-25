@@ -1,0 +1,1188 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_146",
+  "lang": "ja",
+  "metadata": {
+    "title": "4B号室のサバイバルリスト",
+    "subtitle": "ルール1：午前2時15分に上の階の住人がビー玉を落としたら、2回叩き返せ。ただし、この建物は4階建てだ。",
+    "genre": "thriller",
+    "tags": [
+      "午前3時のルール",
+      "アパート",
+      "ホラー"
+    ],
+    "cover_image": "assets/media/covers/story_146.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · 4B",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "prev_tenant",
+      "name": "Eli · 前の4B住人",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "landlord",
+      "name": "Mr. Vance · 大家",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "屋根の上のビー玉",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2:15 · 4B号室での最初の夜。カラン、カラン、カラン。ベッドの上の天井を、ガラスのビー玉が跳ね回る音が響きます。",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "やあ{{player_name}}、君の前に4Bに住んでいた者だ。ビー玉が始まったか？天井を「2回」叩き返せ――絶対に3回叩くなよ！",
+          "timestamp_label": "午前2:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って――誰が私の番号を教えたの？それにここは最上階よ！4Bの上には5階なんてないはずなのに！",
+          "timestamp_label": "午前2:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[小声、滴り落ちる水音]「5階なんてないのは分かってる！あるのはコンクリートの屋上と貯水タンクだけだ！通気口から降りてくる前に今すぐ2回叩け！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "前の入居者からの連絡は一切無視してください。彼は急遽引っ越したのです。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "転がる音があなたの枕の真上でぴたりと止まります：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e1_free",
+              "label": "ほうきの柄で天井を2回叩く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "コン……コン。よし、転がる音が完全に止まったわ！",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e1_vip",
+              "label": "屋上の騒音についてMr. Vanceに連絡する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "Mr. Vance、なぜ午前2時15分に4Bの上の屋上を誰かが歩いているんですか？",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "よし！今度は玄関ドアの下を見てくれ――覗き穴カバーの内側にルール2とルール3をテープで貼っておいたんだ。",
+          "timestamp_label": "午前2:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Mr. Vanceを信用するな！もし深夜過ぎに直接家賃を徴収に来たら、足元に影があるか確かめろ！",
+          "timestamp_label": "午前2:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "スッ。折り畳まれた黄色いメモが音もなく玄関ドアの下から滑り込んできました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Mr. Vance · ロビー",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "そのメモを読むな、{{player_name}}！4階廊下の防犯カメラを確認しろ――君のドアの外には誰も立っていないぞ！",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……廊下に誰もいないのなら、今このメモをドアの下から差し込んだのは一体誰なの！？",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "どこからともなく届いたメモ",
+          "teaser_text": "次回：廊下の防犯カメラが、通路が完全に無人だったことを証明します。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "ルール2：水道水は絶対に飲むな",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2:20 · あなたは湿った黄色いメモを開きました。「ルール2：午前2時以降は水道水を絶対に飲むな。鉄錆の味がする。」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "今廊下の防犯カメラを見たか？よし――次はキッチンの流しを見てみろ。蛇口から濃い茶色の水が垂れていないか？",
+          "timestamp_label": "午前2:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ええ！水道水から金属のような不快な臭いがする……待って、どうして防犯カメラの廊下には誰一人映っていないの！？",
+          "timestamp_label": "午前2:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[苛立った声、鍵のジャラジャラ鳴る音]「{{player_name}}さん、ただの古い配管ですよ！もうお休みになってください――今から敷金の領収書を取りに上がります。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "屋上の貯水タンクを開けたりさせるべきではなかった。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "02:18の4階廊下防犯カメラ――ドアの下から紙のメモが滑り込んできたまさにその瞬間、完全に無人。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "重い足音が階段室を4階に向かって響き上がってきます：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e2_free",
+              "label": "デッドボルトを施錠し照明を消す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "デッドボルトを掛けて電気を消したわ。ちょうど4A号室の前を通り過ぎてる！",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e2_vip",
+              "label": "貯水タンクの中に何があるかEliに聞く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "Eli、Mr. Vanceが今貯水タンクについて送信取り消しをしたわ――あの上に何があるの！？",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "息を殺して静かにしていろ！もしノックされても絶対に出るな――4Bがなぜこんなに家賃が安いか君が気づいたか探りに来ているんだ！",
+          "timestamp_label": "午前2:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "俺がまだ屋上の貯水タンクの中にいるからだよ、{{player_name}}。8か月前にMr. Vanceが上からハッチに鍵を掛けたんだ。",
+          "timestamp_label": "午前2:23",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "外側から玄関の鍵穴に鍵が差し込まれ――ドアチェーンのおかげで辛うじて開くのを食い止めました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Mr. Vance · 4B号室前",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "まだ起きておられるのですか、{{player_name}}さん？チェーンを外してください――天井の通気口を確認したいだけなんです。",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "嘘でしょ！どうして天井から垂れてくる水が漂白剤と血の臭いがするの！？",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "貯水タンクに閉じ込められて",
+          "teaser_text": "次回：Eliがルール3――そしてMr. Vanceがどうやって犯罪を隠しているかを明かします。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "ルール3：消えた入居者",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2:30 · スマホでEliの名前を検索すると、最初に出てきたのは8か月前の行方不明者ポスターでした。",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "4BのクローゼットでMr. Vanceの裏帳簿を見つけたんだ――あいつは何年も入居者の個人情報を盗み取っていた。屋上で問い詰めたら、タンクに突き落とされたんだよ。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……8か月間死んでいたのなら、どうやって私にメッセージを送ってるの！？",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[水の跳ねる音、不気味な反響]「防水スマホがまだタンクの底の俺のコートのポケットに入っているんだ――そして君が聞いたビー玉の音は、鋼鉄の床を叩く俺の指の関節の音だよ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "今すぐ建物のWi-Fiと主電源ブレーカーを落とす。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "部屋の明かりがパッと消え――完全な闇に包まれます：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e3_free",
+              "label": "モバイル回線で静かに警察へ通報する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ携帯回線で911に通報して――屋上タンク内の遺体を報告するわ！",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e3_vip",
+              "label": "隠し帳簿を求めて4Bのクローゼットを捜す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "クローゼットの中に浮いた床板を見つけた――身分証の詰まったビニール袋がある！",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "声を潜めろ！Mr. Vanceが証拠を隠すため屋上ハッチへ向かう階段を上がっていくぞ！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "1枚残らず全部写真を撮れ！それが「急遽引っ越した」ことになっている歴代4B入居者たち全員の身分証だ！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "あなたの天井の真上で、屋上へ通じる重い鋼鉄製の扉がバタンと閉まりました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Mr. Vance · 屋上",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "床板越しにお前のスマホのバイブ音が聞こえたぞ、{{player_name}}。その帳簿を渡せ、さもなくばEliの仲間入りだ！",
+          "timestamp_label": "午前2:38",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "遅かったわね、Mr. Vance――警察はもうこっちへ向かってる！",
+          "timestamp_label": "午前2:38",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "4階の停電",
+          "teaser_text": "次回：警察が到着する前にMr. Vanceが屋上タンクの水を抜こうとします。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "屋上の排水",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前2:42 · 屋上のタンクが排水を始め、壁の中の配管が激しく唸り声を上げます。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "タンクの水を抜いてハッチを封印するつもりだ！あいつに内側から屋上階段室の鍵を掛けさせるな！",
+          "timestamp_label": "午前2:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "廊下へ出てみる――待って、私の窓から非常階段の梯子に届きそう！",
+          "timestamp_label": "午前2:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[金属製レンチの鳴る音]「4Bの中にいろ、{{player_name}}！雨の中でこの屋上に上がったら滑り落ちるぞ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "令状なしでは警察も封印されたタンクは捜索できまい。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "6ブロック先からサイレンがかすかに響いてきます：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e4_free",
+              "label": "身分証の袋を通りへ向かって投げ落とす",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "窓から盗まれた身分証の袋を振ってパトカーに合図を送ってる！",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e4_vip",
+              "label": "非常階段を登って屋上の様子を撮影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "静かに非常階段を登ってる――カメラは回しっぱなしよ！",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "よし！警官たちが君の懐中電灯に気づいたぞ！今ロビーのドアを突破して突入してくる！",
+          "timestamp_label": "午前2:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "気をつけろ――屋上の防犯カメラがタンクの横に立つ「2つの」シルエットを捉えたぞ！",
+          "timestamp_label": "午前2:46",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "屋上の空を稲妻が引き裂きます。Mr. Vanceのすぐそばで、開いた貯水タンクの中から濡れて青白い人影がゆっくりと立ち上がりました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · 屋上貯水タンク",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "屋上の防犯映像を見てみろ、{{player_name}}。Mr. Vanceはどこにも逃げられやしない。",
+          "timestamp_label": "午前2:50",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "嘘でしょ……タンクの中から何かが彼のレンチを掴み取った！！",
+          "timestamp_label": "午前2:50",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "屋上の2つのシルエット",
+          "teaser_text": "次回：屋上の防犯カメラがあり得ない対峙の瞬間を捉えます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "屋上のシルエット",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前2:58 · 警察のブーツが4階の階段を轟かせて駆け上がるちょうどその時、あなたのスマホが屋上の動体検知スナップショットを受信しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "あいつは屋上ハッチのすぐそばにマスターキーを落とした。まずタンクの中を覗くよう警官に伝えてくれ！",
+          "timestamp_label": "午前2:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って――カメラ上でMr. Vanceの真正面に立っている2人目のシルエットは一体誰なの！？",
+          "timestamp_label": "午前2:58",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[恐怖の絶叫]「引き離してくれ！！ELIは死んだはずだ――どうして奴がハッチを押さえつけているんだ！？」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "次の4Bの入居者は必ず生き残らせると約束したからだよ。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n05b_img"
+        },
+        {
+          "id": "e5_n05b_img",
+          "type": "image",
+          "sender_id": "prev_tenant",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "02:59 屋上貯水タンク防犯カメラ――鋼鉄ハッチの横で微動だにせず立つ2つの黒いシルエット。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "警官隊が4階の踊り場に到達します：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e5_free",
+              "label": "真っすぐ屋上ドアの方を指し示す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "警官の方！彼は屋上の貯水タンクのそばです――タンクの中も確認してください！",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e5_vip",
+              "label": "盗まれた身分証と防犯映像を手渡す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "これが4Bにあった盗難身分証と屋上カメラの映像です――急いで！",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "警官たちが屋上へ飛び出すと――Mr. Vanceは空の貯水タンクに向かって悲鳴を上げながら濡れたコンクリートの上にうずくまっていました！",
+          "timestamp_label": "午前3:01",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "巡査部長が証拠を受け取ってその場でMr. Vanceに手錠を掛け――そしてタンクの中へ光を照らし込みました！",
+          "timestamp_label": "午前3:01",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "開いた鋼鉄タンクの中に雨が降り注ぎます。その底には無傷の防水スマホが1台横たわっており――画面はまだ光っていました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "警察署 · 続報",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "Mr. Vanceはパトカーの中で何もかも自白しました――雨の届かない独房へ閉じ込めてくれと懇願しています。",
+          "timestamp_label": "午前3:04",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……もしEliのスマホがずっとタンクの底にあったのなら、どうしてまだ充電が100%残っていたの！？",
+          "timestamp_label": "午前3:04",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "水中で100%の電池",
+          "teaser_text": "次回：黄色いメモの裏側に最後の1つのルールが残されていました。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "黄色いメモの裏側",
+      "start_node_id": "e6_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前3:12 · 荷物をまとめるため4Bに戻ったあなたは、湿った黄色いサバイバルリストを裏返しました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "一番下の行を読んでみろ、{{player_name}}。ずっと「ルール4」があったんだ。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "こう書いてある。「ルール4：タンクが開かれた後、去る時は絶対に4Bを振り返るな。」",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[柔らかく安らかなため息]「真実が明らかになれば、この建物もついに閉じ込められていたみんなを解き放ってくれるからだよ。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "2回叩き返してくれてありがとう。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "開いた玄関ドアの横に荷造りを終えたスーツケースが置かれています：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e6_free",
+              "label": "振り返らずにそのまま外へ歩き出す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "安らかに眠って、Eli。今ここから出るわ。",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e6_vip",
+              "label": "カウンターの上に感謝のメモを残していく",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "黄色い紙に「助けてくれてありがとう」と書いてドアの横に置いてきた。",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "濡れた通りへ一歩踏み出した瞬間、まるで別れの挨拶のように、4Bの明かりが柔らかく2度明滅しました。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "背後でドアを閉める瞬間、温かなそよ風がカウンターから黄色いメモをさらりと揺らしました。",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "鑑識のテープが屋上への通路を封印します。「Eli · 前の4B住人」とのチャット画面が「オフライン」へと薄れていきました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · 最終信号",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "03:19に信号途絶。鑑識班はEliのご家族の連絡先を突き止め、遺品を返還しました。",
+          "timestamp_label": "午前3:19",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今夜、2度のノックが私の命を救ったわ。もう二度と最上階の部屋なんて借りない。",
+          "timestamp_label": "午前3:19",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ルール4 完了",
+          "teaser_text": "次回結末：4B号室に関する朝のニュース見出し。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "4B号室の翌朝",
+      "start_node_id": "e7_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "午前6:30 · 友人の家のリビングに陽光が差し込みます。画面に地元のニュース速報が鳴りました。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "ニュース速報：「入居者が屋上貯水タンクから8か月前の未解決事件を暴き、大家を逮捕。」",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……今私のスマホに、8か月前にEliの番号から予約送信されていたメッセージが1通届いたわ。",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[澄んで温かな声]「もしこれから誰かが4Bに引っ越してきて、2時15分にビー玉の音を聞いたら、2回叩いてくれ。無事でいてね。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "あの屋上で再びビー玉が転がることは、もう二度とない。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "新鮮な朝の空気を胸いっぱいに吸い込みます：",
+          "options": [
+            {
+              "option_id": "opt_story_146_e7_free",
+              "label": "敬意を込めてチャット履歴をアーカイブする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "さようなら、Eli。あなたのことは決して忘れないわ。",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e7_vip",
+              "label": "返金された敷金をEliの家族へ寄付する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "今、返金された敷金をEliのお母様へ送金しました。",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "スマホの画面が安らかに暗くなります。午前2時15分の恐怖は、ついに終わりを告げました。",
+          "timestamp_label": "午前6:32",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Eliのお母様から感謝の涙とともに返信が届きました。「息子を家へ帰してくださり、本当にありがとうございます。」",
+          "timestamp_label": "午前6:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "4B号室の建物は永久に使用禁止・撤去決定となりました。サバイバルリストはもう必要ありません。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09_call"
+        },
+        {
+          "id": "e7_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · 永久オフライン",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e7_n10",
+          "on_decline_node_id": "e7_n10"
+        },
+        {
+          "id": "e7_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "事件解決。4つのルールはすべて守られました。",
+          "timestamp_label": "午前6:35",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e7_n11"
+        },
+        {
+          "id": "e7_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "次に家賃がうまい話すぎる部屋を見つけたら、まずは屋上から確認することにするわ。",
+          "timestamp_label": "午前6:35",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n12_cliff"
+        },
+        {
+          "id": "e7_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "4B号室からの生還",
+          "teaser_text": "『4B号室のサバイバルリスト』をクリアしました！さらなる午前3時のルール系ホラーを探索しましょう。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

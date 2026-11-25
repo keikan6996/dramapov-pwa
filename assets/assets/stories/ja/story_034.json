@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_034",
+  "lang": "ja",
+  "metadata": {
+    "title": "屋上貯水槽の少女",
+    "subtitle": "深夜、屋上の配管工からメッセージが来た。「水道水を飲むな。何かが俺の懐中電灯を掴んだ」",
+    "genre": "thriller",
+    "tags": [
+      "アパート",
+      "貯水タンク",
+      "ホラー"
+    ],
+    "cover_image": "assets/media/covers/story_034.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (5A号室)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0891B2"
+    },
+    {
+      "id": "ally",
+      "name": "Gabe (配管工)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "屋上貯水タンク",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#164E63"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "蛇口から出た黒い水",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前12:48 · キッチンの蛇口をひねります。水は濁った茶色になって勢いよく吹き出し、一本の長い黒髪が混ざっていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}さん、今屋上の貯水槽を点検しに上がったところです。今夜は絶対にその水を飲んだり歯磨きに使ったりしないでください！",
+          "timestamp_label": "午前12:48",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "遅すぎた、色を見る前にもうコップ半分飲んじゃったよ！タンクの中に何が入ってるの！？",
+          "timestamp_label": "午前12:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "今、私はあなたの中にいるのよ、{{player_name}}。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "点検口から懐中電灯で覗き込んだら、青白い指が伸びてきて水中に引きずり込まれたんだ！警察を呼ぶ！",
+          "timestamp_label": "午前12:50",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[くぐもった水中の泡音、水しぶき] ……助けて……屋上の蓋が重すぎるの……{{player_name}}……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "キッチンの蛇口が勝手に激しく全開になり、シンクが水浸しになります。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "シンク下の元栓を閉める",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "部屋の元栓を閉める！",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "マンションの行方不明者チラシを確認する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "ロビーの掲示板の写真を確認する……",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "元栓は固く閉まりました――それなのに、壁の中の配管がまるで水中で誰かが叫んでいるかのように唸り始めます。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED：3週間前に5B号室の女子学生が失踪していました――最後に目撃されたのは屋上の物干し場へ向かう姿でした。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Gabeが応答しない！待って――あなたの部屋の天井照明器具から、水たまりが真っすぐ滴り落ちてきた！",
+          "timestamp_label": "午前12:53",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Gabe (配管工)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "スマホのマイクを水が満たしていく重い音だけが聞こえ――そして少女の囁きが届きます。「屋上で私を見つけて」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否しました。その瞬間、あなたの部屋の真上の階段室で屋上ドアの警報が鳴り響きます。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "その水を飲むな",
+          "teaser_text": "エピソード2：屋上の階段から濡れた足跡が続き――真っすぐ5A号室へ向かっています。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "屋上の貯水槽",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前12:56 · 遠くでパトカーのサイレンが鳴り響きます。ドアの外では廊下のタイル一面に水が溜まっていました。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}さん、タンクにスマホを落としてしまって――警備員さんの携帯を使ってます！ドアは開けずに警察を待ってください！",
+          "timestamp_label": "午前12:56",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabeさん、天井から漏れてくる水が氷みたいに冷たくて――誰かがドアを優しくノックしてるの。",
+          "timestamp_label": "午前12:57",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[滴る水音、かすかなすすり泣き] ……あいつが私を突き落として蓋にボルトを締めたの……警察に伝えて、{{player_name}}……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "屋上タンクの唯一の鍵を持っているのは建物の管理人だ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "待って――管理人が南京錠を持って屋上の階段へ走っていった！警察が来る前にタンクを締め切るつもりだ！",
+          "timestamp_label": "午前12:59",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "ドアのノックが止みました。重いブーツの足音が屋上階段を駆け上がっていきます。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "到着した警察に屋上を指し示す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "警察官を屋上へ案内する！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "階段室から管理人を録画する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "今屋上ドアの前を撮影してる！",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "あなたは警察官たちを真っすぐ階段の上へ案内しました――スチール製の貯水槽の蓋にボルトを締めようとしていた管理人を現行犯で取り押さえました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED：録画を再生すると、管理人の背後でタンクから濡れた白い手が伸び――警察が手錠をかけるまで彼を押さえつけていたのが映っていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "赤と青の光が屋上を照らします。貯水槽の水が抜かれると、あなたの部屋の蛇口からは再び透き通った水が流れるようになりました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "5B号室 (解約済み)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "優しく安堵したような吐息が囁きます。「ありがとう、{{player_name}}さん。もう寒くないわ」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否しました。曇ったバスルームの鏡に、整った2つの文字が浮かび上がり、消えました。「THANK YOU」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "浮かび上がった真実",
+          "teaser_text": "シーズンフィナーレ · 心霊現象の中には呪いではなく、助けを求める叫びもあるのです。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "誰が屋上のドアに鍵をかけた？",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前12:42 · あなたとGabeは貯水槽の中から少女のブレスレットを見つけました――しかし今、重い鉄製の屋上階段ドアが外側から南京錠で施錠されています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}さん、誰かが俺たちが上がるのを見ていたんだ！10分前はこのドアに南京錠なんて付いていなかった！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabeさん、階段の踊り場の下を見て――網入りガラスの向こうから誰かの影がこっちを見てる！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "屋上階段室 · 施錠された鉄扉の向こうに微動だにせず立つ黒い人影。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "背後の貯水槽のハッチがバタンと開き――冷たい水が砂利敷きの屋上へあふれ出しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "建物の管理主任よ、{{player_name}}さん。去年の夏、ボイラー室に私のリュックを隠したの。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "5分前に警察へ通報しました――非常階段から目を離さないで！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[タンクから響く声] 「あいつが階段の照明を消そうとしてる！東側の非常階段から降りて！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "重い足音が階段を駆け下りていきます――管理主任はボイラー室の証拠を隠滅するつもりです。",
+          "options": [
+            {
+              "option_id": "opt_e3_fire_escape",
+              "label": "急いで東側の非常階段を降りる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Gabeさん、東側の非常階段から降りるね――通報のスピーカーは繋いだままにして！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_film_super",
+              "label": "施錠された階段室を撮影し警察へ送る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 証拠",
+              "player_reply_text": "新しい南京錠と男の影を撮った――今すぐ刑事に送る！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "パイプレンチを持ってすぐ後ろをついていきます！5階の踊り場で合流しましょう！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "指令室が映像を確認しました――今パトカーが路地に入ってきています！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "待って――路地の奥にあるボイラー室のドアが今開いたわ！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "ボイラー室。",
+          "teaser_text": "エピソード4：非常階段を駆け下り、管理主任が行方不明の少女のリュックを燃やす前に阻止します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "焼却炉の中の証拠",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前12:55 · 建物の裏路地。2ブロック先でパトカーのサイレンが響く中、地下ボイラー室の換気口から煙が立ち上ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "焼却炉で彼女のリュックを燃やすつもりだ！待って――一人で入っちゃダメです、{{player_name}}さん、俺が地下の止水栓を開けてバーナーを水浸しにします！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabeさん、ボイラー室の窓が少し開いてる――作業台の上に彼女の学生証が置かれてるのが見える！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "門にいる警察官からDNA採取キットをもらって――私のブレスレットの留め金に、あいつの血が付いているから！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "ゴォォッ！Gabeが緊急スプリンクラーのバルブを回し――氷のように冷たい水で焼却炉を鎮火しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "焼却炉が水浸しになったぞ！男が路地へよろめき出て、ちょうどパトカーのヘッドライトの前に飛び出しました！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "配管工を10年やってきて、人生最高のバルブ操作でしたよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[響き渡る警察の拡声器] 「バッグを捨ててドアから離れろ！両手を上げろ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "まばゆいパトカーのライトを浴びて、管理主任はリュックを落とし両手を上げました。",
+          "options": [
+            {
+              "option_id": "opt_e4_point_backpack",
+              "label": "警察官にそのままリュックを指し示す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "お巡りさん！そのバッグの中に行方不明の女の子の学生証と持ち物が入っています！",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_give_bracelet",
+              "label": "鑑識に屋上のブレスレットを渡す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 決定的な証拠",
+              "player_reply_text": "鑑識の方――貯水槽から引き上げたこのブレスレットの留め金を調べてください！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "刑事が作業台ごと押収したぞ！あいつはもう終わりです！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "鑑識が至急で照合をかけたところ――去年の夏に行方不明になった女子学生のものと完全に一致しました！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "鑑識の確認報告書を見てください――正義がついに水面へと浮かび上がりました。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "現行犯逮捕。",
+          "teaser_text": "エピソード5：DNA鑑定報告書が行方不明事件を終結させ――屋上の貯水槽も永遠に清められます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "澄んだ水",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前2:10 · 管理主任が連行される中、通りには鑑識車両が並びます。刑事たちがDNA一致の速報を共有しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "女の子のご家族が州外からこちらへ向かっているそうです、{{player_name}}さん。ずっと彼女を探し続けていたんですよ。",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabeさん、今5Aのキッチンの蛇口をひねってみたら――水が完全に透き通ってきれいになったよ。",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "DNA鑑定報告書 · 屋上貯水槽の証拠品 — 一致を確認、事件解決。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "屋上タンク：信号が消失。それ以上の異常は検出されませんでした。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "蛇口を閉めて立ち去らずにいてくれて、お二人とも本当にありがとうございました。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "明日の朝、屋上の貯水槽を丸ごと無料で新品に交換しますよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[優しい雨音のように消えゆく柔らかな声] 「見つけてくれてありがとう、{{player_name}}さん。もう水はきれいになったわ」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Gabeが2本のミネラルウォーターを持ってあなたのドアの前に立っています。",
+          "options": [
+            {
+              "option_id": "opt_e5_take_water",
+              "label": "水を受け取ってGabeに礼を言う",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "本当のヒーローだよ、Gabeさん。深夜の連絡に出てくれてありがとう。",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_honor_girl",
+              "label": "屋上庭園のそばに白い花を供える",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 追悼",
+              "player_reply_text": "彼女のために屋上ゲートのそばに白い花を供えたよ。安らかに眠ってね。",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "当然の仕事をしたまでです――それに、善良な住人さんを守るのも務めですから。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "この建物で彼女のことが忘れられる日は、きっと来ませんよ。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "5A号室の上空に澄んだ夜明けが訪れます。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "浮かび上がった真実。",
+          "teaser_text": "エピソード6（フィナーレ）：屋上にはピカピカの新しい貯水槽が輝き――5A号室はついに安らかな眠りにつきます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "屋上の新たな始まり",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前9:00 · Gabeが最後のボルトを締め終えると、屋上の真新しいステンレス製タンクが朝日を浴びて輝きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "新品のタンク、新品の配管、そして今朝雇われたばかりの新任の管理人さんですよ、{{player_name}}さん！",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "それに、事件解決に協力したことで市から表彰されたって聞いたよ！",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "その賞の半分はあなたのものですよ――深夜に電話を切らずにいてくれたのはあなたなんですから。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "管理組合のお知らせ：「水道水の安全性および純度100%の検査認証が完了しました」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今度シンクから水漏れしたら、夜8時前に呼んでくださいね――俺の心臓にも休息が必要なんで！",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "この建物で一番素敵な住人さんですよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[クスクス笑うGabe] 「穏やかな一週間をお過ごしください、{{player_name}}さん！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "朝の光の中、グラスに透き通った水を注ぎます。",
+          "options": [
+            {
+              "option_id": "opt_e6_drink_clear",
+              "label": "澄んだ水にグラスを掲げる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "きれいな水と幽霊ゼロに乾杯だね、Gabeさん！",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_thank_gabe",
+              "label": "階下のカフェにGabeを誘う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 友情",
+              "player_reply_text": "角のカフェでコーヒーおごるよ――もちろん昼間の時間帯限定で！",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "それに乾杯！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "俺はブラックでいただきます――下で会いましょう！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "屋上タンク · 安らかに眠る。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · どこまでも澄み渡って。",
+          "teaser_text": "THE END · 時には怪異も、浮かび上がるのを待っていた真実の姿にすぎないのです。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

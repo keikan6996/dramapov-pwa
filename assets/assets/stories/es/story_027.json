@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_027",
+  "lang": "es",
+  "metadata": {
+    "title": "La Enfermera de Turno Nocturno en el Ala B",
+    "subtitle": "La Cama 14 acaba de presionar el botón de llamado a enfermería. La Cama 14 lleva vacía desde el incendio de 2019.",
+    "genre": "thriller",
+    "tags": [
+      "Hospital",
+      "Turno Nocturno",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_027.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Enfermera)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "ally",
+      "name": "Dr. Patel (Urgencias)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Timbre Hab. 14",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "La Cama 14 Está Llamando",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:52 AM · El Ala B está en silencio sepulcral. De pronto, la luz roja sobre la Habitación 14 parpadea y suena tres veces.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, veo la alerta de la Cama 14 en la tableta central. Dime que es una falla de cableado.",
+          "timestamp_label": "2:52 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La Habitación 14 está cerrada con candado por fuera, Doctor. Veo la luz roja brillando a través del vidrio esmerilado.",
+          "timestamp_label": "2:53 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Mi suero está vacío. Ven a cambiarlo.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡NO abras ese cuarto! Espera a seguridad… ¡el expediente de paciente de la Cama 14 se acaba de actualizar solo en el sistema!",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[Monitor cardíaco plano, respiración sibilante] ...Enfermera {{player_name}}... me duele tanto... abre la puerta...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Una pesada camilla de hospital raspa los azulejos detrás de la puerta cerrada con llave.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Reiniciar el panel de llamado de enfermería",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Cortando corriente al panel de llamado!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Abrir el expediente actualizado de Cama 14",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Revisando el expediente del paciente...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "El panel muere… pero el timbre sigue sonando dentro de la Habitación 14, cada vez más rápido.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: Nombre del Paciente: {{player_name}}. Ingreso: Esta noche, 3:00 AM. Estado: Crítico.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Seguridad no responde! ¡Y el ascensor hacia el Ala B se acaba de bloquear en modo mantenimiento!",
+          "timestamp_label": "2:56 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Intercomunicador Habitación 14",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Una voz rasposa susurra: \"Olvidaste desatarme durante el incendio, Enfermera. Ahora es tu turno.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Presionas rechazar. El candado de acero de la Habitación 14 se parte limpiamente en dos y cae al suelo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "La Habitación 14 Está Abierta",
+          "teaser_text": "Episodio 2: El olor a humo inunda el Ala B… y la puerta se abre de par en par.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Código Negro en el Ala B",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:58 AM · Una bruma gris espesa se arrastra por el piso de linóleo. Una silla de ruedas vacía sale rodando despacio de la Habitación 14.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Voy subiendo por las escaleras de emergencia con dos guardias! ¡Enciérrate en el cuarto de medicamentos, {{player_name}}!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La silla de ruedas se detuvo justo afuera de mi escritorio. Las ruedas están dejando huellas negras de hollín húmedo.",
+          "timestamp_label": "2:59 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[Mascarilla de oxígeno siseando] ...Revisa mi pulso, {{player_name}}... ¿Por qué nadie revisa mi pulso?...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Mira el reflejo en la vitrina de medicamentos.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estamos en el descanso del 4to piso—ESPERA, ¡la puerta de las escaleras al Ala B arde como fuego! ¡No podemos tocar la manija!",
+          "timestamp_label": "3:00 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "El reloj marca las 3:00 AM. Las luces del hospital parpadean en carmesí.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Jalar palanca de rociadores contra incendios",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Jalando la alarma de incendios!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Poner un brazalete nuevo en silla de ruedas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Escribiendo una etiqueta de alta para la Cama 14...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Agua helada llueve del techo. El humo sisea al disiparse… y la silla de ruedas se desploma vacía de costado.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRETO DESBLOQUEADO: Susurras \"Ya puedes irte a casa.\" El calor desaparece al instante, y la puerta de las escaleras hace clic al abrirse.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "El Dr. Patel irrumpe en el Ala B empapado. La puerta de la Habitación 14 vuelve a estar cerrada… con el candado intacto.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Dr. Patel (Urgencias)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "El Dr. Patel mira fijamente tu muñeca: \"{{player_name}}... ¿cuándo te pusiste un brazalete de paciente de la Cama 14?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Miras hacia tu propia muñeca: una pulsera blanca impecable de hospital está abrochada con fuerza alrededor: \"CAMA 14 — {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Dada de Alta a las 3:00 AM",
+          "teaser_text": "Final de Temporada · El brazalete de plástico no tiene broche. No puedes cortarlo.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "El Brazalete Inrompible",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "3:08 AM · La pulsera de plástico de paciente en tu brazo no tiene broche… e imprime \"ALA B · CAMA 14\" en tinta fresca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, ¡no uses tijeras quirúrgicas sobre ella—te vas a cortar la muñeca! ¡Ven directo al mostrador de triage de Urgencias!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel, ¡el ascensor no baja a Urgencias! ¡Cada botón de piso me lleva directo de vuelta al Ala B!",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Pasillo Ala B · Figura oscura en bata de hospital chamuscada parada afuera de la Habitación 14.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Sistema de Llamado a Enfermería: \"CAMA 14 · CÓDIGO AZUL PRIORITARIO. SE REQUIERE ENFERMERA {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Me dejaste cuando sonó la alarma en 2019. ¿Por qué nadie revisa mi expediente?",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Espera: el incendio de 2019 no fue accidente. Alguien cerró la Habitación 14 con llave por fuera.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Tosiendo entre humo por el intercomunicador] \"Mira el expediente sujeto a la Cama 14... mi nombre real no está en la placa conmemorativa.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "El pasillo chamuscado se extiende adelante. La puerta de la Habitación 14 está entreabierta.",
+          "options": [
+            {
+              "option_id": "opt_e3_enter_room14",
+              "label": "Entrar al Cuarto 14 a revisar expediente",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Voy entrando a la Habitación 14, Dr. Patel… ¡quédese en el chat conmigo!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_pull_records",
+              "label": "Pedir al Dr. Patel revisar bitácora de 2019",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Investigar",
+              "player_reply_text": "¡Saque la bitácora del incendio de 2019 del Ala B ahora mientras reviso la entrada!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Mantén firme la linterna de tu teléfono! ¡Mándame foto de lo que haya en esa tabla!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡La encontré! El director del hospital autorizó una válvula de oxígeno defectuosa en la Habitación 14… ¡y enterró la prueba de ADN del paciente!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "La pulsera en tu brazo se entibia. Dentro de la Habitación 14, un portapapeles metálico brilla sobre los resortes desnudos.",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "El Expediente Enterrado.",
+          "teaser_text": "Episodio 4: El encubrimiento de la válvula de oxígeno de 2019 apunta directo a alguien que sigue trabajando en la junta del hospital.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Encubrimiento Código Negro",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "3:20 AM · Huele levemente a humo dentro de la Habitación 14. Levantas el portapapeles chamuscado: adentro hay un informe forense de ADN.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Estoy escaneando el archivo de 2019, {{player_name}}! ¡La paciente de la Cama 14 fue registrada como \"Desconocida\" para que su familia nunca pudiera demandar a la junta!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel, la coincidencia de ADN se imprimió en 2019… ¡y el Director la escondió dentro de esta ala cerrada!",
+          "timestamp_label": "2:41 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Cerró las puertas del ala para que nadie encontrara jamás mi nombre real, {{player_name}}. Dáselo a la policía.",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Pasos pesados resuenan desde las escaleras: ¡el Supervisor Nocturno acaba de desactivar las cámaras del Ala B!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡El Supervisor es hermano del Director! Vio el registro de tu credencial entrando al Ala B… ¡escóndete en el armario de suministros!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Si me atrapa con este expediente de ADN, el Ala B tendrá otro \"accidente\" esta noche.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Timbre de llamado zumbando suavemente] \"El montacargas de servicio detrás del estante de sábanas baja directo a Urgencias, {{player_name}}.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "El haz de una linterna barre por debajo de la puerta de la Habitación 14.",
+          "options": [
+            {
+              "option_id": "opt_e4_send_photo",
+              "label": "Fotografiar y enviar ADN al Dr. Patel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Enviando el expediente ahora: ¡súbalo al consejo estatal antes de que corte el Wi-Fi!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_trigger_alarm",
+              "label": "Activar alarma del Ala B para llamar a Urg.",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Audaz",
+              "player_reply_text": "¡Activando la alarma de incendios! ¡Traigamos a todo el hospital aquí arriba!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Recibido! Cada página está respaldada… ¡ahora corre a las escaleras, voy llevando seguridad!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Saltaron los rociadores y alarmas! ¡Seguridad de Urgencias sube corriendo al Ala B—aguanta!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Mira el informe forense que acabas de enviar: la hermana de la paciente es enfermera aquí mismo en esta ciudad.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Ala B Expuesta.",
+          "teaser_text": "Episodio 5: Con seguridad rodeando el Ala B, el encubrimiento de 2019 del Director colapsa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Paciente Identificada",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "3:42 AM · Luces rojas parpadeantes iluminan el Ala B cuando seguridad del hospital intercepta al Supervisor Nocturno en la puerta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "¡Seguridad lo tiene detenido, {{player_name}}! ¡Y acabo de enviar el informe de ADN directo al Forense del Condado!",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel... ¡mire mi muñeca! ¡La pulsera plástica de paciente se acaba de abrir sola!",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Informe Forense de ADN · Incendio Ala B 2019 — Paciente #14 identificada positivamente como Elena Park.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Timbre Habitación 14: La luz se apaga por primera vez en siete años.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "El olor a humo desapareció por completo. Le acabas de devolver su nombre a Elena Park, {{player_name}}.",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Llevo doce años trabajando en Urgencias y nunca vi nada como esta noche.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Voz clara y serena] \"Gracias por responder mi timbre, Enfermera {{player_name}}. Dile a mi hermana que estoy bien.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "El pasillo del Ala B se siente cálido y tranquilo mientras recoges la pulsera abierta.",
+          "options": [
+            {
+              "option_id": "opt_e5_log_discharge",
+              "label": "Registrar el alta oficial de Elena",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dada de alta con dignidad. Descansa en paz, Elena.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_call_sister",
+              "label": "Pedir al Dr. Patel avisar a su hermana ya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Cierre",
+              "player_reply_text": "Llamemos juntas a su hermana en cuanto termine la policía.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "El registro de expediente más significativo que firmarás jamás.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ya estoy marcando al enlace del Forense. Su familia lo sabrá al amanecer.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Baja a la sala de descanso de Urgencias: tu turno terminó oficialmente.",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Timbre Despejado.",
+          "teaser_text": "Episodio 6 (Final): Al amanecer, el Ala B por fin está en paz… y el turno nocturno tiene una heroína.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Ronda Matutina",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:20 AM · La luz del sol inunda el lobby de Urgencias. La hermana de Elena te abraza entre lágrimas afuera del muro conmemorativo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "El Director del Hospital renunció hace una hora, {{player_name}}. Investigadores estatales sellaron su oficina.",
+          "timestamp_label": "7:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Y mira el monitor del Ala B detrás de la estación de enfermería: la Cama 14 está completamente apagada.",
+          "timestamp_label": "7:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Siete años de silencio, terminados en un solo turno nocturno.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Sistema de Llamado a Enfermería: \"Todas las camas libres. Buen regreso a casa, {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Tómate los próximos tres días libres… órdenes médicas. Te los ganaste.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "La mejor enfermera de turno nocturno que ha tenido este hospital jamás.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[Cálido y orgulloso] \"Ve a dormir de verdad, {{player_name}}. Yo cubro las rondas de la mañana.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Checas salida y sales al aire fresco de la mañana.",
+          "options": [
+            {
+              "option_id": "opt_e6_clock_out",
+              "label": "Checar salida e ir a casa a dormir",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Nos vemos el jueves, Dr. Patel. ¡Se acabaron los timbres fantasma!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_place_ribbon",
+              "label": "Atar un listón blanco en memorial Ala B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Honor",
+              "player_reply_text": "Dejé un listón blanco para Elena. Buenas noches, Dr. Patel.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Duerme bien, heroína.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Jamás volverá a ser olvidada. Descansa.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Timbre Habitación 14 · Desactivado Permanentemente.",
+          "timestamp_label": "7:22 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Descansa en Paz, Cama 14.",
+          "teaser_text": "FIN · Algunas llamadas desde la oscuridad solo esperan a alguien lo bastante valiente para contestar.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

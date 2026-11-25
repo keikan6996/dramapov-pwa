@@ -1,0 +1,991 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_065",
+  "lang": "ko",
+  "metadata": {
+    "title": "여동생의 결혼 자금",
+    "subtitle": "동생의 꿈꾸던 결혼식을 위해 8만 달러를 송금해 줬다—그런데 웨딩홀에서 수표가 부도났고 동생이 펜트하우스를 샀다는 문자가 왔다.",
+    "genre": "romance",
+    "tags": [
+      "가족",
+      "돈",
+      "배신"
+    ],
+    "cover_image": "assets/media/covers/story_065.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "sister",
+      "name": "Maya (여동생)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9D174D"
+    },
+    {
+      "id": "venue",
+      "name": "Elena (예식장 매니저)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "fiance",
+      "name": "Liam (그녀의 약혼자)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#374151"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "부도난 계약금",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "마야 결혼식 닷새 전. 3년 치 보너스를 털어 동생에게 80,000달러를 송금해 주었습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "안녕하세요 {{player_name}} 님, 연대보증인으로 등록되어 계셔서 연락드립니다—마야 님의 잔금 35,000달러 수표가 부도 처리되었습니다. 오후 5시까지 미납 시 토요일 예식은 취소됩니다.",
+          "timestamp_label": "오후 02:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "마야, 왜 웨딩홀 수표가 부도났어?! 지난주 월요일에 내가 보낸 8만 달러 어디 갔어?",
+          "timestamp_label": "오후 02:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "sister",
+          "text": "리암!! 스카이라인 펜트하우스 계약금으로 결혼 자금 쓴 거 {{player_name}}한테 들켰어!!",
+          "unsent_placeholder": "Maya님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "아 진짜 진정 좀 해! 은행에서 잠깐 보류 걸었을 뿐이야. 오늘 웨딩홀 3만 5천 달러만 먼저 메워줄 수 있어? 결혼 축의금 들어오면 바로 갚을게!",
+          "timestamp_label": "오후 02:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "fiance",
+          "duration_sec": 11,
+          "transcript": "[실수로 주머니에서 걸린 통화] 걱정 마 자기야, {{player_name}} 완전히 호구잖아. 엄마가 5분만 울면 3만 5천 달러 바로 더 보내줄 걸. 펜트하우스는 이미 내 명의로 해놨으니까.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "예행연습 만찬이 오늘 밤 7시입니다. 어떻게 대응하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_cancel_venue",
+              "label": "엘레나에게 예식 취소와 내 이름 삭제를 요청한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "엘레나 매니저님, 즉시 제 연대보증인 이름 빼주세요. 1센트도 더 낼 생각 없습니다.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_gift_audit",
+              "label": "펜트하우스 송금 건에 대해 사기 지급정지를 건다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "복수전 · 광고 보기",
+              "player_reply_text": "흥미롭네, 리암. 송금 메모에 \"결혼 예식 전용\"이라고 적혀 있어서, 우리 은행에선 그걸 금융 송금 사기라고 부르거든.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "처리했습니다. 고객님 지급 책임은 해제되었습니다. 마야 님께 방금 취소 통지서 발송했습니다.",
+          "timestamp_label": "오후 02:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "에스크로 동결: 부동산 권원 회사가 정식 사기 조사가 끝날 때까지 리암의 펜트하우스 소유권 이전을 정지시킵니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "무슨 짓을 한 거야?! 중개사가 방금 우리 잔금 처리 동결했잖아! 미쳤어?!",
+          "timestamp_label": "오후 02:23",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "엄마한테 다 말했어! 오늘 밤 리허설 디너 전까지 수습 안 해놓으면 우리 집안에서 없는 사람 취급할 거야!",
+          "timestamp_label": "오후 02:25",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "리허설 디너의 정면 충돌",
+          "teaser_text": "2화: 마야는 리암의 부유한 부모님 앞에서 당신이 고개 숙이길 기대합니다—당신이 연회장 마이크에 리암의 음성 메시지를 틀기 전까지는.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "약속 어음",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 07:15 · 리허설 디너. 리암의 부유한 부모님을 포함해 하객 마흔 명이 모였습니다. 마야가 상석에서 당신을 노려봅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "지금 당장 휴대폰으로 웨딩홀 대금 결제해. 리암 아빠는 우리가 다 현금으로 낸 줄 아신단 말이야!",
+          "timestamp_label": "오후 07:16",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "리암 아버님도 리암이 네 이름 빼고 자기 단독 명의로 펜트하우스 계약한 거 아시니?",
+          "timestamp_label": "오후 07:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "입 닥쳐!! 마야 아직 등기에 자기 이름 빠진 거 모른단 말이야!!",
+          "unsent_placeholder": "Liam님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "잠깐… 리암? 방금 {{player_name}}가 등기 얘기가 뭐라고 했어?!",
+          "timestamp_label": "오후 07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "venue",
+          "duration_sec": 8,
+          "transcript": "[다급한 목소리] {{player_name}} 님, 리암 씨가 방금 등록돼 있던 고객님 신용카드로 리허설 술값을 긁으려고 했어요. 제가 막았습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "리암이 \"가족의 너그러움\"에 대한 건배사를 하려고 일어섭니다. 당신의 선택은?",
+          "options": [
+            {
+              "option_id": "opt_play_liam",
+              "label": "마야 앞에서 리암의 '호구' 음성을 튼다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "건배하기 전에, 마야—네 약혼자가 우리 둘을 진짜 어떻게 생각하는지 들어봐.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_hand_deed",
+              "label": "리암의 아버지에게 단독 명의 계약서를 건넨다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "폭로 · 광고 보기",
+              "player_reply_text": "반스 어르신, 아드님이 제가 준 결혼 자금 8만 달러로 자기 단독 명의 펜트하우스를 샀습니다.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "리암의 목소리가 당신을 호구라 부르며 등기를 자랑하자 마야의 얼굴이 백지장처럼 하얗게 질립니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "결정타: 존경받는 판사인 리암의 아버지가 자리에서 일어나 본인의 결혼 선물을 취소하고 리암에게 단 1원도 남김없이 돌려주라고 명령합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}} 언니… 정말 미안해. 내일 내 이름 올려주겠다고 맹세했단 말이야.",
+          "timestamp_label": "오후 07:24",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "결혼은 취소야, 마야. 그리고 내 80,000달러는 금요일까지 내 계좌로 돌아올 거야.",
+          "timestamp_label": "오후 07:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "결혼식장 직전에서 총알을 피하다",
+          "teaser_text": "마야가 약혼반지를 빼냅니다—그리고 리암이 사준 \"다이아몬드\"가 가짜 큐빅 지르코니아임을 알게 됩니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "유리 다이아몬드",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 7:45 · 보석상 카운터. 마야가 손이 덜덜 떨리는 채로 감정용 확대경 수치를 응시합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}} 언니, 보석상이 확인해 줬어—40달러짜리 큐빅이래! 리암은 나한테 22,000달러 주고 샀다고 했단 말이야!",
+          "timestamp_label": "오후 7:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "반지는 탁자 위에 내려놔, 마야. 그리고 방금 엘레나가 웨딩홀 계약금 관련해서 훨씬 더 심각한 문자를 보냈어.",
+          "timestamp_label": "오후 7:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sister",
+          "image_asset": "assets/media/evidence/generic_ring_closeup.webp",
+          "caption": "보석상 감정 불합격 · 리암의 위조 영수증 옆 감정 쟁반 위에 놓인 가짜 보석.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "리암이 방금 프런트 데스크로 전화해서 예식 취소 환불금 15,000달러를 본인 명의 현금으로 받아 가려고 했어요!",
+          "timestamp_label": "오후 7:48",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "내일 아침 펜트하우스 등기만 끝나면 두 자매 다 차단해 버릴—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "venue",
+          "duration_sec": 9,
+          "transcript": "[종이 바스락거리는 소리] {{player_name}} 님, 제가 시간을 끌었는데—우리 보안팀 직원이 그를 알아봤어요! 리암이 2년 전에도 다른 성(姓)으로 여기서 결혼식을 예약했었대요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "리암은 상습 로맨스 사기꾼입니다—그리고 펜트하우스 잔금 마감은 오전 9시입니다! 다음 움직임은?",
+          "options": [
+            {
+              "option_id": "opt_freeze_escrow",
+              "label": "에스크로 담당자에게 전화해 잔금 처리를 중단시킨다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 권원 회사 사기 대응 데스크에 전화 중이야—내 8만 달러 송금 도난 자금으로 신고 등록됐어!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_find_past_victim",
+              "label": "엘레나의 2년 전 예약 기록을 뽑아낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "이중 함정 · 광고 보기",
+              "player_reply_text": "엘레나, 그 옛날 예약 파일 뽑아봐요—다른 신부도 속였다면 오늘 밤 경찰이 바로 체포할 거예요!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "에스크로 보류: 권원 담당자가 펜트하우스 잔금 처리에 72시간 긴급 사기 동결을 겁니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "이전 피해자 확인: 직전 피해 신부가 이미 옆 카운티에서 리암에 대해 사기 체포영장을 발부받아 둔 상태였습니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "온몸이 떨려… 내 인생 전체랑 언니가 평생 모은 돈까지 저놈한테 바칠 뻔했잖아, {{player_name}} 언니.",
+          "timestamp_label": "오후 7:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "마야, 자기야, 왜 권원 회사가 갑자기 우리 펜트하우스를 동결한 거야? 네 언니한테 그만 간섭하라고 해!",
+          "timestamp_label": "오후 7:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "사기꾼이 당황하기 시작하다",
+          "teaser_text": "4화: 리암이 잔금 처리를 강행하려고 권원 회사로 달려갑니다—당신의 함정 속으로 곧장 걸어 들어갑니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "펜트하우스의 덫",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 8:50 · 권원 회사 로비. 대여 정장을 입은 리암이 초조하게 서성이는 사이 마야의 휴대폰이 울립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "보세요 {{player_name}}, 동결만 풀어주면 등기에 마야 이름도 올릴게요. 집안 망신시키지 맙시다.",
+          "timestamp_label": "오전 8:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "어느 집안 말이니, 리암? 2년 전 엘레나 웨딩홀에서 속이던 그 집안, 아니면 지금 네가 문자 보내는 이 집안?",
+          "timestamp_label": "오전 8:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "내 아파트에서 리암 아이패드 동기화된 거 확인했어! 오후 2시 칸쿤행 비행기 티켓 끊어놨어—딱 한 명 치!",
+          "timestamp_label": "오전 8:52",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "펜트하우스 포기하고 에스크로 환불금 내 코인 지갑으로 돌려서—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "방금 권원 회사 옆문으로 뛰쳐나가서 주차장 쪽으로 도망쳤어요!",
+          "timestamp_label": "오전 8:54",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[다가오는 사이렌 소리] {{player_name}} 언니, 경제범죄수사대 형사님이 방금 주차장으로 들어오셨어요! 놈이 빌린 렌터카 앞을 막았어요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "리암이 주차장 구석에 몰렸습니다! 80,000달러 회수를 어떻게 확정하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_escrow_reversal",
+              "label": "권원 담당자와 함께 사기 송금 반환 서류에 서명한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "지금 담당자한테 경찰 사건 번호 넘기고 있어—8만 달러 송금 곧장 원상 복구 시킬게!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_freeze_crypto",
+              "label": "형사들에게 동기화된 아이패드의 지갑 ID를 넘긴다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "전면 동결 · 광고 보기",
+              "player_reply_text": "마야, 형사님께 놈 아이패드 넘겨—피해자 전원을 위해 역외 코인 지갑까지 동결시키자!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "반환 개시: 80,000달러 에스크로 예치금이 즉시 당신의 계좌로 반환되도록 잠금 처리됩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "대규모 압류: 형사들이 도난 자금 210,000달러를 동결합니다—당신과 이전 피해자 모두에게 변제하고도 남을 금액입니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "구치소 안에서 그 40달러짜리 유리 반지 끼고 따뜻하게 잘 지내, 리암.",
+          "timestamp_label": "오전 9:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "마야, 그냥 선물이었다고 말해 줘! 네가 고소하면 나 5년 징역 산다고!",
+          "timestamp_label": "오전 9:03",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "단 1달러까지 정산 완료",
+          "teaser_text": "5화: 최종 에스크로 반환을 확인하고 마야가 리암에게 마지막 작별 인사를 건네는 모습을 지켜보십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "잔금 동결",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오후 1:15 · 경찰서 로비. 은행 준법감시팀이 방금 공식 송금 반환 확인서를 보냈습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "고객님 카드로 웨딩홀 계약금 환불금도 전액 처리 완료했어요, {{player_name}} 님. 그 사람 손엔 단 1센트도 안 들어갔어요.",
+          "timestamp_label": "오후 1:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "에스크로 반환 완료 · 본인 계좌로 80,000달러 복구 + 웨딩홀 계약금 15,000달러 전액 환불.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "단 1달러도 빠짐없이 다 돌아왔어… 어제 언니한테 소리쳤던 거 생각하면 언니 얼굴을 어떻게 봐야 할지도 모르겠어.",
+          "timestamp_label": "오후 1:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "전문 사기꾼이었잖아, 마야. 너도 똑같이 속았던 거야. 혼인신고서에 도장 찍기 전에 정신 차린 게 중요한 거지.",
+          "timestamp_label": "오후 1:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "마야한테 난 진심으로 아꼈었다고 전해 줘, 그냥 빚이 너무 많았을 뿐이라고—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[눈물을 훔치며] 방금 정식 형사 피해 진술서에 서명했어. 감형 합의도, 고소 취하도 없어. 다신 다른 여자한테 이런 짓 못 하게 할 거야.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "엘레나가 취소 수수료 없이 이미 예약된 연회장 날짜를 다른 용도로 바꿔주겠다고 제안합니다!",
+          "options": [
+            {
+              "option_id": "opt_take_refund",
+              "label": "환불금으로 자매 여행을 예약한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "고마워요 엘레나—우린 환불받아서 대신 발리행 자매 비행기 표 두 장 끊을게요!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_charity_gala",
+              "label": "연회장 대관 날짜를 여성 쉼터에 기부한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "황금빛 마음 · 광고 보기",
+              "player_reply_text": "예약 그대로 유지해요, 엘레나—지역 여성 쉼터를 위한 자선 모금 만찬을 엽시다!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "새로운 출발: 마야가 며칠 만에 처음으로 활짝 웃습니다—가짜 결혼식을 진짜 자유와 맞바꾸었습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "선행의 바이럴: 엘레나가 케이터링 비용까지 전부 무료로 지원하며—상처를 올해 가장 따뜻한 밤으로 바꿔 놓습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "두 분은 제가 일해본 자매 중 최고로 품격 있으세요. 저도 당연히 동참할게요!",
+          "timestamp_label": "오후 1:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "나가는 길에 그 유리 반지 경찰서 쓰레기통에 던져 버릴 거야.",
+          "timestamp_label": "오후 1:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "꺾이지 않는 자매애",
+          "teaser_text": "6화 (최종화): 사건을 종결하고 자유를 축하하며 함께 더 밝은 내일로 걸어 나가십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "언제나 자매가 먼저",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3주 뒤 · 해변 카페. 마야가 아이스 라떼 두 잔을 내려놓는 사이 바닷바람이 식탁을 스칩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "검사가 방금 이메일 보냈대—리암 특수절도 혐의 세 건으로 기소 확정됐고 보석도 기각됐대.",
+          "timestamp_label": "오후 4:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "어리석은 장난을 치면 감옥행이 따르는 법이지. 기분 어때, 마야?",
+          "timestamp_label": "오후 4:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "깜짝 소식 전하자면, 이전 피해 신부님이 두 분께 거대한 감사 바구니 보내셨어요—그분도 모아둔 돈 되찾으셨대요!",
+          "timestamp_label": "오후 4:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "국선 변호사가 최소 징역 4년 예상한대—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[파도 소리] 나 대학원 합격했어, {{player_name}} 언니! 그리고 내 학비는 내가 벌어서 낼 거야—지름길도, 가짜 약혼자도 없이.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그거야말로 진짜 건배할 만한 소식이네. 네가 정말 자랑스러워.",
+          "timestamp_label": "오후 4:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "집으로 무사히 돌아온 80,000달러로 무엇을 하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_invest_future",
+              "label": "꿈꾸던 나만의 집을 장만하는 데 보탠다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "내 이름 된 내 집 마련 계약금으로 넣을 거야—물론 너를 위한 손님방은 언제나 비워둘게.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_co_invest",
+              "label": "자매가 함께 디자인 스튜디오를 창업한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "드림팀 · 광고 보기",
+              "player_reply_text": "더 좋은 생각 있어—절반은 우리 둘이 늘 말하던 디자인 스튜디오 세우는 데 투자하자!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "달콤한 승리: 끝까지 자신을 포기하지 않아 준 언니에게 고마워하며 마야가 당신을 꼭 끌어안습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "새로운 장: 6개월 뒤, 두 자매의 스튜디오는 엘레나의 소개로 첫 럭셔리 호텔 계약을 따냅니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "다음번에 제 연회장을 예약하실 땐, 두 분 회사 론칭 파티일 거예요!",
+          "timestamp_label": "오후 4:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "세상에서 제일 멋진 언니 덕분에 내 인생 최악의 총알을 피한 걸 기념하며 건배.",
+          "timestamp_label": "오후 4:23",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 함께할수록 더 강하게",
+          "teaser_text": "상습 사기꾼을 폭로하고, 한 푼도 빠짐없이 되찾았으며, 동생의 미래를 지켜냈습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

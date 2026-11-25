@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_023",
+  "lang": "en",
+  "metadata": {
+    "title": "The 3:07 AM Delivery Driver",
+    "subtitle": "My food rider texted: \"Left your order outside. Who is the woman in white behind your curtain?\"",
+    "genre": "thriller",
+    "tags": [
+      "3AM",
+      "Delivery",
+      "Horror"
+    ],
+    "cover_image": "assets/media/covers/story_023.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "ally",
+      "name": "Leo (Delivery Rider)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Order #4409 Support",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Order You Never Placed",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "3:07 AM · Thunder shakes your 5th-floor studio. A delivery app notification chimes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Hey {{player_name}}, I hung your noodles on the gate. Tell your roommate behind the curtain to stop staring at me, man.",
+          "timestamp_label": "3:07 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—I didn’t order food tonight. And I live completely alone.",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "She is opening your balcony latch right now.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Don’t mess with me! The order is under YOUR name and paid in cash—she dropped a crumpled bill from the 5th floor!",
+          "timestamp_label": "3:09 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[heavy rain, revving scooter] ...Wait, listen to the call recording from when you confirmed the order—that IS your voice...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Your sheer balcony curtain ripples inward—even though the glass door is shut.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Ask Leo what the cash bill looks like",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "What kind of bill did she drop?",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Play the full order confirmation audio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Send me the full audio file!",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Leo texts back shaking: \"It’s not real money, {{player_name}}... It’s hell-banknote paper. Burned at the corner.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Beneath your own sleepy voice ordering noodles, a second voice whispers: \"Two bowls. One for the living.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Bro I’m driving away, good luck—wait, why is the plastic bag NOT on your gate anymore?!",
+          "timestamp_label": "3:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Delivery Automated Call",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "A metallic voice recites: \"Your order has been received... inside your kitchen.\" A spoon clinks in the next room.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "You hang up. Immediately, the smell of cold broth and wet incense drifts under your bedroom door.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Dinner for Two",
+          "teaser_text": "Episode 2: Two steaming bowls are sitting on your table—and one chair is pulled out.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Two Pairs of Chopsticks",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "3:13 AM · You crack the bedroom door. Steam curls from two bowls on your tiny table. One pair of chopsticks is stuck upright.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}! My GPS won’t let me leave your alley. Every turn brings me right back under your balcony!",
+          "timestamp_label": "3:13 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo, there are two bowls in my kitchen. The chopsticks are standing straight up like an offering!",
+          "timestamp_label": "3:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[slurping sound, dripping water] ...Eat while it’s warm, {{player_name}}. Don’t be rude to a guest...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "She is sitting in the chair with her back to you.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I just remembered this street! A girl starved in a locked 5th-floor room here five years ago. Do NOT touch the food!",
+          "timestamp_label": "3:16 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "The chair scrapes slowly across the tile floor as she begins to turn.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Knock the offering bowl off the table",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m overturning the table!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Bow respectfully and offer the bowl",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I’m bowing and backing out...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "The bowl shatters—and spilled across the tiles are not noodles, but tangled strands of long wet black hair.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The cold air softens. A faint sigh whispers \"Thank you for remembering me\" as the front door unlocks.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "You burst into the stairwell just as the streetlights flicker back on. Your phone buzzes with a final app receipt.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Leo (Delivery Rider)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Leo breathes hard: \"I’m out of the alley! Check your app—she left a 5-star review under YOUR account: See you tomorrow at 3:07.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "You decline and check your app. A new recurring order is scheduled automatically for 3:07 AM every night.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Order Scheduled: 3:07 AM",
+          "teaser_text": "Season Finale · The Cancel button is greyed out. She’s already hungry for tomorrow.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Scheduled For 3:07 AM",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "3:01 AM · The next night. Even after deleting the delivery app, your doorbell chime rings—and Leo texts in panic.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, I tried to reject the dispatch, I swear! The app locked my bike GPS and forced me back to your gate!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo, don’t step past the porch! My hallway camera just caught the woman in white unlocking my door from INSIDE!",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "3:04 AM Hallway Cam · Pale figure in white standing right behind your chain lock.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Order #4409 Support: \"Rider arrived early. Please set two bowls before 3:07 AM.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "She paid with a 1999 silver coin, {{player_name}}. Every rider who cancels Order #4409 disappears on the highway.",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Wait—check the delivery address on the receipt. It’s not your apartment number—it’s the lot that burned down here.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[wind howling on Leo’s mic] \"I’m parked across the street, {{player_name}}! Leave the bag on the mat—don’t open the chain lock!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "The clock hits 3:06 AM. Footsteps approach the inside of your front door.",
+          "options": [
+            {
+              "option_id": "opt_e3_slide_chopsticks",
+              "label": "Slide two chopsticks under the door",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I slid the chopsticks under the gap—Leo, keep your engine running!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_fire_escape",
+              "label": "Climb out the kitchen fire escape",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Escape",
+              "player_reply_text": "I’m not eating with a ghost! Climbing down the fire escape to your bike!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "She picked them up! Now run out the back stairwell while she’s distracted!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Jump—I’ve got my headlights on the alley! Hop on the back!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Order #4409 Status Updated: \"Customer left the table. Tracking new GPS location...\"",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Order Still Active.",
+          "teaser_text": "Episode 4: Even three miles away on Leo’s bike, the delivery tracker pin keeps creeping closer.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The 1999 Receipt",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "3:25 AM · Parked under a highway overpass. Leo pulls a yellowed paper receipt from his insulated food bag.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Look at the restaurant name on the ticket, {{player_name}}: \"Lotus Noodle House.\" That place burned down in 1999—the night a bride waited for her late fiancé.",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... she ordered dinner for two at 3:07 AM because her fiancé’s train was delayed?!",
+          "timestamp_label": "2:41 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "He never made it home, {{player_name}}. Every night she orders two bowls hoping tonight he walks through the door.",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Leo’s delivery app pings loudly: \"RIDER OFF ROUTE. RETURN TO LOTUS LOT IMMEDIATELY.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "My phone screen just cracked on its own—and the map pin is pointing to the old train crossing two blocks away!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "If she thinks Leo is the messenger carrying her fiancé’s letter, maybe we can finally deliver it.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[static-filled female voice on support line] \"Is he on the 3:07 train? Please tell me he didn’t forget dinner...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "The delivery app won’t stop until Order #4409 is truly completed.",
+          "options": [
+            {
+              "option_id": "opt_e4_check_station",
+              "label": "Ride to the old train crossing together",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Let’s go to the old crossing, Leo. Let’s see what’s waiting there.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_reply_support",
+              "label": "Reply gently to Order #4409 Support",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Empathy",
+              "player_reply_text": "He didn’t forget you. Tell us where to bring your message.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Hang tight! The old ticket booth is just past the fog line!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The red warning banner just turned soft gold... she’s guiding our GPS!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Look at Leo’s cracked phone screen—the GPS pin just locked onto Locker #07 at the abandoned station.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Locker #07.",
+          "teaser_text": "Episode 5: Inside the rusted station locker lies an undelivered letter dated 1999.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Undelivered Letter",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "3:50 AM · Fog blankets the abandoned platform. Leo pries open Locker #07 and pulls out a sealed envelope.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "It’s addressed to your apartment’s old lot number! A ring and a note: \"Caught in the storm—wait for me at dawn.\"",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No wonder she kept ordering dinner at 3:07 AM... she never knew why he didn’t come home.",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Cracked Phone GPS · Route recalculated straight back to your front gate—0.4 miles away.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Order #4409 Support: \"Package found. Complete delivery to close order permanently.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’ll ride us back to your porch, {{player_name}}. Set the envelope beside the warm noodles—don’t look directly at her.",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "My hands are shaking, but I think this is the last delivery I’ll ever make on this route.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[soft, trembling sigh] \"You found it... please leave it on the doorstep.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "You reach your porch. The white curtain trembles behind the glass.",
+          "options": [
+            {
+              "option_id": "opt_e5_leave_letter",
+              "label": "Place the envelope beside the food bag",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "It’s on the doorstep. He never forgot you.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_read_aloud",
+              "label": "Read the last line aloud before stepping back",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Peace",
+              "player_reply_text": "\"Wait for me at dawn.\" He loved you to the very end.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The curtain just dropped... and my app finally chimed \"ORDER COMPLETED\"!",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A single white petal drifted onto the porch mat. The cold air vanished instantly!",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Order #4409 · Rating: 5 Stars. \"Thank you for bringing him home.\"",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Order Completed.",
+          "teaser_text": "Episode 6 (Finale): Morning breaks over a quiet street—and the 3:07 AM rider never has to fear the night shift again.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Five Stars At Dawn",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:15 AM · Sunlight warms the noodle shop on the corner. Leo buys you two real bowls of hot broth—no ghosts attached.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I checked my dispatch history this morning, {{player_name}}. Order #4409 is completely gone—and my cracked GPS screen works fine again.",
+          "timestamp_label": "7:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And the curtain in my apartment hasn’t moved an inch since sunrise. Guess we both survived the night shift.",
+          "timestamp_label": "7:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Actually, I quit night deliveries an hour ago. Switched to daytime runs only.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Your phone buzzes—a final zero-dollar receipt arrives from \"Lotus Noodle House.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Look at the note at the bottom of the receipt: \"No more waiting. Eat warm.\"",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Honestly, {{player_name}}, I’m glad I didn’t ghost your text at 3:07 AM.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[laughing warmly] \"Next time you order late-night noodles, text me directly—I’ll deliver them myself before midnight.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Steam rises from your breakfast bowls in the morning sun.",
+          "options": [
+            {
+              "option_id": "opt_e6_toast_bowls",
+              "label": "Clink chopsticks with Leo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Deal, Leo. Daytime deliveries only from now on.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_tip_big",
+              "label": "Leave a five-star tip & smile",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Warmth",
+              "player_reply_text": "Five stars for the bravest rider in the city. Breakfast is on me.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Best breakfast after the craziest night of my life.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Deal! See you around the neighborhood, {{player_name}}.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Order #4409 Support · Account Closed Permanently.",
+          "timestamp_label": "7:22 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Delivered At Last.",
+          "teaser_text": "THE END · No more 3:07 AM knocks—just warm noodles and a clear morning sky.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

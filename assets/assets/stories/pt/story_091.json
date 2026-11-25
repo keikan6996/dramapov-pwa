@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_091",
+  "lang": "pt",
+  "metadata": {
+    "title": "O Quarto 409 Não Existe",
+    "subtitle": "O motel de beira de estrada durante a tempestade me entregou a chave 409 — mas o elevador pula o 4º andar, e o Quarto 409 está me mandando mensagem.",
+    "genre": "thriller",
+    "tags": [
+      "Motel",
+      "Mistério",
+      "Sobrevivência"
+    ],
+    "cover_image": "assets/media/covers/story_091.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "clerk",
+      "name": "Recepção · Pine Inn",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "r409",
+      "name": "HÓSPEDE_409",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3B0764"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "O Andar Desaparecido",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "23h32 · Um deslizamento na rodovia deixa você presa no Motel Pine Ridge. Você conecta no Wi-Fi do motel — e um chat da rede interna local abre na tela.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "NÃO use o cartão 409, {{player_name}}. Olhe os botões do elevador — não existe 4º andar.",
+          "timestamp_label": "23:32",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... o elevador só vai para 1, 2, 3 e 5! Como você sabe o meu nome?!",
+          "timestamp_label": "23:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "r409",
+          "duration_sec": 8,
+          "transcript": "[sussurro abafado, chuva forte] Porque estou trancada dentro do 4º Andar agora mesmo! O atendente só entrega cartões 409 para viajantes sozinhas com placa de outro estado no carro.",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Tudo certo no corredor, {{player_name}}? Use a escada de serviço de latão atrás da máquina de gelo para chegar ao 4º Andar.",
+          "timestamp_label": "23:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "A câmera da recepção do atendente gira diretamente na sua direção:",
+          "options": [
+            {
+              "option_id": "opt_091_e1_free",
+              "label": "Voltar para o seu carro e ir embora",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Na verdade esqueci meu carregador no carro — já volto.",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_091_e1_vip",
+              "label": "Subir escondida pela escada e salvar 409",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Você corre para a chuva torrencial — e congela. Todos os quatro pneus do seu carro foram esvaziados com precisão, e o portão da rodovia está trancado com cadeado.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Eu avisei — ninguém sai dirigindo do Pine Inn! Suba pela escada externa de incêndio até a Janela 409 antes que o atendente tranque o pátio!",
+          "timestamp_label": "23:36",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Você sobe escondida pela escada escura de serviço. O 4º Andar não é corredor de motel — é um corredor de concreto isolado acusticamente com pesadas portas de aço e travas biométricas.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Você subiu mesmo?! Passe seu cartão 409 no teclado — é o único cartão mestre que abre minha porta por fora!",
+          "timestamp_label": "23:36",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Comprador confirmado para duas doadoras saudáveis. Lacrando a escada do 4º Andar agora.",
+          "unsent_placeholder": "Recepção apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "Um pesado ferrolho magnético bate fechado atrás de você. No fim do corredor, a porta do Quarto 409 destranca com um clique — revelando um quarto escuro.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Dentro do Quarto Andar",
+          "teaser_text": "A escada está lacrada e o atendente acabou de chamar um comprador. Quem está dentro do Quarto 409 é sua única aliada — ou a isca.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Hora do Check-Out",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "23h40 · Dentro do Quarto 409, uma mulher machucada vestindo jaqueta de paramédica agarra seu braço — bem quando o alto-falante do corredor chia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "clerk",
+          "caller_label": "Recepção · Pine Inn",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 7,
+          "transcript": "[estática calma] Bem-vinda ao 4º Andar, {{player_name}}. Fique dentro do Quarto 409 — gás sonífero sai pelas saídas de ar em sessenta segundos.",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Ignorar minha chamada não vai parar o sistema de ventilação, {{player_name}}. Gás sonífero ativa em 60 segundos.",
+          "timestamp_label": "23:40",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Sou Mara — estou soltando os parafusos do duto de roupas há dois dias! Me ajuda a forçar a grade antes que o gás comece a chiar!",
+          "timestamp_label": "23:41",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera — também precisamos de sinal de celular para chamar a Polícia Estadual antes que peguem a gente lá embaixo!",
+          "timestamp_label": "23:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Névoa branca começa a chiar pela saída de ar do teto:",
+          "options": [
+            {
+              "option_id": "opt_091_e2_free",
+              "label": "Descer pelo duto de aço de roupas",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_091_e2_vip",
+              "label": "Quebrar a caixa do bloqueador na janela",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "O sinal voltou! Mandando nosso GPS ao vivo para a polícia agora mesmo!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Você e Mara despencam quatro andares sobre uma pilha de lençóis úmidos do motel na sala da caldeira do porão — bem ao lado do quadro destrancado de disjuntores do atendente.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Puxe o disjuntor vermelho escrito \"BLOQUEADOR DE CELULAR\"! Assim que cair, meu sinalizador de emergência vai direto para a Polícia Rodoviária!",
+          "timestamp_label": "23:43",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Você estoura a caixa oculta de bloqueador de sinal fora da janela com a perna metálica de uma cadeira. Quatro barras de 5G voltam — e a polícia trava sua localização antes de você descer pelo duto.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Vocês quebraram o bloqueador?! Arrumem a van — policiais estaduais já estão saindo da interestadual!",
+          "timestamp_label": "23:43",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "r409",
+          "text": "Não mostre minha identidade verdadeira à polícia — não sou paramédica de verdade.",
+          "unsent_placeholder": "HÓSPEDE_409 apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Sirenes azuis varrem o estacionamento molhado de chuva. Você se vira para agradecer a Mara — mas ela já sumiu pela mata de pinheiros, deixando para trás uma chave prateada marcada \"QUARTO 410.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "A Chave Para o Quarto 410",
+          "teaser_text": "Você sobreviveu ao quarto andar oculto — mas quem era Mara de verdade, e o que ainda está trancado dentro do Quarto 410?",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Botão Escondido",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "01h28 · Trovões sacodem o toldo do Pine Inn. Você desliza de volta para o elevador de serviço segurando a chave de latão 410 de Mara.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Você voltou mesmo lá para cima, {{player_name}}? O Quarto 410 guarda a prova que fez Mara ser apagada do livro de hóspedes.",
+          "timestamp_label": "01:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Recepção! Pare de mentir — quem é Mara, e por que este elevador tem uma fenda magnética onde deveria estar o 4º Andar?!",
+          "timestamp_label": "01:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/elevator_panel_404.webp",
+          "caption": "Painel do Elevador Pine Inn · 01h29 — Fenda oculta de cartão destranca o 4º andar lacrado.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 8,
+          "transcript": "[chuva forte batendo no vidro] Me escuta! A Mara era repórter investigativa que expôs o xerife do nosso condado! Ele obrigou o dono do motel a lacrar o 4º andar!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "O elevador de serviço estremece abrindo para o 4º andar silencioso e coberto de poeira:",
+          "options": [
+            {
+              "option_id": "opt_091_e3_free",
+              "label": "Ir direto ao Quarto 410 com a chave",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou no 4º Andar agora. Indo até o Quarto 410 — fique na linha!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_091_e3_vip",
+              "label": "Checar a câmera oculta sobre o Quarto 409",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Tábuas do piso rangem sob suas botas. Um brilho azulado fraco de notebook escapa por baixo da fresta do Quarto 410.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Bata duas vezes, {{player_name}}. Não deixe a viatura do xerife ouvir você.",
+          "timestamp_label": "01:28",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "A câmera sobre o 409 não está gravando — o fio dela entra no Quarto 410 como monitor de alerta da própria Mara.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... HÓSPEDE_409 É a Mara! Você esteve escondida dentro do Quarto 410 este tempo todo!",
+          "timestamp_label": "01:28",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "A caminhonete do xerife acabou de entrar no pátio de cascalho do Pine Inn!!",
+          "unsent_placeholder": "Recepção apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "ALERTA VERMELHO! O subxerife acabou de entrar na recepção perguntando por que o elevador de serviço se mexeu!",
+          "timestamp_label": "01:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Entre no Quarto 410 agora mesmo, {{player_name}} — estou abrindo o ferrolho!",
+          "timestamp_label": "01:28",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Dentro do Quarto 410",
+          "teaser_text": "HÓSPEDE_409 é Mara viva — e o subxerife corrupto acabou de perceber que alguém destrancou o proibido 4º andar.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Os Arquivos do Caso de Mara",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "01h39 · Mara tranca o Quarto 410 atrás de você. Recortes de jornal e registros de propina do xerife cobrem a mesa do motel.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Obrigada por responder minhas mensagens, {{player_name}}. Meu sinal de celular só alcança a escada de incêndio do telhado — precisava de alguém para tirar este pendrive daqui.",
+          "timestamp_label": "01:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A Recepção acabou de nos avisar que o subxerife está checando o elevador! Dá para nós duas sairmos pela escotilha do telhado?",
+          "timestamp_label": "01:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Eu disse a ele que o elevador deu curto na tempestade — vocês têm dois minutos!",
+          "unsent_placeholder": "Recepção apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "r409",
+          "duration_sec": 7,
+          "transcript": "[zíper fechando numa bolsa estanque] Aqui está o link completo de envio para a polícia estadual! Assim que chegarmos à estrada da crista, vamos ter barras de 5G!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Botas pesadas ecoam no patamar da escada do 4º andar lá fora:",
+          "options": [
+            {
+              "option_id": "opt_091_e4_free",
+              "label": "Descer pela escada externa escorregadia",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Janela aberta! Me siga para a escada de incêndio — fique abaixada!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_091_e4_vip",
+              "label": "Deixar rádio do 409 tocando como isca",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "A chuva açoita seus rostos enquanto você e Mara descem a escada enferrujada de ferro pela encosta de pinheiros dos fundos.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Estou vendo vocês pulando a cerca! O subxerife ainda está chutando a porta do Quarto 409!",
+          "timestamp_label": "01:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "O rádio abafado atrai o subxerife direto para o Quarto 409 vazio — garantindo a você e Mara vantagem limpa até o carro.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Gênia! Ele está revistando um quarto vazio enquanto já chegamos à linha das árvores!",
+          "timestamp_label": "01:39",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Seu celular pega duas barras de 5G na crista — e o atendente manda foto do recibo do cofre dos cartões.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Levem esta prova do cartão também — mostra que o xerife pagou pessoalmente para lacrar o 4º Andar seis meses atrás!",
+          "timestamp_label": "01:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "A Unidade Interna da Polícia Estadual acabou de atender! Mandem tudo agora mesmo!",
+          "timestamp_label": "01:39",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Envio na Crista",
+          "teaser_text": "Você e Mara escaparam vivas do Pine Inn — e a viatura do xerife acabou de avistar suas lanternas traseiras na estrada da crista.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Prova do Cartão-Chave",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "01h55 · Giroflex vermelhos se aproximam na neblina atrás do seu para-choque. Seu progresso de envio chega a 84%.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Continue dirigindo! Mais dez segundos e a Polícia Estadual tem todo o livro de propinas do xerife E a ordem de lacre do Pine Inn!",
+          "timestamp_label": "01:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Subindo o registro de cartões da Recepção também — 95%... 98%... ENVIADO!",
+          "timestamp_label": "01:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "clerk",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05",
+          "text": "Cartão-Mestre 410 · Registrado em conta paralela do Xerife do Condado."
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 6,
+          "transcript": "[sirenes rodoviárias se aproximando] Quatro viaturas da Polícia Estadual acabaram de voar pelo Pine Inn subindo a crista em direção a vocês! Vocês estão quase lá!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Holofotes da Polícia Estadual surgem na crista seguinte adiante de vocês:",
+          "options": [
+            {
+              "option_id": "opt_091_e5_free",
+              "label": "Piscar farol alto e encostar nos policiais",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Polícia Estadual à frente! Estamos encostando bem atrás do bloqueio deles!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_091_e5_vip",
+              "label": "Transmitir a perseguição ao vivo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Você freia atrás de quatro viaturas da Polícia Estadual. O SUV do xerife derrapa até parar — cercado por doze agentes estaduais.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Ele está cercado! Seis meses presa num andar fantasma — e ele enfim está algemado!",
+          "timestamp_label": "01:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "A redação de Mara transmite ao vivo o cerco na crista enevoada — transformando a prisão do xerife em plantão nacional urgente.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O Quarto 409 acabou de virar primeira página, Mara.",
+          "timestamp_label": "01:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "r409",
+          "text": "Eu jamais teria saído viva do 4º Andar sem você, {{player_name}}.",
+          "unsent_placeholder": "HÓSPEDE_409 apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Policiais Estaduais acabaram de chegar ao Pine Inn para deslacrar oficialmente o 4º Andar! Obrigada por nos libertar daquele xerife.",
+          "timestamp_label": "01:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "O 4º Andar existe outra vez. E desta vez, as luzes ficam acesas.",
+          "timestamp_label": "01:55",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Hora do Check-Out",
+          "teaser_text": "O xerife corrupto está preso na crista e Mara está segura — um último check-out matinal no Pine Inn.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "4º Andar Deslacrado",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "08h30 · Nuvens de chuva se abrem sobre os pinheiros. Fita amarela da perícia tremula suave em volta do botão deslacrado do 4º andar no elevador.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Meu editor acabou de publicar a reportagem completa! Três investigadores estaduais agradeceram por entregarmos o Cartão 410.",
+          "timestamp_label": "08:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Que bom ver você sob a luz do sol, Mara. Chega de mandar mensagem a estranhos de um quarto fantasma.",
+          "timestamp_label": "08:30",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Sua diária no Pine Inn foi oficialmente estornada — além de waffles grátis para a vida toda.",
+          "unsent_placeholder": "Recepção apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 5,
+          "transcript": "[campainha do balcão tocando alegre] Café fresco esperando na recepção quando estiver pronta para fazer o check-out, {{player_name}}!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Você pousa a pesada chave de latão 409 no balcão da frente:",
+          "options": [
+            {
+              "option_id": "opt_091_e6_free",
+              "label": "Deixar 5 estrelas ao atendente honesto",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cinco estrelas para o atendente que arriscou a pele para nos avisar. Zero estrelas para o xerife.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_091_e6_vip",
+              "label": "Guardar contato de Mara para futuras dicas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "O atendente abre um sorrisão e pendura a Chave 409 de volta no quadro de madeira — bem ao lado de uma placa novinha e brilhante de latão para o Quarto 410.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Boa viagem de volta, {{player_name}}! Volte no verão — sem tempestades!",
+          "timestamp_label": "08:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Mara salva a linha direta de imprensa dela no seu celular e acena quando você retorna à rodovia ensolarada da montanha.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "Se encontrar outro andar que não existe, me ligue primeiro.",
+          "timestamp_label": "08:30",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "No retrovisor, o letreiro neon do Pine Inn apaga sob o sol claro da manhã.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "Obrigado por se hospedar conosco, {{player_name}}.",
+          "timestamp_label": "08:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Melhor check-out da minha vida.",
+          "timestamp_label": "08:30",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Check-Out Concluído",
+          "teaser_text": "Mara está livre, o xerife corrupto está atrás das grades e o Quarto 409 finalmente descansa à luz do dia.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

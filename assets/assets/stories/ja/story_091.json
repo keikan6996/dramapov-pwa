@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_091",
+  "lang": "ja",
+  "metadata": {
+    "title": "存在しない409号室",
+    "subtitle": "嵐の夜、モーテルで409号室の鍵を渡された——だがエレベーターに4階はなく、409号室から私にメッセージが届いた。",
+    "genre": "thriller",
+    "tags": [
+      "モーテル",
+      "ミステリー",
+      "サバイバル"
+    ],
+    "cover_image": "assets/media/covers/story_091.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "clerk",
+      "name": "フロント · Pine Inn",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "r409",
+      "name": "GUEST_409",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3B0764"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "消えたフロア",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後11:32 · 高速道路の土砂崩れで、あなたはPine Ridge Innで足止めされました。モーテルのWi-Fiに接続した瞬間——ローカルのイントラネットチャットが画面に開きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "409号室のキーカードは絶対に使わないで、{{player_name}}。エレベーターのボタンを見て——4階なんて存在しないから。",
+          "timestamp_label": "午後11:32",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って…エレベーターのボタンが1、2、3、5しかない！どうして私の名前を知ってるの？！",
+          "timestamp_label": "午後11:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "r409",
+          "duration_sec": 8,
+          "transcript": "[押し殺した囁き声、激しい雨音] 私が今その4階の中に閉じ込められてるからよ！フロントは他州ナンバーの車に乗った一人旅の客にだけ409号室のカードを渡すの。",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "廊下の方、大丈夫でしょうか、{{player_name}}様？4階へは製氷機の裏にある真鍮製の業務用階段をお使いください。",
+          "timestamp_label": "午後11:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "フロントのロビーカメラが真っ直ぐあなたの方へ旋回しました：",
+          "options": [
+            {
+              "option_id": "opt_091_e1_free",
+              "label": "自分の車へ戻り車で走り去る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "すみません、車に充電器を忘れてしまって——すぐ戻ります。",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_091_e1_vip",
+              "label": "業務用階段を忍び上がって409を救出する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "土砂降りの雨の中へ駆け出し——凍りつきます。あなたの車のタイヤ4本すべてが綺麗に空気を抜かれており、幹線道路へのゲートには南京錠がかかっていました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "言ったでしょ——Pine Innから車で出られる人なんていないの！フロントが中庭を閉鎖する前に、外の非常梯子から409号室の窓へ上がってきて！",
+          "timestamp_label": "午後11:36",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "薄暗い業務用階段を忍び上がります。4階はモーテルの客室廊下などではなく——重厚な鉄扉と生体認証ロックが並ぶ防音コンクリート廊下でした。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "本当に上がってきてくれたの？！テンキーにあなたの409カードをスワイプして——外から私のドアを開けられる唯一のマスターカードなの！",
+          "timestamp_label": "午後11:36",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "健康なドナー2名分の買い手確定。今4階の階段室を封鎖する。",
+          "unsent_placeholder": "フロントがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "背後で重い電磁ボルトがバタンと閉まりました。廊下の奥で、409号室のドアがカチリと開き——暗い部屋が姿を現します。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "4階の内部で",
+          "teaser_text": "階段室は封鎖され、フロントは今買い手を呼び出した。409号室の中にいる人物は唯一の味方か——それとも囮か。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "チェックアウト時刻",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午後11:40 · 409号室の中で、救急救命士のジャケットを着た傷だらけの女性があなたの腕を掴んだ——その時、廊下のスピーカーが鳴り響きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "clerk",
+          "caller_label": "フロント · Pine Inn",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 7,
+          "transcript": "[落ち着いたノイズ] 4階へようこそ、{{player_name}}様。409号室にお留まりください——60秒後に睡眠ガスを噴射いたします。",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "お電話を無視されても換気システムは止まりませんよ、{{player_name}}様。60秒後に睡眠ガスが作動します。",
+          "timestamp_label": "午後11:40",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "私はMara——2日間かけてランドリーシュートのボルトを緩めてたの！通気口が鳴り始める前に格子蓋を外すのを手伝って！",
+          "timestamp_label": "午後11:41",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って——下にいる奴らに捕まる前に州警察を呼ぶ携帯電波も必要だわ！",
+          "timestamp_label": "午後11:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "天井の通気口から白い霧がシューッと噴き出し始めました：",
+          "options": [
+            {
+              "option_id": "opt_091_e2_free",
+              "label": "鉄製のランドリーシュートに飛び降りる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_091_e2_vip",
+              "label": "窓辺の電波妨害アンテナを叩き壊す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "電波が戻った！今すぐ911に現在地GPSを送るわ！",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "あなたとMaraは4階分を滑り落ち、地下ボイラー室の湿ったモーテル用シーツの山に着地します——そこはフロントの無施錠のブレーカー盤のすぐ隣でした。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "「CELL JAMMER」って書かれた赤いブレーカーを引いて！それが落ちた瞬間に、私の緊急ビーコンがハイウェイパトロールへ飛ぶから！",
+          "timestamp_label": "午後11:43",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "金属製の椅子の脚で、窓の外に取り付けられた隠し電波妨害装置を叩き壊します。5Gのアンテナ4本が復活し——シュートを滑り降りる前に911があなたの位置を特定しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "ジャマーを壊しただと？！バンに荷物を詰めろ——州警察のパトカーがもう州間高速を降りてきたぞ！",
+          "timestamp_label": "午後11:43",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "r409",
+          "text": "警察には私の本物の身分証を見せないで——私、本当は救急救命士じゃないの。",
+          "unsent_placeholder": "GUEST_409がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "雨に濡れた駐車場を青いサイレンが横切ります。お礼を言おうとMaraの方を振り向きましたが——彼女はすでに松林の中へ姿を消しており、後には「ROOM 410」と書かれた銀色の鍵だけが残されていました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "410号室の鍵",
+          "teaser_text": "隠された4階からは生き延びた——だがMaraの本当の正体とは、そして410号室にまだ閉じ込められているものとは何か？",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "隠されたボタン",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前1:28 · Pine Innの日よけを雷鳴が揺さぶります。あなたはMaraが残した真鍮の410番の鍵を握りしめ、業務用エレベーターに忍び込みました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "本当に戻ってきてくれたの、{{player_name}}？410号室には、宿泊者名簿からMaraの存在を抹消させた証拠が眠ってる。",
+          "timestamp_label": "午前1:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "フロント！嘘はやめて——Maraは誰なの、それになんでこのエレベーターは4階があるべき場所に磁気カードスロットがあるの？！",
+          "timestamp_label": "午前1:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/elevator_panel_404.webp",
+          "caption": "Pine Inn リフト操作盤 · 午前1:29 — 隠しキーカードスロットが封印された4階を解除する。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 8,
+          "transcript": "[窓ガラスを叩く嵐の雨] 聞いてください！Maraはうちの郡保安官を告発した調査報道記者だったんです！保安官がモーテルのオーナーを脅して4階を封印させたんですよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "業務用エレベーターが震えながら開き、埃をかぶった静寂の4階が姿を現しました：",
+          "options": [
+            {
+              "option_id": "opt_091_e3_free",
+              "label": "鍵を構えて410号室へ真っ直ぐ歩く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今4階に着いたわ。410号室へ向かう——電話は繋いだままにして！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_091_e3_vip",
+              "label": "409号室の上の隠しカメラを調べる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "ブーツの下で床板が軋みます。410号室のドアの隙間から、かすかな青いノートPCの光が漏れ出ていました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "2回ノックして、{{player_name}}。保安官のパトカーに聞かれないように。",
+          "timestamp_label": "午前1:28",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "409号室の上のカメラは録画用ではなく——その配線はMara自身の早期警戒モニターとして410号室へ繋がっていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って…GUEST_409って生きているMara本人なの？！ずっと410号室の中に隠れていたのね！",
+          "timestamp_label": "午前1:28",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "保安官のトラックが今Pine Innの砂利駐車場に入ってきました！！",
+          "unsent_placeholder": "フロントがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "緊急警報です！保安官代理が今ロビーに入ってきて、なぜ業務用エレベーターが動いたのか問い詰めています！",
+          "timestamp_label": "午前1:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "今すぐ410号室に入って、{{player_name}}——内鍵を開けるから！",
+          "timestamp_label": "午前1:28",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "410号室の内部",
+          "teaser_text": "GUEST_409は生きていたMaraだった——そして汚職保安官の代理が、誰かが禁断の4階を解除したことに気づいた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Maraの取材ファイル",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前1:39 · Maraがあなたの背後で410号室に閂を下ろします。モーテルの机の上は新聞の切り抜きと保安官の賄賂記録で埋め尽くされていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "メッセージに答えてくれてありがとう、{{player_name}}。私の携帯電波は屋上の非常階段までしか届かないの——このドライブを外に運び出してくれる人が必要だった。",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "フロントから今、代理がエレベーターを確認してるって警告が来たわ！二人とも屋上ハッチから逃げられる？",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "嵐でリフトがショートしたと言っておきました——猶予は2分です！",
+          "unsent_placeholder": "フロントがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "r409",
+          "duration_sec": 7,
+          "transcript": "[防水ポーチのジッパーを閉める音] これが州警察の完全アップロード用リンク！尾根道に出れば5Gのアンテナが立つわ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "外の4階階段踊り場で重いブーツの足音が響きました：",
+          "options": [
+            {
+              "option_id": "opt_091_e4_free",
+              "label": "嵐で濡れた屋上非常階段へ這い出る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "窓が開いたわ！私に続いて非常階段に出て——身を低くして！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_091_e4_vip",
+              "label": "409号室のラジオを囮につけたままにする",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "顔に雨が叩きつける中、あなたとMaraは裏手の松林の斜面へ続く錆びた鉄梯子を駆け降りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "フェンスを越えるのが見えました！保安官代理はまだ409号室のドアを蹴破ろうとしています！",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "くぐもったラジオの音が代理を空っぽの409号室へ誘導し——あなたとMaraは余裕を持ってあなたの車まで逃げ切りました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "天才ね！私たちがもう森の端にいる間に、あいつ空っぽの部屋を捜索してるよ！",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "尾根であなたのスマホが5Gの電波を2本掴み——同時にフロントからキーカード金庫の領収書写真が送られてきました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "このキーカードの証拠も持っていってください——6か月前に保安官が私費で4階を封印させた記録が載っています！",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "州警察内部監察部が応答したわ！今すぐすべて送信して！",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "尾根からの送信",
+          "teaser_text": "あなたとMaraは生きてPine Innから脱出した——だが尾根道で保安官のパトカーがあなたのテールランプを捉えた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "キーカードの証拠",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前1:55 · バンパーの背後の霧の中から点滅する赤い回転灯が迫ります。アップロードの進捗は84%に達しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "走り続けて！あと10秒で州警察に保安官の賄賂台帳全体とPine Innの封印命令書が届く！",
+          "timestamp_label": "午前1:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "フロントがくれたキーカードログもアップロード中——95%…98%…送信完了！",
+          "timestamp_label": "午前1:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "clerk",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05",
+          "text": "マスターキーカード410 · 郡保安官の簿外口座に登録。"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 6,
+          "transcript": "[近づく高速道路のサイレン] 州警察のパトカー4台が今Pine Innの前を猛スピードで通り過ぎ、お二人がいる尾根へ向かって上がっていきました！もう少しです！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "次の坂の頂上の向こうに州警察の投光器が見えてきました：",
+          "options": [
+            {
+              "option_id": "opt_091_e5_free",
+              "label": "ハイビームを点滅させ州警察の元へ車を寄せる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "前に州警察がいます！検問のすぐ後ろに車を停めます！",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_091_e5_vip",
+              "label": "追跡劇をMaraの新聞社へ生配信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "4台の州警察パトカーの後ろでブレーキを踏みます。保安官のSUVはスリップして停止し——12人の州警察官に包囲されました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "完全に包囲された！幽霊フロアに6か月も閉じ込められてたけど——ついにあいつに手錠がかかったわ！",
+          "timestamp_label": "午前1:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Maraの報道局が霧の尾根での生中継を放送し——保安官逮捕の瞬間が全国トップの速報ニュースとなりました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "409号室が一面トップを飾ったわね、Mara。",
+          "timestamp_label": "午前1:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "r409",
+          "text": "あなたがいなかったら、絶対に4階から出られなかったよ、{{player_name}}。",
+          "unsent_placeholder": "GUEST_409がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "州警察がPine Innに到着して、正式に4階の封印を解除してくれました！あの保安官から私たちを解放してくれてありがとうございます。",
+          "timestamp_label": "午前1:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "4階が再び存在するようになったのね。今度はもう、明かりは消えない。",
+          "timestamp_label": "午前1:55",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "チェックアウト時刻",
+          "teaser_text": "汚職保安官は尾根で逮捕され、Maraは無事に保護された——Pine Innでの最後の朝のチェックアウトが訪れる。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "封印を解かれた4階",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前8:30 · 松林の上で雨雲が晴れ上がります。封印を解かれたエレベーターの4階ボタンの周りで、黄色い規制テープがそっと揺れています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "編集長が特集記事の全文を公開したよ！州の捜査官3人から、410番キーカードを渡してくれてありがとうって感謝された。",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "日の光の下に出られて本当によかった、Mara。もう幻の部屋から見知らぬ人にメッセージを送ったりしないでね。",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "clerk",
+          "text": "Pine Innのご宿泊代は正式に返金いたしました——さらに生涯ワッフル食べ放題付きです。",
+          "unsent_placeholder": "フロントがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "clerk",
+          "duration_sec": 5,
+          "transcript": "[陽気なロビーの呼び鈴] チェックアウトの準備ができましたら、いつでもフロントで淹れたてのコーヒーをご用意しております、{{player_name}}様！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "フロントのカウンターに重い真鍮製の409番の鍵を置きます：",
+          "options": [
+            {
+              "option_id": "opt_091_e6_free",
+              "label": "正直なフロント係に5つ星レビューを残す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "危険を冒して警告してくれたフロント係さんに星5つ。保安官には星ゼロよ。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_091_e6_vip",
+              "label": "今後のネタ提供用にMaraの記者連絡先を保存",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "フロント係は満面の笑みで409番の鍵を木製の棚に戻しました——ピカピカに磨かれた410号室の真鍮タグのすぐ隣に。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "お気をつけてお帰りください、{{player_name}}様！夏にまたお越しくださいね——嵐のない日に！",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Maraが自分の記者直通番号をあなたのスマホに登録し、あなたが陽光差し込む山岳ハイウェイへ戻るのを手を振って見送りました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "r409",
+          "text": "もしまた存在しないフロアを見つけたら、真っ先に私に連絡してね。",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "バックミラーの中で、明るい朝日に照らされたPine Innのネオンサインがカチリと消えました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "clerk",
+          "text": "ご宿泊ありがとうございました、{{player_name}}様。",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "人生最高のチェックアウトでした。",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · チェックアウト完了",
+          "teaser_text": "Maraは自由になり、汚職保安官は鉄格子の向こうへ送られ、409号室はついに昼の光を取り戻した。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

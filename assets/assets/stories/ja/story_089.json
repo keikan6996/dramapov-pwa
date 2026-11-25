@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_089",
+  "lang": "ja",
+  "metadata": {
+    "title": "配車アプリの迂回ルート",
+    "subtitle": "運転手がチャイルドロックをかけ、出口を通り過ぎた——なのにアプリでは12分前に「乗車終了」になっていた。",
+    "genre": "thriller",
+    "tags": [
+      "配車サービス",
+      "サバイバル",
+      "深夜"
+    ],
+    "cover_image": "assets/media/covers/story_089.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "sora",
+      "name": "Sora · 位置共有",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "bot",
+      "name": "RideSafeサポート",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3F3F46"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "乗車完了",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前1:42 · RIDESAFE領収書：Victorの乗車をご利用いただきありがとうございました！乗車は午前1:30に終了しました。5つ星評価をつけますか？",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora、私「まだ」このセダンの後部座席に乗ってるの！あいつアプリを偽装して早めに降車処理をして、今工業バイパスに曲がった！",
+          "timestamp_label": "午前1:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "えっ？！バックミラーでメッセージ打ってるのが見えないように画面の明るさを下げて！乗った時ナンバープレート確認した？！",
+          "timestamp_label": "午前1:43",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[必死にタイピングする音] 位置共有の点を見てる！無人操車場の先を時速105キロで走ってる——しかも領収書の運転手の顔写真、あなたが送ってきたナンバーと一致してない！",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "スマホをしまえ、{{player_name}}。バックミラーにお前の顔の青い光が映ってるぞ。",
+          "unsent_placeholder": "RideSafeサポートがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "運転手が踏切の赤信号へ向かってさらにスピードを上げました：",
+          "options": [
+            {
+              "option_id": "opt_089_e1_free",
+              "label": "「警官の叔父」との電話を大声で演じる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "もしもしRay叔父さん！うん、今ちょうど第4操車場を通り過ぎたところ——前にパトカー見えるよ！",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_089_e1_vip",
+              "label": "後部座席のアームレストからトランクを開ける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "ハンドルを握る運転手の指の関節が白くなります。2秒ほど速度を緩めたものの——冷たく笑い、ヘッドライトを完全に消灯しました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "いい度胸だよ——電話は繋いだままにして！今すぐ911指令室にあなたのリアルタイムGPS座標を繋いでるから！",
+          "timestamp_label": "午前1:45",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "静かに中央アームレストのトランクスルーを開け、暗闇で光る緊急トランク開放レバーを掴みます。トランクの中には2台目のスマホがあり——絶え間なく着信音が鳴っていました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora！！本物の運転手Victorの画面が割れたスマホがトランクの中に放り込まれてる！",
+          "timestamp_label": "午前1:45",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "前方で貨物列車の警笛が鳴り響きます。警報機がカンカンと鳴って遮断機が降り、セダンは急ブレーキをかけて停止しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "止まった！！列車が道を塞いでる——今がチャンス！窓を割るかトランクを蹴り開けて！",
+          "timestamp_label": "午前1:46",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "線路の前での停止",
+          "teaser_text": "バンパーのすぐ目の前を鋼鉄の貨物車両が轟音で通過する中、運転手がギアをバックに入れた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "ヘッドレスト脱出",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前1:47 · セダンは砂利の空き地へ乱暴にバックします。あなたは助手席のヘッドレストを力任せに引き抜きました——赤い踏切灯に照らされて2本の鉄の棒が光ります。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "sora",
+          "caller_label": "Sora · 911接続中",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[背後に指令室の声] パトカー2台が今工業通りに入った！金属の棒を窓ガラスの下隅に差し込んで「テコの原理で」こじ開けて！",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "警察が工業通りまであと60秒！ヘッドレストの棒を窓の隅に差し込んでこじ割って——真ん中を叩いちゃダメ！",
+          "timestamp_label": "午前1:47",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "暴れるな！俺はお前を傷つける気はない——明日の朝、証言台に立たせないよう誰かに雇われただけだ！",
+          "timestamp_label": "午前1:48",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "誰があなたを雇ったの？！今すぐ言いなさい！",
+          "timestamp_label": "午前1:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "運転手が急ブレーキを踏んで後部座席へ手を伸ばしてきます：",
+          "options": [
+            {
+              "option_id": "opt_089_e2_free",
+              "label": "窓ガラスを割り砂利道へ転がり出る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_089_e2_vip",
+              "label": "ダッシュボードの依頼主チャットを撮影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "スクショ撮ったわよ！警察が大喜びするでしょうね！",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "バキィッ！強化ガラスが何千もの粒となって外へ砕け散ります。あなたは車外へ飛び出し、到着した2台のパトカーの眩いヘッドライトへと走り込みました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "指令室があなたを保護したって言ってる！！本当によかった、{{player_name}}！怪我はない？！",
+          "timestamp_label": "午前1:50",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "窓を割って脱出する直前、あなたのフラッシュが運転手の車載タブレットを捉えました。タブレット上の送信者名は「Reed弁護人」でした。",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora、警察に保護されたわ——しかも私の誘拐を命じた被告側弁護士の現行犯証拠まで押さえた！",
+          "timestamp_label": "午前1:50",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "あの運転手はプランAにすぎない。警察署の水には絶対に口をつけるな。",
+          "unsent_placeholder": "RideSafeサポートがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "パトカーの後部座席に座って顔を上げると、人懐っこい警官がすでに封の開いたペットボトルの水を差し出し——微笑みました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "プランBはすでに動いている",
+          "teaser_text": "配車アプリの罠からは脱出した——だがあなたを黙らせたい黒幕は、警察署の内部にも手先を送り込んでいた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "警察署の死角",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後11:28 · 第4分署の待合室を出て冷たい路地へ歩み出た瞬間、スマホに偽のRideSafe領収書が届きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "RideSafeサポート：お忘れ物の身分証が回収されました！受け取りのため第4分署の裏手ガレージへお戻りください。",
+          "timestamp_label": "午後11:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora、第4分署には絶対に来ないで！受付の巡査部長があの運転手とグルだわ！",
+          "timestamp_label": "午後11:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sora",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "位置共有追跡 · 午後11:27 — あなたの配車車両が第4分署の駐車場内に停まっている。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[車のウィンカー音] 叔父さんのDMVログインでナンバーを照会したら——その車、Miller巡査部長の義理の弟名義で登録されてる！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "署の裏門がスライドして開き、銀色のセダンが走り出してきました。動いてください：",
+          "options": [
+            {
+              "option_id": "opt_089_e3_free",
+              "label": "向かいの24時間コインランドリーに飛び込む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "明るいBrightWashコインランドリーの中にいるわ！今すぐ監察局に連絡して！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_089_e3_vip",
+              "label": "巡査部長が身分証を手渡す瞬間を撮る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "深夜営業の客3人の横をすり抜けて明るいコインランドリーに飛び込みます——銀色のセダンは減速したものの、そのまま走り去りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "監察局と電話が繋がった！目撃者がいる場所に留まって——Park警部とあと5分で着くから！",
+          "timestamp_label": "午後11:28",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "新聞販売機の陰から、あなたのズームレンズがロビーカメラの下でMiller巡査部長があなたの財布を運転手に手渡す決定的瞬間を捉えました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "二人とも写真に収めた！Miller巡査部長が今まさに私の身分証を運転手に直接渡したわ！",
+          "timestamp_label": "午後11:28",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "監察局がサーバーを監査する前に乗車ログ #88412 を削除しろ。",
+          "unsent_placeholder": "RideSafeサポートがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "その送信取り消しメッセージ、スクショして！！今、乗車ログを消去してるって自白したじゃない！",
+          "timestamp_label": "午後11:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "RideSafeサポート：規約違反により、お客様のアカウントは永久停止されました。",
+          "timestamp_label": "午後11:28",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "バッジ番号412",
+          "teaser_text": "Miller巡査部長は第4分署を拠点に偽装配車組織を運営していた——そして監察局の到着まではあと5分だ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "偽装車両フリート",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後11:38 · コインランドリーの中であなたのスマホが震えます——RideSafeではなく、さらに3台の偽装車両を示すSoraの位置共有マップです。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "監察局のPark警部が今コインランドリーの前に到着するよ！覆面の黒いチャージャーに乗って！",
+          "timestamp_label": "午後11:38",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "乗りました！警部、狙われているのは私だけじゃありません——今この瞬間も他に3台の偽装配車車両が動いています！",
+          "timestamp_label": "午後11:38",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Millerが3番のピックアップを中止しろと——監察局の車両がダウンタウンを出たそうだ。",
+          "unsent_placeholder": "RideSafeサポートがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[警察無線の雑音] Park警部が今RideSafeサポートボットを追跡した——Miller巡査部長のロッカー内のノートPCから動いてるって！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Park警部が、MillerがPCを消去する前に現行犯で押さえる方法を尋ねてきました：",
+          "options": [
+            {
+              "option_id": "opt_089_e4_free",
+              "label": "ボットに返信してMillerを外におびき出す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ボットに「身分証を受け取りに裏ガレージの門にいます」と送るわ。監察局の目の前におびき出しましょう！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_089_e4_vip",
+              "label": "RideSafe本社に偽装フリートを凍結させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "90秒後、Miller巡査部長があなたの財布を手にして裏路地に現れ——4本の監察局の懐中電灯に照らされて凍りつきました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "ビンゴ！あなたの財布を持ったまま現行犯逮捕！それに監察局がロッカーから稼働中のボットPCも押収したよ！",
+          "timestamp_label": "午後11:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "RideSafeのセキュリティチームが4つの偽装運転手トークンを同時に強制終了し——自動的にドアを解錠して3人の乗客に警告を発しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "他の3人の乗客も全員無事！今すぐ第4分署のロッカールームを強制捜査してください！",
+          "timestamp_label": "午後11:38",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "監察局が裏手ガレージを封鎖し、第4分署の駐車場が青い閃光で照らし出されます。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "監察局が署のロビーカメラから引き抜いた映像を見て——めちゃくちゃ鮮明だよ！",
+          "timestamp_label": "午後11:38",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "[ボットサーバーは監察局により停止されました]",
+          "timestamp_label": "午後11:38",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ロビーでの受け渡し",
+          "teaser_text": "Miller巡査部長は現行犯で逮捕され——警察署自身のロビー監視カメラが人身売買組織のすべてを暴き出した。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "監察局の強襲",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前0:05 · 監察局の指令バンの中で、Park警部が大型モニターに第4分署のロビー映像を静止させます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "ほら、あなたの運転手が予備のキーフォブを持って受付を素通りして——Millerが彼をガレージに招き入れてる！",
+          "timestamp_label": "午前0:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "運転手の方も捕まったの？それとも銀色のセダンで逃げられた？",
+          "timestamp_label": "午前0:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "sora",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "第4分署ロビー映像 · 午後11:24 — Millerからガレージのアクセス権を受け取る偽運転手。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 6,
+          "transcript": "[無線の歓声] 今無線に入った！高速道路パトロール隊が川にかかる橋の上で銀色のセダンを包囲して——運転手に手錠をかけたって！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Park警部がロックされた後部座席で録音した音声データの提出を求めてきました：",
+          "options": [
+            {
+              "option_id": "opt_089_e5_free",
+              "label": "後部座席の音声ファイルをすべて提出する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今送ります！チャイルドロックをかける音と、あいつがMillerの名前を呼ぶ声がはっきり入ってます！",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_089_e5_vip",
+              "label": "RideSafeに安全認証の抜本見直しを要求する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Park警部は音声を聞きながら重々しく頷き——両名に対する重罪の誘拐および汚職容疑を確定させました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "保釈も司法取引もなし。何十年も刑務所暮らし確定ね。",
+          "timestamp_label": "午前0:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "RideSafeのCEOが緊急プレスリリースを発表して生体認証による運転手確認を義務化し——3人の乗客を救った功績をあなたに讃えました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "二度とどの乗客もチャイルドロックの裏に閉じ込められるべきじゃないわ。",
+          "timestamp_label": "午前0:05",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "sora",
+          "text": "もう二度と深夜の配車に一人で乗らせたりしないからね、{{player_name}}。",
+          "unsent_placeholder": "Soraがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Park警部があなたの財布と身分証を返してくれるって！さあ——こんな分署からはおさらばしましょ。",
+          "timestamp_label": "午前0:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "大賛成。それと家まで運転するのはあなたよ、Sora。",
+          "timestamp_label": "午前0:05",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "組織壊滅",
+          "teaser_text": "Miller巡査部長と偽運転手の両名が手錠をかけられ——あなたの位置共有の直感が街中の乗客たちを救った。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "安全な帰宅",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前1:10 · Soraのハッチバック車が静かにあなたの通りへ入ってきます。4つのドアロックはすべてはっきりと解錠されたままです。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "まだ少し震えてる？正直、あの時あんなに冷静だったの恐ろしいくらいすごかったよ、{{player_name}}。",
+          "timestamp_label": "午前1:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ずっとあなたが私の位置共有ピンを見守ってくれてるって知ってたからよ。",
+          "timestamp_label": "午前1:10",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "sora",
+          "text": "一生分の親友の務めを果たしたまでだよ。",
+          "unsent_placeholder": "Soraがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 5,
+          "transcript": "[シートベルトを外す音] Park警部からメッセージが来た——助けられた3人の乗客全員が、明日あなたにお礼を言いたいって。完全に伝説だね。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Soraがヘッドライトを点けたまま待つ中、あなたは玄関ポーチに上がります：",
+          "options": [
+            {
+              "option_id": "opt_089_e6_free",
+              "label": "RideSafeアプリを永久にアンインストールする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今RideSafeを削除するところ。5つ星はSoraのハッチバック送迎サービス専用よ。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_089_e6_vip",
+              "label": "Soraを深夜のラーメンに誘う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "アプリのアイコンが画面から消えます。鍵を閉めた玄関の中から、あなたはSoraに手を振りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "5つ星サービスでしょ！ベッドに入ったら連絡してね！",
+          "timestamp_label": "午前1:10",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Soraが車寄せに車を停め——20分後、湯気の立つラーメンの丼を挟んで二人は笑い合っていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今夜最高の迂回ルートね：真っ直ぐキッチン行き。",
+          "timestamp_label": "午前1:10",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "位置共有マップが綺麗に閉じられます。乗車ステータス：無事に到着。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "いつでも位置ピンは共有してね、{{player_name}}。絶対に。",
+          "timestamp_label": "午前1:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ええ、必ず。おやすみ、Sora。",
+          "timestamp_label": "午前1:10",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · 無事に到着",
+          "teaser_text": "偽装配車組織は壊滅し、Miller巡査部長は鉄格子の向こうへ送られ、あなたは無事に家へ辿り着いた。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

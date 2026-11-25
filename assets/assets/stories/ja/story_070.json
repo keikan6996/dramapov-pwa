@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_070",
+  "lang": "ja",
+  "metadata": {
+    "title": "隠されていたもう一つの家族",
+    "subtitle": "父の入院バッグを整理していた時、10歳の少年の学費請求書を見つけた――支払われていたのは母の信託基金からだった。",
+    "genre": "romance",
+    "tags": [
+      "家族の秘密",
+      "裏切り",
+      "メロドラマ"
+    ],
+    "cover_image": "assets/media/covers/story_070.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "mistress",
+      "name": "Sofia (正体不明)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#701A75"
+    },
+    {
+      "id": "sister",
+      "name": "Grace (姉)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "doctor",
+      "name": "Lin医師",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "学費の領収書",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後9:30 · ICU待合室。脳卒中の後、父は鎮静状態にあります。コートのポケットの中で彼の予備スマホが震えました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "あなた、どうしてLeoのインターナショナルスクールの学費引き落としが拒否されたの？金曜日までにヴィラの権利書にサインするって約束したじゃない！",
+          "timestamp_label": "午後9:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Graceお姉ちゃん、今お父さんの2台目のスマホを持ってるんだけど。Sofiaって誰？それにどうしてお母さんの信託から10歳の子の学費が払われてるの！？",
+          "timestamp_label": "午後9:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "sister",
+          "text": "しまった……お母さんの信託が締まるまでSofiaのことは絶対に言わないって、お父さんと約束したのに！",
+          "unsent_placeholder": "Graceがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "そのスマホを置きなさい、{{player_name}}！お父さんがICUにいる間に、お母さんに余計なストレスをかけないようにしよう！",
+          "timestamp_label": "午後9:33",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "mistress",
+          "duration_sec": 12,
+          "transcript": "[冷たく得意げな声] あら、こんにちは{{player_name}}さん。彼のメッセージを読んでいるところ悪いけれど――私はもう公証済みの委任状を持って病院のロビーに来ているの。あなたのお母様の天下は終わりよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Sofiaがエレベーターで5階のICUフロアへ向かっています。どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_alert_doctor",
+              "label": "Lin先生に知らせICUへの立入を制限する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Lin先生、委任状を持っていると主張する部外者の女性がそちらへ上がっています。面会は直系家族のみにしてください！",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_freeze_trust",
+              "label": "母の信託を凍結し銀行取引ログを引く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "母を守る · 広告視聴",
+              "player_reply_text": "今すぐ信託担当官に電話します。お母さんの資産からこれ以上1ドルも出させないから。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "警備へ通知いたしました。なお、お父様は午後4時から認知判断能力がない状態ですので、本日署名されたいかなる書類も法的に無効です。",
+          "timestamp_label": "午後9:37",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "信託凍結完了：6年間で母の口座から34万ドルが流出していたことが発覚――しかも使われていたのは姉Graceによって偽造された共同署名でした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}}待って！合併が終わったらお母さんに全額返すってお父さんが約束してたの！私が手伝ったことはお母さんに言わないで！",
+          "timestamp_label": "午後9:38",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "警備員に道を譲るよう伝えなさい、{{player_name}}。さもなくば街中の記者に電話して、あなたの父親の本性をばらしてやるわ。",
+          "timestamp_label": "午後9:40",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "ICUの外での直接対決",
+          "teaser_text": "エピソード2：ICUの扉の前でSofiaが委任状を振りかざします――その背後のエレベーターから、母が降りてくるまでは。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "本物の女主人",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後9:48 · 5階廊下。茶封筒を手に、Sofiaがあなたと正面から向き合います。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "ヴィラの鍵を渡して私の息子の信託に決着をつけてくれれば、私たちは静かに姿を消すわ。拒否すれば、あなた方一族の名誉は終わりよ。",
+          "timestamp_label": "午後9:48",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "興味深い脅迫ね。特に、その書類の日付の時点で父が意識不明だったとたった今Lin先生が証明したばかりなのに。",
+          "timestamp_label": "午後9:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "公証人に電話して！印章の日付を昨日の朝に遡らせるように言うのよ！！",
+          "unsent_placeholder": "Sofiaがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "doctor",
+          "duration_sec": 9,
+          "transcript": "[毅然とした声] 奥様、病院警備が敷地外へご案内いたします。医療上の時間経過を偽造しようとするいかなる試みも警察へ通報いたします。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Sofiaの弁護士が後ずさりしました。盗まれた信託についてどう対処しますか？",
+          "options": [
+            {
+              "option_id": "opt_clawback",
+              "label": "母の34万ドルを取り戻す返還訴訟を起こす",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "あなたが受け取ったお金は1セント残らず私の母の固有信託から出たものです。月曜日の提訴をお待ちください。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_confront_grace",
+              "label": "今夜中にGraceを共同受託者から外す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "精算 · 広告視聴",
+              "player_reply_text": "それにGraceお姉ちゃん――今夜中に受託者の権限を譲渡するサインをしなさい、さもなくばお母さんに偽造引出伝票を見せるから。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Sofiaは青ざめてエレベーターの中へと後退しました。背後からあなたの母があなたの手を強く握りしめました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "信託保全完了：Graceは涙ながらに受託者権限を放棄する署名をしました。今やあなたが母の財産の唯一の守護者です。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "ごめんなさい、{{player_name}}。断ったらお父さんに勘当されるんじゃないかって怖かったの。",
+          "timestamp_label": "午後9:54",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう二度とお母さんから誰にも盗ませない。Sofiaにも、お父さんにも、他の誰にもね。",
+          "timestamp_label": "午後9:56",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "家は決して忘れない",
+          "teaser_text": "ICUの中で、父が初めて目を開けました――そして母の名前でもSofiaの名前でもない、ある名前を囁いたのです。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "囁かれた名前",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後11:20 · 病院ICU廊下。父がたった今囁いた名前――「Claire」――があなたの耳に響き続けます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}}、Claireって誰なの！？お母さんの名前でもないし、Sofiaの名前でもないよ！",
+          "timestamp_label": "午後11:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って――お母さんの口座から引き出した毎月の信託支出を確認して。すべての支払いがSofiaの名前を通っていたよね？",
+          "timestamp_label": "午後11:21",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sister",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "信託監査 · 母の信託から月8,500ドル → Sofiaの口座 → 即座に「Claire M. 養育信託」へ転送。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "お父様のバイタルは安定してきています――朝までにははっきりと話せるようになるでしょう。言い争いはICUの外でお願いします。",
+          "timestamp_label": "午後11:23",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "もしあいつらがClaireが母親の実の姪だと気づいたら、私の取り分はおしまいだ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 9,
+          "transcript": "[息を呑む音] {{player_name}}！今Sofiaが送信取り消しにしたメッセージ見た！？待って――お母さんには10年前に交通事故で亡くなった妹がいたよね！その娘さんの名前がClaireだったはず！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Sofiaは両親を亡くしたあなたのいとこ宛てのお金の半分をピンハネしていました！どう問い詰めますか？",
+          "options": [
+            {
+              "option_id": "opt_confront_sofia",
+              "label": "転送履歴を突きつけSofiaを問い詰める",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sofia、あなたはお父さんの秘密の妻なんかじゃなかった――私たちのいとこのために雇われた世話人で、毎月4,000ドルも横領していたのね！",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_freeze_trust_now",
+              "label": "Sofiaの信託権限凍結＋警備へ通報",
+              "cost_type": "vip_rewarded",
+              "badge_text": "即時ロック · 広告視聴",
+              "player_reply_text": "Graceお姉ちゃん、信託担当に電話してSofiaの支払カードを止めて――それとLin先生に病院警備を呼ぶよう頼んで！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "Sofiaが動揺：入力中のマークが3回点滅しては消え、彼女は病院のエレベーターへと駆け出しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "封鎖完了：階下のATMでSofiaの銀行カードが拒否され、父の財布を盗んだ容疑で病院警備員が彼女の身柄を確保しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "あなたのお父様に口止めされていたのよ！お母様の実家と信託をめぐって争いたくないって――それに私だって管理手数料を受け取る権利があったわ！",
+          "timestamp_label": "午後11:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "私たちのいとこを安い寄宿学校に入れながら10年間で40万ドルも懐に入れるのは「手数料」とは言わないわ、Sofia――それは横領よ！",
+          "timestamp_label": "午後11:31",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "父が隠していた本当の理由",
+          "teaser_text": "エピソード4：夜明けに父が目を覚ますまで待ちましょう――そしてSofiaが親子関係について最後の嘘をつこうとします。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Sofiaの自白",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前6:40 · ICU待合室。父の朝の回診の前に、Sofiaが薄笑いを浮かべた弁護士を連れて戻ってきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "私を訴える前によく考えなさい。あの学費請求書に載っている10歳の男の子は、間違いなくあなたのお父様の実の息子よ――そして私が彼の法定後見人なの！",
+          "timestamp_label": "午前6:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "最初は世話人だと言ったのに、今度はその男の子が父の息子だと主張するの？一体どちらが嘘なの、Sofia？",
+          "timestamp_label": "午前6:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "お父様は目を覚まされ、意識もはっきりしています。外の騒ぎを聞いて、{{player_name}}さんとGraceさん「だけ」を中に入れるよう明確にご希望されています。",
+          "timestamp_label": "午前6:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "もしあの老人が弁護士の偽造した後見人書類のことを話したら――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "今お父さんが私の手を握って全部話してくれた！あの子はClaireの息子――お母さんの大甥で――お父さんの金庫の中にSofiaとは血縁関係がゼロだと証明する封印されたDNA鑑定書があるって！",
+          "timestamp_label": "午前6:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "doctor",
+          "duration_sec": 8,
+          "transcript": "[規則正しく鳴るモニター音] お父様は私立ち会いのもとで医療判断能力証明書にもご署名なさいました――よってSofiaさんが振りかざしている委任状はすべて100%無効です。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Sofiaの弁護士がICUへの入室を要求しています！どうやって追い払いますか？",
+          "options": [
+            {
+              "option_id": "opt_call_guard_icu",
+              "label": "Lin先生にICU階からの出入り禁止を頼む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Lin先生、父の面会制限を適用してください――それと遺産管財弁護士も呼んでいただけますか。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_retrieve_safe",
+              "label": "Graceに父の封印されたDNA報告書を取らせる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ノックアウト · 広告視聴",
+              "player_reply_text": "Graceお姉ちゃん、お父さんの金庫の暗証番号を持って封印されたクリニックのDNA鑑定書を持ってきて――今日Sofiaの後見人詐欺を終わらせよう！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "入り口で遮断：警備員が即座にSofiaと彼女の弁護士をICU棟から退去させました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "手元に揃った証拠：30分以内にGraceが封印されたクリニック調査書とすべての横領請求書を持って戻ってきました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "安心して休んで、お父さん。Graceお姉ちゃんと私であの小さな甥っ子を守り抜くし――1ドル残らず取り戻すからね。",
+          "timestamp_label": "午前6:52",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "何も証明できやしないわ！後見人登録簿にはまだ私の名前が載っているんだから！",
+          "timestamp_label": "午前6:53",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "クリニックファイルが開封される",
+          "teaser_text": "エピソード5：家庭福祉局の前でDNA鑑定書を開封し、Sofiaから盗んだお金を一銭残らず剥奪しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "クリニックの調査ファイル",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午後2:00 · 病院会議室。家庭福祉局の担当官がSofiaとあなたたち家族を挟んで向かい合って座っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "担当官、こちらが聖マリア・クリニックからの封印されたDNA証明書――それに加えて10年分のピンハネされた信託送金記録です。",
+          "timestamp_label": "午後2:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "sister",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "クリニックDNA鑑定書 · 父およびSofiaとの一致率 0.00% — 母の亡き妹Claireと99.9%の母系血縁一致。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "弁護士にそう言うよう指示されただけよ――検査結果があるなんて知らなかったの！",
+          "timestamp_label": "午後2:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "死にかけた男の娘たちに嘘をつき、孤児になった子供からお金を盗んだのよ。あなたの弁護士なら2分前にもう帰ったわ。",
+          "timestamp_label": "午後2:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "もし私の貯金に残っている18万ドルを返せば逮捕だけは免れるかもしれない――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "doctor",
+          "duration_sec": 8,
+          "transcript": "[優しい微笑み] 402号室から朗報です――この1週間で初めて、お父様の血圧が正常値に戻りました。あの子を家に迎え入れる準備ができていますよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "家庭福祉局が即座にSofiaの後見人資格を取り消しました。次はどうしますか？",
+          "options": [
+            {
+              "option_id": "opt_restitution_order",
+              "label": "全額返還請求を出しLeoを家に迎える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sofiaに対する全額返還および刑事告訴手続きを進め――今日、Graceお姉ちゃんと私で小さないとこの共同後見人に署名します。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_rebuild_trust",
+              "label": "彼女の資産を凍結し彼の進学資金を倍増",
+              "cost_type": "vip_rewarded",
+              "badge_text": "完全防御 · 広告視聴",
+              "player_reply_text": "盗まれた1セント残らず回収するためSofiaのマンションに裁判所先取特権を設定し――その100%を彼専用のロックされた教育信託に入れます！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "後見人移管完了：家族の長年の秘密が癒やされていく中、Sofiaは詐欺容疑の処理のため連行されていきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "未来の保証：裁判官はその場で資産先取特権を承認し――少年の大学卒業までの教育資金が確保されました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Sofiaが10年間も悪用していた誤解のせいで、危うくお父さんのことを恨みそうになっていたなんて信じられない。",
+          "timestamp_label": "午後2:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "真実は1時間だけ傷つけるけれど――嘘は一生を傷つけるものだから。さあ、お父さんに会いに行こう。",
+          "timestamp_label": "午後2:13",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "一つになった家族",
+          "teaser_text": "エピソード6（フィナーレ）：病院から父を退院させ、小さないとこを家族として迎え入れましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "モニターが消える前に",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "2週間後 · 実家のダイニングルーム。病院から退院した父が、温かい日曜日の食卓で微笑んでいます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "見て、あの子がお父さんに算数のトロフィーを見せてる！家に連れて帰ってからずっと笑顔が絶えないのよ。",
+          "timestamp_label": "午後12:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お母さんの信託基金が、ようやくお母さんが望んでいた通りの働き――家族を守ること――をしてくれているね。",
+          "timestamp_label": "午後12:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "私の一番お気に入りの患者さんの様子を見に来ましたよ！お父様には、血圧のお薬を飲み続けて、もう秘密のストレスを抱えないよう伝えてくださいね！",
+          "timestamp_label": "午後12:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "来月が公判日だ、本当にすべてを台無しにしてしまった――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[食卓を囲む笑い声] 今お父さんがスピーカーにするようにって――{{player_name}}、あなたがお母さんの遺産の正式な受託者に任命されたってさ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "命に懸けて1セント残らず守り抜くよ――これからは家族の間に秘密は一切なしにしてね。",
+          "timestamp_label": "午後12:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "日曜日の食卓で、母の思い出をどのように讃えますか？",
+          "options": [
+            {
+              "option_id": "opt_family_photo",
+              "label": "みんなで新しい家族写真を撮る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "お母さんの肖像写真の横にみんなでぎゅっと並んで――リビングの壁に新しい章を飾る時が来たよ。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_mom_garden",
+              "label": "母とClaireの名を冠した奨学金を設立",
+              "cost_type": "vip_rewarded",
+              "badge_text": "純愛 · 広告視聴",
+              "player_reply_text": "取り戻した利息を使って、お母さんとClaire叔母さんの二人の名前を冠した奨学金を設立しましょう！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "温かな思い出：10年来の傷がついに癒やされ、4つの明るい笑顔に向けてシャッターが切られました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "尽きない恵み：Graceがあなたをぎゅっと抱きしめる中、父の瞳に感謝の涙があふれました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "世界で一番効く回復薬は、正直な家族ですね。皆さんお元気で！",
+          "timestamp_label": "午後12:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "スープが冷めないうちにお皿を取りに来て、{{player_name}}。",
+          "timestamp_label": "午後12:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 真実が家を癒やす",
+          "teaser_text": "あなたは入院バッグの背後に隠された真実を解き明かし、横領犯を止め、家族を再び一つに結びつけました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

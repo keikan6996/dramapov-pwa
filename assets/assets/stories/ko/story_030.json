@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_030",
+  "lang": "ko",
+  "metadata": {
+    "title": "영안실에서 온 음성 메시지",
+    "subtitle": "7번 냉동 서랍의 온도가 방금 37°C로 치솟았다—그리고 시신의 휴대폰이 내 번호로 12초짜리 음성 메시지를 보냈다.",
+    "genre": "thriller",
+    "tags": [
+      "영안실",
+      "새벽 3시",
+      "스릴러"
+    ],
+    "cover_image": "assets/media/covers/story_030.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (인턴)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#4F46E5"
+    },
+    {
+      "id": "ally",
+      "name": "Vance 박사 (검시관)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "증거물 봉투 #07",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "7번 서랍: 37°C",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 2:33 · 지하 2층 병리학 실험실. 7번 냉동 서랍의 온도 경보가 붉게 삑삑거립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 내 휴대폰에 온도 경보가 떴어! 왜 7번 서랍이 37°C—사람 체온으로 찍히는 거야?!",
+          "timestamp_label": "오전 2:33",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "냉각 압축기는 멀쩡히 돌아가고 있어요, 박사님! 잠깐—7번 서랍에 봉인돼 있던 증거물 휴대폰이 방금 저한테 문자를 보냈어요!",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "꺼내 줘. 이 철제 상자 안은 너무 어두워.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "말도 안 돼! 그 휴대폰은 내가 배터리까지 분리해서 4번 사물함에 봉인해 뒀다고! 멀찍이 떨어져서 서랍 걸쇠부터 확인해 봐!",
+          "timestamp_label": "오전 2:35",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 12,
+          "transcript": "[철판을 먹먹하게 두드리는 소리, 거친 숨소리] ...{{player_name}}... 나 안 죽었어... 손잡이 좀 당겨 줘...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "7번 서랍 강철 손잡이에서 성에가 녹아내립니다. 규칙적인 쿵 소리가 걸쇠를 뒤흔듭니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "7번 서랍의 부검 꼬리표를 확인한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "입고 서류 파일 열어 보는 중...",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "음성 메시지를 2배 볼륨으로 다시 재생해 본다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "배경 소리를 자세히 들어보는 중...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "그대로 얼어붙습니다. 입고 보고서에는 신원 미상 7번 남성이 이미 오후 6시에 부검이 끝났다고 적혀 있습니다—심장까지 적출된 상태입니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 쿵쿵거리는 소리 아래 들리는 건 7번 서랍이 아닙니다—바로 당신 '등 뒤'에서 실험실 유리문이 스르르 밀려 열리는 소리입니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}!! B2 CCTV 보고 있는데! 7번 서랍이 10분 전부터 '활짝 열려' 있어!",
+          "timestamp_label": "오전 2:37",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "증거물 봉투 #07 (유심 없음)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "통화 너머로 느리고 축축한 발소리가 울려 퍼집니다—정확히 당신의 책상을 향해 걸어오는 발소리와 일치합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "거절합니다. 차가운 소독약 냄새를 품은 바람이 목덜미를 스치고, 의자 위로 하얀 천 한 장이 툭 떨어집니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "7번 서랍이 비어 있다",
+          "teaser_text": "2화: 영안실 카드키 리더기가 붉게 점멸합니다—당신은 그것과 함께 B2 내부에 갇혔습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "지하 2층에 갇히다",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 2:39 · 천장 형광등이 깜빡입니다. 텅 빈 강철 7번 서랍이 복도로 툭 튀어나온 채 물방울을 뚝뚝 떨어뜨립니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "보안 부스에서 B2 전자 잠금장치 강제 해제 중이야! 초록 불 깜빡일 때까지 검체 냉장고 뒤에 숨어 있어!",
+          "timestamp_label": "오전 2:39",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "2번 부검대 위에 시신 포대가 똑바로 앉아 있어요. 왜 손에 수술용 메스를 쥐고 있죠?!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[금속 쟁반 덜그럭거리는 소리] ...내 물건을 가져갔잖아, {{player_name}}. 제자리에 돌려놔...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "가운 주머니 안에 든 은색 로켓 목걸이를 봐.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐—입고 작업할 때 바닥에 떨어진 펜던트 주운 거야?! 지금 당장 2번 부검대 위에 내려놔!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "강철 부검대 주위로 발소리가 조여드는 순간 전자 잠금장치가 초록 불을 내며 삐 소리를 냅니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "은색 펜던트를 던져 두고 전력 질주로 탈출한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "내려놓고 뛰고 있어요!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "은색 펜던트 안쪽의 사진부터 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "먼저 로켓 열어 보는 중...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "펜던트가 2번 부검대 위로 짤랑 떨어집니다. 발소리가 뚝 멈추며—당신은 출입문을 쾅 밀고 빠져나올 수 있었습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 안에는 신원 미상 7번 남성 옆에 서 있는 Vance 박사의 사진이 들어 있습니다—뒷면에는 은폐 날짜가 휘갈겨 적혀 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "1층 복도로 뛰쳐나옵니다. 강화유리 너머에서 7번 서랍이 저절로 스르르 닫힙니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Vance 박사 (검시관)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Vance 박사의 목소리가 얼음처럼 차갑게 변합니다: \"그 로켓 열어 본 건 아니겠지, {{player_name}}? 내 사무실로 와. 혼자서.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "거절합니다—그리고 휴대폰에 증거물 봉투 #07의 마지막 문자가 울립니다: \"Vance가 저지른 짓을 경찰에 말해.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "사망 시각: 보류 중",
+          "teaser_text": "시즌 피날레 · 망자는 정의를 원했고—Vance 박사는 이미 위층에서 기다리고 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "위층의 매복",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 2:18 · 지하 2층 엘리베이터가 어두운 부검실 동으로 열리자—Vance 박사가 7번 서랍 서류철을 든 채 이미 기다리고 있습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 냉동실 앞에서 물러나. 그 시신 휴대폰 지금 당장 이리 내놔—오염된 증거물이야.",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Vance 박사님, DNA 면봉에선 독극물이 검출됐는데 왜 증거물 봉투 #07 독성학 보고서엔 \"자연사\"라고 적혀 있죠?!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "조작된 법의학 보고서 · 7번 서랍 — 원래의 독극물 검출란이 빨간 잉크로 지워져 있음.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "실험실 가운 주머니 속에서 증거물 봉투 #07이 진동합니다—실시간 타임스탬프가 찍힌 오디오 파일이 뜹니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "그한테 휴대폰 넘기지 마, {{player_name}}. 오후 11시 40분에 그가 내 혈액 시험관을 바꿔치기했어.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "이 인턴이 경찰청장한테 원본 검사 스캔본을 올리면, 내 20년 경력이 끝장나는데.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[7번 서랍에서 온 먹먹한 음성 메시지] \"오후 11시 40분 지하 2층 로비 CCTV를 확인해... Vance 박사는 혼자가 아니었어.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Vance 박사가 계단실 문을 가로막고 당신의 가운 주머니를 향해 손을 뻗습니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_bolt_lab",
+              "label": "잠금장치가 있는 저온 실험실 안으로 뛰어들어간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "물러서세요, Vance 박사님! 저온 실험실 문 잠그고 경찰 부를 거예요!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_broadcast_pa",
+              "label": "병원 전체 방송(PA)으로 음성 메시지를 틀어 버린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 폭로",
+              "player_reply_text": "야간 보안팀이 병원 방송으로 증거물 봉투 #07 목소리를 들으면 뭐라고 할지 보자고요!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이 어리석은 것—저온 실험실 안은 휴대폰 안 터져! 내가 전원 내리기 전에 문 열어!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "멈춰! 당장 인터폰 꺼—보안팀이 벌써 계단 내려오고 있잖아!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "증거물 봉투 #07: \"파일이 하나 더 남았어. 병원 로비 CCTV 서버를 확인해.\"",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "실험실에 갇히다.",
+          "teaser_text": "4화: 지하 2층 안에 갇힌 당신은 Vance 박사의 공범이 찍힌 오후 11시 40분 원본 CCTV 프레임을 뽑아냅니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "지하 2층의 오후 11시 40분",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 2:30 · 저온 실험실 단말기 앞. Vance 박사가 강화유리를 내리치는 가운데 당신의 손가락이 키보드 위를 날아다닙니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "네 앞날을 생각해, {{player_name}}! 7번 서랍 그 자는 내부 고발자였어—적들이 부검을 묻어 달라며 50만 달러를 줬다고!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그럼 B2에 실려 왔을 때 아직 살아 있던 환자를 살해한 거라고요?! 그래서 7번 서랍 온도가 37°C로 치솟았던 거군요!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "심장이 멈춘 것처럼 보이게 마비제를 주사했어, {{player_name}}. 검찰청 포털에 11시 40분 CCTV를 업로드해!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "저온 실험실 단말기: \"B2_CCTV_1140.mp4 업로드 중 — 62% 완료...\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "10초 뒤에 실험실 차단기 내린다! 넌 이 지하실에서 살아 나가지 못해!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "제발, 업로드 좀 빨리... 85%... 90%...",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[지지직거리는 병원 보안 무전기] \"지하 2층, 여기는 Morales 보안실장. 안내 방송 경보 듣고 계단실 돌파 중이다!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Vance 박사가 복도 차단기 함을 잡는 바로 그 순간 업로드가 98%에 도달합니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_switch_hotspot",
+              "label": "휴대폰 핫스팟으로 전환해 업로드를 마저 끝낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "모바일 데이터 전환 완료—경찰청장님 앞으로 100% 업로드 완료!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_lock_elevator",
+              "label": "B2에 코드 레드 전면 봉쇄를 발령한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 봉쇄",
+              "player_reply_text": "코드 레드 발동! 경찰 올 때까지 지하 2층 모든 출입구 봉쇄 완료!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "안 돼! 내 휴대폰이 울리고 있어—내부 감찰국이야! 네가 무슨 짓을 한 거야?!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "우리 둘 다 여기 아래에 가둬 버렸다고?! 잠깐—계단실에서 무거운 군홧발 소리가 들려!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "방금 다운로드가 끝난 CCTV 프레임을 봐—Vance 박사 옆에 서 있는 공범을.",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "업로드 완료.",
+          "teaser_text": "5화: 경찰이 지하 2층을 돌파하고—오후 11시 40분 CCTV 프레임이 범죄 조직 전체를 무너뜨립니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "B2의 영상",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 2:48 · 형사들이 당신의 모니터를 확인하는 동안 경찰이 지하 2층으로 들이닥쳐 냉동 서랍 쪽으로 Vance 박사를 제압합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "네가 모든 걸 망쳤어, {{player_name}}! 그 CCTV에서 내 옆에 서 있던 남자가 누군지 알기나 해?!",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "얼마나 돈이 많든 상관없어요—당신 바로 옆 감방에 같이 들어가게 될 테니까.",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "지하 2층 CCTV · 오후 11:40 — 7번 서랍 밖에서 제약회사 임원에게 서류 가방을 건네받는 Vance 박사.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "7번 서랍 온도 계기판이 부드럽게 다시 4°C로 내려갑니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "정의가 실현됐어, {{player_name}}. 우리 가족도 마침내 내가 심장마비로 죽은 게 아니란 걸 알게 되겠지.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "증거물 봉투 #07 배터리: 잔량 1%.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[차분하고 잦아드는 한숨] \"죽은 남자의 음성 메모에 귀 기울여 줘서 고맙네, 인턴. 자넨 아주 훌륭한 의사가 될 거야.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "수석 형사가 핵심 증거물로 봉인할 증거물 봉투 #07을 요청합니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_hand_over_bag",
+              "label": "수석 형사에게 휴대폰을 넘긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "휴대폰과 원본 DNA 스캔 자료 여기 있습니다, 형사님. 둘 다 감옥에 처넣어 주세요.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_close_drawer",
+              "label": "예의를 담아 조용히 7번 서랍을 닫는다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 존중",
+              "player_reply_text": "편히 쉬세요. 이제 모든 진실이 세상에 밝혀졌습니다.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "형사: \"주 역사상 최대 규모의 제약사 은폐 사건을 해결한 겁니다.\"",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "영안실 조명의 깜빡임이 멎습니다. 복도에 고요한 온기가 감돕니다.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "증거물 봉투 #07의 전원이 영구적으로 꺼졌습니다.",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "사건 해결 완료.",
+          "teaser_text": "6화 (피날레): 아침 헤드라인이 도시를 뒤흔들고—외면하기를 거부했던 인턴이 햇살 속으로 걸어 나갑니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "사망 시각: 정의 구현",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 7:30 · 병원 로비 TV 화면을 1면 속보가 장식합니다: \"내부 고발자 살해 사건으로 검시관 및 제약사 임원 전격 체포.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "narrator",
+          "text": "시스템 공지: Vance 박사의 병원 자격을 영구 박탈하였습니다.",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03",
+          "style": "system_alert"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "영안실 첫 야간 근무에서 살아남았다니 아직도 믿기지가 않네.",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "narrator",
+          "text": "Morales 보안실장: \"경찰청장님께서 직접 표창을 내리셨어요, {{player_name}} 씨. 이번 주는 푹 쉬세요!\"",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05",
+          "style": "system_alert"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "병원 인사팀: \"귀하에게 법의병리학 전임의(펠로우십) 전액 지원 과정이 수여되었습니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "더 이상의 조작된 차트도 없고. 7번 서랍에서 들려오던 속삭임도 없습니다.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "때때로 병원에서 가장 조용한 방이 가장 큰 진실을 품고 있곤 하지.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[Morales 실장의 유쾌한 메시지] \"다음에 출근하면 커피는 보안실이 쏩니다, 꼬마 영웅님!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "상쾌한 아침 햇살 속으로 병원 문을 걸어 나갑니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_walk_sunlight",
+              "label": "상쾌한 아침 공기를 깊게 들이마신다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "미친 야간 당직 한 번 끝냈다. 이제 12시간 꿀잠 자러 갈 시간.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_accept_fellowship",
+              "label": "법의병리학 펠로우십 제안을 수락한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 통화",
+              "player_reply_text": "펠로우십 수락하겠습니다—제가 보는 앞에서 부검 조작은 절대 용납 못 해요.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "인생 최고의 꿀잠이 기다리고 있습니다.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이 도시의 새로운 법의학 영웅이 공식적으로 근무를 시작했습니다.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "7번 서랍 · 4°C · 평온히 안식 중.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 보존된 진실.",
+          "teaser_text": "THE END · 가장 차가운 지하실에서도 진실은 결국 말할 길을 찾아냅니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

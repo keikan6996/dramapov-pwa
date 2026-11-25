@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_078",
+  "lang": "ja",
+  "metadata": {
+    "title": "幻の昇進",
+    "subtitle": "2年間もディレクター職の業務をこなしてきたのに、VPは24歳の自分の甥を昇進させ――VIP顧客を彼に引き継ぐよう私に命じた。",
+    "genre": "romance",
+    "tags": [
+      "オフィス",
+      "コネ入社",
+      "逆転劇"
+    ],
+    "cover_image": "assets/media/covers/story_078.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#4F46E5"
+    },
+    {
+      "id": "nephew",
+      "name": "Tyler (VPの甥)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "vp",
+      "name": "Vance氏 (営業担当VP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "client",
+      "name": "Kapoor様 (VIP顧客)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "後任の教育係",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前9:30 · 全社宛てメールが届きました。「新しいアカウント・ディレクター、Tyler Vanceを歓迎しましょう！」あなたのスマホが鳴ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "やあ{{player_name}}！叔父貴がお前めっちゃ整理整頓上手いって言ってたよ。正午までにVIP顧客の電話番号と更新用スライド全部送ってくれる？オッケー？",
+          "timestamp_label": "午前9:31",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Vanceさん、昨年12月に売上400万ドルを達成したら私にディレクターの座を保証すると書面で約束しましたよね。私は520万ドルを達成しました。",
+          "timestamp_label": "午前9:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "ハハッ心配するなTyler、{{player_name}}は忠実すぎるから絶対に辞めやしない――お前が肩書きをもらう間、大変な仕事は全部あいつがやってくれるさ。",
+          "unsent_placeholder": "Vance氏がメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "チームプレーヤーでいこうじゃないか、{{player_name}}。Tylerは「新鮮な経営幹部のエネルギー」をもたらしてくれるんだ。午後2時にKapoor氏の300万ドル更新案件を引き継ぎたまえ。",
+          "timestamp_label": "午前9:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 11,
+          "transcript": "[温かく鋭い声] {{player_name}}、今プレスリリースを見たわ。このTylerっていう若い子は何者なの？私の契約更新は「あなた」と結ぶものよ――もし辞めるなら、どこへ移るのか教えなさい。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "先週、ライバル社から営業担当VPのオファーが届いていました。午後2時までに何をしますか？",
+          "options": [
+            {
+              "option_id": "opt_accept_rival",
+              "label": "ライバル社のVPオファーに署名し退職準備",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Kapoorさん、午後2時の後にコーヒーでもいかがですか。私の次の章についてワクワクするお知らせがあります。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_let_tyler_sink",
+              "label": "午後2時のコンプラ質疑応答をTyler単独に任せる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "黒幕 · 広告視聴",
+              "player_reply_text": "実はKapoorさん――午後2時の席で、TylerにEUデータコンプライアンス補則について質問してみてください。何が起きるか見ものですよ。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "client",
+          "text": "ぜひご一緒しましょう。それに、コーヒーでお話しするまで私の300万ドル契約更新へのサインは保留にしておきますわ。",
+          "timestamp_label": "午前9:39",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "罠の設置完了：Kapoor氏は微笑んで同意――さらに午前11:00、あなたは45%の報酬アップを伴うライバル社のVPオファーに署名しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "client",
+          "text": "まあ、午後2時の会議は極上の劇になりそうね。すぐにお会いしましょう、{{player_name}} VP。",
+          "timestamp_label": "午前11:15",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "なあ{{player_name}}、俺スライド読んでないんだわ(笑)――隣に座って、Kapoorが難しいこと聞いてきたら答えを囁いてくれよな。",
+          "timestamp_label": "午後1:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "300万ドルの引き継ぎ",
+          "teaser_text": "エピソード2：Vance氏がTylerをアカウント担当の「天才」として紹介します――そしてあなたはテーブル越しに退職届を滑らせます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "もう忠実すぎる部下ではない",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後2:02 · クライアント会議室。Kapoor氏がVance氏とTylerを挟んで向かい合って座っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Kapoor様、本日から新ディレクターのTylerが直々に御社の300万ドル更新案件を統括いたします！",
+          "timestamp_label": "午後2:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "client",
+          "text": "素晴らしいわ。ではTylerさん、新しいEU規制のもとで当社のTier-3 SLA違約金条項をどう再構築されるのか、順を追って説明していただけるかしら。",
+          "timestamp_label": "午後2:03",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "{{player_name}}助けてくれ！！SLAって一体何なんだ！？代わりに答えてくれ！！",
+          "unsent_placeholder": "Tylerがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "えっと……俺たちはその……クラウドのバイブスを完全にシナジーさせて……{{player_name}}、補足に入ってくれ！",
+          "timestamp_label": "午後2:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "甥を救うようにとVance氏があなたを睨みつけています。鮮やかな幕引きを飾りましょう。",
+          "options": [
+            {
+              "option_id": "opt_resign_now",
+              "label": "退職届を手渡し席を立つ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "申し訳ありません、Tyler――私にはディレクターに代わって回答する資格がありませんので。こちらが私の即時退職届です、Vanceさん。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_take_client",
+              "label": "VP就任を発表しKapoorが続くのを見る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "圧倒的勝利 · 広告視聴",
+              "player_reply_text": "実は月曜日から、メリディアン・グループのVPとして着任いたします。新鮮な経営幹部のエネルギーを存分にお楽しみください、Vanceさん。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Kapoor氏は即座にペンのキャップを閉じました。「{{player_name}}さん抜きであれば、この300万ドルの契約は公開入札に掛け直します」",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "クライアントの退席：Kapoor氏があなたの横に立ち上がりました。「月曜の朝にメリディアン社の提案書を送ってちょうだい、{{player_name}}！」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "待て！{{player_name}}！向こうと同等の条件を出す！今すぐ君をディレクターにするから！",
+          "timestamp_label": "午後2:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 7,
+          "transcript": "[エレベーターの中で笑いながら] 今年出席した中で最高のビジネス会議だったわ。今夜の飲み代は私のおごりよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "自分の価値を知れ",
+          "teaser_text": "金曜日までに、元同僚のうちさらに4人からメリディアンで採用があるかメッセージが届き――Vance氏は緊急取締役会審査に召喚されました。",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "停止勧告書",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前9:10 · メリディアン・オフィス。4人の元チームメイトがあなたの下へ合流したがっています――そしてVance氏が法的な脅しを送ってきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "{{player_name}}、弊社の法務チームがたった今、君に対して引き抜き禁止の停止勧告書を申し立てた！君はKapoor様と私の営業スタッフを違法に引き抜いたな！",
+          "timestamp_label": "午前9:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "見え透いたハッタリですね、Vanceさん。Tylerがローンチの締切を守れなかった後、Kapoorさんの方からメリディアンに電話をかけてきたんです――それに私は引き抜き禁止契約に署名した覚えはありません。",
+          "timestamp_label": "午前9:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "client",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "でたらめな法的脅迫 · Vanceが添付した未署名の競業避止義務ドラフト — Kapoor氏の契約終了通知と矛盾。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "client",
+          "text": "あら、これは傑作ね！VanceがうちのCFO宛てに、あなたは「業績不振」で解雇されたんだってメールしてきたから――そのまま彼自身の取締役会議長に転送してやったわ！",
+          "timestamp_label": "午前9:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Vance叔父さん、うっかり第4四半期の顧客更新シートを削除しちゃった――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[笑いながら] {{player_name}}、これを聞くまで待って――Tylerったら間違えてうちのチームに、ライバル顧客の極秘価格資料を送ってきたのよ！メーリングリスト全員をCCに入れてね！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Vanceの緊急取締役会審査が午前11時に始まります！彼の停止勧告書にどう返答しますか？",
+          "options": [
+            {
+              "option_id": "opt_send_truth",
+              "label": "恐れずメリディアンの顧問弁護士を通じて返信",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "メリディアンの法務顧問がたった今返信しました。正午までに名誉毀損メールを取り下げなければ、不法妨害で「あなた」を提訴しますと。",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_commission_audit",
+              "label": "2年分の未払いボーナスも同時に請求する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "証拠完備 · 広告視聴",
+              "player_reply_text": "人事部と取締役会を巻き込むのなら、2年以上にわたりあなたが私から差し止めていた64,000ドルのディレクター成果報酬も監査してもらいましょう！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "法的な自爆：Vance自身の会社の顧問弁護士が、直ちに停止勧告書を取り下げるよう彼に命じました！",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "爆弾投下：取締役会議長は、あなたの6万4千ドル報酬請求をそのまま午前11時のVance審査議題に追加しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "ねえ{{player_name}}……まだあの顧客オンボーディング用テンプレート送ってもらえたりしない？Vance叔父さんが俺に怒鳴ってるんだよ。",
+          "timestamp_label": "午前9:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "残念ねTyler――そのテンプレートはディレクターの給料とセットなの。午前11時の審査、頑張ってね。",
+          "timestamp_label": "午前9:23",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "あなたの成果報酬はどこへ消えた？",
+          "teaser_text": "エピソード4：あなたのチームが稼ぎ出した6万4000ドルのボーナスを、誰が実際に懐に入れたのかを突き止めましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "未払いの成果報酬",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前10:50 · メリディアン・ガラスオフィス。Vance氏が取締役会と向き合う10分前です。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "待て、{{player_name}}！午前11時前に報酬監査を取り下げてくれるなら、今すぐ1万5千ドルの和解慰労金を承認しよう！",
+          "timestamp_label": "午前10:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私が「業績不振」だったと言い張っていた人が、黙っていてもらうために急に1万5千ドルも払いたがるなんて面白いですね。",
+          "timestamp_label": "午前10:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "client",
+          "text": "昔の給与担当のお友達が取締役会に何をリークしたと思う？Vanceはあなたの6万4千ドルのディレクター報酬を、「TYLER」への「入社支度金（サイニングボーナス）」に付け替えてたんですって！",
+          "timestamp_label": "午前10:52",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "もし議長が、Tylerの6万4千ドルの入社支度金が{{player_name}}の成約案件から出たものだと知ったら――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "待って――Vance叔父さん、あの6万4千ドルのボーナスは新任ディレクターの標準支給額だって俺に言ったじゃん！もう時計と車のリースで半分使っちゃったよ！",
+          "timestamp_label": "午前10:54",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[ドアの開く音] うちのCFOが今、向こうの取締役会議長との電話を切ったところよ――Vanceの法人カードは利用停止にされ、さらに11時の会議に完全な報酬台帳が持ち込まれたわ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "取締役会議長から直接、書面による陳述書の提出を求める電話が入りました！何を含めますか？",
+          "options": [
+            {
+              "option_id": "opt_submit_deals",
+              "label": "2年分の署名済み成約記録を提出する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "すべての署名済みVIP契約書、メール履歴、そしてVanceが私に約束した正確な報酬計算式をお送りします。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_include_teammates",
+              "label": "4人の同僚の未払いボーナスも含める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "真の監督 · 広告視聴",
+              "player_reply_text": "私の成約ログに加えて、Vanceの部署を支えてきた4人のチームメイト全員に未払いとなっている第3四半期ボーナスも提出します！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "明白な結末：取締役会は数分で全案件を照合し――Vanceがあなたのボーナスを自分の甥に流用していたことを確定させました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "全額返還命令：取締役会は「あなた」と4人の元同僚全員への即時遡及支払いを命じました――資金源はVanceの退職パッケージから直接差し引かれます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "実力主義ではなく縁故主義を選んだのはあなたですよ、Vanceさん。どうぞ取締役会審査をご堪能ください。",
+          "timestamp_label": "午前11:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "会議室に警備員が入ってきた……Tyler、なんでお前はボーナスを使ったことを文字で認めたんだ！？",
+          "timestamp_label": "午前11:06",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "縁故主義の台帳",
+          "teaser_text": "エピソード5：メリディアン社からあなた自身の事業部門を任される中、成果報酬があなたの口座に着金する瞬間を見届けましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "取締役会審査",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午後3:30 · メリディアン会議室。銀行からの着金通知でスマホが鳴り――そして4人の見慣れた顔が歩み入りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "あなたの古巣のタワーからの速報よ：Vance氏は正午に「懲戒解雇」になり――そしてそのすぐ後ろからTylerも警備に付き添われて追い出されたって！",
+          "timestamp_label": "午後3:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "未払い給与精算完了 · 取締役会返還命令に基づき、差し止められていたディレクター成果報酬64,000ドルが全額着金。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "これで満足か！？20年間築いた私の評判がたった一日の午後で消え去ったぞ！",
+          "timestamp_label": "午後3:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "その評判は私の2年間の無償労働の上に築かれたもので、私の席をあなたの甥に譲った瞬間にあなた自身が破壊したんですよ。",
+          "timestamp_label": "午後3:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "リースしたBMWを返却して入社支度金まで返還しなきゃならなくなった――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[微笑みながら] もっと素晴らしいニュースよ、{{player_name}}！うちの取締役会が、メリディアン社との年間契約額を「倍増」することを承認したわ――厳格に「あなた」の新設部門の管轄下でね！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "メリディアンのCEOがあなたをエンタープライズ営業担当VPに昇進させました！最初に誰を採用しますか？",
+          "options": [
+            {
+              "option_id": "opt_hire_four",
+              "label": "忠実な4人の元同僚全員を採用する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "透明性のある報酬階層を明記して、今すぐ私の元チームメイト4人全員の内定通知書に署名します！",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_hire_plus_equity",
+              "label": "4人全員を採用＋チーム収益分配制を追加",
+              "cost_type": "vip_rewarded",
+              "badge_text": "エリートVP · 広告視聴",
+              "player_reply_text": "20%の昇給と四半期ごとの共有収益プールを用意して4人全員を迎え入れます――もう二度と誰も実績を見過ごされないように！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "最強チーム再集結：4人全員がその場で承諾――社内政治の揉め事ゼロ、100%エリート級の遂行力が集いました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "無敵の事業部門：あなたの新しいチームは最初の1ヶ月が終わる前に、400万ドル分の新規見込み案件を成約させました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "幻の昇進から、わずか1週間で本物のVPへ。私がこれまで目撃した中で最高の大逆転劇よ！",
+          "timestamp_label": "午後3:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "自分の価値を知ること――そして決して自分の後任を無料で教育しないことだね。",
+          "timestamp_label": "午後3:43",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "本物のVPがフロアを制す",
+          "teaser_text": "エピソード6（フィナーレ）：Kapoor氏と再集結した最強チームとともに、メリディアン史上最大の四半期をスタートさせましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "新任VP",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "1ヶ月後 · メリディアン・スカイラウンジ。第1四半期の業績が目標比180%を達成する中、あなたの新しいVPのネームプレートが輝いています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "あなたの新しいチームとの導入展開は予定より「10日」も早く完了したわ！これまで契約した中で最高のパートナーシップよ、{{player_name}} VP！",
+          "timestamp_label": "午後5:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "実際に仕事をこなして――実際に稼いだ分にふさわしい報酬を受け取る本物のチームがいれば、簡単なことですよ。",
+          "timestamp_label": "午後5:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "えっと……なあ{{player_name}}、メリディアンが新人営業職を募集してるのを見たんだ。もしよければ――",
+          "timestamp_label": "午後5:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "取締役会審査の内容が漏れたせいで、3社の転職エージェントに断られた――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[笑い声を上げながら] Tylerって本気であなたの「部下」として応募してきたの！？そのメッセージ、VP表彰盾のすぐ横に額縁に入れて飾っておきなさい！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう彼には一般公開の採用ページリンクを送っておいたわ。この部門は完全実力主義だから。",
+          "timestamp_label": "午後5:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "メリディアン第1四半期祝賀会での締めの乾杯：",
+          "options": [
+            {
+              "option_id": "opt_toast_merit",
+              "label": "実力主義、敬意、縁故ゼロに乾杯する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "すでに自分で勝ち取った席に座るために、誰の許可も待たない生き方に乾杯！",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_open_salaries",
+              "label": "全員向けの透明な昇進基準を公開する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "伝説のアイコン · 広告視聴",
+              "player_reply_text": "そして本日より、私の部門のすべての役職に明確で書面化された昇進基準を設けます――もう二度と幻の約束はさせません！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "総立ちの乾杯：夜景が輝き始める中、4人のチームメイトとKapoor氏がグラスを高く掲げました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "最高の雇用主：あなたの事業部門の定着率は100%に達し、街中のトップ営業マンたちがあなたのチームに入りたがって列を成しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "本物のディレクター――そして今のVPである{{player_name}}に乾杯！",
+          "timestamp_label": "午後5:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "まだ始まったばかりですよ、Kapoorさん。第2四半期も倍増させましょう。",
+          "timestamp_label": "午後5:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 1ペニー残らずの価値",
+          "teaser_text": "あなたは幻の昇進に背を向けて去り、未払いの成果報酬を取り戻し、誰にも止められない事業部門を築き上げました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

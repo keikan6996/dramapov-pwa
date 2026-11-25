@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_090",
+  "lang": "ja",
+  "metadata": {
+    "title": "ゼロデイ・ランサム",
+    "subtitle": "ランサムウェアが病院中のICUモニターを凍結させた——15分以内に1人の患者の記録を消去しなければ、全員が死ぬ。",
+    "genre": "thriller",
+    "tags": [
+      "ランサムウェア",
+      "病院",
+      "サイバー"
+    ],
+    "cover_image": "assets/media/covers/story_090.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · NetOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "patel",
+      "name": "Patel医師 · ICU",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "zday",
+      "name": "ZERO_DAY",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#134E4A"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "コード・ブラック",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2:11 · St. Jude病院サーバールーム：すべての端末が真紅に点滅しています。「全輸液ポンプ暗号化完了。残り時間 15:00」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}！！ICUの人工呼吸器がすべてネットワークから落ちた！今3人の患者に手動でアンビューバッグを揉んでいる——今すぐ直してくれ！",
+          "timestamp_label": "午前2:11",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "ビットコインは不要だ、{{player_name}}。マスターデータベースから患者 #4409 の毒物検査報告書を抹消すれば、即座に復号キーを渡してやる。",
+          "timestamp_label": "午前2:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "患者 #4409 ですって？！9号ベッドに入っているのは誰ですか、Patel先生？！",
+          "timestamp_label": "午前2:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 8,
+          "transcript": "[鳴り響く医療機器の警告音] ヨットパーティーから運ばれてきた身元不明の男性だ！血液から禁止された軍用神経剤の陽性反応が出た——殺人未遂事件なんだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "カウントダウンが11:30を刻みます。ICUの命が天秤にかかっています：",
+          "options": [
+            {
+              "option_id": "opt_090_e1_free",
+              "label": "ICUを物理隔離のオフライン予備機へ切り替える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Patel先生、すべてのポンプから青いLANケーブルを抜いてください——オフライン版ファームウェアを流し込みます！",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_090_e1_vip",
+              "label": "消去前に #4409 の毒物検査報告を複製する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "手動切り替えにより2台の人工呼吸器が復旧しましたが——ランサムウェアがVLANを飛び越え、薬局の調剤金庫をロックしてしまいました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "賢いエンジニアだな。だが残念、9号ベッドの患者は4分以内にアトロピンが必要だ——そして俺は今、薬品庫をロックしたぞ。",
+          "timestamp_label": "午前2:15",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "密かに毒物検査PDFを完全隔離されたUSBメモリにミラーリングしてから、メインSQLテーブル上で見せかけの削除を実行します。ZERO_DAYは餌に食いつきました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "いい選択だ。今復号キーを送る…待て。なぜサーバーラック3にUSBマウントのログが記録された？",
+          "timestamp_label": "午前2:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "サーバー室Bの外でIDカードの読み取りを検知。始末屋はすでにお前のフロアにいるぞ。",
+          "unsent_placeholder": "ZERO_DAYがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "サーバールームのカードリーダーが緑色に鳴りました——権限を持つIT職員は2人しかいないはずなのに。重い鋼鉄製の扉が内側へ開きます。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "ラック3の侵入者",
+          "teaser_text": "誰かが管理者バッジでサーバー金庫を開けた——そしてICUのカウントダウンは残り3分を切っていた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "ルートアクセス",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2:18 · あなたはコールドアイルのサーバーラックの後ろに身を隠します。唸りを上げるブレードサーバーの間を、足音がゆっくりと行き来します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "patel",
+          "caller_label": "Patel医師 · ICU",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 7,
+          "transcript": "[小声で] {{player_name}}！病院の警備部が確認したところ、サーバールームで使われたバッジはうちの外科部長——Vance医師のものだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "警備がバッジ履歴を突き止めた——外科部長だ！それに今、9号ベッドの患者が目を覚まして彼の名を囁いたぞ！",
+          "timestamp_label": "午前2:18",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "そのUSBメモリをよこせ、{{player_name}}。そうすれば俺自身の手でICUを復旧させる。今夜誰も死なずに済むんだ。",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "自分の患者に毒を盛り、それを隠すためにICU全体を人質に取ったんですか？！",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "外科部長がラック3の角を曲がってきました。奴を止めてください：",
+          "options": [
+            {
+              "option_id": "opt_090_e2_free",
+              "label": "ハロン消火システムロックを作動させる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_090_e2_vip",
+              "label": "彼のノートPCから復号キーを吸い出す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "ローカルキーは確保したわ——毒物検査報告も医師会に送信済みよ！",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "彼の横をすり抜けてドアの外へ飛び出し、黄色いハロン警報装置を叩き割ります。防爆扉が激しく閉まり、院内警察が到着するまで外科部長を閉じ込めました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "すべてのICUモニターが緑色に戻った！今夜、4人の命を救ったんだ、{{player_name}}！",
+          "timestamp_label": "午前2:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "開かれた彼のノートPCから稼働中のLANケーブルを引き抜き、ローカルのランサムウェア解除キーを病院のマスターコントローラーへ直接流し込みます。すべてのポンプが再起動しました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "ポンプがオンラインに戻り、警備員が廊下で彼に手錠をかけたぞ！その報告書を残しておいてくれて本当によかった！",
+          "timestamp_label": "午前2:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "医者は捕まえたな、{{player_name}}。だがゼロデイ脆弱性を書いた本人ではないぞ。",
+          "unsent_placeholder": "ZERO_DAYがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "St. Jude病院の上に夜明けが訪れる中、あなたのスマホが最後の暗号化ピングを受信しました——発信元は小児科病棟の病院内IPアドレスでした。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "設計者はまだ院内にいる",
+          "teaser_text": "外科部長はただの買い手にすぎなかった。真のハッカーZERO_DAYは、まだSt. Judeの内部ネットワークに接続したままだ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "サブネットの亡霊",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2:26 · ICUモニターが10秒間だけ安定し——再びオレンジ色に点滅しました。ZERO_DAYはまだサブネット4で脈動しています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}！7号ベッドの人工呼吸器の圧力がまた落ちた！外科部長のノートPCは隔離したはずだろう？！",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "部長はただの依頼主だったんです、Patel先生！物理的なサーバールームのバッジを持った誰かが「まだ」4階に直結しています！",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "4階サーバーホール · 午前2:25 — 無許可の技術者バッジで入室。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[唸りを上げるサーバーファン] 賢いNetOpsの坊主だな。部長は捕まえた——だが俺は7号ベッドのカルテが灰になるまで残りの報酬がもらえないんだ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "あなたは4階サーバー金庫のガラス扉に辿り着きました。素早く行動してください：",
+          "options": [
+            {
+              "option_id": "opt_090_e3_free",
+              "label": "ICUスイッチをエアギャップ予備へ切り替える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Patel先生、ICUを手動エアギャップに切り替えます！7号ベッドの呼吸器は遠隔ハックから守られました！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_090_e3_vip",
+              "label": "4階を開けたバッジIDを追跡する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "ラックの奥で重いクリック音が響き——すべてのICUモニターがオフラインバッテリー駆動の緑色表示に切り替わりました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "人工呼吸器が安定した！7号ベッドの患者も安定してる——そこにいる奴はもう患者に手出しできないぞ！",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "入退室ログに見覚えのある名前が点滅しました：「MARCUS V. — MEDTECH 外部ITベンダー」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ZERO_DAYはうちの外部IT業者のMarcusよ！先月のアップグレードの時にバックドアを仕込んだんだわ！",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "エアギャップが作動した！暗号化された患者アーカイブドライブを手動で引き抜く。",
+          "unsent_placeholder": "ZERO_DAYがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "待て——今7号ベッドの紙カルテを確認した！彼は当院最大の寄付者が資金提供した失敗治験の唯一の生存者だぞ！",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "警備員を呼んでも無駄だぞ、{{player_name}}。俺はもうアーカイブドライブを持って業務用階段を降りるところだ。",
+          "timestamp_label": "午前2:26",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "治験の生存者",
+          "teaser_text": "7号ベッドには致命的な臨床試験隠蔽を証明する記録があった——そして院内のIT業者がアーカイブドライブを持って4階から逃走している。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "4階の完全封鎖",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前2:35 · あなたは4階のセキュリティコンソールにバッジを叩きつけ、バイオ棟の電磁ドアを一斉に作動させました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "院内警察とFBIサイバー捜査官が今メインロビーを上がってきてる！一人で立ち向かうな！",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "そうはいかないわ、Marcus！4階のすべてのエレベーターと階段室が今バイオ・ロックダウンされた！",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "アーカイブドライブを焼却炉シュートに落とせば、誰にも何も証明できない。",
+          "unsent_placeholder": "ZERO_DAYがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[響き渡る重い足音] 4階の電磁ロックを解除しろ、{{player_name}}。さもないとバックアップドライブを医療廃棄物シュートに真っ直ぐ落とすぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Marcusはアーカイブドライブを手に廃棄物シュートの前に立っています。知恵で出し抜いてください：",
+          "options": [
+            {
+              "option_id": "opt_090_e4_free",
+              "label": "すでにクラウドへ同期済みだとハッタリをかける",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "落としたければ落としなさい、Marcus！5分前に7号ベッドのカルテ一式をFDAにミラーリング済みよ！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_090_e4_vip",
+              "label": "彼の暗号資産ウォレット通信パケットを傍受する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Marcusが一瞬躊躇しました——防火扉のガラスを閉め切って彼の退路を断つには、それで十分すぎる時間でした。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "FBI捜査官が4階の階段室に到着した！そのまま奴を押さえろ！",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "パケットスニファーが彼の最終身代金確認通信を傍受し——製薬会社ドナーの信託から直接送金された250万ドルの記録を暴きました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "製薬ドナーからの250万ドルの送金を押さえたわ！そのドライブを落としても、もう助からないわよ！",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "連邦の緊急解除により階段室の電磁ロックがカチリと開き——4人のFBI捜査官が4階へ雪崩れ込みました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "奴を確保したぞ！しかもアーカイブドライブはシュートに触れてすらいない！",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "たった1つのICUベッドのために、250万ドルの報酬を台無しにしやがって…",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "身代金の送金線",
+          "teaser_text": "Marcusは手錠をかけられた——そして250万ドルの身代金領収書が、St. Jude病院最大の製薬ドナーと病院ハッキングを直接結びつけた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "ドナーの痕跡",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前2:55 · ICUナースステーション内で、あなたは傍受したMarcusの送金明細をブリーフィング画面に映し出します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Apex Pharma Trustから250万ドル…7号ベッドを黙らせるためだけに、ICU丸ごと1つを停止させる気だったのか。",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "FBIがたった今Apex Pharmaの口座を凍結しました——私も今、すべてのモニターにクリーンなファームウェアパッチを配信しています。",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "傍受された身代金送金 · Apex Pharma TrustからZERO_DAYへの2,500,000ドル。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 6,
+          "transcript": "[安定した心電図モニターの電子音] 7号ベッドの酸素飽和度が99%に戻った！それに彼のご家族の弁護士が連邦保安官を連れて到着したぞ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "病院理事長から電話が入り、ハッキング事件を内密にするよう泣きついてきました：",
+          "options": [
+            {
+              "option_id": "opt_090_e5_free",
+              "label": "拒否して連邦侵害報告書を全面提出する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今夜患者が死にかけたんですよ。すべてのログをそのままFBIとFDAに提出します。",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_090_e5_vip",
+              "label": "MedTech業者のバックドアを即座に全削除する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "連邦捜査官が外科部長室を封鎖する中、理事長は無言で電話を切りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "毅然と立ち向かってくれてありがとう、{{player_name}}。医療は広報対策より優先されるべきだ。",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "あなたのクリーンアップスクリプトが、わずか90秒で病院全6棟に仕込まれていた14の隠しMedTechバックドアをすべて消去しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "全6棟のクリーン化を確認。ZERO_DAYはSt. Judeから永久に追放されました。",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "見事だ、NetOps。今までぶつかった中で最高の夜勤防衛戦だったよ。",
+          "unsent_placeholder": "ZERO_DAYがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "ICUの12床すべてがオールグリーンだ！君がその全員の命を救ったんだぞ。",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "[ランサムウェア・ノード完全駆除 — システム正常]",
+          "timestamp_label": "午前2:55",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "クリーン再起動",
+          "teaser_text": "すべてのICU患者は無事で、Apex Pharmaの隠蔽工作は暴かれた——夜勤が終わる前の最後の夜明けの見回りだ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "夜勤終了",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前6:45 · 黄金色の朝日がICUの廊下を満たします。すべての生体モニターが穏やかで規則正しいリズムを刻んでいます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "外科部長、Marcus、そしてApex Pharmaの役員2人がたった今起訴されたよ。7号ベッドの患者も目を覚まして、誰が自分を救ったのか尋ねている。",
+          "timestamp_label": "午前6:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "夜勤チーム全員のおかげだと伝えてください、Patel先生。私はただ明かりを灯し続けただけです。",
+          "timestamp_label": "午前6:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "patel",
+          "text": "病院長が君をサイバーセキュリティ最高責任者に任命したいと言ってるぞ。",
+          "unsent_placeholder": "Patel医師がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 5,
+          "transcript": "[朝番交代のチャイム] カフェテリアの朝食は俺のおごりだ——それと、大幅な昇給も決まったぞ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "夜勤端末がログアウト前の最終確認を求めています：",
+          "options": [
+            {
+              "option_id": "opt_090_e6_free",
+              "label": "エアギャップ手順を恒久ルール化する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "エアギャップ手順を病院標準として保存。二度と同じ過ちは起こさせません。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_090_e6_vip",
+              "label": "7号ベッドに朝の挨拶をしに立ち寄る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "あなたの新しいセキュリティ方針によりICUの計測機器は物理スイッチで保護されることとなり——全国の病院から称賛が寄せられました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "国内最高のNetOpsエンジニアだな。ゆっくり休んでくれ！",
+          "timestamp_label": "午前6:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "7号ベッドを覗き込みます。患者は力なくあなたの手を握りしめ、口パクで一言だけ伝えました。「ありがとう」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あの15分間のカウントダウンの1秒1秒すべてに価値がありました。",
+          "timestamp_label": "午前6:45",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "あなたは夜勤バッジを掛け、涼しい朝焼けの中へ踏み出します——警報ゼロ、12の力強い鼓動とともに。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "また明日の夜に、チーフ。",
+          "timestamp_label": "午前6:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "また明日、Patel先生。",
+          "timestamp_label": "午前6:45",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · バイタル安定",
+          "teaser_text": "ZERO_DAYは駆除され、Apex Pharmaの隠蔽は粉砕され、ICUの患者全員が朝日を迎えることができた。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

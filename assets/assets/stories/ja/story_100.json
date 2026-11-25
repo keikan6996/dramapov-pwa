@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_100",
+  "lang": "ja",
+  "metadata": {
+    "title": "ブラックアウト・プロトコル",
+    "subtitle": "午後11時、すべての信号機と携帯基地局が停止した——そしてハッカーは、私が電力網リセットドライブを持っていることを知っている。",
+    "genre": "thriller",
+    "tags": [
+      "停電",
+      "サイバー戦争",
+      "サバイバル"
+    ],
+    "cover_image": "assets/media/covers/story_100.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · GridOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "viktor",
+      "name": "Viktor · 第9変電所",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "hunter",
+      "name": "BLACKOUT_01",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#064E3B"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "電力網ゼロ",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後11:00 · ドォォン。夜空をエメラルド色の変圧器アーク放電が切り裂きます。800万人の市民が完全な暗闇に沈みました。生きているのはあなたの暗号化衛星ポケットベルだけです。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "{{player_name}}！！ワームが12か所の変電所すべてを文鎮化した！コールドスタート復号ドライブを持っているのは君だけだ——今すぐ第9変電所へ来い！",
+          "timestamp_label": "午後11:01",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "徒歩で第9変電所から6ブロックの所にいるわ！交通は完全麻痺——ダウンタウン中の車の盗難警報が鳴り響いてる！",
+          "timestamp_label": "午後11:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "hunter",
+          "duration_sec": 7,
+          "transcript": "[変調された無線放送] 「わざわざ第9変電所まで歩く必要はないぞ、{{player_name}}。うちの監視員がブリッジ通りを渡るお前の黄色い作業ベストを目撃した」",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "hunter",
+          "text": "病院の非常用発電機が枯渇するまであと12分だ。コールドスタート・ドライブを渡せ。",
+          "unsent_placeholder": "BLACKOUT_01がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "停電の中、背後で2台の黒いバイクがエンジンを吹かしています：",
+          "options": [
+            {
+              "option_id": "opt_100_e1_free",
+              "label": "黄色いベストを脱ぎ捨て公園を突っ切る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ベストは捨てたわ！セントラルパークを突っ切って川沿いのゲートへ向かう！",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_100_e1_vip",
+              "label": "偽ドライブを落とし蒸気トンネルへ滑り込む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "バイクのヘッドライトが空っぽの大通りを薙ぐ中、あなたは漆黒の木立へと姿を消します。前方では、霧の中に第9変電所の赤いディーゼル標識灯がぼんやり光っていました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "北側の業務用ゲートを少し開けて待ってるぞ！急げ——第9変電所の圧力弁がレッドラインに達してる！",
+          "timestamp_label": "午後11:05",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "業務用のマンホールをこじ開け、ライダーたちの真下を通る地下蒸気導管を駆け抜けて——誰にも気づかれず第9変電所のフェンス内へ飛び出しました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "うおっ——蒸気トンネルから上がってきたのか？！待て…動くな！まだコンソールAにドライブを挿すな！",
+          "timestamp_label": "午後11:05",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "制御室の中で、赤いレーザーサイトがコールドスタート卓にピタリと定まり——タービン開閉装置の陰からフードを被った人影が歩み出ました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "コールドスタートキーを真っ直ぐ俺のところへ届けてくれて感謝するよ、{{player_name}}。机の上に置け。",
+          "timestamp_label": "午後11:07",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "第9変電所の待ち伏せ",
+          "teaser_text": "BLACKOUT_01はすでに制御室の中にいた——そして市内の病院の予備電源は残り6分しか残されていない。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "コールドスタート",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午後11:08 · タービン室が閉じ込められた静電気で唸っています。肋骨に押し当てられた衛星ポケットベルが激しく震えました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "viktor",
+          "caller_label": "Viktor · 制御室",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "viktor",
+          "duration_sec": 7,
+          "transcript": "[囁き声] ガラス張りギャラリーの裏にいる！コンソールAには罠が仕掛けられてる——4番ブレーカーの手動ポートにドライブを挿し込め、俺がアーク閃光を飛ばす！",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "コンソールAはドライブを焼き切る罠だ！左の4番ブレーカーに飛び込め——今頭上のストロボを破裂させる！",
+          "timestamp_label": "午後11:08",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "ブレーカーから手を離せ、{{player_name}}！1時間だけ街を暗闇にしておけ——俺たちが狙ってるのはダウンタウンの連邦準備銀行の金庫だけだ！",
+          "timestamp_label": "午後11:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "市内の3つの病院がディーゼル燃料の最後の一滴で動いてるのよ！あんたたちの強盗のために人を死なせるわけにはいかない！",
+          "timestamp_label": "午後11:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Viktorが頭上の眩いストロボを閃かせます。コールドスタートを実行してください：",
+          "options": [
+            {
+              "option_id": "opt_100_e2_free",
+              "label": "4番ブレーカーにドライブを挿しスイッチを入れる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "コールドスタート起動！街に明かりを灯せ、Viktor！",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_100_e2_vip",
+              "label": "送電して金庫内の強盗団を閉じ込める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "ズドォォン！タービンが轟音を立てて目覚めます。12の変電所が一斉にオンラインへ復帰し黄金色の街灯の波が街並みを駆け抜け——同時にSWATが変電所のドアを突破しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "やったぞ！！すべての病院の電力網が100%グリーンだ、{{player_name}}！君が街全体を救ったんだ！",
+          "timestamp_label": "午後11:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "先にダウンタウンの回線を復旧させ——強盗の最中だった連邦準備銀行の電磁金庫扉を再び作動させて、FBIのために一味全員を中に封じ込めました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "くそっ！！金庫の電磁ロックがうちのチームを中に閉じ込めやがった！後悔させてやるぞ、{{player_name}}！",
+          "timestamp_label": "午後11:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "hunter",
+          "text": "今夜のはただの負荷テストにすぎない。来月は3つの海岸すべてを落とす。",
+          "unsent_placeholder": "BLACKOUT_01がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "輝く街を見下ろすキャットウォークに立っていると、衛星ポケットベルに最後の座標が点滅しました——それはワシントンD.C.の国家電力ハブを真っ直ぐ指していました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "ただの負荷テスト",
+          "teaser_text": "街の明かりは戻ったがBLACKOUT_01は逃走した——そして今夜は全国電力網攻撃のリハーサルにすぎなかった。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "ゼロ番変電所",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後11:48 · 街の街灯は安定して輝いていました——だが次の瞬間、Viktorの遠隔監視盤が14の地方電力ハブ全域で真紅に点滅しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "{{player_name}}、そのリセットドライブをしまうな！BLACKOUT_01が全国版のファームウェア・ワームを送り込んできた——午前0時の同時攻撃まであと12分だ！",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうやって地域の物理隔離を突破したの？！待って——リハーサルの時に私のリセットドライブの暗号署名を複製したのね！",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "viktor",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "中継バン追跡 · 午後11:48 — 沿岸幹線9号線に接近するBLACKOUT_01の移動アップリンク。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "hunter",
+          "duration_sec": 8,
+          "transcript": "[走るバンの中で唸る発電機の音] 鋭いな、GridOps。5年前にこの電力網のバックドアを作ったのは俺だ——そしてそれを報告した俺をクビにした時点で、連中の運命は決まってたんだよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "午前0時まであと11分。BLACKOUT_01は沿岸幹線9号線に向かっています：",
+          "options": [
+            {
+              "option_id": "opt_100_e3_free",
+              "label": "対抗パッチを打つため第9変電所へ急ぐ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ第9変電所に急行するわ、Viktor！コールドブート・コンパイラを起動して！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_100_e3_vip",
+              "label": "BLACKOUT_01の資金源を追跡する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "第9変電所の青い変圧器アークが夜空を照らす中、あなたの車のタイヤが産業用サービス道路へ悲鳴を上げて突入します。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "コンパイラは温まってる！複製されたキーを失効させて奴の中継アップリンクを焼き切るチャンスは1回きりだ！",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Viktorのパケットスニファーがリアルタイムのエスクロー着信を捕捉しました——外国のサイバーシンジケートが、午前0時の電力網崩壊を引き起こすために4,000万ドルを送金したばかりでした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ただの復讐じゃない——外国のシンジケートが海岸全域を闇に落とすために4,000万ドル払ったんだわ！",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "hunter",
+          "text": "GridOpsが第9変電所に向かっている。奴らのブレーカーを吹き飛ばすため高圧サージを迂回流入させる。",
+          "unsent_placeholder": "BLACKOUT_01がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "奴が第9変電所にサージ電流を送り込んでくるぞ！乗り入れる時は変圧器ヤードに気をつけろ！",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "午前0時まであと8分だ、{{player_name}}。お前のリセットドライブが138,000ボルトに耐えられるか見ものだな。",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "午前0時まであと8分",
+          "teaser_text": "BLACKOUT_01の背後には4,000万ドルの外国シンジケートがついていた——そして彼は138,000ボルトのサージ電流を真っ直ぐ第9変電所へ向けた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "高電圧",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後11:54 · 第9変電所の外周フェンスで青い放電がパチパチと弾ける中、あなたはViktorとともに地下バンカー制御室へ飛び込みます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "コンソールAにリセットドライブを挿せ！サージを接地コンデンサに逃がす——残りは「4分」だ！",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ドライブ認識！14の地方ハブすべてから複製されたキーを失効させる対抗パッチを書き込んでるわ！",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "viktor",
+          "text": "連邦サイバー司令部が待機している——BLACKOUT_01の正確なバンの位置データを渡せ！",
+          "unsent_placeholder": "Viktorがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "hunter",
+          "duration_sec": 6,
+          "transcript": "[鳴り響く非常サイレン] サージをアースに逃がしたか、Viktor！だが午前0時まであと3分——お前たちのパッチは間に合わないぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "BLACKOUT_01のDDoS攻撃により、パッチのコンパイルが71%で停滞しました：",
+          "options": [
+            {
+              "option_id": "opt_100_e4_free",
+              "label": "光ファイバーSCADA回線経由でパッチを流す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "閉域光SCADAに切り替える！奴のDDoSを迂回して——85%…96%…配信完了！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_100_e4_vip",
+              "label": "奴の中継バンに逆流パルスを撃ち込む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "午前0時ちょうどまで残り12秒というところで、14の地方ハブすべてがエメラルドグリーンに点灯し——BLACKOUT_01を永久に締め出しました！",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "14ハブすべてグリーン！午前0時を過ぎた——全国電力網は「守り抜いた」ぞ！",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "あなたの対抗パッチがBLACKOUT_01の中継アンテナへ診断用フィードバックサージを直撃させ——火花とともに彼のバンのサーバーを焼き払いました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "奴の中継バンが沈黙した！連邦サイバー司令部が沿岸国道9号線で奴を包囲中よ！",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "午前0:00 · 沿岸全域のすべての超高層ビル、病院、そして信号機が煌々と輝き続けました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "やり遂げたぞ、{{player_name}}！それと焼き切った奴のアップリンクから引き出したこの4,000万ドルの送金明細を見てくれ！",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "[BLACKOUT_01 アップリンク破壊 — 信号途絶]",
+          "timestamp_label": "午後11:54",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "電力網復旧",
+          "teaser_text": "残り12秒で守り抜いた——全国電力網を救い、BLACKOUT_01のバンを焼き、4,000万ドルのシンジケートの痕跡を掴んだ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "4,000万ドルのシンジケート",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前0:20 · Viktorが押収した4,000万ドルの暗号資産送金記録を投影する中、連邦サイバー司令部の将校たちが第9変電所へ入ってきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "ハイウェイパトロールが沿岸9号線で煙を上げるバンからBLACKOUT_01を引きずり出したそうだ——そして連邦サイバー司令部が4,000万ドルのエスクロー全額を凍結した！",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "それと監視委員会には、彼が警告していた5年前のバックドアを確実に塞ぐよう伝えて——二度とあんな穴を開けたままにしないで。",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "viktor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "押収されたサイバーシンジケートのエスクロー · 連邦サイバー司令部により40,000,000ドル凍結。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "viktor",
+          "duration_sec": 6,
+          "transcript": "[スピーカーから響く各地の指令員たちの歓声] 聞こえるか？14の変電所全員が君の名前を呼んで喝采してるぞ、{{player_name}}！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "連邦サイバー長官が、新たな全国電力網プロトコルの主席アーキテクト権限をあなたに打診してきました：",
+          "options": [
+            {
+              "option_id": "opt_100_e5_free",
+              "label": "引き受けて電力網をゼロから再設計する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "条件は1つだけ：Viktorを共同責任者にすること、そしてすべてのバックドアを公開監査にかけることです。",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_100_e5_vip",
+              "label": "古いリセットドライブを博物館のケースに収める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "長官はあなたとViktorの双方と固く握手を交わします——数か月後、あなたのゼロトラストSCADA設計が9,000万世帯の電力を守ることになりました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "共同責任者か！第9変電所の連中が新しいコーヒーメーカーも導入されるって聞いたら大騒ぎするぞ。",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "焦げた鋼鉄製のリセットドライブを微笑みながら引き抜きます——国全体の明かりを灯し続けた小さなハードウェアです。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "残り時間12秒。本当に持ちこたえたなんてまだ信じられないわ。",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "viktor",
+          "text": "これまで同じシフトに立った中で最高のGridOpsパートナーだったよ、{{player_name}}。",
+          "unsent_placeholder": "Viktorがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "電力負荷は定格100%。14ハブすべてで障害ゼロ件だ。",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "これぞ「本物の」負荷テストね。",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "永遠に灯る光",
+          "teaser_text": "BLACKOUT_01は逮捕され、4,000万ドルのシンジケートは凍結され、一度も暗闇に沈まなかった街に夜明けが昇る。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "フルパワー",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前6:30 · 朝日が街並みを黄金色に染めます。街灯は予定時刻通りに優しく消灯しました——誰に強制されるでも、ハッキングされるでもなく。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "おはよう、ボス！すべての信号機、病院、地下鉄路線が一晩中一度のトラブルもなく稼働したよ。",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "おはよう、Viktor。午前0時にどれほど危機一髪だったか街は知らない——それでこそGridOpsの仕事よね。",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "viktor",
+          "text": "第9変電所にドーナツとダブルエスプレッソを用意してあるぞ。",
+          "unsent_placeholder": "Viktorがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "viktor",
+          "duration_sec": 5,
+          "transcript": "[安定した変圧器の唸り音] 全14ハブがグリーンで点呼完了！朝番と交代する前に朝ごはんを食べにおいで！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "目覚めゆく街を見つめながら、第9変電所のキャットウォークに立ちます：",
+          "options": [
+            {
+              "option_id": "opt_100_e6_free",
+              "label": "シフトを終えてViktorと祝杯をあげる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今降りていくわ！グレーズド・ドーナツを1つ残しておいて。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_100_e6_vip",
+              "label": "全14ハブの最後の健全性チェックを実行する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "バンカーを出て澄んだ夜明けの空気の中へ踏み出します——明るく平凡な一日を支えるため唸り続ける変圧器を後にして。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "明かりを守り抜いた夜に乾杯！",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "完璧な調和でタブレットに14個の緑のチェックマークが並びます——バックドアゼロ、異常ゼロ、100%安全。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ブラックアウト・プロトコル：永久に無効化完了。",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "海岸全域で、何百万人もの人々が熱いコーヒーと明るい画面で目を覚まします——午後11時59分に誰が番をしていたか知らぬまま。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "朝食の席で会おう、{{player_name}}。",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今行くわ、Viktor。",
+          "timestamp_label": "午前6:30",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · 電力網防衛完了",
+          "teaser_text": "BLACKOUT_01は鉄格子の向こうへ送られ、4,000万ドルのサイバーシンジケートは凍結され、街の光は夜明けへと明るく輝き続ける。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

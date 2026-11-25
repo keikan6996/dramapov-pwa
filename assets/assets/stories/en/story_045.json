@@ -1,0 +1,1008 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_045",
+  "lang": "en",
+  "metadata": {
+    "title": "Night Shift At Floor 14",
+    "subtitle": "A hospital intern vanished during a blackout—and her voice note came from inside the stalled freight elevator.",
+    "genre": "mystery",
+    "tags": [
+      "Hospital",
+      "Night Shift",
+      "Suspense"
+    ],
+    "cover_image": "assets/media/covers/story_045.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "priya",
+      "name": "Dr. Priya",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "grant",
+      "name": "Nurse Grant",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "keller",
+      "name": "Dr. Keller",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Backup Generator",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:18 AM · Shift Group \"ST. JUDE WARD 14\". Emergency red lights hum after a 90-second blackout.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Has anyone seen Intern Nora? Her pager is on the nurse station desk.",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "She went down to pharmacy for Room 1408’s insulin drip right before the lights cut.",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—Room 1408 was discharged at 6 PM. Why would Nora pull an insulin drip for an empty room?",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "I told her to check the chart audit log, not the pharmacy—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Dr. Keller? What chart audit? Nobody told us about an audit.",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "grant",
+          "duration_sec": 10,
+          "transcript": "[static, muffled voice in background] {{player_name}}, I’m by Freight Elevator B! Nora’s banging on the hatch—she says someone cut the emergency phone!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Do NOT force the freight doors manually. Maintenance is on the way.",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Nora is trapped between floors 13 and 14. What do you check first?",
+          "options": [
+            {
+              "option_id": "opt_pry_door",
+              "label": "Help Grant pry open the elevator gap",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Forget waiting—Grant, grab the crowbar from the supply closet!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_audit_file",
+              "label": "Open Nora’s unlocked chart terminal",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Evidence · Watch Ad",
+              "player_reply_text": "Hold on, Nora left her terminal logged into Room 1408’s chart!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "You wedge the steel doors open six inches. Nora’s pale hand slides a folded prescription sheet through the gap.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "AUDIT ALERT: Three vials of restricted sedative were billed to empty Room 1408 using DR. KELLER’S login—five minutes ago.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, the generator just switched off again—and the stairwell door locked.",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Elevator Cable Just Groaned",
+          "teaser_text": "Episode 2: Someone is inside the elevator machine room on the roof.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Missing Vials",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:26 AM · Ward 14 corridor. Backup lights bathe the hall in crimson.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "We pulled Nora up through the gap! She’s bruised but breathing.",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good. Now tell us who hit the manual stop switch on Freight B.",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "I’ve been in the ER triage downstairs the entire time. Check the cameras.",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 11,
+          "transcript": "[whispering fast] {{player_name}}, I checked security! Someone used Dr. Keller’s badge on the roof—but the height on CCTV is way shorter than Keller!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n06",
+          "type": "unsent_message",
+          "sender_id": "grant",
+          "text": "Nora saw the vials in my locker, I only borrowed Keller’s badge—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grant… you’re standing right next to Nora right now. Step away from her.",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Grant reaches for the crash cart. How do you intervene?",
+          "options": [
+            {
+              "option_id": "opt_code_blue",
+              "label": "Hit the Ward 14 Code Blue alarm",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pulling the hallway Code Blue alarm right now!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_block_exit",
+              "label": "Lock the magnetic ward doors from desk",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Trap · Watch Ad",
+              "player_reply_text": "Locking the magnetic ward exits from the station console!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Alarms flood Ward 14. Six security officers burst through the double doors before Grant reaches the stairwell.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "The magnetic locks slam shut with a heavy thud. Grant drops the stolen vials on the linoleum floor.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Good work, {{player_name}}. Security has Grant in custody.",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Wait… Nora just handed me the paper from her pocket. Grant didn’t sell those vials on the street—he was delivering them to Room 1408’s former patient.",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "Room 1408 Was Never Discharged",
+          "teaser_text": "The discharge papers were forged—and the patient’s real name is on the hospital board of directors.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Freight Shaft Override",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:18 AM · Red backup generators hum along Floor 14 as you and Dr. Priya sprint to the freight elevator panel.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, Nurse Grant found the board member’s real chart! Room 1408 suffered a fatal reaction to Dr. Keller’s trial drug!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And the missing intern caught him swapping the three vials—so Keller stalled the freight lift with her inside!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "Freight Panel 14 · 2:19 AM — Manual override locked with a senior-attending badge.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "I can bypass the service relay from the nursing station, {{player_name}}, but Keller’s badge is still pinging on Floor 14!",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Clear the pharmacy log for Batch 404 before the generator resets.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "The intercom beside the stalled freight doors crackles softly.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Press the intercom and reassure the intern",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hang on! We’re bypassing the lock now!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Pull Batch 404 audit on Priya’s tablet",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking Batch 404 pharmacy audit...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Her shaky voice answers back—she still has one of the swapped vials hidden in her scrub pocket.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Dr. Keller falsified safety data on Batch 404 to secure a $40M biotech buyout scheduled for 9 AM.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Keller is coming down the east wing corridor right now! Hide the tablet!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "keller",
+          "duration_sec": 9,
+          "transcript": "[elevator cables creaking, intern gasping] ...{{player_name}}, he cut the vent fan too—please hurry, the air is getting thin!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grant, pull the manual brake release now. I’ll keep Keller away from the panel.",
+          "timestamp_label": "2:22 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Running Out of Air",
+          "teaser_text": "Episode 4: Dr. Keller steps out of the shadows holding a master keycard and a syringe.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Batch 404",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:25 AM · Fluorescent tubes flicker overhead as Dr. Keller blocks the hallway outside the freight lift.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Stay back, Keller! Nurse Grant already unlocked the brake relay—the elevator is moving!",
+          "timestamp_label": "2:25 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Give it up, Dr. Keller. We know Room 1408 was never discharged and we know about Batch 404.",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Tell hospital security there’s a psych-ward breach on Floor 14. Detain the intern.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "He’s trying to have security lock us in the wing so he can confiscate the swapped vial!",
+          "timestamp_label": "2:27 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "keller",
+          "duration_sec": 11,
+          "transcript": "[calm, icy voice over hallway speaker] ...Think carefully, {{player_name}}. One word from me and none of you ever practice medicine again...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "The freight doors shudder open six inches while security boots echo from the stairwell.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Wedge a crash cart into the freight doors",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Wedging the crash cart in the doors!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Grab the toxicology printout from Lab 14B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Grabbing the real toxicology report...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "You and Priya pry the doors wide and pull the coughing intern safely onto Floor 14.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The real lab sheet proves Batch 404 caused Room 1408’s cardiac arrest—and bears Keller’s direct override signature.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Security’s here—wait, the head of security is Priya’s cousin! He’s not buying Keller’s psych-ward lie!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Don’t touch that lab report! It’s proprietary trial data!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Not anymore, Keller. It’s Exhibit A.",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "The Real Lab Sheet",
+          "teaser_text": "Episode 5: The unedited toxicology report shatters Keller’s $40M buyout in one glance.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Unsealed Toxicology",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:33 AM · Main hospital power roars back online, flooding Floor 14 in harsh white light as security surrounds Keller.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, I scanned the real lab sheet! Sending copies to the medical board and city police right now!",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Make sure the intern’s hidden vial goes straight into a sealed evidence bag.",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "priya",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Toxicology & DNA Match · Room 1408 — Unapproved Batch 404 compound confirmed.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "You have no idea how many lives that drug would have saved! One bad batch shouldn’t ruin my life’s work!",
+          "timestamp_label": "2:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Wire the buyout retainer back before federal auditors freeze my accounts.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "Hospital security asks who should hold the Batch 404 vial until detectives arrive.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Seal it jointly with Priya and security",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sealing the vial with three witnesses.",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Call the Room 1408 board member’s family",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Notifying Room 1408’s family now...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Three signatures go on the chain-of-custody label, making Keller’s defense impossible.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The board chair’s family arrives with the hospital’s legal counsel—and immediately suspends Keller’s license on the spot.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 10,
+          "transcript": "[police radio in lobby, steady voice] ...Homicide and FDA investigators arriving at Emergency Entrance. Hold Floor 14...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "The intern’s vitals are normal—she’s drinking water and thanking you nonstop, {{player_name}}!",
+          "timestamp_label": "2:36 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Worst night shift of my life, Grant. Glad we didn’t ignore that voice note.",
+          "timestamp_label": "2:37 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "License Revoked",
+          "teaser_text": "Episode 6 Finale: By morning rounds, Floor 14’s cover-up is front-page news.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Morning Rounds",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "7:10 AM · Morning sun warms the hospital cafeteria as detectives escort Dr. Keller past the main lobby.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "You threw away a forty-million-dollar breakthrough, {{player_name}}. Remember that.",
+          "timestamp_label": "7:10 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You locked a terrified intern in an airless shaft to hide a lethal drug. I’ll sleep fine.",
+          "timestamp_label": "7:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "The biotech CEO knew about Batch 404’s toxicity two weeks ago.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 9,
+          "transcript": "[intern’s voice, grateful and strong] ...Thank you for coming back for me, {{player_name}}. I’m never taking a freight elevator alone again...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "The chief of medicine just emailed—Floor 14 is getting full safety audits and you three are getting commendations.",
+          "timestamp_label": "7:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "An FDA investigator asks if you noticed anyone else pressuring Dr. Keller.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Hand over the full Floor 14 shift logs",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Submitting our complete shift logs.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Report the biotech CEO’s prior knowledge",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Giving FDA the biotech CEO lead...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "The FDA halts the Batch 404 rollout nationwide before a single outside patient receives a dose.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: Federal marshals raid the biotech headquarters by afternoon, indicting the CEO alongside Keller.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Strongest espresso in the cafeteria is on me, {{player_name}}. Ready to clock out?",
+          "timestamp_label": "7:13 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "More than ready, Dr. Priya. Let’s go home.",
+          "timestamp_label": "7:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "The freight elevator indicator glows a steady green on Floor 14—open, lit, and safe.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Shift Complete",
+          "teaser_text": "The Floor 14 cover-up is over, the intern is safe, and Batch 404 is pulled from every ward.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

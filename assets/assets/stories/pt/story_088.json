@@ -1,0 +1,1045 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_088",
+  "lang": "pt",
+  "metadata": {
+    "title": "Gatilho de Emergência",
+    "subtitle": "Minha irmã jornalista sumiu há seis meses. Hoje à noite o gatilho de emergência criptografado dela enfim disparou.",
+    "genre": "thriller",
+    "tags": [
+      "Desaparecido",
+      "Criptografado",
+      "Conspiração"
+    ],
+    "cover_image": "assets/media/covers/story_088.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#9333EA"
+    },
+    {
+      "id": "nadia",
+      "name": "Nadia · Cofre Automático",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "mrk",
+      "name": "Sr. K",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3B0764"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "180 Dias em Silêncio",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "00h00 · ENVIO AUTOMÁTICO DO COFRE: Limite de 180 dias de inatividade atingido. Entregando pacote final de Nadia para {{player_name}}.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 11,
+          "transcript": "[sussurro urgente, chuva] {{player_name}}, se você está ouvindo isto, não consegui chegar à balsa. O livro-caixa offshore do senador está enterrado sob a Doca 14 — armário 09. Não confie na polícia.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nadia?! Espera — esta mensagem do cofre acabou de mostrar \"Entregue e Lida\" num segundo aparelho!",
+          "timestamp_label": "00:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Esperamos seis meses pelo cronômetro da Nadia expirar, {{player_name}}. Obrigado por abrir a localização do Armário 09 para nós.",
+          "timestamp_label": "00:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "mrk",
+          "text": "Ah, e sua irmã não está morta — ainda. Traga o pendrive para a Doca 14 se quiser que continue assim.",
+          "unsent_placeholder": "Sr. K apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Nadia ainda pode estar viva. Como você lida com a Doca 14?",
+          "options": [
+            {
+              "option_id": "opt_088_e1_free",
+              "label": "Correr ao Cais 14 antes do Sr. K chegar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Não encoste nela! Estou indo para a Doca 14 agora mesmo.",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_088_e1_vip",
+              "label": "Decifrar arquivo oculto no cofre de Nadia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Você força o Armário 09 enferrujado sob o píer. Lá dentro há uma maleta estanque — e uma polaroide de Nadia segurando o jornal de hoje.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ela está viva! Espera... por que há um cadeado novo no armário se ela sumiu há seis meses?!",
+          "timestamp_label": "00:24",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Você digita o nome do cachorro da infância de vocês. Um mapa oculto abre: o Armário 09 é uma armadilha equipada com rastreador GPS. O livro-caixa REAL está preso com fita sob o terceiro pilar do píer.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "[Nota Agendada] Se o Sr. K te mandou mensagem, significa que ele está vigiando o Armário 09. Pegue o pendrive real no Pilar 3 e corra.",
+          "timestamp_label": "00:24",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "Um holofote de barco corta a neblina do porto, prendendo você contra os pilares molhados.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Suba no barco, {{player_name}}. Tem alguém a bordo morrendo de vontade de te ver.",
+          "timestamp_label": "00:25",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "No Barco do Porto",
+          "teaser_text": "Uma silhueta entra na luz da cabine do barco — é Nadia, solta, segurando uma pistola.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Jornalista Fantasma",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "00h27 · Ondas batem no casco. Nadia fica no convés ao lado de Sr. K — e então toca discretamente a orelha duas vezes, o sinal de infância de vocês para \"Entre no jogo.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "nadia",
+          "caller_label": "Nadia · Criptografado",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 7,
+          "transcript": "[sussurrado em microfone oculto] Não entregue o pendrive a ele ainda! Quando eu gritar \"MERGULHA\", pule da grade de estibordo — lanchas federais estão a 30 segundos!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Enrole ele por 30 segundos! Estou usando escuta para o Departamento de Justiça — as lanchas da operação estão bem atrás do banco de neblina!",
+          "timestamp_label": "00:27",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Jogue o livro-caixa no convés, {{player_name}}. Sem movimentos bruscos.",
+          "timestamp_label": "00:28",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Eu entrego — mas deixe a Nadia atravessar para o píer primeiro!",
+          "timestamp_label": "00:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Sr. K ergue o rádio. O tempo acabou:",
+          "options": [
+            {
+              "option_id": "opt_088_e2_free",
+              "label": "Deslizar a maleta isca pelo convés",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pega! Agora afaste-se!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_088_e2_vip",
+              "label": "Transmitir a escuta ao vivo nos jornais",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Sr. K se atira na maleta — bem quando Nadia chuta o manete para ré e grita \"MERGULHA!\" Três holofotes da Guarda Costeira explodem pela névoa.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Segura a escada de resgate, {{player_name}}! Pegamos ele na gravação confessando toda a operação!",
+          "timestamp_label": "00:30",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Você conecta a escuta de Nadia direto na transmissão de emergência da redação dela. Em segundos, 40.000 espectadores ouvem Sr. K citar o senador ao vivo.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Vocês estão transmitindo?! Cortem o motor — caímos!",
+          "timestamp_label": "00:30",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "Um problema: o senador não era o nome mais alto naquele pendrive.",
+          "unsent_placeholder": "Nadia apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Senti sua falta, {{player_name}}. Agora seque-se — nossa reportagem está só pela metade.",
+          "timestamp_label": "00:32",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "O Nome Acima do Senador",
+          "teaser_text": "Nadia está a salvo e Sr. K está algemado — mas o livro-caixa criptografado guarda mais um nome que pode derrubar todo o gabinete.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Segunda Camada do Cofre",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02h14 · O gatilho de emergência de Nadia descriptografa a Camada Dois. Sua tela enche de recibos de remessas offshore.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "MENSAGEM AUTOMÁTICA DO COFRE: Se você está lendo a Camada Dois, {{player_name}}, o Senador era só o intermediário. Olhe a Conta nº 01.",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Conta nº 01... essa é a fundação beneficente do Procurador-Geral! Dezoito milhões de dólares!",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "nadia",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Camada 2 do Cofre · US$ 18.000.000 transferidos do lobby de defesa para a fundação do Procurador-Geral.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "mrk",
+          "duration_sec": 7,
+          "transcript": "[estática de orelhão da detenção] Escuta aqui. Queime esse livro-caixa agora mesmo. Os mensageiros do Procurador-Geral já estão indo para o seu apartamento.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Dois sedãs pretos estacionam diante da sua janela sem placas. Mova-se:",
+          "options": [
+            {
+              "option_id": "opt_088_e3_free",
+              "label": "Pegar o drive de Nadia e sair pela escada",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Não vou queimar uma única página! Estou indo para a redação agora mesmo!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_088_e3_vip",
+              "label": "Espelhar a Camada 2 em 3 servidores ext.",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Você balança para a escada de incêndio congelante bem quando punhos pesados batem na porta do seu apartamento.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "ENTRADA AO VIVO — Aqui é a Nadia! Já saí do hospital! Me encontre na garagem da gráfica do Chronicle!",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Três espelhos criptografados confirmam sincronização em Zurique, Tóquio e Londres — tornando os segredos do Procurador-Geral impossíveis de apagar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tarde demais para confiscar meu notebook! A Camada Dois está espelhada em três continentes!",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "mrk",
+          "text": "O próprio Procurador-Geral assinou a ordem de abafamento. Cheque a pasta criptografada final de Nadia.",
+          "unsent_placeholder": "Sr. K apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Estou estacionada dentro da garagem do Chronicle! Depressa — estão tentando conseguir uma ordem judicial federal de mordaça antes da edição da manhã!",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Se publicarem o nome do Procurador-Geral, eles vão atrás de vocês duas.",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Corrida Para a Imprensa",
+          "teaser_text": "Nadia está viva e esperando no Chronicle — e os mensageiros do Procurador-Geral correm para barrar a reportagem antes do amanhecer.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "A Ordem de Mordaça",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02h36 · Dentro da redação agitada do Chronicle, você abraça Nadia com força antes de plugar o pendrive dela no terminal do editor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Seis meses escondida por este momento, {{player_name}}. Espera — o editor acabou de receber uma ligação do Departamento de Justiça!",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Estão ameaçando fechar o jornal?! Precisamos da prova cabal — a ordem assinada de abafamento!",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "Escondi a chave final de descriptografia dentro da legenda da nossa foto de infância.",
+          "unsent_placeholder": "Nadia apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 7,
+          "transcript": "[teclado estalando rápido] Digite o aniversário da nossa mãe de trás para frente! Isso destranca a Pasta Zero — o mandato exato que o Procurador-Geral assinou!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Delegados federais trazendo uma ordem de mordaça acabaram de entrar no saguão do Chronicle:",
+          "options": [
+            {
+              "option_id": "opt_088_e4_free",
+              "label": "Abrir Pasta Zero e publicar online",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Senha aceita! Aperte publicar antes que cheguem ao quarto andar!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_088_e4_vip",
+              "label": "Mandar Pasta Zero também a seis redes",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "A primeira página do Chronicle entra no ar — e 90.000 leitores clicam na manchete nos primeiros sessenta segundos.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "ESTÁ NO AR! Ordem de mordaça nenhuma desfaz noventa mil sinos tocando!",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "Seis redações concorrentes recebem a pasta descriptografada ao mesmo tempo — estourando a matéria ao vivo nos telejornais matinais pelo país todo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tente amordaçar seis redes nacionais de uma vez, Sr. Procurador-Geral!",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "A redação irrompe em aplausos quando as portas do elevador se abrem — e os delegados estacam no lugar, encarando os monitores de TV com plantão urgente.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Olhe o documento na tela, {{player_name}}. Aquela assinatura acabou de encerrar a carreira dele.",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Vocês publicaram mesmo... o gabinete inteiro está em pânico.",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "A Prova Cabal",
+          "teaser_text": "A Pasta Zero está no ar no país inteiro — agora o mandato assinado do Procurador-Geral dispara um inquérito emergencial no Congresso.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "O Mandato Assinado",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "06h15 · O dia amanhece sobre a escadaria do Capitólio. Toda barra de notícias exibe a página digitalizada da Pasta Zero de Nadia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "A Comissão de Justiça do Senado acabou de intimar o pendrive original — e ofereceu proteção federal integral para nós!",
+          "timestamp_label": "06:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O Sr. K acabou de mandar recado pelo advogado — ele quer depor contra o Procurador-Geral também.",
+          "timestamp_label": "06:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "nadia",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Prova A da Pasta Zero · Mandato assinado de acobertamento do Procurador-Geral.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "mrk",
+          "duration_sec": 6,
+          "transcript": "[viva-voz do advogado] Diga à sua irmã que guardei a cópia original assinada à mão num cofre bancário. Entreguem à comissão a caixa nº 419.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Um enxame de imprensa cerca você e Nadia na escadaria do tribunal:",
+          "options": [
+            {
+              "option_id": "opt_088_e5_free",
+              "label": "Entregar o drive direto ao comitê",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Deixem a prova falar dentro da sessão. A Caixa nº 419 guarda o original em tinta.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_088_e5_vip",
+              "label": "Ler ao vivo a ordem de abafamento do PG",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Em uma hora, investigadores federais abrem a Caixa nº 419 — confirmando que a assinatura em tinta bate com a Pasta Zero.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "PLANTÃO URGENTE: O Procurador-Geral acabou de anunciar sua renúncia!",
+          "timestamp_label": "06:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Milhões assistem ao vivo enquanto você lê o parágrafo exato ordenando enterrar a apuração de Nadia. Em vinte minutos, o Procurador-Geral renuncia.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não dá para enterrar a verdade quando o gatilho de emergência já disparou.",
+          "timestamp_label": "06:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "Nunca mais sumo de você, {{player_name}}.",
+          "unsent_placeholder": "Nadia apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Ele caiu! O gabinete acabou de convocar um procurador especial independente!",
+          "timestamp_label": "06:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Pelo visto sua irmã escolheu a pessoa certa para confiar o gatilho dela.",
+          "timestamp_label": "06:15",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Primeira Página",
+          "teaser_text": "O Procurador-Geral renunciou em desgraça — agora você e Nadia finalmente podem escrever o final.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Gatilho Desarmado",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "11h00 · Tinta fresca tem cheiro forte na edição matinal do Chronicle. Os nomes de vocês duas dividem a assinatura da matéria.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Seis meses atrás achei que ninguém nunca encontraria meu cofre. Obrigada por recusar desistir, {{player_name}}.",
+          "timestamp_label": "11:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Da próxima vez que investigar um escândalo no gabinete, só me mande mensagem normal em vez de usar gatilho de emergência.",
+          "timestamp_label": "11:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "Já estou desarmando o cronômetro automático do cofre agora mesmo.",
+          "unsent_placeholder": "Nadia apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 6,
+          "transcript": "[burburinho de cafeteria, riso caloroso] O comitê do Pulitzer já ligou para o nosso editor! Venham comer panquecas — por minha conta!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Nadia oferece a você uma mesa fixa na unidade investigativa do Chronicle:",
+          "options": [
+            {
+              "option_id": "opt_088_e6_free",
+              "label": "Aceitar — e começar a próxima apuração",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Guarde uma mesa perto da janela para mim. Formamos uma equipe bem imparável.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_088_e6_vip",
+              "label": "Tirar uma semana de folga juntas antes",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Você dobra a primeira página dentro da bolsa e sorri — pronta para qualquer segredo que tentar se esconder em seguida.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Bem-vinda à redação, parceira.",
+          "timestamp_label": "11:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Você e Nadia compram duas passagens de trem para as montanhas — celulares no silencioso, sem cofres criptografados, só família.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Uma semana com zero escândalos. Depois mudamos o mundo de novo.",
+          "timestamp_label": "11:00",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Seu celular apita uma última vez: \"TEMPORIZADOR AUTOMÁTICO DO COFRE DESARMADO. BEM-VINDA DE VOLTA.\"",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Te amo, {{player_name}}. Que bom estar de volta.",
+          "timestamp_label": "11:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Bem-vinda de volta, Nadia.",
+          "timestamp_label": "11:00",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Verdade Publicada",
+          "teaser_text": "Nadia está segura, o acobertamento do Procurador-Geral foi exposto e o gatilho de emergência enfim silenciou.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

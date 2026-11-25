@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_027",
+  "lang": "en",
+  "metadata": {
+    "title": "The Night-Shift Nurse on Ward B",
+    "subtitle": "Bed 14 just pressed the nurse call button. Bed 14 has been empty since the 2019 fire.",
+    "genre": "thriller",
+    "tags": [
+      "Hospital",
+      "Night Shift",
+      "Horror"
+    ],
+    "cover_image": "assets/media/covers/story_027.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Nurse)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "ally",
+      "name": "Dr. Patel (ER)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Room 14 Call Bell",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Bed 14 Is Calling",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:52 AM · Ward B is dead silent. Suddenly, the red light above Room 14 blinks on and chimes three times.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, I see the Bed 14 alert on the central tablet. Tell me it’s a wiring glitch.",
+          "timestamp_label": "2:52 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Room 14 is padlocked from the outside, Doctor. I can see the red light glowing through the frosted glass.",
+          "timestamp_label": "2:53 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "My IV drip is empty. Come change it.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Do NOT unlock that room! Wait for security—the patient chart for Bed 14 just auto-updated in the system!",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[heart monitor flatlining, wheezing breath] ...Nurse {{player_name}}... it hurts so much... open the door...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "A heavy hospital gurney scrapes across the tiles behind the locked door.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Reset the nurse call panel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cutting power to the call panel!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Open the updated Bed 14 chart",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking the patient chart...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "The panel dies—yet the call bell keeps ringing inside Room 14, faster and faster.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Patient Name: {{player_name}}. Admitted: Tonight, 3:00 AM. Condition: Critical.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Security isn’t answering! And the elevator to Ward B just locked itself in maintenance mode!",
+          "timestamp_label": "2:56 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Room 14 Intercom",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "A raspy voice whispers: \"You forgot to unstrap me during the fire, Nurse. Now it’s your turn.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "You hit decline. The steel padlock on Room 14 snaps clean in half and hits the floor.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Room 14 Is Open",
+          "teaser_text": "Episode 2: The smell of smoke pours into Ward B—and the door swings wide.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Code Black on Ward B",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:58 AM · Thick gray haze creeps across the linoleum floor. An empty wheelchair rolls slowly out of Room 14.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’m running up the emergency stairwell with two guards! Lock yourself inside the meds room, {{player_name}}!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The wheelchair stopped right outside my desk. The wheels are leaving wet black soot tracks.",
+          "timestamp_label": "2:59 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[oxygen mask hissing] ...Check my pulse, {{player_name}}... Why won’t anyone check my pulse?...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Look at the reflection in the glass meds cabinet.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "We’re on the 4th floor landing—WAIT, the stairwell door to Ward B is scorching hot! We can’t touch the handle!",
+          "timestamp_label": "3:00 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "The clock strikes 3:00 AM. The hospital lights flicker crimson.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Pull the fire alarm sprinkler lever",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pulling the fire alarm!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Place a fresh wristband on the wheelchair",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Writing a discharge tag for Bed 14...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Cold water rains from the ceiling. The smoke hisses away—and the wheelchair collapses empty onto its side.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: You whisper \"You’re free to go home.\" The heat vanishes instantly, and the stairwell door clicks open.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Dr. Patel bursts onto Ward B soaking wet. Room 14’s door stands shut again—with the padlock intact.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Dr. Patel (ER)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Dr. Patel stares at your wrist: \"{{player_name}}... when did you put on a Bed 14 patient bracelet?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "You glance down at your own wrist—a crisp white hospital band is snapped tight around it: \"BED 14 — {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Discharged at 3:00 AM",
+          "teaser_text": "Season Finale · The plastic bracelet has no clasp. You cannot cut it off.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Unbreakable Bracelet",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "3:08 AM · The plastic patient wristband on your arm has no clasp—and prints \"WARD B · BED 14\" in fresh ink.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, don’t use surgical scissors on it—you’ll cut your wrist! Come straight to the ER triage desk!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel, the elevator won’t go down to ER! Every floor button takes me right back to Ward B!",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Ward B Corridor · Dark figure in a scorched hospital gown standing outside Room 14.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Nurse Call System: \"BED 14 · PRIORITY CODE BLUE. NURSE {{player_name}} REQUIRED.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "You left me when the alarm rang in 2019. Why won’t anyone check my chart?",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Wait—the 2019 fire wasn’t an accident. Someone locked Room 14 from the outside.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[coughing through smoke on the intercom] \"Look at the chart clipped to Bed 14... my real name isn’t on the memorial plaque.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "The scorched corridor stretches ahead. Room 14’s door stands half-open.",
+          "options": [
+            {
+              "option_id": "opt_e3_enter_room14",
+              "label": "Step into Room 14 to check the chart",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m going inside Room 14, Dr. Patel—stay on chat with me!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_pull_records",
+              "label": "Ask Dr. Patel to pull the 2019 fire log",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Investigate",
+              "player_reply_text": "Pull the 2019 Ward B fire log right now while I check the doorway!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Keep your phone flashlight steady! Send me a photo of whatever is on that clipboard!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Found it! The hospital director signed off on a faulty oxygen valve in Room 14—and buried the patient’s DNA chart!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "The wristband on your arm grows warm. Inside Room 14, a metal clipboard gleams on the bare springs.",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "The Buried Chart.",
+          "teaser_text": "Episode 4: The 2019 oxygen valve cover-up points straight to someone still working on the hospital board.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Code Black Cover-Up",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "3:20 AM · Smoke smells faint inside Room 14. You lift the charred clipboard—a forensic DNA report is tucked inside.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’m scanning the 2019 archive, {{player_name}}! The patient in Bed 14 was listed as \"Jane Doe\" so her family could never sue the board!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel, the DNA match was printed back in 2019—and the Director hid it inside this locked ward!",
+          "timestamp_label": "2:41 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "He locked the ward doors so nobody would ever find my real name, {{player_name}}. Give it to the police.",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Heavy footsteps echo from the stairwell—the Night Supervisor just disabled the Ward B cameras!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The Supervisor is the Director’s brother! He saw your badge swipe into Ward B—hide in the supply closet!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "If he catches me with this DNA chart, Ward B will have another \"accident\" tonight.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[call bell humming softly] \"The service dumbwaiter behind the linen rack goes straight to the ER, {{player_name}}.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "A flashlight beam sweeps under Room 14’s door.",
+          "options": [
+            {
+              "option_id": "opt_e4_send_photo",
+              "label": "Snap and send the DNA chart to Dr. Patel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sending the chart now—upload it to the state board before he cuts Wi-Fi!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_trigger_alarm",
+              "label": "Pull the Ward B fire alarm to summon ER",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Bold",
+              "player_reply_text": "Pulling the fire alarm! Let’s bring the whole hospital up here!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Got it! Every single page is backed up—now get to the stairwell, I’m bringing security!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sprinklers and alarms just went off! ER security is sprinting up to Ward B—hold tight!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Look at the forensic report you just sent—the patient’s sister is a nurse right here in this city.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Ward B Exposed.",
+          "teaser_text": "Episode 5: With security swarming Ward B, the Director’s 2019 cover-up collapses.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Patient Identified",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "3:42 AM · Flashing red lights illuminate Ward B as hospital security intercepts the Night Supervisor at the door.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Security has him in custody, {{player_name}}! And I just sent the DNA report straight to the County Coroner!",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel... look at my wrist! The plastic patient bracelet just snapped open by itself!",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Forensic DNA Report · 2019 Ward B Fire — Patient #14 positively identified as Elena Park.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Room 14 Call Bell: Light turns off for the first time in seven years.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The smell of smoke is completely gone. You just gave Elena Park her name back, {{player_name}}.",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "I’ve worked ER for twelve years and never seen anything like tonight.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[clear, peaceful voice] \"Thank you for answering my call bell, Nurse {{player_name}}. Tell my sister I’m okay.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "The Ward B corridor feels warm and quiet as you pick up the snapped bracelet.",
+          "options": [
+            {
+              "option_id": "opt_e5_log_discharge",
+              "label": "Log Elena’s official discharge in the chart",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Discharged with dignity. Rest in peace, Elena.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_call_sister",
+              "label": "Ask Dr. Patel to notify Elena’s sister now",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Closure",
+              "player_reply_text": "Let’s call her sister together as soon as the police finish.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Most meaningful chart entry you’ll ever sign.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Already dialing the Coroner’s liaison. Her family will know by sunrise.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Come down to the ER breakroom—your shift is officially over.",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Call Bell Cleared.",
+          "teaser_text": "Episode 6 (Finale): By sunrise, Ward B is finally at peace—and the night shift has a hero.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Morning Rounds",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:20 AM · Sunlight pours into the ER lobby. Elena’s sister hugs you in tears outside the memorial wall.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The Hospital Director resigned an hour ago, {{player_name}}. State investigators sealed his office.",
+          "timestamp_label": "7:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And look at the Ward B monitor behind the nurses’ station—Bed 14 is completely dark.",
+          "timestamp_label": "7:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Seven years of silence, ended in one night shift.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Nurse Call System: \"All beds clear. Have a safe trip home, {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Take the next three days off—doctor’s orders. You earned it.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Best night-shift nurse this hospital has ever had.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[warm, proud] \"Go get some real sleep, {{player_name}}. I’ve got the morning rounds covered.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "You clock out and step into the crisp morning air.",
+          "options": [
+            {
+              "option_id": "opt_e6_clock_out",
+              "label": "Clock out and head home to sleep",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "See you Thursday, Dr. Patel. No more ghost bells!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_place_ribbon",
+              "label": "Tie a white ribbon on Ward B’s memorial",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Honor",
+              "player_reply_text": "Left a white ribbon for Elena. Goodnight, Dr. Patel.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sleep well, hero.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "She won’t ever be forgotten again. Rest up.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Room 14 Call Bell · Permanently Deactivated.",
+          "timestamp_label": "7:22 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Rest In Peace, Bed 14.",
+          "teaser_text": "THE END · Some calls from the dark just wait for someone brave enough to answer.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

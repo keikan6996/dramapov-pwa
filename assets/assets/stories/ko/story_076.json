@@ -1,0 +1,976 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_076",
+  "lang": "ko",
+  "metadata": {
+    "title": "비서의 블랙리스트 수첩",
+    "subtitle": "은퇴하는 CEO 비서가 내게 물려준 옛 업무용 휴대폰 안에는—C-레벨 임원들의 모든 범죄가 담긴 비밀 금고가 로그인되어 있었다.",
+    "genre": "romance",
+    "tags": [
+      "오피스",
+      "비밀",
+      "권력"
+    ],
+    "cover_image": "assets/media/covers/story_076.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "ex_ea",
+      "name": "Nadia (전 비서)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "cfo",
+      "name": "Derek (CFO)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "ceo",
+      "name": "Eleanor (회장)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "물려받은 휴대폰",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 05:15 · 40층에서 나디아의 후임으로 첫 출근한 날. 그녀는 책상 서랍에 옛 업무용 휴대폰을 남겨두고 갔습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "잠긴 메모 폴더 비밀번호는 4099예요, {{player_name}}. CFO 데릭이 \"입사 환영 술자리\" 제안하기 전에 12번 항목부터 꼭 읽어보세요.",
+          "timestamp_label": "오후 05:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "12번 항목… 데릭이 협력업체 리베이트로 30만 달러를 받아 챙기고 2분기 공급업체 입찰까지 조작했다고요?!",
+          "timestamp_label": "오후 05:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "cfo",
+          "text": "IT팀 말로는 나디아가 폰을 공장 초기화 안 했대! 당장 40층 올라가서 {{player_name}}한테 그 폰 뺏어 와!",
+          "unsent_placeholder": "Derek님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "ex_ea",
+          "duration_sec": 11,
+          "transcript": "[다급하게] 데릭이 지금 엘리베이터 타고 올라가고 있어요! 절대 그 폰 넘기지 마세요—엘리너 의장님이 20분 뒤에 도쿄에서 도착하셔요.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "cfo",
+          "text": "{{player_name}}, 자리에서 움직이지 말고 그대로 있어. IT 보안 규정상 나디아 기존 폰 수거해서 초기화해야 하거든.",
+          "timestamp_label": "오후 05:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "40층에서 엘리베이터 문 도착음이 울립니다. 10초 안에 무엇을 하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_airdrop_vault",
+              "label": "블랙리스트 수첩을 개인 휴대폰으로 백업한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "완료. 제 개인 기기에 암호화 백업 끝났습니다. 빈 껍데기나 가져가라고 하죠.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_message_chair",
+              "label": "12번 항목을 곧장 의장에게 보낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "강력한 한 수 · 광고 보기",
+              "player_reply_text": "엘리너 의장님—사무실 도착하시기 전에 확인하셔야 할 긴급 협력업체 리베이트 증거 첨부합니다.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "데릭의 그림자가 당신 책상 위로 드리워지는 바로 그 순간 서랍을 잠급니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "의장 온라인 접속: 엘리너 의장이 리무진 안에서 12번 항목을 읽고 즉시 답장을 보냅니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "내 집무실에서 데릭 말 붙여놓고 시간 끌어줘요, {{player_name}}. 회사 보안팀이랑 로비 도착까지 5분 거리예요.",
+          "timestamp_label": "오후 05:22",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "cfo",
+          "text": "폰 내놔, {{player_name}}. 안 그러면 자네 수습 기간은 오늘 밤으로 끝이야.",
+          "timestamp_label": "오후 05:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "임원층 전면 봉쇄",
+          "teaser_text": "2화: 데릭이 연봉 4만 달러 인상으로 당신의 침묵을 사려 합니다—엘리너 의장이 문을 열고 들어서기 직전에.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "12번 항목",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 05:26 · 임원실. 데릭이 블라인드를 내리고 당신의 책상 위로 몸을 숙입니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "cfo",
+          "text": "봐, 자네 영리하잖아. 나디아가 그 폰에 써놓은 소설 따윈 잊어버려, 그럼 내일 자네 연봉 4만 달러 올려주지.",
+          "timestamp_label": "오후 05:26",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "소설이라고요? 싱가포르에 있는 데릭 씨 친동생 페이퍼컴퍼니 계좌 라우팅 번호까지 다 적혀 있는데?",
+          "timestamp_label": "오후 05:27",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "cfo",
+          "text": "6만 달러 인상에 디렉터 직함까지 줄게—엘리너 내리기 전에 당장 12번 항목 지워!!",
+          "unsent_placeholder": "Derek님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "ceo",
+          "duration_sec": 9,
+          "transcript": "[문을 열고 들어서며] 이미 늦었어, 데릭. 비행기가 일찍 착륙했거든—그리고 방금 나디아의 블랙리스트 수첩 열네 개 항목을 다 읽었어.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "데릭이 책상 위 옛 업무용 휴대폰을 낚아채려고 몸을 날립니다. 마지막 한 수는?",
+          "options": [
+            {
+              "option_id": "opt_hand_backup",
+              "label": "엘리너에게 암호화된 전체 아카이브를 건넨다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "부수게 두세요, 의장님. 모든 영수증과 음성 메모는 제가 이미 백업해 뒀으니까요.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_show_bribe",
+              "label": "데릭의 6만 달러 입막음 뇌물 문자를 보여준다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "무자비한 역습 · 광고 보기",
+              "player_reply_text": "게다가 방금 2분 전에 12번 항목 지워주면 디렉터 자리 주겠다고 제안까지 했답니다.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "회사 보안팀 직원 두 명이 안으로 들어와 할 말을 잃은 데릭을 임원층 밖으로 연행해 나갑니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "즉시 파격 승진: 엘리너 의장이 데릭의 황금 낙하산을 정지시키고—그 자리에서 바로 당신을 비서실장(Chief of Staff)으로 임명합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "충성심과 담력은 40층에서도 귀한 자산이지, {{player_name}}. 내 핵심 측근이 된 걸 환영해요.",
+          "timestamp_label": "오후 05:33",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "후임 하나는 제대로 뽑았네. 코너 데스크 실컷 누려요, {{player_name}}.",
+          "timestamp_label": "오후 05:35",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "40층의 여왕",
+          "teaser_text": "나디아의 수첩 맨 아래 15번 항목까지 스크롤을 내린 당신은—그대로 얼어붙습니다. 엘리너 의장 본인에 관한 비밀이었습니다.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "15번 항목",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 8:15 · 40층 임원 라운지. 나디아의 블랙리스트 수첩 15번 항목 위에서 당신의 엄지손가락이 멈춥니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "스크롤 멈추고 당장 사무실 문 잠가요, {{player_name}}! 엘리너 의장이 님이 15번 항목 연 걸 알면 그냥 해고하는 수준이 아니라—아예 묻어버릴 거예요!",
+          "timestamp_label": "오후 8:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "나디아… 15번 항목에 의장님이 5년 전 결함 있는 의료기기 리콜을 덮으려고 400만 달러를 썼다고 나와 있어요!",
+          "timestamp_label": "오후 8:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ex_ea",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "15번 항목 첨부 · 엘리너 의장이 승인한 4,000,000달러 역외 입막음 송금 — 참조: 리콜 은폐.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "{{player_name}}, 아까 데릭 폭로한 일 정말 훌륭했어요. 내 개인 서재로 올라와요—연봉 30만 달러에 비서실장 자리를 공식 제안하고 싶네.",
+          "timestamp_label": "오후 8:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "비서실장 배지 넘겨주자마자 IT팀 시켜서 나디아 옛 폰 지워버리면—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "cfo",
+          "duration_sec": 8,
+          "transcript": "[차 안에서 속삭이는 소리] {{player_name}}, 나 데릭이야—끊지 마! 엘리너가 나를 늑대 떼한테 던져버렸으니 잘 들어: 그 여자, 자네가 15번 항목 봤나 시험해 보는 거야. 지금 당장 그 폰 오프라인으로 백업해!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "엘리너가 개인 서재에서 기다리고 있고—IT팀이 나디아의 폰을 초기화하려 합니다! 당신의 선택은?",
+          "options": [
+            {
+              "option_id": "opt_airplane_backup",
+              "label": "비행기 모드를 켜고 USB로 내보낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "비행기 모드 ON—블랙리스트 수첩 전체랑 15번 항목 지금 당장 암호화 USB에 복제 중!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_cloud_deadman",
+              "label": "USB 백업 + 1시간짜리 윤리위원회 전송 타이머를 건다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "최후의 장치 · 광고 보기",
+              "player_reply_text": "USB 복사 완료했고, 동시에 독립 윤리위원회로 직행하는 60분 암호화 데드맨 타이머 걸어뒀어!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "백업 안전 확보: 10초 뒤 원격 초기화 신호가 빈 유심에 닿으며—완전히 실패합니다!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "변조 불가: 설령 엘리너가 40층의 모든 기기를 압수하더라도 진실은 이미 막을 수 없습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "똑똑하네. 이제 포커페이스 유지하고 서재로 걸어 들어가서—그 여자가 어디까지 가는지 지켜봐요.",
+          "timestamp_label": "오후 8:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "40층 펜트하우스 서재 엘리베이터 잠금 풀어뒀어요, {{player_name}}. IT팀이 새 기기로 바꿔줄 수 있게 나디아 옛 폰 챙겨 와요.",
+          "timestamp_label": "오후 8:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "40층의 시험대",
+          "teaser_text": "4화: 엘리너 의장의 황금빛 서재로 걸어 들어가십시오—단 한 마디 잘못하면 문이 잠기는 곳입니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "40층의 시험대",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오후 8:35 · 의장의 서재. 도시 야경을 내려다보며 엘리너가 탄산수 두 잔을 따릅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "나디아 옛 폰은 대리석 쟁반 위에 내려놔요, {{player_name}}. 이 비서실장 계약서에 서명하면 평생 앞날이 보장될 테니.",
+          "timestamp_label": "오후 8:35",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "서명하기 전에 한 가지만요, 의장님—15번 항목에 적힌 2021년 의료기기 리콜 건에 대해서도 제가 입 다물고 있어야 하나요?",
+          "timestamp_label": "오후 8:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "우와—조심해요! 방금 엘리너 책상 제어반에서 40층 임원용 엘리베이터를 잠가버렸어요!",
+          "timestamp_label": "오후 8:37",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "15번 항목 읽었어—그 USB 뺏을 때까지 40층에서 못 나가게 잡아둬—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "cfo",
+          "text": "나 지금 로비 커피숍에서 연방 검사 두 명이랑 같이 앉아 있어!! 말만 해, 바로 위로 모시고 올라갈 테니까!",
+          "timestamp_label": "오후 8:39",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "ex_ea",
+          "duration_sec": 8,
+          "transcript": "[속삭이는 소리] {{player_name}}, 나 아직 40층 비상계단 비밀번호 알아요! 난초 화분 뒤 키패드에서 4049# 눌러요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "엘리너가 임원용 엘리베이터를 잠근 채 USB를 내놓으라고 요구합니다! 어떻게 대처하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_slip_stairwell",
+              "label": "4049# 비상계단으로 몰래 빠져나간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "엘리베이터 잠그시느라 수고하셨어요, 엘리너—나디아가 비상계단 코드 알려줘서 천만다행이네요.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_bluff_live",
+              "label": "로비에 연방 검사들이 와 있다고 알린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "냉철한 대응 · 광고 보기",
+              "player_reply_text": "직접 엘리베이터 잠금 푸세요, 엘리너. 데릭이 로비에서 연방 검사 두 분 모시고 지금 올라오고 계시니까요.",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "깔끔한 탈출: 비상문을 통해 빠져나가 메인 로비에서 데릭과 검사들을 만납니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "왕좌에서 끌어내려진 여왕: 로비 보안 전화로 연방 영장 집행 통지가 울려 오자 엘리너의 얼굴에서 핏기가 가십니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "침묵 위에 제국을 세우셨더군요, 엘리너. 오늘 밤 그 비밀 금고가 열립니다.",
+          "timestamp_label": "오후 8:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "내 이사회 인맥이 얼마나 막강한지 넌 상상도 못 할 거야, {{player_name}}.",
+          "timestamp_label": "오후 8:47",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "40층 자정의 봉쇄",
+          "teaser_text": "5화: 윤리위원회에 15번 항목을 넘기고 40층이 무너지는 모습을 지켜보십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "자정의 봉쇄",
+      "start_node_id": "e5_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오후 9:15 · 40층 엘리베이터 홀. 연방 수사관들이 밀봉 영장을 들고 전용 승강기에서 내립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "임원 엘리베이터 잠금 로그도 뽑았대요! 40층에 님 가둬둔 죄로 엘리너 죄목에 불법 감금까지 추가됐어요!",
+          "timestamp_label": "오후 9:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04",
+          "text": "40층 승강기 로그 · 오후 20:37 의장 책상에서 수동 강제 봉쇄 작동됨."
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "ceo",
+          "text": "알았어! 오늘 밤부로 의장직에서 사임할게—대신 내 개인 자선재단만은 언론에 내지 말아 줘!",
+          "timestamp_label": "오후 9:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그 말은 당신이 묻어버린 2021년 리콜 때문에 피해 본 환자분들께 하세요, 엘리너. 모든 내용이 공공 기록에 올라갈 겁니다.",
+          "timestamp_label": "오후 9:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "이 타워 꼭대기에서 20년을 버텼는데 비서의 옛 휴대폰 하나에 무너지다니—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "cfo",
+          "duration_sec": 8,
+          "transcript": "[한숨을 쉬며] 내가 손댄 돈 1센트도 빠짐없이 갚으려고 윤리위원회에 100% 협조하고 있어—그리고 엘리너의 입막음 비자금은 리콜 피해자 배상을 위해 동결됐어.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "독립 이사회가 당신에게 임시 최고윤리책임자(Chief Ethics Officer)를 맡아 달라고 요청합니다! 당신의 대답은?",
+          "options": [
+            {
+              "option_id": "opt_accept_ethics",
+              "label": "수락하고 미뤄졌던 안전 리콜을 즉시 발령한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "수락하겠습니다—그리고 내일 아침 우리 첫 보도자료는 늦었지만 온전한 2021년 안전 리콜 발표입니다.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_bring_nadia_back",
+              "label": "수락 + 나디아를 수석 윤리 자문으로 영입한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "환상의 콤비 · 광고 보기",
+              "player_reply_text": "리콜과 윤리 개혁을 이끌겠습니다—단, 나디아가 은퇴를 접고 제 수석 자문으로 복귀한다는 조건으로요!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "생명을 살리다: 의료 규제 당국이 신속한 투명 공개를 극찬합니다; 회사는 영혼을 되찾고 살아남습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "막을 수 없는 콤비: 나디아가 웃음을 터뜨립니다—\"진짜 정의를 세울 판이 깔렸는데 은퇴는 무슨! 당장 복귀할게요!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "15번 항목까지 읽어 내려갈 용기가 있는 사람은 님뿐일 줄 알았기에 책상 위에 그 옛 업무용 폰을 두고 갔던 거예요.",
+          "timestamp_label": "오후 9:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "40층에 더 이상 블랙리스트 수첩은 없어요, 나디아. 이제부턴 대낮의 빛 아래서 일합니다.",
+          "timestamp_label": "오후 9:27",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "빛을 향해 열린 금고",
+          "teaser_text": "6화 (최종화): 블랙리스트 수첩을 영원히 닫고 40층의 깨끗한 새 시대를 여십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "열린 금고",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "한 달 뒤 · 40층 유리 집무실. 잠겨 있던 임원 전용 엘리베이터는 이제 모든 직원에게 열려 있습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "2021년 제품 100% 무상 교체가 완료됐고—환자 권익 단체들이 방금 공개 감사 서한을 보내왔어요!",
+          "timestamp_label": "오전 10:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "엘리너가 내 앞에서 흔들던 30만 달러 어떤 뇌물보다도 값진 편지네요.",
+          "timestamp_label": "오전 10:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "cfo",
+          "text": "준법 위반 처분 이행하러 들어가기 전에—엘리너가 리콜 덮지 못하게 막아줘서 고마워. 자네가 진짜 목숨들을 살렸어.",
+          "timestamp_label": "오전 10:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "ceo",
+          "text": "네 가지 혐의로 기소되다니—다 새 비서를 우습게 본 탓이야—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "ex_ea",
+          "duration_sec": 8,
+          "transcript": "[에스프레소 머신 스팀 소리] 40층에 커피 준비됐어요, 최고윤리책임자님! 이제 블랙리스트 수첩을 영구 퇴역시킬 준비되셨나요?",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "바로 뒤따라갈게요, 나디아. 저 옛 폰은 준법 기록 보관소에 넘기죠—사건 종결입니다.",
+          "timestamp_label": "오전 10:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "사내 인트라넷 전체에 고정 게시하는 마지막 메시지:",
+          "options": [
+            {
+              "option_id": "opt_open_glass",
+              "label": "40층 유리문을 언제나 열어두겠다고 선언한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "비밀 금고도, 잠긴 층도 없습니다—이제 40층에서 통하는 유일한 화폐는 청렴함뿐입니다.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_victim_fund",
+              "label": "영구적인 환자 안전 기금을 설립한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "진정한 여왕 · 광고 보기",
+              "player_reply_text": "매년 임원 성과급의 5%를 독립적인 환자 안전 및 투명성 기금으로 영구 출연합니다!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "새로운 시대: 공포가 아닌 진실 위에 세워진 회사의 주가와 평판이 그 어느 때보다 높이 치솟습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "역사적 개혁: 당신은 글로벌 기업 윤리 서밋 기조연설자로 초청받습니다—맨 앞줄에서 환호하는 나디아와 함께.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "ex_ea",
+          "text": "가장 올바른 방식의—40층의 여왕.",
+          "timestamp_label": "오전 10:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그 폰 믿고 맡겨주셔서 감사해요, 나디아. 인생 최고의 인수인계였어요.",
+          "timestamp_label": "오전 10:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 40층의 맑은 대낮",
+          "teaser_text": "C-레벨의 은폐를 폭로하고, 환자들을 지켰으며, 40층을 영원히 탈바꿈시켰습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

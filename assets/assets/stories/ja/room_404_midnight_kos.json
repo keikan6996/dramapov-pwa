@@ -1,0 +1,2986 @@
+{
+  "schema_version": "1.1",
+  "story_id": "room_404_midnight_kos",
+  "lang": "ja",
+  "metadata": {
+    "title": "404号室：真夜中の下宿",
+    "subtitle": "大家は警告した――『404号室』から深夜0時過ぎにメッセージが来ても絶対に返信するな、と。今夜、彼女からボイスノートが届いた。",
+    "genre": "thriller",
+    "tags": [
+      "ホラー",
+      "午前3時",
+      "心霊"
+    ],
+    "cover_image": "assets/media/covers/room_404_midnight_kos.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (あなた)",
+      "side": "right",
+      "avatar": "assets/media/avatars/claire.webp",
+      "bubble_color_hex": "#10B981"
+    },
+    {
+      "id": "landlady",
+      "name": "大家のMarni",
+      "side": "left",
+      "avatar": "assets/media/avatars/vanessa.webp",
+      "bubble_color_hex": "#3F3F46"
+    },
+    {
+      "id": "neighbor",
+      "name": "Raka (403号室)",
+      "side": "left",
+      "avatar": "assets/media/avatars/marcus.webp",
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "room404",
+      "name": "404号室",
+      "side": "left",
+      "avatar": "assets/media/avatars/unknown_v.webp",
+      "bubble_color_hex": "#4C0519"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "深夜0時過ぎは返信厳禁",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前0時04分 · 静かな4階建て下宿の405号室で過ごす初めての夜。激しい雨が廊下の窓を叩きます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "新しいお部屋へようこそ、{{player_name}}さん。一つだけお約束があります。深夜0時過ぎに『404号室』から連絡が来ても、絶対に返信しないでくださいね。",
+          "timestamp_label": "午前12:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "えっ……どうしてですか？すぐ隣の404号室には学生さんが住んでいるんじゃないんですか？",
+          "timestamp_label": "午前12:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "2022年に女の子が失踪してから、404号室はずっと封印されている。新しい入居者を怖がらせるな。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next": "e1_n05",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "ただの古いいたずら番号ですよ、お嬢さん。鍵をしっかり閉めてお休みなさい。",
+          "timestamp_label": "午前12:06",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "narrator",
+          "text": "午前2時17分 · あなたの部屋と404号室を隔てる薄い壁を、ゆっくりとした3回のノックが震わせます。スマホの画面が氷のように冷たく光りました。",
+          "style": "system_alert",
+          "ambient": "heartbeat",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 7,
+          "transcript": "[砂嵐音と湿った息遣い] ……{{player_name}}……どうして私の部屋に入ったの？ドアを開けて……廊下は凍えるほど寒いの……",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next": "e1_n08_choice",
+          "next_node_id": "e1_n08_choice"
+        },
+        {
+          "id": "e1_n08_choice",
+          "type": "choice",
+          "prompt": "ドアノブを何かが引っ掻く音がします！どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_e1_neighbor",
+              "label": "隣の403号室の住人に助けを求める",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Raka！起きてる？405号室の外に何かがいる！",
+              "next_node_id": "e1_n09_free"
+            },
+            {
+              "option_id": "opt_e1_peephole",
+              "label": "廊下の防犯カメラ映像を確認する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": null,
+              "next_node_id": "e1_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09_free",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "{{player_name}}、ドアから離れて！今まさに廊下を爪で引っ掻くような音が聞こえるぞ！",
+          "timestamp_label": "午前2:18",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n09_vip",
+          "type": "narrator",
+          "text": "秘密解放：建物の入居者用防犯カメラリンクを開くと、4階の廊下には誰もいません――それなのに、あなたのカーテンのすぐ後ろに黒い影が立っていました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10_vip"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "廊下には誰もいない……ノックの音は私の部屋の『中』からしてるんだ！",
+          "timestamp_label": "午前2:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "あなたの心臓の鼓動が聞こえるよ、{{player_name}}。ここにいる生きた人間を信じないで。壁の鏡の裏を見て。",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "鏡の裏に何が隠されている？",
+          "teaser_text": "エピソード2：午前2時31分に廊下の明かりが消え――鏡の裏から見つけたものがすべてを一変させます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "ひび割れた鏡の裏",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2時31分 · 天井の電球が弾けて消えます。スマホのライトだけが、ひび割れた壁掛け鏡を照らし出しました。",
+          "style": "time_skip",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "{{player_name}}、大丈夫か？！4階全体のブレーカーが落ちたみたいだ！",
+          "timestamp_label": "午前2:31",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "404号室に鏡の裏を調べろって言われたの。ここに緩んだ木のパネルが隠されてる……",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "もし{{player_name}}が鏡の裏であの子のスマホを見つけたら、警察が2022年の404号室ガス漏れ火災を再捜査してしまう。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next": "e2_n05",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "嘘でしょ……大家さんはこの鏡の裏に何があるか知ってるんだ！あの子は失踪したんじゃない！",
+          "timestamp_label": "午前2:33",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 8,
+          "transcript": "[澄んだ涙声のささやき] お願い、{{player_name}}……鏡の裏の割れたスマホに、私を閉じ込めた犯人の動画が入ってる。午前3時までに送って……",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next": "e2_n07_choice",
+          "next_node_id": "e2_n07_choice"
+        },
+        {
+          "id": "e2_n07_choice",
+          "type": "choice",
+          "prompt": "4階の階段を上がってくる重い足音が響きます！急いで動け！",
+          "options": [
+            {
+              "option_id": "opt_e2_escape",
+              "label": "古いスマホを掴んで403号室へ走る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "スマホを手に入れた！403号室を開けて、Raka！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "opt_e2_video",
+              "label": "まず2022年の隠し動画を再生する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": null,
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "あなたは壁の空洞から埃まみれのスマホを引き抜き、真っ暗な廊下を403号室へ向かって駆け出します。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_free"
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "急いで！ドアは開けてある――待て、なんで大家さんがマスターキーを持って階段を上がってくるんだ？！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：2022年の動画が再生されます――女の子を404号室へ引きずり込んでいるのは大家ではありません。真鍮の『403号室』キーホルダーを持った笑顔の男でした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_vip"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "そんな……動画に映ってる殺人犯は403号室のRakaだ！それなのに私、スマホを見つけたって彼に言っちゃった！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_merge"
+        },
+        {
+          "id": "e2_n11_merge",
+          "type": "voice_note",
+          "sender_id": "neighbor",
+          "duration_sec": 6,
+          "transcript": "[錠前でゆっくりと鍵が回る音] 出ておいでよ、{{player_name}}。どうして鏡の裏なんか覗いたんだ？俺たち、いい隣人になれたはずなのに……",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next": "e2_n12_end",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "真犯人はすぐ隣に住んでいる……",
+          "teaser_text": "エピソード3：4階は封印されているはずなのに――エレベーターの階数表示に「4」が点灯します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "4階の日誌",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2時42分 · 下宿の廊下。ドアの下から冷たい隙間風が忍び込む中、スマホが鳴ります。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "{{player_name}}さん、ドアチェーンを掛けて！Rakaは学生なんかじゃありません――2022年の404号室ガス漏れ火災の夜、403号室に住んでいた男です！",
+          "timestamp_label": "午前2:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "image",
+          "sender_id": "room404",
+          "image_asset": "assets/media/evidence/elevator_panel_404.webp",
+          "caption": "エレベーターパネル（午前2時41分）：無人の昇降路の内側から押されたように『4』のボタンが赤く光っている。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……404号室がエレベーターから写真を送ってきてるの？！他に誰が今この階にいるの？！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "neighbor",
+          "text": "Marniは建築許可を取り消されないために、警察に賄賂を渡して404号室を事故扱いさせたんだ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "大家のMarniの言うことを聞くな、{{player_name}}！ひび割れた鏡の裏を調べろ――死んだ女の子の台帳を隠したのは彼女だ！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 10,
+          "transcript": "[虚ろな囁き、水滴の音] 『403号室がスペアキーを持っている……彼は壁越しに私を覗いていた……』",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "どうして私の机からマスターキーが消えているの？！Raka、{{player_name}}さんのドアから離れなさい！",
+          "timestamp_label": "午前2:48",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "重い足音が403号室と404号室のちょうど間で止まります。どうしますか？",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "鏡の裏に隠された台帳を確認する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ台帳を読むわ――404号室で誰が死んだのか知りたいの。",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "ドアの隙間から廊下を録画する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "カメラ作動中――そのマスターキーを持っている人物を映像に収めてやるわ。",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "9ページ目を読んで……彼女の名前はSari。403号室から開けられた覗き穴を見つけたの。",
+          "timestamp_label": "午前2:48",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "narrator",
+          "text": "VIP展開：あなたのカメラが、真鍮のマスターキーから血のように赤い塗料を拭き取るRakaの姿を捉えます――まさに404号室の鍵でした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "起きてるのか、{{player_name}}？廊下の電気が消えたぞ……",
+          "timestamp_label": "午前2:51",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "大変！あいつが廊下のブレーカーを落としたわ！部屋から出ないで！",
+          "timestamp_label": "午前2:51",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n13_end"
+        },
+        {
+          "id": "e3_n13_end",
+          "type": "cliffhanger",
+          "headline": "403号室の足音……",
+          "teaser_text": "エピソード4：一つの影がドアの下から鍵を滑り込ませ――403号室と404号室を隔てる壁が開きます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "403号室の足音",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前3時15分 · 4階は真っ暗闇。スマホの画面だけが狭い下宿の部屋を照らします。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "ドアを開けろ、{{player_name}}。大家のMarniがバールを持って上がってきてる――俺はお前を助けようとしてるんだ！",
+          "timestamp_label": "午前3:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "image",
+          "sender_id": "landlady",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "4階廊下（午前3時14分）：真鍮の鍵を手に、あなたのドアの外で微動だにせず立つシルエット。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "二人ともお互いに罪をなすりつけ合って――しかも今まさに誰かが私の補助錠を開けようとしてる！",
+          "timestamp_label": "午前3:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "neighbor",
+          "text": "ガス漏れが起きた時、Sariが俺に借金を返さなかったから404のドアにくさびを打ち込んだだけだ――火事で殺すつもりなんてなかった！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "2022年のガス漏れ火災の時、彼が私のドアを塞いだの。私が1時間も助けを求めて叫ぶのを聞いていたくせに。",
+          "timestamp_label": "午前3:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "landlady",
+          "duration_sec": 11,
+          "transcript": "[階段で息を切らしながら] 警察を呼びました！あと5分で到着します――机をタンスの壁に押し付けて、403号室から繋がる隠しハッチがあるわ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "遅かったな、{{player_name}}。タンスのパネルはもう開いてるぞ。",
+          "timestamp_label": "午前3:21",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "タンスの扉が内側へ軋んで開きます！コンマ1秒の判断は？",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "重い机をタンスに押し付けて塞ぐ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "そうはさせない！机でがっちり塞いだわ――もうすぐ警察が来る！",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "影に向けてSariの銀のロケットを突き出す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "鏡の裏で見つけたものを見て、Raka――あなたの指紋がついたSariのロケットよ！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "出せ！403号室のドアが勝手にバタンと閉まったんだ！",
+          "timestamp_label": "午前3:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "narrator",
+          "text": "VIP展開：ロケットが室内の空気を凍らせ――照明が激しく明滅し、彼の背後で404号室の扉が勢いよく開きます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "警察が門の前に来ているわ。非常階段から逃がさないで。",
+          "timestamp_label": "午前3:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "廊下の防犯カメラのテープを持っています！階段の踊り場で会いましょう！",
+          "timestamp_label": "午前3:24",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n13_end"
+        },
+        {
+          "id": "e4_n13_end",
+          "type": "cliffhanger",
+          "headline": "真夜中の監視テープ……",
+          "teaser_text": "エピソード5：Sariが亡くなった夜の廊下防犯映像がついに再生され――すべての真実が暴かれます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "真夜中の監視テープ",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前4時04分 · 階段の踊り場。外でサイレンが鳴り響く中、大家のMarniが埃まみれのSDカードを手渡します。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "去年は怖すぎてこれを提出できなかったの。午前2時04分にRakaが何をしたか見て。",
+          "timestamp_label": "午前4:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "landlady",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "保存済み4階カメラ（2022年）：ガス漏れ中に404号室のドアの下にくさびを打ち込み、403号室へ滑り戻るRaka。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "外からドアを塞いで閉じ込めたの？！事故なんかじゃない――殺人だわ！",
+          "timestamp_label": "午前4:07",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "黙っていたのは、あいつがこの下宿全体を焼き払うと脅したからよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "そのSDカードをよこせ、{{player_name}}！幽霊話なんか誰も信じやしない！",
+          "timestamp_label": "午前4:07",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 12,
+          "transcript": "[澄んで響き渡る声] 『エレベーターが開いているよ、Raka。中に入って、なぜ私のドアを塞いだのか警察官に話しなさい』",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "誰がその音声を流してるんだ？！止めろ！俺のスマホの電源が切れない！",
+          "timestamp_label": "午前4:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "階段でRakaがSDカードに飛びかかってきます。どうしますか？",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "下の階の警察官へSDカードを投げて渡す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "警察官の方、受け取ってください！404号室が殺された夜のすべてがこのカードに入ってます！",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "先に全入居者へ映像をAirDropで送信",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "破壊しようとしても遅いわ――階段にいる住人と警察官全員に今その動画を送ったから！",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "警察官がキャッチしたわ！Raka、もうおしまいよ！",
+          "timestamp_label": "午前4:10",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "narrator",
+          "text": "VIP展開：階段室中で10台のスマホが一斉に鳴り響き――Rakaは完全に観念して膝から崩れ落ちます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "殺すつもりじゃなかったんだ！404号室にメッセージを送るのをやめさせてくれ！",
+          "timestamp_label": "午前4:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "日の出まで待って、{{player_name}}。私が行く前に、最後にもう一つだけ。",
+          "timestamp_label": "午前4:13",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n13_end"
+        },
+        {
+          "id": "e5_n13_end",
+          "type": "cliffhanger",
+          "headline": "4階に訪れる夜明け",
+          "teaser_text": "エピソード6（シーズンフィナーレ）：下宿に最初の朝日が差し込み――404号室から最後のメッセージが届きます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "4階に訪れる夜明け",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前5時45分 · 黄金色の朝日が4階の廊下に差し込みます。警察がRakaに手錠をかけて連行していきます。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "刑事さんたちが403号室を犯行現場として封鎖しました。もっと早く名乗り出られなくてごめんなさいね、{{player_name}}さん。",
+          "timestamp_label": "午前5:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ようやくSariに正義がもたらされたわ。深夜0時過ぎに彼女がメッセージを送ってきたのは、ただそれだけを望んでいたから。",
+          "timestamp_label": "午前5:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "他の誰もがドアに鍵をかけた中で、私に返事をしてくれてありがとう。",
+          "timestamp_label": "午前5:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "あなたの1年分の家賃を全額返金して、4階は追悼庭園に改装しようと思うの。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "私の母は2つ先の町に住んでいるの。どうかその銀のロケットを母に渡して。",
+          "timestamp_label": "午前5:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 8,
+          "transcript": "[柔らかな朝のそよ風、優しいチャイム音] 『さようなら、{{player_name}}。今夜は安らかに眠れるよ』",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "404号室のチャットを見て……あなたのスマホからその連絡先が消えたわ。",
+          "timestamp_label": "午前5:52",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "朝日が無人の廊下を温めます。シーズンフィナーレを選んでください！",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "404号室の前に白い花を手向け前に進む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "安らかに眠って、Sari。あなたの真実はようやく自由になったわ。",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "今日中にSariの母へロケットを届けに行く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "始発列車に乗って、Sariのロケット――そして正義を――お母様の元へ届けてきます。",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "3年ぶりに廊下が温かく感じられるわ。",
+          "timestamp_label": "午前5:52",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "narrator",
+          "text": "VIPフィナーレ：Sariの母親はロケットを抱きしめて感謝の涙を流し――あなたのスマホが深夜0時に鳴ることは二度とありませんでした。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "道中お気をつけてね、{{player_name}}さん。あなたが4階の呪いを解いてくれたのよ。",
+          "timestamp_label": "午前5:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "text",
+          "sender_id": "player",
+          "text": "404号室はようやく静かになったわ。おはようございます。",
+          "timestamp_label": "午前5:55",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n13_end"
+        },
+        {
+          "id": "e6_n13_end",
+          "type": "cliffhanger",
+          "headline": "404号室の下に眠る2つ目のロケット……",
+          "teaser_text": "第2幕 · エピソード7：夜明けにチャットが消えた矢先、404号室が再び点滅します――2022年、Rakaは単独犯ではありませんでした。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "2つ目のロケット",
+      "start_node_id": "e7_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "午前10時15分 · 荷造りをするあなたの4階に朝日が温かく差し込みます。突然、削除されたはずの404号室のスレッドが画面の最上部に再浮上しました。",
+          "style": "time_skip",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "まだ行かないで、{{player_name}}。404号室の窓の下の緩んだ床板を持ち上げて――2018年の2つ目のロケットがあるの。",
+          "timestamp_label": "午前10:15",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "2018年市消防局報告書 · 404号室の入居者、『偶発的なガス漏れ』により行方不明 — 検視なしで捜査終了。",
+          "blur_until_tap": false,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……Sariの『4年前』にも別の女の子が404号室で亡くなっていたの？！しかも同じガス管が二度も故障したなんて？！",
+          "timestamp_label": "午前10:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "{{player_name}}さん、お願いだから404号室から出てちょうだい。床板が腐ってるわ――古い書類のことは警察に任せましょう。",
+          "timestamp_label": "午前10:18",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "大家のMarniが階段室の戸口からこちらを見ています。どうしますか？",
+          "options": [
+            {
+              "option_id": "e7_opt_free",
+              "label": "2018年の報告書をリュックに隠す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ちょっと傘を取りに来ただけです、Marniさん。",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "e7_opt_vip",
+              "label": "2ページ目の受取人欄の名前を確認する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "いい子ね。鍵を閉めて休みなさい――あなたはもう十分すぎるほど怖い思いをしたわ、{{player_name}}さん。",
+          "timestamp_label": "午前10:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "narrator",
+          "text": "秘密解放：2ページ目には偽造された入居者生命保険証券が記載されており――その唯一の受取人は『大家 MARNI』でした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08"
+        },
+        {
+          "id": "e7_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ちょっと待って……なんでMarniはあんなに必死に4階を封鎖して、家賃全額返金までして私を追い出そうとしたの？",
+          "timestamp_label": "午前10:22",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e7_n09"
+        },
+        {
+          "id": "e7_n09",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "Rakaはパニックになって私のドアを塞いだだけ、{{player_name}}……でも地下のガス栓を捻ったのは彼じゃない。",
+          "timestamp_label": "午前10:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n10_end"
+        },
+        {
+          "id": "e7_n10_end",
+          "type": "cliffhanger",
+          "headline": "誰がガス栓を開けたのか？",
+          "teaser_text": "エピソード8：夕暮れとともに再び雨が降り出し――404号室から恐ろしい真相を伝える電話がかかってきます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "印のないバルブ",
+      "start_node_id": "e8_n01",
+      "default_ambient": "rain",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "午後4時40分 · 嵐の雲が下宿の窓を暗く覆います。あり得ない着信を受け、あなたの画面が赤く点滅しました。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "{{player_name}}さん、市場へ行ってきますね。地下室のドアには触らないで――まだ配管からガスが漏れてるから。",
+          "timestamp_label": "午後4:40",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e8_n03_call"
+        },
+        {
+          "id": "e8_n03_call",
+          "type": "incoming_call",
+          "caller_id": "room404",
+          "caller_label": "404号室（着信中）",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e8_n04_ans",
+          "on_decline_node_id": "e8_n04_dec"
+        },
+        {
+          "id": "e8_n04_ans",
+          "type": "narrator",
+          "text": "パチパチと鳴る雑音越しに、Sariが切迫した声で囁きます。『ガスは事故で漏れたんじゃない。Marniが午前2時に地下の赤いバルブを回したの！』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n04_dec",
+          "type": "narrator",
+          "text": "着信を拒否すると、背筋の凍る留守電が即座に文字起こしされます。『Marniが2018年も2022年も地下のガス栓を開けた』",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "嘘でしょ……Marniは階段で泣きながら私にSDカードを渡したじゃない！自分も有罪なら、どうしてRakaをハメたりしたの？！",
+          "timestamp_label": "午後4:42",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "地下階段の方で南京錠がガチャンと鳴る音が聞こえます。急いで動け！",
+          "options": [
+            {
+              "option_id": "e8_opt_free",
+              "label": "今すぐMarniに連絡しアリバイを探る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "大家のMarniさん、2018年に404号室に住んでいたのは誰ですか？",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "e8_opt_vip",
+              "label": "油を差されたばかりのガス栓を撮影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "2018年？誰も住んでなかったわよ、お嬢さん――物置にして空室だったから。どうしてそんなことを聞くの？",
+          "timestamp_label": "午後4:44",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "narrator",
+          "text": "秘密解放：地下の格子越しに覗き込むと、404号室行きガス立ち上がり管に真新しいレンチの傷跡――そしてブリキの現金箱が見えました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08"
+        },
+        {
+          "id": "e8_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "彼女はあなたの目の前で嘘をついているわ、{{player_name}}。あの日地下の階段で何を見たか、Rakaに聞いてみなさい。",
+          "timestamp_label": "午後4:45",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n09"
+        },
+        {
+          "id": "e8_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "こんなことを言う日が来るなんて思わなかったけど……Raka側の言い分も聞く必要があるわ。",
+          "timestamp_label": "午後4:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n10_end"
+        },
+        {
+          "id": "e8_n10_end",
+          "type": "cliffhanger",
+          "headline": "味方が容疑者へと反転する……",
+          "teaser_text": "エピソード9：Rakaの弁護士経由で一通のメッセージが届き――大家Marniの仮面の裏を完全に暴き出します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 9
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "title": "留置場からの告白",
+      "start_node_id": "e9_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e9_n01",
+          "type": "narrator",
+          "text": "午後7時20分 · 405号室に雨が打ちつけます。Rakaの弁護士から転送された認証済みメッセージでスマホが鳴りました。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e9_n02"
+        },
+        {
+          "id": "e9_n02",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "{{player_name}}、Sariが俺の借金を通報すると脅した時、404のドアを塞いだ罪で刑務所に入るのは当然だ。だが誓って、ガスには一度も触れていない！",
+          "timestamp_label": "午後7:20",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n03"
+        },
+        {
+          "id": "e9_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "じゃあなんで、あなたが廊下に立っていた時に404号室にガスが充満したのよ、Raka？！",
+          "timestamp_label": "午後7:21",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n04"
+        },
+        {
+          "id": "e9_n04",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "Marniがすでに地下室にいたからだ！2018年の火事について黙っていれば、俺の滞納家賃をチャラにしてやると言ったんだ！",
+          "timestamp_label": "午後7:22",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n05"
+        },
+        {
+          "id": "e9_n05",
+          "type": "voice_note",
+          "sender_id": "neighbor",
+          "duration_sec": 11,
+          "transcript": "[留置場の公衆電話] 聞いてくれ！Marniは生命保険の特約書に入居者の署名を偽造していた――404号室の女の子『二人分』の保険金を受け取ったんだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e9_n06_choice"
+        },
+        {
+          "id": "e9_n06_choice",
+          "type": "choice",
+          "prompt": "2022年にSariを閉じ込めた男の言葉を信じられますか？",
+          "options": [
+            {
+              "option_id": "e9_opt_free",
+              "label": "Marniの保険金受領の銀行証拠を求める",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Marniが保険金を受け取ったなら、その証拠がどこにあるか示して。",
+              "next_node_id": "e9_n07a"
+            },
+            {
+              "option_id": "e9_opt_vip",
+              "label": "有罪なのに2022年のSDを残した理由を問う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "彼女も犯人なら、なんで私に2022年の防犯カメラのSDカードを渡したの？",
+              "next_node_id": "e9_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e9_n07a",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "去年彼女が隠す前に、机の上にあった銀行伝票を写真に撮っておいたんだ――今お前のスマホに転送する。",
+          "timestamp_label": "午後7:25",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n08"
+        },
+        {
+          "id": "e9_n07b",
+          "type": "narrator",
+          "text": "秘密解放：Rakaは、警察が絶対に地下室を調べないようにするため、Marniがすべての死の責任を彼に擦り付けるよう編集済みSDカードを渡したと明かします！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n08"
+        },
+        {
+          "id": "e9_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "彼女は『私』を利用してRakaを逮捕させ、事件を永久に幕引きにするつもりだったんだ……",
+          "timestamp_label": "午後7:27",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n09"
+        },
+        {
+          "id": "e9_n09",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "{{player_name}}さん？まだ起きていますか？温かい生姜茶を淹れてきましたよ。",
+          "timestamp_label": "午後7:28",
+          "typing_delay_ms": 650,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e9_n10_end"
+        },
+        {
+          "id": "e9_n10_end",
+          "type": "cliffhanger",
+          "headline": "そのお茶を飲むな……",
+          "teaser_text": "エピソード10：405号室の外でMarniの足音が止まります――まさにその瞬間、Rakaが送った銀行送金写真が画面に届きます。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 10
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "title": "保険金の送金",
+      "start_node_id": "e10_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e10_n01",
+          "type": "narrator",
+          "text": "午後9時15分 · ドアスコープ越しに見ると、湯気の立つ陶器のマグカップを持った大家Marniが温かく微笑んでいます。スマホが震えました。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e10_n02"
+        },
+        {
+          "id": "e10_n02",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "2018年の台帳を焼く前に、今夜中に開発業者の手付金が着金するか確認しておいて。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "unsent",
+          "haptic": "heavy",
+          "next_node_id": "e10_n03"
+        },
+        {
+          "id": "e10_n03",
+          "type": "image",
+          "sender_id": "neighbor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "送金確認 · 185,000ドル生命保険金支払い — Sariの死から14日後、Marni Subagioの口座へ入金。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n04"
+        },
+        {
+          "id": "e10_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "18万5000ドル？！しかも今、2018年の台帳を焼くっていうメッセージを取り消したわ！",
+          "timestamp_label": "午後9:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n05"
+        },
+        {
+          "id": "e10_n05",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "ドアを開けないで、{{player_name}}。そのお茶に睡眠薬が入っているわ――私にしたのとまったく同じように。",
+          "timestamp_label": "午後9:16",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n06_choice"
+        },
+        {
+          "id": "e10_n06_choice",
+          "type": "choice",
+          "prompt": "Marniが405号室のドアを優しくノックします。どう立ち回りますか？",
+          "options": [
+            {
+              "option_id": "e10_opt_free",
+              "label": "寝たふりをして完全に息を殺す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e10_n07a"
+            },
+            {
+              "option_id": "e10_opt_vip",
+              "label": "ドア越しに送金の件を問い詰める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "お茶はいりません、Marni。今、18万5000ドルの保険金送金を見ましたから。",
+              "next_node_id": "e10_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e10_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "あら、もうお休みですか？おやすみなさい。今夜はとても静かな夜になりますよ。",
+          "timestamp_label": "午後9:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08"
+        },
+        {
+          "id": "e10_n07b",
+          "type": "narrator",
+          "text": "秘密解放：陶器のマグカップが廊下のタイルに叩きつけられて砕け散り――Marniの優しい仮面が剥き出しの激怒へと変わります！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08"
+        },
+        {
+          "id": "e10_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今すぐこの下宿を抜け出して、この銀行伝票を直接警察に持っていかないと！",
+          "timestamp_label": "午後9:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n09"
+        },
+        {
+          "id": "e10_n09",
+          "type": "narrator",
+          "text": "ガチャン。階下で重い鉄の正門が叩きつけるように閉まり――続いて太い鉄鎖が巻かれる鋭い音が響きました。",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e10_n10_end"
+        },
+        {
+          "id": "e10_n10_end",
+          "type": "cliffhanger",
+          "headline": "外から鉄門が施錠された……",
+          "teaser_text": "エピソード11：4階に午前0時が訪れ――階段室から灯油の臭いが漂い上がってきます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 11
+        }
+      ]
+    },
+    {
+      "episode_number": 11,
+      "title": "冷たい廊下",
+      "start_node_id": "e11_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e11_n01",
+          "type": "narrator",
+          "text": "午前0時08分 · 下宿に再び真夜中が訪れます。ドアの枠の下から、ツンとする灯油の臭いが忍び込んできました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e11_n02"
+        },
+        {
+          "id": "e11_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "正門に鎖が掛けられてる！それに廊下の明かりも今チカチカして消えたわ！",
+          "timestamp_label": "午前12:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n03"
+        },
+        {
+          "id": "e11_n03",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 10,
+          "transcript": "[雑音越しの緊迫した囁き] {{player_name}}！彼女、電気火災に見せかけるために階段室に灯油を撒いてる！階段を降りちゃダメ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n04"
+        },
+        {
+          "id": "e11_n04",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "今朝、家賃の返金を受け取って大人しく出ていけばよかったのに、{{player_name}}。詮索好きな入居者は4階では長生きできないのよ。",
+          "timestamp_label": "午前12:10",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n05"
+        },
+        {
+          "id": "e11_n05",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "おい――404号室のタンスの裏に古い使用人用の階段が隠されてる！地下のボイラー室に直通だ！",
+          "timestamp_label": "午前12:11",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n06_choice"
+        },
+        {
+          "id": "e11_n06_choice",
+          "type": "choice",
+          "prompt": "廊下の突き当たりでオレンジ色の火花が弾けます！急いで選べ！",
+          "options": [
+            {
+              "option_id": "e11_opt_free",
+              "label": "404号室へ滑り込みタンスを調べる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今すぐ404号室の中に入るわ！",
+              "next_node_id": "e11_n07a"
+            },
+            {
+              "option_id": "e11_opt_vip",
+              "label": "まず廊下の消火栓ホースを放水する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e11_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e11_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "404号室の中に入ったわ――空気が凍るように冷たい。それにタンスの裏板はもう留め金が外れてる！",
+          "timestamp_label": "午前12:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n08"
+        },
+        {
+          "id": "e11_n07b",
+          "type": "narrator",
+          "text": "秘密解放：消火ホースの放水が階段室の踊り場を水浸しにし、Marniの灯油の跡を洗い流して彼女を3階に足止めします！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n08"
+        },
+        {
+          "id": "e11_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "今送った廊下の防犯カメラ映像を見て、{{player_name}}。3階にいるのは彼女一人じゃない。",
+          "timestamp_label": "午前12:15",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n09"
+        },
+        {
+          "id": "e11_n09",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "出てきなさい、{{player_name}}！ここの全部屋のマスターキーを持っているのは私なのよ！",
+          "timestamp_label": "午前12:16",
+          "typing_delay_ms": 700,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e11_n10_end"
+        },
+        {
+          "id": "e11_n10_end",
+          "type": "cliffhanger",
+          "headline": "404号室の下から煙が……",
+          "teaser_text": "エピソード12：廊下のカメラ映像が読み込まれ――Marniがこの建物を焼き払うために他に誰を雇ったかが映し出されます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 12
+        }
+      ]
+    },
+    {
+      "episode_number": 12,
+      "title": "無人の廊下",
+      "start_node_id": "e12_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e12_n01",
+          "type": "narrator",
+          "text": "午前1時14分 · 404号室の中に身を潜め、あなたはスマホに光る薄暗い防犯カメラ映像を見つめます。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e12_n02"
+        },
+        {
+          "id": "e12_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……すぐ外から足音が聞こえるのに、なんで廊下の映像は完全に無人なの？！",
+          "timestamp_label": "午前1:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n03"
+        },
+        {
+          "id": "e12_n03",
+          "type": "image",
+          "sender_id": "room404",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "4階防犯カメラ（午前1時14分） · 封印された敷居の下から立ち昇る淡い煙以外、廊下は無人。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n04"
+        },
+        {
+          "id": "e12_n04",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "廊下のカメラをループさせたのよ――私が死んだ夜とまったく同じように。彼女は405号室のすぐ外に立ってる。",
+          "timestamp_label": "午前1:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n05"
+        },
+        {
+          "id": "e12_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "空き部屋ね……賢いわ。404号室に入ったのね、{{player_name}}？",
+          "timestamp_label": "午前1:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n06_choice"
+        },
+        {
+          "id": "e12_n06_choice",
+          "type": "choice",
+          "prompt": "真鍮のマスターキーが404号室の補助錠に差し込まれます！",
+          "options": [
+            {
+              "option_id": "e12_opt_free",
+              "label": "タンスの点検ハッチの裏へ潜り込む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "後ろから隠しパネルを閉めた――息を殺して！",
+              "next_node_id": "e12_n07a"
+            },
+            {
+              "option_id": "e12_opt_vip",
+              "label": "木製椅子の背もたれをドアノブに噛ませる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e12_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e12_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "404号室のドアが大きく押し開けられる直前、ハッチがカチリと閉まります。",
+          "timestamp_label": "午前1:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n08"
+        },
+        {
+          "id": "e12_n07b",
+          "type": "narrator",
+          "text": "秘密解放：固定されたドアノブが真鍮のマスターキーを錠前の途中で真っ二つにへし折り――Marniを煙の立ち込める廊下側へ締め出します！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n08"
+        },
+        {
+          "id": "e12_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "この小ネズミめ！死んだ女の子の部屋に隠れたら助かるとでも思ってるの？！",
+          "timestamp_label": "午前1:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n09"
+        },
+        {
+          "id": "e12_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "スマホが鳴ってる……壁の向こう側からMarniが私に電話をかけてきてるわ。",
+          "timestamp_label": "午前1:22",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e12_n10_end"
+        },
+        {
+          "id": "e12_n10_end",
+          "type": "cliffhanger",
+          "headline": "大家の本当の顔",
+          "teaser_text": "エピソード13：大家Marniがついに優しい演技をかなぐり捨て――通話越しにすべてを自白します。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 13
+        }
+      ]
+    },
+    {
+      "episode_number": 13,
+      "title": "自白の電話",
+      "start_node_id": "e13_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e13_n01",
+          "type": "narrator",
+          "text": "午前1時32分 · 404号室裏の狭い点検用踊り場。懐中電灯の光の中に濃い埃が舞います。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e13_n02"
+        },
+        {
+          "id": "e13_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "録音し続けて……この通話で自白させられれば、あの女は終わりよ。",
+          "timestamp_label": "午前1:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n03_call"
+        },
+        {
+          "id": "e13_n03_call",
+          "type": "incoming_call",
+          "caller_id": "landlady",
+          "caller_label": "大家 Marni（着信中）",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e13_n04_ans",
+          "on_decline_node_id": "e13_n04_dec"
+        },
+        {
+          "id": "e13_n04_ans",
+          "type": "narrator",
+          "text": "Marniの声に毒が滲みます。『この建物は100万ドルの土地に建ってるのよ！二度の「事故」で入居者を追い出した――今夜で取引完了なの！』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n04_dec",
+          "type": "narrator",
+          "text": "着信を拒否すると、怒り狂った留守電が届きます。『2018年も2022年も消防査察官を買収したのよ――私の再開発計画を止められるものですか！』",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "2018年の権利証を渡しなさい。そうすれば今すぐ正門の鍵を開けてあげるわ、{{player_name}}。",
+          "timestamp_label": "午前1:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n06_choice"
+        },
+        {
+          "id": "e13_n06_choice",
+          "type": "choice",
+          "prompt": "音声で彼女の完全な自白を録音しました！次の一手は？",
+          "options": [
+            {
+              "option_id": "e13_opt_free",
+              "label": "音声を保存して使用人階段を下りる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "台帳を取りに地下のボイラー室へ降りるわ。",
+              "next_node_id": "e13_n07a"
+            },
+            {
+              "option_id": "e13_opt_vip",
+              "label": "今すぐクラウドに自白音声をアップロード",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e13_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e13_n07a",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "木の階段を冷たい風に沿って降りて、{{player_name}}。彼女のブリキ箱はボイラーの裏にある。",
+          "timestamp_label": "午前1:36",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n08"
+        },
+        {
+          "id": "e13_n07b",
+          "type": "narrator",
+          "text": "秘密解放：地下室で電波が途切れる直前にクラウドバックアップが同期され――さらに警察の通報窓口へ自動共有されます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n08"
+        },
+        {
+          "id": "e13_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "階段の底で地下のボイラーがオレンジ色に光っているのが見えるわ。",
+          "timestamp_label": "午前1:38",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n09"
+        },
+        {
+          "id": "e13_n09",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "急いで、{{player_name}}――彼女、点検ハッチが開いているのに気づいた。あなたを閉じ込めるために正面階段を駆け下りてきてる。",
+          "timestamp_label": "午前1:39",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n10_end"
+        },
+        {
+          "id": "e13_n10_end",
+          "type": "cliffhanger",
+          "headline": "ボイラー室への競争",
+          "teaser_text": "エピソード14：隠し階段の先にあるブリキ箱の中には、Sariの本当の日記とすべての偽造保険証券が収められています。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 14
+        }
+      ]
+    },
+    {
+      "episode_number": 14,
+      "title": "隠された階段室",
+      "start_node_id": "e14_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e14_n01",
+          "type": "narrator",
+          "text": "午前1時48分 · スニーカーの下で狭い木製階段が軋みます。地下室のコンクリートの壁を水滴が絶え間なく伝い落ちます。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e14_n02"
+        },
+        {
+          "id": "e14_n02",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "身を低くして、{{player_name}}。錆びた給湯器の裏にレンガの窪みがある――そこに私の日記が隠されてるの。",
+          "timestamp_label": "午前1:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n03"
+        },
+        {
+          "id": "e14_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "窪みを見つけた！赤い蝋テープで封印された錆びたブリキ箱があるわ。",
+          "timestamp_label": "午前1:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e14_n04"
+        },
+        {
+          "id": "e14_n04",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 9,
+          "transcript": "[優しく震える声] 中に入っているのは私と2018年の入居者の偽造生命保険証券……それと、あなたの名前が書かれた白紙の証券が一枚。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e14_n05"
+        },
+        {
+          "id": "e14_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "捕まえたわよ、{{player_name}}。地下室をゆっくり楽しみなさい。",
+          "timestamp_label": "午前1:52",
+          "typing_delay_ms": 700,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e14_n06_choice"
+        },
+        {
+          "id": "e14_n06_choice",
+          "type": "choice",
+          "prompt": "地下室の重い鉄扉が枠に向かって叩きつけられます！",
+          "options": [
+            {
+              "option_id": "e14_opt_free",
+              "label": "ブリキ箱を掴んでドアへ駆け出す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ブリキ箱は手に入れた――ここに閉じ込めさせないわ！",
+              "next_node_id": "e14_n07a"
+            },
+            {
+              "option_id": "e14_opt_vip",
+              "label": "ドアの隙間に錆びたパイプレンチを投げ込む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e14_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e14_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あとコンマ1秒というところで鋼鉄の閂がガシャンと閉まった――ボイラー室に閉じ込められたわ！",
+          "timestamp_label": "午前1:54",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n08"
+        },
+        {
+          "id": "e14_n07b",
+          "type": "narrator",
+          "text": "秘密解放：パイプレンチが掛け金をわずかに曲げ、1センチ強の空気穴を残したため――部屋の完全な密閉が阻止されます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n08"
+        },
+        {
+          "id": "e14_n08",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "{{player_name}}、聞いて！彼女が地下室の電灯を切ったら、次はメインのガス集合管を狙う気だ！",
+          "timestamp_label": "午前1:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n09"
+        },
+        {
+          "id": "e14_n09",
+          "type": "narrator",
+          "text": "頭上の裸電球が一つ弾けて消え――暗い配管の奥から激しい金属的なシューッという噴出音が響き渡りました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n10_end"
+        },
+        {
+          "id": "e14_n10_end",
+          "type": "cliffhanger",
+          "headline": "第3幕：地下室の罠",
+          "teaser_text": "エピソード15：午前2時05分 — 404号室を奪ったのとまったく同じガス漏れと共に、暗いボイラー室へ閉じ込められました。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 15
+        }
+      ]
+    },
+    {
+      "episode_number": 15,
+      "title": "ボイラー室の金庫",
+      "start_node_id": "e15_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e15_n01",
+          "type": "narrator",
+          "text": "午前2時05分 · 水浸しのボイラー室は真っ暗闇。スマホの画面がブリキ箱の中の3通の偽造保険証券を照らし出します。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e15_n02"
+        },
+        {
+          "id": "e15_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう私の名前で証券を下書きしてる！私が4階の3人目の『事故』になるはずだったんだ！",
+          "timestamp_label": "午前2:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e15_n03"
+        },
+        {
+          "id": "e15_n03",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "今夜は絶対にさせない、{{player_name}}。この家でこれ以上誰の魂も奪わせないわ。",
+          "timestamp_label": "午前2:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e15_n04"
+        },
+        {
+          "id": "e15_n04",
+          "type": "unsent_message",
+          "sender_id": "landlady",
+          "text": "午前3時までには建物が空になると開発業者に伝えて――もうガス漏れは始まっているから。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "unsent",
+          "haptic": "heavy",
+          "next_node_id": "e15_n05"
+        },
+        {
+          "id": "e15_n05",
+          "type": "narrator",
+          "text": "卵の腐ったような強烈な悪臭が地下の空気に充満します。喉が締め付けられます。",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e15_n06_choice"
+        },
+        {
+          "id": "e15_n06_choice",
+          "type": "choice",
+          "prompt": "メイン管からガスが噴き出しています！最初に何をしますか？",
+          "options": [
+            {
+              "option_id": "e15_opt_free",
+              "label": "濡らしたスカーフで口と鼻を覆う",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "顔を覆った――緊急遮断弁はどこにあるの？！",
+              "next_node_id": "e15_n07a"
+            },
+            {
+              "option_id": "e15_opt_vip",
+              "label": "箱の中のすべての偽造証券を撮影する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e15_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e15_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "あと5分で永遠の眠りよ、{{player_name}}。Sariとまったく同じようにね。",
+          "timestamp_label": "午前2:09",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08"
+        },
+        {
+          "id": "e15_n07b",
+          "type": "narrator",
+          "text": "秘密解放：フラッシュがすべての偽造署名とMarniの親指の指紋を撮影――さらにブリキ箱の底から裏路地格子への真鍮の合鍵が見つかります！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08"
+        },
+        {
+          "id": "e15_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "息が苦しくなってきた……Raka、このガス管の止め方を教えて！",
+          "timestamp_label": "午前2:11",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n09"
+        },
+        {
+          "id": "e15_n09",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "スマホをしっかり構えて、{{player_name}}。4階からあなたの電波を繋ぎ止めているから。",
+          "timestamp_label": "午前2:12",
+          "typing_delay_ms": 650,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e15_n10_end"
+        },
+        {
+          "id": "e15_n10_end",
+          "type": "cliffhanger",
+          "headline": "残る空気はあと5分……",
+          "teaser_text": "エピソード16：濃くなるガスと競争しながら、暗闇の中で隠された緊急遮断バルブを探し出さなければなりません。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 16
+        }
+      ]
+    },
+    {
+      "episode_number": 16,
+      "title": "ガスバルブ",
+      "start_node_id": "e16_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e16_n01",
+          "type": "narrator",
+          "text": "午前2時20分 · ガスで目眩がする中、錆びた鉄パイプの迷路にスマホのライトを走らせます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e16_n02"
+        },
+        {
+          "id": "e16_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "この壁に赤いバルブが4つもある！間違ったのを回したら、部屋が一気にガスで満たされちゃう！",
+          "timestamp_label": "午前2:20",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n03"
+        },
+        {
+          "id": "e16_n03",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "上の列には触るな！建物全体の元栓は、床の排水口の近くにある腐食した真鍮の丸ハンドルだ！",
+          "timestamp_label": "午前2:21",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e16_n04"
+        },
+        {
+          "id": "e16_n04",
+          "type": "voice_note",
+          "sender_id": "neighbor",
+          "duration_sec": 10,
+          "transcript": "[はっきり叫ぶ声] 時計回りに3回転きっちり回せ！錆で手を切らないようにジャケットの袖を使え！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e16_n05"
+        },
+        {
+          "id": "e16_n05",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "すぐ隣にいるよ、{{player_name}}。押して――ありったけの力で回して！",
+          "timestamp_label": "午前2:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e16_n06_choice"
+        },
+        {
+          "id": "e16_n06_choice",
+          "type": "choice",
+          "prompt": "真鍮のハンドルは錆びついて固く動きません！視界が滲みます！",
+          "options": [
+            {
+              "option_id": "e16_opt_free",
+              "label": "壁に両足を踏ん張り時計回りに全力で回す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "動いた――1回転、2回転、3回転！噴出音が止まった！",
+              "next_node_id": "e16_n07a"
+            },
+            {
+              "option_id": "e16_opt_vip",
+              "label": "鉄パイプをテコにして一気に閉める",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e16_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e16_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "シューッという音が即座に止みます！裏路地の通気口から新鮮な冷たい空気が流れ込んできました！",
+          "timestamp_label": "午前2:25",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08"
+        },
+        {
+          "id": "e16_n07b",
+          "type": "narrator",
+          "text": "秘密解放：鉄パイプのテコがわずか2秒で元栓を閉め切り――建物全体の暖房配管が警鐘のように激しく鳴り響きます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08"
+        },
+        {
+          "id": "e16_n08",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "待って……どうしてガスメーターの回転が止まったの？！下で誰があなたを助けているの？！",
+          "timestamp_label": "午前2:27",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n09"
+        },
+        {
+          "id": "e16_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "地下室の扉の閂が引き抜かれる音……階段の一番上に、ライターを手にしたMarniが立っているわ。",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n10_end"
+        },
+        {
+          "id": "e16_n10_end",
+          "type": "cliffhanger",
+          "headline": "階段の上の影",
+          "teaser_text": "エピソード17：Marniがライターをカチリと鳴らします――まさにその時、404号室が建物全体を起こす最後の一本の電話を掛けます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 17
+        }
+      ]
+    },
+    {
+      "episode_number": 17,
+      "title": "階段上のライター",
+      "start_node_id": "e17_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e17_n01",
+          "type": "narrator",
+          "text": "午前2時35分 · 重い足音が地下階段の最上部で止まります。暗闇の中で小さな黄色い炎が揺らめきました。",
+          "style": "banner",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e17_n02"
+        },
+        {
+          "id": "e17_n02",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "地下階段室（午前2時35分） · 真鍮のライターを手に戸口に浮かび上がる大家Marniのシルエット。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n03_call"
+        },
+        {
+          "id": "e17_n03_call",
+          "type": "incoming_call",
+          "caller_id": "room404",
+          "caller_label": "404号室（館内インターホン強制割り込み）",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e17_n04_ans",
+          "on_decline_node_id": "e17_n04_dec"
+        },
+        {
+          "id": "e17_n04_ans",
+          "type": "narrator",
+          "text": "1階から4階までのすべての廊下スピーカーからSariの声が轟きます。『起きて！MARNIが建物に火を放とうとしている！地下室を見て！』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n04_dec",
+          "type": "narrator",
+          "text": "拒否しても着信は下宿のインターホンを乗っ取り――Sariの響き渡る絶叫が1階から4階までのすべての入居者を叩き起こします！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n05",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "それを止めなさい！！死んだ娘がどうして私のインターホンから喋ってるのよ？！",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n06_choice"
+        },
+        {
+          "id": "e17_n06_choice",
+          "type": "choice",
+          "prompt": "上の階で入居者たちが叫んでいます！Marniがパニックになってライターを振り上げます！",
+          "options": [
+            {
+              "option_id": "e17_opt_free",
+              "label": "錆びた水入りバケツを階段の上へ投げつける",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ライターを落としなさい、Marni――建物中の全員が目を覚ましたわよ！",
+              "next_node_id": "e17_n07a"
+            },
+            {
+              "option_id": "e17_opt_vip",
+              "label": "スマホのフラッシュ連射で彼女の目を眩ませる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e17_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e17_n07a",
+          "type": "text",
+          "sender_id": "player",
+          "text": "水が最上段に飛び散り――彼女のライターの火をその場で消し止めます！",
+          "timestamp_label": "午前2:38",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e17_n08"
+        },
+        {
+          "id": "e17_n07b",
+          "type": "narrator",
+          "text": "秘密解放：フラッシュに目を眩まされたMarniが後ろによろめき、マスターキーの束を階段の下のあなたの手元へ落とします！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n08"
+        },
+        {
+          "id": "e17_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "1階の入居者たちが今サイレンを聞いたわ、{{player_name}}。行って――この悪夢を終わらせて！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e17_n09"
+        },
+        {
+          "id": "e17_n09",
+          "type": "narrator",
+          "text": "あなたを助け出そうと駆けつけた隣人たちが、廊下側から地下室の扉に重い体当たりを食らわせます！",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e17_n10_end"
+        },
+        {
+          "id": "e17_n10_end",
+          "type": "cliffhanger",
+          "headline": "4階が目覚める",
+          "teaser_text": "エピソード18：入居者たちが地下室の扉をこじ開け――Marniは雨に濡れた裏路地へと逃げ出します。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 18
+        }
+      ]
+    },
+    {
+      "episode_number": 18,
+      "title": "4階が目覚める",
+      "start_node_id": "e18_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e18_n01",
+          "type": "narrator",
+          "text": "午前2時46分 · 3人の隣人が地下室の扉を引き開け、涼しい廊下の空気の中へあなたを引き出してくれます。",
+          "style": "banner",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e18_n02"
+        },
+        {
+          "id": "e18_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Marniを逃がさないで！現金箱を持って裏路地へ逃げようとしてるわ！",
+          "timestamp_label": "午前2:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n03"
+        },
+        {
+          "id": "e18_n03",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "そこをどきなさい！この下宿は『私』のものなのよ！",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n04"
+        },
+        {
+          "id": "e18_n04",
+          "type": "voice_note",
+          "sender_id": "player",
+          "duration_sec": 8,
+          "transcript": "[息を切らし走りながら] 警察はもう表通りに来ています！みんなで正門を塞いで――2018年と2022年の保険証券が入った箱は私が持っています！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e18_n05"
+        },
+        {
+          "id": "e18_n05",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "彼女は路地の壁とパトライトの間に追い詰められたわ、{{player_name}}。私の日記を離さないで。",
+          "timestamp_label": "午前2:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n06_choice"
+        },
+        {
+          "id": "e18_n06_choice",
+          "type": "choice",
+          "prompt": "雨に濡れた中庭で、Marniがブリキ箱を奪おうとあなたに飛びかかってきます！",
+          "options": [
+            {
+              "option_id": "e18_opt_free",
+              "label": "身をかわし先頭の警官へブリキ箱を投げる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "警察官の方、受け取って！偽造された保険証券が全部この中にあります！",
+              "next_node_id": "e18_n07a"
+            },
+            {
+              "option_id": "e18_opt_vip",
+              "label": "Marniの通話自白を最大音量で再生する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e18_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e18_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "ダメ！！その箱を返しなさい――それは私の私物よ！",
+          "timestamp_label": "午前2:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08"
+        },
+        {
+          "id": "e18_n07b",
+          "type": "narrator",
+          "text": "秘密解放：6人の警察官の目の前で、2018年と2022年のガス漏れを認めるMarni自身の自白音声が中庭中に響き渡ります！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08"
+        },
+        {
+          "id": "e18_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "終わりよ、Marni。404号室の2つの事件はどちらも完全に白日の下に晒されたわ。",
+          "timestamp_label": "午前2:53",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e18_n09"
+        },
+        {
+          "id": "e18_n09",
+          "type": "narrator",
+          "text": "警察官があなたと震える大家の間に割り入り、赤と青の光が中庭を染め上げます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n10_end"
+        },
+        {
+          "id": "e18_n10_end",
+          "type": "cliffhanger",
+          "headline": "最後の真夜中",
+          "teaser_text": "エピソード19：鉄門の前で手錠が鳴り――4階の真実がついに公式記録として刻まれます。",
+          "sfx": "gasp",
+          "ambient": "horror_whisper",
+          "haptic": "heavy",
+          "next_episode_number": 19
+        }
+      ]
+    },
+    {
+      "episode_number": 19,
+      "title": "最後の真夜中",
+      "start_node_id": "e19_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e19_n01",
+          "type": "narrator",
+          "text": "午前3時08分 · パトカーの屋根を雨が優しく叩きます。刑事たちがブリキ箱、2018年の火災報告書、そして油を差されたガス栓を撮影します。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n02"
+        },
+        {
+          "id": "e19_n02",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "この恩知らずの入居者が……住む屋根を与えてやったというのに！",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n03"
+        },
+        {
+          "id": "e19_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "保険金のために3度も404号室を死の罠に変えようとしたくせに。続きは裁判官に言いなさい。",
+          "timestamp_label": "午前3:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n04"
+        },
+        {
+          "id": "e19_n04",
+          "type": "text",
+          "sender_id": "neighbor",
+          "text": "刑事が今俺の弁護士に連絡してきた――Marniを二重殺人および放火容疑で起訴するそうだ。ちゃんと耳を傾けてくれてありがとう、{{player_name}}。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n05"
+        },
+        {
+          "id": "e19_n05",
+          "type": "narrator",
+          "text": "警察官がMarniをパトカーの後部座席へ押し込みます。数年ぶりに、4階から重苦しい冷気が消え去りました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n06_choice"
+        },
+        {
+          "id": "e19_n06_choice",
+          "type": "choice",
+          "prompt": "主任刑事から、Sariの日記を甲号証拠として提出するか尋ねられます。",
+          "options": [
+            {
+              "option_id": "e19_opt_free",
+              "label": "写しを提出し原本はSariの母へ残す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "完全なスキャンデータをお渡しします――本物の日記はお母様が持つべきです。",
+              "next_node_id": "e19_n07a"
+            },
+            {
+              "option_id": "e19_opt_vip",
+              "label": "日の出に404号室の封印を解くよう頼む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e19_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e19_n07a",
+          "type": "text",
+          "sender_id": "landlady",
+          "text": "これで終わりじゃないわ……私の弁護士が正午までに保釈させてみせるから！",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08"
+        },
+        {
+          "id": "e19_n07b",
+          "type": "narrator",
+          "text": "秘密解放：刑事が重々しく頷きます――『あなたの音声自白と銀行送金記録がある限り、彼女に保釈は絶対に認められません』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08"
+        },
+        {
+          "id": "e19_n08",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "最後にもう一度だけ日の出を待って、{{player_name}}。ようやく二人とも安らかに休める。",
+          "timestamp_label": "午前3:14",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n09"
+        },
+        {
+          "id": "e19_n09",
+          "type": "narrator",
+          "text": "パトカーが濡れた路地を走り去り、下宿は夜明け前の穏やかな静寂に包まれます。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e19_n10_end"
+        },
+        {
+          "id": "e19_n10_end",
+          "type": "cliffhanger",
+          "headline": "4階に昇る朝日……",
+          "teaser_text": "エピソード20（グランドフィナーレ）：澄み渡った暖かい朝が訪れ――404号室から最後のお別れが届きます。",
+          "sfx": "ting_soft",
+          "ambient": "none",
+          "haptic": "light",
+          "next_episode_number": 20
+        }
+      ]
+    },
+    {
+      "episode_number": 20,
+      "title": "静かな廊下",
+      "start_node_id": "e20_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e20_n01",
+          "type": "narrator",
+          "text": "午前7時00分 · 淡い黄金色の朝日が4階の廊下いっぱいに差し込みます。雨は完全に上がっていました。",
+          "style": "time_skip",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n02"
+        },
+        {
+          "id": "e20_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "2018年と2022年、両方のロケットがご家族の元に戻ったわ。それにMarniの再開発計画も市によって白紙撤回された。",
+          "timestamp_label": "午前7:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n03"
+        },
+        {
+          "id": "e20_n03",
+          "type": "text",
+          "sender_id": "room404",
+          "text": "もう廊下は寒くないよ、{{player_name}}。すべての真実が出るまでそばにいてくれてありがとう。",
+          "timestamp_label": "午前7:02",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n04"
+        },
+        {
+          "id": "e20_n04",
+          "type": "voice_note",
+          "sender_id": "room404",
+          "duration_sec": 7,
+          "transcript": "[温かな朝の鳥のさえずり、優しいチャイム音] 『さようなら、{{player_name}}。もう私もあなたも、404号室に閉じ込められてはいないよ』",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n05"
+        },
+        {
+          "id": "e20_n05",
+          "type": "narrator",
+          "text": "あなたの目の前で、404号室のチャットが『永久アーカイブ済み』へと淡く切り替わります。優しいそよ風が白いカーテンを揺らしました。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n06_choice"
+        },
+        {
+          "id": "e20_n06_choice",
+          "type": "choice",
+          "prompt": "日当たりの良い門の外で引っ越しタクシーが優しくクラクションを鳴らします。グランドフィナーレを選んでください！",
+          "options": [
+            {
+              "option_id": "e20_opt_free",
+              "label": "404号室に白い百合を2輪添えて出発する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "安らかに眠って、二人とも。おはようございます。",
+              "next_node_id": "e20_n07a"
+            },
+            {
+              "option_id": "e20_opt_vip",
+              "label": "今日Sariの母と追悼式に参列する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": null,
+              "next_node_id": "e20_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e20_n07a",
+          "type": "narrator",
+          "text": "404号室の開いた戸口の横に新鮮な白い百合を2輪手向け、あなたは明るい朝の中へと歩き出します。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n08"
+        },
+        {
+          "id": "e20_n07b",
+          "type": "narrator",
+          "text": "VIPフィナーレ：追悼の場でSariの母と2018年の犠牲者の妹（姉）が涙ながらにあなたを抱きしめます――『娘たちの名前を取り戻してくれてありがとう』",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e20_n08"
+        },
+        {
+          "id": "e20_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "4階にようやく平和が戻ったわ。真新しい章を始める時ね。",
+          "timestamp_label": "午前7:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n09"
+        },
+        {
+          "id": "e20_n09",
+          "type": "narrator",
+          "text": "開かれた鉄門を抜け、日の差し込む通りへと一歩踏み出します。真夜中があなたのドアをノックすることは、もう二度とありません。",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n10_end"
+        },
+        {
+          "id": "e20_n10_end",
+          "type": "cliffhanger",
+          "headline": "404号室はついに解放された。",
+          "teaser_text": "グランドフィナーレ完結 · 大家Marniの陰謀を暴き、地下のガス罠を生き延び、4階のすべての魂を解放しました。",
+          "sfx": "ting_soft",
+          "ambient": "none",
+          "haptic": "light",
+          "next_episode_number": null,
+          "cta_label": "シリーズ完結"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_007",
+  "lang": "ja",
+  "metadata": {
+    "title": "離婚弁護士の痛恨のミス",
+    "subtitle": "夫の冷酷な弁護士が、今夜私の銀行口座を凍結する企みを話し合うチャットに誤って私を追加した。",
+    "genre": "romance",
+    "tags": [
+      "離婚",
+      "裏切り",
+      "復讐"
+    ],
+    "cover_image": "assets/media/covers/story_007.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "lawyer",
+      "name": "Arthur Vance (弁護士)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "mil",
+      "name": "Evelyn (義母)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#581C87"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "作戦室への誤招待",
+      "start_node_id": "e1_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後8時12分 · システム通知：『Arthur Vanceが{{player_name}}をグループ「プロジェクト・クリーンブレイク」に追加しました』",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Evelyn様、海外送金は午前0時に予約済みです。明日{{player_name}}様が『税務書類』にサインすれば、彼女は一文無しで出ていくことになります。",
+          "timestamp_label": "午後8:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "結構。あの娘はお人好しだから、息子が差し出す書類なら何でもサインするわよ。ビーチヴィラから彼女の名前は消しておいた？",
+          "timestamp_label": "午後8:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "署名済み権利放棄証書、午前9時きっかりに提出可能。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "lawyer",
+          "text": "待て――なぜ{{player_name}}がこのグループにいるんだ？！連絡先を打ち間違えた！！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "mil",
+          "duration_sec": 7,
+          "transcript": "[金切り声] グループを消しなさい！今すぐあの子を強制退会させなさい、この無能！！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "narrator",
+          "text": "遅すぎました。あなたはすでにすべてのメッセージ、偽造された証書、そして海外送金先の口座番号を画面録画済みでした。",
+          "style": "banner",
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "choice",
+          "prompt": "チャットから追い出されるまであと5秒。どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_say_thanks",
+              "label": "抜ける前に震え上がる一言を落とす",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "重罪の証拠をありがとう、Arthur。弁護士会でお会いしましょう。",
+              "next_node_id": "e1_n09a"
+            },
+            {
+              "option_id": "opt_vip_silent",
+              "label": "何も言わず先に共有エスクローを引き出す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 黒幕",
+              "player_reply_text": "スクショ保存完了。それと、午前0時前にエスクローの残高を確認しておいてね。",
+              "next_node_id": "e1_n09b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09a",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "{{player_name}}、待って！ただの遺産対策の打ち合わせよ！誰にも電話しないで！",
+          "timestamp_label": "午後8:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n09b",
+          "type": "narrator",
+          "text": "銀行アラート：380万ドルがあなたの単独信託口座へ送金されました。ご主人の海外送金は残高不足で不渡りになりました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "cliffhanger",
+          "headline": "真夜中の凍結を逆転。",
+          "teaser_text": "エピソード2：夫が花束を抱えて玄関から帰ってきます――もう一方の手にはあの『税務書類』を握って。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "点線の上にサインを",
+      "start_node_id": "e2_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午後8時45分 · 夫がキッチンで緊張しながらお茶を淹れている間、彼の母親があなたの個人チャットに連投してきます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "よく聞きなさい、{{player_name}}。あのスクショを消しなさい、さもなければあなたが不倫していたと皆に言いふらすわよ。",
+          "timestamp_label": "午後8:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "可愛い脅しですね、Evelyn。おかしいな、さっきArthurから弁護士資格を守るために証人に寝返りたいって連絡が来ましたよ。",
+          "timestamp_label": "午後8:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}夫人、ご主人の隠しLLCの完全な監査記録をメールでお送りいたしました。刑事告訴から私の名前だけは外していただけないでしょうか。",
+          "timestamp_label": "午後8:47",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "ARTHUR、この裏切り者！！50万ドルも払ってやったのに！！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "mil",
+          "duration_sec": 8,
+          "transcript": "[過呼吸気味に] {{player_name}}、家族らしく話し合いで解決しましょう！ビーチヴィラはあげるから、連邦検察にだけは連絡しないで！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "切り札はすべてあなたの手の中にあります。条件を突きつけてください。",
+          "options": [
+            {
+              "option_id": "opt_take_all",
+              "label": "資産の70%と即時離婚を要求する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "午前9時までに資産の70%を送金しなさい。さもなくば検察にArthurのファイルが渡ります。",
+              "next_node_id": "e2_n08a"
+            },
+            {
+              "option_id": "opt_vip_arrest",
+              "label": "詐欺で告訴した上でヴィラも奪う",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 容赦ゼロ",
+              "player_reply_text": "遅すぎよ、Evelyn。検察官はすでに偽造証書の受領を確認したわ。",
+              "next_node_id": "e2_n08b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08a",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "わかったわよ！！今夜中に息子にサインさせるわ。容赦ない子ね、{{player_name}}。",
+          "timestamp_label": "午後8:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n08b",
+          "type": "narrator",
+          "text": "リビングのカーテンの隙間から赤と青のパトライトが点滅します。夫は恐怖のあまりティーカップを取り落としました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n09",
+          "type": "cliffhanger",
+          "headline": "プロジェクト・クリーンブレイク：完了。",
+          "teaser_text": "エピソード3：夜明け前にEvelynが海外LLCから資金を引き出そうと画策――そしてArthurがマスター台帳をあなたに差し出します。",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "海外送金の痕跡",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後9時20分 · あなたの書斎。夫が客室に閉じこもってパニックになる中、Evelynが午前0時前に850万ドルを動かそうとしています。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}夫人、今ケイマン信託の台帳をアップロードしています。Evelyn様が私の署名をバイパスしようとチューリッヒに電話をかけました！",
+          "timestamp_label": "午後9:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "送金警告 · 婚姻保有会社からEvelynの妹（姉）のダミー口座へ8,500,000ドルの送金予約。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "夫婦の共有財産を自分の姉妹に送金しようとしてるの？！銀行の詐欺対策窓口に事前通報しておいてよかったわ！",
+          "timestamp_label": "午後9:22",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "なんでチューリッヒ送金がコンプライアンス保留で止まってるの？！Arthurが銀行に密告したの？！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "{{player_name}}、聖人ぶるのはやめなさい！その富を築いたのはうちの息子よ――私たち一族の帝国の半分を盗む気？！",
+          "timestamp_label": "午後9:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 10,
+          "transcript": "[書類をめくる音] {{player_name}}夫人、あなたのスタートアップのシード資金がビーチヴィラと信託の60%を出資していたことを証明する元のLLC設立書類がございます。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "コンプライアンス担当者が、850万ドルを永久凍結するために10分以内の宣誓供述書を求めています。",
+          "timestamp_label": "午後9:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Evelynの850万ドルの送金がコンプライアンス保留で宙吊りになっています。どう動きますか？",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "供述書を提出し850万ドルを凍結する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今サインするわ、Arthur――午前0時前に最後の1セントまで凍結して。",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "凍結した上でEvelynの姉妹にも送達",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "送金を凍結して、今夜中にEvelynの姉妹も共謀者として訴状を送達して！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "銀行が私の口座を全部凍結したわ！！{{player_name}}、絶対にタダじゃおかないから！！",
+          "timestamp_label": "午後9:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "narrator",
+          "text": "VIP展開：訴状を受け取ったEvelynの姉妹はパニックに陥り、即座に隠蔽を命じるEvelynのボイスノートを検察官へメール送信します！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "凍結確定いたしました！ビーチヴィラとケイマン準備金の両方が今、裁判所の管財下に置かれました。",
+          "timestamp_label": "午後9:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "まだ祝うのは早いわよ――金庫に日付を遡らせた証書がまだ残ってるし、息子が今公証役場へ車を走らせているところなの！",
+          "timestamp_label": "午後9:28",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n13_end"
+        },
+        {
+          "id": "e3_n13_end",
+          "type": "cliffhanger",
+          "headline": "800万ドル凍結",
+          "teaser_text": "エピソード4：Evelynの日付改ざん権利放棄証書が壁に激突――そしてArthurが最後の爆弾を投下します。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 4,
+          "cta_label": "エピソード4をプレイ"
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "日付改ざんの証書",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後10時15分 · Vance法律事務所。Evelynが郡書記官の目を盗んで提出しようとした偽造権利放棄証書から、Arthurがメタデータを抽出します。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "本当にビーチヴィラの証書の日付を去年に遡らせようとしていました――なんと今年1月に失効済みの公証印を使って！",
+          "timestamp_label": "午後10:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "反訴提出証拠 · 配偶者の偽造署名が入った日付改ざん権利放棄証書。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "文書偽造の上に、期限切れの公証印？誰もインクを調べないと本気で思ってたの、Evelyn？",
+          "timestamp_label": "午後10:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "お抱えの弁護士が検察側の証人に寝返って、今は息子まで電話に出ないの？！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "{{player_name}}、お願い――息子が車の中で泣いているの！重罪の文書偽造で告訴したら、あの子は取締役の座を失ってしまうわ！",
+          "timestamp_label": "午後10:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 11,
+          "transcript": "[落ち着いてプロフェッショナルな声] {{player_name}}夫人、地方検事局の夜間書記官はいつでも重罪告訴を受理できます――あるいは苛烈な民事和解を突きつけることも可能です。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Evelyn様が私の事務所のロビーの外で慈悲を乞うております。ご提示される条件は？",
+          "timestamp_label": "午後10:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Evelynと夫は完全に追い詰められました。どこまで容赦なく叩きますか？",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "資産70%とビーチヴィラの譲渡を要求",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "婚姻財産の70%、ビーチヴィラ、そして配偶者扶養料ゼロ――今夜サインしなさい。",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "70%を奪いさらにEvelynを検察へ突き出す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "私の70%はいただくわ――そしてEvelynは文書偽造で検察官の取り調べを受けなさい！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "70パーセント？！骨の髄まで吸い尽くす気なの？！……わかったわよ、書類を下ろしなさい！",
+          "timestamp_label": "午後10:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "narrator",
+          "text": "VIP展開：検察が証拠パッケージを受理――刑務所行きを恐れた夫がすべての株式を譲渡する一方、Evelynのパスポートが出国禁止登録されます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "ご主人が今、協議離婚届と全資産譲渡書に電子署名されました。",
+          "timestamp_label": "午後10:22",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Evelynに伝えて――彼女の『プロジェクト・クリーンブレイク』は、想像以上にうまくいったわね、私にとって。",
+          "timestamp_label": "午後10:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n13_end"
+        },
+        {
+          "id": "e4_n13_end",
+          "type": "cliffhanger",
+          "headline": "暴かれた文書偽造",
+          "teaser_text": "エピソード5：朝の法廷が開廷――そして廊下でEvelynが最後の見苦しい騒動を起こします。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5,
+          "cta_label": "エピソード5をプレイ"
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "法廷での清算",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前9時05分 · 家庭裁判所の廊下。外でカメラが待ち受ける中、裁判官が最終判決に署名する直前にEvelynがあなたに詰め寄ります。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "勝ったつもりなの、{{player_name}}？！あなたが私たち家族を罠にハメたとマスコミに話してやるわ！",
+          "timestamp_label": "午前9:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうぞご自由に、Evelyn。そのマイクのすぐ横で、あなたが『グループを消しなさい！』と金切り声を上げるボイスノートを流してあげるから。",
+          "timestamp_label": "午前9:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Morales裁判官がグループチャットの画面録画を確認されました。弁護士費用の100%も先方負担とする判決を下されます。",
+          "timestamp_label": "午前9:07",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "カントリークラブの友人たちが全員、私のメッセージを既読無視してる……",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "待って――なんでうちの息子が廷吏に別の陳述書を手渡してるの？！今何にサインしたの？！",
+          "timestamp_label": "午前9:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 9,
+          "transcript": "[静かな含み笑い] 間もなく元夫となられる彼は今、宣誓の下で『海外送金スキームはすべてEvelynの発案だった』と証言しましたよ。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうやらあなたの自慢の息子は、自分だけ助かるためにあなたを売ったみたいね、Evelyn。",
+          "timestamp_label": "午前9:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "裁判官があなたの案件を証言台へ呼び出します。法廷での最後の一手は？",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "判決を受け入れ優雅に法廷を後にする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "判決にご署名を、裁判官――この一族とは永遠にお別れです。",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Evelynの『お人好し』発言を法廷記録へ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "全員が真実を知れるよう、彼女のグループチャットを公開の法廷記録に提出します！",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "木槌が下りました！離婚は確定し、ヴィラの権利書はあなたのもの、そして正午までに送金が完了します。",
+          "timestamp_label": "午前9:11",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "narrator",
+          "text": "VIP展開：Evelynのメッセージが法廷で読み上げられて傍聴席がどよめき――経済記者たちが即座に記事を書き始めます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "二度と私に話しかけないで、{{player_name}}！",
+          "timestamp_label": "午前9:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "おめでとうございます、{{player_name}}様。正午に銀行アプリをご確認ください――正式に自由の身ですよ。",
+          "timestamp_label": "午前9:13",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n13_end"
+        },
+        {
+          "id": "e5_n13_end",
+          "type": "cliffhanger",
+          "headline": "華麗なる完全勝訴",
+          "teaser_text": "エピソード6：あなたのビーチヴィラの夕暮れ――そしてあなた自身の条件で始まる新しい章。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 6,
+          "cta_label": "エピソード6をプレイ"
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "ビーチヴィラの夕暮れ",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午後5時30分 · オーシャンフロントのテラス。権利書はあなたの単独名義となり、鍵も交換され、850万ドルの和解金が着金しました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "最終送金を確認いたしました、{{player_name}}様。海外にあった1ペニーまで安全にあなたの単独信託に入りました。",
+          "timestamp_label": "午後5:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ありがとう、Arthur。正直なところ、あのグループチャットに私を誤追加してくれたのが、あなたがしてくれた中で最高の法務サービスだったわ。",
+          "timestamp_label": "午後5:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "5つ星の評価として頂戴いたします。ところで、Evelyn様はワンルームアパートに引っ越されたそうです――妹様にも縁を切られたようで。",
+          "timestamp_label": "午後5:32",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "あなたを見くびらなければよかったわ、{{player_name}}。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "また、合併監査でのあなたの見事な手腕を見た2つのベンチャーファンドが、あなたの新会社への出資を希望しています。",
+          "timestamp_label": "午後5:33",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 8,
+          "transcript": "[落ち着いて敬意を込めた声] 待ち伏せに飛び込んで、逆に取締役会を丸ごと手中に収めましたね。夕陽をご堪能ください、{{player_name}}様。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "シャンパンを注いで、『プロジェクト・クリーンブレイク』をバックミラーの彼方に置き去りにする時ね。",
+          "timestamp_label": "午後5:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "目の前で海が黄金色に輝いています。シーズンフィナーレを選んでください！",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "ビーチヴィラで自由に乾杯する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "平穏と力、そしてこの景色の1平方フィートすべてを所有する喜びに乾杯！",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "今夜自分自身のベンチャーファンドを設立",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 秘密の展開",
+              "player_reply_text": "その投資家たちに折り返して――次は元夫の古巣のライバル社を買収するわ！",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "当然の勝利です、{{player_name}}様。ご用命の折には、いつでも当事務所がお力になります。",
+          "timestamp_label": "午後5:36",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "narrator",
+          "text": "VIPフィナーレ：1ヶ月以内にあなたの新ファンドは4000万ドルを達成――その一方で、元夫が今やあなたが所有する会社に応募してきます！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "グループチャットの連絡先間違い一つで……自分の人生を丸ごと取り戻せたわ。",
+          "timestamp_label": "午後5:37",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "人生で最高のミスでした。あなたの次の帝国に乾杯、{{player_name}}様。",
+          "timestamp_label": "午後5:38",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n13_end"
+        },
+        {
+          "id": "e6_n13_end",
+          "type": "cliffhanger",
+          "headline": "鮮やかな決別。完全なる勝利。",
+          "teaser_text": "シーズンフィナーレ完結 · すべてを奪おうとした連中を退け、すべてを手に入れて歩み出しました。",
+          "sfx": "ting",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "cta_label": "シーズン完結"
+        }
+      ]
+    }
+  ]
+}

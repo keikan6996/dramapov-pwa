@@ -1,0 +1,961 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_019",
+  "lang": "pt",
+  "metadata": {
+    "title": "Câmera no Grande Saguão",
+    "subtitle": "Meu marido jurou que trabalhou sozinho a noite toda num IPO. Às 3h da manhã, o segurança noturno me mandou uma imagem da câmera do saguão.",
+    "genre": "romance",
+    "tags": [
+      "Câmera de Segurança",
+      "Traição",
+      "Casamento"
+    ],
+    "cover_image": "assets/media/covers/story_019.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "security",
+      "name": "Sam (Chefe de Segurança)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "mason",
+      "name": "Mason (Marido)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Horário 02h47",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "03h02 · Você ainda está acordada preocupada com a \"madrugada de trabalho no IPO\" de Mason. Seu amigo de infância Sam—chefe da segurança da torre—manda mensagem.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "{{player_name}}, desculpa acordar você. Prometeu que me avisaria se o Mason voltasse a mentir. Olhe a Câmera 04.",
+          "timestamp_label": "03:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "02h47 · Saguão Executivo. Mason entrando no elevador privativo com a Diretora de RP—carregando malas de pernoite.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Malas de pernoite?! O Mason literalmente me mandou mensagem há dez minutos dizendo que dormiu na mesa dele!",
+          "timestamp_label": "03:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Ainda ralando nas planilhas, amor. Volte a dormir, passo pegando café da manhã no caminho para casa. ❤️",
+          "timestamp_label": "03:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Eles não foram para a sala dele no 30º andar—passaram o crachá na suíte spa executiva do 42º andar.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 7,
+          "transcript": "[estática baixa de rádio] Salvei toda a filmagem em HD num disco criptografado, {{player_name}}. Diga o que quer fazer.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "choice",
+          "prompt": "São 03h06. Seu marido está no 42º andar mentindo na sua cara.",
+          "options": [
+            {
+              "option_id": "opt_send_cctv",
+              "label": "Mandar a foto da câmera a Mason agora mesmo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Adorei as \"planilhas\" no 42º andar, Mason. Não precisa trazer café da manhã.",
+              "next_node_id": "e1_n09a"
+            },
+            {
+              "option_id": "opt_vip_lock",
+              "label": "Pedir a Sam para disparar o alarme no 42º",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Xeque-Mate",
+              "player_reply_text": "Sam, faça uma checagem obrigatória de segurança das 3h na Suíte 42. Eu encontro eles no saguão.",
+              "next_node_id": "e1_n09b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09a",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "ONDE VOCÊ CONSEGUIU ESSA FOTO?! Quem está me espionando?! {{player_name}}, atende!!",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n09b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Alarme do 42º andar ativo. Os dois estão correndo de roupão para o elevador agora mesmo.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "cliffhanger",
+          "headline": "Flagrado na Câmera 04.",
+          "teaser_text": "Episódio 2: O elevador do saguão abre às 03h15—e Mason dá de cara com você e o presidente do conselho do prédio.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Evacuação das 03h15",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "03h18 · O saguão está claro como o dia. Mason congela de roupão enquanto manda mensagem para você a três metros de distância.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "{{player_name}}, por favor! O IPO abre às 9h! Se o conselho vir isso, minhas opções de ações viram pó!",
+          "timestamp_label": "03:18",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ah, agora liga para opções de ações? Lembra quem hipotecou a casa dos pais para financiar sua rodada inicial, Mason?",
+          "timestamp_label": "03:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Foi por isso que transferi metade das minhas ações de fundador para minha Diretora de RP ontem—para você não poder tocar nelas!",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 7,
+          "transcript": "[calmo, protetor] Você tirou print dessa mensagem apagada, {{player_name}}? Porque o fiscal de compliance da SEC acabou de entrar no saguão.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "choice",
+          "prompt": "A transferência secreta de ações de Mason é fraude ilegal pré-IPO. Dê sua palavra final.",
+          "options": [
+            {
+              "option_id": "opt_settlement",
+              "label": "Forçá-lo a passar 60% das ações para você",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Passe 60% das ações de fundador de volta para mim agora, ou mostro ao fiscal de compliance.",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_vip_burn",
+              "label": "Entregar câmera e prova de fraude ao conselho",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Terra Arrasada",
+              "player_reply_text": "Divirta-se explicando transferências secretas pré-IPO ao conselho, Mason. Estamos divorciados.",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Eu assino! Só por favor não mostre a eles! Estou ligando para o meu advogado agora!",
+          "timestamp_label": "03:22",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "narrator",
+          "text": "O conselho suspende o IPO na hora. Mason desaba numa poltrona do saguão enquanto a Diretora de RP dispara pelas portas giratórias.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08"
+        },
+        {
+          "id": "e2_n08",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Turno encerrado, {{player_name}}. Deixe eu levar você para casa—e pagar aquele café da manhã que ele mentiu.",
+          "timestamp_label": "03:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n09",
+          "type": "cliffhanger",
+          "headline": "Caso Encerrado. Novo Amanhecer.",
+          "teaser_text": "Final da Temporada · Saindo no ar fresco das 3h ao lado de Sam, você finalmente respira livre.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Segundo Ângulo de Câmera",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "08h10 · Suíte segura de hotel. Você mal dormiu quando Sam envia um segundo quadro com horário do saguão.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Não era só um caso, {{player_name}}. Olhe o que Mason entregou às 02h51—aquele é o drive de patentes do IPO da sua família.",
+          "timestamp_label": "08:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele jurou que estava protegendo o IPO do meu pai... estava vendendo tudo pelas nossas costas?!",
+          "timestamp_label": "08:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Câmera do Grande Saguão #04 · 02h51 — Mason entregando um USB criptografado ao advogado rival da sua irmã.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Mason manda mensagem—o tom subitamente gélido ao perceber que você não voltou para casa.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Onde você está, {{player_name}}? Pare de ouvir um vigia glorificado e volte para casa antes que eu congele nossas contas conjuntas.",
+          "timestamp_label": "08:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Se ela entregar essa filmagem do saguão à SEC antes do sino das 14h, eu vou para a cadeia.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 10,
+          "transcript": "[firme, calmo] \"Fiz backup de todo o vídeo 4K do saguão na nuvem, {{player_name}}. É só falar e eu levo você direto ao seu advogado.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "A abertura do IPO de Mason é às 14h00. Como você contra-ataca?",
+          "options": [
+            {
+              "option_id": "opt_e3_call_lawyer",
+              "label": "Mandar o vídeo da câmera direto ao advogado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Congele o que quiser, Mason. Meu advogado já está com a filmagem das 02h51.",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_crash_ipo",
+              "label": "Entrar no lançamento do IPO com Sam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Vingança",
+              "player_reply_text": "Guarde um lugar na primeira fila para mim às 14h, Mason. Tenho uma surpresa.",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Jogada esperta. Seu advogado acabou de entrar com liminar de emergência—Mason está prestes a surtar.",
+          "timestamp_label": "08:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Fico bem ao seu lado o caminho todo. Ninguém encosta em você enquanto eu estiver de guarda.",
+          "timestamp_label": "08:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Está blefando, {{player_name}}. A segurança trabalha para MIM—essa filmagem não existe!",
+          "timestamp_label": "08:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Contagem Regressiva Para o Sino das 14h.",
+          "teaser_text": "Episódio 4: Mason tenta subornar Sam para apagar o servidor—sem saber que Sam está gravando cada palavra.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Suborno na Garagem",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11h45 · Estacionamento subsolo G2. Sam envia a você uma transmissão ao vivo de áudio do microfone na jaqueta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Mason acabou de me encurralar perto da minha caminhonete com um cheque administrativo de US$ 200K. Fique no carro—deixe ele falar.",
+          "timestamp_label": "11:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cuidado, Sam! Se ele perceber que você está gravando, vai surtar.",
+          "timestamp_label": "11:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Você vai mesmo jogar seu casamento fora por uma noite ruim, {{player_name}}? Volte e eu passo a casa para o seu nome.",
+          "timestamp_label": "11:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "O áudio ao vivo dá pico—Mason ameaça Sam, depois admite sem querer que falsificou sua assinatura na transferência da compra.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Espera... por que o rádio do Sam está piscando vermelho?! Vocês dois armaram para mim?!",
+          "timestamp_label": "11:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Estou cuidando de você da portaria de segurança há um ano, {{player_name}}—não podia deixar ele destruir você.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "mason",
+          "duration_sec": 10,
+          "transcript": "[voz furiosa de Mason gravada] \"Apague o vídeo das 02h51 e eu dobro o valor! Ela nem sabe que falsifiquei o nome dela na transferência da patente!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Agora você tem tanto a câmera quanto a confissão gravada dele.",
+          "options": [
+            {
+              "option_id": "opt_e4_send_police",
+              "label": "Encaminhar confissão à Delegacia de Fraudes",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Peguei cada palavra gravada, Mason. Os detetives de fraudes estão a caminho.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_air_on_stage",
+              "label": "Preparar nos alto-falantes do palco do IPO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Explosivo",
+              "player_reply_text": "Guarde seu discurso para os investidores às 14h—eles vão ouvir isso ao vivo.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Ele acabou de disparar para o elevador. Os detetives já estão fechando as saídas do saguão.",
+          "timestamp_label": "11:50",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "O técnico de som é um velho amigo meu. Me dê dez minutos e o salão inteiro vai ouvir.",
+          "timestamp_label": "11:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Também tirei a transferência falsificada da patente da bandeja da impressora executiva. Olhe isto.",
+          "timestamp_label": "11:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "A Assinatura Falsificada.",
+          "teaser_text": "Episódio 5: Às 14h00 em ponto, Mason sobe ao púlpito do IPO—bem quando o telão pisca suas provas.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Ao Vivo no Telão do IPO",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "14h00 · Grande Salão. Repórteres lotam os corredores quando Mason bate no microfone—e o painel LED de 12 metros pisca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Hora do show, {{player_name}}. Tanto a câmera das 02h51 quanto o contrato falsificado acabaram de entrar ao vivo atrás da cabeça dele.",
+          "timestamp_label": "14:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Olhe os investidores levantando! E a amante dele acabou de fugir pela porta lateral!",
+          "timestamp_label": "14:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Prova B · Transferência Falsificada de Patente — Perícia confirma a caligrafia de Mason.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Policiais sobem ao palco. O sino do IPO é suspenso por tempo indeterminado.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "{{player_name}}, por favor—diga que foi um mal-entendido! Assino os papéis do divórcio agora mesmo, só retire a queixa de fraude!",
+          "timestamp_label": "14:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Minha vida inteira acabou... como ela me derrotou com tanta facilidade?",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 9,
+          "transcript": "[orgulho quieto] \"Acabaram de algemá-lo, {{player_name}}. As patentes do seu pai voltaram para o seu nome. Saia—o ar finalmente está limpo.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Mason é levado passando por você algemado, implorando piedade.",
+          "options": [
+            {
+              "option_id": "opt_e5_cold_goodbye",
+              "label": "Entregar papéis do divórcio em silêncio",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Assine pelo meu advogado, Mason. Não temos mais nada a dizer.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_thank_sam",
+              "label": "Virar as costas e aceitar o casaco de Sam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Corte Limpo",
+              "player_reply_text": "Você me perdeu às 02h47, Mason. Sam, vamos sair daqui.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Despedida mais limpa que já vi. O café é por minha conta—chega de emergências às 3h da manhã.",
+          "timestamp_label": "14:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Meu casaco fica melhor em você mesmo. Vamos ver o pôr do sol no píer.",
+          "timestamp_label": "14:05",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Espera—antes de bater meu ponto final para sempre, tem algo que quero perguntar desde a primavera passada.",
+          "timestamp_label": "14:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Finalmente Fora de Serviço.",
+          "teaser_text": "Episódio 6 (Final): Livre de um casamento tóxico, você descobre o guardião silencioso que nunca tirou os olhos da sua segurança.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "O Guardião Silencioso",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "18h15 · Café à Beira-Mar. A luz dourada reflete no porto quando Sam pousa duas xícaras fumegantes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Entreguei meu pedido de demissão na Grande Torre hoje cedo. Chega de vigiar homens desonestos por um monitor.",
+          "timestamp_label": "18:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera—o que vai fazer agora? A empresa do meu pai precisa de um Chefe de Segurança de verdade.",
+          "timestamp_label": "18:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Só se trabalhar para você não quebrar a regra contra levar a chefa para jantar.",
+          "timestamp_label": "18:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Seu celular apita—decreto de divórcio finalizado, e o IPO da sua família voltou oficialmente aos trilhos no SEU nome.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Olhe essa notificação, {{player_name}}. Você não apenas sobreviveu a ele—retomou seu império inteiro.",
+          "timestamp_label": "18:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Não preciso apressar você. Só quero ser o homem que nunca faz você checar câmera às 3h da manhã.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 9,
+          "transcript": "[gentil, sincero] \"Sem pressão hoje, {{player_name}}. Só me prometa uma coisa—quando estiver pronta para um recomeço, me deixe ser o primeiro da fila.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "A brisa do porto parece mais quente do que em anos.",
+          "options": [
+            {
+              "option_id": "opt_e6_first_in_line",
+              "label": "Dizer que ele é o único na fila",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Não existe fila, Sam. Jantar sexta-feira—só nós dois.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_hold_hand",
+              "label": "Estender a mão pela mesa e segurar a dele",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Novo Amanhã",
+              "player_reply_text": "Por que esperar até sexta? Comece hoje à noite, Sam.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Sexta às sete. Estarei adiantado—como sempre.",
+          "timestamp_label": "18:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Melhor turno da minha vida, {{player_name}}. Estou com você.",
+          "timestamp_label": "18:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Sem mais sombras no saguão. Só céu limpo à frente. 🌅",
+          "timestamp_label": "18:22",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Segura nos Braços Dele.",
+          "teaser_text": "FIM · Uma foto de segurança das 3h despedaçou uma mentira—e levou você ao coração mais verdadeiro que já conheceu.",
+          "sfx": "ting",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

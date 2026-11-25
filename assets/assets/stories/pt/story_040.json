@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_040",
+  "lang": "pt",
+  "metadata": {
+    "title": "O Último Recado Antes das 03:33",
+    "subtitle": "Recebi uma mensagem minha datada de 7 dias no futuro: \"Às 03:33 de hoje, NÃO atenda quando ela ligar chorando.\"",
+    "genre": "thriller",
+    "tags": [
+      "03:33",
+      "Loop Temporal",
+      "Suspense"
+    ],
+    "cover_image": "assets/media/covers/story_040.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Você)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#9333EA"
+    },
+    {
+      "id": "ally",
+      "name": "{{player_name}} (+7 Dias)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4C1D95"
+    },
+    {
+      "id": "threat",
+      "name": "Nora (Melhor Amiga)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Mensagem da Semana Que Vem",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "03h28 · A chuva açoita a janela do seu apartamento. Uma mensagem agendada chega do seu próprio número — com data de daqui a 7 dias.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ME ESCUTA, {{player_name}}! Às 03:33, Nora vai ligar chorando na sua porta. NÃO ATENDA. NÃO TIRE A CORRENTE.",
+          "timestamp_label": "03:28",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Quem hackeou meu número?! Nora está num voo para Singapura agora, como ela estaria na minha porta?",
+          "timestamp_label": "03:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Porque a Nora de verdade nunca voltou para casa.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sou VOCÊ — e mal sobrevivi ao primeiro ciclo! Olha para a porta do corredor: a corrente de segurança está passada agora?",
+          "timestamp_label": "03:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[soluçando, batendo na madeira] ...{{player_name}}, por favor! Alguém me seguiu até o prédio! Abre a porta!...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "03h32. As batidas desesperadas de Nora ecoam de verdade no corredor lá fora.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Perguntar a Nora um segredo só dela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Nora, qual era o nome do meu cachorro de infância?",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Checar o rastreador do voo da Nora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Checando o rastreador do voo dela agora mesmo...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "O choro lá fora corta de repente. Por cinco longos segundos, só uma imitação rouca e grave repete sua pergunta palavra por palavra.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O voo SQ-185 está a 35.000 pés sobre o oceano — e Nora acabou de postar uma foto das nuvens pela janela.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "SÃO 03:33!! Fique longe da porta — essa coisa está te ligando agora!",
+          "timestamp_label": "03:33",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Nora (Melhor Amiga)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Uma voz distorcida e sorridente imita Nora: \"Tarde demais, {{player_name}}. Você atendeu.\" A corrente de segurança arrebenta.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você toca em Recusar! Lá fora, o choro vira arranhões furiosos de alto a baixo na porta de madeira.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "03:33",
+          "teaser_text": "Episódio 2: O relógio se recusa a marcar 03:34 — e seu eu do futuro tem um último aviso.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Preso às 03:33",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "03h33 · Sessenta segundos se passam. Depois dois minutos. Todos os relógios digitais do apartamento continuam congelados em 03:33.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, minhas mensagens estão falhando — você mudou a linha do tempo! É por isso que o relógio travou!",
+          "timestamp_label": "03:33",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Os arranhões pararam! Agora está falando com a MINHA voz lá fora! Como faço chegar às 03:34?!",
+          "timestamp_label": "03:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[sua própria voz, calma e fria] ...Abre, {{player_name}}. Sou você da semana que vem. Me deixa entrar...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Apague a conversa da mensagem agendada para quebrar o ciclo.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Está tentando ME imitar agora! Desligue o Wi-Fi e apague esta conversa — enquanto a ponte estiver aberta, ela consegue atravessar!",
+          "timestamp_label": "03:33",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "A maçaneta chacoalha com violência enquanto o imitador grita o seu nome.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Ativar o Modo Avião no celular agora",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cortando todos os sinais agora!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Gravar aviso de 3s para seu eu passado",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Fechando o ciclo por conta própria...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "As barras de sinal somem. No mesmo instante, o corredor cai em silêncio absoluto — e o relógio do micro-ondas pisca 03:34.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Você agenda exatamente o aviso que recebeu antes — selando o paradoxo. Lá fora, os passos recuam pela escada.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "03h34. Uma chuva morna bate firme no vidro. Seu celular volta a se conectar às barras normais da rede.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Nora (Roaming em Singapura)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Nora boceja animada: \"Acabei de pousar em Singapura! Que coisa mais estranha — sonhei que você estava trancado no quarto às 03:33.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você solta o ar e abre a pasta de Rascunhos — uma mensagem não enviada espera lá, agendada para daqui a 7 dias.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Ciclo Quebrado… Por Enquanto",
+          "teaser_text": "Final de Temporada · Se seu celular vibrar às 03:33, nunca atenda.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "A Torre Falsificada",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "03h35 · Seu relógio passa das 03:33, mas a tela acende com uma nova mensagem de \"+7 Dias\".",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Não comemore ainda, {{player_name}}. Você desviou da ligação, então quem clonou a voz da Nora está mudando para o Plano B.",
+          "timestamp_label": "03:35",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera — pare de fingir que é meu eu do futuro. Quem é você de verdade, e onde está a Nora real?",
+          "timestamp_label": "03:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Rastreio de Sinal · 03h36 — A ligação das 03:33 partiu de uma van estacionada na frente do prédio da Nora.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Olhe o ID da torre! O recado chorando não era sobrenatural — foi montado com trechos das lives antigas da Nora!",
+          "timestamp_label": "03:37",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "{{player_name}}, por favor vem para o meu prédio agora, estou trancada no terraço.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "O balão real de chat da Nora aparece, seguido de um pino de localização repentino.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Perguntar a Nora um segredo só dela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Qual nome demos para o gato de rua da faculdade?",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Rastrear o IP do remetente \"+7 Dias\"",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Fazendo um rastreio rápido de IP no \"+7 Dias\"...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Três pontinhos aparecem, travam por dez segundos e somem. Quem está com o celular dela não sabe a resposta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Os textos de \"+7 Dias\" foram agendados do iPad da Nora — ela programou um alerta de emergência de 7 dias antes de o perseguidor roubar o celular dela!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Não sou do futuro — sou o script automático de backup da Nora! Se fui disparado agora, ele está dentro do apartamento dela!",
+          "timestamp_label": "03:38",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[porta chacoalhando abafada, sussurro urgente] ...{{player_name}}! É a Nora de verdade — ele pegou meu celular para te atrair até aqui, chama a polícia!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Aguenta firme, Nora! Estou ligando para a polícia agora e indo para a sua rua.",
+          "timestamp_label": "03:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Não Era um Loop Temporal",
+          "teaser_text": "Episódio 4: O perseguidor percebe que o alerta automático disparou — e corta a energia do apartamento da Nora.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Gatilho de Emergência",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "03h41 · A chuva risca o para-brisa enquanto você acelera rumo ao prédio da Nora com a polícia no viva-voz.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ALERTA AUTOMÁTICO: A central inteligente da Nora registrou um acesso não autorizado do notebook do ex-colega de trabalho às 03h10.",
+          "timestamp_label": "03:41",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera — o ex-colega dela do laboratório de áudio? Isso explica como ele criou um clone de IA da voz dela chorando!",
+          "timestamp_label": "03:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Se {{player_name}} trouxer a polícia, apague o disco do modelo de voz e desça pela escada de incêndio.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ele ainda está logado no chat na nuvem dela! Está lendo tudo o que digitamos agora!",
+          "timestamp_label": "03:43",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 11,
+          "transcript": "[voz sintética de Nora falhando na risada de um homem] ...Belo script de segurança, {{player_name}}. Pena que chegou cinco minutos atrasado...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "Você estaciona diante do prédio da Nora; o teclado da portaria pisca em vermelho.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Tocar todos os interfones do térreo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tocando todos os apartamentos para abrir!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Ativar a sirene da caixa smart da Nora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Disparando o alarme da caixa inteligente...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Um vizinho sonolento abre o portão da portaria bem na hora em que você ouve botas descendo a escada do terceiro andar.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: A caixa do quarto dispara uma sirene de 100 dB, abafando os passos dele e forçando-o para o campo da câmera do corredor.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ALERTA AUTOMÁTICO: Movimento detectado fora do Apto 4B! Ele está indo para a escada de incêndio dos fundos com o notebook da Nora!",
+          "timestamp_label": "03:44",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Saiam do meu caminho! Ela ia denunciar meu esquema de falsificação de áudio para a diretoria!",
+          "timestamp_label": "03:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A polícia está a dois quarteirões. Você não vai sair deste corredor com o disco dela.",
+          "timestamp_label": "03:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Flagrado pela Câmera do Corredor",
+          "teaser_text": "Episódio 5: A câmera do corredor da Nora foca o rosto do invasor em visão noturna nítida.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "A Voz Verdadeira",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03h48 · Você sobe correndo ao 4º andar enquanto o script de backup da Nora envia um quadro ao vivo da câmera do corredor.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ALERTA AUTOMÁTICO: Reconhecimento facial confirmado. Enviando registros brutos do clone de voz ao portal de provas da polícia.",
+          "timestamp_label": "03:48",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele está encurralado entre a escada de incêndio e a escada principal. Nora, continue trancada no banheiro!",
+          "timestamp_label": "03:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Câmera do Corredor 4B · 03h49 — Invasor paralisado sob a luz estroboscópica do corredor.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Desliga essa câmera! Aquele modelo de voz era só um protótipo — eu nunca quis machucar ninguém!",
+          "timestamp_label": "03:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Já fiz backup dos áudios falsificados num pendrive no meu casaco.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "Ele avança na direção da porta da escada de incêndio segurando o notebook da Nora.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Segurar a bolsa dele e bloquear a saída",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Agarrando a bolsa para detê-lo!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Pegar o pendrive do bolso do casaco",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Garantindo a prova do pendrive...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "O notebook desliza em segurança pelo corredor enquanto ele tropeça direto nos braços de dois policiais que chegavam.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O pendrive guarda recados deepfake mirando outros seis executivos — o bastante para prendê-lo por uma década.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[passos pesados, vozes policiais] ...Mãos para trás! Pegamos ele, {{player_name}} — a moradora está bem?...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Nora acabou de destrancar a porta do banheiro! Ela está tremendo, mas completamente ilesa!",
+          "timestamp_label": "03:51",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Acabou, Nora. Chega de recados às 03:33 da manhã.",
+          "timestamp_label": "03:52",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "03:33 Silenciado",
+          "teaser_text": "Episódio 6 Final: O dia amanhece sobre a delegacia enquanto Nora desativa o script \"+7 Dias\" de vez.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Manhã Depois das 03:33",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "04h10 · Café quente fumega no banco da delegacia enquanto detetives de crimes cibernéticos ensacam o equipamento de clonagem de voz.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Diz para a Nora que eu sinto muito... Entrei em pânico quando ela descobriu que eu vendia vozes clonadas na dark web.",
+          "timestamp_label": "04:10",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Guarde as desculpas para o juiz. Você usou a própria voz dela como arma para aterrorizá-la.",
+          "timestamp_label": "04:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Chequem o servidor do laboratório de áudio — ainda há o nome de dois compradores na fila.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 9,
+          "transcript": "[voz real de Nora, risada aliviada] ...Me lembra de dar um nome menos assustador para o meu alerta automático da próxima vez, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ALERTA AUTOMÁTICO: Temporizador de emergência desativado pela dona. Tenha uma manhã segura, {{player_name}}.",
+          "timestamp_label": "04:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Os detetives perguntam se você quer acrescentar um depoimento final antes de ir para casa.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Enviar todo o registro e horários do chat",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Enviando os registros completos do chat.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Entregar os dois nomes do laboratório",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Passando a lista de compradores aos detetives...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "A unidade de crimes cibernéticos marca cada áudio falsificado e congela as contas do perseguidor na dark web.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "EPÍLOGO SECRETO: Agentes federais prendem os dois compradores antes do meio-dia, desmontando toda a rede de clonagem de voz.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sério, obrigada por confiar numa mensagem bizarra de \"+7 Dias\" em vez de desligar, {{player_name}}.",
+          "timestamp_label": "04:13",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sempre que precisar, Nora. Só promete me ligar em horários normais daqui em diante.",
+          "timestamp_label": "04:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "O relógio do seu celular marca 06h00 — claro, tranquilo e finalmente de volta ao presente.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Ciclo Fechado",
+          "teaser_text": "A armadilha de clonagem de voz foi destruída, e 03:33 nunca mais vai tocar.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1045 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_088",
+  "lang": "ja",
+  "metadata": {
+    "title": "デッドマンズ・スイッチ",
+    "subtitle": "ジャーナリストの姉が6か月前に失踪した。今夜、姉が仕掛けていた暗号化デッドマンズ・スイッチがついに発動した。",
+    "genre": "thriller",
+    "tags": [
+      "失踪",
+      "暗号化",
+      "陰謀"
+    ],
+    "cover_image": "assets/media/covers/story_088.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#9333EA"
+    },
+    {
+      "id": "nadia",
+      "name": "Nadia · 自動金庫",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "mrk",
+      "name": "K氏",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3B0764"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "180日間の沈黙",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前0:00 · 金庫自動送信：180日間の無操作閾値に到達。Nadiaからの最終パッケージを{{player_name}}へ配信します。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 11,
+          "transcript": "[切迫した囁き声、雨音] {{player_name}}、これを聞いているなら、私はフェリーに辿り着けなかったということ。上院議員の海外裏帳簿は14番ドックの下——09番ロッカーに埋めてある。警察は信じないで。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nadia？！待って——この金庫メッセージ、別の端末で「配信済み・既読」になってる！",
+          "timestamp_label": "午前0:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "Nadiaのタイマーが切れるのを6か月も待っていたんだよ、{{player_name}}。09番ロッカーの場所を開けてくれて感謝する。",
+          "timestamp_label": "午前0:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "mrk",
+          "text": "ああ、それとお前の姉はまだ死んでいない——今のところはな。そのまま生かしておきたければ、ドライブを14番ドックへ持って来い。",
+          "unsent_placeholder": "K氏がメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Nadiaはまだ生きているかもしれません。14番ドックにどう対処しますか？",
+          "options": [
+            {
+              "option_id": "opt_088_e1_free",
+              "label": "K氏が着く前に14番ドックへ急ぐ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "彼女に指一本触れないで！今すぐ14番ドックへ向かうわ。",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_088_e1_vip",
+              "label": "Nadiaの金庫内の隠しファイルを復号する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "桟橋の下にある錆びた09番ロッカーをこじ開けます。中には防水のペリカンケース——そして今日の日付の新聞を手にしたNadiaのポラロイド写真が入っていました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "生きてる！待って…6か月前に失踪したはずなのに、どうしてロッカーに真新しい南京錠がついてたの？！",
+          "timestamp_label": "午前0:24",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "幼い頃に飼っていた犬の名前を入力します。すると隠し地図が解除されました：09番ロッカーはGPSビーコンが仕掛けられた罠で、「本物」の台帳は桟橋の3本目の杭の下にテープで留められているとのこと。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "[予約メッセージ] もしK氏からメッセージが届いたなら、彼は09番ロッカーを見張っている。3本目の杭から本物のドライブを掴んで逃げて。",
+          "timestamp_label": "午前0:24",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "ボートのサーチライトが港の霧を切り裂き、濡れた杭の前にあなたを釘付けにしました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "船に乗りな、{{player_name}}。船上に君に会いたくてたまらない人物がいるぞ。",
+          "timestamp_label": "午前0:25",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "港のボートの上で",
+          "teaser_text": "ボートの船室灯の中に人影が歩み出る——それは縛られてもいない、拳銃を手にしたNadiaだった。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "幽霊ジャーナリスト",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前0:27 · 波が船体を打ちます。K氏の隣で甲板に立つNadiaが——さりげなく自分の耳を2回タップしました。「芝居に合わせて」という子供の頃からの合図です。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "nadia",
+          "caller_label": "Nadia · 暗号化回線",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 7,
+          "transcript": "[隠しマイク越しの囁き声] まだドライブを渡さないで！私が「飛び込め！」と叫んだら右舷の手すりから海に飛び込んで——連邦の船があと30秒で来る！",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "あと30秒時間を稼いで！司法省のために盗聴器をつけてるの——霧のすぐ後ろに強襲艇が待機してる！",
+          "timestamp_label": "午前0:27",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "甲板に台帳を放れ、{{player_name}}。妙な動きはするなよ。",
+          "timestamp_label": "午前0:28",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "渡すわ——でも先にNadiaを桟橋に渡らせて！",
+          "timestamp_label": "午前0:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "K氏が無線機を構えました。時間切れです：",
+          "options": [
+            {
+              "option_id": "opt_088_e2_free",
+              "label": "甲板越しに偽のケースを滑らせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "受け取りなさい！さあ下がって！",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_088_e2_vip",
+              "label": "隠しマイクの音声を報道局へ生配信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "K氏がケースに飛びついたまさにその瞬間、Nadiaがスロットルを逆転させて「飛び込め！」と叫びます。霧の中から3基の沿岸警備隊の投光器が炸裂しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "救助ラダーを掴んで、{{player_name}}！作戦全体の自白を完璧に録音できたよ！",
+          "timestamp_label": "午前0:30",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Nadiaの盗聴回線を彼女の報道局の緊急配信へ直結させます。数秒のうちに、4万人の視聴者がK氏の口から上院議員の名が語られるのを目撃しました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "生放送してやがるのか？！エンジンを止めろ——正体が割れた！",
+          "timestamp_label": "午前0:30",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "1つ問題がある：あのドライブに載っているトップの名前は、上院議員じゃなかった。",
+          "unsent_placeholder": "Nadiaがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "会いたかったよ、{{player_name}}。さあ体を拭いて——私たちの取材はまだ半分しか終わっていないから。",
+          "timestamp_label": "午前0:32",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "上院議員の上の人物",
+          "teaser_text": "Nadiaは無事でK氏は手錠をかけられた——だが暗号化台帳には、内閣全体を揺るがしかねないもう1つの名前が残されていた。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "金庫第2層",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2:14 · Nadiaのデッドマンズ・スイッチが第2層を復号しました。画面が海外送金明細で埋め尽くされます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "金庫自動メッセージ：第2層を読んでいるなら、{{player_name}}、上院議員はただの仲介役にすぎない。口座 #01 を見て。",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "口座 #01 …これ、司法長官の慈善財団じゃない！1,800万ドルも！",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "nadia",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "金庫第2層 · 防衛ロビーから司法長官の財団へ18,000,000ドルが送金。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "mrk",
+          "duration_sec": 7,
+          "transcript": "[拘置所の公衆電話の雑音] よく聞け。今すぐその台帳を燃やせ。司法長官の運び屋どもがすでにお前のアパートに向かっているぞ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "窓の外にナンバープレートのない黒いセダンが2台停まりました。動いてください：",
+          "options": [
+            {
+              "option_id": "opt_088_e3_free",
+              "label": "ドライブを掴み非常階段から脱出する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "1ページだって燃やすものですか！今すぐ報道局へ向かうわ！",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_088_e3_vip",
+              "label": "第2層を海外3か所のサーバーに複製する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "アパートの玄関ドアを重い拳が叩き始めたまさにその時、あなたは極寒の非常階段へ飛び出しました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "緊急割り込み — Nadiaだよ！病院を出たところ！クロニクル新聞社の印刷所ガレージで落ち合おう！",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "チューリッヒ、東京、ロンドンの3つの暗号化ミラーが同期完了を通知し——司法長官の秘密を抹消することは不可能になりました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ノートPCを押収してももう遅いわよ！第2層は3大陸にミラーリング済みだもの！",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "mrk",
+          "text": "揉み消し命令書に署名したのは長官自身だ。Nadiaの最後の暗号化フォルダを確認しろ。",
+          "unsent_placeholder": "K氏がメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "クロニクル社のガレージの中に停めてあるよ！急いで——朝刊の前に連邦の報道禁止命令を取ろうとしてる！",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "もし司法長官の名前を印刷したら、お前たち二人とも命を狙われるぞ。",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "印刷機への競争",
+          "teaser_text": "Nadiaは無事でクロニクル社で待っている——そして司法長官の運び屋たちが、夜明け前に記事を止めようと迫っている。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "報道禁止命令",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前2:36 · 活気に満ちたクロニクル新聞社の編集局で、あなたはNadiaを強く抱きしめた後、編集長の端末に彼女のドライブを差し込みました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "この瞬間のために6か月も身を隠してきたの、{{player_name}}。待って——編集長に司法省から電話が入った！",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "新聞の発行を差し止めると脅してるの？！決定的な証拠——長官の署名入り揉み消し命令書が必要だわ！",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "最後の復号キーは、私たちの子供の頃の写真のキャプションの中に隠してある。",
+          "unsent_placeholder": "Nadiaがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 7,
+          "transcript": "[激しくキーボードを叩く音] ママの誕生日を逆から入力して！それでフォルダ・ゼロが開く——司法長官が署名した命令書そのものよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "報道禁止命令書を携えた連邦保安官がクロニクル社のロビーに入ってきました：",
+          "options": [
+            {
+              "option_id": "opt_088_e4_free",
+              "label": "フォルダ・ゼロを解除しネット公開する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "パスワード承認！奴らが4階に上がる前に公開ボタンを押して！",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_088_e4_vip",
+              "label": "他6つのテレビ局にもフォルダを一斉送信",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "クロニクル社のトップページが公開に切り替わり——最初の60秒で9万人の読者がその見出しをクリックしました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "公開完了！報道禁止命令が出ても、もう9万人が見た真実は消せないよ！",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "6つのライバル報道局が同時に復号フォルダを受信し——全国の朝の生放送で一斉にスクープ速報が流れました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "6つの全国ネットワークを同時に黙らせてみなさいよ、司法長官閣下！",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "エレベーターの扉が開いた瞬間、編集局から大歓声が沸き起こり——保安官たちは速報を映すテレビモニターを見つめたまま立ち尽くしました。",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "画面の書類を見て、{{player_name}}。あの署名が彼のキャリアを終わらせたのよ。",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "クレイジーな姉妹だな、本当に刷りやがった…内閣中が大パニックだぞ。",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "決定的な証拠",
+          "teaser_text": "フォルダ・ゼロは全国に公開された——今、司法長官の署名入り命令書が議会の緊急調査を引き起こしている。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "署名入りの命令書",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前6:15 · 国会議事堂の階段に夜明けが訪れます。すべてのニュース速報が、Nadiaのフォルダ・ゼロからスキャンされたページを映し出しています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "上院司法委員会が原本ドライブに召喚状を発行した——それに私たちに完全な連邦保護を申し出てくれたよ！",
+          "timestamp_label": "午前6:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "K氏からも弁護士経由で連絡が来たわ——司法長官に不利な証言をしたいんですって。",
+          "timestamp_label": "午前6:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "nadia",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "フォルダ・ゼロ証拠A · 司法長官による署名入りの隠蔽命令書。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "mrk",
+          "duration_sec": 6,
+          "transcript": "[弁護士のスピーカーフォン] お姉さんに伝えてくれ、直筆署名入りの原本を貸金庫に保管してあると。委員会に貸金庫419番を開けさせろ。",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "裁判所の階段で報道陣の群れがあなたとNadiaを取り囲みます：",
+          "options": [
+            {
+              "option_id": "opt_088_e5_free",
+              "label": "ドライブをそのまま委員会に提出する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "議場の中で証拠自身に語らせましょう。貸金庫419番に直筆の原本があります。",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_088_e5_vip",
+              "label": "長官の隠蔽命令書をカメラの前で朗読する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "1時間以内に連邦捜査官が419番の貸金庫を開封し——直筆署名がフォルダ・ゼロと完全に一致することを確認しました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "速報：司法長官がたった今、辞任を発表したよ！",
+          "timestamp_label": "午前6:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Nadiaの捜査を葬るよう命じた正確な一節をあなたが読み上げる姿を何百万人が生視聴しました。20分後、司法長官は辞任しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "デッドマンズ・スイッチがすでに作動した以上、真実を埋めることなど不可能です。",
+          "timestamp_label": "午前6:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "もう二度とあなたの前から姿を消したりしないよ、{{player_name}}。",
+          "unsent_placeholder": "Nadiaがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "辞任したわ！内閣が独立特別検察官の任命を要請したって！",
+          "timestamp_label": "午前6:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "mrk",
+          "text": "どうやらお前の姉さんは、スイッチを託すのに一番正しい相手を選んだようだな。",
+          "timestamp_label": "午前6:15",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "一面トップ記事",
+          "teaser_text": "司法長官は不名誉のうちに辞任した——今こそ、あなたとNadiaの手でエンディングを書き上げる時だ。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "スイッチ解除",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前11:00 · クロニクル紙朝刊の刷りたてのインクの匂いが鼻をくすぐります。署名欄には二人の名前が並んでいました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "6か月前は、誰も私の金庫を見つけられないと思っていた。諦めないでいてくれてありがとう、{{player_name}}。",
+          "timestamp_label": "午前11:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今度内閣のスキャンダルを調査する時は、デッドマンズ・スイッチじゃなくて普通にメッセージを送ってよね。",
+          "timestamp_label": "午前11:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "今まさに自動金庫タイマーを解除してるところだよ。",
+          "unsent_placeholder": "Nadiaがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 6,
+          "transcript": "[喫茶店のざわめき、温かな笑い声] ピューリッツァー賞委員会からもう編集長に連絡が来たって！パンケーキ食べにおいで——私のおごり！",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Nadiaがクロニクル社の調査報道部門にあなたの専用デスクを用意すると申し出てきました：",
+          "options": [
+            {
+              "option_id": "opt_088_e6_free",
+              "label": "引き受けて次の調査を始める",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "窓際のデスクを空けておいて。私たち、かなりの無敵コンビだもの。",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_088_e6_vip",
+              "label": "まずは二人で1週間の休暇を取る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "一面記事をバッグに折り畳んで微笑みます——次にどんな秘密が隠れようとしていても、迎え撃つ準備は万端です。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "報道局へようこそ、相棒。",
+          "timestamp_label": "午前11:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "あなたとNadiaは山へ向かう列車の切符を2枚予約します——スマホはマナーモード、暗号化金庫もなし、ただの家族として。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "1週間だけスキャンダルはお休み。そしたらまた世界を変えましょう。",
+          "timestamp_label": "午前11:00",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "スマホが最後に一度だけ鳴りました：「金庫自動タイマー解除完了。おかえりなさい」",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "愛してるよ、{{player_name}}。戻ってこられて嬉しい。",
+          "timestamp_label": "午前11:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "おかえりなさい、Nadia。",
+          "timestamp_label": "午前11:00",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "最終話 · 真実の報道",
+          "teaser_text": "Nadiaは無事に戻り、司法長官の隠蔽工作は暴かれ、デッドマンズ・スイッチはついに沈黙した。",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

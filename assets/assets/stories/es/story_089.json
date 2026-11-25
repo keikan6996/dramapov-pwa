@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_089",
+  "lang": "es",
+  "metadata": {
+    "title": "El Desvío del Viaje Compartido",
+    "subtitle": "Mi conductor activó el seguro para niños, se pasó la salida... y la app dice que mi viaje terminó hace 12 minutos.",
+    "genre": "thriller",
+    "tags": [
+      "Viaje Compartido",
+      "Supervivencia",
+      "Noche"
+    ],
+    "cover_image": "assets/media/covers/story_089.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "sora",
+      "name": "Sora · Transmisión",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "bot",
+      "name": "Soporte RideSafe",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3F3F46"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Viaje Completado",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "1:42 AM · RECIBO RIDESAFE: ¡Gracias por viajar con Victor! Tu viaje terminó a la 1:30 AM. ¿Lo calificas con 5 estrellas?",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Sora, SIGO en el asiento trasero de este sedán! ¡Alteró la app para finalizar el viaje antes y acaba de girar hacia la vía industrial!",
+          "timestamp_label": "1:42 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡¿QUÉ?! ¡Baja el brillo de tu pantalla para que no te vea escribiendo por el espejo! ¡¿Revisaste la placa cuando subiste?!",
+          "timestamp_label": "1:43 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[tecleando desesperada] ¡Estoy viendo tu punto en FindMy! ¡Vas a 105 km/h pasando el patio ferroviario vacío... y la foto del conductor en tu recibo no coincide con la placa que me enviaste!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Baja el teléfono, {{player_name}}. Puedo ver la luz azul en tu cara por el retrovisor.",
+          "unsent_placeholder": "Soporte RideSafe anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "El conductor acelera hacia una luz roja en el cruce ferroviario:",
+          "options": [
+            {
+              "option_id": "opt_089_e1_free",
+              "label": "Fingir una llamada con tu \"tío policía\"",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Hola, tío Ray! Sí, justo paso por el Patio Ferroviario 4... ¡veo tu patrulla adelante!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_089_e1_vip",
+              "label": "Abrir el descansabrazos hacia la cajuela",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Los nudillos del conductor se ponen blancos en el volante. Reduce la velocidad dos segundos... luego ríe con frialdad y apaga los faros por completo.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡Buen intento... quédate en línea! ¡Estoy enlazando al 911 con tus coordenadas GPS en vivo ahora mismo!",
+          "timestamp_label": "1:45 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Abres en silencio el acceso del descansabrazos central y jalas la manija luminosa de emergencia de la cajuela. Adentro hay un segundo teléfono... sonando sin parar.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¡Sora!! ¡El teléfono destrozado del verdadero conductor Victor está adentro de la cajuela!",
+          "timestamp_label": "1:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "Suena la bocina de un tren de carga adelante. Las barreras del cruce bajan con campanas metálicas, obligando al sedán a frenar de golpe.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡¡Se detuvo!! ¡El tren bloquea el camino... ES TU OPORTUNIDAD! ¡Rompe la ventana o abre la cajuela!",
+          "timestamp_label": "1:46 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Detenidos en las Vías",
+          "teaser_text": "El conductor mete reversa mientras vagones de carga rugen a centímetros de la defensa.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Escape con el Cabecera",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "1:47 AM · El sedán retrocede bruscamente hacia un lote de grava. Arrancas el cabecera delantero del pasajero... dos varillas de acero brillan bajo las luces rojas del cruce.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "sora",
+          "caller_label": "Sora · 911 Enlazado",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[operadora al fondo] ¡Dos patrullas acaban de entrar a Industrial Way! ¡Mete la varilla de metal en la esquina inferior del vidrio y HAZ PALANCA!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡La policía está a 60 segundos en Industrial Way! ¡Mete la varilla del cabecera en la esquina de la ventana y haz palanca... no golpees el centro!",
+          "timestamp_label": "1:47 AM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "¡Deja de pelear! No quiero hacerte daño... ¡alguien me contrató para evitar que te presentes a declarar mañana por la mañana!",
+          "timestamp_label": "1:48 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¿Quién te contrató?! ¡Dímelo ahora mismo!",
+          "timestamp_label": "1:48 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "El conductor clava los frenos y estira el brazo hacia ti:",
+          "options": [
+            {
+              "option_id": "opt_089_e2_free",
+              "label": "Romper el vidrio y rodar sobre la grava",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_089_e2_vip",
+              "label": "Fotografiar el chat de pago en su tablero",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "¡Tengo la captura! ¡A la policía le va a encantar esto!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "¡CRAC! El vidrio templado estalla hacia afuera en mil cubitos. Saltas y corres directo hacia los faros cegadores de dos patrullas que llegan.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡¡La operadora dice que ya te tienen!! ¡Ay, gracias a Dios, {{player_name}}! ¡¿Estás sangrando?!",
+          "timestamp_label": "1:50 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Tu flash capta la tableta montada en el tablero antes de que rompas el vidrio y saltes. El nombre del contacto en la tableta: \"Abogado Defensor Reed\".",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Sora, estoy a salvo con la policía... y acabo de atrapar al abogado defensor ordenando mi secuestro con las manos en la masa!",
+          "timestamp_label": "1:50 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "El conductor era solo el Plan A. No bebas el agua en la comisaría.",
+          "unsent_placeholder": "Soporte RideSafe anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Sentada en el asiento trasero de la patrulla, miras hacia arriba cuando un oficial amable te ofrece una botella de agua ya abierta... y sonríe.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "El Plan B Ya Está Aquí",
+          "teaser_text": "Escapaste de la trampa del viaje... solo para descubrir que quien quiere silenciarte tiene a alguien dentro de la comisaría.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Punto Ciego en Comisaría",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:28 PM · Sales de la sala de espera de la Comisaría 4 hacia el callejón frío. Tu teléfono suena con un falso recibo de RideSafe.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "Soporte RideSafe: ¡Recuperamos tu identificación perdida! Regresa al garaje trasero de la Comisaría 4 para reclamarla.",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Sora, NO vengas a la Comisaría 4! ¡El sargento de guardia trabaja con mi conductor!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sora",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Rastreo en Vivo · 11:27 PM — Tu auto de viaje compartido está estacionado dentro del lote de la Comisaría 4.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[direccional del auto parpadeando] ¡Busqué la placa con el acceso del DMV de mi tío... el auto está registrado a nombre del cuñado del sargento Miller!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "El portón trasero de la comisaría se abre y sale un sedán plateado. Muévete:",
+          "options": [
+            {
+              "option_id": "opt_089_e3_free",
+              "label": "Entrar a la lavandería 24 horas enfrente",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Estoy dentro de la lavandería BrightWash bajo luces fuertes! ¡Llama a Asuntos Internos ahora!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_089_e3_vip",
+              "label": "Fotografiar al sargento entregando tu ID",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Te deslizas entre tres clientes del turno nocturno dentro de la brillante lavandería... el sedán plateado frena un segundo y sigue de largo.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡Asuntos Internos está en la línea! Quédate donde haya testigos... ¡estoy a cinco minutos con el capitán Park!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Desde detrás de un dispensador de periódicos, tu lente con zoom capta al sargento Miller entregándole tu cartera al conductor bajo la cámara del vestíbulo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Los atrapé a ambos en cámara! ¡El sargento Miller acaba de darle mi identificación directo al conductor!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Borren los registros del viaje de pasajero #88412 antes de que Asuntos Internos audite el servidor.",
+          "unsent_placeholder": "Soporte RideSafe anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡¡Haz captura de ese mensaje sin enviar!! ¡Acaba de admitir que están borrando registros de viajes!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "Soporte RideSafe: Tu cuenta ha sido suspendida permanentemente por violar nuestras políticas.",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Placa Número 412",
+          "teaser_text": "El sargento Miller opera una red de viajes falsos desde la Comisaría 4... y Asuntos Internos llega en cinco minutos.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Flota Suplantada",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:38 PM · Dentro de la lavandería, tu teléfono vibra... no es RideSafe, sino el mapa en vivo de Sora mostrando tres autos suplantados más.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡El capitán Park de Asuntos Internos está llegando a la lavandería ahora! ¡Sube al Charger negro sin insignias!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Adentro! Capitán, no me atacan solo a mí... ¡hay otros tres autos de viaje falso activos en este momento!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Miller dice que aborten la recogida #3... patrullas de AI acaban de salir del centro.",
+          "unsent_placeholder": "Soporte RideSafe anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[estática de radio policial] ¡El capitán Park acaba de rastrear el bot de Soporte RideSafe... corre desde una laptop dentro del casillero del sargento Miller!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "El capitán Park pregunta cómo atrapar a Miller con las manos en la masa antes de que borre la laptop:",
+          "options": [
+            {
+              "option_id": "opt_089_e4_free",
+              "label": "Responder al bot para atraer a Miller afuera",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Le escribo al bot: \"Estoy en el portón del garaje trasero por mi ID\". ¡Atraigámoslo hacia AI!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_089_e4_vip",
+              "label": "Pedir a RideSafe congelar la flota falsa",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Noventa segundos después, el sargento Miller sale al callejón trasero sosteniendo tu cartera... y queda congelado bajo cuatro linternas de AI.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡BOOM! ¡Lo atraparon con tu cartera en la mano! ¡Y AI acaba de sacar la laptop del bot activo de su casillero!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "El equipo de seguridad de RideSafe desactiva los cuatro tokens falsos a la vez... desbloqueando las puertas automáticamente y alertando a tres pasajeros.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Los otros tres pasajeros están a salvo! ¡Ahora registren los vestidores de la Comisaría 4!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Luces azules iluminan el estacionamiento de la Comisaría 4 mientras Asuntos Internos sella el garaje trasero.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡Mira lo que AI acaba de sacar de la cámara del vestíbulo... está clarísimo!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "[SERVIDOR DEL BOT TERMINADO POR ASUNTOS INTERNOS]",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Entrega en el Vestíbulo",
+          "teaser_text": "El sargento Miller cayó con las manos en la masa... y las cámaras del vestíbulo expusieron toda la red.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Redada de Asuntos Internos",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "12:05 AM · Dentro de la camioneta de mando de AI, el capitán Park congela el video del vestíbulo de la Comisaría 4 en un monitor enorme.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Ahí está tu conductor pasando junto al mostrador con un llavero de repuesto... ¡y Miller abriéndole el garaje!",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¿Atraparon también al conductor, o escapó en el sedán plateado?",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "sora",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Cámara del Vestíbulo · 11:24 PM — El falso conductor recibe acceso al garaje de manos de Miller.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 6,
+          "transcript": "[radio celebrando] ¡Acaba de salir por la frecuencia! ¡La Patrulla de Caminos encerró al sedán plateado en el puente del río... el conductor está esposado!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "El capitán Park pide tu grabación de audio desde el asiento trasero bloqueado:",
+          "options": [
+            {
+              "option_id": "opt_089_e5_free",
+              "label": "Subir el archivo de audio completo del auto",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Enviándolo ahora! ¡Se oye cuando activa el seguro para niños y dice el nombre de Miller!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_089_e5_vip",
+              "label": "Exigir a RideSafe reforzar su verificación",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "El capitán Park asiente con gravedad mientras suena el audio... asegurando cargos graves de secuestro y corrupción contra ambos hombres.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Sin fianza, sin acuerdos. Van a pasar décadas en prisión.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "El CEO de RideSafe publica un comunicado de emergencia imponiendo verificación biométrica en vivo... y te reconoce por salvar a tres pasajeros.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ningún pasajero debería quedar atrapado tras seguros para niños nunca más.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "sora",
+          "text": "Jamás volveré a dejarte tomar un viaje a medianoche a solas, {{player_name}}.",
+          "unsent_placeholder": "Sora anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡El capitán Park te devuelve tu cartera y tu ID! Vamos... salgamos de esta comisaría.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Con gusto. Y tú me llevas a casa, Sora.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Red Desmantelada",
+          "teaser_text": "Tanto el sargento Miller como el falso conductor están esposados... y tu instinto salvó a toda una ciudad.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Viaje Seguro a Casa",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "01:10 AM · El hatchback de Sora entra en silencio a tu calle. Los cuatro seguros permanecen claramente abiertos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¿Sigues temblando un poco? Sinceramente mantuviste una calma impresionante allá atrás, {{player_name}}.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Solo porque sabía que estabas vigilando mi ubicación en vivo todo el tiempo.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "sora",
+          "text": "Deber de mejor amiga de por vida.",
+          "unsent_placeholder": "Sora anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 5,
+          "transcript": "[cinturón desabrochándose] El capitán Park acaba de escribir... los tres pasajeros rescatados quieren agradecerte mañana. Eres una leyenda.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Sales a tu porche mientras Sora espera con las luces encendidas:",
+          "options": [
+            {
+              "option_id": "opt_089_e6_free",
+              "label": "Desinstalar RideSafe para siempre",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Borrando RideSafe ahora mismo. Cinco estrellas solo para el Servicio Hatchback de Sora.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_089_e6_vip",
+              "label": "Invitar a Sora a cenar ramen de medianoche",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "El ícono de la app desaparece de tu pantalla. Saludas a Sora desde tu puerta ya cerrada con llave.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "¡Servicio de cinco estrellas! ¡Avísame cuando ya estés en la cama!",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Sora estaciona en tu entrada... y veinte minutos después ambas ríen frente a tazones humeantes de ramen.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El mejor desvío de la noche: directo a la cocina.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Tu mapa en vivo se cierra sin novedad. Estado del viaje: Llegó a Salvo.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Siempre comparte tu ubicación, {{player_name}}. Siempre.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Siempre. Buenas noches, Sora.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Llegada a Salvo",
+          "teaser_text": "La red de viajes falsos fue destruida, el sargento Miller está tras las rejas y llegaste a casa a salvo.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_038",
+  "lang": "pt",
+  "metadata": {
+    "title": "A Voz no Walkie-Talkie",
+    "subtitle": "Meu colega vigia noturno mandou mensagem: \"Pare de me zoar no Canal 3.\" A roda-gigante abandonada acabou de começar a girar.",
+    "genre": "thriller",
+    "tags": [
+      "Vigília Noturna",
+      "Parque Abandonado",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_038.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Portão Norte)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Marcus (Portão Sul)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Estática Canal 3",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Cabine 9 Está se Movendo",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02h40 · Parque de Diversões Wonderland fechado. Aço enferrujado geme pelo terreno escuro quando as luzes da roda-gigante piscam acendendo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, corta essa! Pare de tocar música assustadora de parque no Canal 3—e por que ligou o disjuntor da roda-gigante?!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Meu walkie-talkie está DESLIGADO em cima da mesa! E o quadro de disjuntores está desconectado há seis anos!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Dez... nove... oito... venha andar na Cabine 9.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Espera—tem voz de criança contando regressivo no Canal 3! E a Cabine 9 acabou de parar bem na plataforma de embarque lá embaixo!",
+          "timestamp_label": "02:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[melodia distorcida de carrossel, estática de rádio] ...Sete... seis... cinco... {{player_name}}, não esqueça de pôr o cinto...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Seu walkie-talkie desligado estala e liga sozinho, brilhando verde intenso.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Arrancar a bateria do rádio agora",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Puxando a bateria para fora agora!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Checar o livro de ocorrências de 2018",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Checando o livro antigo de registros...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Sem nenhuma bateria dentro, o alto-falante chia mais alto: \"Quatro... três... dois...\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O parque fechou depois que uma tempestade prendeu a Cabine 9 no topo—o operador noturno fugiu do posto sem baixar a roda.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Os holofotes do parque morreram! A porta da minha guarita travou—tem algo andando da roda-gigante para o Portão Norte!",
+          "timestamp_label": "02:44",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Cabine 9 da Roda-Gigante",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Um toque soa como sino de parque: \"Um. Zero. Seu passeio está começando, {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa. Na hora, a janela da guarita embaça com mãozinhas pequenas pelo vidro de fora.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Bilhete Picotado",
+          "teaser_text": "Episódio 2: A roda-gigante acelera ao contrário enquanto a contagem recomeça.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Último Passeio da Noite",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02h46 · A roda-gigante gira descontrolada contra o céu de tempestade, suas correntes enferrujadas gritando como sirenes.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, chutei a janela da guarita para fora! Me encontre no portão principal de ingressos—NÃO passe diante da roda-gigante!",
+          "timestamp_label": "02:46",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O cadeado do portão de aço está emperrado de ferrugem! A única saída é atravessar a praça do parque!",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[correntes batendo, criança rindo] ...Não fuja como o último vigia, {{player_name}}... Baixe a Cabine 9...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Puxe o freio manual de manivela na caixa de controle.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Espera—a alavanca manual de liberação fica bem ao lado da plataforma da roda! Se você travar o freio, talvez pare!",
+          "timestamp_label": "02:49",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "Faíscas chovem do eixo da roda. A alavanca manual do freio fica a três metros.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Correr direto ao Portão Sul com Marcus",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou correndo direto até você!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Puxar a manivela e baixar a Cabine 9",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Baixando a Cabine 9 em segurança!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Você dispara pela praça quando a roda-gigante geme numa parada brusca—a Cabine 9 balançando vazia lá no alto.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: A roda desce suave até a Cabine 9 tocar a plataforma. A música de parque desvanece num toque sereno.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Os dois vigias sobem na caminhonete de Marcus fora da cerca do parque. Atrás de vocês, todas as lâmpadas do parque apagam juntas.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Marcus (Banco do Motorista)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Marcus encara o rádio do painel: \"Peço demissão hoje. Espera... por que o som da minha caminhonete está sintonizado no Canal 3?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você olha no retrovisor lateral—uma única luz verde pisca adeus da Cabine 9.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Parque Fechado Permanentemente",
+          "teaser_text": "Final da Temporada · Estão contratando um novo vigia noturno amanhã. Não se candidate.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Túnel de Manutenção",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02h54 · Você e Marcus entram sob a plataforma da roda-gigante no túnel alagado de manutenção.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, a sala de geradores aqui embaixo está rodando num banco de baterias novinho! Alguém ligou essa roda hoje à noite!",
+          "timestamp_label": "02:54",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera—isso quer dizer que não é só história de fantasma. Tem alguém escondido dentro do Parque Wonderland agora.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Túnel de Manutenção B · 02h55 — Uma silhueta abaixada atrás do painel de disjuntores.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Olhe essa foto! Isso não é criança—está usando uma jaqueta antiga de supervisor do parque!",
+          "timestamp_label": "02:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Saia do túnel antes que eu baixe a comporta, {{player_name}}.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Um armário de aço enferrujado perto dos disjuntores está entreaberto com um facho de lanterna lá dentro.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Pegar a chave de ferro e travar a escotilha",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Travando a escotilha com a chave!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Examinar o relatório de 2018 lá dentro",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Checando o relatório de segurança de 2018...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Você calça a chave inglesa na alça de aço bem quando botas pesadas batem na grade acima.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: A tempestade de 2018 não travou a Cabine 9—o irmão do dono cortou o cabo do guincho para embolsar US$ 2M de seguro.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Meu rádio acabou de captar o Canal 3 a seis metros de distância—ele está bem acima do poço de controle!",
+          "timestamp_label": "02:57",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[estrondo metálico, respiração rouca] ...Pare de cavar sobre 2018, {{player_name}}. Ninguém sai do parque hoje à noite...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Marcus, não nos separemos. Se estiver na torre de controle, encurralamos pela escada.",
+          "timestamp_label": "02:58",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Presos Abaixo da Roda",
+          "teaser_text": "Episódio 4: A escotilha de aço bate fechada—e as engrenagens da roda-gigante começam a ranger acima das suas cabeças.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Quem Cortou a Cabine 9",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "03h02 · Óleo pinga do eixo giratório lá em cima enquanto vocês forçam a escada de emergência para a cabine de controle.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Achei uma prancheta colada com fita debaixo do painel! O novo dono da empresa de \"vigilância noturna\" é sobrinho do dono de 2018!",
+          "timestamp_label": "03:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele contratou a gente de bode expiatório para poder queimar os registros antigos antes que a equipe de demolição da prefeitura chegue!",
+          "timestamp_label": "03:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Queimar as fitas de 2018 e forjar um incêndio elétrico. Culpar os dois vigias noturnos.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ele esqueceu que o microfone do interfone ainda estava ligado! Espera—acabou de cortar as luzes da escada de emergência!",
+          "timestamp_label": "03:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 11,
+          "transcript": "[fósforos riscando, querosene espirrando] ...A Cabine 9 guardou um segredo seis anos atrás. Hoje leva mais dois...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "Fumaça sobe por baixo da porta da cabine de controle enquanto os freios da roda guincham.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Chutar a janela para abrir até a passarela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chutando a janela da passarela!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Baixar o cartão SD reserva das câmeras",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Pegando o cartão SD de backup das câmeras...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Chuva fria atinge seu rosto quando você sobe na estreita passarela de aço seis metros acima do chão.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O cartão SD guarda um vídeo de 2018 mostrando o irmão do dono mexendo na trava da Cabine 9.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ele está correndo para o Portão Sul com um galão de gasolina! Espera—por que a Cabine 9 está parando bem ao lado dele?!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Fica longe! Não liguei a roda de volta—os freios estão mortos!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não é mais ele controlando. Outra coisa no Canal 3 acabou de assumir a roda.",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Canal 3 Responde de Volta",
+          "teaser_text": "Episódio 5: Todos os alto-falantes do parque abandonado explodem a contagem regressiva de 2018 no volume máximo.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Sinal de 2018",
+      "start_node_id": "e5_n01",
+      "default_ambient": "rain_night",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03h11 · A chuva açoita a praça do parque quando a roda-gigante inverte a velocidade sob lâmpadas vermelhas piscantes de alerta.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, peguei o celular descartável que ele deixou cair perto do disjuntor! Olhe o histórico de GPS!",
+          "timestamp_label": "03:11",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele tem entrado escondido aqui há três noites—instalando alto-falantes para espantar vigias enquanto limpava provas.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Celular Descartável Rachado · 03h12 — Sinais levam direto ao poço enterrado do guincho da Cabine 9.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Desliguem esse rádio! Só liguei a música do parque—juro que não mandei essa voz de criança!",
+          "timestamp_label": "03:13",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Avisei ao meu tio que devíamos ter tirado o medalhão do corpo de dentro do poço do guincho.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "O culpado escorrega nas tábuas molhadas ao lado do poço aberto do guincho.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Puxá-lo de volta e amarrar seus pulsos",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Puxando ele para longe do poço!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Gravar a confissão completa no Canal 3",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Gravando a confissão dele ao vivo...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Você o arrasta para o concreto bem quando uma corrente enferrujada arrebenta a centímetros da bota dele.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O Canal 3 retransmite automaticamente a confissão direto para a frequência da central da polícia do condado.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[chiado de rádio policial, sirenes distantes] ...Unidade 14 copiando socorro no Parque Wonderland Canal 3—deslocando código três...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sirenes! Ouviram tudo pela torre repetidora—segura firme, {{player_name}}, a roda está freando!",
+          "timestamp_label": "03:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Estamos quase fora, Marcus. Mantenha a lanterna no portão principal.",
+          "timestamp_label": "03:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Amanhecer no Wonderland",
+          "teaser_text": "Episódio 6 Final: A Cabine 9 para por completo no nível do chão—e sua porta enferrujada abre sozinha.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Parada Final: Cabine 9",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "03h22 · Luzes azuis e vermelhas das viaturas varrem pelo arco enferrujado quando a roda-gigante geme e para.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Não abram a Cabine 9! Por favor—só digam à polícia que confesso tudo de 2018!",
+          "timestamp_label": "03:22",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Vai contar tudo a eles de qualquer jeito. A família da vítima de 2018 finalmente terá a verdade hoje.",
+          "timestamp_label": "03:23",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Deixei o livro verdadeiro de inspeção debaixo do assoalho do Portão Sul.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 9,
+          "transcript": "[toque suave de caixinha de música sumindo na chuva] ...Obrigada, {{player_name}}. Já podem apagar as luzes agora...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ouviu isso? A música de parque parou—e a temperatura na praça acabou de voltar ao normal.",
+          "timestamp_label": "03:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Detetives imobilizam o culpado enquanto o assento vazio da Cabine 9 balança suave na brisa.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Entregar o celular descartável e registros",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entregando todas as provas aos detetives.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Olhar dentro da Cabine 9 uma última vez",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Conferindo a Cabine 9 antes de sair...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Em menos de uma hora, investigadores estaduais lacram o poço do guincho e reabrem o processo de 2018.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "EPÍLOGO SECRETO: Repousando no assento seco há um medalhão de prata—e um ingresso desbotado carimbado \"LIVRE PARA IR.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Nunca mais pego turno noturno em parque abandonado, {{player_name}}. O café é por minha conta ao nascer do sol.",
+          "timestamp_label": "03:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Fechado, Marcus. E deixe o Canal 3 desligado para sempre.",
+          "timestamp_label": "03:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "Quando o sol nasce sobre a roda-gigante silenciosa, as correntes enferrujadas finalmente aquietam.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Passeio Encerrado",
+          "teaser_text": "O acobertamento de 2018 é exposto, e o último fantasma do Parque Wonderland finalmente descansa.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

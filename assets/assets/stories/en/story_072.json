@@ -1,0 +1,981 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_072",
+  "lang": "en",
+  "metadata": {
+    "title": "The Severance Trap",
+    "subtitle": "HR gave me 2 hours to sign a 'generous' NDA—until a fired engineer warned it shifts criminal blame onto me.",
+    "genre": "romance",
+    "tags": [
+      "Corporate",
+      "Whistleblower",
+      "Thriller"
+    ],
+    "cover_image": "assets/media/covers/story_072.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "hr_dir",
+      "name": "Brenda (VP of HR)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "engineer",
+      "name": "Tariq (Ex-Lead Eng)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "counsel",
+      "name": "Maya (Legal Counsel)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4338CA"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Two Hours to Sign",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "02:00 PM · Conference Room 4. HR slides a 15-page severance agreement and a $90,000 check across the table.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "hr_dir",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Separation & Confidentiality Agreement — Offer expires today at 4:00 PM.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Six months full pay, {{player_name}}. Just sign before 4 PM so we can part as friends.",
+          "timestamp_label": "02:01 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "DO NOT SIGN IT {{player_name}}!! Read Page 12, Clause 14B! It states YOU had sole sign-off authority on the defective battery batch!",
+          "timestamp_label": "02:02 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Boss, {{player_name}} hasn’t noticed Clause 14B yet. Once they sign, the regulator goes after them instead of the C-suite.",
+          "unsent_placeholder": "Brenda unsent a message",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 12,
+          "transcript": "[urgent] Three units overheated in Europe this morning. A federal recall is dropping tomorrow—they fired me yesterday and now they're buying your signature to pin it on you!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Brenda taps her pen impatiently. How do you play this?",
+          "options": [
+            {
+              "option_id": "opt_call_counsel",
+              "label": "Demand 72 hours for your lawyer to review",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m taking this copy to my employment attorney, Brenda. Especially Clause 14B.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_grab_report",
+              "label": "Get Tariq’s failed-test memo signed by CEO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Evidence · Watch Ad",
+              "player_reply_text": "Tariq, send me the email where the CEO overrode our safety hold last month.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Take one step out of this room without signing, and the $90,000 disappears—and security escorts you out.",
+          "timestamp_label": "02:06 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "SMOKING GUN RECEIVED: A PDF memo signed directly by the CEO ordering \"Ship the batch despite 18% thermal failure.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Sent. Plus I already looped in Maya, the whistleblower counsel.",
+          "timestamp_label": "02:07 PM",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Two security guards are outside the door, {{player_name}}. Hand over your phone and sign the paper.",
+          "timestamp_label": "02:09 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Trapped in Conference Room 4",
+          "teaser_text": "Episode 2: Brenda reaches for your phone—unaware you have already dialed Legal Counsel on speaker.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Clause 14B",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "02:14 PM · Conference Room 4. Brenda blocks the glass door while security waits outside.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Company policy says we inspect personal devices upon termination. Unlock your phone now.",
+          "timestamp_label": "02:14 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "False imprisonment is a crime, Brenda. And say hello to my whistleblower attorney on speakerphone.",
+          "timestamp_label": "02:15 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 10,
+          "transcript": "[crisp, legal] This is Maya Lin, Counsel for {{player_name}}. This call is recorded. Step away from the door or I file a federal obstruction complaint in five minutes.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "CEO—abort!! They have a whistleblower lawyer on the line AND they know about Clause 14B!!",
+          "unsent_placeholder": "Brenda unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Brenda steps back, pale as chalk. What is your next move?",
+          "options": [
+            {
+              "option_id": "opt_walk_free",
+              "label": "Walk out & file the safety report today",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Keep your hush money, Brenda. The safety regulators will see the truth before 5 PM.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_drop_memo",
+              "label": "Show the CEO’s signed override memo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Checkmate · Watch Ad",
+              "player_reply_text": "Oh, and tell the CEO we have his signed memo overriding the 18% thermal failure.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Security steps aside immediately as you walk through the lobby with your head held high.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "WHISTLEBLOWER AWARD: Within 48 hours, regulators halt the unsafe product, indict the CEO, and protect your full backpay + bounty!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Masterclass, {{player_name}}. You just saved lives and crushed a corporate cover-up.",
+          "timestamp_label": "02:22 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Dinner is on me tonight. Welcome to the whistleblower club.",
+          "timestamp_label": "02:25 PM",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Unsigned & Unbroken",
+          "teaser_text": "At the café, a Board Member approaches your table: \"We are replacing the CEO. Would you and Tariq consider coming back to fix this?\"",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Board’s Offer",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "3:15 PM · Corner Café. The Board Member’s offer to bring you and Tariq back barely settles before Brenda strikes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "{{player_name}}, legal just served you a breach-of-confidentiality notice! Talking to Tariq voids your severance—and we’re sending the safety breach file to regulators!",
+          "timestamp_label": "3:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You’re trying to frame me for the safety breach I REPORTED last month?!",
+          "timestamp_label": "3:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "ALTERED COMPLIANCE SIGN-OFF · Your initials pasted onto the safety waiver dated two days before you were locked out.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Look at the PDF metadata I just extracted, {{player_name}}—Brenda edited that compliance sheet on HER laptop at 11:42 PM last night!",
+          "timestamp_label": "3:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Once the regulator blames {{player_name}}, the CEO’s $3M parachute clears—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[typing fast] {{player_name}}! I still have the immutable Slack backup where BOTH of us warned the CEO about the bug—and Brenda ordered us to bury it!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Brenda forged a federal compliance form to protect the CEO’s $3M payout! Your move?",
+          "options": [
+            {
+              "option_id": "opt_send_board_pdf",
+              "label": "Send the forged PDF metadata to the Board",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Maya, forward Brenda’s 11:42 PM metadata trail straight to the Board Member we just met!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_whistleblower_file",
+              "label": "File federal whistleblower protection first",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Untouchable · Watch Ad",
+              "player_reply_text": "File Tariq’s Slack logs and the forged PDF directly with the federal regulator under whistleblower shield!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "BOARD ALERT: The independent chair immediately freezes all executive severance wires pending emergency review.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "FEDERAL SHIELD ACTIVE: Any retaliation by Brenda or the CEO is now an automatic federal felony!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Whoa—the Board Member just texted me! They moved the CEO removal vote up to 9 AM tomorrow!",
+          "timestamp_label": "3:25 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "You think the Board will side with two ex-employees? Our golden parachutes are already queued with Treasury!",
+          "timestamp_label": "3:26 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "The $3M Parachute Wire",
+          "teaser_text": "Episode 4: Intercept Brenda’s rush payout before the treasury wire clears at midnight.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Forged Sign-Off",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "9:40 PM · Maya’s Law Office. Two hours before the midnight wire batch processes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Last chance, {{player_name}}. Drop the metadata claim and I’ll double your severance to $180K cash tomorrow.",
+          "timestamp_label": "9:40 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You just offered me hush money in writing while under a whistleblower investigation, Brenda.",
+          "timestamp_label": "9:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Screenshot saved and timestamped! Now we just need to stop that midnight treasury wire before the outgoing CEO drains the account.",
+          "timestamp_label": "9:42 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Tell Treasury to bypass the Board freeze using the CEO’s override token—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "WAIT! They’re trying to use the CEO’s override token to push the $3M wire through before the 9 AM vote!",
+          "timestamp_label": "9:44 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 8,
+          "transcript": "[phone dialing] I’m on the line with the Board’s outside bank counsel right now—if we fax the forged sign-off and bribe text, the bank locks the corporate vault in five minutes!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Ten minutes to the wire cutoff! What goes into the emergency bank injunction?",
+          "options": [
+            {
+              "option_id": "opt_send_injunction",
+              "label": "Send the forged PDF + bribe screenshot",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Send both—the forged compliance sheet AND Brenda’s $180K hush-money text!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_cc_prosecutor",
+              "label": "Block wire + copy the District Attorney",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Zero Mercy · Watch Ad",
+              "player_reply_text": "Lock the wire AND copy the prosecutor’s white-collar crimes desk—let them explain the override attempt!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "WIRE BLOCKED: The corporate bank’s fraud desk halts the $3M payout with four minutes to spare.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "CRIMINAL SUBPOENA: The bank freezes the account and hands the CEO’s override log straight to prosecutors.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Your golden parachute just snapped, Brenda.",
+          "timestamp_label": "9:54 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Treasury just rejected the wire… wait, why are two compliance officers knocking on my front door?!",
+          "timestamp_label": "9:55 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Morning Of Reckoning",
+          "teaser_text": "Episode 5: Watch the Board review the blocked payout receipt and hand you the keys to fix the company.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Golden Parachute",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "9:00 AM · 28th Floor Boardroom. You, Tariq, and Maya walk past a stunned HR department.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "The Board just saw the blocked $3M wire receipt—and Brenda’s attempt to override their freeze.",
+          "timestamp_label": "9:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "BLOCKED PAYOUT · $3,000,000 unauthorized severance wire to Outgoing CEO & VP HR — Halted by Fraud Desk.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "I was only following the CEO’s instructions! I’ve given twelve years to this company!",
+          "timestamp_label": "9:02 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And in twelve minutes you forged my initials to send an innocent employee to prison.",
+          "timestamp_label": "9:03 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Terminated for cause—zero severance, zero stock, and a criminal referral—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[exhaling in relief] Both of them are OUT—terminated for cause! And the Board just offered ME VP of Engineering and YOU Chief Compliance & Operations Officer!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Before you accept the C-suite offer, what non-negotiable reform do you demand?",
+          "options": [
+            {
+              "option_id": "opt_ban_forced_nda",
+              "label": "Ban 2-hour pressure NDAs permanently",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’ll come back—if we permanently abolish pressure-cooker NDAs and give every employee 14 days for legal review.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_fix_safety_bug",
+              "label": "Ban pressure NDAs + ship Tariq’s safety fix",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Heroic · Watch Ad",
+              "player_reply_text": "Abolish pressure NDAs AND greenlight Tariq’s full safety patch with a transparent customer advisory today!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "POLICY ADOPTED: The Board ratifies your Employee Protection Charter unanimously before lunch.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "PUBLIC TRUST WON: Regulators commend your voluntary disclosure—stock rebounds 14% by closing bell.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Remember two days ago when Brenda gave you two hours to sign your life away? Look at you now.",
+          "timestamp_label": "9:14 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Never sign under panic—and always keep a good lawyer on speed dial.",
+          "timestamp_label": "9:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "From Scapegoat To C-Suite",
+          "teaser_text": "Episode 6 (Finale): Ship the safety patch, clean house, and lead the turnaround with Tariq.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Back on the Top Floor",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "One Month Later · 28th Floor Executive Suite. The safety patch is live and customer trust is at an all-time high.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "100% of customer systems patched with zero downtime! Regulators just closed our file with a commendation!",
+          "timestamp_label": "4:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Turns out fixing the bug was cheaper and faster than bribing people to hide it.",
+          "timestamp_label": "4:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "And thanks for bringing my firm on as independent ethics counsel! No more shady NDAs on my watch.",
+          "timestamp_label": "4:32 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "I should never have pushed that severance trap across the desk—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[coffee cups clinking] Town hall starts in five minutes, Chief! Two hundred engineers are waiting to hear the new playbook!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Walking in now. Rule #1 of the new playbook: truth travels faster than cover-ups.",
+          "timestamp_label": "4:36 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Your closing promise at the company town hall:",
+          "options": [
+            {
+              "option_id": "opt_open_door",
+              "label": "Promise zero retaliation for safety reports",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Flagging a safety bug here will never get you fired again—it’ll get you promoted.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_bug_bounty",
+              "label": "Launch an internal Integrity Bonus pool",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Game Changer · Watch Ad",
+              "player_reply_text": "We’re launching a $500K annual Integrity Bonus pool rewarding any employee who catches critical risks early!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "THUNDEROUS APPLAUSE: The room rises to its feet—the culture of fear is gone forever.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "INDUSTRY MODEL: Tech leaders worldwide copy your Integrity Bonus—and top talent lines up at your door.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Unsigned, unbroken, and now running the show. Legendary.",
+          "timestamp_label": "4:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Glad I texted you before that 2-hour timer ran out, {{player_name}}.",
+          "timestamp_label": "4:43 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINALE · Integrity Wins The Floor",
+          "teaser_text": "You dodged the severance trap, exposed the cover-up, and rebuilt the company on truth.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

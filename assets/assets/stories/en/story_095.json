@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_095",
+  "lang": "en",
+  "metadata": {
+    "title": "The Fake Paramedic",
+    "subtitle": "After a foggy mountain crash, an ambulance arrived before I called 911—and 911 says no unit is nearby.",
+    "genre": "thriller",
+    "tags": [
+      "Survival",
+      "Impostor",
+      "Crash"
+    ],
+    "cover_image": "assets/media/covers/story_095.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "disp",
+      "name": "911 · Unit 4",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "emt",
+      "name": "EMT-00",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#450A0A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "No Dispatch Record",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "11:08 PM · Pine Pass Highway. Your sedan skids into a guardrail in thick fog. Before you can even dial 911, flashing red lights pull up behind you.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "[Emergency Text] Hi 911, I’m okay—your ambulance just reached Mile Marker 18 super fast!",
+          "timestamp_label": "11:09 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "MA’AM/SIR, LOCK YOUR DOORS NOW! County Dispatch has ZERO ambulances on Pine Pass tonight! Nearest unit is 14 miles away!",
+          "timestamp_label": "11:09 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[urgent typing] Stay inside your vehicle, {{player_name}}! Do NOT roll down your window—look at the ambulance’s side number and text it to me!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "Unlock the door, {{player_name}}. You’re bleeding from the forehead—let me help.",
+          "unsent_placeholder": "EMT-00 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "A gloved hand taps softly on your fogged driver window:",
+          "options": [
+            {
+              "option_id": "opt_095_e1_free",
+              "label": "Keep doors locked & crank the engine",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "No unit number on the van—it’s painted over! Trying to restart my car!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_095_e1_vip",
+              "label": "Flash your high beams & record his face",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "The starter whines weakly—then dies. The radiator hisses steam. Outside, the \"paramedic\" reaches into his medical bag and pulls out a heavy window-punch.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Troopers are speeding up Pine Pass—hold on! Lay on your car horn continuously to scare him off!",
+          "timestamp_label": "11:11 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "You snap a clear shot through the windshield as he flinches from the glare—and recognize the jagged scar on his cheek. He’s the tow-truck driver from the gas station 20 miles back.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "He cut my brake line at the gas station!! That’s why my car skidded at Mile 18!",
+          "timestamp_label": "11:11 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "Stop honking, {{player_name}}. Nobody hears you in this fog.",
+          "timestamp_label": "11:12 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "CRACK! The driver’s window spiders into a white web. He swings the tool back for a second strike.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "One Swing Left",
+          "teaser_text": "The glass won’t hold another hit—and the real troopers are still six minutes down the mountain.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Into The Fog",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "11:13 PM · You dive over the center console, shove the passenger door open, and tumble into the misty pine ravine.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "disp",
+          "caller_label": "911 · Unit 4",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[radio chatter] Stay low in the trees, {{player_name}}! Do NOT use your flashlight—Trooper 7 just passed Mile 15!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Keep your screen brightness at zero! Trooper 7 is 3 miles below you—head DOWNHILL toward the sirens!",
+          "timestamp_label": "11:13 PM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "Come back to the road, {{player_name}}. You dropped your wallet on the passenger seat—I know where you live.",
+          "timestamp_label": "11:14 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... his ambulance is still idling on the road with the keys inside!",
+          "timestamp_label": "11:14 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "His flashlight beam sweeps ten yards above you:",
+          "options": [
+            {
+              "option_id": "opt_095_e2_free",
+              "label": "Sprint downhill toward the police sirens",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I hear the sirens! Running down the drainage ditch now!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_095_e2_vip",
+              "label": "Circle back & hijack his fake ambulance",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "You burst onto the asphalt at Mile 17 straight into the blinding lightbar of Trooper 7. Up the hill, the fake ambulance’s tires screech as it flees into the fog.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Trooper 7 confirms you’re safe! Roadblocks are going up at both ends of Pine Pass!",
+          "timestamp_label": "11:17 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "While he searches the treeline, you vault into the ambulance cab, lock the doors, and floor it straight into the waiting police blockade—with all his evidence inside the back.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "WAIT—you stole the suspect’s own ambulance?! Troopers just found a stack of missing-person IDs in the glovebox!",
+          "timestamp_label": "11:17 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "I still have your driver’s license, {{player_name}}. See you when you get home.",
+          "unsent_placeholder": "EMT-00 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Wrapped in a shock blanket inside the cruiser, you watch the troopers’ radio crackle: \"Suspect fled on foot into Pine Gorge—armed and unaccounted for.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "He Has Your Address",
+          "teaser_text": "You survived Mile Marker 18—but the fake paramedic vanished into the fog with your wallet and house key.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Home Perimeter",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02:24 AM · Wrapped in a shock blanket inside a real patrol car, your phone flashes a motion alert from your apartment hallway.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: {{player_name}}, we put a BOLO on the stolen ambulance—but our nearest cruiser is still 12 minutes from your apartment!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "He’s ALREADY at my door!! My smart doorbell just caught EMT-00 using my stolen house key!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "Apartment Hallway Cam · 02:24 AM — EMT-00 unlocking your front door."
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "emt",
+          "duration_sec": 7,
+          "transcript": "[front door clicking open] Nice apartment, {{player_name}}. Tell me where you backed up your car’s dashcam SD card and I’ll leave quietly.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00 is ransacking your desk for your dashcam backup. React:",
+          "options": [
+            {
+              "option_id": "opt_095_e3_free",
+              "label": "Trigger your apartment smoke alarm remotely",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Enjoy the 110-decibel hallway alarm, EMT-00! Every neighbor is waking up right now!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_095_e3_vip",
+              "label": "Check what your dashcam recorded before crash",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Your smart-alarm siren shrieks through the hallway—EMT-00 curses and bolts back toward the stairwell empty-handed.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: Neighbors just called 911! Officers spotted a white ambulance speeding west off Oak Avenue!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Your cloud dashcam clip loads: ten minutes before your crash, a black sedan ran a cyclist off the mountain road—and the driver is Judge Vance!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dispatch! My dashcam caught a hit-and-run by Judge Vance ten minutes before my crash—THAT’S why EMT-00 tried to silence me!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "No backup drive at the apartment. Returning to the old clinic to swap plates.",
+          "unsent_placeholder": "EMT-00 unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: Did you catch that unsent text?! Wait—you left your spare phone inside the wallet he stole!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "Give up the cloud clip, {{player_name}}. You don’t want to make enemies with a sitting judge.",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Dashcam Witness",
+          "teaser_text": "Your dashcam recorded a sitting judge’s hit-and-run—and your wallet’s hidden tracker just pinged EMT-00’s hideout.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Abandoned Clinic",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02:39 AM · You open your Find-My-Wallet app inside the patrol car. A blue dot pulses steadily two miles east.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: Copy that! Rerouting three Highway Patrol cruisers to Mercy Clinic—and forwarding your dashcam clip to the State Prosecutor!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dispatch, I have a live ping on my stolen wallet! He’s parked behind the abandoned Mercy Clinic off Highway 7!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "Judge Vance is calling—he wants the ambulance torched before sunrise.",
+          "unsent_placeholder": "EMT-00 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[police radio static] Unit 4 on scene at Mercy Clinic! Visual on a decommissioned ambulance in the rear bay—suspect is pouring gasoline!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00 is about to torch the stolen ambulance with your wallet inside:",
+          "options": [
+            {
+              "option_id": "opt_095_e4_free",
+              "label": "Tell Unit 4 to breach with sirens off",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tell them to cut sirens and rush the rear bay before he strikes a match!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_095_e4_vip",
+              "label": "Ping your wallet’s loud chime to startle him",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Three cruisers glide silently into the lot and snap their floodlights on—freezing EMT-00 with the gas can still in his hand.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: SUSPECT IN CUSTODY! No fire, ambulance preserved intact—and we recovered your wallet!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "Your wallet’s 90-decibel tracker shrieks from the passenger seat—distracting EMT-00 just as Unit 4 tackles him to the tarmac.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Best $29 wallet tracker I ever bought!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Inside the ambulance glovebox, officers find a burner phone lighting up with missed calls from Judge Vance.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: State Prosecutor just issued an emergency arrest warrant for Judge Vance—and the injured cyclist is alive in County General!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "[EMT-00 DEVICE SEIZED AS EVIDENCE]",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Tracker Lock",
+          "teaser_text": "EMT-00 is arrested before he could burn the ambulance—and your GPS trail just put a corrupt judge behind bars.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Code Three",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03:15 AM · At the county precinct, Unit 4’s lead dispatcher prints your wallet’s exact GPS trail beside the dashcam frames.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: Every piece fits—Mile Marker 18, your hallway cam, and Mercy Clinic. Judge Vance just surrendered at his estate.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "How is the cyclist from the mountain road? Did my dashcam timestamp help doctors find him in time?",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "disp",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "GPS Recovery Log · Pinpointed stolen ambulance at Mercy Clinic at 02:39 AM.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[warm, relieved voice] Yes! Our REAL ambulance reached him twenty minutes after your crash report—he’s going to make a full recovery!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "The State Prosecutor asks to enter your cloud dashcam video as Exhibit 1:",
+          "options": [
+            {
+              "option_id": "opt_095_e5_free",
+              "label": "Sign the witness affidavit immediately",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Signed and verified. Make sure neither of them ever drives near Mile Marker 18 again.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_095_e5_vip",
+              "label": "Request a lock change before going home",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "The prosecutor shakes your hand firmly—with both the dashcam clip and the burner calls, the case is airtight.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: You saved two lives tonight—yours and that cyclist’s.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Unit 4 sends a patrol escort to stand outside your apartment while an emergency locksmith installs brand-new deadbolts.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Fresh locks, wallet back, and both culprits in cuffs. Finally feels safe.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "Best caller I’ve ever guided off a foggy mountain.",
+          "unsent_placeholder": "911 · Unit 4 unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: Your car’s towed to a safe lot, and a real cruiser is ready to take you home.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Thank you for answering when I needed you, Unit 4.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Real Rescue",
+          "teaser_text": "EMT-00 and Judge Vance are both in cuffs, the cyclist is recovering, and morning light finally clears the mountain fog.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Clear Road Ahead",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "09:00 AM · Clear sunlight dries the mountain pass. You sit on your couch with a mug of tea and brand-new apartment keys.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 Dispatch: Morning check-in, {{player_name}}! Judge Vance was formally suspended from the bench an hour ago.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good morning, Unit 4! And my bruised ribs are already feeling way better knowing he’s off the road.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "The cyclist’s family sent flowers to our dispatch center for you!",
+          "unsent_placeholder": "911 · Unit 4 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 5,
+          "transcript": "[cheerful morning radio hum] Always check the unit number on the side door, {{player_name}}. Stay safe out there!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "You glance at your new house keys and the morning news alert:",
+          "options": [
+            {
+              "option_id": "opt_095_e6_free",
+              "label": "Visit the recovering cyclist at County General",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m stopping by County General this afternoon to say hi to him.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_095_e6_vip",
+              "label": "Install a dual-cloud dashcam in your next car",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "That afternoon, the cyclist’s whole family hugs you in the sunlit hospital lobby—grateful you never got into the wrong ambulance.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Always trust your gut—and always verify 911.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "You order a dual-channel cloud dashcam before lunch—knowing one tiny lens just brought down a corrupt judge.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 approves! Safe driving, {{player_name}}.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "The fog over Mile Marker 18 has burned away completely. Only blue sky remains.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unit 4 signing off. Take care, {{player_name}}.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Over and out, Unit 4.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Safe Harbor",
+          "teaser_text": "EMT-00 and Judge Vance face justice, the cyclist survived, and Mile Marker 18’s nightmare is over.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

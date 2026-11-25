@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_093",
+  "lang": "es",
+  "metadata": {
+    "title": "Línea 9 del Metro Después de Medianoche",
+    "subtitle": "El último tren exprés murió en un túnel abandonado... y AirDrop muestra que no hay nadie en la cabina del conductor.",
+    "genre": "thriller",
+    "tags": [
+      "Metro",
+      "Túnel",
+      "Supervivencia"
+    ],
+    "cover_image": "assets/media/covers/story_093.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "hannah",
+      "name": "Hannah · Vagón 3",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "cab",
+      "name": "SISTEMA_TAXI",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Cabina Vacía",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "12:14 AM · El Expreso de la Línea 9 frena con un chirrido en seco bajo el río. Tiras de emergencia brillan azul pálido. Todos los teléfonos del Vagón 3 suenan a la vez.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "[Chat Mesh] Oye, ¿eres la de chamarra verde frente a mí? ¡¿También recibiste esa foto por AirDrop de la cabina vacía?!",
+          "timestamp_label": "12:14 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sí... soy {{player_name}}. Mira el reflejo del parabrisas en esa foto... ¡estamos detenidos dentro del túnel sellado de 1978!",
+          "timestamp_label": "12:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 7,
+          "transcript": "[estática del altavoz, golpe metálico lejano] \"Atención, Vagón 3. Una persona a bordo presenció el tiroteo del Muelle 6. Entréguenla en diez minutos o abro las compuertas del río.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "Ay Dios... no mires mi mochila. Yo grabé todo el tiroteo en el Muelle 6.",
+          "unsent_placeholder": "Hannah anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Los pasajeros del Vagón 3 entran en pánico y empiezan a mirarse entre sí:",
+          "options": [
+            {
+              "option_id": "opt_093_e1_free",
+              "label": "Proteger a Hannah e ir hacia la cabina frontal",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Quédate cerca de mí, Hannah. Vamos a entrar a la cabina para reiniciar el tren.",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_093_e1_vip",
+              "label": "Ver quién envió el AirDrop vía Bluetooth",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Tú y Hannah cruzan la puerta hacia el Vagón 2. Está completamente vacío... salvo por una pesada cadena de acero con candado en la entrada del Vagón 1.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Espera... si el Vagón 1 está encadenado por dentro, ¡¿cómo salió el conductor del tren?!",
+          "timestamp_label": "12:17 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Tu escáner Bluetooth detecta un dispositivo activo a 4 metros dentro del Vagón 3: \"TRANSIT_OVERRIDE_01\". El ejecutivo en la esquina trasera no es un pasajero.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hannah, no voltees... ¡el secuestrador está sentado justo detrás de nosotros en el Vagón 3 controlando el tren a distancia!",
+          "timestamp_label": "12:17 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "Un retumbo mecánico profundo sacude los muros del túnel. Agua fría del río empieza a correr por las vías de concreto afuera.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "Tres minutos para que el tercer riel haga cortocircuito. Entrega el teléfono del Muelle 6, Hannah.",
+          "timestamp_label": "12:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "El Agua Sube en las Vías",
+          "teaser_text": "El secuestrador ya sabe el nombre de Hannah... y el río está entrando al túnel sellado.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Tercer Riel",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "12:19 AM · Chispas llueven fuera de las ventanas cuando el agua toca la vía electrificada. La caja telefónica de emergencia parpadea.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "cab",
+          "caller_label": "CAB_SYSTEM",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 7,
+          "transcript": "[agua rugiendo] Tira el teléfono de Hannah por la ventana agrietada, {{player_name}}, y restauraré la propulsión ahora mismo.",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "Deja de hacerte la heroína, {{player_name}}. Un teléfono por doce vidas... deslízalo bajo la puerta del Vagón 2.",
+          "timestamp_label": "12:19 AM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡Mira arriba! Hay una escotilla de mantenimiento en el muro del túnel diez metros adelante... ¡si forzamos la puerta lateral de emergencia, podemos subir a la rejilla de la calle!",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... el tercer riel está del lado derecho. ¡Tenemos que saltar a la IZQUIERDA sobre la pasarela de concreto!",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "El agua golpea el sello de la puerta. Toma tu decisión final:",
+          "options": [
+            {
+              "option_id": "opt_093_e2_free",
+              "label": "Jalar palanca izquierda y guiar a todos fuera",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Todos por la pasarela IZQUIERDA! ¡Síganme hacia la escalera!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_093_e2_vip",
+              "label": "Quitarle la tableta al secuestrador en el caos",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Jalas la liberación manual y guías a once pasajeros asustados por la angosta cornisa hasta la escalera vertical de hierro... saliendo por una rejilla al aire frío de la noche.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡¡Lo logramos!! ¡Y mi teléfono recuperó 5G... el video del Muelle 6 ya se está subiendo a la fiscalía!",
+          "timestamp_label": "12:24 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Mientras los pasajeros salen en tropel, le arrancas la tableta blindada al ejecutivo y subes corriendo la escalera. Su consola activa muestra un usuario de Director de Tránsito.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡¿El propio Director de Tránsito intentó ahogar todo un vagón del metro para ocultar lo del Muelle 6?!",
+          "timestamp_label": "12:24 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cab",
+          "text": "Sobreviviste a la Línea 9, {{player_name}}. Buena suerte llegando al amanecer.",
+          "unsent_placeholder": "CAB_SYSTEM anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Sobre la superficie, cada poste de luz a lo largo de la Novena Avenida empieza a apagarse en secuencia... marchando directo hacia donde están paradas tú y Hannah.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "La Ciudad se Apaga",
+          "teaser_text": "Escapaste del túnel inundado con la prueba... ahora quienes controlan la red eléctrica de la ciudad te cazan en la superficie.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Apagón en Superficie",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "12:52 AM · Tú y Hannah salen de la rejilla de emergencia... y ven cada farola de la Octava Avenida apagarse de golpe en una ola oscura.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡{{player_name}}, están cortando las luces cuadra por cuadra para acorralarnos! ¡No sueltes esa tarjeta SD de la caja negra!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¡¿cómo sigue escribiéndonos CAB_SYSTEM en la superficie?! ¡Ya salimos del túnel!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "hannah",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Cámara Salida Estación · 12:52 AM — Seguridad de tránsito sellando el acceso a nivel de calle.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 7,
+          "transcript": "[campanilla sintetizada del metro] Atención ex pasajeros de la Línea 9. Devuelvan la caja negra de mantenimiento en Plaza Central de inmediato.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Dos camionetas de seguridad del metro barren la avenida oscura con reflectores:",
+          "options": [
+            {
+              "option_id": "opt_093_e3_free",
+              "label": "Correr hacia la biblioteca pública 24 horas",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Por las puertas de la biblioteca nocturna! ¡Adentro tienen terminales públicas de fibra óptica!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_093_e3_vip",
+              "label": "Revisar el informe tóxico oculto en la SD",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Pasan junto al guardia adormilado hacia la cálida sala de lectura iluminada por generador.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡Qué alivio que la biblioteca tenga su propio generador! ¡Conecta la tarjeta SD en la Terminal 4!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Tu lector móvil descifra el encabezado: la Línea 9 no se inundó por tormenta... ¡Control de Tránsito abrió las compuertas para ocultar una fuga química!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Hannah! ¡Inundaron el Túnel 9 A PROPÓSITO para lavar un derrame químico tóxico debajo de la Estación Central!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cab",
+          "text": "Generador de la biblioteca aún encendido. Envía a la Unidad 3 a la entrada este.",
+          "unsent_placeholder": "CAB_SYSTEM anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡Saben que estamos en la biblioteca! ¡Tenemos tal vez dos minutos para subir los archivos de la caja negra!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "El incidente de la Línea 9 está clasificado bajo la Directiva Municipal de Seguridad 4. Salgan afuera.",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Encubrimiento Tóxico",
+          "teaser_text": "La Línea 9 fue inundada deliberadamente para enterrar un derrame tóxico... y seguridad del metro ya rodea la biblioteca.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Terminal Cuatro",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "01:02 AM · La pantalla de la Terminal 4 ilumina sus rostros mientras gigabytes de telemetría de la Línea 9 se abren.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡Mira la hora de la anulación manual... 11:59 PM! ¡Alguien en Control Central cerró las puertas de nuestro tren y nos mandó directo a la zona de inundación!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Y mira quién firmó el permiso falso de seguridad autorizando trenes a medianoche de todos modos... ¡el propio Comisionado de Tránsito!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "¡Mi prima trabaja en la mesa nocturna de Canal 5... le estoy enviando todo el paquete por correo!",
+          "unsent_placeholder": "Hannah anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 6,
+          "transcript": "[puertas cortafuegos vibrando] Seguridad Municipal está en la entrada este. Desconecten la Terminal 4 o enfrenten cargos federales por interferencia.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "La carga hacia Canal 5 y el Inspector General llega al 78%:",
+          "options": [
+            {
+              "option_id": "opt_093_e4_free",
+              "label": "Trabar las puertas dobles de la sala de lectura",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Aguanta las puertas! ¡Doce segundos más y el Inspector General lo tendrá todo!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_093_e4_vip",
+              "label": "Imprimir 50 copias del permiso del Comisionado",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "La barra de progreso golpea el 100%... ¡y tanto Canal 5 como la línea de emergencia del Inspector General confirman recepción automática!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡ENVIADO! ¡Mi prima acaba de responder... están interrumpiendo el noticiero de la 1 AM AHORA MISMO!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "La impresora láser de la biblioteca escupe cincuenta hojas nítidas del permiso falsificado... se las repartes directo a estudiantes sorprendidos que empiezan a grabar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Veinte estudiantes están transmitiendo en vivo la firma del Comisionado ahora mismo! ¡Crucen esa puerta si se atreven!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Las pantallas de la biblioteca muestran de golpe \"ÚLTIMA HORA: EXPONEN ENCUBRIMIENTO TÓXICO EN LÍNEA 9\"... y los guardias afuera se paralizan.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡Están retrocediendo del vidrio! ¡Y la policía de la ciudad... policía de verdad... acaba de llegar afuera!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "[ANULACIÓN DE CONTROL CENTRAL REVOCADA POR ORDEN DE LA ALCALDÍA]",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "El Permiso Falsificado",
+          "teaser_text": "El encubrimiento salió en vivo por Canal 5 y llegó la policía real... ahora el contrato falsificado del Comisionado sella su destino.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "El Contrato de Tránsito",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "01:20 AM · Las farolas vuelven a encenderse por la Octava Avenida mientras investigadores del Inspector General entran a la biblioteca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡El Inspector General lo acaba de confirmar... Control Central intentó borrar la grabadora de voz de la cabina, pero tu tarjeta SD captó todo!",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Aquí está el permiso de seguridad firmado de la tarjeta SD. Esa firma casi ahoga a todo un tren de pasajeros.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Exención de Seguridad Línea 9 · Autorización falsificada firmada por el Comisionado de Tránsito.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "hannah",
+          "duration_sec": 6,
+          "transcript": "[sirenas alejándose, suspiro de alivio] ¡Acabo de oírlo en Canal 5... la Alcaldía ordenó arrestar al Comisionado de Tránsito en Control Central!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "El Inspector General pregunta si tú y Hannah encabezarán la rueda de prensa matutina:",
+          "options": [
+            {
+              "option_id": "opt_093_e5_free",
+              "label": "Hablar en nombre de cada pasajero de Línea 9",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cuenten con nosotras. Toda la ciudad merece saber por qué se oscureció el último tren.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_093_e5_vip",
+              "label": "Exigir auditoría independiente en las 12 líneas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Canal 5 programa su entrevista en vivo para las 7 AM... y cuadrillas de materiales peligrosos sellan de inmediato el Túnel 9 para limpiar la fuga química sin riesgos.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "De verdad detuvimos un envenenamiento en toda la ciudad. Todavía no lo puedo creer.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "La Alcaldía firma una orden de emergencia para auditar cada túnel del metro antes de que empiece la hora pico de la mañana.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Se acabaron los trenes fantasma. Cada viajero vuelve a salvo a casa.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "La mejor compañera de asiento del Vagón 3 que pude haber pedido, {{player_name}}.",
+          "unsent_placeholder": "Hannah anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡El auto del Inspector General espera para llevarnos a casa... nada de metro esta noche!",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Voy a tomar el autobús los próximos seis meses.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Primer Tren al Amanecer",
+          "teaser_text": "El Comisionado de Tránsito está bajo arresto y el Túnel 9 sellado para limpieza... al fin amanece en la superficie.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Sobre la Superficie",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "07:30 AM · Sol radiante baña la Plaza del Ayuntamiento mientras los viajeros matutinos se detienen a ver su conferencia de prensa en vivo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "¡Todas las pantallas de las estaciones transmiten nuestra declaración... y la ciudad ya clausuró a la contratista química responsable del derrame!",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Qué bien se siente estar bajo el sol después de ese túnel inundado, ¿verdad?",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "¡No olvides que vamos por un café después de esto... yo invito!",
+          "unsent_placeholder": "Hannah anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "hannah",
+          "duration_sec": 5,
+          "transcript": "[palomas aleteando, risa cálida] Ah... ¡y pon tu AirDrop en Solo Contactos de ahora en adelante, ¿sí?!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Revisas los ajustes de AirDrop de tu teléfono en la plaza soleada:",
+          "options": [
+            {
+              "option_id": "opt_093_e6_free",
+              "label": "Cambiar AirDrop a Solo Contactos",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Listo! Cero fotos espeluznantes de medianoche de cabinas vacías nunca más.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_093_e6_vip",
+              "label": "Caminar al café sobre superficie con Hannah",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Desactivas AirDrop y guardas el teléfono... escuchando el zumbido normal y alegre de la ciudad por la mañana.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "El cambio de ajuste más inteligente del año.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Tú y Hannah caminan seis cuadras soleadas sobre las vías del metro, riendo cuando el primer expreso seguro pasa por debajo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La luz del día le gana a los túneles de medianoche todas las veces.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "La Línea 9 reanuda servicio bajo monitores independientes de seguridad... su oscuro secreto al fin lavado.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Qué gusto haber compartido el Vagón 3, {{player_name}}.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Igualmente, Hannah. Vamos por ese café.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Luz del Día Adelante",
+          "teaser_text": "El encubrimiento tóxico de la Línea 9 fue expuesto, el Comisionado arrestado y saliste a salvo hacia el sol de la mañana.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_021",
+  "lang": "en",
+  "metadata": {
+    "title": "Floor 13 Doesn't Exist",
+    "subtitle": "The elevator stopped at Floor 13 at 2:14 AM. My building only has twelve floors.",
+    "genre": "thriller",
+    "tags": [
+      "3AM",
+      "Elevator",
+      "Supernatural"
+    ],
+    "cover_image": "assets/media/covers/story_021.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Hector (Night Guard)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "Lobby Intercom",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Button 13 Lit Up",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:14 AM · The elevator jolts to a halt. The red LED flickers past 12 and locks onto 13.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, I see Car B stalled on my monitor. Why did you press the service override?",
+          "timestamp_label": "2:14 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I didn’t touch anything! The doors just slid open onto a dark hallway. There’s someone waving at me.",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Good. Step out so I can finally leave.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Stay inside the cab! Do NOT cross the threshold. Press Door Close right now.",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[fluorescent hum, slow footsteps] ...Why are you staring, {{player_name}}? You live on this floor now...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "The doors refuse to close. Cold air pours into the elevator.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Hit the red emergency alarm",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m slamming the alarm bell!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Zoom phone flash down Floor 13",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Turning on my flashlight...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "The bell rings—not in the shaft, but right behind the figure in the dark hallway.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Every apartment door on Floor 13 has a brass plaque—all engraved with YOUR name.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Wait... the security desk phone is ringing on its own. Look at the lobby camera feed.",
+          "timestamp_label": "2:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Lobby Guard Desk",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "A frantic voice gasps: \"This is Hector! Someone stole my phone twenty minutes ago—who are you texting?!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "You decline. A voicemail transcribes instantly: \"This is Hector—I’m locked in the lobby! That’s NOT me texting you!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Then Who Was Texting You?",
+          "teaser_text": "Episode 2: The figure on Floor 13 lifts a glowing phone—and smiles.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "The Thirteenth Tenant",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:18 AM · The elevator lights die. Only the glow of the phone in the hallway lights the figure’s face.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "You shouldn’t have answered the lobby phone, {{player_name}}. Now I have to come inside.",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Get back! Who are you?! Why do you have Hector’s phone?!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CAM 13 · 02:18:55 AM — Corridor outside Car B.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Look at the mirror behind you. I am already inside.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’ve been stuck on Floor 13 since 2011. The building only lets me leave if someone takes my place.",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "The metal doors screech shut—trapping the cold shadow inside with you.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Pry open the ceiling hatch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m climbing out the top!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Shatter the Floor 13 LED panel",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Breaking the panel now!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "You push the hatch up—and icy fingers wrap around your wrist from the pitch-black shaft above.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Sparks fly and the elevator plunges—straight to Ground. Behind the broken panel is a faded 2011 missing-person photo of Hector.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "The elevator chimes softly. The doors open to a bright, empty lobby—except every clock reads 2:14 AM.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Hector (Night Guard)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "A hollow whisper echoes: \"Welcome home, {{player_name}}. Enjoy Floor 13.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "You hit decline, but the call connects anyway. Behind you, the elevator button 13 glows bright red.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Next Stop: Forever",
+          "teaser_text": "Season Finale · The lobby doors are bricked shut. Only the elevator is waiting.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Bricked Lobby",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:28 AM · The elevator jolts back down, but when the doors part, solid concrete bricks seal the lobby.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, stay inside the cab! I’m pounding on the lobby glass from outside—the whole ground floor vanished behind brick!",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector, the panel just lit up again—not 13 this time. It says \"B4\" and the doors won’t open!",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "Elevator Panel · Floor 13 & hidden service code glowing red at 2:29 AM.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "The ceiling fluorescent flickers out. A cold draft rises through the floor grates.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Press 13 again, {{player_name}}. You forgot to return the key you took from Tenant 13.",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "In 1998 a resident died trapped between Floor 12 and the roof—management sealed the shaft.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[static crackling from the intercom] \"Every building hides a missing floor, {{player_name}}. Only the night shift knows why.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "The elevator begins rising on its own toward the sealed shaft.",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_stop",
+              "label": "Pull the red emergency stop latch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m pulling the emergency brake—Hector, call the fire department!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_press_alarm",
+              "label": "Hold the service override & open hatch",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Escape",
+              "player_reply_text": "I found the roof hatch latch! I’m climbing into the shaft!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The brake snapped?! Hold onto the handrail—I’m prying open the lobby maintenance door!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Smart! There’s a ladder bolted to the west wall of the shaft—climb toward Floor 12!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Too late. The shaft lights just died—and something is climbing down from above you.",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Something In The Shaft.",
+          "teaser_text": "Episode 4: Trapped between floors in pitch darkness, you discover why Floor 13 was erased from the blueprints.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Blueprint 1998",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:35 AM · You cling to the steel ladder in the dark shaft while Hector pulls the 1998 building ledger.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I found the old blueprint in the guard booth! Floor 13 wasn’t superstition—it was an illegal penthouse sealed after a fire!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector, there’s a doorway right beside the ladder! Someone scratched \"DON’T TRUST THE GUARD\" into the steel!",
+          "timestamp_label": "2:41 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Ask Hector why he still carries the brass key to Floor 13 on his belt, {{player_name}}.",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Your flashlight beam catches a brass keyhole beside the rusted door.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Don’t listen to that thing! That key was handed to me by the landlord—I swear I never opened it!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Wait... why is my own signature on the 1998 inspection log? I wasn’t even hired until 2020...",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[whispering through the vents] \"He wasn’t hired in 2020, {{player_name}}. Look at the guard’s badge photo.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "The intercom claims Hector has been trapped on night shift since 1998.",
+          "options": [
+            {
+              "option_id": "opt_e4_question_hector",
+              "label": "Demand Hector send his badge photo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hector, take a photo of your security badge right now.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_open_door",
+              "label": "Force open the rusted Floor 13 door",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Brave",
+              "player_reply_text": "I’m kicking open the Floor 13 door—I need the truth myself.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "My badge says... 1998?! No, that’s impossible—why can’t I remember leaving this building?!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Wait—the hallway inside is lit by amber lamps! And there’s a mirror at the end!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Welcome home, {{player_name}}. Look at the shadow standing at the end of the corridor.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "The Forgotten Hallway.",
+          "teaser_text": "Episode 5: A security frame from Floor 13 reveals the face of the person who sealed the shaft.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Corridor Of Ash",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:44 AM · Ash drifts lazily through the air of Floor 13 as your phone receives an archived security frame.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I remember now, {{player_name}}! I tried to rescue the girl in 13A during the fire—and the landlord locked the elevator to hide the code violations!",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector... does that mean you’re one of the people who never made it out?!",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Floor 13 Corridor · Shadow standing beside Apt 13A—holding the brass master key.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "The elevator bell chimes behind you. The doors open onto a bright, normal lobby—for thirty seconds.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Take the ledger from Apt 13A and run to the elevator, {{player_name}}. Tell the living what really happened here!",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "If the truth gets out, we can finally clock out of this building forever.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[calm, echoing] \"Take the fire report, {{player_name}}. Leave the brass key on the floor—and never look back.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "The portal to the real lobby is closing in ten seconds.",
+          "options": [
+            {
+              "option_id": "opt_e5_grab_ledger",
+              "label": "Grab the charred fire ledger and sprint",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’ve got the ledger! I’m running for the cab!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_promise_hector",
+              "label": "Promise Hector you’ll expose the landlord",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Justice",
+              "player_reply_text": "I swear I’ll expose them all, Hector. Rest now!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "GO! Don’t let the doors close without you!",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Thank you, {{player_name}}. For the first time in twenty-eight years, my shift is over.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "The elevator drops smoothly to Floor 1. Outside, dawn is finally breaking.",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "The Last Descent.",
+          "teaser_text": "Episode 6 (Finale): Stepping out into the morning light, you hold the only proof that Floor 13 ever existed.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Shift Complete",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:05 AM · Police tape stretches across the apartment lobby as detectives bag the charred 1998 ledger.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The detectives found the sealed wall behind Floor 12, {{player_name}}. Every name on the fire report is finally going to be laid to rest.",
+          "timestamp_label": "7:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—Hector?! How are you still texting me if the morning guard just clocked in?!",
+          "timestamp_label": "7:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Just one last message before my signal fades. Look at the elevator panel.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "You glance back at the elevator: Button 13 is gone—replaced by smooth, unbroken steel.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The landlord was just arrested at the airport. Thank you for not leaving us in the dark.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Goodbye, {{player_name}}. Take the stairs next time.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[warm, fading into static] \"Goodnight from the night shift, {{player_name}}. You’re safe now.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Your phone screen flickers as Hector’s chat thread begins to archive itself.",
+          "options": [
+            {
+              "option_id": "opt_e6_say_goodbye",
+              "label": "Thank Hector before the signal fades",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Rest easy, Hector. You saved my life tonight.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_leave_flowers",
+              "label": "Leave white flowers by the guard desk",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Tribute",
+              "player_reply_text": "I left flowers at the lobby desk for you and 13A. Goodbye.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Message delivered · Seen at 6:07 AM.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Message delivered · A warm breeze brushes past the empty guard desk.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "System: \"Lobby Intercom\" has disconnected permanently.",
+          "timestamp_label": "7:22 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Twelve Floors Only.",
+          "teaser_text": "THE END · The building finally has twelve floors again—and the night guard has gone home.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

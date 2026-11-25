@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_090",
+  "lang": "hi",
+  "metadata": {
+    "title": "ज़ीरो-डे फिरौती",
+    "subtitle": "रैनसमवेयर ने मेरे अस्पताल के हर ICU मॉनिटर को फ़्रीज़ कर दिया—जब तक मैं 15 मिनट में एक मरीज़ का रिकॉर्ड न मिटा दूँ।",
+    "genre": "thriller",
+    "tags": [
+      "रैनसमवेयर",
+      "अस्पताल",
+      "साइबर"
+    ],
+    "cover_image": "assets/media/covers/story_090.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · NetOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "patel",
+      "name": "Dr. Patel · ICU",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "zday",
+      "name": "ZERO_DAY",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#134E4A"
+    },
+    {
+      "id": "narrator",
+      "name": "सूत्रधार",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "कोड ब्लैक",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "रात 2:11 · ST. JUDE सर्वर रूम: हर टर्मिनल लाल चमक रहा है। \"सभी इन्फ़्यूज़न पंप एन्क्रिप्टेड। 15:00 बाकी।\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}!! हमारे ICU वेंटिलेटर अभी नेटवर्क से कट गए! हम तीन मरीज़ों को हाथ से पंप दे रहे हैं—इसे अभी ठीक करो!",
+          "timestamp_label": "रात 2:11",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "किसी बिटकॉइन की ज़रूरत नहीं, {{player_name}}। मास्टर डेटाबेस से मरीज़ #4409 की टॉक्सिकोलॉजी रिपोर्ट मिटा दो, और मैं तुरंत डिक्रिप्शन चाबी दे दूँगा।",
+          "timestamp_label": "रात 2:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "मरीज़ #4409?! बेड 9 में कौन है, Dr. Patel?!",
+          "timestamp_label": "रात 2:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 8,
+          "transcript": "[मॉनिटर तेज़ी से बीप करते हुए] वह एक अज्ञात शख़्स है जिसे यॉट पार्टी से लाया गया! उसके ख़ून में प्रतिबंधित मिलिट्री नर्व एजेंट मिला है—यह हत्या की कोशिश है!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "काउंटडाउन 11:30 पर पहुँच गया। ICU की जानें दाँव पर हैं:",
+          "options": [
+            {
+              "option_id": "opt_090_e1_free",
+              "label": "ICU को एयर-गैप्ड ऑफ़लाइन बैकअप पर डालें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Patel, सभी पंपों से नीले ईथरनेट केबल खींच दीजिए—मैं ऑफ़लाइन फ़र्मवेयर भेज रही हूँ!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_090_e1_vip",
+              "label": "डिलीट करने से पहले #4409 की रिपोर्ट क्लोन करें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "मैनुअल ओवरराइड दो वेंटिलेटर बहाल कर देता है—लेकिन रैनसमवेयर VLAN कूदकर फ़ार्मेसी दवा वॉल्ट को लॉक कर देता है।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "चालाक छोटी इंजीनियर। अफ़सोस कि बेड 9 को चार मिनट में एट्रोपिन चाहिए—और मैंने अभी दवाइयाँ लॉक कर दीं।",
+          "timestamp_label": "रात 2:15",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "आप चुपचाप टॉक्सिकोलॉजी PDF को एक एयर-गैप्ड USB स्टिक पर कॉपी करती हैं, फिर मुख्य SQL टेबल पर दिखने वाला वाइप चलाती हैं। ZERO_DAY झाँसे में आ जाता है।",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "अच्छा फ़ैसला। डिक्रिप्शन चाबी आ रही है... रुको। सर्वर रैक 3 पर अभी USB माउंट लॉग क्यों दिखा?",
+          "timestamp_label": "रात 2:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "सर्वर रूम B के बाहर बैज स्वाइप मिला। हमारा सफ़ाईकर्मी पहले ही आपकी मंज़िल पर है।",
+          "unsent_placeholder": "ZERO_DAY ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "सर्वर रूम का बैज रीडर हरी बीप करता है—जबकि सिर्फ़ दो IT स्टाफ़ के पास अनुमति है। भारी स्टील का दरवाज़ा अंदर की ओर खुलता है।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "रैक 3 में घुसपैठिया",
+          "teaser_text": "किसी ने अभी एडमिन बैज से सर्वर वॉल्ट खोला है—और ICU काउंटडाउन में 3 मिनट बचे हैं।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "रूट एक्सेस",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "रात 2:18 · आप कोल्ड-आइल सर्वर रैक के पीछे दुबक जाती हैं। गुनगुनाते ब्लेड्स के बीच धीरे-धीरे क़दम चलते हैं।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "patel",
+          "caller_label": "Dr. Patel · ICU",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 7,
+          "transcript": "[फुसफुसाते हुए] {{player_name}}! अस्पताल सिक्योरिटी कह रही है आपके सर्वर रूम पर इस्तेमाल किया गया बैज हमारे अपने चीफ़ ऑफ़ सर्जरी—Dr. Vance का है!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "सिक्योरिटी ने अभी बैज स्वाइप ट्रेस किया—वह चीफ़ ऑफ़ सर्जरी हैं! और बेड 9 अभी होश में आया और धीरे से उनका नाम लिया!",
+          "timestamp_label": "रात 2:18",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "USB स्टिक मुझे दे दो, {{player_name}}, मैं खुद ICU बहाल कर दूँगा। आज रात किसी को मरने की ज़रूरत नहीं है।",
+          "timestamp_label": "रात 2:19",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "आपने अपने ही मरीज़ को ज़हर दिया और उसे छुपाने के लिए पूरे ICU को बंधक बना लिया?!",
+          "timestamp_label": "रात 2:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "चीफ़ ऑफ़ सर्जरी रैक 3 के पास मुड़ते हैं। उन्हें रोकें:",
+          "options": [
+            {
+              "option_id": "opt_090_e2_free",
+              "label": "हैलॉन फ़ायर-सप्रेशन लॉक चालू करें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_090_e2_vip",
+              "label": "उनके लैपटॉप से डिक्रिप्शन चाबी निकालें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": "आपकी लोकल चाबी मिल गई—और मेडिकल बोर्ड को टॉक्स रिपोर्ट ईमेल कर दी!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "आप उनके बगल से दरवाज़े की ओर दौड़ती हैं और पीले हैलॉन अलार्म पर हाथ मारती हैं। ब्लास्ट दरवाज़े धड़ाम से बंद हो जाते हैं, जिससे अस्पताल पुलिस के आने तक चीफ़ अंदर क़ैद हो जाते हैं।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "सभी ICU मॉनिटर अभी हरे हो गए! आज रात आपने चार जानें बचा लीं, {{player_name}}!",
+          "timestamp_label": "रात 2:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "आप उनके खुले लैपटॉप से चालू ईथरनेट केबल खींच लेती हैं, जिससे लोकल रैनसमवेयर चाबी सीधे अस्पताल के मास्टर कंट्रोलर में आ जाती है। हर पंप रीसेट हो जाता है।",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "पंप वापस ऑनलाइन आ गए और सिक्योरिटी ने उन्हें गलियारे में हथकड़ी लगा दी! शुक्र है आपने वह रिपोर्ट बचाकर रखी!",
+          "timestamp_label": "रात 2:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "तुमने डॉक्टर को पकड़ लिया, {{player_name}}। उस इंसान को नहीं जिसने ज़ीरो-डे लिखा।",
+          "unsent_placeholder": "ZERO_DAY ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "जब St. Jude’s पर भोर फूटती है, आपके फ़ोन पर एक आख़िरी एन्क्रिप्टेड पिंग आता है—पीडियाट्रिक वार्ड के एक अस्पताल IP पते से।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "मास्टरमाइंड अभी भी अंदर है",
+          "teaser_text": "चीफ़ ऑफ़ सर्जरी सिर्फ़ ख़रीदार थे। असली ZERO_DAY हैकर अभी भी St. Jude’s के आंतरिक नेटवर्क से जुड़ा हुआ है।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "सबनेट का भूत",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "रात 2:26 · ICU मॉनिटर दस सेकंड के लिए स्थिर होते हैं—फिर दोबारा पीले टिमटिमाते हैं। ZERO_DAY अभी भी सबनेट 4 पर सक्रिय है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}! बेड 7 के वेंटिलेटर का प्रेशर फिर गिर गया! मुझे लगा हमने चीफ़ ऑफ़ सर्जरी का लैपटॉप अलग कर दिया था!",
+          "timestamp_label": "रात 2:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "चीफ़ सिर्फ़ ख़रीदार थे, Dr. Patel! फ़िज़िकल सर्वर-रूम बैज वाला कोई शख़्स अभी भी फ़्लोर 4 से जुड़ा हुआ है!",
+          "timestamp_label": "रात 2:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "फ़्लोर 4 सर्वर हॉल · रात 2:25 — अंदर अनधिकृत टेक्नीशियन बैज स्वाइप किया गया।",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[सर्वर पंखों की गरज] होशियार NetOps बच्ची। तुमने चीफ़ को पकड़ लिया—लेकिन जब तक बेड 7 का चार्ट राख नहीं होता, मुझे मेरी दूसरी किस्त नहीं मिलेगी।",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "आप फ़्लोर 4 सर्वर वॉल्ट के काँच के दरवाज़ों पर पहुँचती हैं। तेज़ी से क़दम उठाएँ:",
+          "options": [
+            {
+              "option_id": "opt_090_e3_free",
+              "label": "ICU स्विच को एयर-गैप्ड बैकअप पर काटें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Patel, मैं ICU को मैनुअल एयर-गैप पर डाल रही हूँ! बेड 7 का वेंटिलेटर रिमोट हैक से सुरक्षित है!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_090_e3_vip",
+              "label": "फ़्लोर 4 खोलने वाला बैज ID ट्रेस करें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "रैक में एक भारी क्लिक गूँजता है—ऑफ़लाइन बैटरी टेलीमेट्री पर हर ICU मॉनिटर हरा हो जाता है।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "वेंटिलेटर स्थिर! बेड 7 का मरीज़ स्थिर है—अंदर जो भी है अब मेरे मरीज़ों को छू नहीं सकता!",
+          "timestamp_label": "रात 2:26",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "एक्सेस लॉग पर एक जाना-पहचाना नाम चमकता है: \"MARCUS V. — MEDTECH बाहरी IT वेंडर।\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ZERO_DAY हमारे अपने IT कॉन्ट्रैक्टर का Marcus है! उसने पिछले महीने के अपग्रेड के दौरान बैकडोर लगाया था!",
+          "timestamp_label": "रात 2:26",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "एयर-गैप चालू हो गया! एन्क्रिप्टेड मरीज़ आर्काइव ड्राइव हाथ से निकाल रहा हूँ।",
+          "unsent_placeholder": "ZERO_DAY ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "रुको—मैंने अभी बेड 7 का काग़ज़ी चार्ट देखा! वह हमारे अस्पताल के सबसे बड़े दानदाता द्वारा फ़ंड किए गए एक फ़ेल दवा ट्रायल का इकलौता जीवित गवाह है!",
+          "timestamp_label": "रात 2:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "सिक्योरिटी बुलाने की ज़हमत मत करना, {{player_name}}। मैं आर्काइव ड्राइव लेकर पहले ही सर्विस सीढ़ियों से बाहर निकल रहा हूँ।",
+          "timestamp_label": "रात 2:26",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ट्रायल का जीवित गवाह",
+          "teaser_text": "बेड 7 के पास एक जानलेवा क्लिनिकल ट्रायल की लीपापोती का सबूत है—और आपका अपना IT वेंडर आर्काइव ड्राइव लेकर फ़्लोर 4 से भाग रहा है।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "फ़्लोर 4 पर लॉकडाउन",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "रात 2:35 · आप फ़्लोर 4 सिक्योरिटी कंसोल पर अपना बैज मारती हैं, जिससे बायो-विंग के मैग्नेटिक दरवाज़े सक्रिय हो जाते हैं।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "अस्पताल पुलिस और FBI साइबर एजेंट अभी मुख्य लॉबी से ऊपर आ रहे हैं! अकेले उसका सामना मत करना!",
+          "timestamp_label": "रात 2:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "इतनी जल्दी नहीं, Marcus! फ़्लोर 4 की हर लिफ़्ट और सीढ़ी बायो-लॉकडाउन में चली गई है!",
+          "timestamp_label": "रात 2:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "अगर मैं आर्काइव ड्राइव भस्मक शूट में डाल दूँ, तो कोई कुछ साबित नहीं कर पाएगा।",
+          "unsent_placeholder": "ZERO_DAY ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[भारी क़दमों की गूँज] फ़्लोर 4 के मैग-लॉक खोलो, {{player_name}}, वरना मैं बैकअप ड्राइव सीधे बायो-वेस्ट शूट में गिरा दूँगा!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Marcus आर्काइव ड्राइव लिए वेस्ट शूट के पास खड़ा है। उसे मात दें:",
+          "options": [
+            {
+              "option_id": "opt_090_e4_free",
+              "label": "झांसा दें कि क्लाउड सिंक हो चुका है",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "गिराना है तो गिरा दो, Marcus! मैंने पाँच मिनट पहले ही बेड 7 का पूरा चार्ट FDA को मिरर कर दिया!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_090_e4_vip",
+              "label": "उसका बाहर जाने वाला क्रिप्टो पैकेट सूँघें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Marcus झिझकता है—इतनी देर काफ़ी होती है कि आप फ़ायर-डोर का काँच पटककर उसका बाहर निकलने का रास्ता काट दें।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "FBI एजेंट अभी चौथी मंज़िल की सीढ़ियों पर पहुँच गए! उसे वहीं रोके रखो!",
+          "timestamp_label": "रात 2:35",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "आपका पैकेट स्निफ़र उसकी अंतिम फिरौती पुष्टि पकड़ लेता है—सीधे फ़ार्मा दानदाता के ट्रस्ट से $2.5M का वायर ट्रांसफ़र।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "मैंने फ़ार्मा दानदाता से तुम्हारा $2.5M का वायर पकड़ लिया! अब ड्राइव गिराने से भी तुम नहीं बचोगे!",
+          "timestamp_label": "रात 2:35",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "फ़ेडरल ओवरराइड से सीढ़ियों का मैग-लॉक क्लिक करके खुलता है—और चार FBI एजेंट फ़्लोर 4 पर टूट पड़ते हैं।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "उन्होंने उसे पकड़ लिया! और आर्काइव ड्राइव ने शूट को छुआ तक नहीं!",
+          "timestamp_label": "रात 2:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "तुमने एक अकेले ICU बेड के लिए $2.5 मिलियन की कमाई बर्बाद कर दी...",
+          "timestamp_label": "रात 2:35",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "फिरौती का वायर",
+          "teaser_text": "Marcus हथकड़ी में है—और $2.5M की फिरौती रसीद St. Jude के सबसे बड़े फ़ार्मा दानदाता को सीधे अस्पताल हैक से जोड़ती है।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "दानदाता का सुराग़",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "रात 2:55 · ICU नर्स स्टेशन के अंदर, आप ब्रीफ़िंग स्क्रीन पर Marcus की रोकी हुई वायर रसीद दिखाती हैं।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Apex Pharma Trust से ढाई मिलियन डॉलर... वे सिर्फ़ बेड 7 को चुप कराने के लिए पूरा ICU बंद करने को तैयार थे।",
+          "timestamp_label": "रात 2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "FBI ने अभी Apex Pharma के खाते फ़्रीज़ कर दिए—और मैं अभी हर मॉनिटर पर एक साफ़ फ़र्मवेयर पैच भेज रही हूँ।",
+          "timestamp_label": "रात 2:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "रोकी गई फिरौती वायर · Apex Pharma Trust से ZERO_DAY को $2,500,000।",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 6,
+          "transcript": "[स्थिर हार्टबीट मॉनिटर की बीप] बेड 7 की ऑक्सीजन 99% पर वापस आ गई! और उनके परिवार के वकील फ़ेडरल मार्शल्स के साथ पहुँच चुके हैं।",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "अस्पताल बोर्ड अध्यक्ष कॉल करके आपसे हैक को चुपचाप दबाने की भीख माँगते हैं:",
+          "options": [
+            {
+              "option_id": "opt_090_e5_free",
+              "label": "मना करें व पूरी फ़ेडरल रिपोर्ट दर्ज करें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "आज रात मरीज़ लगभग मरने ही वाले थे। एक-एक लॉग सीधे FBI और FDA को जाएगा।",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_090_e5_vip",
+              "label": "MedTech वेंडर के सभी बैकडोर लाइव हटाएँ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "जैसे ही फ़ेडरल एजेंट चीफ़ ऑफ़ सर्जरी का ऑफ़िस सील करते हैं, बोर्ड अध्यक्ष चुपचाप फ़ोन काट देते हैं।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "अपनी बात पर अड़े रहने के लिए शुक्रिया, {{player_name}}। PR से पहले इलाज आता है।",
+          "timestamp_label": "रात 2:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "आपकी क्लीनअप स्क्रिप्ट ठीक नब्बे सेकंड में अस्पताल के सभी छह विंग से 14 छुपे MedTech बैकडोर साफ़ कर देती है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "सभी छह विंग साफ़ सत्यापित। ZERO_DAY को हमेशा के लिए St. Jude’s से बाहर कर दिया गया है।",
+          "timestamp_label": "रात 2:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "सलाम, NetOps। अब तक की सबसे बेहतरीन नाइट-शिफ़्ट डिफ़ेंस जिससे मेरा पाला पड़ा।",
+          "unsent_placeholder": "ZERO_DAY ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "बोर्ड पर सभी बारह ICU बेड हरे हैं! आपने उन सभी को बचा लिया।",
+          "timestamp_label": "रात 2:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "[रैनसमवेयर नोड साफ़ — सिस्टम सुरक्षित]",
+          "timestamp_label": "रात 2:55",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "साफ़ रीबूट",
+          "teaser_text": "हर ICU मरीज़ सुरक्षित है और Apex Pharma की लीपापोती बेनक़ाब हो चुकी है—आपकी नाइट शिफ़्ट ख़त्म होने से पहले एक आख़िरी भोर जाँच।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "नाइट शिफ़्ट की समाप्ति",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "सुबह 6:45 · ICU गलियारे में सुनहरी धूप भर जाती है। हर वाइटल-साइन मॉनिटर एक स्थिर, शांत लय में गुनगुनाता है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "चीफ़ ऑफ़ सर्जरी, Marcus, और दो Apex Pharma एग्ज़िक्यूटिव्स पर अभी आरोप तय हुए। बेड 7 जाग गया है और पूछ रहा है किसने उसे बचाया।",
+          "timestamp_label": "सुबह 6:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "उनसे कहिए पूरी नाइट शिफ़्ट ने बचाया, Dr. Patel। मैंने तो बस बत्तियाँ जलाई रखीं।",
+          "timestamp_label": "सुबह 6:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "patel",
+          "text": "अस्पताल निदेशक आपको चीफ़ ऑफ़ साइबरसिक्योरिटी बनाना चाहते हैं।",
+          "unsent_placeholder": "Dr. Patel ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 5,
+          "transcript": "[सुबह की शिफ़्ट की घंटी बजती हुई] कैफ़ेटेरिया में नाश्ता मेरी तरफ़ से—और हाँ, तुम्हें ज़बरदस्त सैलरी हाइक मिल रही है।",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "साइन-आउट से पहले आपका नाइट-शिफ़्ट टर्मिनल अंतिम पुष्टि माँगता है:",
+          "options": [
+            {
+              "option_id": "opt_090_e6_free",
+              "label": "एयर-गैप प्रोटोकॉल स्थायी रूप से लॉक करें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "अस्पताल मानक के रूप में एयर-गैप प्रोटोकॉल सेव। फिर कभी ऐसा नहीं होगा।",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_090_e6_vip",
+              "label": "सुबह की नमस्ते कहने बेड 7 पर जाएँ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "आपकी नई सुरक्षा नीति ICU टेलीमेट्री को भौतिक स्विच के पीछे लॉक करती है—जिसे देश भर के अस्पतालों से सराहना मिलती है।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "देश की सबसे बेहतरीन NetOps इंजीनियर। अब थोड़ी नींद ले लो!",
+          "timestamp_label": "सुबह 6:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "आप बेड 7 में झाँकती हैं। मरीज़ धीरे से आपका हाथ दबाता है और बिना आवाज़ के दो शब्द कहता है: \"शुक्रिया।\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "उस 15-मिनट के काउंटडाउन के हर सेकंड की क़ीमत वसूल हो गई।",
+          "timestamp_label": "सुबह 6:45",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "आप अपना नाइट-शिफ़्ट बैज टाँगती हैं और ठंडी सुबह की धूप में कदम रखती हैं—ज़ीरो अलर्ट, बारह मज़बूत धड़कनें।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "कल रात मिलते हैं, चीफ़।",
+          "timestamp_label": "सुबह 6:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "कल मिलते हैं, Dr. Patel।",
+          "timestamp_label": "सुबह 6:45",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "सीज़न फ़िनाले · धड़कनें स्थिर",
+          "teaser_text": "ZERO_DAY साफ़ हो चुका है, Apex Pharma की लीपापोती चकनाचूर हो गई, और हर ICU मरीज़ सूर्योदय देखने के लिए ज़िंदा रहा।",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

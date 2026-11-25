@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_098",
+  "lang": "en",
+  "metadata": {
+    "title": "Cabin 12: No Signal",
+    "subtitle": "A blizzard knocked out cell service—yet a Bluetooth mesh chat opens from 15 feet outside my cabin.",
+    "genre": "thriller",
+    "tags": [
+      "Blizzard",
+      "Cabin",
+      "Survival"
+    ],
+    "cover_image": "assets/media/covers/story_098.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "cole",
+      "name": "Ranger Cole · Radio",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "btnode",
+      "name": "BT_NODE_01",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0C4A6E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "15 Feet Away",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "10:52 PM · -14°F BLIZZARD. Zero cell bars. Your offline hiking app pings: \"PEER CONNECTED VIA BLUETOOTH MESH — DISTANCE: 15 FT.\"",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "Please open the porch door, {{player_name}}! My snowmobile flipped in the drift—I’m freezing to death out here!",
+          "timestamp_label": "10:52 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... how do you know my name?! I rented Cabin 12 under my own booking!",
+          "timestamp_label": "10:53 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 7,
+          "transcript": "[crackling VHF relay] Cabin 12, this is Ranger Cole! Do NOT let anyone inside! A state prisoner escaped a transport van on Highway 89 two hours ago!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "btnode",
+          "text": "Your guestbook was sitting in the mailbox, {{player_name}}. Now unlock the door before I cut the power line.",
+          "unsent_placeholder": "BT_NODE_01 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Heavy fists pound against the frosted porch door:",
+          "options": [
+            {
+              "option_id": "opt_098_e1_free",
+              "label": "Barricade door & hold the fireplace poker",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Ranger Cole, he’s right on my porch! Send backup to Cabin 12!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_098_e1_vip",
+              "label": "Check the outdoor trail-cam on your tablet",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "You shove the heavy oak dining table against the front door. Suddenly the cabin lights flicker and die—he just ripped the exterior breaker box off the wall.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Snowcat is 12 minutes out! Stay away from the ground-floor windows—get up into the sleeping loft!",
+          "timestamp_label": "10:55 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "The porch trail-cam lights up in night-vision. There is NO escaped convict on the porch—it’s a bleeding woman in a park ranger uniform, and a second shadow is behind her.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if the person bleeding on my porch is wearing a Ranger badge, then WHO is on the radio claiming to be Ranger Cole?!",
+          "timestamp_label": "10:55 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "Bluetooth signal indicator changes: \"DISTANCE: 4 FT — REAR MUDROOM WINDOW.\" Glass shatters in the kitchen.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "He stole the real ranger’s radio, {{player_name}}! He’s coming through the back window—LET ME IN!",
+          "timestamp_label": "10:56 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Two Voices In The Blizzard",
+          "teaser_text": "One of them is a ranger trying to save you. The other is the escaped convict—and someone just climbed into your kitchen.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Whiteout",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "10:57 PM · Snow gusts through the broken kitchen pane. You climb the wooden loft ladder as boots crunch broken glass below.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "cole",
+          "caller_label": "Ranger Cole · VHF",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 7,
+          "transcript": "[heavy breathing—AND the exact same echo from downstairs] \"Come down from the loft, {{player_name}}. I’m just here to check your stove.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Drop the poker, {{player_name}}. I only need your car keys and a warm coat.",
+          "timestamp_label": "10:57 PM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "I’m Deputy Park Ranger Maya! I crawled around to the snowcat—toss me your flare gun from the loft window and I’ll draw him out!",
+          "timestamp_label": "10:58 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The fake ranger’s hand grips the bottom rung of the loft ladder!",
+          "timestamp_label": "10:58 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "You have two seconds before he climbs up:",
+          "options": [
+            {
+              "option_id": "opt_098_e2_free",
+              "label": "Kick the wooden ladder backward & jump",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_098_e2_vip",
+              "label": "Fire the flare straight through the loft window",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Flare up! Maya, rev the snowcat NOW!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "You shove the ladder off the beam—crashing it down on him—and leap from the loft window into a six-foot snowdrift right beside Maya’s idling snowcat.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "Climb in!! Hold tight—we’re gunning straight down the logging road to the ranger station!",
+          "timestamp_label": "11:00 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "The crimson flare lights up the entire valley like noon. Overhead, a state search-and-rescue chopper pivots its blinding floodlight directly onto Cabin 12.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "They spotted us!! Jump into the drift—the chopper’s dropping the rescue team right now!",
+          "timestamp_label": "11:00 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "Cabin 12 wasn’t random, {{player_name}}. Your testimony put me in that prison van.",
+          "unsent_placeholder": "Ranger Cole unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "As the snowcat roars away through the whiteout, you look back at Cabin 12’s porch—and freeze. Standing in the doorway isn’t a stranger. It’s your former business partner.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "He Found Your Hideout",
+          "teaser_text": "The prison break wasn’t an accident—he escaped specifically to track you to Cabin 12.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Porch Breach",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:34 PM · The cabin generator coughs and dies. Wind howls through the pines as BT_NODE_01 pings 3 feet outside your kitchen window.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "Five years in state prison thinking about your testimony, {{player_name}}. Remember the lake bonfire?",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ranger Cole!! He’s right on my porch! How far is your snowmobile?!",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "btnode",
+          "image_asset": "assets/media/evidence/lake_bonfire_timestamp.webp",
+          "caption": "Bluetooth Transfer · Five years ago — The bonfire night your testimony put him away.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 8,
+          "transcript": "[radio static, wind roaring] A fallen pine blocked Trail 4—I’m coming on snowshoes! Wait—somebody inside the Ranger Station leaked Cabin 12’s coordinates!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "A boot slams against the frozen kitchen latch. React immediately:",
+          "options": [
+            {
+              "option_id": "opt_098_e3_free",
+              "label": "Barricade the kitchen & slip to the boathouse",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m bolting out the cellar hatch toward the boathouse! Meet me by the frozen dock!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_098_e3_vip",
+              "label": "Leave your spare Bluetooth speaker on as bait",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "You heave the oak table against the kitchen door and slip into the waist-deep snow behind the cabin.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Good move! State rescue chopper is lifting off as soon as the squall breaks—keep moving!",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Your paired Bluetooth speaker pings loudly in the attic—luring BT_NODE_01 upstairs while you slip cleanly out the cellar door.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "Empty attic?! Smart trick, {{player_name}}—I see your boot prints heading to the lake!",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "btnode",
+          "text": "Deputy Ranger at Timberline Lodge owes me one more pickup once this is done.",
+          "unsent_placeholder": "BT_NODE_01 unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "WAIT—DID HE SAY TIMBERLINE LODGE?! My deputy is stationed there—HE’S the leak!",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "Nowhere to run on a frozen lake, {{player_name}}. Bluetooth range: 40 feet and closing.",
+          "timestamp_label": "11:34 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Timberline Leak",
+          "teaser_text": "The deputy ranger at Timberline Lodge sold your hideout—and BT_NODE_01 is tracking your footprints toward the boathouse.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Boathouse Trap",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:46 PM · Ice groans under the timber boathouse. Inside the tackle lockbox you spot a flare gun and a dropped lodge keycard.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "I’m 200 yards north on the ridge! Fire that flare gun when he steps onto the dock—the rescue chopper just cleared the clouds!",
+          "timestamp_label": "11:46 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cole, I found a Timberline Lodge master pass inside the boathouse! Your deputy hid supplies here for him!",
+          "timestamp_label": "11:46 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "State Police already surrounded Timberline Lodge to arrest my deputy.",
+          "unsent_placeholder": "Ranger Cole unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "btnode",
+          "duration_sec": 6,
+          "transcript": "[ice cracking outside door] Signal strength 98%, {{player_name}}. Open the boathouse latch before you freeze to death.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "The boathouse door rattles as rotor blades thump overhead. Move:",
+          "options": [
+            {
+              "option_id": "opt_098_e4_free",
+              "label": "Fire the red flare straight into the sky",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "FLARE UP! Helicopter right above the boathouse—Cole, NOW!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_098_e4_vip",
+              "label": "Kick the loose dock plank to drop him in snow",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Crimson fire lights up the entire frozen cove! The rescue chopper’s blinding searchlight snaps straight onto BT_NODE_01 on the dock.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "ON THE GROUND! State tactical team is rappelling onto the ice right now!",
+          "timestamp_label": "11:46 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "You kick the rotted cedar plank loose—sending BT_NODE_01 sprawling into a snowdrift just as Cole tackles him under the chopper spotlight.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Got him! And keep that Timberline Lodge pass—it proves who helped him escape!",
+          "timestamp_label": "11:46 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "The blizzard breaks into swirling starlight as state troopers secure the convict in the rescue sled.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "You held out through a Category-3 blizzard without cell service! Hand me that lodge keycard.",
+          "timestamp_label": "11:46 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "btnode",
+          "text": "[BLUETOOTH MESH DISCONNECTED]",
+          "timestamp_label": "11:46 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "First Light Rescue",
+          "teaser_text": "BT_NODE_01 is back in shackles—and the Timberline Lodge keycard seals the dirty deputy’s fate.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Timberline Proof",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "12:25 AM · Inside the heated rescue cabin at Base Camp, you thaw your fingers around hot cocoa as Cole examines the lodge pass.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Look at the serial stamp on this Timberline pass—issued directly to Deputy Miller two days before the prison break!",
+          "timestamp_label": "12:25 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "So he didn’t just leak Cabin 12—he stocked the boathouse and planned the whole ambush.",
+          "timestamp_label": "12:25 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "cole",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05",
+          "text": "Timberline Lodge Pass · Issued to Deputy Miller 48 hours before the escape."
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 6,
+          "transcript": "[radio beep] State Troopers just confirmed—Deputy Miller confessed at Timberline Lodge. Both of them are heading to maximum security!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "The rescue pilot says the chopper can fly you straight back to the city at dawn:",
+          "options": [
+            {
+              "option_id": "opt_098_e5_free",
+              "label": "Fly straight back to civilization at dawn",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Save me a window seat! I’ve had enough snow and Bluetooth mesh for one lifetime.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_098_e5_vip",
+              "label": "Grab your cabin gear & lock Cabin 12 first",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Cole laughs and hands you a thick wool parka—already radioing the pilot to prep your dawn seat.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Next vacation, pick somewhere with palm trees and five bars of 5G.",
+          "timestamp_label": "12:25 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "At sunrise, you and Cole swing by Cabin 12 by snowmobile—recovering your bag and padlocking the porch cleanly behind you.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leaving Cabin 12 in one piece. Never thought I’d say that at midnight.",
+          "timestamp_label": "12:25 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "You kept your cool better than half my trainees, {{player_name}}.",
+          "unsent_placeholder": "Ranger Cole unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Storm’s gone, cell towers are coming back online, and the mountain is finally quiet.",
+          "timestamp_label": "12:25 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Thank you for walking through a blizzard to reach me, Cole.",
+          "timestamp_label": "12:25 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Signal Restored",
+          "teaser_text": "Both the escaped convict and the traitor deputy are in cuffs—dawn breaks clear over Cabin 12.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Five Bars Of Signal",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "07:45 AM · The rescue helicopter lifts above the sparkling white pines. Your phone chirps—five full bars of 5G.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Radio check from the ground! Both suspects were just transferred to federal custody. No more escapes.",
+          "timestamp_label": "07:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Loud and clear, Ranger Cole! And I’m permanently turning Bluetooth OFF.",
+          "timestamp_label": "07:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "cole",
+          "text": "If you ever come back in summer, I’ll show you the trail without blizzards.",
+          "unsent_placeholder": "Ranger Cole unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "cole",
+          "duration_sec": 5,
+          "transcript": "[chopper rotors thrumming warmly] Safe flight home, {{player_name}}! You earned a warm bed!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Looking down at tiny Cabin 12 fading in the snow:",
+          "options": [
+            {
+              "option_id": "opt_098_e6_free",
+              "label": "Switch Bluetooth off & enjoy the sunrise",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bluetooth OFF. Coffee and sunlight ON.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_098_e6_vip",
+              "label": "Wave down to Cole on the ridge",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Golden sunlight floods the helicopter cabin as the snow-covered peaks give way to the warm valley below.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Finally back on the grid.",
+          "timestamp_label": "07:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Down on the sunlit ridge, Cole raises his radio in a crisp salute as the chopper banks toward home.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Clear skies ahead, {{player_name}}.",
+          "timestamp_label": "07:45 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Your screen shows zero nearby Bluetooth nodes—only a welcome-home text from the valley.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "cole",
+          "text": "Ranger Cole signing off.",
+          "timestamp_label": "07:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Thank you for everything, Cole.",
+          "timestamp_label": "07:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Out Of The Storm",
+          "teaser_text": "The convict and his inside man are locked away for good, and you flew safely out of Cabin 12 into the sunrise.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

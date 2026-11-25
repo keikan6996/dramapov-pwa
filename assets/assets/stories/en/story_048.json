@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_048",
+  "lang": "en",
+  "metadata": {
+    "title": "The Estate Auction Alibi",
+    "subtitle": "A $3M emerald necklace and the gallery curator vanished the same night—and someone unsent the vault code.",
+    "genre": "mystery",
+    "tags": [
+      "Heist",
+      "Museum",
+      "Mystery"
+    ],
+    "cover_image": "assets/media/covers/story_048.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#10B981"
+    },
+    {
+      "id": "nadia",
+      "name": "Nadia (Archivist)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#EC4899"
+    },
+    {
+      "id": "julian",
+      "name": "Julian (Security)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "celeste",
+      "name": "Celeste (Appraiser)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#8B5CF6"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Lot #19 Missing",
+      "start_node_id": "e1_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "10:30 PM · Staff Chat \"VANDERBILT GALLERY\". After the charity gala, Vault C is open and empty.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "Lockdown active. Lot #19—the Duchess Emerald—is gone. And Curator Arthur isn’t answering.",
+          "timestamp_label": "10:30 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "Impossible! The vault requires dual biometrics plus a rotating 6-digit PIN.",
+          "timestamp_label": "10:31 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—the alarm never tripped. That means whoever opened Vault C used a valid PIN.",
+          "timestamp_label": "10:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "nadia",
+          "text": "492817 wasn’t supposed to work after 9 PM—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "Nadia. How the hell do you know tonight’s rotating vault PIN?!",
+          "timestamp_label": "10:32 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 9,
+          "transcript": "[whispering] {{player_name}}, Arthur texted me that code at 8:50 PM! He said someone swapped the real emerald for glass BEFORE the gala!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "Ridiculous. I personally certified the emerald under a loupe at 6 PM!",
+          "timestamp_label": "10:33 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Police are 5 minutes out. Where do you check first?",
+          "options": [
+            {
+              "option_id": "opt_vault_cam",
+              "label": "Pull Vault C’s thermal motion sensor log",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Julian, pull Vault C’s thermal log from 6 PM to 9 PM!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_loupe_desk",
+              "label": "Check Celeste’s appraisal case in Room B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Clue · Watch Ad",
+              "player_reply_text": "I’m checking Celeste’s velvet appraisal case right now.",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "THERMAL LOG: Two people entered Vault C at 6:12 PM—and only ONE walked back out.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "EVIDENCE FOUND: Hidden under the foam of Celeste’s case is a jeweler’s receipt for a cubic zirconia replica.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "{{player_name}}, we just heard knocking from behind the false wall in the Restoration Wing!",
+          "timestamp_label": "10:36 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "Curator Arthur Never Left The Building",
+          "teaser_text": "Episode 2: And he saw who switched the necklace before the lights went out.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "The Replica Trap",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "10:39 PM · Restoration Wing. Behind a gilded frame lies a locked storage alcove.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "We got Arthur out! He has a bump on his head, but he’s conscious.",
+          "timestamp_label": "10:39 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ask him who locked him in there—and whether the emerald in the vault was real.",
+          "timestamp_label": "10:40 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "Wait, why is Julian heading toward the loading dock? The police are at the front gate!",
+          "timestamp_label": "10:40 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "julian",
+          "text": "Celeste, the buyer’s van is already waiting—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 10,
+          "transcript": "[urgent] {{player_name}}! Arthur says BOTH Celeste and Julian were in Vault C! Celeste swapped the gem, and Julian looped the cameras!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Not so fast, you two. Look at the security monitor by the loading dock.",
+          "timestamp_label": "10:42 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Julian is lifting the steel shutter to the alley. How do you stop the getaway?",
+          "options": [
+            {
+              "option_id": "opt_shutter",
+              "label": "Hit the emergency fire-seal button",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Triggering the gallery fire-seal shutter right now!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_tracker",
+              "label": "Activate the micro-tracker inside the clasp",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Genius · Watch Ad",
+              "player_reply_text": "Hope you enjoy the emerald—Arthur put a GPS chip in the clasp.",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "The steel shutter crashes shut inches from the van’s bumper. Police flood the alley from both ends.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Julian freezes as his jacket pocket starts emitting a piercing high-frequency locator chime.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Detectives recovered the emerald! You saved the entire auction, {{player_name}}.",
+          "timestamp_label": "10:45 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "Laugh while you can. Test that emerald under UV light—Arthur sold the real one three years ago.",
+          "timestamp_label": "10:46 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Gem Doesn’t Glow Under UV",
+          "teaser_text": "You turn around to ask Curator Arthur—and the ambulance outside just drove off without him.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Ghost Ambulance",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "10:15 PM · Flashing sirens fade down the avenue as you realize the ambulance left without Curator Arthur inside.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "{{player_name}}, I just pulled the gallery lobby CCTV! That ambulance never even unloaded a stretcher!",
+          "timestamp_label": "10:15 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Then where is Arthur—and who walked out with the real $3M emerald while we tested the UV fake?",
+          "timestamp_label": "10:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "nadia",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Gallery Lobby CCTV · 10:09 PM — Two fake paramedics wheeling a locked art crate out.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "Wait—that crate has Celeste’s appraisal seal on it! She swapped the emerald right at the auction podium!",
+          "timestamp_label": "10:17 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "celeste",
+          "text": "Meet the cargo van at Pier 12. Arthur is sedated inside the crate until we clear customs.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Celeste quietly slips her appraisal case under her arm and heads for the freight corridor.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Seal the gallery loading bay shutters",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dropping the loading bay shutters!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Scan QR on Celeste’s appraisal tag",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Scanning Celeste’s appraisal tag...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Heavy steel shutters slam down, trapping Celeste inside the gallery wing while Julian dials police.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The tag links to an offshore freight manifest—Curator Arthur’s crate is still sitting in the gallery’s own basement loading dock!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Julian, the cargo van hasn’t left the building yet! Arthur is still downstairs in Loading Dock B!",
+          "timestamp_label": "10:18 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "celeste",
+          "duration_sec": 9,
+          "transcript": "[muffled thumping inside wood crate, faint groan] ...Nadia... {{player_name}}... check Dock B, she’s trying to ship the real necklace out...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Stay on the shutters, Julian. Nadia and I are heading straight to Dock B.",
+          "timestamp_label": "10:19 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Inside Dock B",
+          "teaser_text": "Episode 4: Celeste grabs the backup shutter key and races you to the basement van.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Appraisal Switch",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10:22 PM · Concrete echoes in Basement Dock B as a white cargo van revs its engine behind the locked steel shutter.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "{{player_name}}, I see the crate! And Celeste is right behind us with the manual shutter crank!",
+          "timestamp_label": "10:22 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Drop the crank, Celeste! The fake emerald didn’t glow under UV—your alibi is finished!",
+          "timestamp_label": "10:23 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "celeste",
+          "text": "Ram the shutter if you have to—the buyer’s yacht leaves at midnight.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "She’s signaling the van driver! Wait—I recognize that driver, he’s the bidder from Row 2!",
+          "timestamp_label": "10:24 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "celeste",
+          "duration_sec": 11,
+          "transcript": "[tires screeching on concrete, Celeste snapping] ...Do you know how much an authentic 1920s emerald brings offshore? Step aside, {{player_name}}!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "The cargo van lurches forward toward the steel shutter while Arthur pounds inside the crate.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Pull the dock’s hydraulic wheel-lock lever",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Engaging the dock wheel-lock!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Grab Celeste’s unlocked appraisal tablet",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Securing Celeste’s appraisal tablet...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Heavy steel chocks snap up from the floor, pinning the van’s front axle dead in its tracks.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: The tablet shows the offshore wire receipt—$800,000 paid to Celeste an hour before the auction even opened.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Julian just let the art-crimes detectives through the lobby! We’ve got the van pinned!",
+          "timestamp_label": "10:25 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "This is a civil dispute over provenance! Don’t open that crate without my lawyer!",
+          "timestamp_label": "10:25 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Your \"provenance\" is currently banging on the lid asking for air, Celeste.",
+          "timestamp_label": "10:26 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Pinned in the Dock",
+          "teaser_text": "Episode 5: An $800,000 offshore wire seals Celeste’s fate as the crate pops open.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The $800,000 Wire",
+      "start_node_id": "e5_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "10:30 PM · Detectives pry open the wooden crate in Dock B, lifting a groggy but relieved Curator Arthur to safety.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "{{player_name}}, I found the real $3M emerald sewn inside the crate’s velvet lining! And look at Celeste’s wire!",
+          "timestamp_label": "10:30 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Eight hundred thousand dollars wired from a Cayman shell account before the first bid was even called.",
+          "timestamp_label": "10:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "nadia",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Offshore Wire · $800,000 — Paid to Celeste for \"Private Emerald Authentication.\"",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "Arthur was going to donate it to a public museum! It deserved a private collector who actually pays!",
+          "timestamp_label": "10:32 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "celeste",
+          "text": "Tell the Row 2 bidder not to mention my London gallery.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "The art-crimes detective holds up both emeralds—the UV fake and the glowing real stone.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Hand over the UV test log and CCTV clip",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Submitting our UV log and CCTV.",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Reveal Celeste’s London gallery connection",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Giving detectives the London lead...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "The detective bags both stones and places Celeste and the Row 2 bidder under arrest for grand theft and kidnapping.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Interpol links Celeste’s London gallery to three missing European museum jewels—cracking a five-year international heist ring.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 10,
+          "transcript": "[police radio, Curator Arthur coughing] ...Thank heaven for my archivist and {{player_name}}... I knew that UV lamp would save us...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "Paramedics cleared Arthur—he just wants a cup of Earl Grey and his vault code changed!",
+          "timestamp_label": "10:33 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Make sure nobody unsends the new vault code this time, Julian.",
+          "timestamp_label": "10:34 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Going Once, Going Twice",
+          "teaser_text": "Episode 6 Finale: The gallery reopens at dawn with the real emerald shining under museum glass.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Sold to Justice",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "9:00 AM · Sunlight sparkles off the real emerald necklace back inside its reinforced display case as press cameras flash.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "celeste",
+          "text": "You have zero appreciation for fine art, {{player_name}}. Enjoy your gallery salary.",
+          "timestamp_label": "9:00 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And you enjoy your museum-grade handcuffs, Celeste.",
+          "timestamp_label": "9:01 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "celeste",
+          "text": "The auctioneer knew the vault code had been reset at 8 PM.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "nadia",
+          "duration_sec": 9,
+          "transcript": "[Curator Arthur’s warm voice] ...Tonight’s charity gala goes on as planned—and {{player_name}} gets the seat of honor beside the vault...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "julian",
+          "text": "Julian upgraded the vault to dual biometrics. Good luck unsending a fingerprint!",
+          "timestamp_label": "9:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Curator Arthur asks if you’d like to lead the gallery’s new authentication desk.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Accept with Nadia and Julian on the team",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Deal—if Nadia and Julian are in!",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Flag the auctioneer’s 8 PM vault-code reset",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking the auctioneer’s 8 PM log...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Arthur beams, raising a fresh glass of sparkling cider to the safest gallery team in the city.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: Detectives pull the auctioneer’s phone records, arresting him as the inside accomplice who leaked the vault code.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "nadia",
+          "text": "Never thought a UV flashlight would be our MVP, {{player_name}}.",
+          "timestamp_label": "9:03 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Always trust the UV light, Nadia.",
+          "timestamp_label": "9:04 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "Under the gallery skylight, the emerald glows a deep, unmistakable green—right where it belongs.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Priceless Truth",
+          "teaser_text": "The $3M emerald is recovered, Curator Arthur is safe, and the heist ring is behind bars.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

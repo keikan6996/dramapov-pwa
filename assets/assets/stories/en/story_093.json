@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_093",
+  "lang": "en",
+  "metadata": {
+    "title": "Subway Line 9 After Midnight",
+    "subtitle": "The last express train died in an abandoned tunnel—and AirDrop shows nobody is in the driver’s cab.",
+    "genre": "thriller",
+    "tags": [
+      "Subway",
+      "Tunnel",
+      "Survival"
+    ],
+    "cover_image": "assets/media/covers/story_093.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "hannah",
+      "name": "Hannah · Car 3",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "cab",
+      "name": "CAB_SYSTEM",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Empty Cab",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "12:14 AM · Line 9 Express screeches to a dead stop beneath the river. Emergency strips glow pale blue. Every phone in Car 3 chimes at once.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "[Mesh Chat] Hey, are you the one in the green jacket across from me? Did you just get that AirDrop of the empty driver’s cab?!",
+          "timestamp_label": "12:14 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Yeah—I’m {{player_name}}. Look at the windshield reflection in that photo... we’re parked inside the sealed 1978 tunnel!",
+          "timestamp_label": "12:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 7,
+          "transcript": "[intercom static, distant metal clang] \"Attention Car 3. One passenger aboard witnessed the Pier 6 shooting. Name them in ten minutes, or the river floodgates open.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "Oh god—don’t look at my backpack. I filmed the whole shooting at Pier 6.",
+          "unsent_placeholder": "Hannah unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Passengers in Car 3 start panicking and staring at each other:",
+          "options": [
+            {
+              "option_id": "opt_093_e1_free",
+              "label": "Protect Hannah & head for the front cab",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Stay close to me, Hannah. We’re getting into the cab to restart the train.",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_093_e1_vip",
+              "label": "Check who sent the AirDrop via Bluetooth",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "You and Hannah push through the connecting door into Car 2. It’s completely empty—except for a heavy steel chain padlocked across the Car 1 entrance.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Wait... if Car 1 is chained from the inside, how did the conductor get off the train?!",
+          "timestamp_label": "12:17 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Your Bluetooth scanner pings an active device 12 feet away inside Car 3: \"TRANSIT_OVERRIDE_01.\" The businessman in the back corner isn’t a commuter.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hannah, don’t turn around—the hijacker is sitting right behind us in Car 3 controlling the train remotely!",
+          "timestamp_label": "12:17 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "A deep mechanical rumble shakes the tunnel walls. Cold river water begins rushing along the dark concrete track bed outside.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "Three minutes until the third rail shorts out. Hand over the Pier 6 phone, Hannah.",
+          "timestamp_label": "12:18 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Water Rising On The Tracks",
+          "teaser_text": "The hijacker already knows Hannah’s name—and the river is pouring into the sealed tunnel.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Third Rail",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "12:19 AM · Sparks shower outside the windows as water licks the electrified track. The emergency phone box flashes.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "cab",
+          "caller_label": "CAB_SYSTEM",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 7,
+          "transcript": "[water roaring] Toss Hannah’s phone through the cracked window, {{player_name}}, and I’ll restore propulsion power right now.",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "Stop playing hero, {{player_name}}. One phone for twelve lives—slide it under the Car 2 door.",
+          "timestamp_label": "12:19 AM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Look up! There’s a maintenance escape hatch on the tunnel wall ten yards ahead—if we pop the side emergency door, we can climb up to the street grate!",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—the third rail is on the right side. We have to jump LEFT onto the concrete catwalk!",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Water hits the door seal. Make your final call:",
+          "options": [
+            {
+              "option_id": "opt_093_e2_free",
+              "label": "Pull left emergency handle & lead everyone out",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Everyone stay on the LEFT catwalk! Follow me to the ladder!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_093_e2_vip",
+              "label": "Grab the hijacker’s tablet in the chaos",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "You yank the manual release and guide eleven shaken commuters along the narrow ledge to the vertical iron ladder—bursting through a street grate into cold night air.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "We made it!! And my phone just reconnected to 5G—the Pier 6 video is uploading to the DA’s office!",
+          "timestamp_label": "12:24 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "As commuters surge out, you wrench the rugged tablet from the businessman’s grip and bolt up the ladder. Its active console shows a Transit Authority Director login.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "The Transit Director himself tried to drown a whole subway car to hide Pier 6?!",
+          "timestamp_label": "12:24 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cab",
+          "text": "You survived Line 9, {{player_name}}. Good luck making it to dawn.",
+          "unsent_placeholder": "CAB_SYSTEM unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Above ground, every streetlight along 9th Avenue suddenly flickers out in sequence—marching straight toward where you and Hannah are standing.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "The City Goes Dark",
+          "teaser_text": "You escaped the flooded tunnel with the proof—now the people who control the city’s grid are hunting you on the surface.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Surface Blackout",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "12:52 AM · You and Hannah climb out of the emergency street grate—and watch every streetlight on 8th Avenue snap black in a wave.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "{{player_name}}, they’re cutting the streetlights block by block to funnel us! Hold onto that black-box SD card!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—how is CAB_SYSTEM still texting us on the surface?! We’re out of the tunnel!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "hannah",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Station Exit Cam · 12:52 AM — Transit security sealing the street-level access.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 7,
+          "transcript": "[synthesized transit PA chime] Attention former passengers of Line 9. Return the maintenance black-box at Central Plaza immediately.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Two transit security vans sweep the darkened avenue with spotlights:",
+          "options": [
+            {
+              "option_id": "opt_093_e3_free",
+              "label": "Sprint into the 24-hour public library",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Through the night library doors! They have public fiber terminals inside!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_093_e3_vip",
+              "label": "Check the SD card’s hidden toxicity report",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "You slip past the sleepy security guard into the warm, generator-lit library reading room.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Thank goodness the library has its own backup generator! Plug the SD card into Terminal 4!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Your phone reader cracks the header: Line 9 wasn’t flooded by a storm—Transit Control opened the sluice gates to hide a chemical leak!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hannah! They flooded Tunnel 9 ON PURPOSE to wash away a toxic chemical spill under Central Station!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "cab",
+          "text": "Library generator still online. Send Unit 3 to the east entrance.",
+          "unsent_placeholder": "CAB_SYSTEM unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "They know we’re in the library! We have maybe two minutes to upload the black-box files!",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "Line 9 incident is classified under Municipal Safety Directive 4. Step outside.",
+          "timestamp_label": "12:52 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Toxic Cover-Up",
+          "teaser_text": "Line 9 was flooded deliberately to bury a toxic spill—and transit security is closing in on the library.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Terminal Four",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "01:02 AM · Terminal 4’s screen illuminates your faces as gigabytes of Line 9 telemetry spill open.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Look at the manual override timestamp—11:59 PM! Someone at Central Control locked our train doors and sent us straight into the flood zone!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And look who signed the fake safety clearance allowing midnight trains to run anyway—the Transit Commissioner himself!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "My cousin works at Channel 5 Night Desk—I’m emailing her the entire dump!",
+          "unsent_placeholder": "Hannah unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "cab",
+          "duration_sec": 6,
+          "transcript": "[library fire doors rattling] Municipal Security is at the east entrance. Disconnect Terminal 4 or face federal interference charges.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "The upload to Channel 5 and the Inspector General hits 78%:",
+          "options": [
+            {
+              "option_id": "opt_093_e4_free",
+              "label": "Lock the reading-room double doors",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hold the doors! Twelve more seconds until the Inspector General gets everything!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_093_e4_vip",
+              "label": "Print 50 copies of the Commissioner’s clearance",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "The progress bar slams to 100%—and both Channel 5 and the Inspector General’s emergency desk auto-confirm receipt!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "SENT! My cousin just texted back—they’re interrupting the 1 AM broadcast RIGHT NOW!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "The library laser printer spits out fifty crisp pages of the forged clearance—you hand them straight to startled night students who start filming.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Twenty students are livestreaming the Commissioner’s signature right now! Walk through that door if you dare!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "The library TV mounts suddenly flash \"BREAKING NEWS: LINE 9 TOXIC COVER-UP EXPOSED\"—and the transit guards outside freeze.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "They’re backing away from the glass! And city police—real city police—just pulled up outside!",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "cab",
+          "text": "[CENTRAL CONTROL OVERRIDE REVOKED BY MAYORAL ORDER]",
+          "timestamp_label": "01:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Forged Clearance",
+          "teaser_text": "The cover-up is live on Channel 5 and real police have arrived—now the Transit Commissioner’s forged contract seals his fate.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Transit Contract",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "01:20 AM · Streetlights flicker back to life across 8th Avenue as Inspector General investigators step into the library.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "The Inspector General just confirmed it—Central Control tried to erase the cab voice recorder, but your SD card caught the whole thing!",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Here’s the signed safety clearance from the SD card. That signature nearly drowned an entire train of passengers.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Line 9 Safety Waiver · Falsified clearance signed by Transit Commissioner.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "hannah",
+          "duration_sec": 6,
+          "transcript": "[police sirens fading, relieved exhale] Just heard on Channel 5—the Mayor ordered the Transit Commissioner arrested at Central Control!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "The Inspector General asks if you and Hannah will lead the morning briefing:",
+          "options": [
+            {
+              "option_id": "opt_093_e5_free",
+              "label": "Speak for every Line 9 passenger",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Count us in. The whole city deserves to know why the last train went dark.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_093_e5_vip",
+              "label": "Demand an independent audit of all 12 lines",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Channel 5 schedules your live interview for 7 AM—and hazmat crews immediately seal Tunnel 9 to clean the chemical leak safely.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "We actually stopped a citywide poisoning. Still can’t believe it.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "The Mayor signs an emergency order auditing every subway tunnel in the city before morning rush hour begins.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No more ghost trains. Every commuter gets home safe.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "Best Car 3 seatmate I could’ve ever asked for, {{player_name}}.",
+          "unsent_placeholder": "Hannah unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "The Inspector General’s car is waiting to drive us home—no subway tonight!",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I’m taking the bus for the next six months.",
+          "timestamp_label": "01:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "First Train At Dawn",
+          "teaser_text": "The Transit Commissioner is under arrest and Tunnel 9 is sealed for cleanup—dawn finally breaks above ground.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Above Ground",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "07:30 AM · Bright morning sun pours across City Hall Plaza as fresh commuters stop to watch your live press conference.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Every single station screen is running our statement—and the city already shut down the chemical contractor responsible for the leak!",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Feels good to stand in the sunlight after that flooded tunnel, doesn’t it?",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "hannah",
+          "text": "Don’t forget we’re grabbing coffee after this—my treat!",
+          "unsent_placeholder": "Hannah unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "hannah",
+          "duration_sec": 5,
+          "transcript": "[city pigeons fluttering, warm laugh] Oh—and turn your AirDrop to Contacts Only from now on, okay?!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "You check your phone’s AirDrop settings in the sunlit plaza:",
+          "options": [
+            {
+              "option_id": "opt_093_e6_free",
+              "label": "Switch AirDrop to Contacts Only",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Done! Zero creepy midnight photos from empty driver cabs ever again.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_093_e6_vip",
+              "label": "Walk to the café above ground with Hannah",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "You toggle AirDrop off and pocket your phone—listening to the ordinary, cheerful hum of the morning city.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Smartest setting change of the year.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "You and Hannah stroll six sunny blocks above the subway tracks, laughing as the first safe express train glides underneath.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sunlight beats midnight tunnels every single time.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Line 9 resumes service under independent safety monitors—its dark secret washed clean at last.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "hannah",
+          "text": "Glad we shared Car 3, {{player_name}}.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Me too, Hannah. Let’s get that coffee.",
+          "timestamp_label": "07:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Daylight Ahead",
+          "teaser_text": "The Line 9 toxic cover-up is exposed, the Commissioner is arrested, and you stepped safely back into the morning sun.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

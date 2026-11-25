@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_047",
+  "lang": "en",
+  "metadata": {
+    "title": "Last Seen At Platform 4",
+    "subtitle": "A commuter vanished off the 11:48 PM express train—and the CCTV timestamp doesn’t match the ticket punch.",
+    "genre": "mystery",
+    "tags": [
+      "Train",
+      "Missing",
+      "Alibi"
+    ],
+    "cover_image": "assets/media/covers/story_047.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "sam",
+      "name": "Sam (Car 3)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "elena",
+      "name": "Elena",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "victor",
+      "name": "Victor (Conductor)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "The 11:48 Express",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "12:04 AM · Commuter Group \"LINE 4 LATE RIDERS\". The express train halts inside Tunnel 2.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Wait—did anyone see where Arthur went? His briefcase is still on seat 14B.",
+          "timestamp_label": "12:04 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "He was right across from me when we pulled out of Platform 4 at 11:48.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Folks, this train doesn’t open doors between stations. He’s probably in the restroom.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I just checked every restroom from Car 1 to Car 5. Arthur is NOT on this train.",
+          "timestamp_label": "12:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "sam",
+          "text": "He never actually boarded, that was his brother’s coat—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Sam?! What did you just unsend?! You said you saw him at 11:48!",
+          "timestamp_label": "12:07 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "voice_note",
+          "sender_id": "victor",
+          "duration_sec": 9,
+          "transcript": "[train radio crackling] {{player_name}}, dispatch just checked Platform 4 CCTV. Arthur stepped OFF at 11:47—someone wearing his gray trench coat got ON!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "An impostor boarded Car 3 with Arthur’s briefcase. What do you do?",
+          "options": [
+            {
+              "option_id": "opt_briefcase",
+              "label": "Inspect the tag on Arthur’s briefcase",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m checking the luggage tag and latch on seat 14B right now.",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_ticket_stub",
+              "label": "Ask Victor to scan the punched ticket stub",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Clue · Watch Ad",
+              "player_reply_text": "Victor, scan the QR code on seat 14B’s punched ticket!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "The briefcase isn’t locked. Inside is a ticking burner phone—and a stack of blank customs passports.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "TICKET SCAN: Seat 14B was purchased 4 minutes ago with ELENA’S commuter card.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, the emergency brake handle in Car 4 was just pulled!",
+          "timestamp_label": "12:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Doors Hissed Open Inside the Tunnel",
+          "teaser_text": "Episode 2: Someone just jumped onto the service catwalk with the briefcase.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Tunnel Catwalk",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "12:13 AM · Tunnel 2. Emergency lights line the damp concrete wall.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Stay inside the cars! Third rail is live—transit police are sealing both tunnel exits.",
+          "timestamp_label": "12:13 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Elena, why is your seat empty too? Where did you go?",
+          "timestamp_label": "12:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "I’m in Car 5! I saw a man in a gray coat drop his gloves near the coupler.",
+          "timestamp_label": "12:14 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 10,
+          "transcript": "[panting] {{player_name}}, don’t trust Elena! Arthur is a whistleblower at her shipping firm—she hired the guy in the trench coat to swap briefcases!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n06",
+          "type": "unsent_message",
+          "sender_id": "elena",
+          "text": "Sam you swore you’d keep quiet if I cleared your debt—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "I see the guy in the trench coat! He’s climbing the maintenance ladder at Marker 19.",
+          "timestamp_label": "12:16 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Elena is sprinting toward the Car 5 exit. What do you do?",
+          "options": [
+            {
+              "option_id": "opt_lock_car5",
+              "label": "Have Victor lock Car 5 doors from the cab",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Victor, override-lock Car 5 doors right now—Elena’s the accomplice!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_call_arthur",
+              "label": "Dial the last number on Arthur’s burner",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Twist · Watch Ad",
+              "player_reply_text": "Wait—the briefcase burner phone just lit up with Arthur’s real number!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Pneumatic doors slam shut with a hiss. Elena bangs on the glass as transit police flood the tunnel.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Arthur answers: \"I knew Elena would try to steal the manifests—that briefcase is full of blank paper. The real drive is with the FBI.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Police got the runner at Marker 19, {{player_name}}. Everyone’s safe.",
+          "timestamp_label": "12:19 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Wait… if Arthur’s briefcase had fake papers, why did he leave a note addressed to YOU inside the lining?",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "\"Meet Me At Platform 9 Tomorrow\"",
+          "teaser_text": "Inside the lining is a brass locker key—and a warning that the real mole works for transit police.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Locker 9B",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "6:10 AM · Early mist hangs over Platform 9 as you grip the brass locker key found inside the commuter’s coat lining.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, stay sharp! Elena just spotted a transit officer watching the lockers from behind the newsstand!",
+          "timestamp_label": "6:10 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The warning note said the mole works for transit police. Sam, walk past him casually while I open Locker 9B.",
+          "timestamp_label": "6:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sam",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Platform 9 Service Corridor · 6:11 AM — A dark figure waiting outside the locker alcove.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Don’t open it alone! That’s Conductor Victor’s coat—he’s meeting the transit officer right now!",
+          "timestamp_label": "6:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "Wait for {{player_name}} to unlock 9B, then grab the drive and claim it’s stolen property.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "The brass key slides into Locker 9B as footsteps echo down the corridor.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Grab the drive and duck into the commuter crowd",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Got the drive—blending into the crowd!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Leave a decoy phone recording inside Locker 9B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Dropping a live mic inside Locker 9B...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "You slip into a wave of 6:15 AM commuters just as Victor rounds the corner to an empty locker.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Your hidden mic catches the transit mole admitting they hid the missing commuter inside Signal Box 4.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Elena found him! The missing commuter is alive—he’s a rail safety inspector they locked in Signal Box 4!",
+          "timestamp_label": "6:13 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "victor",
+          "duration_sec": 9,
+          "transcript": "[train whistle blaring, breathless voice] ...{{player_name}}, if you have the drive from 9B, don’t trust transit dispatch—call state rail investigators!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Calling state investigators now, Sam. Meet me by the Platform 4 footbridge.",
+          "timestamp_label": "6:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Signal Box 4",
+          "teaser_text": "Episode 4: Victor realizes the drive is gone—and switches the express track signals to red.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Red Signal Override",
+      "start_node_id": "e4_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "6:20 AM · Departure boards across the station flash DELAYED as all outbound tracks lock red.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, Victor locked down the concourse gates! He’s trying to trap us inside the station until the mole grabs the drive!",
+          "timestamp_label": "6:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "What’s actually on this drive that has them shutting down the whole express line?",
+          "timestamp_label": "6:21 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "Seal the footbridge doors. Do not let them reach Signal Box 4.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "I just plugged the drive into my tablet! It’s brake-inspection logs—six express trains have cracked axles they covered up!",
+          "timestamp_label": "6:22 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "victor",
+          "duration_sec": 11,
+          "transcript": "[station PA crackling, Victor’s voice] ...Passengers, please clear Platform 4 immediately due to a security sweep...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "The footbridge glass doors hiss shut, leaving only the maintenance catwalk open.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Take the catwalk straight to Signal Box 4",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Crossing the catwalk to Signal Box 4!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Sync axle logs to state rail portal",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Uploading the brake logs to state rail...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "You and Sam sprint above the silent rails, reaching the locked signal box door before Victor arrives.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: State rail HQ immediately halts all six faulty trains and dispatches federal marshals to Platform 4.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Elena just pulled the concourse CCTV from the security kiosk! It caught Victor handing cash to the transit mole!",
+          "timestamp_label": "6:23 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Step away from Signal Box 4! That inspector was going to cost five hundred people their jobs!",
+          "timestamp_label": "6:23 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Better than costing five hundred passengers their lives, Victor.",
+          "timestamp_label": "6:24 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Concourse Proof",
+          "teaser_text": "Episode 5: Station concourse CCTV exposes Conductor Victor and the transit-police mole together.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Concourse Tape",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "6:30 AM · You pry open the latch of Signal Box 4 and help the bound rail inspector to his feet.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, I sent the concourse CCTV straight to the federal marshals—they’re rushing Platform 4 right now!",
+          "timestamp_label": "6:30 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hold the door, Sam. Victor and his mole are out of track.",
+          "timestamp_label": "6:31 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "sam",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Station Concourse CCTV · 11:51 PM — Victor passing the inspector’s keycard to the mole.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Lower your phones! The depot director ordered us to hold him until the morning audit passed!",
+          "timestamp_label": "6:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "I’m ditching my radio and taking the north tunnel exit.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "The transit mole breaks into a sprint toward the north tunnel stairs.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Point marshals to the north tunnel stairs",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Marshals! North tunnel stairs, move!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Record Victor naming the depot director",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Getting the depot director’s name...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Two marshals vault the turnstiles and tackle the mole before he reaches the tunnel gate.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Victor’s recorded statement implicates the entire depot executive board in the brake-inspection cover-up.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 10,
+          "transcript": "[marshals shouting, station chimes] ...Platform 4 secured! Rail inspector safe, two suspects in custody!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "The inspector says you literally saved the 7:00 AM commuter express from derailing, {{player_name}}!",
+          "timestamp_label": "6:33 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Glad we noticed that mismatched ticket punch on Platform 4.",
+          "timestamp_label": "6:34 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Express Cleared",
+          "teaser_text": "Episode 6 Finale: Morning trains roll again—only after every faulty axle is pulled from service.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "All Aboard Safely",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "8:05 AM · Bright morning light streams through the glass station roof as inspected trains finally glide past Platform 4.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Look, {{player_name}}... I didn’t want anyone hurt. The director threatened my pension.",
+          "timestamp_label": "8:05 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Six trains had cracked axles, Victor. You almost traded lives for a pension.",
+          "timestamp_label": "8:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "The repair invoices were forged at the central depot warehouse.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 9,
+          "transcript": "[inspector’s voice, deeply grateful] ...Thank you, {{player_name}}, Sam, and Elena. Hundreds of commuters made it to work safely today because of you...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Transit authority just gave all three of us lifetime express passes—though I might take the bus today!",
+          "timestamp_label": "8:07 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "A federal rail investigator asks for your final statement on the Platform 4 CCTV gap.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Submit the original timestamp comparison",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Handing over our timestamp notes.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Report central warehouse fake invoices",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Sharing the warehouse invoice lead...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Your timeline seals the indictment against Victor, the mole, and the depot director.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: Federal auditors raid the central depot warehouse and uncover a regional parts-counterfeiting ring.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Same time tomorrow on Car 3, {{player_name}}? Hopefully without a mystery.",
+          "timestamp_label": "8:08 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Deal, Sam. Just bring coffee.",
+          "timestamp_label": "8:09 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "The 8:10 AM express pulls smoothly away from Platform 4—right on time and completely safe.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · End of the Line",
+          "teaser_text": "The commuter is rescued, the transit mole is arrested, and the express line runs safe again.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

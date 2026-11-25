@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_029",
+  "lang": "ko",
+  "metadata": {
+    "title": "잠긴 다락방이 있는 에어비앤비",
+    "subtitle": "호스트가 깜빡하고 못 보낸 규칙을 문자로 보냈다: \"새벽 1시 이후에 다락방이 삐걱거리면 모든 불을 끄고 자는 척하세요.\"",
+    "genre": "thriller",
+    "tags": [
+      "오두막",
+      "에어비앤비",
+      "공포"
+    ],
+    "cover_image": "assets/media/covers/story_029.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (투숙객)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "ally",
+      "name": "Margo (진행자)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "이전 투숙객",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "하우스 룰 7번",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 1:04 · 산악 폭풍 속에서 소나무 가지가 오두막 창문을 거세게 때립니다. 침대 위쪽 나무 판자가 신음하듯 삐걱거립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "안녕하세요 {{player_name}} 님, 늦게 문자 드려 죄송해요! 7번 규칙을 깜빡했어요: 새벽 1시 이후 다락 해치가 삐걱거리면 모든 불을 끄고 절대 위를 올려다보지 마세요.",
+          "timestamp_label": "오전 1:04",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "네?! 잠겨 있다는 다락방 위에서 왜 무언가가 움직이는 거죠?! 불법 침입자라도 숨어 있나요?",
+          "timestamp_label": "오전 1:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "사람이 아니야. 그리고 그건 밝은 화면 불빛을 싫어해.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "지금 당장 휴대폰 화면 밝기 낮추세요! 그리고 무슨 일이 있어도 협탁 위의 가죽 방명록은 절대 열지 마세요.",
+          "timestamp_label": "오전 1:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[나무 해치가 천천히 밀려 열리는 소리, 거친 속삭임] ...아래층에 깨어 있니, {{player_name}}? 방명록에 서명해...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "천장 해치에서 다락방 사다리가 5센티미터가량 내려옵니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "이불 속으로 숨고 휴대폰 화면을 어둡게 낮춘다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "이불 속으로 숨는 중...",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "가죽 방명록을 펼쳐 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "방명록 확인하는 중...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "침대 옆 러그 위로 맨발이 가볍게 쿵 내려섭니다. 무언가가 퀼트 이불 바로 위에서 킁킁거리며 공기를 맡습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 마지막 열두 페이지가 전부 '당신'의 필체로 채워져 있습니다—모두 내일 날짜가 적힌 채로: \"나는 절대 체크아웃하지 않았다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐—왜 스마트록 앱에서 오두막 문이 '안쪽'에서 잠겼다고 알림이 뜨죠?",
+          "timestamp_label": "오전 1:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "오두막 유선전화 (다락방 내선)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "덜덜 떨리는 목소리가 경고합니다: \"Margo가 그놈 먹이 주려고 이 오두막을 임대하는 거야! 해치가 완전히 열리기 전에 도망쳐!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "거절합니다. 즉시 방명록 아래에서 쪽지 한 장이 미끄러져 나옵니다: \"Margo는 호스트가 아니다. 숙소 프로필 사진을 확인해 봐.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "체크아웃 시간: 없음",
+          "teaser_text": "2화: 다락방 사다리가 바닥까지 완전히 쾅 내려앉습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "다락방 사다리",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 1:12 · 나무 사다리가 마룻바닥에 쿵 내려앉습니다. 어두운 개구부에서 차가운 소나무 안개가 쏟아져 내립니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "침대 안에 꼼짝 말고 계세요, {{player_name}} 님. 별 다섯 개짜리 모범 투숙객은 해 뜨기 전에 절대 떠나지 않는답니다.",
+          "timestamp_label": "오전 1:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "나한테 거짓말했군요! 내 예약을 수락할 때부터 위층에 뭐가 있는지 이미 알고 있었으면서!",
+          "timestamp_label": "오전 1:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[사다리 발판이 삐걱거리며 내려오는 소리] ...한 계단... 두 계단... 현관 불 켜지 마, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "예비 차 키는 현관 화분 아래에 테이프로 붙어 있어.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "현관 고사리 화분 밑에 예비 대문 열쇠를—잠깐, 내가 친 게 아니에요! 다시 안으로 들어가요!",
+          "timestamp_label": "오전 1:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "그림자가 사다리 맨 아래 칸에 닿습니다. 현관 유리문까지 거리는 3미터입니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "의자로 현관 유리문을 부수고 나간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "현관 유리 깨고 탈출할 거예요!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "벽난로 속에 가죽 방명록을 던져 불태운다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "지금 당장 방명록 불태우는 중!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "빗속으로 유리 조각이 쏟아집니다. 다락방에서 비인간적인 비명이 울려 퍼지는 가운데 당신은 진흙탕 오솔길을 전력 질주합니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 푸른 불꽃이 책장을 집어삼킵니다. 그 형체가 재로 흩어지며 현관 보조 잠금장치가 저절로 딸깍 열립니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "큰길에 다다라 지나가던 트럭을 세워 탑니다. 휴대폰이 자동 숙박 후기 알림으로 진동합니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Margo (진행자)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Margo가 차갑게 낄낄거립니다: \"오두막에 재킷 두고 가셨어요, {{player_name}} 님. 다음번을 위해 다락방에 잘 보관해 둘게요.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "거절하고 예약 앱을 확인합니다—오두막 숙소 목록은 사라지고, 그 자리에 \"404: 1994년 전소된 건물\"이라 떠 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "별 5개 · 다시 출몰할 의향 있음",
+          "teaser_text": "시즌 피날레 · 예약 앱이 방금 당신의 카드로 1박 추가 요금을 자동 결제했습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "추가 1박 결제됨",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 1:12 · 예약 앱이 자동으로 숙박을 하룻밤 연장하더니—현관 키패드 비밀번호까지 바뀌어 버립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 제가 카드 결제한 게 아니에요! 누군가 다락방 와이파이 공유기 안에서 제 호스트 계정에 로그인했어요!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Margo 씨, 식탁 밑에 테이프로 붙어 있던 예비 출입 카드키를 찾았어요—그리고 방금 다락 해치 걸쇠가 풀리는 소리가 났어요!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "숨겨진 출입 카드 · 각인 문구: \"다락 점검용 — 투숙객에게 발급 금지.\"",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "삐걱. 삐걱. 무거운 발소리가 바로 당신의 침대 위에서 멈춥니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "불 끄고 자는 척해, {{player_name}}. 난 해 뜰 때까지만 머물다 가니까.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "잠깐—이건 유령이 아니야. 예약 손님이 없는 틈을 타 누군가 내 다락방에 몰래 살고 있었어!",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Margo의 다급한 속삭임] \"사다리 올라가지 마세요! 위층에 진짜 무단 침입자가 있어요—지금 당장 보안관 부르고 있어요!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "다락방 사다리가 복도로 미끄러져 내려오기 시작합니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_lock_bedroom",
+              "label": "침실 문을 잠그고 창문으로 기어 나간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "1층 창문 잠금 풀고 있어요—보안관님께 저 현관 베란다에 있다고 전해 주세요!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_jam_ladder",
+              "label": "다락 사다리를 막아 버리고 차단기를 내린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 영리함",
+              "player_reply_text": "사다리 아래 의자 끼워서 막고 불 다 꺼버렸어요—놈이 위층에 갇혔어요!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "곧장 큰길 쪽으로 뛰세요! 보안관 대원들이 6분 거리에 있어요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "천재적이네요! 이제 밖으로 나와서 진입로 쪽으로 가세요—같은 지붕 아래 있지 마시고요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "잠깐—침실 옷장 불이 방금 켜졌어요. 옷장 안쪽에 두 번째 해치가 있어요!",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "두 번째 해치.",
+          "teaser_text": "4화: 안개 자욱한 산비탈에 갇힌 당신은 어떻게 \"이전 투숙객\"이 모든 하우스 룰을 꿰고 있었는지 알게 됩니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "별 5개짜리 스토커",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 1:28 · 오두막 베란다 주변으로 소나무 안개가 피어오릅니다. Margo가 무거운 손전등을 들고 트럭을 몰고 도착합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "운전석으로 타세요, {{player_name}} 님! 잠깐—6개월 전 그 남자의 실제 예약 프로필이 방금 떴어요. 그 다락방을 직접 지은 시공업자였어요!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "공짜로 묵으면서 투숙객들 카드를 훔치려고 옷장 뒤에 비밀 통로 공간을 지어 뒀던 거예요?!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "주방 조리대에 지갑 두고 갔더라, {{player_name}}. 다시 안으로 들어와서 별 5개 후기 남겨 줘.",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "위층 다락 창문에 어두운 인물이 나타납니다—당신의 예비 차 키를 손에 든 채로.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "움직이지 마세요! 보안관 순찰차가 자갈길로 진입했어요—언덕을 올라오는 헤드라이트 불빛이 보여요!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "지난가을 그놈을 해고했을 때 스마트록 마스터 코드를 바꿨어야 했는데.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[오두막 안에서 들려오는 먹먹한 고함] \"아무도 내 오두막을 뺏어 갈 순 없어! 이 벽들은 내가 지었다고!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "그가 다락 계단을 뛰어 내려와 뒤쪽 소나무 등산로로 달아나려 합니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_flash_highbeams",
+              "label": "등산로 쪽을 향해 Margo 트럭의 상향등을 번쩍인다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "상향등 비췄어요! 보안관님—놈이 소나무 등산로로 도망치고 있어요!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_lock_smartdoor",
+              "label": "앱에서 스마트록 보조 잠금장치를 작동시킨다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 봉쇄",
+              "player_reply_text": "예비 출입 카드 코드로 뒷문 데드볼트 잠가 버렸어요!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "보안관들이 불빛 속에서 놈을 포착했어요! 개울가에서 퇴로를 막고 있어요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠긴 뒷문에 정면으로 들이받았어요—보안관들이 데크 위에서 바로 수갑 채웠어요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "놈을 연행하기 직전, 보안관 대원이 방금 찍은 다락 복도 사진을 보세요.",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "데크 위에서 검거되다.",
+          "teaser_text": "5화: 다락방 은신처 내부에서 보안관들이 열두 채의 오두막에서 훔친 투숙객 열쇠들을 발견합니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "다락방 은신처",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 1:55 · 보안관들이 무단 침입자를 순찰차에 태우는 동안 푸른 경광등 불빛이 안개 낀 오두막을 물들입니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "위층에서 뭐가 나왔는지 들으면 기절하실 거예요, {{player_name}} 님—숙소 열 채에서 훔친 예비 카드키랑 공유기가 벽면 가득 걸려 있었대요!",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그럼 그 오싹한 \"하우스 룰 7번\" 메시지도 손님들이 위를 올려다보지 못하게 막으려고 저 남자가 꾸민 거였네요?!",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "다락방 계단 · 가짜 리넨 패널 뒤에 숨겨져 있던 어두운 비밀 통로 문.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "예약 앱 알림: \"전액 환불 완료 + 안전 보상 크레딧 $500 지급.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "정말 죄송해요, {{player_name}} 님. 저 다락방은 영구 봉쇄하고, 사비로 시내 5성급 로지 호텔 방 잡아 드릴게요.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "식탁 밑에 붙은 그 출입 카드를 발견하지 못하셨으면 아무도 놈을 못 잡았을 거예요.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[안도하는 Margo의 한숨] \"보안관들이 고객님 지갑이랑 차 키 손도 안 댄 상태로 회수했어요. 짐 챙겨 나오세요—이 숲에서 벗어납시다.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "현관 베란다에서 보안관 대원이 당신의 차 키를 돌려줍니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_pack_fast",
+              "label": "짐을 챙겨 시내 호텔로 향한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "전부 챙겼어요. 다락방 없는 호텔로 얼른 가요!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_leave_review",
+              "label": "곧 남길 별점 1점 후기를 두고 가볍게 농담한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 재치",
+              "player_reply_text": "Margo 씨가 좋아서 다행이네요—아니었으면 저 다락방에 별 1개 박았을 텐데!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "로지 스위트룸 이미 결제 완료했어요—진짜 프런트 데스크랑 보안팀이 있는 곳으로요.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "하하! 인정해요—평생 무료 커피 서비스라도 얹어 드릴게요!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "순찰차가 소나무 언덕 너머로 사라집니다. 다락방은 이제 마침내 비었습니다.",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "체크아웃 완료.",
+          "teaser_text": "6화 (피날레): 계곡 위로 아침 햇살이 떠오르고—유쾌한 마지막 숙박 후기 하나가 남습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "생존 기념 별 5개",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 8:30 · 룸서비스로 따뜻한 와플이 도착하는 가운데 시내 호텔 객실로 산악 지대의 아침 햇살이 쏟아집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "좋은 아침이에요, {{player_name}} 님! 보안관님이 전화 주셨는데—시공업자가 열 건의 침입 절도를 전부 자백했대요. 계곡 모든 호스트들이 은혜를 입었네요.",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "다음 손님 예약받기 전에 그 다락방 사다리부터 꼭 벽돌로 막아 두세요.",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이미 정식 시공사 불러서 가짜 벽 뜯어내고 강철 잠금장치 달기로 했어요.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "예약 앱: \"숙박은 어떠셨나요? 파인 리지 오두막에 대한 후기를 남겨 주세요.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "제 호스트 평점은 조금만 봐 주세요—제가 올려보낸 와플만큼은 별 다섯 개짜리라고 맹세해요!",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "진심으로, 어젯밤 침착하게 대처해 주셔서 정말 감사했어요.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[따뜻하게 웃으며] \"다음에 산에 놀러 오실 땐 저 로지에 묵으세요—저녁은 제가 대접할게요!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "휴대폰이 당신의 마지막 후기를 기다리고 있습니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_five_stars",
+              "label": "재치 넘치는 별 5개 \"액션 스릴러\" 후기를 남긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "별 5개: 멋진 산 풍경, 평생 못 잊을 한밤중의 반전 스토리.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_toast_waffles",
+              "label": "와플을 맛있게 먹고 예약 앱 알림을 끈다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 여유",
+              "player_reply_text": "와플은 10점 만점에 10점이에요, Margo 씨. 다음 여행 때 봐요—다락방 없는 곳에서!",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "하하, 액자에 걸어 둘 최고의 리뷰네요!",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "조심히 운전해서 돌아가세요, {{player_name}} 님!",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이전 투숙객 · 계정 영구 차단됨.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 안전한 체크아웃.",
+          "teaser_text": "THE END · 불을 끄기 전엔 항상 다락방 걸쇠부터 확인하세요.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_061",
+  "lang": "ja",
+  "metadata": {
+    "title": "偽造された遺言補遺",
+    "subtitle": "祖父の遺言朗読の2時間前、昏睡状態だった時期に署名された遺言補遺書が家族チャットに流出した。",
+    "genre": "romance",
+    "tags": [
+      "遺産相続",
+      "裏切り",
+      "家族"
+    ],
+    "cover_image": "assets/media/covers/story_061.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "lawyer",
+      "name": "Arthur Vance (遺産管財弁護士)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "uncle",
+      "name": "Victor叔父",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "nurse",
+      "name": "Clara看護師",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "誤送信された添付ファイル",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前9:15 · 遺産グループチャット。グランド・スターリング・ホテルでの祖父の遺言朗読の2時間前。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "最終遺言補遺書 — スターリング・ホテル株式の100%を Victor Sterling へ譲渡。10月14日署名。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ちょっと待って。10月14日？おじいちゃんが昏睡状態に陥ったのは10月11日だよ。どうやってこれに署名したの？",
+          "timestamp_label": "午前9:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Arthur、このバカ、チャットを間違えてるぞ！！{{player_name}}が日付をスクショする前に消せ！！",
+          "unsent_placeholder": "Victor叔父がメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "大げさに騒ぐな、{{player_name}}。Arthurが事務用コピーの日付を書き間違えただけだ。今日は少しは敬意を示したらどうだ。",
+          "timestamp_label": "午前9:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "narrator",
+          "text": "個人DM · 看護師Clara（祖父のICU担当看護師）からボイスメッセージが届きました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 14,
+          "transcript": "[小声] {{player_name}}さん、10月14日の夜、あなたの叔父様が夜勤警備員を買収して12分間ICUのカメラを止めさせたんです。そして意識のないお祖父様の手に無理やりペンを握らせました。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n08"
+        },
+        {
+          "id": "n08",
+          "type": "choice",
+          "prompt": "遺言朗読まであと90分。どう動きますか？",
+          "options": [
+            {
+              "option_id": "opt_download_meta",
+              "label": "PDFのメタデータを保存し静観する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "了解、Claraさん。ICUの記録は大切に保管しておいて。Victorは私が相手にするから。",
+              "next_node_id": "n09_free"
+            },
+            {
+              "option_id": "opt_unlock_cctv",
+              "label": "廊下の予備防犯カメラ映像を引き出す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "待って――あの夜、廊下のエレベーターカメラは動いたままだった？",
+              "next_node_id": "n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "n09_free",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "まさにその分単位で祖父が鎮静状態にあったことを証明するICUバイタル記録を、すでに写真に撮ってあります。",
+          "timestamp_label": "午前9:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_merge"
+        },
+        {
+          "id": "n09_vip",
+          "type": "narrator",
+          "text": "極秘証拠：エレベーターカメラが、午前2:14に遺産管財弁護士と一緒にICU402号室から出てくるVictor叔父の姿を捉えていました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n10_vip"
+        },
+        {
+          "id": "n10_vip",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "今暗号化された映像を送ります。Victorはその廊下に2台目のレンズがあったことをまったく知りません。",
+          "timestamp_label": "午前9:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_merge"
+        },
+        {
+          "id": "n11_merge",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "ところで、{{player_name}}、朗読室に入る前に全員のスマホを没収するよう警備に命じてある。では後ほど。",
+          "timestamp_label": "午前9:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n12_end"
+        },
+        {
+          "id": "n12_end",
+          "type": "cliffhanger",
+          "headline": "入り口で没収されたスマホ",
+          "teaser_text": "エピソード2：Victorはあなたを黙らせたと思い込んでいます――あなたが公証人に祖父からの封印された封筒を手渡すまでは。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "朗読室",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前11:02 · スターリング邸の書斎。12人の親族が沈黙の中で着席しています。あなたはブレザーのポケットに予備の小型タブレットを忍ばせていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "これより10月14日付の遺言補遺書を執行いたします。すべての支配株式は単独でVictor氏に継承されます。",
+          "timestamp_label": "午前11:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "実に重い責任だ。{{player_name}}、お前にはお祖父様の懐中時計を形見として取っておくことを許そう。",
+          "timestamp_label": "午前11:04",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ご親切にどうも、叔父さん。私たちが署名する前に、なぜその署名の3日前におじいちゃんの心拍モニターが鎮静状態で水平を示していたのか、Arthurに説明してもらえますか？",
+          "timestamp_label": "午前11:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "lawyer",
+          "text": "Victor、中止だ！公証人が病院のタイムスタンプを確認している！",
+          "unsent_placeholder": "Arthur Vanceがメッセージの送信を取り消しました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 11,
+          "transcript": "[スピーカーフォン] こちらICU主任看護師のClaraです。今外に郡の検認官と、無編集のICU入退室記録を持って待機しています。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "テーブル越しにVictorが書類を奪おうと手を伸ばしました。どうやってトドメを刺しますか？",
+          "options": [
+            {
+              "option_id": "opt_open_doors",
+              "label": "検認官のために扉を開錠する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "その書類に触れたら、12人の証人の目の前で証拠隠滅の現行犯になるわよ。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_play_grandpa",
+              "label": "祖父の秘密の病床ビデオを再生する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "強気の一手 · 広告視聴",
+              "player_reply_text": "それより、先月おじいちゃんが誰の横領を突き止めたのか、本人の口からみんなに聞いてもらいましょうか。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "検認官たちが室内に踏み込んできました。Arthurは即座にブリーフケースを取り落とし、免責取引を求めました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "祖父のビデオ：「もしVictorが10月1日以降の日付の書類を持ち出したら、奴の取り分をすべて剥奪し、{{player_name}}を会長に任命する」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "その映像はディープフェイクだ！このホテルの半分は私が築き上げたんだぞ！",
+          "timestamp_label": "午前11:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}様、私のコートのポケットに本物の原本遺言書がございます。あなたがスターリング・グループの68%を所有しています。",
+          "timestamp_label": "午前11:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "正当な後継者が会長の座に就く",
+          "teaser_text": "Victorは手錠を掛けられて連行されました――しかし本物の遺言書に隠された条項には、誰も会ったことのない2人目の相続人の名が記されていました。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "隠された条項",
+      "start_node_id": "e3_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後2:15 · 屋敷の書斎。Victor叔父は去りましたが、Arthurの机の上には蝋で封印された追加条項書が置かれています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}様、もしVictorが遺言に異議を唱えた場合にのみ第12条を開封するよう、お祖父様から指示されておりました。よくお読みください。",
+          "timestamp_label": "午後2:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "2人目の相続人？一族の誰も、他の誰かのことなんて一度も口にしたことがないのに。",
+          "timestamp_label": "午後2:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "封印された第12条 · 「2004年に息子Victorがこの家から追い出した子供に、Vance Holdingsの30%を譲渡する」",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "待って……お祖父様が昏睡状態に陥る前の晩、若い女性がお部屋をお見舞いに訪れていたんです！その方に銀の懐中時計を渡されていました！",
+          "timestamp_label": "午後2:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "もしArthurが第12条を開封したら、なぜ私が病院に金を払ったのかバレてしまう――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 9,
+          "transcript": "[小声] {{player_name}}さん、あの夜の面会者受付写真を持っています！お祖父様は彼女もお孫さんだとおっしゃっていました――Victorさんの秘密の娘さんなんです！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Victorの弁護士が第12条に対する緊急凍結命令を申し立てました！どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_find_heir",
+              "label": "Claraの記録から面会者を追跡する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Claraさん、面会受付の詳細を送って。彼女が家族なら、真実を知る権利があるわ。",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_audit_2004",
+              "label": "Victorの2004年病院買収金を調べる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "極秘ファイル · 広告視聴",
+              "player_reply_text": "Arthur、2004年の信託支出記録を引き出して――彼女の存在を消すためにVictorがいくら払ったか確かめましょう。",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "照合一致：その面会者は16キロ先に住む小児科看護師のElenaでした――一銭も要求したことのない女性でした。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "金庫記録：Victorは2004年に兄の署名を偽造し、一族の戸籍からその子供を切り離していました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "彼女の住所を特定しました。午後5時に屋敷の正門でお会いすることに同意してくれています。",
+          "timestamp_label": "午後2:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "保釈されたぞ。その偽物を父上の門から一歩でも中に入れてみろ、{{player_name}}。",
+          "timestamp_label": "午後2:25",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Victorが保釈で釈放された",
+          "teaser_text": "エピソード4：2人目の相続人が屋敷に辿り着く前に、Victorが妨害しようと急行します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "2人目の相続人",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後4:40 · 屋敷の車道。雨が降り注ぐ中、Victorの黒いセダンが鉄門の前を塞いでいます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "よく考えろ、{{player_name}}。あいつが相続人だと証明されれば、お前も遺産の30%を失うんだぞ！俺と手を組めば70対30で分け合える！",
+          "timestamp_label": "午後4:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "おじいちゃんが昏睡状態だった時に遺言補遺を偽造しておいて、今度は死に際の願いまで裏切れっていうの？",
+          "timestamp_label": "午後4:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "気をつけて！Victorの雇った私立探偵が薬局の外で彼女を追い詰めています！彼女、怯えています！",
+          "timestamp_label": "午後4:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "運転手に、今すぐ権利放棄書にサインするなら現金5万ドルを提示しろと伝えろ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "その権利放棄書は違法な強要です！今すぐ屋敷の警備員と警察を薬局へ急行させます。",
+          "timestamp_label": "午後4:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 9,
+          "transcript": "[雨音と車のドアがバタンと閉まる音] 彼女を私の車に乗せました！無事です――それに、蓋の裏にマイクロSDカードが隠されたお祖父様の銀の懐中時計を持っています！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Claraが隠されたマイクロSDカードを持って到着しました！次の一手は？",
+          "options": [
+            {
+              "option_id": "opt_play_video",
+              "label": "書斎で祖父のビデオを再生する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "書斎の扉を開けてメインスクリーンでおじいちゃんの録画を流して――Victorにも聞かせてあげましょう。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_stream_board",
+              "label": "理事会メンバーへビデオを生配信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "チェックメイト · 広告視聴",
+              "player_reply_text": "再生ボタンを押す前に、遺産理事会と一族の評議員全員を配信に繋いで！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "祖父の声：「もしVictorがこの遺言に争うなら、奴に残された5%の信託給付金も剥奪し、鍵を2人の孫娘たちに渡せ」",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "理事会の反応：祖父がカメラに向かってVictorを泥棒と名指しするのを聞き、すべての評議員が青ざめるVictorを見つめます。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "終わりだよ、Victor。おじいちゃんはあなたが仕掛けてくる小細工をすべて見通していたんだね。",
+          "timestamp_label": "午後4:52",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "裁判所の認定したDNA鑑定がなければビデオなど何の証明にもならん！検認裁判で5年間足止めしてやる！",
+          "timestamp_label": "午後4:53",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "DNA鑑定での直接対決",
+          "teaser_text": "エピソード5：封印された1通の検査機関の封筒が、Victorの法廷闘争を永遠に終わらせます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "血とインク",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前10:05 · 検認裁判所の控え室。封印された検査機関の配達便が今到着しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "お祖父様は3ヶ月前にすでに裁判所指定の検査機関へ照合用サンプルを提出されていました。今しがた比較鑑定が完了したそうです！",
+          "timestamp_label": "午前10:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "裁判所検査機関認証済み · 99.98% 祖父母・孫の血縁一致。Harlan判事により保管連続性封印。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "ありえない！3ヶ月前は体調が悪すぎて検査機関になど行けるはずがなかった！",
+          "timestamp_label": "午前10:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "あなたが偽の遺言補遺を偽造するのに忙しかった間に、Clara看護師が裁判所の技師を病床まで連れてきてくれたのよ。",
+          "timestamp_label": "午前10:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "待て――もし判事が薬局での保釈条件違反を見たら、俺はそのまま刑務所に逆戻りだ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 8,
+          "transcript": "[法廷の扉が開く音] 廷吏が薬局のドライブレコーダー映像を判事席へ提出しました。Victorの保釈が今にも取り消されそうです！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "判事から、Victorに対する全面的な罰則条項を適用したいか尋ねられました。",
+          "options": [
+            {
+              "option_id": "opt_enforce_clause",
+              "label": "祖父の不争条項をそのまま適用する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "はい、裁判長。文字通り不争条項を適用してください。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_reclaim_loans",
+              "label": "200万ドルの遺産貸付金も即時回収する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "完全なる正義 · 広告視聴",
+              "player_reply_text": "条項を適用し――さらにVictorが2019年から隠していた200万ドルの未払い会社貸付金も返済請求します。",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "判事裁定：Victorの異議申し立ては再訴不可で却下され、保釈はその場で取り消されました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "資産先取特権認容：裁判所は一族の遺産へ返済させるため、Victorの高級ペントハウスとヨットを差し押さえました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "木槌が鳴りました！検認手続きは終了です。お二人の相続人の権利が正式に確定いたしました。",
+          "timestamp_label": "午前10:18",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "いとこさんが法廷の外で嬉し涙を流しています――お祖父様の懐中時計をあなたにお返ししたいそうです。",
+          "timestamp_label": "午前10:19",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "屋敷での最後の署名",
+          "teaser_text": "エピソード6（フィナーレ）：会長の席に就き、一緒に一族の遺産を築き直しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "女性会長の印章",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午後6:00 · 屋敷の温室。一族の台帳が真新しいページへと開かれる中、温かなランタンの光が灯ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "すべての肩書き、議決権株式、そして信託の鍵が譲渡されました、{{player_name}}様。Vance Holdingsは正式にあなたの指揮下にございます。",
+          "timestamp_label": "午後6:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ありがとう、Arthur。それにClaraさん――あなたの勇気がなければ、何ひとつ守れなかったわ。",
+          "timestamp_label": "午後6:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "私はお祖父様との約束を守っただけです。あの方は、あの部屋にいた誰よりもあなたが強い心を持っているとご存知でした。",
+          "timestamp_label": "午後6:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "{{player_name}}にすまなかったと伝えてくれ、もしかしたらまだ面会に来てくれるかもしれないから――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 8,
+          "transcript": "[グラスの触れ合う音] おいとこさんがパートナーシップ憲章に署名されました――ご自身の取り分の30%で、お祖父様の名を冠した小児科棟を設立したいそうです！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私も本体の財団から同額をすべて拠出するよ。おじいちゃんも今ごろ微笑んでくれているはず。",
+          "timestamp_label": "午後6:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "祖父の遺産を讃える最後のひとつの行動：",
+          "options": [
+            {
+              "option_id": "opt_keep_watch",
+              "label": "時計を分かち合い彼女を家に迎え入れる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "その時計はあなたが持って――そして東棟に引っ越してきて。この家がようやくまた家族の家らしくなったよ。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_name_clara_director",
+              "label": "Claraを医療財団の理事長に任命する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "黄金の心 · 広告視聴",
+              "player_reply_text": "Claraさん、Vance医療財団を率いてくれませんか？あなた以上にふさわしい人はいません。",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "戻ってきた家：20年ぶりに、屋敷の広間に笑い声が響き渡りました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "受け継がれる遺産：Claraは涙を浮かべて引き受け――二人は力を合わせて古い一族の財閥を善き力へと生まれ変わらせました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "今夜のことは一生忘れません、{{player_name}}さん。あなたはVictorのように冷酷になることなく勝利したのですから。",
+          "timestamp_label": "午後6:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "正当な相続人たちに栄光あれ。今夜は書斎の明かりを点けたままにしておきましょう。",
+          "timestamp_label": "午後6:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 正当な一族の絆",
+          "teaser_text": "あなたは偽造された遺言補遺を暴き、真の相続人たちを結びつけ、誇りをもって遺産を継承しました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

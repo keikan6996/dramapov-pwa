@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_021",
+  "lang": "id",
+  "metadata": {
+    "title": "Lantai 13 Tidak Ada",
+    "subtitle": "Lift berhenti di Lantai 13 pukul 02:14. Gedungku hanya punya dua belas lantai.",
+    "genre": "thriller",
+    "tags": [
+      "Jam 3 Pagi",
+      "Lift",
+      "Supranatural"
+    ],
+    "cover_image": "assets/media/covers/story_021.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Kamu)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Hector (Penjaga Malam)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "Interkom Lobi",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Tombol 13 Menyala",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02:14 · Lift menyentak berhenti. LED merah berkedip melewati 12 dan mengunci di angka 13.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, aku lihat Lift B berhenti di monitorku. Kenapa kau menekan tombol akses servis?",
+          "timestamp_label": "02:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Aku tak menyentuh apa pun! Pintunya terbuka sendiri ke lorong gelap. Ada seseorang melambai padaku.",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Bagus. Keluarlah supaya aku akhirnya bisa pergi.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Tetap di dalam kabin! JANGAN melangkah melewati ambang pintu. Tekan Tutup Pintu sekarang juga.",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[dengung lampu neon, langkah kaki pelan] ...Kenapa kau menatapku, {{player_name}}? Kau tinggal di lantai ini sekarang...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Pintu menolak menutup. Udara dingin mengalir masuk ke dalam lift.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Tekan alarm darurat merah",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aku menekan bel alarm sekarang!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Sorotkan senter HP ke Lantai 13",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Menyalakan senterku...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Bel berdering—bukan di lorong lift, melainkan tepat di belakang sosok di lorong gelap itu.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "RAHASIA TERBUKA: Setiap pintu apartemen di Lantai 13 memiliki pelat kuningan—semuanya terukir namaMU.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Tunggu... telepon meja keamanan berdering sendiri. Lihat umpan kamera lobi.",
+          "timestamp_label": "02:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Meja Penjaga Lobi",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Suara panik terengah: \"Ini Hector! Seseorang mencuri ponselku dua puluh menit lalu—kau sedang chat dengan siapa?!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Kamu menolak. Pesan suara langsung ditranskrip: \"Ini Hector—aku terkunci di lobi! Yang chat denganmu itu BUKAN aku!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Lalu Siapa Yang Chat Denganmu?",
+          "teaser_text": "Episode 2: Sosok di Lantai 13 mengangkat ponsel yang berpendar—dan tersenyum.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Penghuni Ketiga Belas",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02:18 · Lampu lift mati. Hanya cahaya ponsel di lorong yang menerangi wajah sosok itu.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Seharusnya kau tak menjawab telepon lobi itu, {{player_name}}. Sekarang aku harus masuk ke dalam.",
+          "timestamp_label": "02:18",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mundur! Siapa kau?! Kenapa kau pegang ponsel Hector?!",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CAM 13 · 02:18:55 — Koridor di luar Lift B.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Lihat cermin di belakangmu. Aku sudah di dalam.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Aku terjebak di Lantai 13 sejak 2011. Gedung ini hanya mengizinkanku pergi kalau ada yang menggantikan posisiku.",
+          "timestamp_label": "02:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "Pintu logam berderit menutup—mengurung bayangan dingin itu di dalam bersamamu.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Congkel palka atap lift",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aku memanjat keluar lewat atas!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Hancurkan panel LED Lantai 13",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Memecahkan panelnya sekarang!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Kamu mendorong palka ke atas—dan jari-jari sedingin es mencengkeram pergelangan tanganmu dari lorong gelap di atas.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "RAHASIA TERBUKA: Percikan api menyambar dan lift meluncur turun—lurus ke Dasar. Di balik panel yang pecah terselip foto orang hilang Hector tahun 2011 yang pudar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Lift berdenting pelan. Pintunya terbuka ke lobi yang terang dan kosong—kecuali setiap jam menunjuk pukul 02:14.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Hector (Penjaga Malam)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Bisikan hampa menggema: \"Selamat datang di rumah, {{player_name}}. Nikmati Lantai 13.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Kamu menekan tolak, tapi panggilan tetap tersambung. Di belakangmu, tombol lift 13 menyala merah terang.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Perhentian Berikutnya: Selamanya",
+          "teaser_text": "Akhir Musim · Pintu lobi ditembok rapat. Hanya lift yang menunggu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Lobi yang Ditembok",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02:28 · Lift menyentak kembali ke bawah, tapi saat pintu terbuka, batu bata beton padat menyegel lobi.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, tetap di dalam kabin! Aku menggedor kaca lobi dari luar—seluruh lantai dasar lenyap di balik tembok bata!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector, panelnya menyala lagi—bukan 13 kali ini. Tulisannya \"B4\" dan pintunya tak mau terbuka!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "Panel Lift · Lantai 13 & kode servis tersembunyi menyala merah pukul 02:29.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Lampu neon plafon berkedip mati. Angin dingin naik menembus kisi-kisi lantai.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Tekan 13 lagi, {{player_name}}. Kau lupa mengembalikan kunci yang kau ambil dari Penghuni 13.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Tahun 1998 seorang penghuni meninggal terjebak antara Lantai 12 dan atap—pengelola menyegel lorong liftnya.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[suara statis berderak dari interkom] \"Setiap gedung menyembunyikan lantai yang hilang, {{player_name}}. Hanya penjaga shift malam yang tahu alasannya.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Lift mulai naik sendiri menuju lorong yang disegel.",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_stop",
+              "label": "Tarik tuas berhenti darurat merah",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aku menarik rem daruratnya—Hector, panggil pemadam kebakaran!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_press_alarm",
+              "label": "Tahan akses servis & buka palka atap",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Kabur",
+              "player_reply_text": "Aku menemukan kait palka atap! Aku memanjat ke lorong lift!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Remnya putus?! Pegang erat pegangan tangan—aku mencongkel pintu pemeliharaan lobi!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cerdas! Ada tangga yang dibaut di dinding barat lorong lift—panjat menuju Lantai 12!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Terlambat. Lampu lorong baru saja padam—dan sesuatu sedang memanjat turun dari atasmu.",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Sesuatu Di Dalam Lorong Lift.",
+          "teaser_text": "Episode 4: Terjebak di antara lantai dalam gelap gulita, kamu menemukan alasan Lantai 13 dihapus dari cetak biru.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Cetak Biru 1998",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02:35 · Kamu berpegangan pada tangga baja di lorong gelap sementara Hector menarik buku catatan gedung tahun 1998.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Aku menemukan cetak biru lama di pos jaga! Lantai 13 bukan takhayul—itu penthouse ilegal yang disegel setelah kebakaran!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector, ada pintu tepat di samping tangga! Seseorang menggoreskan \"JANGAN PERCAYA PENJAGA\" ke bajanya!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Tanya Hector kenapa dia masih membawa kunci kuningan Lantai 13 di ikat pinggangnya, {{player_name}}.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Sorot sentermu menangkap lubang kunci kuningan di samping pintu berkarat.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Jangan dengarkan benda itu! Kunci itu diserahkan pemilik gedung padaku—sumpah aku tak pernah membukanya!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Tunggu... kenapa tanda tanganku sendiri ada di log inspeksi 1998? Aku bahkan baru diterima kerja tahun 2020...",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[berbisik lewat ventilasi] \"Dia tak diterima tahun 2020, {{player_name}}. Lihat foto lencana penjaga itu.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Interkom mengklaim Hector sudah terjebak di shift malam sejak 1998.",
+          "options": [
+            {
+              "option_id": "opt_e4_question_hector",
+              "label": "Minta Hector kirim foto lencananya",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hector, foto lencana keamananmu sekarang juga.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_open_door",
+              "label": "Paksa buka pintu Lantai 13 yang karatan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Pemberani",
+              "player_reply_text": "Aku mendobrak pintu Lantai 13—aku butuh kebenarannya sendiri.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Lencanaku tertulis... 1998?! Tidak, itu mustahil—kenapa aku tak ingat pernah meninggalkan gedung ini?!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Tunggu—lorong di dalam diterangi lampu kuning redup! Dan ada cermin di ujungnya!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Selamat datang di rumah, {{player_name}}. Lihat bayangan yang berdiri di ujung koridor.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Lorong yang Terlupakan.",
+          "teaser_text": "Episode 5: Cuplikan keamanan dari Lantai 13 mengungkap wajah orang yang menyegel lorong lift.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Koridor Abu",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02:44 · Abu melayang pelan di udara Lantai 13 saat ponselmu menerima cuplikan keamanan yang terarsip.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Aku ingat sekarang, {{player_name}}! Aku mencoba menyelamatkan gadis di 13A saat kebakaran—dan pemilik gedung mengunci lift untuk menyembunyikan pelanggaran!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector... apakah itu berarti kau salah satu orang yang tak pernah berhasil keluar?!",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Koridor Lantai 13 · Bayangan berdiri di samping Apt 13A—memegang kunci induk kuningan.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Bel lift berdenting di belakangmu. Pintunya terbuka ke lobi yang terang dan normal—selama tiga puluh detik.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ambil buku catatan dari Apt 13A dan lari ke lift, {{player_name}}. Beri tahu orang-orang yang hidup apa yang sebenarnya terjadi di sini!",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Jika kebenaran terungkap, kami akhirnya bisa pulang dari gedung ini selamanya.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[tenang, menggema] \"Ambil laporan kebakaran itu, {{player_name}}. Tinggalkan kunci kuningannya di lantai—dan jangan pernah menoleh ke belakang.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Jalan keluar menuju lobi nyata akan menutup dalam sepuluh detik.",
+          "options": [
+            {
+              "option_id": "opt_e5_grab_ledger",
+              "label": "Sambar buku catatan hangus & berlari",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Buku catatannya sudah kudapat! Aku lari ke kabin!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_promise_hector",
+              "label": "Janji ke Hector kau bongkar pemiliknya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Keadilan",
+              "player_reply_text": "Aku bersumpah akan membongkar mereka semua, Hector. Beristirahatlah sekarang!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "LARI! Jangan biarkan pintunya menutup tanpamu!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Terima kasih, {{player_name}}. Untuk pertama kalinya dalam dua puluh delapan tahun, shift-ku selesai.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Lift turun mulus ke Lantai 1. Di luar, fajar akhirnya menyingsing.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Penurunan Terakhir.",
+          "teaser_text": "Episode 6 (Akhir): Melangkah keluar ke cahaya pagi, kamu memegang satu-satunya bukti bahwa Lantai 13 pernah ada.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Shift Selesai",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06:05 · Garis polisi membentang di lobi apartemen saat detektif mengantongi buku catatan hangus 1998 itu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Detektif menemukan dinding bersegel di balik Lantai 12, {{player_name}}. Setiap nama di laporan kebakaran akhirnya akan dimakamkan dengan layak.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tunggu—Hector?! Bagaimana kau masih chat denganku kalau penjaga pagi baru saja masuk kerja?!",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Satu pesan terakhir saja sebelum sinyalku memudar. Lihat panel lift.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Kamu menoleh ke lift: Tombol 13 sudah hilang—digantikan baja mulus tanpa celah.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Pemilik gedung baru saja ditangkap di bandara. Terima kasih sudah tidak meninggalkan kami dalam kegelapan.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Selamat tinggal, {{player_name}}. Lewat tangga saja lain kali.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[hangat, memudar ke suara statis] \"Selamat malam dari shift malam, {{player_name}}. Kau aman sekarang.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Layar ponselmu berkedip saat utas chat Hector mulai mengarsipkan dirinya sendiri.",
+          "options": [
+            {
+              "option_id": "opt_e6_say_goodbye",
+              "label": "Ucapkan terima kasih sebelum sinyal putus",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Beristirahatlah dengan tenang, Hector. Kau menyelamatkan nyawaku malam ini.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_leave_flowers",
+              "label": "Taruh bunga putih di meja penjaga",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Penghormatan",
+              "player_reply_text": "Kutinggalkan bunga di meja lobi untukmu dan 13A. Selamat tinggal.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Pesan terkirim · Dibaca pukul 06:07.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Pesan terkirim · Angin hangat berembus melewati meja penjaga yang kosong.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sistem: \"Interkom Lobi\" telah terputus secara permanen.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Akhir Musim · Hanya Dua Belas Lantai.",
+          "teaser_text": "TAMAT · Gedung itu akhirnya punya dua belas lantai lagi—dan penjaga malam sudah pulang.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

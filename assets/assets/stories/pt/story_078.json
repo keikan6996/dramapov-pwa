@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_078",
+  "lang": "pt",
+  "metadata": {
+    "title": "A Promoção Fantasma",
+    "subtitle": "Depois de 2 anos fazendo o trabalho do Diretor, o VP promoveu o sobrinho dele de 24 anos — e me mandou entregar meus clientes VIP.",
+    "genre": "romance",
+    "tags": [
+      "Escritório",
+      "Nepotismo",
+      "Volta por Cima"
+    ],
+    "cover_image": "assets/media/covers/story_078.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#4F46E5"
+    },
+    {
+      "id": "nephew",
+      "name": "Tyler (Sobrinho do VP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "vp",
+      "name": "Sr. Vance (VP de Vendas)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "client",
+      "name": "Sra. Kapoor (Cliente VIP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Treine Seu Substituto",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09h30 · Um e-mail geral da empresa cai na caixa: \"Boas-vindas ao nosso novo Diretor de Contas — Tyler Vance!\" Seu celular apita.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "E aí {{player_name}}! O tio disse que você é super organizada. Me manda todos os telefones dos seus clientes VIP e apresentações de renovação até meio-dia, beleza?",
+          "timestamp_label": "09:31",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sr. Vance, o senhor colocou por escrito em dezembro passado que bater US$ 4M de receita me garantia a cadeira de Diretora. Eu bati US$ 5,2M.",
+          "timestamp_label": "09:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Haha esquenta não, Tyler, {{player_name}} é leal demais para pedir demissão — ela vai fazer o trabalho pesado todo enquanto você fica com o cargo.",
+          "unsent_placeholder": "Sr. Vance apagou uma mensagem",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Vamos jogar em equipe, {{player_name}}. O Tyler traz \"energia executiva fresca.\" Entregue a renovação de US$ 3M da Kapoor às 14h.",
+          "timestamp_label": "09:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 11,
+          "transcript": "[calorosa, afiada] {{player_name}}, acabei de ver o comunicado à imprensa. Quem é esse garoto Tyler? A renovação do meu contrato é com VOCÊ — se você estiver saindo, me diga para onde vai.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Uma concorrente ofereceu a você VP de Vendas semana passada. O que você faz antes das 14h?",
+          "options": [
+            {
+              "option_id": "opt_accept_rival",
+              "label": "Assinar oferta rival de VP e demissão",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sra. Kapoor, vamos tomar um café depois das 14h. Tenho novidades empolgantes sobre meu próximo capítulo.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_let_tyler_sink",
+              "label": "Deixar Tyler encarar as perguntas das 14h",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Mente Brilhante · Ver Anúncio",
+              "player_reply_text": "Na verdade, Sra. Kapoor — pergunte ao Tyler sobre o aditivo europeu de conformidade de dados às 14h. Veja o que acontece.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Pode contar comigo. E vou pausar a assinatura da minha renovação de US$ 3M até depois do nosso café.",
+          "timestamp_label": "09:39",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "ARMADILHA MONTADA: Sra. Kapoor sorri e concorda — E você assina a oferta rival de VP com 45% de aumento salarial às 11h00!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Ah, essa reunião das 14h vai ser puro teatro. Até logo, VP {{player_name}}.",
+          "timestamp_label": "11:15",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "E aí {{player_name}}, não li os slides kkk — só senta do meu lado e cochicha as respostas se a Kapoor perguntar algo difícil.",
+          "timestamp_label": "13:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "A Passagem de US$ 3 Milhões",
+          "teaser_text": "Episódio 2: Sr. Vance apresenta Tyler como o \"gênio\" por trás da conta — e você desliza sua carta de demissão pela mesa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Não Mais Leal Demais",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "14h02 · Sala de Reunião do Cliente. Sra. Kapoor senta-se diante de Sr. Vance e Tyler.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Sra. Kapoor, nosso novo Diretor Tyler vai supervisionar pessoalmente sua renovação de US$ 3M a partir de hoje!",
+          "timestamp_label": "14:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Maravilha. Tyler, me explique como você está reestruturando nossas multas de SLA Nível 3 sob o novo regulamento da UE.",
+          "timestamp_label": "14:03",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "{{player_name}} SOCORRO!! Que diabos é um SLA?! Responde por mim!!",
+          "unsent_placeholder": "Tyler apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Ãhn... vamos super sinergizar as... vibrações da nuvem? {{player_name}}, entra aí!",
+          "timestamp_label": "14:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Sr. Vance fuzila você com os olhos para salvar o sobrinho dele. Solte o microfone.",
+          "options": [
+            {
+              "option_id": "opt_resign_now",
+              "label": "Entregar sua carta de demissão e sair",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Desculpa, Tyler — não sou qualificada para responder por um Diretor. Aqui está meu pedido imediato de demissão, Sr. Vance.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_take_client",
+              "label": "Anunciar seu cargo de VP e ver Kapoor",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Sem Palavras · Ver Anúncio",
+              "player_reply_text": "Na verdade, começo segunda-feira como VP no Grupo Meridian. Aproveite a energia executiva fresca, Sr. Vance.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Sra. Kapoor fecha a caneta imediatamente: \"Sem {{player_name}}, estamos colocando este contrato de US$ 3M em concorrência.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "SAÍDA DO CLIENTE: Sra. Kapoor levanta ao seu lado: \"Me mande a proposta da Meridian segunda de manhã, {{player_name}}!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "ESPERA! {{player_name}}! Eu cubro a oferta deles! Eu faço VOCÊ Diretora agora mesmo!",
+          "timestamp_label": "14:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 7,
+          "transcript": "[rindo no elevador] Melhor reunião de negócios a que já fui o ano inteiro. Drinques por minha conta!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Saiba Seu Valor",
+          "teaser_text": "Até sexta-feira, mais quatro ex-colegas seus mandam mensagem perguntando se a Meridian está contratando — e Sr. Vance é convocado a uma revisão emergencial do conselho.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "A Notificação Extrajudicial",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "09h10 · Escritórios da Meridian. Quatro ex-colegas querem se juntar a você — e Sr. Vance acabou de enviar uma ameaça jurídica.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "{{player_name}}, nossa equipe jurídica acabou de enviar uma notificação extrajudicial por aliciamento contra você! Você roubou ilegalmente a Sra. Kapoor e minha equipe de vendas!",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Boa tentativa, Sr. Vance. A própria Sra. Kapoor ligou para a Meridian depois que o Tyler perdeu o prazo de lançamento dela — e nunca assinei cláusula de não aliciamento.",
+          "timestamp_label": "09:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "client",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "AMEAÇA JURÍDICA FALSA · Minuta sem assinatura de não concorrência anexada por Vance — desmentida pelo aviso de rescisão da Sra. Kapoor.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Ah, essa é ótima! O Vance mandou e-mail para o meu CFO alegando que VOCÊ foi demitida por \"problemas de desempenho\" — então encaminhei o e-mail dele direto para a Presidência do Conselho dele!",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Tio Vance apaguei sem querer a planilha de renovação de clientes do 4º tri—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[rindo] {{player_name}}, espera até ouvir isso — o Tyler acabou de mandar para minha equipe uma tabela confidencial de preços de um cliente rival por engano! Ele copiou a lista de distribuição inteira!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "A revisão emergencial de Vance no conselho começa às 11h! Como você responde à notificação dele?",
+          "options": [
+            {
+              "option_id": "opt_send_truth",
+              "label": "Responder com o jurídico da Meridian",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A diretoria jurídica da Meridian acabou de responder: retirem o e-mail difamatório até meio-dia ou processamos VOCÊS por interferência ilícita.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_commission_audit",
+              "label": "Cobrar também 2 anos de bônus retidos",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Provas na Mão · Ver Anúncio",
+              "player_reply_text": "Já que estamos envolvendo RH e Conselho, vamos auditar também os US$ 64.000 em comissões de Diretora que você reteve de mim por dois anos!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "TIRO PELA CULATRA: O próprio advogado da empresa de Vance ordena que ele retire a notificação na hora!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "BOMBA INCLUÍDA: A Presidência do Conselho inclui sua cobrança de US$ 64 mil de comissão direto na pauta das 11h de Vance!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Ei {{player_name}}… alguma chance de você ainda me mandar aqueles modelos de integração de clientes? O Tio Vance está gritando comigo.",
+          "timestamp_label": "09:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Desculpa, Tyler — aqueles modelos vêm junto com salário de Diretor. Boa sorte na revisão das 11h.",
+          "timestamp_label": "09:23",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Para Onde Foram Suas Comissões?",
+          "teaser_text": "Episódio 4: Descubra quem realmente embolsou os US$ 64.000 em bônus que sua equipe conquistou.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "As Comissões Retidas",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10h50 · Sala de Vidro da Meridian. Dez minutos antes de Sr. Vance encarar o Conselho.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Espera aí, {{player_name}}! Se você retirar a auditoria das comissões antes das 11h, autorizo um pagamento de boa vontade de US$ 15 mil agora mesmo!",
+          "timestamp_label": "10:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Engraçado como um homem que dizia que eu tinha \"problemas de desempenho\" de repente quer me pagar US$ 15 mil para ficar quieta.",
+          "timestamp_label": "10:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Adivinha o que sua antiga amiga da folha acabou de vazar para o Conselho? Vance reclassificou suas comissões de US$ 64 mil como \"Bônus de Contratação\" — para o TYLER!",
+          "timestamp_label": "10:52",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Se a Presidência vir que o bônus de contratação de US$ 64K do Tyler saiu dos negócios de {{player_name}}—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Espera — Tio Vance, você me disse que esse bônus de US$ 64 mil era padrão para novos Diretores! Já gastei metade num relógio e num aluguel!",
+          "timestamp_label": "10:54",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[porta clicando ao abrir] Meu CFO acabou de desligar com a Presidência do Conselho deles — suspenderam o cartão corporativo do Vance E levaram todo o livro de comissões para a reunião das 11h!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "A Presidência do Conselho liga diretamente para você pedindo seu relato por escrito! O que você inclui?",
+          "options": [
+            {
+              "option_id": "opt_submit_deals",
+              "label": "Enviar 2 anos de contratos assinados",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Enviando cada contrato VIP assinado, histórico de e-mails e a fórmula exata de comissão que Vance me prometeu.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_include_teammates",
+              "label": "Incluir bônus retidos dos 4 colegas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Verdadeiro Diretor · Ver Anúncio",
+              "player_reply_text": "Enviando meus registros de contratos MAIS os bônus retidos do 3º tri devidos a todos os quatro colegas que carregaram o departamento de Vance!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "CASO ENCERRADO: O Conselho verifica cada contrato em minutos — confirmando que Vance desviou seus bônus para o sobrinho.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "RESTITUIÇÃO INTEGRAL: O Conselho ordena pagamento retroativo imediato para VOCÊ e todos os quatro colegas — descontado direto do pacote de saída de Vance!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você promoveu nepotismo em vez de mérito, Sr. Vance. Agora aproveite a revisão do conselho.",
+          "timestamp_label": "11:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "A segurança acabou de entrar na sala de reunião… Tyler, por que você admitiu por escrito que gastou o bônus?!",
+          "timestamp_label": "11:06",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Livro do Nepotismo",
+          "teaser_text": "Episódio 5: Veja o pagamento das comissões cair na sua conta enquanto a Meridian entrega a você sua própria divisão.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "A Revisão do Conselho",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "15h30 · Sala de Conferência da Meridian. Seu celular toca com um alerta do banco — e quatro rostos familiares entram.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Notícia urgente da sua antiga torre: Sr. Vance foi demitido POR JUSTA CAUSA ao meio-dia — e Tyler foi escoltado para fora logo atrás dele!",
+          "timestamp_label": "15:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "RETROATIVOS COMPENSADOS · US$ 64.000 de comissões retidas de Diretora transferidos integralmente por ordem de restituição do Conselho.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Está satisfeita?! Vinte anos da minha reputação destruídos em uma tarde!",
+          "timestamp_label": "15:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você construiu essa reputação em cima dos meus dois anos de trabalho não pago e a destruiu sozinho no segundo em que entregou meu lugar ao seu sobrinho.",
+          "timestamp_label": "15:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Agora tenho que devolver a BMW alugada e pagar de volta o bônus de contratação—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[sorrindo] Notícia ainda melhor, {{player_name}}! Meu conselho acabou de aprovar DOBRAR nosso contrato anual com a Meridian — estritamente sob a SUA nova divisão!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "O CEO da Meridian promove você a VP de Vendas Corporativas! Quem você contrata primeiro?",
+          "options": [
+            {
+              "option_id": "opt_hire_four",
+              "label": "Contratar todos os 4 colegas leais",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Assinando propostas de contratação para todos os meus quatro ex-colegas agora mesmo — com faixas transparentes de comissão!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_hire_plus_equity",
+              "label": "Contratar os 4 + dividir receita da equipe",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VP de Elite · Ver Anúncio",
+              "player_reply_text": "Tragam todos os quatro com 20% de aumento E um fundo compartilhado trimestral de receita — ninguém nunca mais será passado para trás!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "EQUIPE DOS SONHOS REUNIDA: Os quatro aceitam na hora — trazendo zero drama e 100% de execução de elite.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "DIVISÃO IMPARÁVEL: Sua nova equipe fecha US$ 4M em negócios antes mesmo do fim do primeiro mês!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "De promoção fantasma a VP de verdade em uma semana. Melhor reviravolta que já presenciei!",
+          "timestamp_label": "15:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Saiba seu valor — e nunca treine seu próprio substituto de graça.",
+          "timestamp_label": "15:43",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "A Verdadeira VP Assume o Comando",
+          "teaser_text": "Episódio 6 (Final): Dê a largada no maior trimestre da Meridian com Sra. Kapoor e sua equipe dos sonhos reunida.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "A Nova VP",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Um Mês Depois · Lounge Panorâmico da Meridian. Sua nova placa de VP reluz enquanto os números do 1º tri batem 180% da meta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Nossa implantação com sua nova equipe terminou DEZ dias antes do prazo! Melhor parceria que já assinamos, VP {{player_name}}!",
+          "timestamp_label": "17:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Fácil quando você tem a equipe real fazendo o trabalho — e recebendo o que realmente conquistou.",
+          "timestamp_label": "17:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Hã… ei {{player_name}}, vi que a Meridian está contratando vendedores júnior. Alguma chance—",
+          "timestamp_label": "17:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Três recrutadores me recusaram depois que a revisão do conselho vazou—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[caindo na gargalhada] O Tyler se candidatou mesmo para trabalhar ABAIXO de você?! Emoldure essa mensagem bem ao lado do seu prêmio de VP!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Já mandei a ele o link público padrão de vagas. Só mérito neste departamento.",
+          "timestamp_label": "17:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Seu brinde de encerramento na festa do 1º tri da Meridian:",
+          "options": [
+            {
+              "option_id": "opt_toast_merit",
+              "label": "Brindar ao mérito e zero nepotismo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A nunca esperar permissão para reivindicar o lugar que você já conquistou!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_open_salaries",
+              "label": "Publicar faixas claras de promoção",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Ícone Cultural · Ver Anúncio",
+              "player_reply_text": "E a partir de hoje, todo cargo na minha divisão tem metas claras e escritas de promoção — chega de promessas fantasmas para sempre!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "BRINDE DE PÉ: Seus quatro colegas e a Sra. Kapoor erguem as taças enquanto o horizonte se ilumina.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "MELHOR EMPREGADORA: A retenção da sua divisão bate 100%, e os melhores vendedores da cidade imploram por uma vaga no seu time.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Saúde à verdadeira Diretora — agora VP — {{player_name}}!",
+          "timestamp_label": "17:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Só começando, Sra. Kapoor. Vamos dobrar o 2º tri também.",
+          "timestamp_label": "17:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Valeu Cada Centavo",
+          "teaser_text": "Você abandonou uma promoção fantasma, recuperou suas comissões e ergueu uma divisão imparável.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

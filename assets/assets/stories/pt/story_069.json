@@ -1,0 +1,978 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_069",
+  "lang": "pt",
+  "metadata": {
+    "title": "Sabotagem na Sala Executiva",
+    "subtitle": "Minha melhor amiga do trabalho mandou um pedido falso de demissão do meu notebook na noite anterior à nossa entrevista para Diretoria.",
+    "genre": "romance",
+    "tags": [
+      "Escritório",
+      "Rivalidade",
+      "Reviravolta"
+    ],
+    "cover_image": "assets/media/covers/story_069.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "rival",
+      "name": "Clara (Amiga do Trabalho)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#BE185D"
+    },
+    {
+      "id": "director",
+      "name": "Olivia (VP de Criação)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "intern",
+      "name": "Leo (Estagiário)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0369A1"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "O Pedido Falso de Demissão",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "08h12 · Você entra na agência com café para você e para Clara. Sua VP manda mensagem.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "director",
+          "text": "{{player_name}}, estou chocada. Você enviou sua demissão imediata por e-mail ontem às 19h18 — e pôs em cópia o recrutador da nossa agência rival?!",
+          "timestamp_label": "08:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O QUÊ?! Saí do escritório às 18h30! Nunca mandei esse e-mail!",
+          "timestamp_label": "08:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Resolvido. {{player_name}} está desclassificada. Cancelem a entrevista das 10h e preparem logo minha carta de promoção.",
+          "unsent_placeholder": "Clara apagou uma mensagem",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Meu Deus, {{player_name}}, acabei de saber!! Estou literalmente tremendo — quem hackearia seu notebook?!",
+          "timestamp_label": "08:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 11,
+          "transcript": "[nervoso] Ei {{player_name}}... Fiquei até tarde imprimindo painéis. Às 19h15 vi a Clara sentada na sua mesa digitando no seu notebook. Ela me disse que você pediu para ela enviar um arquivo.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "A entrevista solo de Clara para Diretora começa às 10h. Sua jogada?",
+          "options": [
+            {
+              "option_id": "opt_keycard_log",
+              "label": "Puxar os horários do crachá na saída",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Leo, obrigado. Fique perto da portaria — meu crachá prova que saí 45 minutos antes daquele e-mail.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_laptop_cam",
+              "label": "Checar a foto de falha de login do laptop",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Peguei · Ver Anúncio",
+              "player_reply_text": "Espera — meu aplicativo de segurança tira uma foto pela webcam sempre que alguém erra minha senha!",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "A Segurança do Prédio confirma: você passou o crachá na saída às 18h31. Clara passou na saída às 19h22.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "FOTO DA WEBCAM ÀS 19H16: Imagem cristalina de Clara dando um sorrisinho cínico bem sobre o seu teclado!",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "UAU! Essa foto é digna de vilã de cinema. Mande para a Olivia!",
+          "timestamp_label": "08:20",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Que pena que cancelaram seu horário, amiga. Vou super falar bem de você assim que eu for Diretora!",
+          "timestamp_label": "08:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "A Banca das 10h",
+          "teaser_text": "Episódio 2: Clara entra na entrevista para Diretora esperando uma coroação — e encontra VOCÊ já sentada com a banca.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Sorria Para a Webcam",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "10h00 · Sala de Vidro do Conselho. Clara entra confiante segurando seu portfólio — e congela ao ver você ao lado de Olivia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Sente-se, Clara. Antes de analisarmos seu portfólio, poderia explicar o que você estava fazendo na mesa de {{player_name}} às 19h16?",
+          "timestamp_label": "10:01",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Isso é ridículo! Eu estava na aula de ioga às 19h00! {{player_name}} está só com inveja!",
+          "timestamp_label": "10:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Leo, se você me dedurou vou acabar com o seu estágio!!",
+          "unsent_placeholder": "Clara apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 8,
+          "transcript": "[no viva-voz] Estou do lado de fora da sala, Olivia. Vi a Clara digitando no notebook da {{player_name}} às 19h15 — e ela acabou de me ameaçar no chat.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Clara insiste que é apenas a palavra de um estagiário contra a dela. Encerre isso.",
+          "options": [
+            {
+              "option_id": "opt_show_logs",
+              "label": "Deslizar na mesa o registro de crachás",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estranho — seu crachá registrou saída deste andar às 19h22, Clara. A aula de ioga devia ser bem aqui.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_airdrop_photo",
+              "label": "Exibir a foto da webcam das 19h16",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Nocaute · Ver Anúncio",
+              "player_reply_text": "Na verdade, meu notebook tirou um belo retrato seu às 19h16. Quer ver?",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "O queixo de Clara cai. Olivia fecha o portfólio de Clara e faz sinal para o RH esperando lá fora.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "FLAGRADA EM 4K: O rosto debochado de Clara preenche a TV da sala do conselho. Toda a banca arfa em uníssono.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "{{player_name}}, por favor! Somos amigas há três anos! Não deixe que me queimem no mercado!",
+          "timestamp_label": "10:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Você está demitida por justa causa, Clara. {{player_name}}, bem-vinda à sala executiva de esquina — e Leo, você vai receber proposta de efetivação.",
+          "timestamp_label": "10:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Nome Novo na Porta",
+          "teaser_text": "Ao se mudar para a sala executiva, você encontra um post-it sob a mesa — escrito com a letra de Clara com o número privado de um CEO rival.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Sob a Mesa",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "13h10 · Sua Nova Sala de Esquina. O post-it achado sob a mesa queima na palma da sua mão.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "{{player_name}}, puxei aquele número do post-it! Pertence a Marcus Vance — CEO da Apex Creative, nosso maior concorrente na concorrência do 4º trimestre!",
+          "timestamp_label": "13:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Clara não falsificou apenas minha demissão — estava passando a eles nossa tabela de preços do 4º trimestre também!",
+          "timestamp_label": "13:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "intern",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "ACHADO NA GAVETA DA MESA · Cartão do Lounge VIP do Hotel Grand — Passado ontem à noite às 21h40.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Emergência, {{player_name}}! Nosso principal cliente acabou de mandar e-mail dizendo que um concorrente ofereceu EXATAMENTE o mesmo conceito criativo por 15% menos!",
+          "timestamp_label": "13:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "A Apex já me prometeu Diretoria de Criação assim que roubarem essa conta—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 8,
+          "transcript": "[rolando rápido] {{player_name}}, chequei o log de auditoria da pasta compartilhada! A Clara baixou nossa planilha de preços do 4º tri num pendrive pessoal cinco minutos antes de ser demitida!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "A apresentação ao cliente é às 16h — e a Apex está com nossa apresentação roubada! Qual é sua contrajogada?",
+          "options": [
+            {
+              "option_id": "opt_build_v2",
+              "label": "Criar conceito V2 melhor antes das 16h",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Olivia, Leo — descartem a apresentação vazada. Temos duas horas para montar um Conceito V2 que deixe a cópia roubada deles comendo poeira!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_decoy_watermark",
+              "label": "Criar V2 + armadilha de marca d'água oculta",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Xadrez 4D · Ver Anúncio",
+              "player_reply_text": "Construímos a V2 — E lembra da tag oculta de metadados dentro da nossa apresentação antiga? Deixem a Apex apresentá-la e se expor AO VIVO!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "MARATONA CRIATIVA: Sua sala de guerra fica elétrica enquanto Leo e você criam uma apresentação interativa que a Apex jamais previu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "ARMADILHA ARMADA: Olivia dá um sorriso feroz — \"Vamos assistir à Apex explicar por que a assinatura oculta da nossa agência está no Slide 9.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "director",
+          "text": "O jurídico também está puxando o horário do saguão do Hotel Grand — espionagem corporativa é crime grave.",
+          "timestamp_label": "13:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Aproveite essa sala de esquina por uma tarde, {{player_name}}. Depois das 16h, você não terá mais nenhum cliente principal.",
+          "timestamp_label": "13:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Duas Horas Para a Batalha do Pitch",
+          "teaser_text": "Episódio 4: Clara tenta uma última sabotagem bem quando você chega à apresentação do cliente.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "A Reunião no Lounge",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "15h42 · Saguão da Torre do Cliente. Dezoito minutos antes de a apresentação do 4º tri começar.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Vi vocês entrando no saguão. Engraçado — a Apex apresenta PRIMEIRO, e os slides deles parecem TÃO familiares.",
+          "timestamp_label": "15:42",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Que bom que vão primeiro, Clara. Diga ao Marcus para prestar atenção redobrada no Slide 9.",
+          "timestamp_label": "15:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "ESPERA! Alguém acabou de tentar cancelar nossa reserva de projetor de áudio e vídeo na recepção do cliente usando o e-mail antigo da Clara na agência!",
+          "timestamp_label": "15:44",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Espera, o que tem no Slide 9, não chequei a camada oculta—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Eu já reconfirmei a sala de AV com a VP do cliente — e mostrei a ela o e-mail falso de cancelamento!",
+          "timestamp_label": "15:46",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 8,
+          "transcript": "[sussurrando] {{player_name}}, acabei de avistar a Clara no café do outro lado da rua segurando um celular descartável — acompanhando a apresentação da Apex ao vivo!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "A Apex acabou de apresentar sua versão V1 roubada — e o cliente chama você para entrar! Primeira fala?",
+          "options": [
+            {
+              "option_id": "opt_show_metadata",
+              "label": "Mostrar os horários originais de criação",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Antes de mostrarmos nosso conceito V2 aprimorado, aqui está o carimbo de tempo do servidor provando que a Apex acabou de apresentar nosso rascunho roubado.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_reveal_slide9",
+              "label": "Revelar o selo oculto no Slide 9",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Lendário · Ver Anúncio",
+              "player_reply_text": "Deem zoom de 400% no canto inferior direito do Slide 9 da Apex — vocês vão ver a micromarca d'água da nossa agência e as MINHAS iniciais.",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "VP DO CLIENTE ARFA: A sala esfria feito gelo na direção da Apex enquanto seus registros do servidor verificam cada pixel.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "NOCAUTE DA DÉCADA: O cliente amplia, vê suas iniciais claras como o dia e desclassifica a Apex na hora!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "director",
+          "text": "O CEO da Apex acabou de sair furioso do prédio com cara de quem vai demitir alguém — aos berros.",
+          "timestamp_label": "16:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Espera — o Marcus acabou de bloquear meu número! {{player_name}}, o que você mostrou lá dentro?!",
+          "timestamp_label": "16:16",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Sinal do Celular Descartável",
+          "teaser_text": "Episódio 5: Rastreie o GPS do descartável de Clara para encerrar de vez o caso de espionagem corporativa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "O Rastro do Descartável",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "17h10 · Sala de Conferência da Agência. O departamento jurídico coloca sobre a mesa a peça final do quebra-cabeça.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Lembra do celular de testes da empresa que Clara esqueceu de devolver? O Buscar Dispositivo acabou de marcar a rota exata dele ontem à noite!",
+          "timestamp_label": "17:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "intern",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "REGISTRO DE ROTA GPS · 21h40 Lounge VIP Hotel Grand → 22h55 Sede da Apex Creative.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Ok, parem!! A Apex retirou minha proposta de emprego e ameaçou ME processar por entregar slides com marca d'água! Por favor, não prestem queixa!",
+          "timestamp_label": "17:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você falsificou minha demissão, roubou nossa apresentação e tentou cancelar nosso projetor, Clara. O carma não é negociável.",
+          "timestamp_label": "17:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Joguei fora cinco anos de amizade e toda a minha carreira em 48 horas—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "director",
+          "duration_sec": 8,
+          "transcript": "[taças de champanhe tilintando] {{player_name}}! O cliente principal acabou de assinar nossa proposta V2 — num contrato exclusivo de TRÊS ANOS!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "O jurídico pergunta com que firmeza deve avançar no acordo por violação de segredo comercial contra Clara e Apex.",
+          "options": [
+            {
+              "option_id": "opt_sue_apex",
+              "label": "Processar a Apex e exigir confissão",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cobrem indenização integral da Apex — e liberem a Clara mediante confissão assinada e cláusula de não concorrência de 2 anos.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_public_retract",
+              "label": "Exigir indenização + retratação da Apex",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Vitória Total · Ver Anúncio",
+              "player_reply_text": "Indenização E retratação formal da Apex para o mercado — para todo mundo saber o trabalho de quem venceu aquela concorrência.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "ACORDO ASSINADO: A Apex paga US$ 500 mil em indenização para evitar julgamento público, e Clara assina em lágrimas.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "LENDA DO SETOR: A retratação da Apex viraliza na imprensa publicitária; três marcas da Fortune 500 ligam para o seu escritório.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Espera — acabei mesmo de ajudar a conquistar um contrato principal de três anos na sexta semana do meu estágio?!",
+          "timestamp_label": "17:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Ajudou sim, Leo. E acho que sua nova Diretora tem uma proposta de efetivação esperando por você.",
+          "timestamp_label": "17:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "A Sala Executiva Pertence a Você",
+          "teaser_text": "Episódio 6 (Final): Dê a largada na campanha principal de 3 anos com a equipe que esteve ao seu lado.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Apresentação Perfeita",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Sexta 17h00 · Sala de Esquina. As luzes da cidade se acendem atrás da sua porta de vidro recém-gravada.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Primeira semana como Diretora de Criação: contrato principal de 3 anos assinado, concorrente humilhada, zero demissões.",
+          "timestamp_label": "17:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "E configurei uma senha biométrica de 16 caracteres no meu notebook — só por precaução.",
+          "timestamp_label": "17:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Acabei de assinar minha proposta integral de Estrategista Júnior! Minha mãe está literalmente emoldurando o e-mail!",
+          "timestamp_label": "17:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Parabéns pelo contrato de 3 anos, {{player_name}}, eu pisei mesmo na bola—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "director",
+          "duration_sec": 8,
+          "transcript": "[música e risadas] Todo mundo está esperando no terraço da cobertura para o brinde da sua promoção, {{player_name}}! Pega o Leo e sobe logo!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Subindo! A primeira rodada de drinques sem álcool e tacos é por conta da nova Diretora.",
+          "timestamp_label": "17:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Seu brinde à equipe criativa no terraço:",
+          "options": [
+            {
+              "option_id": "opt_toast_loyalty",
+              "label": "Brindar a aliados reais e vitórias limpas",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A construir ideias tão boas que ninguém consegue copiar — e a colegas de equipe que sempre protegem suas costas!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_intern_fund",
+              "label": "Lançar trilha paga de mentoria com Leo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Nova Geração · Ver Anúncio",
+              "player_reply_text": "E a partir do próximo trimestre, Leo e eu vamos lançar um programa pago de jovens talentos criativos — mentoria de verdade, zero punhaladas nas costas!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "BRINDE NO TERRAÇO: Taças se erguem contra o horizonte enquanto seu novo capítulo brilha forte.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "OVAÇÃO DE PÉ: Olivia sorri cheia de orgulho — você não é só uma ótima Diretora, está transformando a agência inteira.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Melhor primeiro emprego do universo. Vamos detonar o 4º trimestre!",
+          "timestamp_label": "17:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Bem-vinda à sala de esquina, {{player_name}}. Ela sempre foi feita para você.",
+          "timestamp_label": "17:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Sala Executiva Coroada",
+          "teaser_text": "Você venceu a sabotagem corporativa, expôs a apresentação roubada e conquistou o maior contrato da sua carreira.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

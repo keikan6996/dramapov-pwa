@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_148",
+  "lang": "pt",
+  "metadata": {
+    "title": "O Último Trem Nunca Para na Estação 9",
+    "subtitle": "Acordei no metrô das 23:55 com um alerta: \"Nunca responda a ninguém de casaco cinza — e não olhe pela janela.\"",
+    "genre": "thriller",
+    "tags": [
+      "Terror no Metrô",
+      "Regras das 3h",
+      "Reviravolta"
+    ],
+    "cover_image": "assets/media/covers/story_148.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · Vagão 4",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "conductor",
+      "name": "Alerta de Trânsito",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "stranger",
+      "name": "Casaco Cinza · Assento 4C",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F172A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Alerta da Estação 9",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "23:58 · Você desperta num sobressalto no último metrô chacoalhando. O letreiro digital acima falha de \"Central\" para \"ESTAÇÃO 9\".",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "REGRA DE EMERGÊNCIA DO METRÔ: Se o Vagão 4 entrar na Estação 9, mantenha os olhos no celular, NÃO responda a ninguém de casaco cinza e permaneça sentado até as 03:30.",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A Estação 9 foi fechada com tijolos há 15 anos! Por que os freios estão guinchando?!",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[urgente, abafado por sirenes] \"{{player_name}}! Consegue me ouvir?! Aperte minha mão ou atenda seu celular — não fique dentro desse trem!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Ele está vestindo um casaco cinza. Não erga os olhos.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "As portas do metrô abrem com um chiado para uma plataforma escura como breu:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e1_free",
+              "label": "Manter olhos cravados no celular",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sem olhar para cima. Só esperando as portas fecharem...",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e1_vip",
+              "label": "Espiar passageiro do Assento 4C",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Olhei — ele está vestindo uma jaqueta cinza refletiva de resgate, não um casaco comum!",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Ótimo. As portas acabaram de travar — Espera, a câmera da plataforma mostra 6 silhuetas que acabaram de embarcar no Vagão 4!",
+          "timestamp_label": "00:01",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Aviso! NÃO confie no disfarce do casaco! A câmera da plataforma mostra o Vagão 4 totalmente vazio exceto por sombras!",
+          "timestamp_label": "00:01",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "As luzes do vagão piscam e apagam por 3 segundos. Quando voltam zumbindo, cada banco ao seu redor está encharcado.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Casaco Cinza · Assento 4C",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Pare de dar ouvidos ao alerta automático, {{player_name}}! Seu pulso está caindo — olhe seu reflexo no vidro!",
+          "timestamp_label": "00:04",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Por que o vidro está rachado feito teia de aranha... e por que estou sentindo cheiro de fumaça de diesel?!",
+          "timestamp_label": "00:04",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Seis Sombras no Vagão 4",
+          "teaser_text": "A seguir: A câmera de segurança da Estação 9 revela quem realmente embarcou.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Câmera da Plataforma",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "00:08 · O trem acelera para dentro de um túnel negro sem fim. Seu celular baixa a imagem do CFTV da Estação 9.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Confirmado: Passageiros não vivos detectados no Vagão 4. Permaneça no assento. NÃO deixe Casaco Cinza tirar você na próxima parada.",
+          "timestamp_label": "00:08",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Olhe a foto do CFTV — não são fantasmas, estão carregando macas e alicates hidráulicos!",
+          "timestamp_label": "00:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[urgente, estalo metálico] \"ISSO! Estamos cortando a porta esmagada do Vagão 4 agora mesmo! Fique acordado, {{player_name}}!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Ignore o barulho de corte. Durma até as 03:30.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "conductor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Câmera de segurança da plataforma da Estação 9 — silhuetas sombrias embarcando num vagão que parece vazio.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Suas pálpebras pesam de repente como chumbo:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e2_free",
+              "label": "Beliscar o braço para ficar alerta",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou acordado! Por que o Alerta do Metrô está me mandando voltar a dormir?!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e2_vip",
+              "label": "Perguntar a Casaco Cinza se o trem bateu",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Me fale na lata — o trem das 23:55 bateu?!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Porque o \"Alerta do Metrô\" não é real — é o seu próprio choque tentando puxar você para baixo! Lute contra isso!",
+          "timestamp_label": "00:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Sim! O Vagão 4 descarrilou dentro do Túnel 9 há trinta minutos! Você está preso sob o Assento 4C — fique comigo!",
+          "timestamp_label": "00:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "O sacolejo ritmado do trem desacelera... virando o bipe firme inconfundível de um monitor cardíaco.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Paramédico · Túnel 9",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Vemos a tela do seu celular brilhando nos destroços! Toque qualquer coisa no celular para sabermos que ainda está consciente!",
+          "timestamp_label": "00:16",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Estou tocando... por que não consigo sentir minhas pernas?!",
+          "timestamp_label": "00:16",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Descarrilado no Túnel 9",
+          "teaser_text": "A seguir: O trem tenta um último truque para manter você a bordo para sempre.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Condutor Falso",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "00:20 · Luz dourada morna inunda o Vagão 4. A dor desaparece por completo. O Alerta do Metrô toca suave.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "Última Chamada de Embarque: Fique no seu lugar, {{player_name}}. Sem dor, sem sirenes, só uma viagem tranquila para casa.",
+          "timestamp_label": "00:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Está tão quentinho... talvez eu deva só fechar os olhos por 5 minutos...",
+          "timestamp_label": "00:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "conductor",
+          "duration_sec": 8,
+          "transcript": "[zumbido suave e hipnótico] \"Feche os olhos, {{player_name}}. A Estação 9 é a última parada de que você vai precisar.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Não deixe o socorrista de casaco cinza acordar você.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Sua visão se fecha num túnel branco morno:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e3_free",
+              "label": "Lutar contra o calor e gritar socorro",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "NÃO! Não vou descer na Estação 9! Me puxem para fora!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e3_vip",
+              "label": "Bater lanterna do celular contra o vidro",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Piscando minha tela bem na direção do cortador de resgate — estou BEM AQUI!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "NÓS TE OUVIMOS! Aguenta firme — vamos erguer a viga de aço de cima do seu assento no três!",
+          "timestamp_label": "00:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "TEMOS VISUAL! A luz do seu celular piscou pela fresta — estamos puxando você livre AGORA!",
+          "timestamp_label": "00:24",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "CRAC! Ar real e gelado do túnel enche seus pulmões quando holofotes brancos fortes do resgate estilhaçam a ilusão morna.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Líder do Resgate · a 1m",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Olhe sua tela rachada de GPS — você está 40 metros debaixo da terra no Túnel 9, e acabamos de liberar sua maca!",
+          "timestamp_label": "00:28",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Consigo sentir o ar frio... ainda estou vivo!",
+          "timestamp_label": "00:28",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Puxado dos Destroços",
+          "teaser_text": "A seguir: O GPS do seu celular rachado confirma o quão perto você chegou da Estação 9.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "40 Metros Abaixo da Terra",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "00:35 · Deitado na maca de resgate, você olha para o celular rachado agarrado na mão machucada.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Aqui é o paramédico Mark — estamos subindo o elevador de emergência até o nível da rua! Seus sinais estão estabilizando rápido.",
+          "timestamp_label": "00:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... se o \"Alerta do Metrô\" era alucinação minha, então por que ele AINDA aparece na minha caixa de mensagens real?!",
+          "timestamp_label": "00:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[pausando, inquieto] \"Espera... deixa eu ver sua tela. NÃO existe nenhum remetente automático chamado Alerta do Metrô na rede da cidade...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "Da próxima vez que andar depois da meia-noite, não pegue no sono.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "stranger",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Mapa de GPS do celular rachado — sinal congelado 40 metros abaixo da terra dentro de um túnel de manutenção lacrado.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "O elevador de emergência alcança o nível da rua:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e4_free",
+              "label": "Mostrar ao paramédico o alerta apagado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Olha! Ele literalmente acabou de apagar um aviso bem na nossa frente!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e4_vip",
+              "label": "Apagar conversa da Estação 9 na hora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Apagando essa conversa para sempre — nunca mais quero ver a Estação 9 na vida!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Mark empalidece: \"Outros dois sobreviventes do Vagão 4 acabaram de me mostrar exatamente a mesma mensagem...\"",
+          "timestamp_label": "00:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Mark suspira aliviado: \"Boa decisão. Certas coisas lá embaixo no Túnel 9 é melhor deixar enterradas.\"",
+          "timestamp_label": "00:39",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "A chuva bate no seu rosto — real, fria e viva — quando as portas da ambulância se fecham atrás de você.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Pronto-Socorro do Hospital · Chegada",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Triagem do PS concluída. Concussão leve e costelas machucadas — você vai ter 100% de recuperação, {{player_name}}.",
+          "timestamp_label": "00:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Obrigado por usar aquele casaco cinza hoje à noite, Mark.",
+          "timestamp_label": "00:43",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "De Volta à Superfície",
+          "teaser_text": "Final a seguir: Uma semana depois, você passa pela entrada lacrada da Estação 9.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Nunca Embarque às 23:55",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "09:10 · Uma semana depois. De alta do hospital, você passa pela escada do metrô — pegando um táxi em vez disso.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Ei {{player_name}}, aqui é o Mark do resgate! Vi que teve alta — fique longe da linha da madrugada, combinado?",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Prometido! Pegando táxi pelo resto da vida. Chegaram a descobrir o que causou o descarrilamento?",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[baixo, sério] \"O laudo oficial diz que uma chave de trilho falhou... bem em frente à plataforma murada da Estação 9.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "O Assento 4C ainda está reservado para você.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Seu táxi arranca para longe da entrada da estação:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e5_free",
+              "label": "Desativar alertas de metrô para sempre",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aplicativo do metrô desinstalado. Nunca mais piso debaixo da terra à noite.",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e5_vip",
+              "label": "Agradecer Mark e pagar café à equipe",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Acabei de mandar café para o Esquadrão de Resgate 9 — vocês literalmente me puxaram da morte!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Escolha mais inteligente que você fez no ano inteiro. Aproveite o sol!",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "A equipe inteira mandou agradecer! Fique acordado em toda viagem de agora em diante!",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "Pelo retrovisor lateral do táxi, a entrada do metrô encolhe na multidão da manhã.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Mark · Resgate 9",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Se cuida, {{player_name}}! Ainda bem que não seguiu as regras erradas lá embaixo.",
+          "timestamp_label": "09:16",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Se uma voz no escuro disser para não confiar no cara de casaco cinza — não escute.",
+          "timestamp_label": "09:16",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Fora do Último Trem",
+          "teaser_text": "Você concluiu \"O Último Trem Nunca Para na Estação 9\"! Explore mais suspenses das 3h.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

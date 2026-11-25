@@ -1,0 +1,991 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_075",
+  "lang": "ja",
+  "metadata": {
+    "title": "継母の信託",
+    "subtitle": "25歳の誕生日に亡き母の信託口座の残高を見たら412ドルしか残っていなかった――そして継母がトスカーナのブドウ園を購入したところだった。",
+    "genre": "romance",
+    "tags": [
+      "遺産相続",
+      "継母",
+      "復讐"
+    ],
+    "cover_image": "assets/media/covers/story_075.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "stepmom",
+      "name": "Camille (継母)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#701A75"
+    },
+    {
+      "id": "banker",
+      "name": "Grant氏 (信託銀行員)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "dad",
+      "name": "パパ",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "残高：412ドル",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後4:00 · あなたの25歳の誕生日――亡き母が遺した120万ドルの信託の受給権が確定する日。信託銀行の担当者から緊急のメッセージが届きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "お誕生日おめでとうございます、{{player_name}}様――申し上げにくいのですが、信託残高が412.40ドルとなっております。昨年、合計118万ドルに上る4件の「緊急医療費」送金が引き出されております。",
+          "timestamp_label": "午後4:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "緊急医療費ですって！？私、去年一度も病気になんてなっていません！誰があの送金を承認したんですか！？",
+          "timestamp_label": "午後4:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 12,
+          "transcript": "[重々しい声] 継母のCamille様が署名入りの保護者管理書類を提出されました――そしてすべての送金が、ちょうどブドウ園を購入したフィレンツェの持株会社を経由していました。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "不動産業者にトスカーナの権利書は確定したと伝えて――Arthurは私が自分の慰謝料で買ったと思い込んでいるわ！",
+          "unsent_placeholder": "Camilleがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "25歳のお誕生日おめでとう、かわいい人！早く下の階へバースデーディナーに降りてきて――素敵なシルクスカーフを買っておいたのよ！",
+          "timestamp_label": "午後4:05",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "階下では50人の招待客とお父様が待っています。どうやって準備しますか？",
+          "options": [
+            {
+              "option_id": "opt_pull_wires",
+              "label": "4件の送金明細と偽請求書を印刷する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Grantさん、フィレンツェのペーパーカンパニー名が載った4件すべての送金領収書をメールで送ってください。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_file_felony",
+              "label": "銀行に詐欺フラグを立てヴィラを凍結",
+              "cost_type": "vip_rewarded",
+              "badge_text": "起訴 · 広告視聴",
+              "player_reply_text": "今すぐ4件の医療書類すべてを偽造としてフラグ登録してください。銀行の詐欺対策チームにトスカーナを追跡させましょう。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "送信しました。それと、彼女の「医療」領収書にあるクリニック名にもご注目ください――そのクリニックは2019年に閉院しています。",
+          "timestamp_label": "午後4:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "詐欺アラート発動：国際銀行コンプライアンス部門がCamilleのフィレンツェ持株口座を凍結し――イタリア当局へ通知しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "{{player_name}}、なんでキッチンでCamilleがスマホに向かって叫んでるんだ？もうすぐケーキ入刀だから降りておいで。",
+          "timestamp_label": "午後4:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "笑顔を作りなさい、{{player_name}}。お父様は誕生日に恩知らずな騒ぎを起こされるのを嫌うから。",
+          "timestamp_label": "午後4:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "120万ドルのスカーフ",
+          "teaser_text": "エピソード2：50人の招待客の前でCamilleが40ドルのスカーフを手渡してきます――そしてあなたはダイニングホールのプロジェクターにノートパソコンを接続します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "誕生日の乾杯",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後6:45 · ダイニングホール。父に向かって甘く微笑みながら、Camilleがシャンパングラスを掲げました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "{{player_name}}に乾杯！私は実の子供のようにあなたを大切にしてきました――今日、このスカーフを愛用してくれると嬉しいわ。",
+          "timestamp_label": "午後6:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ありがとう、Camille。でも私は、あなたが私の亡き母の信託資金で買った118万ドルのブドウ園の方にちょっと興味があるの。",
+          "timestamp_label": "午後6:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "プロジェクターを消しなさい！！Arthurにフィレンツェ送金を見せないで！！",
+          "unsent_placeholder": "Camilleがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "Camille！？{{player_name}}は何の話をしているんだ？あのブドウ園はお前の兄が買ったと言っていたじゃないか！",
+          "timestamp_label": "午後6:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 9,
+          "transcript": "[スピーカー越しに] Hải様、信託銀行でございます。奥様は{{player_name}}様の信託を空にするため、2019年に閉院したクリニックの4件の医療請求書を偽造されました。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "大理石の床にCamilleがグラスを落としました。どうやって彼女の支配に終止符を打ちますか？",
+          "options": [
+            {
+              "option_id": "opt_press_charges",
+              "label": "今夜中に重罪横領罪で刑事告訴する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "内密に示談にする気はありません、お父さん。彼女は母の墓から盗んだのよ。検察に裁いてもらいましょう。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_seize_vineyard",
+              "label": "ブドウ園の名義をあなたへ譲渡させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "痛快な一手 · 広告視聴",
+              "player_reply_text": "今夜中に利子を付けてトスカーナの権利書を私に譲渡しなさい――さもなくば裁判官にその偽クリニックについて説明してもらうわ。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "あなたの父は結婚指輪を外し、一言も発することなくバースデーケーキの横に置きました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "財産回収完了：Camilleは値上がり中の160万ドルのトスカーナのブドウ園を譲渡する署名をし――そして父は午前0時前に離婚手続きを申請しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "彼女の本性が見えていなかったなんて本当にすまなかった、{{player_name}}。お前がこれほど毅然と戦ったことを、お母さんも誇りに思っているはずだ。",
+          "timestamp_label": "午後6:55",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "25歳の誕生日に望みうる最高の贈り物だよ。真実が手に入ったんだから。",
+          "timestamp_label": "午後6:57",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "25歳に乾杯",
+          "teaser_text": "Camilleの机を片付けていた時、父は2つ目の偽造署名を見つけました――彼女は「彼」を被保険者にした生命保険契約を結ぼうとしていたのです。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "2つ目の署名",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後8:20 · 父の書斎。Camilleの机から父がたった今見つけた生命保険申込書が、すべてを一変させます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "{{player_name}}……手の震えが止まらないんだ。Camilleが私の署名を偽造して、受取人を「彼女単独」にした500万ドルの生命保険に加入しようとしていた！",
+          "timestamp_label": "午後8:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "トスカーナのブドウ園のために亡き母の信託を空にして、今度は「お父さん」の命に500万ドルの保険を掛けたっていうの！？",
+          "timestamp_label": "午後8:21",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "dad",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "偽造された保険申込書 · 5,000,000ドル定期生命保険 — 受取人：Camille V.（父不在のまま公証）。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "緊急警報です、{{player_name}}様！Camille様がたった今、イタリアの不動産ブローカーに明日の正午までにトスカーナのブドウ園を現金で急ぎ売却するよう指示しました！",
+          "timestamp_label": "午後8:23",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "ブドウ園の売却金がチューリッヒの口座に着金したら、午前6時の便で出国するわ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 8,
+          "transcript": "[素早いタイピング音] {{player_name}}様、国際詐欺凍結を申し立てる前にそのトスカーナ売買が成立してしまったら、お母様の信託資金がチューリッヒへ消えてしまいます！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Camilleは亡き母の信託資金を持って午前6時に国外逃亡しようとしています！どうやって止めますか？",
+          "options": [
+            {
+              "option_id": "opt_freeze_italy",
+              "label": "トスカーナで国際詐欺差し止めを申請",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Grantさん、信託窃盗の警察被害届をそのままブドウ園を扱っているイタリアの公証人へ送信してください！",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_airport_watch",
+              "label": "ブドウ園凍結＋保険偽造で警察へ警戒要請",
+              "cost_type": "vip_rewarded",
+              "badge_text": "完全封鎖 · 広告視聴",
+              "player_reply_text": "トスカーナの決済を凍結し、さらに刑事に偽造500万ドル生命保険証券を提出して――彼女のパスポートに逃亡警戒フラグを立ててください！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "売却凍結：イタリアの公証人はEUマネーロンダリング防止法に基づき、現金売買の決済を即座に停止しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "パスポート警戒登録：刑事たちはCamilleを逃亡の恐れ極めて高い重罪容疑者に指定――空港税関に緊急手配が回りました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "娘から財産を奪い、私にまで罠を掛けていたのに、3年間も彼女を庇っていたなんて信じられないよ。",
+          "timestamp_label": "午後8:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "なんでイタリアのブローカーから今、ブドウ園のエスクローがロックされたってメッセージが来たの！？何をしたのよ、{{player_name}}！？",
+          "timestamp_label": "午後8:31",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "離陸前の包囲網",
+          "teaser_text": "エピソード4：それでもCamilleは空港へ急行します――12番ゲートで刑事たちがすでに待ち構えているとも知らずに。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "ブドウ園からの逃亡",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前5:25 · 国際線ターミナル。ブランド品のキャリーバッグを引きながら、Camilleが保安検査場へ向かっています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "保険の告訴を取り下げてくれるならブドウ園の名義を返し直すってお父様に伝えなさい！誤解のせいで私の人生を台無しにしないで！",
+          "timestamp_label": "午前5:25",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "500万ドルの生命保険証券に父の署名を偽造するのは「誤解」とは言わないわ、Camille。",
+          "timestamp_label": "午前5:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "朗報です――トスカーナのブドウ園を購入した正確な送金経路を、亡きお母様の信託口座まで遡って完全に特定しました。法廷での疑いの余地はゼロです！",
+          "timestamp_label": "午前5:27",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "なんで税関でパスポートスキャナーが赤く点滅してるの――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "今刑事から電話があった！税関が国際線出発ゲートでCamilleを拘束し――彼女のハンドバッグから未申告の現金4万ドルを見つけたそうだ！",
+          "timestamp_label": "午前5:29",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 8,
+          "transcript": "[低く唸るプリンター音] さらに朗報です――Camille様の偽造書類に違法な公証印を押した公証人が司法取引で証人に転じました！免責と引き換えに彼女に不利な証言をするそうです！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "拘束されたCamilleは、直ちにブドウ園の権利書を返還署名すると申し出ています！あなたの一手は？",
+          "options": [
+            {
+              "option_id": "opt_sign_deed_back",
+              "label": "権利書を受け取り検察の起訴に委ねる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "母の信託へ戻す完全な返還譲渡証書にサインさせて――刑事文書偽造の件は検察官に任せましょう。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_seize_cash_too",
+              "label": "ブドウ園返還＋空港の現金4万ドルも回収",
+              "cost_type": "vip_rewarded",
+              "badge_text": "完全奪還 · 広告視聴",
+              "player_reply_text": "ブドウ園の権利書を取り戻し、さらに彼女が密輸しようとした4万ドルの現金も弁護士費用と利息の返済に充当させます！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "返還確定：地方検事が正式に起訴状を提出する中、取調室でCamilleは譲渡証書に署名しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "1セント残らず回収：亡き母の信託は発生利息を含めて100%完全に回復しました――1ドルたりとも失われませんでした。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "今朝詐欺を理由に婚姻無効の申立てを出すよ、{{player_name}}。それと、人生で一番大きな謝罪をお前にしなければならない。",
+          "timestamp_label": "午前5:38",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お父さんが無事で本当によかった。家に帰ろう――ちゃんとした美味しいコーヒーを淹れようよ。",
+          "timestamp_label": "午前5:39",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "トスカーナの凍結",
+          "teaser_text": "エピソード5：国際エスクロー送金によって、お母様の信託が1ドル残らず元通りに戻る瞬間を見届けましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "トスカーナの凍結",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前11:30 · プライベート信託銀行。Grant氏がマホガニーの机越しに国際送金確認書を滑らせてよこしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "フィレンツェから公式の確認通知が届きました――トスカーナ不動産の売却権益は、そのままあなた様の25歳誕生日の信託口座へ着金いたしました！",
+          "timestamp_label": "午前11:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "banker",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "信託回復完了 · 元本全額＋発生利息142,000ドルが{{player_name}}様へ返還。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "412ドルから、お母さんがお前のために残してくれた1ペニーに至るまで元通りだ。それに弁護士に頼んで私自身の共同署名権限も削除させた――100%お前だけのものだよ。",
+          "timestamp_label": "午前11:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ありがとう、お父さん。それにGrantさんも――Camilleが偽造書類を持って現れた時に見て見ぬふりをしないでくださってありがとうございました。",
+          "timestamp_label": "午前11:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "弁護士によると詐欺罪と保険偽造で最低でも懲役3年になるそうだ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "dad",
+          "duration_sec": 8,
+          "transcript": "[温かく感極まった声] ちょっと遅れちゃったけど、25歳のお誕生日おめでとう、大切な娘よ。今夜はお母さんが大好きだったディナーを手作りするからね――二人きりで。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "亡き母の信託が100%あなたの手に戻りました！最初の一歩は？",
+          "options": [
+            {
+              "option_id": "opt_invest_wisely",
+              "label": "80%をインデックス運用し夢の資金へ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Grantさん、80%を保護されたインデックス信託に入れてください――そして残りで私自身の建築設計スタジオを立ち上げます！",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_mom_memorial",
+              "label": "スタジオ設立＋母の名を冠した奨学金",
+              "cost_type": "vip_rewarded",
+              "badge_text": "美しい遺産 · 広告視聴",
+              "player_reply_text": "スタジオを立ち上げ――さらに取り戻した14万2000ドルの利息を使って、母の名を冠した毎年の芸術奨学金制度を設立します！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "賢明な相続人：Grant氏は感心したように頷きました。「お祖母様……いえ、お母様もあなたのその冷静さをさぞ誇りに思われるでしょう」",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "誇りの涙：父が目を拭いました。「それがお母さんの思い出を称える一番清らかな方法だね、{{player_name}}」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "すべての手続きが完了いたしました。25歳のお誕生日おめでとうございます、{{player_name}}様。",
+          "timestamp_label": "午前11:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "午後7時に家でね――食べ損ねていたバースデーケーキはもう買っておいたから。",
+          "timestamp_label": "午前11:41",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "25歳に乾杯",
+          "teaser_text": "エピソード6（フィナーレ）：取り戻された遺産と父との癒やされた絆の前で、ろうそくの火を吹き消しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "取り戻された母の遺産",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午後7:30 · 実家のダイニングルーム。額縁に入った母の肖像写真の横で、ケーキの上の25本のろうそくが温かく灯っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "今日の午後、裁判官によって婚姻無効が正式に確定したよ。ようやくこの家がまた私たちの家らしくなったな。",
+          "timestamp_label": "午後7:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "それにお父さん手作りのスープ、昔覚えていたよりもさらに美味しくなってる。",
+          "timestamp_label": "午後7:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "ささやかな誕生日プレゼントの続報です。イタリアの裁判所がCamille様の最後の上訴を正式に却下いたしました。あなたの信託は100%盤石です。",
+          "timestamp_label": "午後7:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "あの信託基金には手を出すべきではなかったわ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "dad",
+          "duration_sec": 8,
+          "transcript": "[揺らめくろうそくの灯] 願い事をしなさい、{{player_name}}。25歳でどんなものを築くとしても、私がすぐ後ろで支えるから――もう惑わされることも、見落とすことも二度とない。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "もう願い事はしたよ――それに、もう叶い始めてる。",
+          "timestamp_label": "午後7:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "25歳の誕生日のろうそくを吹き消しながら込める最後の願い：",
+          "options": [
+            {
+              "option_id": "opt_wish_peace",
+              "label": "平穏、家族、恐れ知らずの25歳を願う",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "母の愛と、父の健康と、そして25歳の恐れを知らない新しい章を願って！",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_visit_tuscany",
+              "label": "来春、父と本物のイタリア旅行へ行く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "見事な結末 · 広告視聴",
+              "player_reply_text": "来年の春は、お父さん――母が取り戻してくれた遺産で、私たち自身で本当のイタリア父娘旅行に行こうよ！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "吹き消されたろうそく：継母の影が永遠に消え去り、部屋中に温かな笑い声が満ち溢れました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "痛快な決着：父が思わず吹き出して笑いました。「まさに「それ」こそがトスカーナの取り戻し方だな！」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "ケーキを楽しんでくださいね、お二人とも。信頼できる銀行員が必要な時はいつでもお声掛けください。",
+          "timestamp_label": "午後7:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "愛しているよ。25歳、本当におめでとう。",
+          "timestamp_label": "午後7:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 取り戻された遺産",
+          "teaser_text": "あなたは継母の詐欺を暴き、父を救い出し、母の愛を1セント残らず取り戻しました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_071",
+  "lang": "ko",
+  "metadata": {
+    "title": "이모의 비밀 경매",
+    "subtitle": "할머니 장례를 치른 지 일주일도 안 되어, 큰이모가 내 가보 옥반지를 경매에 내놓았다.",
+    "genre": "romance",
+    "tags": [
+      "유산",
+      "가보",
+      "가족"
+    ],
+    "cover_image": "assets/media/covers/story_071.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "aunt",
+      "name": "Margaret 고모",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7E22CE"
+    },
+    {
+      "id": "appraiser",
+      "name": "Chen 씨 (감정사)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "cousin",
+      "name": "Lucas (사촌)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "경매품 14번",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오전 10:05 · 할머니 장례식 엿새 뒤. 예전에 한 번 뵌 적 있던 유산 감정사가 다급하게 문자를 보냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}} 님, 큰이모 마가렛 씨가 오늘 오후 1시 경매 목록 14번으로 제왕 옥 팔찌를 올리셨어요—안쪽에 {{player_name}} 님 이니셜이 새겨진 물건입니다.",
+          "timestamp_label": "오전 10:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "마가렛 이모! 왜 할머니 옥 팔찌가 경매 도록에 올라와 있어요?! 그건 저한테 물려주신 거잖아요!",
+          "timestamp_label": "오전 10:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "루카스, {{player_name}} 오기 전에 경매 정오 정각으로 당기고 파란 벨벳 상자 숨겨!",
+          "unsent_placeholder": "Margaret 고모님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "욕심부리지 마, {{player_name}}. 서면 목록표가 없으면 할머니 집 안 모든 물건은 유언 집행자인 내 소유야.",
+          "timestamp_label": "오전 10:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 11,
+          "transcript": "[낮춘 목소리] 석 달 전에 어머님께서 제 가게에 들르셨어요. 그 팔찌의 출처 보증서를 직접 {{player_name}} 님 명의로 등록해 두시고—제 금고에 사본을 맡기셨습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "비공개 경매가 90분 뒤에 시작됩니다. 어떻게 저지하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_get_cert",
+              "label": "출처 보증서를 챙겨 경매장으로 달려간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "첸 선생님, 그 보증서 꼭 쥐고 계세요! 10분 안에 모시러 갈게요.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_bring_police",
+              "label": "경찰에 도난 물품 경보를 접수한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "기습 작전 · 광고 보기",
+              "player_reply_text": "소유자 동의 없이 등록된 재산을 매각하는 건 특수절도입니다. 형사님 모시고 가죠.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "보증서 확보했습니다. 이 직인을 보는 순간 그 어떤 정상적인 경매장도 14번 물품에 손대지 못할 겁니다.",
+          "timestamp_label": "오전 10:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "경찰 동행 준비: 제왕 옥 감정가가 18만 달러에 달하므로, 재산범죄 전담팀이 즉시 경찰관 두 명을 배정합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "야 {{player_name}}, 진정 좀 해—엄마 그냥 내 레스토랑 임대료 메울 현금이 급해서 그랬대. 소란 피우지 마!",
+          "timestamp_label": "오전 10:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "입찰은 정오 정각에 시작한다. 올 생각 마라—정문 경비원들한테 너 들이지 말라고 지시해 뒀으니까.",
+          "timestamp_label": "오전 10:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "낙찰 직전, 한 번, 두 번...",
+          "teaser_text": "2화: 경매사가 14번 물품을 향해 망치를 들어 올립니다—바로 저택 정문이 활짝 열리는 순간에.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "최고 입찰자",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 12:08 · 할머니의 응접실. 벨벳 차단봉과 부유한 수집가 스무 명. 경매 망치가 14번 위로 올라갑니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "195,000달러에 낙찰! 잠깐—누가 {{player_name}}를 정문 통과시킨 거야?!",
+          "timestamp_label": "오후 12:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "매매 중지하세요! 14번 경매품을 사시는 분은 누구든 서류상 도난 장물을 매수하시는 겁니다.",
+          "timestamp_label": "오후 12:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "cousin",
+          "text": "엄마, 맨 앞줄 구매자가 방금 수표 다시 집어넣고 있어!!",
+          "unsent_placeholder": "Lucas님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 10,
+          "transcript": "[권위 있는 목소리] 신사 숙녀 여러분, 확대경으로 안쪽 테두리를 보십시오. {{player_name}} 님의 이니셜과 석 달 전 제 공증 등록 이전 기록이 새겨져 있습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "마가렛 이모가 당황하며 벨벳 상자를 떨어뜨립니다. 당신의 판결은?",
+          "options": [
+            {
+              "option_id": "opt_reclaim_jade",
+              "label": "팔찌를 되찾고 이모의 유언 집행자 자격을 박탈한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "팔찌 내놓으세요, 마가렛 이모. 그리고 제 변호사가 오늘 이모의 집행자 해임 청원을 낼 겁니다.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_check_safe",
+              "label": "옥 상자 안쪽의 이중 바닥을 열어본다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 금고 · 광고 보기",
+              "player_reply_text": "잠깐—할머니가 이 파란 상자에 이중 벨벳 바닥이 있다고 하셨는데. 이모가 뭘 팔아넘길 뻔했는지 보죠.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "수집가들이 불쾌한 표정으로 줄지어 나갑니다. 당신은 서늘한 할머니의 옥 팔찌를 손목에 안전히 낍니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "숨겨진 권리증 발견: 벨벳 안감 아래에는 오직 {{player_name}} 앞으로만 단독 양도된 할머니 저택의 원본 등기권리증이 끼워져 있습니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "안 돼… 말도 안 돼! 집 전체를 너한테 물려주셨다고?! 우린 갈 데가 없는데!",
+          "timestamp_label": "오후 12:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "경매 팻말 싸서 나가세요, 마가렛 이모. 할머니 집은 영업 종료니까요.",
+          "timestamp_label": "오후 12:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "유품을 되찾다",
+          "teaser_text": "저택 등기권리증 안쪽에는 할머니의 자필 메모가 들어 있습니다: \"지하실 금고를 묻는 자를 경계하라.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "지하실의 쪽지",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 11:48 · 할머니 저택. 지하실 금고를 조심하라는 할머니의 자필 경고가 갑자기 현실로 살아납니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "{{player_name}}, 일어나 봐! 내 폰에 저택 지하실 동작 감지 경보 떴어—게다가 집 앞 차도에 엄마 차가 없어!",
+          "timestamp_label": "오후 11:48",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "할머니가 글자 그대로 쓰셨어: \"지하실 금고를 묻는 자를 경계하라.\" 마가렛 이모가 지금 당장 저 아래 내려가 있어!",
+          "timestamp_label": "오후 11:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "cousin",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "지하실 동작 감지 캠 · 오후 11:46 — 손전등을 들고 할머니의 석조 금고 쪽으로 향하는 실루엣.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}} 님, 방금 자외선 라이트 아래서 옥반지 정밀 감정을 마쳤어요! 안쪽 띠 문양은 장식이 아니라—새겨진 6자리 금고 비밀번호예요!",
+          "timestamp_label": "오후 11:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "이 열쇠공이 자정 전에 다이얼 뚫어야 할 텐데, 안 그러면 내 구매자가 발을 빼는데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[자갈 밟는 발소리] 지금 저택 쪽문으로 들어가고 있어! 울타리 뒤에 흰색 열쇠공 승합차가 서 있어—엄마가 진짜로 금고 뚫을 사람 고용했어!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "마가렛이 할머니의 금고에 드릴을 대려 하고 있습니다! 어떻게 막으시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_call_police_manor",
+              "label": "주거침입 및 절도 현행범으로 경찰에 신고한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "저택 등기상 법적 소유주는 나야—지금 당장 현행범 절도로 경찰 부를게!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_trigger_alarm",
+              "label": "저택 경보를 울리고 지하실 철문을 잠근다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "현행범 체포 · 광고 보기",
+              "player_reply_text": "루카스, 지하실 투광등 켜고 저택 경보기 울려—경찰 올 때까지 거기 딱 가둬둬!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "바깥의 사이렌: 순찰차 헤드라이트가 안뜰을 비추자 열쇠공이 드릴을 내던지고 도망칩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "눈부신 조명: 투광등이 번쩍 켜지며, 손대지 않은 할머니 금고 옆에서 쇠지렛대를 들고 서 있는 마가렛 이모의 모습이 포착됩니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "친이모한테 경찰을 불렀다고?! 난 그저 지하실에 습기 찼나 확인하러 내려갔을 뿐이야!",
+          "timestamp_label": "오후 11:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "한밤중에 다이아몬드 날 금고 드릴 들고 습기 확인하는 사람은 없어요, 마가렛. 내일 지하실에서 만납시다—정식으로 열어보죠.",
+          "timestamp_label": "오후 11:59",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "할머니 금고 안에는 무엇이 들었나?",
+          "teaser_text": "4화: 옥반지 속 숨겨진 UV 암호로 지하실 금고를 열고—왜 마가렛이 그렇게 필사적이었는지 확인하십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "두 번째 감정",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 10:00 · 저택 지하실. 경찰 입회 아래, 당신은 옥반지 안쪽에 숨겨진 6자리 숫자를 돌립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "찰칵! 금고 문이 활짝 열렸습니다! 세상에… {{player_name}} 님, 저 자단나무 상자 안에 뭐가 들었는지 아세요?!",
+          "timestamp_label": "오전 10:00",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "짝이 맞는 제왕 옥 펜던트, 골동품 권리증 장부—그리고 저 앞으로 쓴 편지가 있어요!",
+          "timestamp_label": "오전 10:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "잠깐—왜 엄마 핸드백 속에 딱 저 펜던트 사진이 실린 비밀 경매 도록이 꽂혀 있지?!",
+          "timestamp_label": "오전 10:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "이미 해외 수집가한테 그 펜던트 착수금으로 15만 달러 받아 놨는데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "맙소사! 이 제왕 옥 한 세트는 박물관급입니다—감정가만 140만 달러예요! 그래서 마가렛 씨가 먼저 반지부터 훔치려 했던 거군요!",
+          "timestamp_label": "오전 10:04",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[종이 펼치는 소리] {{player_name}}, 할머니 편지에 적혀 있기를—엄마가 지난달에 지하 경매 브로커한테 불법 착수금을 받아 챙겼대! 할머니가 돌아가시기도 전에!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "마가렛이 펜던트를 내놓지 않으면 할머니가 치매였다고 주장하겠다고 협박합니다! 당신의 선택은?",
+          "options": [
+            {
+              "option_id": "opt_read_letter",
+              "label": "할머니의 공증된 편지를 소리 내어 읽는다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "할머니가 주치의랑 공증인 입회 아래 이 편지를 쓰셨어요—장례 치르기도 전에 이모가 팔아치울 줄 다 아셨던 거예요.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_expose_broker",
+              "label": "경매 협회에 이모의 불법 사전 매각을 신고한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "체크메이트 · 광고 보기",
+              "player_reply_text": "첸 선생님, 지하실 절도 보고서랑 사전 매각 영수증을 국제 경매 협회에 바로 보내세요!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "말문을 잃음: 첸 선생님이 방탄 감정 가방에 옥 세트를 봉인하는 동안 마가렛은 와인 상자 위에 주저앉습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "블랙리스트 등재: 브로커가 즉시 계약을 파기하고 마가렛에게 15만 달러 선수금을 돌려달라고 요구합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "친어머니가 아직 숨 쉬고 계실 때 어머니 유품을 팔아넘겼군요, 마가렛 이모.",
+          "timestamp_label": "오전 10:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "위탁 판매 계약서에 도장 찍었단 말이야! 오후 5시까지 저 펜던트 못 넘기면 내 집까지 뺏어가!",
+          "timestamp_label": "오전 10:13",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "드러난 위탁 판매 계약서",
+          "teaser_text": "5화: 마가렛이 서명한 위조 위탁 판매 계약서를 확인하십시오—당신의 이름이 적혀 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "위탁 판매의 덫",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오후 2:15 · 첸 선생님의 감정 갤러리. 경매 브로커가 방금 마가렛이 서명한 계약서를 팩스로 보내왔습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}} 님, 이 위탁 판매 계약서 맨 아랫줄 보세요—마가렛 씨가 공동 소유주란에 {{player_name}} 님 서명을 위조했어요!",
+          "timestamp_label": "오후 2:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "appraiser",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "위조 위탁 계약서 · 위조된 상속인 서명이 담긴 제왕 옥 세트(140만 달러) 무단 매각 계약.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "제발 {{player_name}}, 나 체포당하지 않게 그냥 네 서명 맞다고만 해 줘! 경매 대금 절반 너 줄게!",
+          "timestamp_label": "오후 2:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "현금 쥐자고 할머니의 영혼을 팔아넘기려고 내 이름까지 위조했잖아요. 절대 어림없어요, 마가렛.",
+          "timestamp_label": "오후 2:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "루카스도 이제 내 전화 아예 안 받네, 완전히 혼자 남았구나—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[깊은 한숨] {{player_name}}, 방금 경찰에 엄마가 우리 부엌 식탁에서 네 서명 연습하던 걸 증언하고 왔어. 옳은 일을 해—할머니의 유산을 지켜줘.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "경매 회사가 계약을 무효화하고 140만 달러짜리 옥 세트를 어떻게 처리할지 묻습니다.",
+          "options": [
+            {
+              "option_id": "opt_bank_vault",
+              "label": "옥 세트를 가족 명의 은행 금고에 안전히 보관한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "반지와 펜던트를 함께 개인 은행 금고에 봉인해 주세요—영원히 우리 가문에 남을 겁니다.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_museum_loan",
+              "label": "소유권은 가족으로 두되 할머니 이름으로 시립 박물관에 대여 전시한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "영원한 유산 · 광고 보기",
+              "player_reply_text": "소유권은 우리 가족에게 남기고—할머니를 기리는 명패와 함께 시립 박물관에 기탁 전시하겠습니다!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "영구 보존: 첸 선생님이 어떤 브로커도 손댈 수 없는 보호 가문 등록부에 유품을 등재합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "박물관의 영예: 관장이 전액 보험 가입 조건으로 즉시 수락합니다—할머니의 이름이 대대손손 빛날 것입니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "어머님께서 정확히 가장 올바른 수호자를 선택하셨네요, {{player_name}} 님.",
+          "timestamp_label": "오후 2:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "엄마가 자기 보석들 넘겨서 갚아주자 브로커가 집 압류는 풀어줬대—그리고 서명 위조 건으론 집행유예 처분을 받을 거래.",
+          "timestamp_label": "오후 2:27",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "안전해진 할머니의 유산",
+          "teaser_text": "6화 (최종화): 루카스와 함께 할머니 저택을 다시 열고 할머니를 기리며 옥 가보를 공개하십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "할머니의 금고",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "한 달 뒤 · 시립 문화유산 갤러리. 따뜻한 스포트라이트가 할머니의 성함이 새겨진 벨벳 진열장을 비춥니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "오늘 밤 제왕 옥 전시회를 보러 200명이 넘는 손님들이 오셨어요, {{player_name}} 님! 할머님께서 활짝 웃고 계실 거예요.",
+          "timestamp_label": "오후 7:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "어두운 지하실에 숨겨지거나 탐욕에 팔려나가는 대신 이렇게 축복받는 걸 보니 비로소 제자리를 찾은 것 같아요.",
+          "timestamp_label": "오후 7:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "오늘 밤 날 초대해 줘서 고마워, {{player_name}}. 엄마가 저지른 짓들을 생각하면 우리 둘 다 연 끊을 줄 알았거든.",
+          "timestamp_label": "오후 7:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "신문에서 옥 전시회 사진 봤다—{{player_name}}에 대한 어머니 말씀이 옳았어—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 8,
+          "transcript": "[부드러운 박수 소리] 박물관장님께서 할머니에 대해 짧은 말씀 부탁드린다며 {{player_name}} 님을 단상으로 모시고 계세요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "지금 올라갈게요. 루카스, 내 옆에 같이 서 줘—이걸 지키는 데 너도 도왔잖아.",
+          "timestamp_label": "오후 7:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "갤러리 단상에서 전하는 마지막 헌사:",
+          "options": [
+            {
+              "option_id": "opt_dedicate_grandma",
+              "label": "할머니의 지혜에 전시회를 바친다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "할머니는 진정한 가보란 캐럿 수로 재는 것이 아니라—그것을 지키는 사람의 고결함으로 재는 것이라 가르쳐 주셨습니다.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_manor_library",
+              "label": "할머니 저택을 무료 문화예술 살롱으로 개방한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "살아있는 전설 · 광고 보기",
+              "player_reply_text": "그리고 올가을, 루카스와 저는 젊은 장인들을 위한 무료 문화유산 도서관으로 할머니 저택 정원을 개방하겠습니다!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "기립 박수: 유리 진열장 아래에서 옥이 은은하게 빛나는 가운데 갤러리가 박수 소리로 가득 찹니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "살아 있는 헌사: 첸 선생님이 그 자리에서 자신의 골동품 참고 서적 컬렉션 전체를 새 도서관에 기증하겠다고 약속합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "오늘 밤 할머니께서 하늘에서 우리를 보며 미소 짓고 계실 거야, {{player_name}}.",
+          "timestamp_label": "오후 7:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "비취 옥의 걸작이요—그보다 더 훌륭한 상속자입니다.",
+          "timestamp_label": "오후 7:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 옥의 수호자",
+          "teaser_text": "한밤중의 비밀 경매를 저지하고, 할머니의 금고를 열었으며, 대대손손 이어질 유산을 지켜냈습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

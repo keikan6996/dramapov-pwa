@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_070",
+  "lang": "es",
+  "metadata": {
+    "title": "La Segunda Familia Secreta",
+    "subtitle": "Ordenando la bolsa del hospital de papá, hallé un recibo de colegiatura de un niño de 10 años... pagado desde el fideicomiso de mamá.",
+    "genre": "romance",
+    "tags": [
+      "Secreto Familiar",
+      "Traición",
+      "Novela"
+    ],
+    "cover_image": "assets/media/covers/story_070.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "mistress",
+      "name": "Sofia (Desconocida)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#701A75"
+    },
+    {
+      "id": "sister",
+      "name": "Grace (Hermana Mayor)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "doctor",
+      "name": "Dr. Lin",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "El Recibo de Colegiatura",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09:30 PM · Sala de Espera de UCI. Papá está sedado tras su derrame. Su teléfono de repuesto vibra dentro de su abrigo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "Amor, ¿por qué rebotó la colegiatura internacional de Leo? ¡Prometiste que la escritura de la villa se firmaría antes del viernes!",
+          "timestamp_label": "09:30 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grace, tengo en la mano el segundo teléfono de papá. ¿Quién es Sofia? ¡¿Y por qué paga la escuela de un niño de 10 años del fideicomiso de mamá?!",
+          "timestamp_label": "09:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "sister",
+          "text": "Ay no... ¡Papá me hizo jurar nunca decirte lo de Sofia hasta después de cerrar el fideicomiso de mamá!",
+          "unsent_placeholder": "Grace anuló el envío de un mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡Suelta el teléfono, {{player_name}}! ¡No estresemos a mamá mientras papá está en terapia intensiva!",
+          "timestamp_label": "09:33 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "mistress",
+          "duration_sec": 12,
+          "transcript": "[fría, arrogante] Oh, hola {{player_name}}. Ya que estás leyendo sus mensajes... ya estoy en el vestíbulo del hospital con un Poder Notarial certificado. El reinado de tu madre terminó.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Sofia va subiendo en el elevador al Piso 5 de UCI. ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "opt_alert_doctor",
+              "label": "Pide al Dr. Lin restringir acceso UCI",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Lin, sube una mujer sin autorización reclamando poder notarial. ¡Solo familia directa!",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_freeze_trust",
+              "label": "Congela fideicomiso de Mamá ya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Proteger a Mamá · Ver Anuncio",
+              "player_reply_text": "Llamando al oficial fiduciario ahora mismo. Ni un dólar más sale del patrimonio de mamá.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "Seguridad notificada. Además, tu padre ha estado incapacitado cognitivamente desde las 4 PM... cualquier documento firmado hoy es legalmente nulo.",
+          "timestamp_label": "09:37 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "FIDEICOMISO CONGELADO: ¡Descubres que se drenaron $340,000 de la cuenta de mamá en 6 años—usando una cofirma falsificada por tu hermana Grace!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡{{player_name}} espera! ¡Papá prometió devolverle a mamá tras la fusión! ¡No le digas a mamá que lo ayudé!",
+          "timestamp_label": "09:38 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "Dile a seguridad que se haga a un lado, {{player_name}}. O llamo a cada periodista de la ciudad y les cuento quién es tu padre en realidad.",
+          "timestamp_label": "09:40 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Duelo Afuera de Terapia Intensiva",
+          "teaser_text": "Episodio 2: Sofia agita su Poder Notarial en las puertas de UCI... hasta que Mamá sale del elevador detrás de ella.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "La Verdadera Matriarca",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09:48 PM · Pasillo Piso 5. Sofia está cara a cara contigo, sosteniendo una carpeta manila.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "Dame las llaves de la villa y liquida el fideicomiso de mi hijo, y desaparecemos en silencio. Niégate, y el apellido de tu familia queda arruinado.",
+          "timestamp_label": "09:48 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Interesante chantaje. Especialmente porque el Dr. Lin acaba de certificar que papá estaba inconsciente cuando se fechó ese papel.",
+          "timestamp_label": "09:49 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "¡Llama al notario! ¡¡Dile que antedate el sello a ayer por la mañana!!",
+          "unsent_placeholder": "Sofia anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "doctor",
+          "duration_sec": 9,
+          "transcript": "[firme] Señora, seguridad del hospital la está escoltando fuera de las instalaciones. Cualquier intento de falsificar tiempos médicos será reportado a la policía.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "El abogado de Sofia retrocede. ¿Qué haces respecto al fideicomiso robado?",
+          "options": [
+            {
+              "option_id": "opt_clawback",
+              "label": "Demanda devolución de los $340K",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cada centavo que recibiste salió del fideicomiso aparte de mi madre. Espera una demanda el lunes.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_confront_grace",
+              "label": "Quita a Grace como cofiduciaria hoy",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Ajuste de Cuentas · Ver Anuncio",
+              "player_reply_text": "Y Grace... cede por firma tu puesto de fiduciaria esta noche, o mamá ve los comprobantes de retiro falsificados.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Sofia palidece y se retira al elevador. Tu madre te aprieta la mano desde atrás.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "FIDEICOMISO ASEGURADO: Grace cede su poder fiduciario entre lágrimas. Ahora eres la única protectora del patrimonio de tu madre.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Lo siento, {{player_name}}. Tenía pánico de que papá me dejara sin nada si decía que no.",
+          "timestamp_label": "09:54 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nadie vuelve a robarle a mamá jamás. Ni Sofia, ni papá, ni nadie.",
+          "timestamp_label": "09:56 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "La Casa Siempre Recuerda",
+          "teaser_text": "Dentro de UCI, Papá abre los ojos por primera vez... y susurra un nombre que no es el de Mamá y no es el de Sofia.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "El Nombre Susurrado",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:20 PM · Pasillo UCI del Hospital. El nombre que papá acaba de susurrar —\"Claire\"— resuena en tus oídos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}}, ¿quién es Claire?! ¡Ese no es el nombre de mamá y no es el de Sofia!",
+          "timestamp_label": "11:20 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera—revisa los retiros mensuales del fideicomiso que sacamos de la cuenta de mamá. Cada pago pasaba por el nombre de Sofia, ¿verdad?",
+          "timestamp_label": "11:21 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sister",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "AUDITORÍA FIDEICOMISO · $8,500/mes del fideicomiso de Mamá → cuenta de Sofia → Reenviados al instante a \"Fideicomiso Cuidado Claire M.\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "Los signos vitales de su padre se están estabilizando—podrá hablar con claridad por la mañana. Por favor dejen las discusiones fuera de UCI.",
+          "timestamp_label": "11:23 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "Si descubren que Claire es la propia sobrina de su madre, mi tajada se acaba—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 9,
+          "transcript": "[jadeando] ¡{{player_name}}! ¡¿Viste lo que acaba de anular Sofia?! Espera—¡mamá tuvo una hermana menor que murió en un choque hace diez años! ¡Su hija se llamaba Claire!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Sofia estuvo desviando la mitad del dinero destinado a tu prima huérfana. ¿Cómo la enfrentas?",
+          "options": [
+            {
+              "option_id": "opt_confront_sofia",
+              "label": "Enfrenta a Sofia con los envíos",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sofia, no eras la esposa secreta de papá—eras la cuidadora que contrató para nuestra prima, ¡y te robabas $4,000 al mes!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_freeze_trust_now",
+              "label": "Congela tarjetas y avisa a seguridad",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bloqueo Ya · Ver Anuncio",
+              "player_reply_text": "Grace, llama al oficial fiduciario para revocar la tarjeta de desembolso de Sofia—¡y pide al Dr. Lin que alerte a seguridad del hospital!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "SOFIA SE QUIEBRA: Sus burbujas de escritura empiezan y paran tres veces antes de salir corriendo hacia el elevador del hospital.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "BLOQUEADA: La tarjeta bancaria de Sofia es rechazada en el cajero abajo mientras seguridad del hospital la detiene por robar la cartera de papá.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "¡Tu padre me hizo jurar secreto! No quería que la familia de tu mamá peleara por el fideicomiso... ¡y yo merecía una comisión por administración!",
+          "timestamp_label": "11:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Llevarte $400,000 en diez años mientras metías a nuestra prima en un internado barato no es una \"comisión\", Sofia—¡es desfalco!",
+          "timestamp_label": "11:31 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "La Verdadera Razón Por La Que Papá Lo Ocultó",
+          "teaser_text": "Episodio 4: Espera hasta el alba cuando Papá despierte... y Sofia intente una última mentira sobre paternidad.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Confesión de Sofia",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "6:40 AM · Sala de Espera de UCI. Sofia regresa con un abogado arrogante antes de la revisión matutina de papá.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "Piénsalo bien antes de demandarme. El niño de 10 años en ese recibo de colegiatura SÍ es hijo biológico de tu padre... ¡y yo soy su tutora legal!",
+          "timestamp_label": "6:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Primero dijiste ser cuidadora, ¿ahora aseguras que el niño es hijo de papá? ¿Cuál mentira es, Sofia?",
+          "timestamp_label": "6:41 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "Su padre está despierto y lúcido ahora. Oyó el alboroto y pidió explícitamente que SOLO entren {{player_name}} y Grace.",
+          "timestamp_label": "6:42 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "Si el viejo les dice que mi abogado falsificó ese papel de tutela—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡Papá me acaba de apretar la mano y me contó todo! ¡El niño es hijo de Claire—sobrino nieto de mamá—y papá tiene un reporte sellado de ADN en su caja fuerte probando que Sofia tiene CERO lazo de sangre con él!",
+          "timestamp_label": "6:44 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "doctor",
+          "duration_sec": 8,
+          "transcript": "[monitor pitando constante] Su padre también firmó conmigo un formulario de capacidad médica con testigo... así que cualquier poder notarial que agite Sofia es 100% nulo.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "El abogado de Sofia exige entrar a UCI. ¿Cómo los detienes?",
+          "options": [
+            {
+              "option_id": "opt_call_guard_icu",
+              "label": "Pide al Dr. Lin vetarlas de la UCI",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Lin, por favor haga cumplir la restricción de visitas de papá... y mande llamar al abogado sucesorio.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_retrieve_safe",
+              "label": "Manda a Grace por el ADN de la caja",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Nocaut · Ver Anuncio",
+              "player_reply_text": "Grace, toma la clave de la caja fuerte de papá y trae el reporte sellado de ADN de la clínica... ¡acabemos hoy con la estafa de tutela de Sofia!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "VETADOS EN LA PUERTA: Seguridad escolta de inmediato a Sofia y su abogado fuera del ala de UCI.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "EVIDENCIA EN MANO: En treinta minutos, Grace vuelve con el expediente sellado de la clínica y cada factura robada.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Descansa tranquilo, Papá. Grace y yo cuidaremos de nuestro pequeño sobrino... y recuperaremos hasta el último dólar.",
+          "timestamp_label": "6:52 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "¡No pueden probar nada! ¡Mi nombre sigue en el registro de tutelas!",
+          "timestamp_label": "6:53 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Se Abre el Expediente de la Clínica",
+          "teaser_text": "Episodio 5: Abran el reporte de ADN frente a Servicios Familiares y despojen a Sofia de cada centavo robado.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "El Expediente de la Clínica",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:00 PM · Sala de Juntas del Hospital. Una oficial de Servicios Familiares se sienta frente a Sofia y tu familia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Oficial, aquí está la verificación sellada de ADN de la Clínica St. Mary... además de diez años de transferencias desviadas del fideicomiso.",
+          "timestamp_label": "2:00 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "sister",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "REPORTE ADN CLÍNICA · 0.00% coincidencia con Padre y Sofia — 99.9% parentesco materno con la difunta hermana de Madre, Claire.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "mistress",
+          "text": "¡Mi abogado me dijo que dijera eso—no sabía que tenían una prueba de laboratorio!",
+          "timestamp_label": "2:02 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Les mentiste a las hijas de un hombre enfermo y le robaste a un niño huérfano. Tu abogado ya salió caminando hace dos minutos.",
+          "timestamp_label": "2:03 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "Si devuelvo los $180,000 que quedan en mis ahorros tal vez no me arresten—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "doctor",
+          "duration_sec": 8,
+          "transcript": "[sonrisa amable] Buenas noticias del Cuarto 402... la presión arterial de su padre está normal por primera vez en toda la semana. Está listo para recibir al niño en casa.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Servicios Familiares revoca de inmediato la tutela de Sofia. ¿Qué haces después?",
+          "options": [
+            {
+              "option_id": "opt_restitution_order",
+              "label": "Exige restitución y acoge a Leo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Presenten cargos completos de restitución contra Sofia... y Grace y yo cofirmamos hoy la tutela de nuestro pequeño primo.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_rebuild_trust",
+              "label": "Embarga bienes + duplica beca escolar",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Escudo Total · Ver Anuncio",
+              "player_reply_text": "¡Traben un gravamen judicial sobre el departamento de Sofia para recuperar cada centavo robado—y metan 100% en un fideicomiso educativo blindado para él!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "TUTELA TRANSFERIDA: Se llevan a Sofia para proceso por fraude mientras el largo secreto de tu familia sana.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "FUTURO GARANTIZADO: El juez aprueba el gravamen sobre bienes en el acto... asegurando la educación del niño hasta la universidad.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "No puedo creer que casi odiamos a papá por un malentendido que Sofia explotó durante diez años.",
+          "timestamp_label": "2:12 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La verdad duele una hora... las mentiras duelen toda una vida. Vamos a ver a papá.",
+          "timestamp_label": "2:13 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Una Familia Completa Otra Vez",
+          "teaser_text": "Episodio 6 (Final): Lleva a Papá a casa del hospital y recibe a tu pequeño primo en la familia.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Antes de Que Se Apaguen los Monitores",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Dos Semanas Después · Comedor Familiar. Papá está en casa del hospital, sonriendo frente a una cálida mesa dominical.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡Míralo enseñándole a papá su trofeo de matemáticas! No ha dejado de sonreír desde que lo trajimos a casa.",
+          "timestamp_label": "12:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "El fondo fiduciario de mamá por fin está haciendo exactamente lo que ella habría querido... proteger a la familia.",
+          "timestamp_label": "12:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "¡Pasando a saludar a mi paciente favorito! ¡Díganle a su padre que siga tomando sus pastillas para la presión y cero estrés secreto!",
+          "timestamp_label": "12:32 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mistress",
+          "text": "Mi fecha en corte es el próximo mes, de verdad lo arruiné todo—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[risas alrededor de la mesa] ¡Papá me acaba de pedir ponerte en altavoz—dice que eres oficialmente la Fiduciaria del legado de mamá ahora, {{player_name}}!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cuidaré cada centavo con mi vida... y con cero secretos entre nosotros de ahora en adelante.",
+          "timestamp_label": "12:36 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "¿Cómo honras la memoria de Mamá en la mesa dominical?",
+          "options": [
+            {
+              "option_id": "opt_family_photo",
+              "label": "Tómense un nuevo retrato familiar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Todos júntense al lado del retrato de mamá... hora de un capítulo nuevo en la pared de la sala.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_mom_garden",
+              "label": "Dedica beca en nombre de Mamá y Claire",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Amor Puro · Ver Anuncio",
+              "player_reply_text": "¡Usemos los intereses recuperados para financiar una beca con los nombres de Mamá y Tía Claire!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "CÁLIDO RECUERDO: El obturador hace clic sobre cuatro sonrisas luminosas... una herida de diez años al fin sanada.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "GRACIA DURADERA: Los ojos de papá se llenan de lágrimas agradecidas mientras Grace te abraza fuerte.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "doctor",
+          "text": "La mejor medicina de recuperación en el mundo es una familia honesta. ¡Cuídense mucho todos!",
+          "timestamp_label": "12:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Ven por un plato antes de que se enfríe la sopa, {{player_name}}.",
+          "timestamp_label": "12:43 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · La Verdad Sana La Casa",
+          "teaser_text": "Destapaste la verdad detrás de la bolsa del hospital, detuviste a la estafadora y reuniste a tu familia.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

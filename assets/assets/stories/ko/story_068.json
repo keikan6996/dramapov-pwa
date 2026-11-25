@@ -1,0 +1,978 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_068",
+  "lang": "ko",
+  "metadata": {
+    "title": "애지중지 아들의 알리바이",
+    "subtitle": "동생이 술에 취해 회사 밴으로 사고를 냈다—그런데 엄마는 동생 MBA 장학금을 지키겠다며 나보고 형사 처벌을 뒤집어쓰라고 한다.",
+    "genre": "romance",
+    "tags": [
+      "가족",
+      "희생양",
+      "정의 구현"
+    ],
+    "cover_image": "assets/media/covers/story_068.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "mom",
+      "name": "엄마",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#6B21A8"
+    },
+    {
+      "id": "brother",
+      "name": "Kevin (오빠)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "guard",
+      "name": "Ray (경비원)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "대신 총대 메기",
+      "start_node_id": "n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오전 01:45 · 두 블록 밖에서 사이렌이 울부짖습니다. 엄마에게서 전화가 끊임없이 울립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "{{player_name}}, 지금 당장 4번가 교차로로 튀어와. 케빈이 아빠 배달 밴 몰다가 주차된 세단 들이받고 집으로 도망쳐 왔어.",
+          "timestamp_label": "오전 01:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "경찰한테는 네가 운전하다가 당황해서 도망쳤다고 말해. 케빈이 음주운전 전과 생기면 MBA 장학금 박탈당한단 말이야!",
+          "timestamp_label": "오전 01:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "뺑소니는 중범죄예요, 엄마! 케빈이 음주운전 저질렀는데 내 인생 전체를 망가뜨리라고요?!",
+          "timestamp_label": "오전 01:47",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "ㅋㅋㅋ 엄마가 {{player_name}}한테 다 뒤집어씌우기로 했대, 내일 해변 별장에서 보자!",
+          "unsent_placeholder": "Kevin님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 11,
+          "transcript": "[다급한 목소리] 저기 {{player_name}}, 나 창고 정문 경비원 레이야. 우리 HD 카메라에 케빈이 밴에서 비틀거리며 내리는 거 다 찍혔어. 경찰한테 거짓말하지 마—벌써 우리 쪽에 영상 달라고 요청 왔어.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "엄마가 케빈을 태우고 경찰서 주차장으로 들어서고 있습니다. 어떻게 하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_refuse_firm",
+              "label": "엄마에게 거절 의사를 밝히고 레이의 녹음을 저장한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "케빈 대신 감옥 갈 생각 추호도 없어요. 그리고 걔가 도망치는 HD 영상도 이미 있대요.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_send_footage",
+              "label": "레이에게 HD 영상을 클라우드에 백업해 달라고 부탁한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "정의 구현 · 광고 보기",
+              "player_reply_text": "레이 아저씨, 엄마가 지우기 전에 지금 당장 보안 링크로 그 영상 올려주세요.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "10분 안에 경찰서 안으로 걸어 들어오지 않으면 짐 싸서 나가고 다신 날 엄마라 부르지 마!",
+          "timestamp_label": "오전 01:51",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "영상 확보 완료: 레이의 클라우드 클립에는 케빈이 덤불 속에 술병을 던지는 모습과—엄마가 케빈에게 운전대 닦으라고 지시하는 모습까지 찍혀 있습니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "링크 보냈어. 그 집안에서 정직한 사람은 언제나 너뿐이었지, {{player_name}}.",
+          "timestamp_label": "오전 01:52",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "에이 {{player_name}}, 넌 잃을 거창한 커리어도 없잖아. 그냥 진술서에 사인해!",
+          "timestamp_label": "오전 01:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "경찰서 로비",
+          "teaser_text": "2화: 엄마는 이미 경사에게 당신이 운전자였다고 말했습니다—이제 당신이 경찰서 문을 열고 들어섭니다.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "더 이상 희생양은 없다",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오전 02:10 · 경찰서 로비. 당신이 걸어 들어오자 당직 경사가 고개를 듭니다. 엄마가 당신 소매를 확 잡아끕니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "아이고 와줘서 고맙다! 경찰관님, 이 애가 {{player_name}}예요—사고 자백하러 왔어요.",
+          "timestamp_label": "오전 02:10",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "경찰관님, 저는 반대편 시내 제 아파트에서 자고 있었습니다. 스마트 도어락 출입 기록과 이웃집 초인종 카메라가 증명합니다.",
+          "timestamp_label": "오전 02:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "엄마 쟤네 음주측정기 꺼냈어!! 나 집에 돌아온 뒤에 마셨다고 말해줘!!",
+          "unsent_placeholder": "Kevin님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "mom",
+          "duration_sec": 9,
+          "transcript": "[으르렁거리는 소리] 감히 네 친동생을 배신해?! 오늘 밤 당장 이 집에서 쫓겨난 줄 알아!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "경찰관이 누가 밴을 운전했는지에 대한 증거가 있는지 묻습니다.",
+          "options": [
+            {
+              "option_id": "opt_show_video",
+              "label": "케빈이 찍힌 창고 HD 보안 영상을 보여준다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "네, 경찰관님. 여기 오전 1시 32분 타임스탬프가 찍힌 창고 보안 영상입니다.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_show_texts",
+              "label": "해변 별장 간다고 자랑하던 케빈의 문자까지 넘긴다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "모든 진실 · 광고 보기",
+              "player_reply_text": "그리고 여기 10분 전에 케빈이 엄마가 저한테 누명 씌운다고 낄낄거리며 쓴 문자도 있습니다.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "경찰관이 10초 남짓 영상을 보더니 수갑을 철컥 꺼내 케빈을 향해 걸어갑니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "이중 입건: 케빈은 뺑소니 현행범으로 체포되고—엄마는 허위 경찰 신고 혐의로 입건됩니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "{{player_name}} 누나 제발 그만하라고 해 줘! 나 다 잃게 생겼어!!",
+          "timestamp_label": "오전 02:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "네가 시동 키 돌릴 때 네가 선택한 거야, 케빈. 그리고 난 이 집안 호구 노릇 이제 끝냈어.",
+          "timestamp_label": "오전 02:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "끊어진 사슬",
+          "teaser_text": "경찰서 밖에서 마침내 아버지가 전화를 겁니다: \"영상 다 봤다. 내일 케빈이 아니라 네 앞으로 회사 명의를 넘기마.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "차고 CCTV 영상",
+      "start_node_id": "e3_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 8:10 · 회사 물류 사무실. 당신 앞으로 회사를 넘기겠다는 아버지의 약속이 폭풍을 불러일으킵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "네가 네 아버지 귀에 바람 넣어서 친아들을 미워하게 만들었지! 당장 회사 안 받겠다고 말씀드려, {{player_name}}!",
+          "timestamp_label": "오전 8:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "아빠가 직접 보안 영상 보신 거예요, 엄마. 케빈이 술 마시고 밴 박은 것도 모자라 나를 감옥에 보내려 했잖아요.",
+          "timestamp_label": "오전 8:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "guard",
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "차고 캠 01 · 오전 01:14 — 술병을 손에 쥔 채 운전석으로 비틀거리며 걸어가는 케빈."
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "미리 알려줄게, {{player_name}}—케빈이 방금 경비실로 와서 원본 서버 백업 지워주면 현금 2,000달러 주겠다고 했어!",
+          "timestamp_label": "오전 8:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "보험사 손해사정사가 그 HD 영상 보면 내 장학금이랑 면허가—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 8,
+          "transcript": "[열쇠 짤랑거리는 소리] 걱정 마—바디캠으로 놈이 뇌물 주려던 장면 다 녹화해서 방금 너희 아버님 변호사님께 USB 직송했어!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "엄마가 아버지의 지분 양도를 막으려고 공증사무소로 달려가고 있습니다! 어떻게 하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_warn_dad",
+              "label": "아버지께 경고하고 서명 장소를 로펌으로 옮긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "방금 아빠한테 문자드렸어요—양도 서명 장소를 기업 법무팀 잠긴 회의실로 옮기기로 했어요.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_audit_petty_cash",
+              "label": "케빈이 2,000달러 뇌물 현금을 어디서 구했는지 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "예리한 눈 · 광고 보기",
+              "player_reply_text": "잠깐—케빈 빈털터리인데. 레이 아저씨, 회사 금고 확인해 봐요! 아침 8시에 2,000달러 현금이 어디서 났죠?!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "안전한 이동: 아버지가 기업 공증인과 함께 일찍 도착하며—엄마의 기습 방해를 완벽하게 차단합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "절도 적발: 케빈이 엄마 책상 열쇠로 기사님들 유류비 현금 봉투를 털었던 것이 드러나며—횡령 혐의까지 추가됩니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "알겠어 내가 잘못했어, 됐지?! 그냥 아빠한테 내 용돈 모아서 밴 수리비 갚겠다고 말해 줘—내 앞길 완전히 망가뜨리지 마!",
+          "timestamp_label": "오전 8:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "걱정 마, 케빈. 네 아버지가 아직 연례 은행 갱신 서류에 서명하셔야 해—내가 그 서류 철에 다른 걸 하나 끼워 넣었거든.",
+          "timestamp_label": "오전 8:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "바꿔 치기 된 서류",
+          "teaser_text": "4화: 엄마가 아버지를 속여 케빈 명의의 숨겨진 위임장에 서명하게 만들려 합니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "긴급 가족 표결",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 11:05 · 아버지 사무실. 엄마가 \"일상적인 은행 서류\" 뭉치 옆에 따뜻한 차 한 잔을 내려놓습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "네 아버지 방에서 나가 있어, {{player_name}}. 그냥 일상적인 급여 갱신 서류 결재 중이시니까.",
+          "timestamp_label": "오전 11:05",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "방금 이 단톡방에서 서류 철에 다른 문서 끼워 넣었다고 실토하셨잖아요, 엄마.",
+          "timestamp_label": "오전 11:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "10분 전에 사모님이 프런트 데스크 복사기에서 3장짜리 \"취소 불가능한 포괄 위임장\" 뽑으시는 거 봤어!",
+          "timestamp_label": "오전 11:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "아빠가 3페이지에 서명만 하시면 {{player_name}}한테 가는 회사 양도 동결시킬 수 있—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "레이 아저씨, 정문이나 지키시지 안 그럼 해고예요! 나 아직 이 회사 공동 소유주라고요!",
+          "timestamp_label": "오전 11:09",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 8,
+          "transcript": "[크게 문 두드리는 소리] 이미 늦으셨습니다, 사모님! 아버님께서 방금 돋보기 가져다 달라고 하셔서—지금 3페이지 한 글자도 안 빼놓고 다 읽고 계십니다!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "아버지가 펜을 공중에 든 채 굳으십니다! 어떻게 개입하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_walk_in_calm",
+              "label": "들어가서 아버지께 가족 톡방 메시지를 보여드린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "아빠, 3페이지 서명하지 마세요—엄마랑 케빈이 방금 가족 톡방에 쓴 글 읽어보세요.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_keep_evidence",
+              "label": "찢기 전에 3페이지부터 촬영해 증거를 남긴다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "프로의 한 수 · 광고 보기",
+              "player_reply_text": "잠깐만요 아빠—아직 찢지 마세요! 나중에 아무도 양도에 이의 못 걸게 변호사님이 3페이지 사진부터 찍게 해주세요!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "침묵의 분노: 아버지가 채팅을 읽고는 위조 위임장을 반으로 찢어 쓰레기통에 버립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "철벽 기록: 변호사가 사기 미수 행위를 공식 기록에 남겨—향후 엄마나 케빈이 제기할 수 있는 모든 소송을 봉쇄합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "20년 동안 케빈은 온갖 변명으로 감싸주시면서 나만 짐을 졌어. 그건 오늘로 끝이야.",
+          "timestamp_label": "오전 11:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "아빠가 방금 나 급여 명부에서 빼버리고 밴 값 갚을 때까지 물류창고 상하차 근무 뛰라고 하셨어…",
+          "timestamp_label": "오전 11:17",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "마침내 찾아온 책임",
+          "teaser_text": "5화: 회사 승계 절차를 마무리하고 읽지 않은 서류의 전말을 완전히 폭로하십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "읽지 않은 서류",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오후 2:30 · 기업 변호사 사무실. 공식 지분 양도 서류가 마지막 직인 하나만을 기다립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "법무 파일에 넣으라고 아까 바꿔 치기 된 3페이지 스캔본 챙겼어, {{player_name}}. 티끌 하나 없이 깨끗하지.",
+          "timestamp_label": "오후 2:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "guard",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "바꿔 치기 된 3페이지 · 케빈에게 100% 지배권을 넘기는 숨겨진 취소 불능 양도서 — 서명 직전 적발.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "그래! 회사 통째로 다 가져가! 대신 네 축하 만찬에 내가 나타날 거라곤 기대도 마!",
+          "timestamp_label": "오후 2:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "케빈 대신 저를 택해 달라고 한 적 없어요, 엄마. 그저 쟤를 위해 저를 제물로 삼는 것만 멈춰 달라고 했을 뿐이에요.",
+          "timestamp_label": "오후 2:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "mom",
+          "text": "어쩌면 당신 아버지 말이 맞을지도 모르지—내가 케빈을 혼자 서지도 못할 만큼 오냐오냐 망쳐놨나 봐—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "brother",
+          "duration_sec": 8,
+          "transcript": "[조용하고 겸손해진 목소리] 저기 {{player_name}} 누나… 유류비 봉투에 2,000달러 돌려놨고 음주운전 건도 자수했어. 이제 다신 누나 등 뒤에 안 숨을게.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "이제 당신은 100% 대표이사(Managing Director)입니다! 첫 번째 경영 지시는?",
+          "options": [
+            {
+              "option_id": "opt_promote_ray",
+              "label": "레이를 차량 보안 총괄 팀장으로 승진시킨다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "대표이사로서 첫 결재: 레이 아저씨는 오늘부로 연봉 40% 인상과 함께 차량 안전·보안 총괄 책임자로 승진하십니다!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_kevin_probation",
+              "label": "레이를 승진시키고 케빈에겐 정직한 수습 기회를 준다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "진정한 리더 · 광고 보기",
+              "player_reply_text": "레이 아저씨는 보안 총괄이 되시고—케빈은 딱 한 번, 정직한 말단 현장 근무 수습으로 시작한다. 특혜 제로, 남들과 똑같이 일해서 인정받아라.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "충성에 대한 보상: 창고 직원 전체가 박수를 치며 환호하는 가운데 레이의 입이 귀에 걸립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "진짜 성장: 태어나서 처음으로 케빈이 안전 조끼를 챙겨 입고 오전 6시 정각에 출근 도장을 찍습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "이 회사 역사상 최고의 대표님이에요, {{player_name}}. 진심으로 감사합니다!",
+          "timestamp_label": "오후 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "아버지가 다음 주 금요일에 은퇴하십니다—이 회사가 앞으로 30년 동안 더 번창하도록 만들어 보자고요.",
+          "timestamp_label": "오후 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "새로운 서명",
+          "teaser_text": "6화 (최종화): 새 물류 차량단의 테이프 커팅을 하며 애지중지 아들의 그림자에서 영원히 벗어나십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "새로운 서명",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "석 달 뒤 · 물류 야적장. 아침 햇살 아래 여섯 대의 새 전기 배송 밴이 눈부시게 반짝입니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "90일 연속 안전사고 0건—게다가 3분기 매출이 회사 역대 최고 기록을 갈아치웠어요, 대표님!",
+          "timestamp_label": "오전 8:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "공정한 원칙과 땀 흘린 노력이 편애보다 매번 이긴다는 게 증명됐네요.",
+          "timestamp_label": "오전 8:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "4번 도크 상차 일찍 끝냈습니다, 대표님. 그리고… 망가졌던 밴 수리비 마지막 할부금 어제 다 갚았습니다.",
+          "timestamp_label": "오전 8:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mom",
+          "text": "{{player_name}} 시간 괜찮으면 오늘 사무실에 점심 도시락 싸 갈까 하는데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "mom",
+          "duration_sec": 8,
+          "transcript": "[부드럽고 진심 어린 목소리] {{player_name}}… 내가 틀렸었단다. 케빈이 드디어 철드는 모습 보고—네가 일궈낸 걸 보니까—진작 네 강인함을 알아보지 못해서 정말 미안하다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그렇게 말씀해 주셔서 감사해요, 엄마. 선은 여전히 지키겠지만—점심 식사 자리는 언제든 열려 있어요.",
+          "timestamp_label": "오전 8:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "대표이사로서 첫 분기를 어떻게 마무리하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_team_bonus",
+              "label": "역대 최고 실적을 전 직원과 함께 나눈다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "오늘 모든 운전기사님, 상하차 팀원, 배차 담당자 전원에게 15% 이익 공유 성과급을 지급하겠습니다!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_expand_branch",
+              "label": "성과급 지급 + 제2 지역 물류 거점 개설을 발표한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "제국 건설 · 광고 보기",
+              "player_reply_text": "전 직원 성과급 지급—그리고 다음 달 우리는 제2 지역 물류 허브를 엽니다!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "기립 환호: 물류 야적장이 함성으로 가득 찹니다—이제 단순한 가업이 아니라 업계 강자입니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "멈출 수 없는 질주: 당신이 회사를 새 시대로 이끌자 아버지가 한쪽에서 자랑스러운 눈물을 훔칩니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "사슬은 끊어졌고, 기록은 갈아치웠어. 당신 밑에서 일해서 자랑스러워, {{player_name}}!",
+          "timestamp_label": "오전 8:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "점심시간에 봐, 누나. 여분 의자 챙겨갈게.",
+          "timestamp_label": "오전 8:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 더 이상 희생양은 없다",
+          "teaser_text": "대신 죄를 뒤집어쓰길 거부하고, 지독한 편애에서 벗어나, 번창하는 회사를 일구어 냈습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

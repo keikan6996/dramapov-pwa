@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_024",
+  "lang": "pt",
+  "metadata": {
+    "title": "Último Trem na Linha 4",
+    "subtitle": "Meu amigo mandou mensagem dizendo que a Linha 4 do metrô fechou às 00h30. Estou sentada nela agora mesmo.",
+    "genre": "thriller",
+    "tags": [
+      "Metrô",
+      "3h da Manhã",
+      "Sobrenatural"
+    ],
+    "cover_image": "assets/media/covers/story_024.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Você)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "ally",
+      "name": "Sam (Melhor Amigo)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Maquinista Linha 4",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#450A0A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Próxima Parada: Ashwood",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02h19 · O vagão balança por um túnel negro interminável. Todos os outros passageiros sentam imóveis, de olhos fechados.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, cadê você? Estou esperando na Estação Central—o guarda disse que a Linha 4 fechou duas horas atrás.",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O quê?! Estou literalmente NA Linha 4 agora mesmo. O letreiro LED acabou de mudar para \"Estação Ashwood\".",
+          "timestamp_label": "02:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Não abra os olhos quando as portas se separarem.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A Estação Ashwood pegou fogo em 1998!! Eles lacraram o túnel! {{player_name}}, puxe o freio de emergência!",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[trilho guinchando, coro de sussurros] ...Todos a bordo para 1998... Bilhetes, por favor, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Os passageiros abrem os olhos em uníssono—todos virando a cabeça para o seu assento.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Correr para o próximo vagão",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Indo para o vagão da frente!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Checar o bilhete de papel no seu bolso",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Espera, tenho um bilhete de papel...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Você passa com estrondo pela porta deslizante—o vagão da frente está completamente vazio exceto por bancos de madeira carbonizados.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O bilhete não tem a data de hoje. Está carimbado com sua data exata de nascimento—e marcado \"SOMENTE IDA\".",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Seu ponto de GPS acabou de sumir do mapa da cidade! Me diga que você está desacelerando!",
+          "timestamp_label": "02:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Interfone do Maquinista",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "A estática chia: \"Parada final, Ashwood. Apenas passageiros que rasgarem o bilhete podem permanecer a bordo.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa. Na hora, o alto-falante do vagão troveja acima: \"Conferência de bilhetes no Vagão 3.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "As Portas Estão Abrindo",
+          "teaser_text": "Episódio 2: Uma plataforma coberta de cinza aparece lá fora—e alguém espera com uma lanterna.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Plataforma de Ashwood",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02h25 · O trem chia ao parar. Fuligem flutua pelas portas abertas. Os ponteiros do relógio da estação giram ao contrário.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, estou lendo uma matéria antiga! Doze passageiros desapareceram naquele trem—ninguém que pisou na plataforma voltou!",
+          "timestamp_label": "02:25",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Um maquinista de uniforme queimado está descendo o corredor na minha direção. Está segurando um picotador de bilhetes.",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[picotador metálico estalando] ...Desça do trem, {{player_name}}. Sua parada foi há vinte anos...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Feche os olhos até as portas tocarem.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Não olhe para o rosto dele! Lembra do que o fórum de sobreviventes disse—finja que está dormindo até o trem andar!",
+          "timestamp_label": "02:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "O maquinista para ao lado do seu banco. Fumaça gelada enche seus pulmões.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Fechar os olhos e prender a respiração",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Olhos fechados. Sem me mexer...",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Rasgar o bilhete de 1998 ao meio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Rasgando o bilhete agora mesmo!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Uma mão queimada paira a centímetros do seu rosto. O sinal da porta toca—e o trem dá um tranco para frente na escuridão.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O papel vira cinza morna nos seus dedos. O maquinista faz uma reverência única e as luzes fluorescentes voltam a brilhar brancas.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Uma placa clara da estação passa rápido: ESTAÇÃO CENTRAL. Você salta de pé—o vagão está vazio e limpo.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Sam (Melhor Amigo)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Sam arfa: \"Graças a Deus você está viva! Espera—por que tem uma marca de mão de fuligem nas costas do seu casaco?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você pisa na plataforma iluminada—e nota que o papel de parede do celular mudou para uma foto da Estação Ashwood.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Cuidado com o Vão",
+          "teaser_text": "Final da Temporada · Seu histórico do cartão de transporte ainda mostra uma viagem ativa: Destino Desconhecido.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Destino Desconhecido",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02h18 · Você sobe correndo as escadas da plataforma de Ashwood—só para descobrir que as catracas dão de volta exatamente no mesmo vagão de metrô.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, sua localização ao vivo acabou de pular dez quilômetros abaixo da terra! A Linha 4 nem TEM túnel tão fundo!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sam, todas as saídas dão a volta para dentro do Vagão 4! E os outros passageiros estão todos usando casacos dos anos 1980!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Túnel Ashwood · Silhueta alta do maquinista bloqueando a ponta distante da plataforma escurecida.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Sinal Sonoro: \"Por favor permaneça sentado. Passageiros com bilhetes não validados não podem desembarcar.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Você passou um cartão de transporte morto na catraca, {{player_name}}. Agora viaja até o terminal final.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Em 1987 um expresso da meia-noite na Linha 4 desapareceu durante uma enchente—a prefeitura lacrou a Estação Ashwood.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[guincho metálico do trem] \"Próxima parada: Comporta Antiga de Ashwood. Todas as passagens não pagas para o vagão da frente.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "O trem acelera para dentro de um túnel alagado no breu total.",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_cord",
+              "label": "Puxar a alavanca do freio de emergência",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou puxando a corda vermelha—Sam, fique na linha!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_walk_front",
+              "label": "Avançar para confrontar o Maquinista",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Destemida",
+              "player_reply_text": "Estou indo para o Vagão 1 encarar o Maquinista eu mesma!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Os freios gritaram—o trem reduziu perto de uma alcova de manutenção! Procure uma luz verde de saída!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cuidado! Acabei de puxar o arquivo municipal de 1987—o Maquinista morreu tentando abrir as portas manuais!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Olhe a janela da cabine à frente. O Maquinista está erguendo uma chave de emergência de latão.",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Vagão 1 à Frente.",
+          "teaser_text": "Episódio 4: Dentro da cabine do maquinista, você descobre por que o expresso de 1987 ainda procura a superfície.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Expresso de 1987",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02h29 · Você força a abertura da porta deslizante para o Vagão 1. Água pinga do painel de controle enferrujado.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Achei o recorte de jornal, {{player_name}}! A enchente de 1987 travou as portas eletrônicas—o Maquinista precisava de alguém FORA da cabine para virar o disjuntor do túnel!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ele não está tentando me prender! Está apontando para o túnel iluminado de manutenção ao lado dos trilhos!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Trinta e nove anos circulando neste loop, {{player_name}}. Vire o disjuntor da superfície no Marco 4 e deixe a gente chegar à estação.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "O trem guincha parando ao lado de uma escada de aço enferrujada marcada \"CAIXA DISJUNTOR 4.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Vou segurar as portas da cabine abertas por noventa segundos. Não derrube o celular—mantenha seu amigo guiando você!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Se o disjuntor desarmar, os holofotes do túnel vão revelar a escada real para o nível da rua.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[rouco, urgente] \"Noventa segundos antes de o loop reiniciar, {{player_name}}! Suba até a passarela!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "As luzes do túnel piscam enquanto a água sobe ao redor do terceiro trilho.",
+          "options": [
+            {
+              "option_id": "opt_e4_climb_catwalk",
+              "label": "Subir correndo a escada de aço até a passarela",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou na passarela! Sam, qual alavanca é o disjuntor da superfície?!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_grab_key",
+              "label": "Pegar a chave de latão do Maquinista primeiro",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Preparada",
+              "player_reply_text": "Me dê a chave de latão—eu destranco a caixa do disjuntor!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A alavanca de cabo azul bem na esquerda! Puxe direto para baixo!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Essa chave de latão destranca o alçapão da escada de emergência também! Vai!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "O GPS do seu celular dá erro de repente—mostrando você parada bem abaixo da Rua Principal!",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Noventa Segundos Restando.",
+          "teaser_text": "Episódio 5: Com a caixa do disjuntor à vista, a água do túnel sobe—e seu GPS falha.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Marco 4",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02h40 · Você alcança a caixa enferrujada do disjuntor quando água gelada lambe a passarela abaixo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estou parado bem acima de você na Rua Principal, {{player_name}}! Consigo ouvir a grade de aço chacoalhando sob meus tênis!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sam! A alavanca do disjuntor está emperrada de ferrugem—estou jogando todo meu peso nela!",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "GPS do Celular Rachado · Sinal travando no Alçapão de Emergência da Rua Principal—3,5 metros acima.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "CREC! A pesada alavanca de ferro desce com força. Holofotes brancos brilhantes acendem por todo o túnel.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "As portas eletrônicas do Vagão 1 acabaram de destravar! Olhe lá embaixo—os passageiros de 1987 estão finalmente pisando numa plataforma clara e seca!",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Obrigado, {{player_name}}. Nossa longa viagem finalmente acabou.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[toque suave e ecoante] \"Terminal alcançado. Cuidado com o vão—e suba para a luz.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "O alçapão de emergência acima da sua cabeça destranca com um estalo alto.",
+          "options": [
+            {
+              "option_id": "opt_e5_climb_hatch",
+              "label": "Subir a escada na direção da voz de Sam",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Abre a grade, Sam—estou bem abaixo de você!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_salute_train",
+              "label": "Acenar adeus ao Maquinista primeiro",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Respeito",
+              "player_reply_text": "Descanse em paz, Maquinista. Obrigada por nos levar para casa.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Segura minhas mãos! Peguei você—sobe!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ele ergueu o quepe e o trem se dissolveu em luz dourada! Agora sobe!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Você rola para o asfalto molhado da Rua Principal quando a grade de aço bate fechada atrás de você.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Nível da Superfície.",
+          "teaser_text": "Episódio 6 (Final): Segura acima do solo, seu cartão de transporte imprime uma última mensagem.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Fim da Linha",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "05h55 · A primeira luz do dia atinge a entrada do metrô quando Sam entrega um copo de café quente na calçada.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A companhia do metrô acabou de anunciar que uma oscilação bizarra de energia consertou um relé antigo de 1987 na Linha 4 durante a noite. Ninguém sabe explicar.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Olhe meu app de transporte, Sam. Aquela viagem \"Destino Desconhecido\" finalmente encerrou.",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Viagem Concluída · Tarifa: US$ 0,00 · Status: Em Casa em Segurança.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "O primeiro trem da manhã passa limpo sob a grade—claro, barulhento e completamente comum.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Me prometa uma coisa, {{player_name}}? Depois da meia-noite, pegue um táxi.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Quase tive um infarto vendo seu GPS sumir embaixo da terra.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[rindo aliviado] \"Vem, vou acompanhar você até a porta de casa. Sem metrô hoje.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Passageiros da manhã passam apressados enquanto a cidade desperta.",
+          "options": [
+            {
+              "option_id": "opt_e6_take_cab",
+              "label": "Jurar nunca mais pegar metrô à meia-noite",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Fechado, Sam. Só táxi depois das 23h de agora em diante.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_keep_ticket",
+              "label": "Guardar a chave de latão como amuleto",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Lembrança",
+              "player_reply_text": "Vou guardar esta chave de latão para sempre. Vamos tomar café da manhã.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Melhor decisão que tomou na semana inteira.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Só não encoste ela em nenhuma catraca! Vamos comer.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Maquinista da Linha 4 · Fora de Serviço Permanentemente.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Em Casa em Segurança.",
+          "teaser_text": "FIM · O expresso da meia-noite de 1987 finalmente chegou ao seu destino final.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

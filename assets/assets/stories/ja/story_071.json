@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_071",
+  "lang": "ja",
+  "metadata": {
+    "title": "叔母のオークション",
+    "subtitle": "祖母が埋葬されてまだ一週間も経たないうちに、Margaret叔母が私の形見の翡翠の指輪をオークションに出品した。",
+    "genre": "romance",
+    "tags": [
+      "遺産相続",
+      "家宝",
+      "家族"
+    ],
+    "cover_image": "assets/media/covers/story_071.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "aunt",
+      "name": "Margaret叔母",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7E22CE"
+    },
+    {
+      "id": "appraiser",
+      "name": "Chen氏 (鑑定士)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "cousin",
+      "name": "Lucas (いとこ)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "出品番号14",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前10:05 · 祖母の葬儀から6日後。一度だけ会ったことのある遺産鑑定士から緊急のメッセージが届きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}さん、Margaret叔母様が午後1時のオークションに出品番号14として最高級翡翠のバングルを出品されました――内側には「あなた」のイニシャルが彫られています。",
+          "timestamp_label": "午前10:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Margaret叔母さん！どうしておばあちゃんの翡翠のバングルがオークションのカタログに載ってるの！？あれは私に遺されたものだったはずよ！",
+          "timestamp_label": "午前10:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Lucas、オークションを正午に前倒しして、{{player_name}}が到着する前に青いビロードの箱を隠しなさい！",
+          "unsent_placeholder": "Margaret叔母がメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "欲張りなことを言うんじゃないわ、{{player_name}}。書面による財産目録がない限り、お婆ちゃんの家のものはすべて遺言執行者――つまり私のものなの。",
+          "timestamp_label": "午前10:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 11,
+          "transcript": "[声を潜めて] 3ヶ月前、あなたのお祖母様が私の店を訪ねてこられたんです。あのバングルの来歴証明書を直接あなたの名義で登録し――コピーを私の金庫に預けていかれました。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "非公開オークションは90分後に始まります。どうやって彼女を止めますか？",
+          "options": [
+            {
+              "option_id": "opt_get_cert",
+              "label": "来歴証明書を受け取り屋敷へ急行する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chenさん、その証明書を持っていてください！10分後にそちらへ迎えに行きます。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_bring_police",
+              "label": "警察に盗難財産の緊急通報をする",
+              "cost_type": "vip_rewarded",
+              "badge_text": "強制捜査 · 広告視聴",
+              "player_reply_text": "所有者の同意なく登録済み財産を売却するのは重窃盗罪です。刑事を同行させましょう。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "証明書は手元にあります。この公印を見れば、まともなオークションハウスは出品番号14に指一本触れようとしないでしょう。",
+          "timestamp_label": "午前10:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "警察同行準備完了：最高級翡翠の評価額が18万ドルに上るため、財産犯罪課は即座に2人の警察官を派遣しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "ねえ{{player_name}}、落ち着けって――お袋は俺のレストランの賃料を払うための現金が必要だっただけなんだ。騒ぎにするなよ！",
+          "timestamp_label": "午前10:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "正午きっかりに入札を始めるわ。来ても無駄よ――門の警備員にはあなたを中に入れないよう命じてあるから。",
+          "timestamp_label": "午前10:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "第一声、第二声……",
+          "teaser_text": "エピソード2：オークショニアが出品番号14に向けて木槌を振り上げます――ちょうど屋敷の扉が大きく開かれるその瞬間に。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "最高額入札者",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後12:08 · 祖母の客間。ビロードのロープに囲まれた20人の裕福なコレクターたち。木槌が出品番号14の上で宙に止まります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "19万5000ドルで落札！待って――誰が{{player_name}}を正門から通したの！？",
+          "timestamp_label": "午後12:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "取引を凍結してください！出品番号14を購入する方は、記録上証明された盗品を買い取ることになります。",
+          "timestamp_label": "午後12:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "cousin",
+          "text": "ママ、最前列の買い手が小切手を引っ込めようとしてる！！",
+          "unsent_placeholder": "Lucasがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 10,
+          "transcript": "[威厳ある声] ご列席の皆様、ルーペで内側の縁をご覧ください。{{player_name}}様のイニシャルと、3ヶ月前に私が公証した登録譲渡記録が刻まれております。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Margaret叔母はパニックになってビロードの箱を取り落としました。あなたの裁決は？",
+          "options": [
+            {
+              "option_id": "opt_reclaim_jade",
+              "label": "バングルを取戻し執行者権限を剥奪する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "バングルを返しなさい、Margaret叔母さん。それに私の弁護士が今日中にあなたを遺言執行者から解任する申立てをするわ。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_check_safe",
+              "label": "翡翠の箱の二重底の仕掛けを開ける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "隠し金庫 · 広告視聴",
+              "player_reply_text": "待って――おばあちゃんが、この青い箱にはビロードの二重底があるって教えてくれたの。あなたが危うく売り払うところだった中身を見てみましょう。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "コレクターたちは呆れ果てて部屋を出ていきました。あなたはひんやりとした祖母の翡翠のバングルを安全に自分の手首へ通しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "隠された権利書を発見：ビロードの裏地の下に差し込まれていたのは、祖母の屋敷の原本権利書――{{player_name}}単独宛てに署名譲渡されたものでした！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "嘘……嘘よ！あの人が屋敷丸ごとをあんたに遺したっていうの！？私たちに行く場所がなくなっちゃうじゃない！",
+          "timestamp_label": "午後12:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "オークションの看板を片付けて、Margaret叔母さん。おばあちゃんの家は営業終了よ。",
+          "timestamp_label": "午後12:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "取り戻された家宝",
+          "teaser_text": "屋敷の権利書の中には、祖母からの直筆のメモが入っていました。「地下室の金庫について尋ねてくる者には誰でも警戒しなさい」",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "地下室のメモ",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後11:48 · 祖母の屋敷。地下室の金庫に関する祖母の直筆の警告が、突然現実味を帯びて蘇ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "{{player_name}}、起きて！スマホに屋敷の地下室から動体検知アラートが届いた――それにうちの車道に母さんの車がないんだ！",
+          "timestamp_label": "午後11:48",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "おばあちゃんが文字通り「地下室の金庫について尋ねてくる者には警戒しなさい」って書いていたの。今まさにMargaret叔母さんが下にいるんだ！",
+          "timestamp_label": "午後11:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "cousin",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "地下室動体カメラ · 午後11:46 — 祖母の石造り金庫室へ向けて懐中電灯を持って進むシルエット。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}さん、ちょうどあなたの翡翠の指輪をUVライトの下で調べ終えたところです！内輪の模様は飾りではありません――彫り込まれた6桁の金庫の暗証番号です！",
+          "timestamp_label": "午後11:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "この錠前屋が真夜中までにダイヤルをこじ開けてくれないと、買い手が手を引いてしまう――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[砂利を踏みしめる足音] 今屋敷の勝手口門に到着した！生垣の後ろに白い錠前屋のバンが停まってる――母さんは本当に金庫にドリルで穴を開ける業者を雇ったんだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Margaretが祖母の金庫室をドリルで破ろうとしています！どうやって阻止しますか？",
+          "options": [
+            {
+              "option_id": "opt_call_police_manor",
+              "label": "不法侵入および窃盗未遂で警察に通報",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "屋敷の権利書上の法的所有者は私です――今すぐ進行中の住居侵入強盗で警察を呼びます！",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_trigger_alarm",
+              "label": "屋敷の警報を鳴らし地下室の門を施錠",
+              "cost_type": "vip_rewarded",
+              "badge_text": "現行犯 · 広告視聴",
+              "player_reply_text": "Lucas、地下室の投光器を点けて屋敷の警報を鳴らして――警察が来るまで彼女をそこに釘付けにするの！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "外に響くサイレン：パトカーのヘッドライトが中庭を照らし出した瞬間、錠前屋はドリルを放り出して逃げ出しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "眩しい照明：投光器が一斉に点灯し、無傷の祖母の金庫のそばでバールを握りしめているMargaret叔母の姿を捉えました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "実の叔母に向かって警察を呼んだの！？私はただ地下室に湿気が出ていないか確認していただけなのに！",
+          "timestamp_label": "午後11:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "真夜中にダイヤモンド先端の金庫破りドリルで湿気の確認をする人間はいませんよ、Margaretさん。明日地下室で会いましょう――正しい手順で開けますから。",
+          "timestamp_label": "午後11:59",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "祖母の金庫室の中に眠るものとは？",
+          "teaser_text": "エピソード4：翡翠の指輪に隠されたUVコードを使って地下室の金庫を開け――なぜMargaretがそこまで必死だったのかを解き明かしましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "二度目の査定",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前10:00 · 屋敷の地下室。警察官立ち会いのもと、あなたは翡翠の指輪の内側に隠されていた6桁の番号をダイヤルしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "カチリ！金庫の扉が大きく開きました！なんということだ……{{player_name}}さん、その紫檀の箱の中に何が収められているかおわかりですか！？",
+          "timestamp_label": "午前10:00",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "バングルと対になる最高級翡翠のペンダント、骨董品の権利書台帳――そして私宛ての手紙！",
+          "timestamp_label": "午前10:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "待って――なんで母さんのバッグの中に、まさに「その」ペンダントの写真が載った非公開オークションカタログが押し込まれてるんだ！？",
+          "timestamp_label": "午前10:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "あのペンダントのために、海外のコレクターからすでに15万ドルの前払金を受け取ってしまっているのに――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "なんと素晴らしい！この一対の最高級翡翠セットは美術館級ですよ――査定額は140万ドルに上ります！だからこそMargaretさんは最初にあなたの指輪を盗もうとしたのです！",
+          "timestamp_label": "午前10:04",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[紙を広げる音] {{player_name}}、おばあちゃんの手紙によると、Margaret叔母さんは先月――おばあちゃんが亡くなる「前」に――闇オークションのブローカーから違法な手付金を受け取っていたって！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Margaretは、ペンダントを渡さなければ祖母は認知症だったと主張すると脅してきます！あなたの一手は？",
+          "options": [
+            {
+              "option_id": "opt_read_letter",
+              "label": "祖母の公証済み手紙を声に出して読む",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "おばあちゃんは主治医と公証人の両方を証人にしてこの手紙を残していたわ――あなたが葬儀の前から売ろうとするのを見抜いていたのよ。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_expose_broker",
+              "label": "オークション評議会へ違法な事前売買通報",
+              "cost_type": "vip_rewarded",
+              "badge_text": "チェックメイト · 広告視聴",
+              "player_reply_text": "Chenさん、地下室侵入被害届と事前売買領収書をそのまま国際オークションギルドへ送ってください！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "絶句：Chenさんが翡翠セットを装甲付き鑑定ケースに封印する中、Margaretはワインの木箱の上に崩れ落ちました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "業界追放：ブローカーは即座に取引を破棄し、Margaretに対して15万ドルの前払金の即時返還を要求しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "まだおばあちゃんが息をしていた時から、実の母親の形見を売り飛ばしていたのね、Margaret叔母さん。",
+          "timestamp_label": "午前10:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "私には署名済みの委託販売契約があるのよ！午後5時までにそのペンダントを引き渡さなければ、私の家が差し押さえられてしまう！",
+          "timestamp_label": "午前10:13",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "浮上した委託販売契約書",
+          "teaser_text": "エピソード5：Margaretが「あなた」の名前で署名した偽造委託販売契約書を精査しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "委託販売の罠",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午後2:15 · Chen氏の鑑定ギャラリー。オークションブローカーがたった今、Margaretが署名した契約書をFAXで送ってきました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}さん、この委託販売契約書の一番下の行をご覧ください――Margaretさんは共同所有者として「あなた様」の署名を偽造しています！",
+          "timestamp_label": "午後2:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "appraiser",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "偽造委託販売契約書 · 偽造された相続人署名を伴う最高級翡翠セット（140万ドル）の無断売却。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "お願い{{player_name}}、逮捕されないようにその署名が本物だと認めるだけでいいから！オークションのお金の半分をあげるわ！",
+          "timestamp_label": "午後2:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お金目当てにおばあちゃんの魂を売り渡すために私の名前を偽造したのよ。絶対にありえない、Margaret。",
+          "timestamp_label": "午後2:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "もうLucasさえ私の電話に出てくれない、私は完全に一人ぼっちだわ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[重いため息] {{player_name}}、今警察に供述書を提出してきたよ。キッチンのテーブルで母さんがあんたの署名の練習をしていたのを見たと証言した。正しいことをしてくれ――おばあちゃんの遺産を守って。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "オークションハウスは契約を無効とし、140万ドルの翡翠セットをどうしたいか尋ねてきました。",
+          "options": [
+            {
+              "option_id": "opt_bank_vault",
+              "label": "一族の銀行貸金庫で翡翠セットを保管する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "指輪とペンダントを一緒に民間の銀行金庫室に封印するわ――永遠に私たちの家族のものとして残します。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_museum_loan",
+              "label": "祖母の名を冠し市立美術館へ寄託展示する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "不滅の遺産 · 広告視聴",
+              "player_reply_text": "所有権は一族に残したまま――おばあちゃんを讃える記念プレートを添えて市立美術館へ貸し出しましょう！",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "永遠の保全：Chenさんはこの家宝を保護対象の家族登録台帳に記録しました――もはやどのブローカーも手を出せません。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "美術館の名誉：館長は完全な保険付きで即座に快諾しました――祖母の名前は何世代にもわたって輝き続けるでしょう。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "あなたのお祖母様はまさに最高の守護者を選ばれましたな、{{player_name}}さん。",
+          "timestamp_label": "午後2:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "母さんのブローカーは、母さんが自分の宝石を差し出して弁済したことで家の先取特権を取り下げたよ――それで母さんは文書偽造罪で執行猶予処分になる見込みだ。",
+          "timestamp_label": "午後2:27",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "守られた祖母の遺産",
+          "teaser_text": "エピソード6（フィナーレ）：Lucasと一緒に祖母の屋敷を再び開き、彼女を讃えて翡翠の家宝をお披露目しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "祖母の金庫室",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "1ヶ月後 · 市立文化遺産ギャラリー。温かなスポットライトが、祖母の名を刻んだビロードの展示ケースを照らし出しています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "今夜の最高級翡翠展には200人以上の招待客が訪れましたよ、{{player_name}}さん！お祖母様も目を細めてお喜びでしょう。",
+          "timestamp_label": "午後7:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "暗い地下室に隠されたり強欲のために売り払われたりする代わりに、こうしてお祝いされているのを見ると本当に心が落ち着くよ。",
+          "timestamp_label": "午後7:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "今夜まだ俺を招待してくれてありがとう、{{player_name}}。母さんがあんなことをした後だから、二人とも絶縁されるかもと半分覚悟してたんだ。",
+          "timestamp_label": "午後7:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "新聞で翡翠展覧会の写真を見たわ――おばあちゃんは{{player_name}}のことを見抜いていたのね――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 8,
+          "transcript": "[柔らかな拍手] 館長があなたに、お祖母様について一言お話しいただきたいと演壇へお呼びになっていますよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今上がります。Lucas、私の隣に来て一緒に立って――これを守るのを助けてくれたのはあなたでもあるんだから。",
+          "timestamp_label": "午後7:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "ギャラリーの演壇から贈る締めの追悼の言葉：",
+          "options": [
+            {
+              "option_id": "opt_dedicate_grandma",
+              "label": "祖母の知恵に展覧会を捧げる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "真の家宝の価値はカラット数で測られるのではなく、それを守り抜く者の誠実さで測られるのだと祖母は教えてくれました。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_manor_library",
+              "label": "祖母の屋敷を文化遺産サロンとして開放",
+              "cost_type": "vip_rewarded",
+              "badge_text": "生きた遺産 · 広告視聴",
+              "player_reply_text": "そしてこの秋、Lucasと私で祖母の屋敷の庭園を、若い職人たちのための無料文化遺産ライブラリーとして開放します！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "万雷の拍手：ガラスケースの中で翡翠が優しく輝く中、ギャラリーに拍手が鳴り響きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "生きた追悼：Chen氏はその場で、あなたの新しいライブラリーに自身のアンティーク資料コレクション全点を寄贈すると誓いました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "今夜はおばあちゃんも上から微笑んで見守ってくれてるね、{{player_name}}。",
+          "timestamp_label": "午後7:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "翡翠の傑作――そして、それ以上に立派な後継者です。",
+          "timestamp_label": "午後7:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 翡翠の守護者",
+          "teaser_text": "あなたは真夜中のオークションを阻止し、祖母の金庫室を開き、何世代にもわたって彼女の遺産を守り抜きました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

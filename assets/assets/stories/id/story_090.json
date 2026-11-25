@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_090",
+  "lang": "id",
+  "metadata": {
+    "title": "Tebusan Zero-Day",
+    "subtitle": "Ransomware baru saja membekukan seluruh monitor ICU di rumah sakitku—kecuali aku menghapus rekam medis satu pasien dalam 15 menit.",
+    "genre": "thriller",
+    "tags": [
+      "Ransomware",
+      "Rumah Sakit",
+      "Siber"
+    ],
+    "cover_image": "assets/media/covers/story_090.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · NetOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "patel",
+      "name": "Dr. Patel · ICU",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "zday",
+      "name": "ZERO_DAY",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#134E4A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Kode Hitam",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02.11 · RUANG SERVER ST. JUDE: Setiap terminal berkedip merah menyala. \"SELURUH POMPA INFUS TERENKRIPSI. SISA WAKTU 15.00.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}!! Ventilator ICU kita baru saja terputus dari jaringan! Kami memompa napas tiga pasien secara manual—perbaiki SEKARANG!",
+          "timestamp_label": "02:11",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Tak perlu Bitcoin, {{player_name}}. Hapus laporan toksikologi Pasien #4409 dari basis data utama, dan aku langsung berikan kunci dekripsinya seketika.",
+          "timestamp_label": "02:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Pasien #4409?! Siapa yang di Ranjang 9, Dr. Patel?!",
+          "timestamp_label": "02:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 8,
+          "transcript": "[monitor berbunyi bip liar] Itu pasien tanpa identitas yang dibawa dari pesta kapal pesiar! Darahnya positif mengandung agen saraf militer terlarang—ini percobaan pembunuhan!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Hitungan mundur menyentuh 11.30. Nyawa pasien ICU berada di ujung tanduk:",
+          "options": [
+            {
+              "option_id": "opt_090_e1_free",
+              "label": "Alihkan ICU ke cadangan luring terpisah",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Patel, cabut kabel ethernet biru di semua pompa—aku mengirim firmware luring sekarang!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_090_e1_vip",
+              "label": "Salin laporan toksin #4409 sebelum hapus",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Pengambilalihan manual memulihkan dua ventilator—tetapi ransomware itu melompati VLAN dan mengunci brankas penyimpanan obat farmasi.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Insinyur kecil yang cerdik. Sayangnya Ranjang 9 butuh atropin dalam empat menit—dan aku baru saja mengunci obatnya.",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Kamu diam-diam mencerminkan PDF toksikologi ke stik USB terisolasi, lalu menjalankan penghapusan yang tampak jelas di tabel SQL utama. ZERO_DAY menelan umpannya.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Pilihan bagus. Kunci dekripsi dikirim... Tunggu. Kenapa pemasangan USB baru saja tercatat di Rak Server 3?",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Pemindaian kartu terdeteksi di luar Ruang Server B. Petugas pembersih kami sudah berada di lantaimu.",
+          "unsent_placeholder": "ZERO_DAY menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "Pembaca kartu ruang server berbunyi bip hijau—meski hanya dua staf TI yang memiliki akses. Pintu baja berat berayun terbuka ke dalam.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Penyusup di Rak 3",
+          "teaser_text": "Seseorang baru saja membuka brankas server dengan kartu admin—dan hitungan mundur ICU tinggal 3 menit lagi.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Akses Root",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02.18 · Kamu merunduk di balik rak server lorong dingin. Langkah kaki melangkah pelan di antara bilah server yang berdengung.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "patel",
+          "caller_label": "Dr. Patel · ICU",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 7,
+          "transcript": "[berbisik] {{player_name}}! Keamanan rumah sakit bilang kartu yang dipakai masuk ke ruang servermu milik Kepala Bedah kita sendiri—Dr. Vance!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Keamanan baru saja melacak kartu aksesnya—itu Kepala Bedah! Dan Ranjang 9 baru saja siuman dan membisikkan namanya!",
+          "timestamp_label": "02:18",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Serahkan stik USB itu, {{player_name}}, dan aku pulihkan ICU sendiri. Tak ada yang perlu mati malam ini.",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kau meracuni pasienmu sendiri lalu menyandera satu unit ICU untuk menutupinya?!",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Kepala Bedah memutari Rak 3. Hentikan dia:",
+          "options": [
+            {
+              "option_id": "opt_090_e2_free",
+              "label": "Picu kunci pemadam kebakaran Halon",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_090_e2_vip",
+              "label": "Ambil kunci dekripsi dari laptopnya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Dapat kunci lokalmu—dan sudah kukirim laporan toksinnya ke Dewan Medis!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Kamu melesat melewatinya keluar pintu lalu menghantam alarm kuning Halon. Pintu kedap ledakan membanting menutup, mengurung Kepala Bedah di dalam sampai polisi rumah sakit tiba.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Semua monitor ICU baru kembali hijau! Kamu menyelamatkan empat nyawa malam ini, {{player_name}}!",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Kamu merenggut kabel Ethernet aktif dari laptop terbukanya, menarik kunci ransomware lokal langsung ke pengendali utama rumah sakit. Semua pompa tereset.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Pompa sudah menyala kembali DAN keamanan baru memborgolnya di lorong! Syukurlah kamu menyimpan laporan itu!",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Kau menangkap dokternya, {{player_name}}. Bukan orang yang menulis zero-day ini.",
+          "unsent_placeholder": "ZERO_DAY menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Saat fajar menyingsing di atas St. Jude, ponselmu menerima satu sinyal terenkripsi terakhir—dari alamat IP rumah sakit di Bangsal Anak.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Arsiteknya Masih di Dalam",
+          "teaser_text": "Kepala Bedah hanyalah pembelinya. Peretas ZERO_DAY sesungguhnya masih terhubung ke jaringan internal St. Jude.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Hantu Subnet",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02.26 · Monitor ICU stabil selama sepuluh detik—lalu berkedip kuning lagi. ZERO_DAY masih berdenyut di Subnet 4.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}! Tekanan ventilator Ranjang 7 baru saja anjlok lagi! Kukira kita sudah mengisolasi laptop Kepala Bedah!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kepala Bedah cuma pembeli, Dr. Patel! Seseorang berkartu akses ruang server fisik MASIH tercolok di Lantai 4!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Aula Server Lantai 4 · 02.25 — Kartu teknisi tak berizin dipindai masuk.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[kipas server meraung] Bocah NetOps yang cerdas. Kau menangkap Kepala Bedah—tapi aku belum menerima bayaran separuh kedua sebelum berkas Ranjang 7 jadi abu.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Kamu tiba di pintu kaca brankas server Lantai 4. Bertindak cepat:",
+          "options": [
+            {
+              "option_id": "opt_090_e3_free",
+              "label": "Putus sakelar ICU ke cadangan terisolasi",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Patel, aku mengalihkan ICU ke isolasi manual! Ventilator Ranjang 7 aman dari peretasan jarak jauh!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_090_e3_vip",
+              "label": "Lacak ID lencana yang membuka Lantai 4",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Bunyi klik berat menggema di sepanjang rak—setiap monitor ICU berbalik hijau memakai telemetri baterai luring.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Ventilator stabil! Pasien di Ranjang 7 stabil—siapa pun di dalam sana tak bisa menyentuh pasienku sekarang!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Log akses memunculkan nama yang familier: \"MARCUS V. — VENDOR TI EKSTERNAL MEDTECH.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ZERO_DAY adalah Marcus dari kontraktor TI kita sendiri! Dia memasang pintu belakang saat pembaruan bulan lalu!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Jalur terputus! Menarik drive arsip pasien terenkripsi secara manual.",
+          "unsent_placeholder": "ZERO_DAY menarik pesan",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Tunggu—aku baru memeriksa rekam kertas Ranjang 7! Dia satu-satunya penyintas uji coba obat gagal yang didanai donatur terbesar rumah sakit kita!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Tak perlu panggil keamanan, {{player_name}}. Aku sudah berjalan keluar lewat tangga servis membawa drive arsip.",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Penyintas Uji Coba",
+          "teaser_text": "Ranjang 7 menyimpan bukti penyamaran uji klinis mematikan—dan vendor TI-mu sendiri kabur dari Lantai 4 membawa drive arsip.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Penguncian di Lantai 4",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02.35 · Kamu menempelkan kartumu di konsol keamanan Lantai 4, memicu penguncian pintu magnet sayap biologi.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Polisi rumah sakit dan agen siber FBI sedang naik dari lobi utama sekarang! Jangan hadapi dia sendirian!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Jangan buru-buru, Marcus! Semua lift dan tangga darurat di Lantai 4 baru saja masuk penguncian biologis!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Kalau kujatuhkan drive arsip ini ke saluran insinerator, tak ada yang bisa membuktikan apa pun.",
+          "unsent_placeholder": "ZERO_DAY menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[langkah berat menggema] Buka kunci magnet Lantai 4, {{player_name}}, atau kujatuhkan drive cadangan ini lurus ke saluran limbah biologis!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Marcus berdiri di dekat saluran limbah memegang drive arsip. Kalahkan akalnya:",
+          "options": [
+            {
+              "option_id": "opt_090_e4_free",
+              "label": "Gertak sudah sinkronisasi ke cloud",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Jatuhkan saja kalau mau, Marcus! Aku sudah mencerminkan seluruh rekam medis Ranjang 7 ke FDA lima menit lalu!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_090_e4_vip",
+              "label": "Sadapkan paket dompet kripto keluarnya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Marcus ragu-ragu—cukup lama bagimu untuk membanting pintu kaca tahan api dan memutus jalan keluarnya.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Agen FBI baru mencapai tangga darurat lantai 4! Tahan dia di sana!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "Alat penyadap paketmu mencegat konfirmasi tebusan terakhirnya—mengungkap transfer $2,5 juta langsung dari yayasan donatur farmasi itu.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Aku baru menangkap transfer $2,5 juta dari donatur farmasi! Menjatuhkan drive itu tak akan menyelamatkanmu sekarang!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Kunci magnet tangga berklik terbuka di bawah otoritas federal—dan empat agen FBI menyerbu masuk ke Lantai 4.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Mereka menangkapnya! Dan drive arsip itu bahkan tak menyentuh saluran limbah!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Kau menghancurkan bayaran $2,5 juta demi satu ranjang ICU...",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Transfer Tebusan",
+          "teaser_text": "Marcus sudah diborgol—dan bukti transfer tebusan $2,5 juta mengaitkan donatur farmasi terbesar St. Jude langsung dengan peretasan rumah sakit.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Jejak Sang Donatur",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02.55 · Di dalam pos perawat ICU, kamu memproyeksikan bukti transfer Marcus yang disadap ke layar pengarahan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Dua setengah juta dolar dari Apex Pharma Trust... mereka rela mematikan seluruh ICU hanya untuk membungkam Ranjang 7.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "FBI baru saja membekukan rekening Apex Pharma—dan aku mengirim pembaruan firmware bersih ke setiap monitor sekarang.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Transfer Tebusan Tersadap · $2.500.000 dari Apex Pharma Trust ke ZERO_DAY.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 6,
+          "transcript": "[monitor detak jantung berbunyi stabil] Oksigen Ranjang 7 kembali di 99%! Dan pengacara keluarganya baru saja tiba bersama marsekal federal.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Ketua dewan rumah sakit menelepon memohonmu merahasiakan peretasan ini:",
+          "options": [
+            {
+              "option_id": "opt_090_e5_free",
+              "label": "Tolak & kirim laporan pelanggaran federal",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pasien hampir meninggal malam ini. Setiap baris log langsung diserahkan ke FBI dan FDA.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_090_e5_vip",
+              "label": "Hapus semua pintu belakang vendor MedTech",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Ketua dewan menutup telepon dalam kebisuan saat agen federal menyegel kantor Kepala Bedah.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Terima kasih telah berdiri teguh, {{player_name}}. Medis selalu di atas pencitraan.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Skrip pembersihanmu menghapus 14 pintu belakang tersembunyi MedTech di seluruh enam sayap rumah sakit dalam sembilan puluh detik.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Keenam sayap terverifikasi bersih. ZERO_DAY diusir permanen dari St. Jude.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Hormatku, NetOps. Pertahanan shift malam terbaik yang pernah kuhadapi.",
+          "unsent_placeholder": "ZERO_DAY menarik pesan",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Ke-12 ranjang ICU semuanya hijau! Kamu menyelamatkan setiap pasien di dalamnya.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "[NODE RANSOMWARE DIBERSIHKAN — SISTEM BERSIH]",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Booting Ulang yang Bersih",
+          "teaser_text": "Semua pasien ICU selamat dan kejahatan Apex Pharma terbongkar—satu pemeriksaan fajar terakhir sebelum shift malammu berakhir.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Akhir Shift Malam",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06.45 · Cahaya keemasan memenuhi koridor ICU. Setiap monitor tanda vital berdengung dengan ritme yang stabil dan damai.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Kepala Bedah, Marcus, dan dua eksekutif Apex Pharma baru saja didakwa. Ranjang 7 sudah sadar dan menanyakan siapa yang menyelamatkannya.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Beri tahu dia seluruh tim shift malam, Dr. Patel. Aku cuma memastikan lampunya tetap menyala.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "patel",
+          "text": "Direktur rumah sakit ingin mengangkatmu menjadi Kepala Keamanan Siber.",
+          "unsent_placeholder": "Dr. Patel menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 5,
+          "transcript": "[bel pergantian shift pagi berbunyi] Sarapan di kafetaria aku yang traktir—dan ya, kamu dapat kenaikan gaji besar.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Terminal shift malammu meminta konfirmasi terakhir sebelum keluar:",
+          "options": [
+            {
+              "option_id": "opt_090_e6_free",
+              "label": "Kunci permanen protokol isolasi jaringan",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Protokol isolasi jaringan disimpan sebagai standar rumah sakit. Tak akan terulang lagi.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_090_e6_vip",
+              "label": "Mampir ke Ranjang 7 untuk menyapa pagi",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Kebijakan keamanan barumu mengunci telemetri ICU di balik sakelar fisik—menuai pujian dari rumah sakit di seluruh negeri.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Insinyur NetOps terbaik di negeri ini. Tidurlah dengan nyenyak!",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Kamu menengok ke Ranjang 7. Pasien itu meremas tanganmu pelan dan berucap tanpa suara dua kata: \"Terima kasih.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sepadan dengan setiap detik hitungan mundur 15 menit tadi.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Kamu menggantung kartu identitas shift malammu dan melangkah ke matahari terbit yang sejuk—nol peringatan, dua belas detak jantung yang kuat.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Sampai jumpa besok malam, Kepala.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sampai jumpa besok, Dr. Patel.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Penutup Musim · Tanda Vital Stabil",
+          "teaser_text": "ZERO_DAY dibersihkan, penyamaran Apex Pharma hancur berkeping-keping, dan setiap pasien ICU hidup menyaksikan matahari terbit.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

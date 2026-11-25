@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_034",
+  "lang": "ko",
+  "metadata": {
+    "title": "옥상 물탱크 속의 소녀",
+    "subtitle": "배관공이 자정에 옥상에서 문자를 보냈다: \"수돗물 절대 마시지 마세요. 무언가가 내 손전등을 낚아챘습니다.\"",
+    "genre": "thriller",
+    "tags": [
+      "아파트",
+      "물탱크",
+      "공포"
+    ],
+    "cover_image": "assets/media/covers/story_034.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (5A호)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0891B2"
+    },
+    {
+      "id": "ally",
+      "name": "Gabe (배관공)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "옥상 물탱크",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#164E63"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "수도꼭지에서 나온 검은 물",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 12:48 · 주방 수도꼭지를 틉니다. 탁한 갈색 물이 쿨럭거리며 쏟아지더니, 긴 검은 머리카락 한 올이 함께 흘러나옵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 방금 옥상 물탱크 점검하러 올라왔는데요. 오늘 밤 절대 물 마시거나 양치질하지 마세요!",
+          "timestamp_label": "오전 12:48",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "이미 늦었어요, 색깔 보기 전에 반 잔이나 마셨는데! 물탱크 안에 뭐가 있는 거예요?!",
+          "timestamp_label": "오전 12:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "나 지금 네 몸속에 들어왔어, {{player_name}}.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "뚜껑 너머로 손전등을 비췄는데 창백한 손가락이 불쑥 올라와서 손전등을 물속으로 끌어당겼어요! 지금 경찰에 신고하고 있어요!",
+          "timestamp_label": "오전 12:50",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[먹먹한 물속 거품 소리, 첨벙거림] ...살려줘... 옥상 뚜껑이 너무 무거워... {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "주방 수도꼭지가 저절로 거세게 열리며 싱크대가 순식간에 물에 잠깁니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "싱크대 아래 메인 급수 밸브를 잠근다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "메인 밸브 잠그고 있어요!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "건물 실종 입주민 안내문을 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "로비 안내문 사진 확인해 볼게요...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "밸브가 딱 잠깁니다—그런데도 벽 속 배관들이 마치 물속에서 비명을 지르는 것처럼 끙끙 울기 시작합니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 5B호에 살던 학생이 3주 전에 실종되었습니다—마지막으로 목격된 곳은 옥상 빨래 건조대로 올라가는 계단이었습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "게이브 씨가 전화를 안 받아요! 잠깐—당신 집 천장 전등 틈새로 지금 물웅덩이가 떨어지기 시작하지 않나요?!",
+          "timestamp_label": "오전 12:53",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "게이브 (배관공)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "전화기 마이크에 물이 차오르는 먹먹한 소리뿐입니다—그리고 한 소녀가 속삭입니다: \"옥상에서 나를 찾아줘.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "전화를 거절했습니다. 그 즉시 바로 위층 계단실 옥상 출입문 경보기가 울립니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "물을 마시지 마라",
+          "teaser_text": "2화: 젖은 발자국이 옥상 계단에서 내려와—곧장 5A호 앞으로 이어집니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "옥상 저수조",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 12:56 · 멀리서 경찰 사이렌 소리가 울립니다. 현관문 밖 복도 타일 위로 물이 고여갑니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 물탱크에 내 폰을 빠뜨려서 경비원 폰으로 보내요! 문 열지 말고 경찰 올 때까지 기다리세요!",
+          "timestamp_label": "오전 12:56",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "게이브 씨, 천장에서 새는 물이 얼음장처럼 차가워요—그리고 누군가 제 문을 조심스레 두드리고 있어요.",
+          "timestamp_label": "오전 12:57",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[뚝뚝 떨어지는 물소리, 낮은 흐느낌] ...그 남자가 날 밀어 넣고 뚜껑을 잠갔어... 제발 경찰에 말해줘, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "옥상 물탱크 열쇠는 건물 관리인만 갖고 있어.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐—건물 관리인이 방금 자물쇠를 들고 옥상 계단으로 뛰어가요! 경찰 오기 전에 물탱크를 잠가버리려나 봐요!",
+          "timestamp_label": "오전 12:59",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "문 두드리는 소리가 멈춥니다. 무거운 구두 소리가 옥상 계단을 쿵쿵 뛰어올라갑니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "도착한 경찰에게 옥상으로 가라고 알린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "경찰관님들 옥상으로 안내하고 있어요!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "계단실에서 관리인의 모습을 촬영한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "지금 옥상 문 쪽 찍고 있어요!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "경찰관들을 곧장 옥상으로 안내합니다—강철 물탱크 뚜껑을 자물쇠로 채우려던 관리인을 현장에서 체포합니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 녹화 영상을 돌려보니, 관리인 뒤 물탱크에서 젖은 하얀 손이 솟아올라—경찰이 수갑을 채울 때까지 그를 꼼짝 못 하게 붙잡고 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "청색과 적색 경광등이 옥상을 물들입니다. 물탱크 물을 빼내자 당신 집 수돗물이 다시 수정처럼 맑아집니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "5B호 (연결 끊긴 번호)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "부드럽고 안도한 한숨이 속삭입니다: \"고마워, {{player_name}}. 이제 춥지 않아.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "전화를 거절했습니다. 김이 서린 욕실 거울 위에 단정한 두 단어가 떠올랐다가 사라집니다: \"THANK YOU.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "수면 위로 떠오른 진실",
+          "teaser_text": "시즌 피날레 · 어떤 심령 현상은 저주가 아니라—도움을 청하는 외침입니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "누가 옥상 문을 잠갔는가?",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 12:42 · 당신과 게이브가 물탱크 안에서 소녀의 팔찌를 찾아냈습니다—그런데 지금 무거운 철제 옥상 계단실 문이 바깥에서 자물쇠로 잠겨 있습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 누군가 우리가 올라오는 걸 봤나 봐요! 10분 전만 해도 저 자물쇠 없었거든요!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "게이브 씨, 계단 참 아래쪽 보세요—철사 유리 너머로 그림자가 우리를 지켜보고 있어요!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "옥상 계단실 · 잠긴 철문 뒤에 미동도 없이 서 있는 어두운 형체.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "등 뒤의 물탱크 뚜껑이 쾅 열리며 차가운 물이 옥상 자갈 바닥으로 쏟아집니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "건물 관리소장이야, {{player_name}}. 작년 여름에 내 가방을 보일러실에 숨겼어.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "5분 전에 이미 911에 신고했어요—비상계단만 시야에 두고 버텨요!",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[물탱크에서 울려 나오는 메아리 목소리] \"계단 불을 끄고 있어! 동쪽 비상계단으로 내려가!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "무거운 발소리가 계단 아래로 멀어집니다—관리소장이 보일러실의 증거를 인멸하려 합니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_fire_escape",
+              "label": "동쪽 비상계단으로 빠르게 내려간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "게이브 씨, 동쪽 비상계단으로 내려가요—911 스피커폰 계속 켜두세요!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_film_super",
+              "label": "잠긴 계단실을 찍어 911에 전송한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 증거",
+              "player_reply_text": "새 자물쇠랑 그 사람 그림자 다 찍었어요—형사들한테 바로 보낼게요!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "파이프 렌치 들고 바로 뒤따라가요! 5층 계단 참에서 만나요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "상황실에서 영상 확인했대요—순찰차들이 지금 골목으로 들이닥치고 있어요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "잠깐—골목 끝 보일러실 문이 방금 벌컥 열렸어!",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "보일러실.",
+          "teaser_text": "4화: 비상계단을 뛰어 내려간 당신은 관리소장이 실종된 소녀의 가방을 태우기 전에 막아섭니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "소각로 속의 증거",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 12:55 · 건물 뒤편 골목. 두 블록 떨어져 경찰 사이렌이 울리는 가운데, 지하 보일러실 환기구에서 연기가 피어오릅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "소각로에 소녀의 가방을 태우려나 봐요! 잠깐—혼자 들어가지 마세요, {{player_name}} 님, 제가 지하 메인 급수관을 열어서 불을 꺼버릴게요!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "게이브 씨, 보일러실 창문이 살짝 열려 있어요—작업대 위에 놓인 소녀의 학생증이 보여요!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "정문에 도착한 경찰관한테 DNA 채취 키트 받으라고 해—내 팔찌 잠금쇠에 그자 피가 묻었거든!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "쏴아아! 게이브가 비상 스프링클러 밸브를 돌리자 얼음장 같은 물이 소각로를 덮칩니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "소각로 침수 완료! 그자가 골목으로 비틀거리며 나오다가 순찰차 헤드라이트 정면으로 걸려들었어요!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "배관공 경력 10년에 인생 최고의 밸브 돌리기였네.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[울려 퍼지는 경찰 메가폰 소리] \"가방을 내려놓고 문에서 떨어져! 손 들어!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "눈부신 순찰차 조명 아래 관리소장이 가방을 떨어뜨리고 두 손을 듭니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_point_backpack",
+              "label": "경찰관들에게 가방을 똑바로 가리킨다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "경찰관님! 실종된 여학생의 학생증과 소지품이 바로 저 가방 안에 있어요!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_give_bracelet",
+              "label": "과학수사대에 옥상 물탱크 팔찌를 넘긴다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 핵심 증거",
+              "player_reply_text": "과학수사대분들—물탱크에서 건져 올린 이 팔찌 잠금쇠 좀 감식해 주세요!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "형사들이 작업대 전체를 증거물로 확보했어요! 이제 꼼짝 못 해요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "과학수사대가 긴급 대조를 돌렸는데—작년 여름 실종된 학생과 정확히 일치한대요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "법의학 감식 확인서를 보세요—마침내 정의가 수면 위로 떠올랐습니다.",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "현행범 체포.",
+          "teaser_text": "5화: DNA 감식 보고서가 실종 사건을 종결짓고—옥상 물탱크를 영원히 정화합니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "맑아진 물",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 2:10 · 과학수사대 차량들이 거리에 늘어서고 관리소장이 연행됩니다. 형사들이 1차 DNA 일치 결과를 공유합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "여학생 가족분들이 다른 주에서 지금 내려오고 계신대요, {{player_name}} 님. 한순간도 찾기를 포기하지 않으셨대요.",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "게이브 씨, 5A호 주방 수도꼭지를 틀어봤는데—물이 완전히 수정처럼 맑아요.",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "DNA 감식 보고서 · 옥상 저수조 증거물 — 일치 확인, 사건 해결.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "옥상 물탱크: 신호가 잦아들었습니다. 더 이상의 이상 징후는 감지되지 않습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "수도꼭지를 잠그고 외면하지 않아 주셔서 두 분 다 정말 감사합니다.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "내일 아침 당장 옥상 물탱크 전체를 무료로 새것으로 갈아드려야지.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[가랑비처럼 부드럽게 잦아드는 목소리] \"나를 찾아줘서 고마워, {{player_name}}. 이제 물이 깨끗해.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "게이브가 생수 두 병을 들고 문 앞에 서 있습니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_take_water",
+              "label": "생수를 건네받으며 게이브에게 고마움을 전한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "게이브 씨야말로 진짜 영웅이에요. 한밤중 연락에도 달려와 주셔서 감사해요.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_honor_girl",
+              "label": "옥상 정원 앞에 하얀 꽃을 놓아둔다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 헌정",
+              "player_reply_text": "그녀를 기리며 옥상 문 앞에 하얀 꽃을 두었어요. 편히 쉬세요.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "제 할 일을 했을 뿐이에요—좋은 입주민분들도 챙겨야죠.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이 건물에서 그녀는 절대 잊히지 않을 겁니다.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "5A호 너머로 맑은 새벽이 밝아옵니다.",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "수면 위로 떠오른 진실.",
+          "teaser_text": "6화 (최종화): 옥상에 눈부신 새 물탱크가 올라가고—5A호는 마침내 평온한 잠을 이룹니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "옥상의 새로운 시작",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 9:00 · 게이브가 마지막 볼트를 조이자, 아침 햇살이 반짝이는 새 스테인리스 옥상 물탱크 위로 쏟아집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "새 물탱크, 새 배관, 그리고 오늘 아침 새로 고용된 새 건물 관리인까지 완벽합니다, {{player_name}} 님!",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "시에서 사건 해결에 기여한 공로로 게이브 씨한테 표창장 수여한다는 소식 들었어요!",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "그 메달 반쪽은 당신 거예요—자정에 전화를 끊지 않고 버텨준 게 바로 당신이잖아요.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "건물 공지: \"상수도 수질 100% 청정 및 안전 인증 완료.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "다음에 싱크대 물 새면 오후 8시 전에만 불러주세요—제 심장도 좀 쉬어야 해서요!",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "이 건물 통틀어 최고의 입주민이네.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[피식 웃는 게이브] \"평온한 한 주 보내세요, {{player_name}} 님!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "아침 햇살 아래 수정처럼 맑은 물을 한 잔 따릅니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_drink_clear",
+              "label": "맑은 물을 들어 건배한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "깨끗한 물과 유령 없는 일상을 위하여 건배, 게이브 씨!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_thank_gabe",
+              "label": "게이브를 1층 카페에 초대한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 우정",
+              "player_reply_text": "모퉁이 카페에서 제가 커피 살게요—단, 해 떠 있을 때만요!",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "그 말에 건배합시다!",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "전 블랙으로 마실게요—1층에서 뵈어요!",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "옥상 물탱크 · 평온한 안식.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 수정처럼 맑은 아침.",
+          "teaser_text": "끝 · 때로 유령 소동이란 그저 수면 위로 떠오르기를 기다리는 진실일 뿐입니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

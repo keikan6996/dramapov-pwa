@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_095",
+  "lang": "ko",
+  "metadata": {
+    "title": "가짜 구급대원",
+    "subtitle": "안개 낀 산길에서 추돌 사고가 나자마자 911에 전화도 하기 전에 구급차가 도착했다—그런데 911은 근처에 출동한 차량이 없다고 한다.",
+    "genre": "thriller",
+    "tags": [
+      "생존",
+      "사칭범",
+      "추락 사고"
+    ],
+    "cover_image": "assets/media/covers/story_095.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "disp",
+      "name": "911 · 4호 상황실",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "emt",
+      "name": "EMT-00",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#450A0A"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "출동 기록 없음",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오후 11:08 · 파인 패스 고속도로. 짙은 안개 속에서 당신의 세단이 미끄러져 가드레일을 들이받습니다. 911을 누르기도 전에 붉은 경광등이 뒤쪽에 멈춰 섭니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "[긴급 문자] 안녕하세요 911, 저 괜찮아요—구급차가 벌써 18마일 표지판에 엄청 빨리 도착했네요!",
+          "timestamp_label": "오후 11:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "선생님, 지금 당장 차 문 잠그세요! 오늘 밤 파인 패스에 출동한 카운티 구급차는 한 대도 없습니다! 가장 가까운 차량도 14마일 밖이에요!",
+          "timestamp_label": "오후 11:09",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[다급한 타자 소리] 차 안에 그대로 계세요, {{player_name}} 님! 절대 창문 내리지 마시고—구급차 옆면에 적힌 차량 번호를 봐서 저한테 문자로 보내 주세요!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "문 열어, {{player_name}}. 이마에서 피가 나고 있잖아—내가 도와줄게.",
+          "unsent_placeholder": "EMT-00 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "장갑을 낀 손이 김 서린 운전석 창문을 가볍게 두드립니다:",
+          "options": [
+            {
+              "option_id": "opt_095_e1_free",
+              "label": "문을 잠근 채 시동을 걸어본다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "차량 번호가 없어요—밴 옆면이 덧칠돼 있어요! 차 다시 시동 거는 중이에요!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_095_e1_vip",
+              "label": "상향등을 비추고 그의 얼굴을 촬영한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "스타터 모터가 힘없이 헛돌다가—꺼집니다. 라디에이터에서 김이 쉭 뿜어져 나옵니다. 바깥의 '구급대원'이 의료 가방에 손을 넣어 묵직한 창문 파쇄기를 꺼냅니다.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "주 경찰이 파인 패스로 급히 올라가고 있으니 버티세요! 경적을 계속 길게 눌러서 그자를 겁줘 쫓아내세요!",
+          "timestamp_label": "오후 11:11",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "그가 눈부심에 움찔하는 순간 당신이 앞유리 너머로 선명한 사진을 찍고—그의 뺨에 난 거친 흉터를 알아봅니다. 20마일 뒤 주유소에 있던 견인차 운전사입니다.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "주유소에서 저자가 내 브레이크 호스를 잘랐어!! 그래서 내 차가 18마일 지점에서 미끄러진 거였어!",
+          "timestamp_label": "오후 11:11",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "경적 그만 울려, {{player_name}}. 이 안개 속에선 아무도 네 소리 못 들어.",
+          "timestamp_label": "오후 11:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "쩌적! 운전석 유리에 거미줄 같은 하얀 금이 갑니다. 그가 두 번째 일격을 가하기 위해 도구를 뒤로 젖힙니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "단 한 번의 일격만 남았다",
+          "teaser_text": "유리는 한 번 더 버티지 못할 것입니다—그리고 진짜 주 경찰은 아직 산 아래 6분 거리에 있습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "안개 속으로",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오후 11:13 · 당신이 센터 콘솔 위로 몸을 날려 조수석 문을 밀어젖히고 안개 자욱한 소나무 계곡 비탈로 굴러 떨어집니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "disp",
+          "caller_label": "911 · 4호 상황실",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[무전 잡음] 나무 사이에 몸 낮추세요, {{player_name}} 님! 절대 손전등 켜지 마세요—7호 순찰차가 방금 15마일 지점을 통과했습니다!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "화면 밝기 0으로 낮추세요! 7호 순찰차가 3마일 아래에 있으니—사이렌 소리 쪽 내리막으로 내려가세요!",
+          "timestamp_label": "오후 11:13",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "도로로 다시 올라와, {{player_name}}. 조수석에 지갑 떨어뜨렸더군—네 집 주소 다 알아냈어.",
+          "timestamp_label": "오후 11:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "잠깐… 저놈 구급차 시동 켜진 채 열쇠도 꽂혀서 도로 위에 서 있잖아!",
+          "timestamp_label": "오후 11:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "10야드 위쪽에서 그의 손전등 불빛이 숲을 훑고 지나갑니다:",
+          "options": [
+            {
+              "option_id": "opt_095_e2_free",
+              "label": "경찰 사이렌 소리가 들리는 내리막으로 전력 질주한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "사이렌 소리 들려요! 지금 배수로 타고 아래로 뛰고 있어요!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_095_e2_vip",
+              "label": "되돌아가서 그의 가짜 구급차를 탈취한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "당신이 17마일 지점 아스팔트 위로 뛰쳐나와 7호 순찰차의 눈부신 경광등 바로 앞에 섭니다. 언덕 위에서는 가짜 구급차가 타이어 비명을 지르며 안개 속으로 도주합니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "7호 순찰차가 안전 확보를 확인했습니다! 파인 패스 양쪽 끝에 검문 바리케이드가 설치되고 있습니다!",
+          "timestamp_label": "오후 11:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "그가 숲 경계를 수색하는 동안 당신이 구급차 운전석에 뛰어올라 문을 잠그고 경찰 바리케이드를 향해 풀액셀을 밟습니다—뒷칸에 그의 모든 증거물을 실은 채요.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "잠깐—용의자의 구급차를 직접 탈취해 오셨다고요?! 경찰들이 글러브 박스에서 실종자 신분증 뭉치를 발견했답니다!",
+          "timestamp_label": "오후 11:17",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "아직 네 운전면허증은 내가 갖고 있어, {{player_name}}. 집에 가면 보자고.",
+          "unsent_placeholder": "EMT-00 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "순찰차 안에서 응급 담요를 두른 당신이 경찰 무전이 지지직거리며 울리는 것을 지켜봅니다: \"용의자 파인 협곡으로 도보 도주—무장 상태이며 행방 묘연.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "그자가 당신의 주소를 쥐고 있다",
+          "teaser_text": "18마일 표지판에서는 살아남았습니다—하지만 가짜 구급대원은 당신의 지갑과 집 열쇠를 챙겨 안개 속으로 사라졌습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "집 앞 경계선",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 2:24 · 진짜 순찰차 안에서 응급 담요를 두르고 있는 순간, 휴대폰에 당신의 아파트 복도 동작 감지 경보가 뜹니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: {{player_name}} 님, 도난 구급차에 수배령을 내렸지만—가장 가까운 순찰차도 댁 아파트에서 아직 12분 거리입니다!",
+          "timestamp_label": "오전 02:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그놈이 벌써 내 집 문 앞에 왔어요!! 내 스마트 초인종에 EMT-00이 내 도난당한 집 열쇠를 쓰는 게 방금 찍혔어요!",
+          "timestamp_label": "오전 02:24",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "아파트 복도 카메라 · 오전 2:24 — 당신의 현관문 자물쇠를 여는 EMT-00."
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "emt",
+          "duration_sec": 7,
+          "transcript": "[현관문 달칵 열리는 소리] 집 좋네, {{player_name}}. 네 차 블랙박스 SD 카드 어디다 백업했는지 말하면 조용히 나가줄게.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00이 블랙박스 백업을 찾으려고 당신의 책상을 뒤지고 있습니다. 대응하십시오:",
+          "options": [
+            {
+              "option_id": "opt_095_e3_free",
+              "label": "아파트 화재 경보기를 원격으로 울린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "110데시벨 복도 경보음 실컷 들어봐, EMT-00! 지금 모든 이웃이 다 깨어나고 있을 테니까!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_095_e3_vip",
+              "label": "사고 직전 내 블랙박스에 무엇이 찍혔는지 확인한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "스마트 경보기 사이렌이 복도 전체에 울려 퍼집니다—EMT-00이 욕설을 내뱉으며 빈손으로 계단실을 향해 줄행랑칩니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 이웃들이 방금 911에 신고했습니다! 경찰관들이 오크 애비뉴 서쪽으로 과속하는 흰색 구급차를 포착했습니다!",
+          "timestamp_label": "오전 02:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "클라우드 블랙박스 영상이 로드됩니다: 당신이 사고 나기 10분 전, 검은 세단 한 대가 산악 도로에서 자전거 운전자를 치고 달아납니다—그리고 운전자는 Vance 판사입니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "상황실! 내 블랙박스에 사고 10분 전 Vance 판사의 뺑소니가 찍혔어요—그래서 EMT-00이 내 입을 막으려 한 거예요!",
+          "timestamp_label": "오전 02:24",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "아파트에 백업 드라이브 없음. 번호판 바꾸러 옛 병원으로 복귀 중.",
+          "unsent_placeholder": "EMT-00 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 방금 전송 취소된 문자 보셨어요?! 잠깐—그자가 훔쳐 간 지갑 안에 여분 휴대폰 넣어두셨던 거군요!",
+          "timestamp_label": "오전 02:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "클라우드 영상 포기해, {{player_name}}. 현직 판사랑 척져서 좋을 거 하나 없어.",
+          "timestamp_label": "오전 02:24",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "블랙박스 목격자",
+          "teaser_text": "당신의 블랙박스가 현직 판사의 뺑소니를 포착했습니다—그리고 지갑 속 숨겨진 추적기가 방금 EMT-00의 은신처를 찍어냈습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "버려진 병원",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 2:39 · 순찰차 안에서 '내 지갑 찾기' 앱을 엽니다. 동쪽 2마일 지점에서 파란 점 하나가 일정하게 깜빡입니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 수신 양호! 고속도로 순찰차 세 대를 머시 병원으로 우회시키고—주 검찰청에 블랙박스 영상을 전송 중입니다!",
+          "timestamp_label": "오전 02:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "상황실, 도난당한 내 지갑 실시간 위치 떴어요! 7번 국도 벗어난 버려진 머시 병원 뒤쪽에 차 대고 있어요!",
+          "timestamp_label": "오전 02:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "Vance 판사가 전화 왔어—해 뜨기 전에 구급차 불태워 버리래.",
+          "unsent_placeholder": "EMT-00 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[경찰 무전 잡음] 머시 병원 현장 4호 팀! 뒤쪽 격납고에서 폐차 처리된 구급차 확인—용의자가 휘발유를 붓고 있음!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00이 당신의 지갑이 든 채로 훔친 구급차에 불을 지르려 합니다:",
+          "options": [
+            {
+              "option_id": "opt_095_e4_free",
+              "label": "4호 팀에 사이렌을 끄고 급습하라고 전한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "성냥 긋기 전에 사이렌 끄고 뒤쪽 격납고로 바로 덮치라고 전해 주세요!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_095_e4_vip",
+              "label": "지갑의 고음 알림음을 울려 그를 놀라게 한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "순찰차 세 대가 소리 없이 주차장으로 미끄러져 들어와 투광등을 켭니다—휘발유 통을 든 채로 EMT-00이 그대로 얼어붙습니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 용의자 검거 완료! 화재 없음, 구급차 원형 보존—그리고 지갑도 회수했습니다!",
+          "timestamp_label": "오전 02:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "조수석에서 당신의 90데시벨 지갑 추적기가 비명처럼 울려 퍼집니다—EMT-00이 주춤하는 순간 4호 팀이 그를 아스팔트 위로 덮칩니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "내 생애 최고의 29달러짜리 지갑 추적기네!",
+          "timestamp_label": "오전 02:39",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "구급차 글러브 박스 안에서 경찰관들이 Vance 판사의 부재중 전화가 줄줄이 뜬 대포폰을 발견합니다.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 주 검찰청이 방금 Vance 판사에 대한 긴급 체포 영장을 발부했습니다—그리고 부상당한 자전거 운전자는 카운티 종합병원에서 살아남았답니다!",
+          "timestamp_label": "오전 02:39",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "[증거물로 EMT-00 기기 압수됨]",
+          "timestamp_label": "오전 02:39",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "추적기 고정",
+          "teaser_text": "EMT-00이 구급차를 불태우기 직전에 체포되었습니다—그리고 당신의 GPS 흔적이 부패한 판사를 철창에 넣었습니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "코드 3",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 3:15 · 카운티 경찰서에서, 4호 상황실 수석 상황관이 블랙박스 프레임 옆에 당신 지갑의 정확한 GPS 이동 경로를 출력합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 모든 퍼즐이 딱 맞아떨어집니다—18마일 표지판, 복도 카메라, 그리고 머시 병원까지. Vance 판사는 방금 자택에서 자수했답니다.",
+          "timestamp_label": "오전 03:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "산악 도로에 쓰러졌던 자전거 운전자분은 어떠시대요? 내 블랙박스 타임스탬프 덕분에 의사들이 제때 찾았나요?",
+          "timestamp_label": "오전 03:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "disp",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "GPS 회수 로그 · 오전 2:39 머시 병원에서 도난 구급차 위치 특정.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[따뜻하고 안도한 목소리] 네! 우리 진짜 구급차가 사고 신고 20분 만에 그분께 도착했어요—완전 회복하실 거랍니다!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "주 검사가 당신의 클라우드 블랙박스 영상을 증거물 1호로 등록하겠다고 합니다:",
+          "options": [
+            {
+              "option_id": "opt_095_e5_free",
+              "label": "즉시 목격자 진술서에 서명한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "서명 및 검증 마쳤습니다. 두 사람 다 다신 18마일 표지판 근처에서 운전 못 하게 해 주세요.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_095_e5_vip",
+              "label": "귀가하기 전에 아파트 자물쇠 교체를 요청한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "검사가 당신의 손을 굳게 잡습니다—블랙박스 영상과 대포폰 통화 기록이 모두 확보되어 사건은 빈틈없이 확정됩니다.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 오늘 밤 두 생명을 구하셨어요—본인과 그 자전거 운전자분요.",
+          "timestamp_label": "오전 03:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "긴급 열쇠공이 새 데드볼트를 설치하는 동안 4호 상황실이 당신의 아파트 밖에 순찰차 호위를 세워 줍니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "새 자물쇠, 돌아온 지갑, 그리고 수갑 찬 두 범인까지. 드디어 안심이 되네요.",
+          "timestamp_label": "오전 03:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "안개 낀 산에서 내가 안내했던 신고자 중 최고였어요.",
+          "unsent_placeholder": "911 · 4호 상황실 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 차는 안전한 차고지로 견인됐고, 진짜 순찰차가 집까지 모셔다드릴 준비가 됐습니다.",
+          "timestamp_label": "오전 03:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "내가 필요할 때 응답해 줘서 고마워요, 4호 상황실.",
+          "timestamp_label": "오전 03:15",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "진짜 구조",
+          "teaser_text": "EMT-00과 Vance 판사는 모두 수갑을 찼고, 자전거 운전자는 회복 중이며, 마침내 아침 햇살이 산 안개를 걷어냅니다.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "앞에 펼쳐진 맑은 길",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 9:00 · 맑은 햇살이 산길을 말려줍니다. 당신은 차 한 잔과 새 아파트 열쇠를 옆에 두고 소파에 앉아 있습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실: 좋은 아침이에요, {{player_name}} 님! Vance 판사는 한 시간 전에 법관직에서 공식 정직 처리됐답니다.",
+          "timestamp_label": "오전 09:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "좋은 아침이에요, 4호 상황실! 그자가 도로에서 사라졌다고 생각하니 멍든 갈비뼈도 벌써 다 나은 기분이에요.",
+          "timestamp_label": "오전 09:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "자전거 운전자 가족분들이 당신께 전해달라며 우리 상황실로 꽃다발을 보내오셨어요!",
+          "unsent_placeholder": "911 · 4호 상황실 님이 메시지를 전송 취소했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 5,
+          "transcript": "[명랑한 아침 무전 소리] 언제나 옆문 차량 번호 확인하는 거 잊지 마세요, {{player_name}} 님. 항상 안전운전하세요!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "새 집 열쇠와 아침 뉴스 속보 알림을 번갈아 바라봅니다:",
+          "options": [
+            {
+              "option_id": "opt_095_e6_free",
+              "label": "카운티 종합병원으로 회복 중인 자전거 운전자를 문병 간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "오늘 오후에 카운티 종합병원에 들러서 안부 인사 전하려고요.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_095_e6_vip",
+              "label": "다음 차에는 듀얼 클라우드 블랙박스를 설치한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 시청",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "그날 오후, 햇살이 쏟아지는 병원 로비에서 자전거 운전자의 가족 전체가 당신을 끌어안습니다—잘못된 구급차에 타지 않은 것에 감사하면서요.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "언제나 직감을 믿고—언제나 911에 확인해야죠.",
+          "timestamp_label": "오전 09:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "당신은 점심 먹기 전에 듀얼 채널 클라우드 블랙박스를 주문합니다—그 작은 렌즈 하나가 부패한 판사를 무너뜨렸다는 걸 알기에요.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실도 찬성입니다! 안전 운전하세요, {{player_name}} 님.",
+          "timestamp_label": "오전 09:00",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "18마일 표지판 위의 안개는 완전히 걷혔습니다. 오직 푸른 하늘만이 남아 있습니다.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "4호 상황실 교신 종료. 몸조심하세요, {{player_name}} 님.",
+          "timestamp_label": "오전 09:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "이상 교신 끝, 4호 상황실.",
+          "timestamp_label": "오전 09:00",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "시즌 최종화 · 안전한 안식처",
+          "teaser_text": "EMT-00과 Vance 판사는 법의 심판을 받고, 자전거 운전자는 살아남았으며, 18마일 표지판의 악몽은 끝났습니다.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

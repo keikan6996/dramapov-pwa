@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_033",
+  "lang": "ko",
+  "metadata": {
+    "title": "죽은 자의 다리로 안내한 내비게이션",
+    "subtitle": "오빠가 문자를 보냈다: \"왜 옛날 다리로 좌회전했어? 거기 2012년에 무너졌잖아!\" 나는 이미 다리 한가운데다.",
+    "genre": "thriller",
+    "tags": [
+      "고속도로",
+      "안개",
+      "초자연"
+    ],
+    "cover_image": "assets/media/covers/story_033.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (나)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#CA8A04"
+    },
+    {
+      "id": "ally",
+      "name": "Ryan (남동생)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "GPS 음성 안내",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "경로를 재탐색합니다",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 2:11 · 짙은 산안개가 헤드라이트를 삼킵니다. 내비게이션이 안내합니다: \"올드 리버 다리 방면으로 좌회전하세요.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 당장 차 세워!! 네 위치 점이 올드 리버 다리로 꺾이는 게 보이는데—거기 2012년에 붕괴된 다리야!!",
+          "timestamp_label": "오전 2:11",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "말도 안 돼! 나 지금 멀쩡한 콘크리트 위를 달리고 있는데—내 앞엔 빨간 세단 미등도 보인단 말이야!",
+          "timestamp_label": "오전 2:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "계속 내 미등 따라와. 떨어질 땐 꼭 날아오르는 기분이야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "지금 당장 브레이크 밟고 후진해! 계기판 시계 봐—왜 내비게이션 날짜가 2012년 10월로 돌아가 있어?!",
+          "timestamp_label": "오전 2:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[왜곡된 차량 라디오, 아래로 흐르는 거친 강물 소리] ...200미터 앞, {{player_name}}, 최종 목적지에 도착했습니다...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "앞선 빨간 세단이 안개 속에서 급정거합니다. 운전석 문이 스르르 열립니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "후진 기어를 넣고 가속 페달을 끝까지 밟는다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "다리에서 후진으로 빠져나가는 중!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "빨간 세단을 향해 상향등을 깜빡인다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "상향등 켜볼게!",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "후방 카메라가 깜빡이며 켜집니다—범퍼 뒤에는 아무것도 보이지 않습니다. 강물로 떨어지는 짙은 흑암뿐입니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 안개가 찰나 걷히며 드러납니다—빨간 세단은 녹슬고 찌그러진 채 끊어진 콘크리트 끝자락에 위태롭게 걸쳐 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "나 다리 앞 바리케이드에 와 있어! 네 헤드라이트가 텅 빈 강 허공 위에 떠 있는 게 보인다고!!",
+          "timestamp_label": "오전 2:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "{{player_name}} (내 번호로 걸려 온 전화)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "물기에 젖은 목소리가 헐떡입니다: \"차에서 내리지 마. 창문 옆 가드레일을 봐.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "전화를 거절했습니다. 그 즉시 차량 문이 자동으로 잠기고 라디오에서 2012년 다리 붕괴 뉴스 특보가 터져 나옵니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "앞에는 길이 없다",
+          "teaser_text": "2화: 창백한 형체가 빨간 세단에서 내려 당신의 앞유리를 향해 곧장 걸어옵니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "거리 표지판 0",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 2:17 · 시동이 꺼집니다. 차가운 강안개가 송풍구를 타고 스며드는 가운데 깨진 아스팔트를 밟는 발소리가 들립니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "뒤쪽 내 비상등 깜빡이는 것만 보고 버텨! 안개 속 사람 절대 쳐다보지 마, {{player_name}}!",
+          "timestamp_label": "오전 2:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "앞유리를 톡톡 두드리고 있어! 내비 화면엔 계속 \"계속 직진하세요\"라고 뜨고!",
+          "timestamp_label": "오전 2:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[젖은 손가락 마디가 유리를 두드리는 소리] ...창문 내려, {{player_name}}... 2012년부터 계속 기다렸어...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "차량 대시보드에서 휴대폰 케이블 뽑아.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐—내비게이션 앱 꺼! 차를 조종하지 못하게 대시보드 USB 케이블 확 뽑아버려!",
+          "timestamp_label": "오전 2:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "얼어붙은 손바닥 아래 앞유리에 거미줄처럼 금이 가기 시작합니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "내비 케이블을 뽑고 다시 시동을 건다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "케이블 뽑고 시동 다시 거는 중!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "경적을 멈추지 않고 계속 울린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "경적 계속 울리는 중!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "엔진이 다시 굉음을 내며 살아납니다. 타이어가 노란 통제선 바로 몇 인치 앞의 진짜 자갈을 밟습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 거센 경적 소리가 안개의 환영을 산산조각 냅니다. 빨간 세단이 사라지고—가드레일에 묶인 녹슨 추모 화환이 드러납니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "안전하게 바리케이드 뒤로 후진하자 라이언이 당신을 차에서 끌어냅니다. 앞범퍼가 18미터 낭떠러지 끝에 걸쳐 있었습니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "라이언 (바로 옆에 서 있음)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "라이언이 뒷좌석을 보고 경악합니다: \"왜 뒷좌석이 물에 흠뻑 젖어 있어, {{player_name}}?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "뒷유리를 돌아봅니다—유리 안쪽에 젖은 손자국이 찍혀 있고, 내비게이션이 속삭입니다: \"경로를 재탐색합니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "목적지에 도착했습니다",
+          "teaser_text": "시즌 피날레 · 안개 낀 밤에는 절대 지름길 안내를 믿지 마세요.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "강 위의 경로 재탐색",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 1:45 · 안개가 헤드라이트를 집어삼킵니다. 타이어가 녹슨 교량 철골 위를 밟고 있지만—라이언은 이 다리가 2012년에 무너졌다고 장담합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, 차 멈춰! 당장 후진 기어 넣어! 위성 지도 보고 있는데—가운데 상판이 아예 없어!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "라이언, 내비 화면이 저절로 금 가더니 조향 보조 장치가 잠겼어—\"추락까지 30미터\"라고 떠!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "금 간 내비 화면 · 2012년 붕괴 다리 경로 고정 — 수신 감도 0칸.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "내비게이션 음성 안내: \"안개 속으로 계속 직진하세요. 2012년에 거의 다 도착했습니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "후진하지 마, {{player_name}}. 네 범퍼 뒤에 누군가 서 있어.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "2012년에 스쿨버스가 음주운전 차량을 피하려다 여기서 급핸들을 꺾었어—그 뺑소니 트럭은 끝내 못 찾았지.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[사람의 애원하는 목소리로 일그러지는 금속성 내비 음성] \"끝까지 몰고 가지 마! 오른쪽 가드레일을 봐!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "헤드라이트가 15미터 앞 부서진 콘크리트 틈새를 비춥니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_slam_brakes",
+              "label": "사이드브레이크를 당기고 시동을 끈다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "사이드 당겼어! 낭떠러지 3미터 앞에서 멈췄어, 라이언!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_check_rail",
+              "label": "오른쪽 가드레일에 손전등을 비춘다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 단서",
+              "player_reply_text": "차 세웠어! 잠깐—가드레일에 2012년식 녹슨 번호판이 끼여 있어!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "다행이다! 1밀리미터도 움직이지 마—내가 조명탄 들고 북쪽 강둑으로 차 몰고 갈게!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "번호판이라고?! 당장 사진 찍어—2012년 그 뺑소니 트럭 거야!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "내비게이션 음성 안내: \"북쪽 강둑의 조명탄을 따라가세요. 번호판을 꼭 챙겨가세요.\"",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "낭떠러지 3미터 앞.",
+          "teaser_text": "4화: 얼어붙는 안개 속에서, 당신은 내비게이션이 왜 당신을 죽은 자의 다리로 이끌었는지 깨닫습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "2012년 뺑소니 사고",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 2:02 · 강안개 속에서 붉은 도로 조명탄이 타오르고, 라이언이 멀쩡한 북쪽 진입로로 달려와 당신의 차로 다가옵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "차는 P에 두고 내 조명탄 불빛만 보고 똑바로 걸어와, {{player_name}}! 그 녹슨 번호판 꼭 쥐고!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "라이언! 잠깐—내비게이션 목소리가 날 죽이려던 게 아니었어! 파묻힌 번호판 바로 옆에 차를 세워준 거였어!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "14년 동안 내 동생 사고가 미제였어, {{player_name}}. 아무도 이 옛날 다리 위로 들어와 철골에 낀 걸 확인하려 하지 않았지.",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "안개가 잠시 걷히며—강둑 옆에서 따뜻한 주황빛 불꽃에 비친 추모 십자가가 모습을 드러냅니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "고속도로 순찰대 친구한테 번호판 조회 부탁했더니—군 도로국장 소유 차량으로 떴대!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "아무도 가드레일을 조사 못 하게 다리를 통제 구역으로 묶고 펜스를 쳐버린 장본인이 바로 그 작자야!",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[차량 스피커에서 흘러나오는 맑고 고마워하는 목소리] \"지름길로 와줘서 고마워, {{player_name}}. 그가 번호판을 다시 묻지 못하게 해줘.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "갑자기 라이언 뒤쪽 다리 입구에 헤드라이트가 켜집니다—검은 픽업트럭이 출구를 가로막습니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_run_riverbank",
+              "label": "라이언과 함께 강둑 오솔길로 빠져나간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "누가 다리 입구를 막았어! 라이언, 강둑 오솔길로 뛰자!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_send_plate",
+              "label": "고속도로 순찰대에 지금 당장 번호판 사진을 보낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 영리함",
+              "player_reply_text": "주 순찰대에 번호판 사진이랑 GPS 좌표 보냈어—5분 거리래!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "갈대밭 옆 낚시꾼 길 알아! 내 조명탄 따라와!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "순찰대 출동 확인! 순찰차 네 대가 지금 고속도로 출구를 막고 있어!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "강둑 모닥불 너머를 보니 순찰대 경광등이 물 위로 번쩍입니다!",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "다리 위에서의 포위.",
+          "teaser_text": "5화: 주 순찰대가 강가에서 도로국장의 픽업트럭을 포위합니다—14년의 은폐가 막을 내립니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "강둑의 정의",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 2:25 · 어두운 강물에 푸른 경광등이 비치고, 주 순찰대가 2012년 번호판을 빼앗으려던 남자를 체포합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "경찰이 잡았어, {{player_name}}! 트럭 안에 절단기가 있었대—내비 신호가 뜨자 가드레일 흔적을 없애러 돌아온 거야!",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "라이언, 추모 십자가 서 있는 강둑 좀 봐—안개가 완전히 걷혔어!",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/lake_bonfire_timestamp.webp",
+          "caption": "강둑 · 오전 02:25 — 옛 교각 옆에서 따뜻하게 타오르는 추모의 불꽃.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "내비게이션 음성 안내: \"목적지에 도착했습니다. 안전하게 집으로 안내를 시작합니다.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "죽은 자의 다리에 14년 동안 끼어 있던 안개가... 오늘 밤 드디어 걷혔어.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "다시는 네가 내비게이션 믿고 달린다고 놀리지 않을게.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[부드럽고 평온한 내비 알림음] \"60미터 앞 좌회전입니다. 안전 운전하세요, {{player_name}}.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "주 순찰대원이 따뜻한 보온병을 건네며 차량을 점검해 줍니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_drive_home",
+              "label": "라이언의 미등을 따라 고속도로로 돌아간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "조심해서 다리 빠져나갈게—앞장서, 라이언!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_thank_bridge",
+              "label": "2012년 추모비 옆에 조명탄 하나를 남긴다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 존중",
+              "player_reply_text": "추모 십자가 옆에 불을 하나 남겨뒀어. 이제 편히 쉬세요.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "바로 앞에 있어. 본선 도로는 완전히 안전해!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "강물이 유리처럼 잔잔하네. 이제 집으로 가자.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "내비게이션 음성 안내: \"경로 안내를 종료합니다.\"",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "고속도로 복귀.",
+          "teaser_text": "6화 (최종화): 새 다리 위로 아침 해가 떠오르고—옛 지름길은 마침내 안식을 얻습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "탁 트인 앞길",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 7:45 · 라이언이 팬케이크를 뒤집는 사이 집 앞마당에 햇살이 따뜻하게 내리쬐고, 아침 뉴스에서 2012년 사건 체포 소식을 보도합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "다음 주에 무너진 2012년 다리를 공식 철거하고 강둑에 정식 추모 공원을 만든대.",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "내비게이션 앱도 밤새 업데이트됐어—죽은 자의 다리는 지도에서 완전히 지워졌더라.",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잘됐네. 다음번에 놀러 올 땐 내가 직접 굽이굽이 길 안내 다 보내줄 거니까.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "내비게이션 앱: \"모든 경로가 원활합니다. 안전한 여정 되세요.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "식기 전에 와서 아침 먹어, 영웅님.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "제때 브레이크 밟아줘서 정말 천만다행이야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[웃는 라이언] \"이제 자정 지름길 타기는 금지다—약속해?\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "아침 햇살 아래 식탁 위 커피에서 김이 모락모락 피어오릅니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_promise_ryan",
+              "label": "라이언에게 자정 지름길은 안 타겠다고 약속한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "약속할게! 앞으론 무조건 큰길로만 다닐게.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_toast_coffee",
+              "label": "2012년 추모비를 기리며 머그잔을 들어 올린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 명예",
+              "player_reply_text": "안개를 뚫고서라도 끝내 제 자리를 찾아간 진실을 위하여.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "올해 한 약속 중에 제일 똑똑한 약속이야.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "백 번 옳은 말이야. 어서 먹자!",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "내비게이션 음성 안내 · 정상 경로 안내 복구 완료.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 무사 귀가.",
+          "teaser_text": "끝 · 때로는 안개 속의 잘못된 회전이 정의가 기다리던 자리로 이끌어 주기도 합니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

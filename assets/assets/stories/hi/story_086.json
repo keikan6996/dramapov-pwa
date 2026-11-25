@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_086",
+  "lang": "hi",
+  "metadata": {
+    "title": "स्मार्ट होम ओवरराइड",
+    "subtitle": "मेरा थर्मोस्टैट 108°F पर पहुँच गया, स्मार्ट ताले बंद हो गए, और स्पीकर मेरे राज़ सुना रहे हैं।",
+    "genre": "thriller",
+    "tags": [
+      "स्मार्ट होम",
+      "हैकर",
+      "फ़ँसे हुए"
+    ],
+    "cover_image": "assets/media/covers/story_086.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "owen",
+      "name": "Owen · HomeSec",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "root",
+      "name": "ROOT_ADMIN",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#064E3B"
+    },
+    {
+      "id": "narrator",
+      "name": "सूत्रधार",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "थर्मल लॉकडाउन",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "रात 10:41 · HOME OS अलर्ट: सभी बाहरी डेडबोल्ट लॉक। स्टॉर्म शटर गिरे। हीटिंग MAX (108°F) पर सेट।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen!! तुम्हारे स्मार्ट होम ऐप ने मुझे मेरे ही घर में बंद कर दिया और हीटर को 108 डिग्री पर कर दिया!",
+          "timestamp_label": "रात 10:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "अभी तुम्हारा हब चेक कर रहा हूँ, {{player_name}}... रुको, मेरे टेक्नीशियन अधिकार अभी रद्द कर दिए गए! कोई तुम्हारे गैराज के अंदर से ROOT_ADMIN के रूप में लॉग-इन है।",
+          "timestamp_label": "रात 10:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "root",
+          "duration_sec": 7,
+          "transcript": "[आपके लिविंग रूम के स्पीकरों में गूँजते हुए] \"पिछला मंगलवार याद है, {{player_name}}? तुमने वादा किया था कि किसी को कभी पता नहीं चलेगा कि हाईवे 9 पर क्या हुआ था।\"",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "वह तो मेरे बेडरूम की रिकॉर्डिंग है! तुम मेरे स्मार्ट स्पीकर से जासूसी कर रहे थे?!",
+          "timestamp_label": "रात 10:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "हवा झुलसाने वाली है। आँखों में पसीना चुभ रहा है। आप क्या करेंगी?",
+          "options": [
+            {
+              "option_id": "opt_086_e1_free",
+              "label": "हॉल में मुख्य ब्रेकर बॉक्स तोड़ दें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "मैं मेन पावर बंद कर रही हूँ—देखते हैं बिना बिजली के तुम्हारे स्मार्ट ताले कैसे टिकते हैं!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_086_e1_vip",
+              "label": "Owen से फ़ैक्टरी रीसेट पिन माँगें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": "Owen, बेहोश होने से पहले मुझे हार्डवेयर ओवरराइड कोड बताओ!",
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "आप मास्टर ब्रेकर गिरा देती हैं। बत्तियाँ बुझ जाती हैं—फिर एक हरी बैकअप बैटरी गुनगुनाकर चालू होती है। फ़ेल-सिक्योर ताले कसकर बंद रहते हैं।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "सोलर बैटरी वॉल 98% पर है, {{player_name}}। अब तुम अंधेरे में पक रही हो।",
+          "timestamp_label": "रात 10:45",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "हॉलवे थर्मोस्टैट के पीछे पिनहोल को 5 सेकंड दबाए रखो और 9941 टाइप करो! रुको—इससे गैराज का दरवाज़ा भी खुल जाएगा!",
+          "timestamp_label": "रात 10:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "आप 9941 दबाती हैं। सारे डेडबोल्ट एक साथ क्लिक करके खुल जाते हैं—जिसमें अंधेरे गैराज की ओर जाने वाला भारी स्टील का दरवाज़ा भी शामिल है।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "हाईवे 9 पर तुमने जिस साइकिल सवार को छोड़ा था वह मेरी बहन थी, {{player_name}}। सच क़बूलने का वक़्त आ गया है।",
+          "unsent_placeholder": "ROOT_ADMIN ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "रुको... गैराज का मोशन सेंसर अभी चालू हुआ! कोई अभी अंदरूनी सीढ़ियों से ऊपर आ रहा है!",
+          "timestamp_label": "रात 10:46",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "गैराज का दरवाज़ा",
+          "teaser_text": "घर सिर्फ़ हैक नहीं हुआ—यह एक अदालत बन गया है। और ROOT_ADMIN ने अभी किचन में कदम रखा है।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "मैनुअल ओवरराइड",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "रात 10:48 · आप ऊपर की रेलिंग के पीछे दुबकी हैं। नीचे, हर स्मार्ट टीवी पर हाईवे 9 का डैशकैम फ़ुटेज चलने लगता है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "owen",
+          "caller_label": "Owen · HomeSec",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[हल्के सायरन] {{player_name}}, मैंने मास्टर बालकनी का विंडो शटर बाईपास कर दिया है! वह दो फ़ीट खुला है—ओक की डाल पर बाहर निकल जाओ!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "मैंने मास्टर बालकनी शटर ज़बरदस्ती खोल दिया है! अभी छत पर निकलो—पुलिस 4 मिनट दूर है!",
+          "timestamp_label": "रात 10:48",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "root",
+          "text": "डैशकैम के टाइमस्टैम्प को ध्यान से देखो, {{player_name}}। मुझे पता है गाड़ी तुम नहीं चला रही थीं। बताओ कौन था—और मैं तुम्हें जाने दूँगा।",
+          "timestamp_label": "रात 10:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "तुमने ही पिछले महीने मेरा स्मार्ट होम लगाया था... रुको। स्पीकर पर वह आवाज़—",
+          "timestamp_label": "रात 10:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "सीढ़ियों पर धीरे-धीरे क़दम ऊपर आ रहे हैं। अपना फ़ैसला लें:",
+          "options": [
+            {
+              "option_id": "opt_086_e2_free",
+              "label": "मास्टर बालकनी शटर की ओर भागें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_086_e2_vip",
+              "label": "ROOT_ADMIN को असली ड्राइवर का नाम भेजें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": "वह मेरे मंगेतर की कार थी! उसने मेरा फ़ोन छीन लिया था ताकि मैं 911 पर कॉल न कर सकूँ!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "आप बालकनी के शटर के नीचे से रात की ठंडी हवा में सरकती हैं—और जम जाती हैं। ठीक आपके नीचे Owen की HomeSec वैन खड़ी है, बोनट पर लैपटॉप चमक रहा है।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "नीचे उतर आओ, {{player_name}}। मैं तो बस डराकर तुमसे सच निकलवाना चाहता था—मेरी बहन अभी भी कोमा में है।",
+          "timestamp_label": "रात 10:51",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "सीढ़ियों पर क़दम अचानक रुक जाते हैं। सारे स्टॉर्म शटर तुरंत ऊपर उठ जाते हैं, और घर में रात की ठंडी हवा भर जाती है।",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "root",
+          "text": "तुम्हारे मंगेतर की कार? मज़ेदार बात है—वह अभी तुम्हारे ड्राइववे में गाड़ी मोड़ रहा है।",
+          "timestamp_label": "रात 10:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "उसे अंदर मत आने देना—मैंने अभी बेडरूम का ऑडियो पुलिस को अपलोड कर दिया है।",
+          "unsent_placeholder": "Owen ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "लिविंग रूम की दीवार पर हेडलाइट्स चमकती हैं। आगे के ताले में चाबी घूमती है—और फ़ॉयर से आपका मंगेतर आपका नाम पुकारता है।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "असली मुजरिम अंदर आता है",
+          "teaser_text": "शुरू से ही Owen ही ROOT_ADMIN था—और अब पुलिस, हैकर और आपका मंगेतर आपके लिविंग रूम में टकराने वाले हैं।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "थर्मल लॉक",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "रात 11:42 · थर्मोस्टैट 110°F पर पहुँच जाता है। जब आपके ड्राइववे के सिरे पर सायरन गूँजते हैं, आँखों में पसीना चुभता है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "root",
+          "text": "सरप्राइज़, {{player_name}}। तुम्हें लगा Owen तुम्हारी मदद कर रहा था—जबकि मास्टर एडमिन की उसी के पास थी।",
+          "timestamp_label": "रात 11:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen?! तुमने मुझे मेरे ही स्मार्ट घर में क्यों बंद किया?!",
+          "timestamp_label": "रात 11:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "गैराज साइड कैम · रात 11:41 — हब में हार्डवेयर बाईपास डोंगल लगाता Owen।"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 8,
+          "transcript": "[इंटरकॉम से भारी साँसें] तुम्हारे मंगेतर ने आज रात \"नर्वस ब्रेकडाउन\" का नाटक रचने के लिए मुझे $30,000 दिए ताकि वह तुम्हारी इक्विटी हिस्सेदारी रद्द कर सके!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "आती हुई पुलिस को धोखा देने के लिए स्मार्ट स्पीकर नक़ली चीख़ने का ऑडियो बजाने लगते हैं:",
+          "options": [
+            {
+              "option_id": "opt_086_e3_free",
+              "label": "हॉलवे स्मार्ट-स्पीकर हब तोड़ दें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "वह स्पीकर बंद करो! पुलिस को लगेगा मेरा दिमाग़ ख़राब हो गया है!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_086_e3_vip",
+              "label": "Owen का इंटरकॉम क़बूलनामा लाइव रिकॉर्ड करें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "आप दीवार के हब पर एक पीतल का लैम्प दे मारती हैं। चिंगारियों की बौछार के साथ नक़ली ऑडियो बंद हो जाता है!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "root",
+          "text": "अच्छा प्रयास। अफ़सोस कि जब तक पुलिस मेन डेडबोल्ट तोड़ती नहीं, वह लॉक ही रहेगा।",
+          "timestamp_label": "रात 11:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "आपका फ़ोन Owen के आपके मंगेतर का नाम लेने और $30,000 की रिश्वत का हर शब्द रिकॉर्ड कर लेता है—टाइमस्टैम्प और क्लाउड बैकअप के साथ।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "तुम्हारा पूरा क़बूलनामा टेप पर आ गया है, Owen! गैराज का दरवाज़ा खोलो वरना बंधक बनाने के संगीन जुर्म में अंदर जाओगे!",
+          "timestamp_label": "रात 11:42",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "तुम्हारा मंगेतर अभी ड्राइववे में आ रहा है—उसके ब्रीफ़केस में जाली प्रीनप रखा है।",
+          "unsent_placeholder": "Owen ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "रुको—अगर तुम पुलिस से यह कहने का वादा करो कि मैंने सहयोग किया, तो मैं अभी बेसमेंट ब्रेकर पैनल अनलॉक कर दूँगा!",
+          "timestamp_label": "रात 11:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "सौदेबाज़ी के लिए बहुत देर हो गई। तुम्हारा मंगेतर अधिकारियों के साथ सामने वाले पोर्च पर आ चुका है।",
+          "timestamp_label": "रात 11:42",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "पोर्च का झूठ",
+          "teaser_text": "आपका मंगेतर पुलिस को बता रहा है कि आपका मानसिक संतुलन बिगड़ गया है—जबकि Owen के पास $30,000 की साज़िश का इकलौता क्लाउड बैकअप है।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "छुपा हुआ परिशिष्ट",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "रात 11:49 · जब ऊपर बंद मेन दरवाज़े पर अधिकारी ज़ोर से दस्तक देते हैं, आप भागकर ठंडे बेसमेंट में उतरती हैं।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "मैंने गैराज का मैग-लॉक खोल दिया! वर्कबेंच से मेरा टैबलेट उठाओ—तुम्हारे मंगेतर के साथ पूरी चैट थ्रेड खुली है!",
+          "timestamp_label": "रात 11:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "रुको... उसके संदेशों में \"Emergency Asset Transfer\" नाम की PDF क्यों है?!",
+          "timestamp_label": "रात 11:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "Owen के वर्कबेंच टैबलेट पर रिमोट फ़ैक्टरी वाइप शुरू हो रहा है...",
+          "unsent_placeholder": "ROOT_ADMIN ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 7,
+          "transcript": "[घबराया हुआ] टैबलेट पर एयरप्लेन मोड चालू करो! तुम्हारे मंगेतर के पास रिमोट-वाइप पासवर्ड है—वह सबूत मिटा रहा है!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Owen के टैबलेट पर एक लाल बैनर चमकता है: \"5 सेकंड में रिमोट वाइप\":",
+          "options": [
+            {
+              "option_id": "opt_086_e4_free",
+              "label": "तुरंत एयरप्लेन मोड चालू करें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "एयरप्लेन मोड ON! वाइप रुक गया—मेरे पास हर message सुरक्षित है!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_086_e4_vip",
+              "label": "PDF को सीधे अपने फ़ोन पर AirDrop करें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "प्रोग्रेस बार 2% पर जम जाता है। पूरी चैट लॉग—और जाली कॉन्ट्रैक्ट—स्क्रीन पर सुरक्षित रहते हैं।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "हाँ!! अब मुख्य बेसमेंट ब्रेकर गिराओ ताकि पुलिस के लिए आगे का दरवाज़ा खुल जाए!",
+          "timestamp_label": "रात 11:49",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "टैबलेट के बंद होने से ठीक एक सेकंड पहले साइन की हुई PDF आपके फ़ोन पर आ जाती है—आपके मंगेतर के IP और जाली नोटरी मुहर के साथ।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "चाहो जितना टैबलेट वाइप कर लो—जाली कॉन्ट्रैक्ट पहले ही मेरे फ़ोन पर आ चुका है!",
+          "timestamp_label": "रात 11:49",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "आप भारी लाल ब्रेकर लीवर नीचे खींचती हैं। घर का हर स्मार्ट ताला एक साथ क्लिक करके खुल जाता है।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "ऊपर जाकर सार्जेंट को दिखाओ! मैं ठीक तुम्हारे पीछे सरेंडर कर रहा हूँ।",
+          "timestamp_label": "रात 11:49",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "root",
+          "text": "[स्मार्ट होम हब ऑफ़लाइन — मैनुअल ओवरराइड]",
+          "timestamp_label": "रात 11:49",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "लिविंग रूम में टकराव",
+          "teaser_text": "स्मार्ट ताले बंद हो चुके हैं, जाली कॉन्ट्रैक्ट आपके हाथ में है—और आप अपने मंगेतर व पुलिस का सामना करने ऊपर जा रही हैं।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "जालसाज़ी में हस्ताक्षर",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "रात 11:56 · फ़ॉयर में रात की ठंडी हवा भर जाती है। जब आप शांत और अडिग होकर बेसमेंट से ऊपर आती हैं, आपका मंगेतर बोलते-बोलते जम जाता है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "यह सच है, ऑफ़िसर! मैं HomeSec टेक हूँ—इसने मुझे दरवाज़े लॉक करने और हीट 110 डिग्री करने के लिए पैसे दिए थे!",
+          "timestamp_label": "रात 11:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ऑफ़िसर, इससे पहले कि यह आपको बताए कि मेरा ब्रेकडाउन हुआ था, कृपया वह कॉन्ट्रैक्ट देखें जिसे लागू करने के लिए इसने Owen को $30,000 दिए।",
+          "timestamp_label": "रात 11:56",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "जाली इक्विटी ट्रांसफ़र · चोरी के ई-हस्ताक्षर से आज रात बनाया गया।",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 6,
+          "transcript": "[पुलिस रेडियो की खरखराहट] इसकी जैकेट की पिछली जेब चेक कीजिए, ऑफ़िसर—इसके पास अभी भी दूसरा बाईपास की-फ़ॉब है!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "आपका मंगेतर सबूत छीनने के लिए आपके फ़ोन की ओर झपटता है। प्रतिक्रिया दें:",
+          "options": [
+            {
+              "option_id": "opt_086_e5_free",
+              "label": "लीड ऑफ़िसर के पीछे कदम हटाएँ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "मुझे छूना मत! इसका हर एक शब्द पहले से मेरे वकील के क्लाउड पर बैकअप है!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_086_e5_vip",
+              "label": "फ़ॉयर की मेज़ पर सगाई की अंगूठी रख दें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "दो अधिकारी तुरंत आपके मंगेतर को रोकते हैं—और सीधे उसकी जेब से HomeSec बाईपास फ़ॉब निकाल लेते हैं।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "यही वह फ़ॉब है! अब यह बातों से बच नहीं सकता।",
+          "timestamp_label": "रात 11:56",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "मार्बल कंसोल पर हीरे की अंगूठी तेज़ी से खनकती है जब आपके मंगेतर की कलाइयों पर हथकड़ी क्लिक करके बंद होती है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "शादी कैंसिल। पुलिस स्टेशन की हवालात का मज़ा लो।",
+          "timestamp_label": "रात 11:56",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "root",
+          "text": "डिस्ट्रिक्ट अटॉर्नी के लिए सिस्टम लॉग सुरक्षित।",
+          "unsent_placeholder": "ROOT_ADMIN ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "वे उसे पुलिस गाड़ी में बिठा रहे हैं। मैं अपना पूरा क़बूलनामा साइन करने स्टेशन जा रहा हूँ।",
+          "timestamp_label": "रात 11:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "सच बोलना, Owen। अब यही एक चीज़ तुम्हें बचा पाएगी।",
+          "timestamp_label": "रात 11:56",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "फ़ैक्टरी रीसेट",
+          "teaser_text": "साज़िश और जालसाज़ी के आरोप में आपका मंगेतर गिरफ़्तार हो चुका है—अब अपनी शर्तों पर अपना घर वापस पाने का वक़्त है।",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "सिर्फ़ असली चाबियाँ",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "सुबह 9:15 · शांत लिविंग रूम में धूप फैल रही है। एक ताला बनाने वाला हर दरवाज़े पर भारी पीतल के डेडबोल्ट कसकर लगा देता है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "मेरे वकील ने बताया कि टैबलेट सौंपने की वजह से DA ने मेरी सज़ा कम कर दी। हर चीज़ के लिए मुझे सच में माफ़ करना, {{player_name}}।",
+          "timestamp_label": "सुबह 9:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "बस लोगों के स्मार्ट घरों से दूर रहना, Owen। आज रात तुम्हारी क़िस्मत अच्छी थी।",
+          "timestamp_label": "सुबह 9:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "owen",
+          "text": "HomeSec ने मुझे नौकरी से निकाल दिया और तुम्हारी पूरी इंस्टॉलेशन फ़ीस वापस कर दी।",
+          "unsent_placeholder": "Owen ने एक मैसेज अनसेंड किया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 5,
+          "transcript": "[दूर सड़क के ट्रैफ़िक की आवाज़] ओह—और तालेवाले ने पुराना स्मार्ट हब तुम्हारे घर के बाहर कार्डबोर्ड बॉक्स में छोड़ा है। मन हल्का करना हो तो तोड़ देना।",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "आप पोर्च पर बिना प्लग के पड़े स्मार्ट हब के सामने खड़ी हैं। अंतिम क़दम:",
+          "options": [
+            {
+              "option_id": "opt_086_e6_free",
+              "label": "पूरा स्मार्ट हब कूड़ेदान में फेंक दें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "न कोई क्लाउड लॉक, न बात सुनने वाले स्पीकर। बस पीतल की चाबियाँ और सुकून।",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_086_e6_vip",
+              "label": "थर्मोस्टैट को हाथ से सुहावने 68°F पर सेट करें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "राज़ · Ad देखें",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "हब रीसाइक्लिंग बिन में खड़खड़ाता हुआ गिरता है। आपका घर पूरी तरह शांत है—और 100% आपका।",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "काग़ज़ात सिर्फ़ मेरे नाम पर हैं। अब तक का सबसे अच्छा गृह-प्रवेश उपहार।",
+          "timestamp_label": "सुबह 9:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "जैसे ही आप एक ठोस, एनालॉग क्लिक के साथ पीतल का डेडबोल्ट बंद करती हैं, वेंट्स से ठंडी हवा धीरे-धीरे गूँजती है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "अब ठोस पीतल को ओवरराइड करके दिखाओ, ROOT_ADMIN।",
+          "timestamp_label": "सुबह 9:15",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "आपके वकील के संदेश से फ़ोन बजता है: रेस्ट्रेनिंग ऑर्डर स्थायी हो गया है और संपत्ति धोखाधड़ी के आरोप पक्के लग गए हैं।",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "अभी तुम्हारा कॉन्टैक्ट डिलीट कर रहा हूँ। तुम्हारे शांत घर की शुभकामनाएँ, {{player_name}}।",
+          "timestamp_label": "सुबह 9:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "अलविदा, Owen।",
+          "timestamp_label": "सुबह 9:15",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "सीज़न फ़िनाले · घर वापस मिला",
+          "teaser_text": "स्मार्ट-होम का जाल टूट चुका है, आपका मंगेतर संगीन आरोपों का सामना कर रहा है, और आपका घर अब सिर्फ़ आपका है।",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,961 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_019",
+  "lang": "es",
+  "metadata": {
+    "title": "Cámaras en el Gran Lobby",
+    "subtitle": "Mi esposo juró que trabajó solo toda la noche en una salida a bolsa. A las 3 AM, seguridad nocturna me envió un cuadro de cámara del lobby.",
+    "genre": "romance",
+    "tags": [
+      "Cámaras de Seguridad",
+      "Traición",
+      "Matrimonio"
+    ],
+    "cover_image": "assets/media/covers/story_019.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "security",
+      "name": "Sam (Jefe de Seguridad)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "mason",
+      "name": "Mason (Esposo)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Marca de Tiempo 02:47 AM",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "3:02 AM · Sigues despierta preocupada por la \"noche en vela\" de Mason. Tu amigo de la infancia Sam —jefe de seguridad de la torre— te escribe.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "{{player_name}}, perdón por despertarte. Prometiste que me dirías si Mason volvía a mentirte. Mira la Cám 04.",
+          "timestamp_label": "3:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "02:47 AM · Lobby Ejecutivo. Mason entrando al ascensor privado con su Directora de RP… cargando equipaje de noche.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¿Equipaje de noche?! ¡Mason literalmente me escribió hace diez minutos diciendo que estaba dormido en su escritorio!",
+          "timestamp_label": "3:03 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Aquí sigo repasando hojas de cálculo, amor. Vuelve a dormir, llevo el desayuno de regreso a casa. ❤️",
+          "timestamp_label": "3:04 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "No subieron a su oficina en el Piso 30… pasaron tarjeta en la suite spa ejecutiva del Piso 42.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 7,
+          "transcript": "[Estática tenue de radio] Guardé la grabación completa en HD en un disco encriptado, {{player_name}}. Dime qué quieres hacer.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "choice",
+          "prompt": "Son las 3:06 AM. Tu esposo está en el Piso 42 mintiéndote en la cara.",
+          "options": [
+            {
+              "option_id": "opt_send_cctv",
+              "label": "Mandarle la foto de cámara a Mason ya",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Me encantan las \"hojas de cálculo\" del Piso 42, Mason. No te molestes en traer desayuno.",
+              "next_node_id": "e1_n09a"
+            },
+            {
+              "option_id": "opt_vip_lock",
+              "label": "Pedir a Sam simulacro de incendio en 42",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Jaque Mate",
+              "player_reply_text": "Sam, activa una revisión obligatoria de seguridad a las 3 AM en la Suite 42. Los veo en el lobby.",
+              "next_node_id": "e1_n09b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09a",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "¡¿DE DÓNDE SACASTE ESA FOTO?! ¡¿Quién me está espiando?! ¡¡{{player_name}}, contesta!!",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n09b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "La alarma del Piso 42 está activa. Ambos van corriendo al ascensor en batas de hotel ahora mismo.",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "cliffhanger",
+          "headline": "Atrapado en la Cámara 04.",
+          "teaser_text": "Episodio 2: El ascensor del lobby se abre a las 3:15 AM… y Mason camina directo hacia ti y el presidente de la junta del edificio.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "La Evacuación de las 3:15 AM",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "3:18 AM · El lobby está iluminado como de día. Mason permanece helado en bata de baño mientras te escribe desde tres metros.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "{{player_name}}, ¡por favor! ¡La salida a bolsa arranca a las 9 AM! ¡Si la junta ve esto, mis opciones de acciones quedan borradas!",
+          "timestamp_label": "3:18 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Oh, ¿ahora te importan las opciones de acciones? ¿Recuerdas quién hipotecó la casa de sus padres para financiar tu ronda inicial, Mason?",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "¡Por eso le transferí ayer la mitad de mis acciones de fundador a mi Directora de RP… para que no pudieras tocarlas!",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 7,
+          "transcript": "[Sereno y protector] ¿Acabas de tomar captura de ese mensaje anulado, {{player_name}}? Porque el oficial de cumplimiento de la SEC acaba de entrar al lobby.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "choice",
+          "prompt": "El traspaso secreto de acciones de Mason es fraude ilegal previo a la OPV. Toma tu decisión final.",
+          "options": [
+            {
+              "option_id": "opt_settlement",
+              "label": "Obligarlo a cederte 60% de sus acciones",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Fírmame el 60% de las acciones de fundador ahora mismo, o se lo muestro al oficial de cumplimiento.",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_vip_burn",
+              "label": "Entregar video y fraude de acciones a junta",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Tierra Arrasada",
+              "player_reply_text": "Disfruta explicando traspasos secretos previos a la OPV a la junta, Mason. Estamos divorciados.",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "¡Firmaré! ¡Solo por favor no se los muestres! ¡Estoy llamando a mi abogado ahora mismo!",
+          "timestamp_label": "3:22 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "narrator",
+          "text": "La junta detiene la OPV en el acto. Mason se desploma en un sillón del lobby mientras su Directora de RP sale corriendo por las puertas giratorias.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08"
+        },
+        {
+          "id": "e2_n08",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Turno terminado, {{player_name}}. Déjame llevarte a casa… y comprarte ese desayuno sobre el que mintió.",
+          "timestamp_label": "3:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n09",
+          "type": "cliffhanger",
+          "headline": "Caso Cerrado. Nuevo Amanecer.",
+          "teaser_text": "Final de Temporada · Saliendo al aire fresco de las 3 AM junto a Sam, por fin respiras libre.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "El Segundo Ángulo de Cámara",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "8:10 AM · Suite segura de hotel. Apenas dormiste cuando Sam envía un segundo cuadro con marca de tiempo desde el lobby.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "No era solo una aventura, {{player_name}}. Mira lo que Mason entregó a las 2:51 AM: ese es el disco de patentes de la OPV de tu familia.",
+          "timestamp_label": "8:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Juró que estaba protegiendo la OPV de mi padre... ¡¿la estaba vendiendo a nuestras espaldas?!",
+          "timestamp_label": "8:11 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Cámara Gran Lobby #04 · 02:51 AM — Mason entregando una USB encriptada al abogado rival de tu hermana.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Mason te escribe… su tono de repente helado ahora que se dio cuenta de que no volviste a casa.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "¿Dónde estás, {{player_name}}? Deja de escuchar a un simple guardia glorificado y vuelve a casa antes de que congele nuestras cuentas conjuntas.",
+          "timestamp_label": "8:13 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Si entrega esa grabación del lobby a la SEC antes de la campana de las 2 PM, voy a ir a prisión.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 10,
+          "transcript": "[Firme y sereno] \"Respaldé todo el video del lobby en 4K en la nube, {{player_name}}. Di la palabra y te llevo directo con tu abogado.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "El lanzamiento de la OPV de Mason es a las 2:00 PM. ¿Cómo contraatacas?",
+          "options": [
+            {
+              "option_id": "opt_e3_call_lawyer",
+              "label": "Mandar la grabación directo a tu abogado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Congela lo que quieras, Mason. Mi abogado ya tiene el video de las 2:51 AM.",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_crash_ipo",
+              "label": "Ir al lanzamiento de la OPV con Sam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Venganza",
+              "player_reply_text": "Guárdame un asiento en primera fila en el lanzamiento de las 2 PM, Mason. Tengo una sorpresa.",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Jugada inteligente. Tu abogado acaba de presentar una orden judicial de emergencia… Mason está por entrar en pánico.",
+          "timestamp_label": "8:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Estaré justo a tu lado todo el camino. Nadie te toca mientras yo esté de guardia.",
+          "timestamp_label": "8:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Estás mintiendo, {{player_name}}. Seguridad trabaja para MÍ… ¡esa grabación no existe!",
+          "timestamp_label": "8:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Cuenta Regresiva a las 2 PM.",
+          "teaser_text": "Episodio 4: Mason intenta sobornar a Sam para borrar el servidor… sin saber que Sam está grabando cada palabra.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "El Soborno en el Garaje",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:45 AM · Estacionamiento subterráneo B2. Sam te envía una señal de audio en vivo desde el micrófono de su chamarra.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Mason me acaba de acorralar junto a mi camioneta con un cheque de caja por $200K. Quédate en el auto… deja que hable.",
+          "timestamp_label": "11:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Ten cuidado, Sam! Si se da cuenta de que estás grabando, perderá el control.",
+          "timestamp_label": "11:46 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "¿De verdad vas a tirar tu matrimonio por una mala noche, {{player_name}}? Vuelve y pondré la casa a tu nombre.",
+          "timestamp_label": "11:48 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "El audio en vivo sube de volumen: Mason amenaza a Sam y luego admite por accidente que falsificó tu firma en el traspaso de compra.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Espera... ¡¿por qué está parpadeando en rojo el radio de Sam?! ¡¿Ustedes dos me tendieron una trampa?!",
+          "timestamp_label": "11:48 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Llevo un año cuidándote desde el escritorio de seguridad, {{player_name}}… no podía dejar que te destruyera.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "mason",
+          "duration_sec": 10,
+          "transcript": "[La voz furiosa de Mason captada en cinta] \"¡Borra el clip de las 2:51 AM y te lo duplico! ¡Ella ni siquiera sabe que falsifiqué su nombre en el traspaso de patentes!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Ahora tienes tanto la cámara de seguridad como su confesión grabada.",
+          "options": [
+            {
+              "option_id": "opt_e4_send_police",
+              "label": "Enviar confesión a la Unidad de Fraudes",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tengo cada palabra grabada, Mason. Detectives de fraude vienen en camino.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_air_on_stage",
+              "label": "Prepararla para altavoces del escenario OPV",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Nuclear",
+              "player_reply_text": "Guarda tu discurso para los inversionistas a las 2 PM… están por escuchar esto en vivo.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Acaba de correr hacia el ascensor. Los detectives ya están sellando las salidas del lobby.",
+          "timestamp_label": "11:50 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "El técnico de sonido es un viejo amigo mío. Dame diez minutos y todo el salón lo escuchará.",
+          "timestamp_label": "11:50 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "También saqué el traspaso de patentes falsificado de la bandeja de la impresora ejecutiva. Mira esto.",
+          "timestamp_label": "11:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "La Firma Falsificada.",
+          "teaser_text": "Episodio 5: A las 2:00 PM en punto, Mason sube al podio de la OPV… justo cuando la pantalla gigante muestra tus pruebas.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "En Vivo en la Pantalla OPV",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:00 PM · Gran Salón. Los reporteros llenan los pasillos cuando Mason golpea suavemente el micrófono… y la pantalla LED de 12 metros parpadea.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Hora del show, {{player_name}}. Tanto la cámara de las 2:51 AM como el contrato falsificado acaban de salir en vivo detrás de su cabeza.",
+          "timestamp_label": "2:00 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Mira a los inversionistas poniéndose de pie! ¡Y su amante acaba de salir corriendo por la puerta lateral!",
+          "timestamp_label": "2:01 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Prueba B · Traspaso de Patentes Falsificado — Auditoría forense confirma la letra de Mason.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Oficiales de policía suben al escenario. La campana de la OPV queda suspendida indefinidamente.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "{{player_name}}, por favor… ¡diles que fue un malentendido! ¡Firmaré el divorcio ahora mismo, solo retira el cargo por fraude!",
+          "timestamp_label": "2:03 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Toda mi vida se acabó... ¿cómo me venció tan limpiamente?",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 9,
+          "transcript": "[Orgullo tranquilo] \"Lo acaban de esposar, {{player_name}}. Las patentes de tu padre volvieron a tu nombre. Sal afuera… el aire por fin está limpio.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Pasan frente a ti a Mason esposado, rogando piedad.",
+          "options": [
+            {
+              "option_id": "opt_e5_cold_goodbye",
+              "label": "Entregarle papeles de divorcio en silencio",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Firma a través de mi abogado, Mason. No nos queda nada más que decir.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_thank_sam",
+              "label": "Darte la vuelta y tomar el saco de Sam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Corte Limpio",
+              "player_reply_text": "Me perdiste a las 2:47 AM, Mason. Sam, vámonos de aquí.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "La despedida más limpia que he visto jamás. El café corre por mi cuenta… no más emergencias a las 3 AM.",
+          "timestamp_label": "2:05 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "De todos modos mi chamarra se te ve mejor a ti. Vamos a ver el atardecer junto al muelle.",
+          "timestamp_label": "2:05 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Espera: antes de checar salida para siempre, hay algo que he querido preguntarte desde la primavera pasada.",
+          "timestamp_label": "2:08 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Fuera de Servicio Por Fin.",
+          "teaser_text": "Episodio 6 (Final): Libre de un matrimonio tóxico, descubres al guardián silencioso que nunca apartó la vista de tu seguridad.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "El Guardián Silencioso",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:15 PM · Café frente al mar. La luz dorada se refleja en el puerto mientras Sam sirve dos tazas humeantes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Entregué mi renuncia en la Gran Torre esta mañana. Se acabó vigilar a hombres deshonestos desde un monitor.",
+          "timestamp_label": "6:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera: ¿y qué harás ahora? La empresa de mi padre necesita un verdadero Jefe de Seguridad.",
+          "timestamp_label": "6:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Solo si trabajar para ti no rompe la regla contra invitar a cenar a la jefa.",
+          "timestamp_label": "6:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Suena tu teléfono: decreto de divorcio finalizado, y la OPV de tu familia vuelve oficialmente a la pista bajo TU nombre.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Mira esa notificación, {{player_name}}. No solo lo sobreviviste… recuperaste todo tu imperio.",
+          "timestamp_label": "6:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "No necesito apresurarte. Solo quiero ser el hombre que jamás te haga revisar una cámara a las 3 AM.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 9,
+          "transcript": "[Dulce y sincero] \"Sin presión hoy, {{player_name}}. Solo prométeme una cosa: cuando estés lista para un nuevo comienzo, déjame ser el primero en la fila.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "La brisa del puerto se siente más cálida que en años.",
+          "options": [
+            {
+              "option_id": "opt_e6_first_in_line",
+              "label": "Decirle que es el único en la fila",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "No hay ninguna fila, Sam. Cena este viernes… solo nosotros dos.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_hold_hand",
+              "label": "Estirar tu mano y tomar la suya en la mesa",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Nuevo Amanecer",
+              "player_reply_text": "¿Por qué esperar hasta el viernes? Empieza esta noche, Sam.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Viernes a las siete. Llegaré temprano… como siempre.",
+          "timestamp_label": "6:20 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "El mejor turno de mi vida, {{player_name}}. Yo te cuido.",
+          "timestamp_label": "6:20 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Se acabaron las sombras en el lobby. Solo cielos despejados por delante. 🌅",
+          "timestamp_label": "6:22 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · A Salvo en Sus Brazos.",
+          "teaser_text": "FIN · Una foto de seguridad de las 3 AM destrozó una mentira… y te guio al corazón más leal que hayas conocido.",
+          "sfx": "ting",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

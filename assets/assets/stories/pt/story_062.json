@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_062",
+  "lang": "pt",
+  "metadata": {
+    "title": "A Planilha da Sogra",
+    "subtitle": "Ela me encaminhou sem querer a planilha provando que triplica minha parcela do financiamento para sustentar a ex dele.",
+    "genre": "romance",
+    "tags": [
+      "Sogros",
+      "Casamento",
+      "Vingança"
+    ],
+    "cover_image": "assets/media/covers/story_062.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "mil",
+      "name": "Evelyn (Sogra)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4C1D95"
+    },
+    {
+      "id": "husband",
+      "name": "Daniel (Marido)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "sil",
+      "name": "Tessa (Cunhada)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9D174D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "O Encaminhamento Errado",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "20h42 · Você está lavando a louça quando Evelyn solta um arquivo no seu chat privado.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "Tessa, aqui está a planilha atualizada. {{player_name}} transferiu US$ 3.600 de novo hoje. A prestação do banco é US$ 1.150 — o resto foi direto para o aluguel da butique de flores da Chloe.",
+          "timestamp_label": "20:42",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "MEU DEUS JANELA ERRADA. NÃO abra esse arquivo, {{player_name}}!!",
+          "unsent_placeholder": "Evelyn apagou uma mensagem",
+          "reveal_ms": 2000,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tarde demais, Evelyn. Butique da Chloe? A ex-noiva do Daniel? Estou pagando financiamento triplicado há DOIS ANOS.",
+          "timestamp_label": "20:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Amor, a mamãe está hiperventilando. Você entendeu errado — a Chloe é só um investimento de negócios da família!",
+          "timestamp_label": "20:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "sil",
+          "duration_sec": 12,
+          "transcript": "[risada debochada] Sinceramente, {{player_name}}, você é tão ingênua. O Daniel visita a Chloe toda quinta-feira enquanto você faz hora extra. A mamãe diz que você é só o caixa eletrônico até o aluguel quitar.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Suas mãos estão tremendo, mas sua mente está fria como gelo. O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_freeze_account",
+              "label": "Bloquear a conta conjunta agora mesmo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Obrigada pelo áudio, Tessa. O banco vai adorar ouvir.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_buy_lease",
+              "label": "Ligar direto para o locador da butique",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jogada de Chefe · Ver Anúncio",
+              "player_reply_text": "Engraçado — cada transferência para aquele locador saiu do MEU número de conta individual.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Você cancela a transferência automática e move suas economias para uma conta individual em menos de quarenta segundos.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "LOCADOR CONFIRMA: Como sua conta financiou o depósito caução, você pode legalmente transferir ou rescindir o contrato comercial da butique!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Espera… por que a Chloe acabou de ligar chorando dizendo que estão trocando as fechaduras da loja dela?!",
+          "timestamp_label": "20:50",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "Desça para o jantar de domingo em família amanhã. Vamos resolver sua falta de respeito na frente de todo mundo.",
+          "timestamp_label": "20:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Emboscada no Jantar de Domingo",
+          "teaser_text": "Episódio 2: Evelyn convida vinte parentes para humilhar você — sem saber que você imprimiu vinte cópias da planilha dela.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Vinte Cópias no Jantar",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "Domingo · 18h30. Cada tia, tio e primo está sentado. Evelyn bate com o talher na taça.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "Pessoal, estou de coração partido. {{player_name}} cortou a conta da nossa casa e deixou o Daniel passando aperto.",
+          "timestamp_label": "18:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Só pede desculpa para a mamãe, {{player_name}}, que a gente esquece todo esse chilique.",
+          "timestamp_label": "18:32",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Olhem embaixo dos pratos, pessoal. Trouxe a sobremesa mais cedo.",
+          "timestamp_label": "18:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "sil",
+          "text": "Daniel, pega as pastas!! O Tio Robert está lendo a linha da butique!!",
+          "unsent_placeholder": "Tessa apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "mil",
+          "duration_sec": 9,
+          "transcript": "[entrando em pânico] Esses extratos bancários são falsificados! {{player_name}} está tentando destruir a reputação do meu filho!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "A mesa inteira está encarando Daniel. Dê o golpe final?",
+          "options": [
+            {
+              "option_id": "opt_play_tessa",
+              "label": "Tocar o áudio da Tessa no viva-voz",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Falsificados? Engraçado, a Tessa confirmou cada palavra ontem à noite.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_serve_divorce",
+              "label": "Entregar divórcio + cobrança de US$ 58K",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Supremo · Ver Anúncio",
+              "player_reply_text": "Meu advogado calculou US$ 58.800 em verbas desviadas. Assine aqui, Daniel.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "A voz de Tessa ecoa pela sala de jantar. O pai de Daniel joga o guardanapo na mesa com nojo.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "DIVÓRCIO ENTREGUE: Como a escritura da casa está no nome de Evelyn, seu advogado registrou uma hipoteca judicial sobre o imóvel pelos US$ 58.800 roubados!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Espera — {{player_name}}, por favor! Eu corto a Chloe hoje mesmo! Não me deixe com a dívida da minha mãe!",
+          "timestamp_label": "18:38",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Aproveitem o assado, pessoal. O caixa eletrônico está fora de serviço em definitivo.",
+          "timestamp_label": "18:40",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Saia de Cabeça Erguida",
+          "teaser_text": "Quando você sai na chuva, o pai de Daniel manda mensagem no privado: \"Vou reescrever meu testamento hoje à noite. Me encontre para um café.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Encontro no Café",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "09h10 · Café da Esquina. O pai de Daniel nem se sentou ainda quando seu celular explode de mensagens.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "Como você ousa correr chorando para o meu marido! Cancele esse café agora mesmo, {{player_name}}!",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele mandou mensagem para MIM, Evelyn. E acabou de pedir para ver a planilha que você encaminhou sem querer.",
+          "timestamp_label": "09:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sil",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "PLANILHA DE 36 MESES · US$ 108.000 desviados das suas prestações → \"Camellia Floricultura LLC\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Também mandei para o papai toda a trilha bancária! A mamãe dizia para ele que você é quem gastava demais todo mês!",
+          "timestamp_label": "09:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "husband",
+          "text": "A mamãe me disse que a floricultura era só um investimento discreto, eu juro—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "sil",
+          "duration_sec": 9,
+          "transcript": "[sussurrando] {{player_name}}, o papai está FURIOSO. Ele acabou de ligar para o advogado da família bloquear os cartões de crédito conjuntos da mamãe!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Evelyn invade o café exigindo seu celular! Como você responde?",
+          "options": [
+            {
+              "option_id": "opt_show_dad",
+              "label": "Deslizar a planilha impressa pela mesa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Não precisa do meu celular, Evelyn — imprimi três cópias. Uma para o papai, uma para meu advogado.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_demand_interest",
+              "label": "Apresentar a cobrança na hora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Energia de Chefe · Ver Anúncio",
+              "player_reply_text": "Já que você está aqui, assine este reconhecimento de dívida pelos US$ 108.000 — ou nos vemos num juiz cível segunda-feira.",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "SILÊNCIO NO CAFÉ: O pai de Daniel lê o total em voz alta e pede com calma a Evelyn as chaves de casa.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "XEQUE-MATE IMEDIATO: Seu sogro assina como testemunha na hora, garantindo o reembolso integral pela conta pessoal de Evelyn!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "{{player_name}}, por favor volta para casa para conversarmos sem advogados. Vou cortar minha mãe da minha vida!",
+          "timestamp_label": "09:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Não acredite nele, {{player_name}}! Acabei de ouvi-lo ligando para a ex para avisar sobre a auditoria!",
+          "timestamp_label": "09:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Ele Avisou Ela Primeiro",
+          "teaser_text": "Episódio 4: A promessa secreta de Daniel para a ex envolve a escritura da SUA casa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Segredo da Floricultura",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "13h40 · Escritório de Advocacia. Você está protocolando o pedido de divórcio quando Tessa manda um print desesperado.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Você pediu mesmo o divórcio?! Depois de cinco anos, está jogando tudo fora por causa de uma planilha?!",
+          "timestamp_label": "13:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você ligou para a sua ex para avisá-la antes mesmo de me pedir desculpa, Daniel. Acabou.",
+          "timestamp_label": "13:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "Ótimo! Vá embora! Quero ver quanto você leva quando a escritura da casa já está no fundo da minha família!",
+          "timestamp_label": "13:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "Ainda bem que o Daniel assinou aquela escritura de renúncia mês passado antes de—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "ESPERA UM SEGUNDO! Mãe, você fez o Daniel transferir a casa enquanto a {{player_name}} estava viajando a trabalho?!",
+          "timestamp_label": "13:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "sil",
+          "duration_sec": 9,
+          "transcript": "[gaveta abrindo] {{player_name}}, estou no escritório da mamãe! O documento de transferência tem a SUA assinatura — mas a data é de quando você estava em Chicago! Ela falsificou!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Evelyn falsificou sua assinatura numa transferência de imóvel! Sua jogada?",
+          "options": [
+            {
+              "option_id": "opt_call_notary",
+              "label": "Avisar o cartório de imóveis e a polícia",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tessa, fotografe cada página! Meu advogado está bloqueando a matrícula no cartório de imóveis agora mesmo.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_flight_proof",
+              "label": "Anexar cartões de embarque à denúncia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Blindado · Ver Anúncio",
+              "player_reply_text": "Anexando meus cartões de embarque de voo e horários de check-in do hotel direto na queixa-crime de falsificação.",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "ESCRITURA BLOQUEADA: A unidade de fraudes do condado sinaliza a transferência como suspeita de falsificação em vinte minutos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "INQUÉRITO CRIMINAL ABERTO: Detetives pedem depoimento imediato de Evelyn e do tabelião que carimbou o ato.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espero que aquela floricultura tenha valido um processo criminal por falsidade ideológica, Evelyn.",
+          "timestamp_label": "13:52",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "Espera — mãe, você me disse que a {{player_name}} assinou aquele papel! Você falsificou o nome da minha mulher?!",
+          "timestamp_label": "13:53",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "A Escritura Falsificada Explode",
+          "teaser_text": "Episódio 5: Evelyn tenta jogar a culpa da falsificação em Tessa — bem antes de o Sogro entrar na sala.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Perícia Forense",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "19h05 · Chat de Grupo da Família. Evelyn conta uma última mentira desesperada.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "mil",
+          "text": "Eu não falsifiquei nada! A Tessa é quem cuidava da papelada da casa — ela deve ter assinado!",
+          "timestamp_label": "19:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "sil",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "RENÚNCIA FALSIFICADA · Anotação manuscrita na margem com a letra cursiva inconfundível de Evelyn: \"Transferir para Fundo Camellia\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Inacreditável, mãe! Você escreveu suas próprias notas na margem do rascunho! E o papai acabou de ver tudo!",
+          "timestamp_label": "19:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O perito grafotécnico do meu advogado já associou a pressão da tinta ao seu talão de cheques, Evelyn.",
+          "timestamp_label": "19:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "Daniel, diga ao seu pai que se ele se divorciar de mim fico sem nada—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "husband",
+          "duration_sec": 8,
+          "transcript": "[voz tremendo] Mãe, o papai acabou de fazer as malas e me disse que vai cortar nós dois da herança a menos que {{player_name}} receba cada centavo de volta hoje à noite.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Evelyn implora por um acordo extrajudicial hoje à noite. Seus termos?",
+          "options": [
+            {
+              "option_id": "opt_full_refund",
+              "label": "US$ 108K inteiros + divórcio consensual",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Transfira todos os US$ 108.000 mais honorários até as 9h e assine o divórcio consensual.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_house_equity",
+              "label": "Reembolso total + 100% da casa",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Vitória Total · Ver Anúncio",
+              "player_reply_text": "Reembolso total de US$ 108.000, 100% da cota da casa e um pedido de desculpas por escrito para a Tessa.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "TERMOS ACEITOS: A assinatura trêmula de Evelyn cai no contrato digital de custódia cinco minutos depois.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "VITÓRIA TOTAL: Daniel transfere sua parte da casa sem uma única objeção.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Você é minha heroína, {{player_name}}. Sério, também vou sair da casa da mamãe neste fim de semana.",
+          "timestamp_label": "19:16",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "A transferência acabou de compensar na conta de custódia do seu advogado. Desculpa não ter ficado do seu lado quando importava.",
+          "timestamp_label": "19:17",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Sem Dívidas e Imparável",
+          "teaser_text": "Episódio 6 (Final): Assine a sentença final, brinde com Tessa e abra a porta da sua nova vida.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Página em Branco",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Um Mês Depois · Terraço Panorâmico. As chaves do seu novo apartamento reluzem ao lado de um buquê comemorativo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Feliz Dia da Independência, {{player_name}}! Espere até saber — a floricultura fechou as portas ontem!",
+          "timestamp_label": "18:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Pelo visto é difícil manter um negócio quando eu não estou pagando aluguel triplicado escondido para ele.",
+          "timestamp_label": "18:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "husband",
+          "text": "A sentença do divórcio acabou de sair. O papai também finalizou o novo testamento — deixou um fundo universitário para a Tessa e um bilhete de agradecimento para você.",
+          "timestamp_label": "18:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mil",
+          "text": "Acho que eu realmente arruinei o casamento do meu próprio filho por nada—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "sil",
+          "duration_sec": 8,
+          "transcript": "[rolha de espumante estourando] Estou na portaria com comida tailandesa e cidra espumante! Abre a porta, chefa!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Liberando sua entrada agora mesmo. Sem mais planilhas, sem mais mentiras — só paz.",
+          "timestamp_label": "18:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Daniel pergunta se vocês dois algum dia tomariam um café como amigos. Sua resposta?",
+          "options": [
+            {
+              "option_id": "opt_block_peace",
+              "label": "Desejar o melhor e encerrar o capítulo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Desejo que você amadureça, Daniel, mas eu não olho para trás. Cuide-se.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_toast_future",
+              "label": "Mandar foto da nova escritura e bloquear",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Icônico · Ver Anúncio",
+              "player_reply_text": "Ocupada demais decorando uma cobertura só com o MEU nome na escritura. Adeus, Daniel.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "CAPÍTULO ENCERRADO: Você arquiva a conversa com um sorriso calmo e vai para a varanda ensolarada.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "ENCERRAMENTO TRIUNFAL: Tessa ri tanto que quase derruba as sacolas de comida enquanto vocês brindam à liberdade.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "sil",
+          "text": "Melhor cunhada que já tive — mesmo depois do divórcio!",
+          "timestamp_label": "18:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sempre, Tessa. Entra aí — o jantar está esfriando.",
+          "timestamp_label": "18:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Seu Nome na Escritura",
+          "teaser_text": "Você expôs a planilha da sogra, recuperou cada centavo e construiu uma vida da qual ninguém pode desviar nada.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

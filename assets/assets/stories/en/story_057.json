@@ -1,0 +1,1009 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_057",
+  "lang": "en",
+  "metadata": {
+    "title": "Signal Lost On Ridge Trail",
+    "subtitle": "Five hikers split up in sudden fog—then the missing fifth sends a garbled voice note saying someone shoved his pack off the cliff.",
+    "genre": "mystery",
+    "tags": [
+      "Hiking",
+      "Survival",
+      "Missing"
+    ],
+    "cover_image": "assets/media/covers/story_057.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#16A34A"
+    },
+    {
+      "id": "brad",
+      "name": "Brad (Guide)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "kendra",
+      "name": "Kendra",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#EC4899"
+    },
+    {
+      "id": "sam",
+      "name": "Sam (Missing)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Fog At Marker 7",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "5:42 PM · Trail Mesh Chat \"EAGLE RIDGE 5\". Sunset in 20 minutes. Four hikers reached Basecamp; Sam never arrived.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "Rangers said choppers can’t fly in this fog. Why didn’t Sam stay behind me at Marker 7?!",
+          "timestamp_label": "5:42 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "brad",
+          "text": "He twisted his ankle near the creek. I told him to rest while I went ahead for the first-aid kit.",
+          "timestamp_label": "5:43 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—Brad, you’ve been at Basecamp for 40 minutes. You never even asked for the first-aid kit.",
+          "timestamp_label": "5:43 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 8,
+          "transcript": "[wind roaring, static] {{player_name}}… can you hear me?! I’m by the old fire tower—someone threw my pack and compass down the ravine—",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "brad",
+          "text": "Sam’s GPS tracker was supposed to fall with the pack—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "BRAD?! Did you just try to strand Sam in the fog?!",
+          "timestamp_label": "5:45 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "text",
+          "sender_id": "brad",
+          "text": "Shut up, Kendra. You’re the one who gave me his trail map this morning.",
+          "timestamp_label": "5:46 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Sam’s mesh signal is fading at 4% battery! What do you do?",
+          "options": [
+            {
+              "option_id": "opt_fire_tower",
+              "label": "Send Rangers straight to Old Fire Tower",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dispatching Ranger Search Team to the Old Fire Tower coordinates NOW!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_check_pack",
+              "label": "Ask Sam what was hidden in his backpack",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Sam, hold on—why did Brad want your backpack off the cliff?!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "Two Park Rangers fire up their ATV headlights and roar up the switchback toward the fire tower.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "SAM REPLIES: \"I found a buried survey marker from the illegal logging site—Brad’s family owns the timber company.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, I see a headlamp climbing the fire tower ladder—it’s NOT a Ranger!",
+          "timestamp_label": "5:49 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "Sam’s Mesh Signal Just Dropped To 0%",
+          "teaser_text": "Episode 2: Brad is still sitting at Basecamp—which means someone else climbed the fire tower.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Old Fire Tower",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "5:53 PM · Switchback Trail. You ride shotgun in the Ranger ATV cutting through freezing mist.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—if Brad is cuffed at Basecamp, where did Kendra disappear to?",
+          "timestamp_label": "5:53 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "brad",
+          "text": "I told you! Kendra’s the company lawyer! She hiked up the shortcut to grab Sam’s camera SD card!",
+          "timestamp_label": "5:54 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n04",
+          "type": "unsent_message",
+          "sender_id": "kendra",
+          "text": "Sam hand over the memory card and I’ll walk you down—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 9,
+          "transcript": "[metal trapdoor slamming] {{player_name}}! I wedged the fire tower trapdoor shut! I’m on the top deck—hurry!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "Don’t be dramatic, Sam. You’re trespassing on private timber land.",
+          "timestamp_label": "5:56 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Look down the ridge, Kendra. Those red-and-blue strobe lights are 200 yards away.",
+          "timestamp_label": "5:56 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "You reach the base of the fire tower. What do you do first?",
+          "options": [
+            {
+              "option_id": "opt_spotlight",
+              "label": "Sweep the ATV spotlight onto the ladder",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Spotlight on the tower! Freeze, Kendra—Rangers are right behind me!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_flare",
+              "label": "Fire a rescue flare to signal the Sheriff",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Backup · Watch Ad",
+              "player_reply_text": "Popping a red rescue flare—County Sheriff is locking the trailhead!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Blinding headlights freeze Kendra halfway down the ladder. Rangers secure her while Sam climbs down safely.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Crimson light illuminates the entire ridge. Kendra drops her flashlight in surrender as Sam waves from the top rail.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "You literally saved my life, {{player_name}}. And I still have the SD card in my boot.",
+          "timestamp_label": "6:02 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Wait… the Ranger who drove you up here—why did he just ask me to hand over the SD card WITHOUT logging an evidence bag?",
+          "timestamp_label": "6:03 PM",
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "Check The Ranger’s Badge Number",
+          "teaser_text": "Sam whispers to you: \"The illegal logging road leads straight to the Park Supervisor’s private cabin.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Logging Road",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "6:40 PM · Dusk settles over the old fire tower as you and Sam watch timber trucks rumbling along an unmarked ridge road below.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, my cracked phone still saved the offline GPS pins of every illegal clearing—and look who’s talking to the Park Supervisor!",
+          "timestamp_label": "6:40 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No way—is that Brad?! Our trail guide led us straight into the fog on purpose to keep us off the north ridge!",
+          "timestamp_label": "6:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "sam",
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "Offline GPS Map · Ridge Trail — Unmarked logging road running straight to the Supervisor’s cabin."
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "Wait—Brad told me to stay at the lower fork while he \"looked for Sam\"! He wasn’t looking for Sam, he was clearing our trail markers!",
+          "timestamp_label": "6:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "brad",
+          "text": "Find Sam’s phone before dark. If he uploads those clearing coordinates, we lose the whole timber contract.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "A pickup truck’s headlights sweep up the dirt track toward the base of the fire tower.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Kill your flashlights and lock the trapdoor",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Lights out—bolting the tower trapdoor!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Tune tower VHF radio to State Rangers",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Tuning the tower VHF to State Rangers...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "The wooden trapdoor locks silent just as boots crunch on the gravel directly below the stilts.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: State Forestry Dispatch picks up your faint distress call—and confirms NO logging permits exist anywhere on Ridge Trail!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Kendra just climbed up the back service ladder! She saw the Park Supervisor leave a red folder on his truck dashboard!",
+          "timestamp_label": "6:43 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "brad",
+          "duration_sec": 9,
+          "transcript": "[chainsaws idling in distance, Brad calling out] ...Sam! {{player_name}}! Come down—the fog’s rolling in, I’m just trying to get you off the ridge!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Don’t buy it, Kendra. State Rangers know this logging road is illegal—we just need that red folder from the truck.",
+          "timestamp_label": "6:44 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Surrounded in the Fog",
+          "teaser_text": "Episode 4: Brad realizes you’re inside the fire tower—and cuts the exterior ladder rope.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Guide’s Betrayal",
+      "start_node_id": "e4_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "6:50 PM · Pine mist wraps the fire tower windows as Brad paces beneath the lookout deck holding a heavy mag-lite.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Stay back, Brad! We saw you shaking hands with the Park Supervisor—and State Rangers are already scrambling a chopper!",
+          "timestamp_label": "6:50 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Why did you shove Sam’s pack off the cliff, Brad? You were supposed to keep five hikers safe!",
+          "timestamp_label": "6:51 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "brad",
+          "text": "Tell the Supervisor to pull the trucks out before the state chopper spots the clearing.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "Sam’s compass just picked up a clear cell bar on the north railing! I’m sending our offline GPS pins to State Forestry RIGHT NOW!",
+          "timestamp_label": "6:52 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "brad",
+          "duration_sec": 11,
+          "transcript": "[wind whipping tower shutters, Brad shouting] ...He paid me ten grand to steer tour groups away from the north ridge! Toss down Sam’s phone and I’ll let you walk out!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "While Brad stares up at the deck, the Supervisor’s truck sits unlocked fifty yards down the slope.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Fire the tower’s red emergency flare",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Launching the emergency flare now!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Zip down and grab the Supervisor’s folder",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Grabbing the Supervisor’s red folder...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "A blazing crimson flare lights up the entire valley, exposing six illegal timber trucks to the approaching ranger helicopter.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Inside the red folder is a forged federal timber clearance permit—bearing the Park Supervisor’s own fake seal!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Helicopter blades! A State Forestry chopper is hovering right above the flare smoke!",
+          "timestamp_label": "6:53 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "brad",
+          "text": "Forget the trucks—I’m hiking back to the trailhead before they land!",
+          "timestamp_label": "6:53 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Too late, Brad. The chopper’s spotlight just locked right onto your jacket.",
+          "timestamp_label": "6:54 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Flare in the Fog",
+          "teaser_text": "Episode 5: A forged federal timber permit exposes the Park Supervisor’s entire illegal logging operation.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Forged Timber Permit",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "7:05 PM · Rotor wash flattens the tall pines as State Rangers rappel into the clearing and block the logging road.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, we made it down! Look at this forged permit we pulled from the Supervisor’s truck!",
+          "timestamp_label": "7:05 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "He faked a federal forestry seal to log protected old-growth timber right behind his own cabin.",
+          "timestamp_label": "7:06 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "sam",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Forged Timber Permit · Ridge Sector 4 — Falsified federal forestry stamp and signature.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "brad",
+          "text": "I didn’t forge anything! I just guided hikers away from the ridge—the Supervisor threatened to revoke my guide license!",
+          "timestamp_label": "7:07 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "brad",
+          "text": "Don’t check the ledger inside the Supervisor’s private cabin.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "The State Ranger captain asks how Sam’s pack ended up over the cliff.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Play Sam’s garbled voice note for the captain",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Playing Sam’s voice note for rangers.",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Lead rangers to the Supervisor’s cabin",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Leading rangers to the private cabin...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "The ranger captain logs the voice note and places both Brad and the Park Supervisor in zip-ties.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Inside the cabin, rangers seize $300,000 in timber kickbacks and contracts linking two corrupt lumber mills.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 10,
+          "transcript": "[chopper powering down, ranger radio] ...All five hikers accounted for and safe! Illegal logging camp seized on Ridge Trail...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "I’m wrapping Sam’s scraped knee—and the rangers offered us a helicopter ride straight back to base camp, {{player_name}}!",
+          "timestamp_label": "7:08 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Way better than hiking back through that fog.",
+          "timestamp_label": "7:09 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Airborne Rescue",
+          "teaser_text": "Episode 6 Finale: Morning mist clears over Ridge Trail as protected pines stand safe once more.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Signal Restored",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "9:20 AM · Golden morning light filters through untouched old-growth pines as you and your hiking crew sip hot cocoa at base camp.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "brad",
+          "text": "Look, {{player_name}}... I’m glad Sam’s okay. I turned state’s witness against the Supervisor this morning.",
+          "timestamp_label": "9:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good. At least those trees—and future hikers—will be safe from now on.",
+          "timestamp_label": "9:21 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "brad",
+          "text": "The lumber mill owner already wired bail money before his own warrant dropped.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 9,
+          "transcript": "[Sam’s voice, laughing loud and clear] ...Full five bars of signal, hot pancakes, and my spare backpack recovered—thanks for never leaving me behind, {{player_name}}!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "kendra",
+          "text": "Next weekend we’re walking on a flat, paved city park trail—zero fog allowed.",
+          "timestamp_label": "9:22 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "The State Ranger captain asks if you’d like to name the newly protected ridge overlook.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Name it after the Old Fire Tower that saved you",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Let’s call it Fire Tower Overlook.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Verify corrupt lumber mills are shut down",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking on the lumber mill warrants...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "The rangers dedicate the lookout permanently, installing a solar emergency beacon for every future hiker.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: State marshals shut down both illegal lumber mills by Friday, preserving ten thousand acres of ancient forest.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Never losing signal on your watch again, {{player_name}}.",
+          "timestamp_label": "9:23 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Always pack a spare flare, Sam.",
+          "timestamp_label": "9:24 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "High above the quiet valley, the old fire tower gleams in clear morning sun.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Trail Cleared",
+          "teaser_text": "Sam is rescued, the illegal logging ring is dismantled, and Ridge Trail stands protected.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

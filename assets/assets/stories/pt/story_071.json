@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_071",
+  "lang": "pt",
+  "metadata": {
+    "title": "O Leilão da Tia",
+    "subtitle": "A Vovó não fazia nem uma semana que fora enterrada quando Tia Margaret colocou meu bracelete de jade de herança em leilão.",
+    "genre": "romance",
+    "tags": [
+      "Herança",
+      "Relíquia de Família",
+      "Família"
+    ],
+    "cover_image": "assets/media/covers/story_071.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "aunt",
+      "name": "Tia Margaret",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7E22CE"
+    },
+    {
+      "id": "appraiser",
+      "name": "Sr. Chen (Avaliador)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "cousin",
+      "name": "Lucas (Primo)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Lote nº 14",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "10h05 · Seis dias após o funeral da Vovó. Um avaliador de espólio que você conheceu uma vez manda mensagem urgente.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}, sua Tia Margaret acabou de listar um bracelete de jade imperial como Lote nº 14 às 13h — gravado por dentro com as SUAS iniciais.",
+          "timestamp_label": "10:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tia Margaret! Por que o bracelete de jade da Vovó está num catálogo de leilão?! Ele foi deixado para mim!",
+          "timestamp_label": "10:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Lucas, antecipe o leilão para o meio-dia e esconda a caixa de veludo azul antes que {{player_name}} chegue!",
+          "unsent_placeholder": "Tia Margaret apagou uma mensagem",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Não seja gananciosa, {{player_name}}. Sem inventário escrito, tudo na casa da Vovó pertence à inventariante do espólio — eu.",
+          "timestamp_label": "10:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 11,
+          "transcript": "[voz baixa] Sua avó visitou minha loja há três meses. Ela registrou o certificado de procedência desse bracelete diretamente no seu nome — e deixou uma cópia no meu cofre.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "O leilão privado começa em 90 minutos. Como você a detém?",
+          "options": [
+            {
+              "option_id": "opt_get_cert",
+              "label": "Pegar o certificado e correr para lá",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Segure esse certificado, Sr. Chen! Passo para pegar o senhor em dez minutos.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_bring_police",
+              "label": "Registrar alerta de roubo na polícia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Batida · Ver Anúncio",
+              "player_reply_text": "Vender bem registrado sem autorização da dona é furto qualificado. Vamos levar um detetive.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Certificado em mãos. Nenhuma casa de leilões respeitável tocará no Lote nº 14 depois de ver este selo.",
+          "timestamp_label": "10:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "ESCOLTA POLICIAL PRONTA: Como o jade imperial é avaliado em US$ 180.000, a delegacia de Crimes Contra o Patrimônio designa dois agentes na hora!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "Ei {{player_name}}, relaxa — a mamãe só precisava de dinheiro vivo para cobrir o aluguel do meu restaurante. Não faça cena!",
+          "timestamp_label": "10:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Os lances começam ao meio-dia em ponto. Nem se dê ao trabalho de aparecer — os porteiros têm ordem de não deixar você entrar.",
+          "timestamp_label": "10:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Dou-lhe Uma, Dou-lhe Duas...",
+          "teaser_text": "Episódio 2: O leiloeiro ergue o martelo pelo Lote nº 14 — bem quando as portas da mansão se escancaram.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "O Maior Lance",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "12h08 · Salão de Visitas da Vovó. Cordas de veludo, vinte colecionadores ricos. O martelo paira sobre o Lote nº 14.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Vendido por US$ 195.000! Espera — quem deixou {{player_name}} passar pelo portão da frente?!",
+          "timestamp_label": "12:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Congela a venda! Quem arrematar o Lote nº 14 está comprando bem furtado documentado.",
+          "timestamp_label": "12:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "cousin",
+          "text": "Mãe, o comprador da primeira fila está recolhendo o cheque dele!!",
+          "unsent_placeholder": "Lucas apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 10,
+          "transcript": "[autoritário] Senhoras e senhores, examinem a borda interna com uma lupa. Traz as iniciais de {{player_name}} e minha transferência autenticada em cartório de três meses atrás.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Tia Margaret deixa cair a caixa de veludo em pânico. Qual é o seu veredito?",
+          "options": [
+            {
+              "option_id": "opt_reclaim_jade",
+              "label": "Retomar o bracelete e tirar a inventariança",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entregue o bracelete, Tia Margaret. E meu advogado está protocolando hoje sua destituição como inventariante.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_check_safe",
+              "label": "Abrir o fundo falso na caixa de jade",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Cofre Oculto · Ver Anúncio",
+              "player_reply_text": "Espera — a Vovó me contou que esta caixa azul tem um fundo falso de veludo. Vamos ver o que você quase vendeu.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Os colecionadores saem enojados em fila. Você desliza o bracelete frio de jade da Vovó em segurança no pulso.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "ESCRITURA OCULTA ACHADA: Guardada sob o forro de veludo está a escritura original da mansão da Vovó — passada exclusivamente para {{player_name}}!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Não... não! Ela deixou a casa inteira para você?! Não temos para onde ir!",
+          "timestamp_label": "12:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Recolha suas placas de leilão, Tia Margaret. A casa da Vovó fechou para negócios.",
+          "timestamp_label": "12:17",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Herança Recuperada",
+          "teaser_text": "Dentro da escritura da mansão há um bilhete manuscrito da Vovó: \"Desconfie de quem perguntar sobre o cofre do porão.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Bilhete do Porão",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "23h48 · Mansão da Vovó. O aviso manuscrito da Vovó sobre o cofre do porão ganha vida de repente.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "{{player_name}}, acorda! Meu celular acabou de receber um alerta de movimento do porão da mansão — e o carro da mamãe não está na nossa garagem!",
+          "timestamp_label": "23:48",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A Vovó literalmente escreveu: \"Desconfie de quem perguntar sobre o cofre do porão.\" Tia Margaret está lá embaixo AGORA MESMO!",
+          "timestamp_label": "23:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "cousin",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CÂMERA DE MOVIMENTO DO PORÃO · 23h46 — Uma silhueta carregando lanterna em direção ao cofre de pedra da Vovó.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}, acabei de inspecionar sua joia de jade sob luz UV! O aro interno não é decoração — é uma combinação de cofre de 6 dígitos gravada!",
+          "timestamp_label": "23:51",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Esse chaveiro que trate de abrir o disco antes da meia-noite ou meu comprador vai embora—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[passos no cascalho] Estou encostando no portão lateral da mansão agora! Tem uma van branca de chaveiro estacionada atrás das sebes — a mamãe contratou mesmo alguém para perfurar o cofre!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Margaret está tentando arrombar o cofre da Vovó! Como você a detém?",
+          "options": [
+            {
+              "option_id": "opt_call_police_manor",
+              "label": "Chamar a polícia por invasão de domicílio",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sou a proprietária legal na escritura da mansão — chamando a polícia por arrombamento em andamento agora mesmo!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_trigger_alarm",
+              "label": "Tocar o alarme e trancar o portão do porão",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Flagra · Ver Anúncio",
+              "player_reply_text": "Lucas, acenda os holofotes do porão e dispare o alarme da mansão — mantenha ela bem aí até a polícia chegar!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "SIRENES LÁ FORA: O chaveiro larga a furadeira e foge quando faróis de viatura varrem o pátio.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "LUZES CEGANTES: Holofotes se acendem, flagrando Tia Margaret segurando um pé de cabra junto ao cofre intacto da Vovó.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Você chamou a polícia para sua própria tia?! Eu só estava checando se havia umidade no porão!",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Ninguém checa umidade com broca diamantada de cofre à meia-noite, Margaret. Me encontre no porão amanhã — vamos abrir direito.",
+          "timestamp_label": "23:59",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Que Há Dentro do Cofre da Vovó?",
+          "teaser_text": "Episódio 4: Use o código UV oculto na joia de jade para abrir o cofre do porão — e descubra por que Margaret estava desesperada.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "A Segunda Avaliação",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10h00 · Porão da Mansão. Com testemunha policial presente, você gira os 6 dígitos escondidos dentro do seu jade.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "CLIQUE! A porta do cofre abriu! Meu Deus… {{player_name}}, você sabe o que está dentro daquela caixa de jacarandá?!",
+          "timestamp_label": "10:00",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Um pingente combinando de jade imperial, um livro de escrituras antigas — e uma carta endereçada a mim!",
+          "timestamp_label": "10:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "Espera — por que tem um catálogo privado de leilão enfiado na bolsa da mamãe com uma foto EXATA desse pingente?!",
+          "timestamp_label": "10:02",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Já recebi um adiantamento de US$ 150.000 do colecionador estrangeiro por esse pingente—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Céus! Este conjunto de jade imperial tem nível de museu — avaliado em US$ 1,4 MILHÃO! Foi por isso que Margaret tentou roubar sua peça primeiro!",
+          "timestamp_label": "10:04",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[papéis desdobrando] {{player_name}}, a carta da Vovó diz que Tia Margaret pegou um sinal ilegal de um corretor clandestino mês passado — ANTES mesmo de a Vovó falecer!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Margaret ameaça alegar que a Vovó estava senil a menos que você entregue o pingente! Sua jogada?",
+          "options": [
+            {
+              "option_id": "opt_read_letter",
+              "label": "Ler em voz alta a carta da Vovó",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A Vovó fez o médico E o tabelião testemunharem esta carta — ela sabia que você tentaria vender antes do enterro dela.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_expose_broker",
+              "label": "Denunciar pré-venda ilegal ao conselho",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Xeque-Mate · Ver Anúncio",
+              "player_reply_text": "Sr. Chen, mande o boletim do arrombamento do porão e o recibo de pré-venda direto para a Associação Internacional de Leilões!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "SEM PALAVRAS: Margaret afunda num caixote de vinho enquanto o Sr. Chen lacra o conjunto de jade numa maleta blindada de avaliação.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "LISTA NEGRA: O corretor cancela imediatamente o negócio e exige de Margaret seus US$ 150 mil de adiantamento de volta!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você vendeu a joia de família da sua própria mãe enquanto ela ainda respirava, Tia Margaret.",
+          "timestamp_label": "10:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Tenho um contrato de consignação assinado! Se eu não entregar esse pingente até as 17h vão tomar minha casa!",
+          "timestamp_label": "10:13",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Contrato de Consignação Aparece",
+          "teaser_text": "Episódio 5: Examine o contrato falsificado de consignação que Margaret assinou — com o SEU nome nele.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "A Armadilha da Consignação",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "14h15 · Galeria de Avaliação do Sr. Chen. O corretor de leilões acabou de enviar por fax o contrato assinado por Margaret.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "{{player_name}}, olhe a linha de baixo deste contrato de consignação — Margaret falsificou a SUA assinatura como coproprietária!",
+          "timestamp_label": "14:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "appraiser",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "CONSIGNAÇÃO FALSIFICADA · Venda não autorizada de Conjunto de Jade Imperial (US$ 1,4M) com assinatura falsificada da herdeira.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "aunt",
+          "text": "Por favor, {{player_name}}, só confirma a assinatura para não me prenderem! Eu te dou metade do dinheiro do leilão!",
+          "timestamp_label": "14:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você falsificou meu nome para vender a alma da Vovó por dinheiro. Nem em sonho, Margaret.",
+          "timestamp_label": "14:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "O Lucas nem sequer atende mais minhas ligações, estou completamente sozinha—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "cousin",
+          "duration_sec": 8,
+          "transcript": "[suspirando pesado] {{player_name}}, acabei de dar meu depoimento à polícia confirmando que a mamãe treinou sua assinatura na mesa da nossa cozinha. Faça o que é certo — proteja o legado da Vovó.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "A casa de leilões anula o contrato e pergunta o que você quer fazer com o conjunto de jade de US$ 1,4 milhão.",
+          "options": [
+            {
+              "option_id": "opt_bank_vault",
+              "label": "Guardar o conjunto no cofre da família",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Lacrem o anel e o pingente juntos num cofre privado de banco — fica na nossa família para sempre.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_museum_loan",
+              "label": "Emprestar ao Museu no nome da Vovó",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Legado Eterno · Ver Anúncio",
+              "player_reply_text": "Mantenham a propriedade na família — e emprestem o conjunto ao Museu da Cidade com uma placa homenageando a Vovó!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "PRESERVADO PARA SEMPRE: O Sr. Chen registra a relíquia no cadastro familiar protegido — intocável por qualquer corretor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "HONRA NO MUSEU: O curador aceita na hora com seguro total — o nome da Vovó brilhará por gerações.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Sua avó escolheu exatamente a guardiã certa, {{player_name}}.",
+          "timestamp_label": "14:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "O corretor da mamãe retirou a penhora da casa depois que ela entregou as joias dela para pagá-lo — e ela responde em liberdade condicional pela falsificação.",
+          "timestamp_label": "14:27",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Legado da Vovó em Segurança",
+          "teaser_text": "Episódio 6 (Final): Reabram a mansão da Vovó com Lucas e inaugurem a exposição da relíquia de jade em homenagem a ela.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "O Cofre da Vovó",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Um Mês Depois · Galeria do Patrimônio da Cidade. Refletores quentes iluminam uma vitrine de veludo levando o nome da Vovó.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Mais de duzentos convidados vieram ver a exposição de Jade Imperial hoje à noite, {{player_name}}! Sua avó estaria radiante.",
+          "timestamp_label": "19:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Parece certo ver tudo celebrado em vez de escondido num porão escuro — ou vendido por ganância.",
+          "timestamp_label": "19:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "Obrigada por ainda me convidar hoje à noite, {{player_name}}. Depois de tudo o que a mamãe fez, quase achei que fosse cortar nós dois.",
+          "timestamp_label": "19:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "aunt",
+          "text": "Vi a foto no jornal da exposição de jade — a Vovó tinha razão sobre {{player_name}}—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "appraiser",
+          "duration_sec": 8,
+          "transcript": "[aplausos suaves] O diretor do museu está chamando você ao pódio para dizer algumas palavras sobre sua avó!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Subindo agora. Lucas, venha ficar ao meu lado — você ajudou a salvar isto também.",
+          "timestamp_label": "19:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Sua dedicatória de encerramento no pódio da galeria:",
+          "options": [
+            {
+              "option_id": "opt_dedicate_grandma",
+              "label": "Dedicar a mostra à sabedoria da Vovó",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A Vovó me ensinou que verdadeiras heranças não se medem em quilates — medem-se na integridade de quem as guarda.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_manor_library",
+              "label": "Abrir a mansão como salão de patrimônio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Legado Vivo · Ver Anúncio",
+              "player_reply_text": "E neste outono, Lucas e eu vamos abrir os jardins da mansão da Vovó como biblioteca gratuita de patrimônio para jovens artesãos!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "APLAUSOS DE PÉ: A galeria ecoa em palmas enquanto o jade brilha suave sob o vidro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "HOMENAGEM VIVA: O Sr. Chen doa toda a sua coleção de referência antiga para sua nova biblioteca na hora.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "cousin",
+          "text": "A Vovó está sorrindo lá de cima para nós hoje à noite, {{player_name}}.",
+          "timestamp_label": "19:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "appraiser",
+          "text": "Uma obra-prima em jade — e uma herdeira ainda mais nobre.",
+          "timestamp_label": "19:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Guardiã do Jade",
+          "teaser_text": "Você impediu o leilão da madrugada, abriu o cofre da Vovó e honrou o legado dela por gerações.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

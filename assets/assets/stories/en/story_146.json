@@ -1,0 +1,1188 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_146",
+  "lang": "en",
+  "metadata": {
+    "title": "The Apartment 4B Survival List",
+    "subtitle": "Rule 1: When the upstairs neighbor drops marbles at 2:15 AM, knock back twice. Except my building only has 4 floors.",
+    "genre": "thriller",
+    "tags": [
+      "3AM Rules",
+      "Apartment",
+      "Horror"
+    ],
+    "cover_image": "assets/media/covers/story_146.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · 4B",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "prev_tenant",
+      "name": "Eli · Prev 4B",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "landlord",
+      "name": "Mr. Vance · Owner",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Marbles on the Roof",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:15 AM · First night in Apartment 4B. CLACK-CLACK-CLACK. Glass marbles bounce across the ceiling above your bed.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Hey {{player_name}}, I lived in 4B before you. Did the marbles start? Knock back TWICE on the ceiling—never three times!",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—who gave you my number? And we’re on the top floor! There IS no 5th floor above 4B!",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[whispering, dripping water] \"I know there’s no 5th floor! Only the concrete roof and the water tank! Knock twice NOW before it climbs down the vent!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "Ignore any texts from the previous tenant. He moved out abruptly.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "The rolling sound stops directly above your pillow:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e1_free",
+              "label": "Knock twice on the ceiling with a broom",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Knock... knock. Okay, the rolling just stopped completely!",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e1_vip",
+              "label": "Text Mr. Vance about the roof noise",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Mr. Vance, why is someone walking on the roof above 4B at 2:15 AM?",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Good! Now check under your front door—I left Rule 2 and Rule 3 taped inside the peephole cover.",
+          "timestamp_label": "2:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Do NOT trust Mr. Vance! If he asks for rent in person after midnight, check if he casts a shadow!",
+          "timestamp_label": "2:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "SSSHK. A folded yellow note slides silently under your front door.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Mr. Vance · Lobby",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Don’t read that note, {{player_name}}! Check the 4th-floor hallway camera—nobody is standing outside your door!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if nobody is in the hallway, then who just slid this note under my door?!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Note From Nowhere",
+          "teaser_text": "Next: The hallway CCTV proves the corridor was dead empty.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Rule 2: Never Drink Tap Water",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:20 AM · You unfold the damp yellow note: \"RULE 2: Do NOT drink the tap water after 2:00 AM. It tastes like rust.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Did you just pull up the hallway CCTV? Good—now check your kitchen sink. Is the faucet dripping dark brown?",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Yes! The tap water smells metallic and foul... wait, why is the hallway totally empty on CCTV?!",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[annoyed, keys jingling] \"{{player_name}}, it’s just old pipes! Go back to sleep—I’m coming up to collect your security deposit receipt.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "He shouldn’t have opened the rooftop water tank.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "4th-floor corridor CCTV at 02:18 — completely empty right as a paper note slid under my door.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Heavy footsteps echo up the stairwell toward Floor 4:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e2_free",
+              "label": "Deadbolt the door and turn off lights",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I deadbolted the door and killed the lights. He’s walking right past 4A!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e2_vip",
+              "label": "Ask Eli what is inside the water tank",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Eli, Mr. Vance just unsent something about the water tank—what’s up there?!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Stay dead quiet! If he knocks, do NOT answer—he’s checking if you figured out why 4B is so cheap!",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Because I’m still inside the rooftop water tank, {{player_name}}. Mr. Vance locked the hatch on me 8 months ago.",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "A key scrapes into your front lock from the outside—stopped only by your deadbolt chain.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Mr. Vance · Outside 4B",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "You’re still awake, {{player_name}}? Open the chain—I just need to check the ceiling vent.",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No way! Why does the water dripping from my ceiling smell like bleach and blood?!",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Locked in the Water Tank",
+          "teaser_text": "Next: Eli reveals Rule 3—and how Mr. Vance hides his crimes.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Rule 3: The Missing Tenant",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:30 AM · You search Eli’s name on your phone. The first result is a missing-person poster from 8 months ago.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "I found Mr. Vance’s hidden ledger in 4B’s closet—he’s been skimming tenants’ identities for years. When I confronted him on the roof, he pushed me in.",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if you’ve been dead for 8 months, how are you texting me?!",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[water sloshing, eerie echo] \"My waterproof phone is still in my coat pocket at the bottom of the tank—and the marbles you heard were my knuckles tapping the steel floor!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "I’m shutting off the building Wi-Fi and power breaker now.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Your apartment lights snap off—total blackness:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e3_free",
+              "label": "Call police quietly on mobile data",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Calling 911 on cellular data right now—reporting a body in the rooftop tank!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e3_vip",
+              "label": "Search 4B’s closet for the hidden ledger",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I found a loose floorboard inside the closet—there’s a plastic bag of IDs!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Keep your voice down! Mr. Vance is heading up the stairs to the rooftop hatch to hide the evidence!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Photograph every single ID! Those are all the previous 4B tenants who \"moved out abruptly\"!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "The heavy steel rooftop door slams shut directly above your ceiling.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Mr. Vance · Rooftop",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "I heard your phone vibrating through the floorboards, {{player_name}}. Hand over that ledger or you’ll join Eli!",
+          "timestamp_label": "2:38 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Too late, Mr. Vance—the police are already on their way!",
+          "timestamp_label": "2:38 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Power Cut on Floor 4",
+          "teaser_text": "Next: Mr. Vance tries to drain the rooftop tank before police arrive.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Rooftop Drain",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:42 AM · Pipes groan violently inside your walls as the rooftop tank begins draining.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "He’s trying to dump the tank and seal the hatch! Don’t let him lock the rooftop stairwell from the inside!",
+          "timestamp_label": "2:42 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I’m heading out to the hallway—Wait, can I reach the fire-escape ladder from my window?",
+          "timestamp_label": "2:42 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[metal wrench clanging] \"Stay inside 4B, {{player_name}}! If you step onto this roof in the rain, you’ll slip!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "Police won’t search a sealed tank without a warrant.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Sirens echo faintly 6 blocks away:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e4_free",
+              "label": "Throw the bag of IDs down to the street",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m flagging down the patrol car from my window with the stolen IDs!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e4_vip",
+              "label": "Climb the fire escape to film the roof",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I’m climbing the fire escape silently—my camera is rolling!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Yes! The officers just spotted your flashlight! They’re breaching the lobby door!",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Careful—the rooftop camera just caught TWO silhouettes standing beside the tank!",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "Lightning splits the sky above the roof. Beside Mr. Vance, a soaked, pale figure rises slowly out of the open water tank.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · Rooftop Tank",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Look at the rooftop security feed, {{player_name}}. Mr. Vance isn’t going anywhere.",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Oh God... something just grabbed his wrench from inside the tank!",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Two Silhouettes on the Roof",
+          "teaser_text": "Next: The rooftop security camera captures the impossible confrontation.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Rooftop Silhouettes",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:58 AM · Your phone downloads the rooftop motion snapshot just as police boots thunder up the 4th-floor stairs.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "He dropped the master key right by the roof hatch. Tell the officers to look inside the tank first!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—who is the second silhouette standing right in front of Mr. Vance on the camera?!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[screaming in terror] \"GET IT OFF ME!! ELI IS DEAD—HOW IS HE HOLDING THE HATCH SHUT?!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "Because I promised the next 4B tenant would survive.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n05b_img"
+        },
+        {
+          "id": "e5_n05b_img",
+          "type": "image",
+          "sender_id": "prev_tenant",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Rooftop water-tank security cam at 02:59 — two dark silhouettes standing motionless by the steel hatch.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Police officers reach your 4th-floor landing:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e5_free",
+              "label": "Point them straight to the rooftop door",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Officers! He’s on the roof by the water tank—check inside the tank!",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e5_vip",
+              "label": "Hand over the stolen IDs and CCTV shot",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Here are the stolen IDs from 4B and the rooftop camera shot—hurry!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Officers burst onto the roof—Mr. Vance is curled on the wet concrete screaming at an empty water tank!",
+          "timestamp_label": "3:01 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "The sergeant takes the evidence and cuffs Mr. Vance on sight—then shines a beam into the tank!",
+          "timestamp_label": "3:01 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "Rain pours into the open steel tank. At the bottom lies an untouched waterproof phone—screen still glowing.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Police Precinct · Update",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "Mr. Vance just confessed to everything in the patrol car—he’s begging to be locked in a cell away from the rain.",
+          "timestamp_label": "3:04 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if Eli’s phone was at the bottom of the tank the whole time, how did it still have 100% battery?!",
+          "timestamp_label": "3:04 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "100% Battery Underwater",
+          "teaser_text": "Next: One final rule remains on the back of the yellow note.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "The Back of the Yellow Note",
+      "start_node_id": "e6_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3:12 AM · Back inside 4B to pack your bag, you flip over the damp yellow survival list.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Check the bottom line, {{player_name}}. There was always a Rule 4.",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "It says: \"RULE 4: Once the tank is opened, never look back at 4B when you leave.\"",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[soft, peaceful sigh] \"Because once the truth comes out, the building finally lets go of everyone trapped here.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "Thank you for knocking back twice.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Your suitcase is zipped beside the open front door:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e6_free",
+              "label": "Walk straight out without looking back",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Rest in peace, Eli. I’m walking out now.",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e6_vip",
+              "label": "Leave a thank-you note on the counter",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I wrote \"Thank you for saving me\" on the yellow paper and left it by the door.",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "As you step onto the wet street, the lights in 4B flicker softly twice—like a goodbye.",
+          "timestamp_label": "3:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "A warm breeze rustles the yellow note off the counter as you close the door behind you.",
+          "timestamp_label": "3:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "Forensics tape seals the rooftop access. Your chat thread with \"Eli · Prev 4B\" fades to \"Offline\".",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · Final Signal",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Signal lost at 03:19. Forensics recovered Eli’s family contact and returned his belongings.",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Two knocks saved my life tonight. I’ll never rent a top-floor apartment again.",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Rule 4 Complete",
+          "teaser_text": "Finale next: The morning headline about Apartment 4B.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "Morning After 4B",
+      "start_node_id": "e7_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "6:30 AM · Sunlight pours into your friend’s living room. A local news alert buzzes on your screen.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "News Alert: \"Landlord arrested after tenant uncovers 8-month cold case in rooftop water tank.\"",
+          "timestamp_label": "6:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... my phone just got one scheduled text from Eli’s number—sent 8 months ago.",
+          "timestamp_label": "6:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[clear, warm voice] \"If anyone ever moves into 4B and hears marbles at 2:15, knock twice. Stay safe.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "The marbles will never roll on that roof again.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "You take a deep breath of fresh morning air:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e7_free",
+              "label": "Archive the chat thread respectfully",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Goodbye, Eli. You won’t be forgotten.",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e7_vip",
+              "label": "Donate your refunded deposit to Eli’s family",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Just wired the refunded deposit to Eli’s mother.",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Your phone screen dims peacefully. The 2:15 AM dread is finally over.",
+          "timestamp_label": "6:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Eli’s mother texts back with tears of gratitude: \"Thank you for bringing my son home.\"",
+          "timestamp_label": "6:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "Building 4B is permanently condemned and cleared. The survival list is no longer needed.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09_call"
+        },
+        {
+          "id": "e7_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · Offline Forever",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e7_n10",
+          "on_decline_node_id": "e7_n10"
+        },
+        {
+          "id": "e7_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Case closed. All 4 rules obeyed.",
+          "timestamp_label": "6:35 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e7_n11"
+        },
+        {
+          "id": "e7_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Next time a rent price looks too good to be true, I’m checking the roof first.",
+          "timestamp_label": "6:35 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n12_cliff"
+        },
+        {
+          "id": "e7_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Survived Apartment 4B",
+          "teaser_text": "You finished \"The Apartment 4B Survival List\"! Explore more 3AM rules horror.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

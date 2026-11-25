@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_005",
+  "lang": "pt",
+  "metadata": {
+    "title": "Cartão da Cobertura 3802",
+    "subtitle": "O concierge de um hotel de luxo me mandou mensagem por engano: \"Suas rosas estão prontas na Suíte 3802 para a Srta. Sofia.\"",
+    "genre": "romance",
+    "tags": [
+      "Hotel de Luxo",
+      "Caso Extraconjugal",
+      "Vingança"
+    ],
+    "cover_image": "assets/media/covers/story_005.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#EC4899"
+    },
+    {
+      "id": "concierge",
+      "name": "Aurelia Hotel VIP",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel (Marido)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Contato Errado, Suíte Certa",
+      "start_node_id": "e1_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "20h50 · Daniel disse que estava preso num voo noturno para Tóquio. Então seu celular toca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Boa noite, Sr. Mercer! As 99 rosas vermelhas e o Krug safrado já foram colocados na Cobertura 3802 para o aniversário da Srta. Sofia.",
+          "timestamp_label": "20:50",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "image",
+          "sender_id": "concierge",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "Seu cartão-chave do elevador privativo está aguardando na recepção VIP.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Obrigada. Aqui é a Sra. Mercer—eu mesma busco o cartão reserva em vinte minutos.",
+          "timestamp_label": "20:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "concierge",
+          "text": "ESPERA SENHORA ELE DISSE EXPLICITAMENTE PARA NÃO AVISAR A ESPOSA—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Embarcando agora, {{player_name}}! O Wi-Fi vai ficar desligado por 12 horas. Não me espere acordada. ✈️",
+          "timestamp_label": "20:53",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "daniel",
+          "duration_sec": 5,
+          "transcript": "[taças de vinho tilintando ao fundo] Te amo amor, Tóquio está congelando—nos falamos amanhã!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "choice",
+          "prompt": "Você já está num táxi rumo ao Hotel Aurelia. Como você joga essa?",
+          "options": [
+            {
+              "option_id": "opt_knock_door",
+              "label": "Subir direto para a Cobertura 3802",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tenha um bom voo, Daniel. Cuidado com a turbulência no 38º andar.",
+              "next_node_id": "e1_n09a"
+            },
+            {
+              "option_id": "opt_vip_upgrade",
+              "label": "Convidar o noivo rico de Sofia para a 3802",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Lance de Mestre",
+              "player_reply_text": "Acabei de mandar o número da suíte para o noivo da Sofia. Ele já está no saguão.",
+              "next_node_id": "e1_n09b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09a",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "O quê?? 38º andar? {{player_name}}, onde você está agora?!",
+          "timestamp_label": "20:56",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n09b",
+          "type": "narrator",
+          "text": "JOGADA VIP: O noivo de Sofia é o maior cliente corporativo de Daniel. A resposta leva 3 segundos: \"Estou subindo com você.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "cliffhanger",
+          "headline": "Sinal do Elevador: 38º Andar.",
+          "teaser_text": "Episódio 2: O cartão reserva destranca a Suíte 3802—e a rolha do champanhe estoura bem quando você entra.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Surpresa do Serviço de Quarto",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "21h18 · A porta da cobertura se escancara. Daniel congela no meio do brinde, segurando uma pulseira de diamantes.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "{{player_name}}, saia para o corredor! Pare de filmar—você está passando vergonha!",
+          "timestamp_label": "21:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Eu? Não sou eu quem está usando roupão de hotel em \"Tóquio\", Daniel.",
+          "timestamp_label": "21:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Sra. Mercer, a segurança do hotel confirmou que o cavalheiro do saguão acabou de chegar ao 38º andar.",
+          "timestamp_label": "21:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "daniel",
+          "text": "Espera, é o Marcus?! Se ele vir a Sofia aqui vai cancelar meu contrato de US$ 12M!",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "daniel",
+          "duration_sec": 8,
+          "transcript": "[sussurro desesperado] {{player_name}}, finja que era uma festa surpresa para VOCÊ! Passo a casa para o seu nome amanhã, por favor!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "Passos ecoam diante da Suíte 3802. Você acoberta ou bota fogo no circo?",
+          "options": [
+            {
+              "option_id": "opt_open_wide",
+              "label": "Escancarar a porta para o noivo de Sofia",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entre à vontade! O Daniel estava bem explicando por que comprou 99 rosas para a sua noiva.",
+              "next_node_id": "e2_n08a"
+            },
+            {
+              "option_id": "opt_vip_take_diamond",
+              "label": "Pegar a nota do diamante + vídeo e sair",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Implacável",
+              "player_reply_text": "Pago na nossa conta conjunta—meu advogado de divórcio agradece pela prova.",
+              "next_node_id": "e2_n08b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08a",
+          "type": "narrator",
+          "text": "O noivo de Sofia dá uma olhada no roupão e nas rosas, puxa o celular e rescinde o contrato de Daniel na hora.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n08b",
+          "type": "narrator",
+          "text": "Você passa serena pelo noivo furioso de Sofia, jogando o cartão-chave no chão enquanto o caos explode atrás de você.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n09",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Volta aqui! Não me deixe aqui com ele, {{player_name}}!!",
+          "timestamp_label": "21:26",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "cliffhanger",
+          "headline": "Check-out Definitivo.",
+          "teaser_text": "Episódio 3: O concierge do Aurelia entrega o dossiê completo da Suíte 3802—e a linha de crédito secreta de Daniel.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "A Confissão do Concierge",
+      "start_node_id": "e3_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "22h15 · Bar de Champanhe do Hotel Aurelia. O ex bilionário de Sofia ergue a taça quando seu celular apita.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "{{player_name}}, pare de ficar no bar do saguão com o ex da Sofia! Suba para conversarmos!",
+          "timestamp_label": "22:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "image",
+          "sender_id": "concierge",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "Registro de Cartão da Suíte 3802: 14 pernoites em 6 meses — todas faturadas no cartão da empresa da sua família.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Quatorze estadias em seis meses—pagas com o Amex corporativo da MINHA empresa?!",
+          "timestamp_label": "22:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "daniel",
+          "text": "Espera—se ela auditar o cartão corporativo, vai ver o colar de diamantes também.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Senhora, conforme solicitado, aqui está a fatura detalhada da Suíte 3802. Desativamos o acesso do Sr. Daniel?",
+          "timestamp_label": "22:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "daniel",
+          "duration_sec": 11,
+          "transcript": "[em pânico] {{player_name}}, não cancele o cartão! O hotel vai cobrar o quarto da Sofia no meu crédito pessoal!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "O concierge aguarda sua assinatura para bloquear o cartão corporativo dele.",
+          "timestamp_label": "22:21",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Daniel está preso na Suíte 3802 com uma conta de US$ 28.000. Sua jogada?",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Cancelar o cartão corporativo dele na hora",
+              "cost_type": "free",
+              "badge_text": null,
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Mandar a conta do champanhe do bar para a 3802",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Segredo Oculto",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "A recepção acabou de ligar—meu cartão foi recusado na frente da Sofia!",
+          "timestamp_label": "22:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "narrator",
+          "text": "VIRADA VIP: A segurança escolta Daniel até o saguão de roupão enquanto Sofia faz as malas e vai embora!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Senhora, a Suíte 3802 foi bloqueada. Nosso gerente geral envia suas mais sinceras desculpas.",
+          "timestamp_label": "22:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Você me humilhou na frente do hotel inteiro, {{player_name}}!",
+          "timestamp_label": "22:24",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n13_end"
+        },
+        {
+          "id": "e3_n13_end",
+          "type": "cliffhanger",
+          "headline": "Estorno na Suíte 3802...",
+          "teaser_text": "Episódio 4: As câmeras do saguão revelam que Daniel deu a Sofia a pulseira de família da sua mãe—hora de tomar de volta.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Estorno na Suíte 3802",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "23h05 · Saguão do Hotel Aurelia. Monitores de segurança brilham atrás do balcão do concierge.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Senhora, nossa equipe de segurança revisou a gravação do manobrista—a Srta. Sofia saiu usando uma pulseira de safiras.",
+          "timestamp_label": "23:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "image",
+          "sender_id": "daniel",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Câmera do Saguão (22h42): Sofia saindo pelas portas giratórias usando a relíquia de safiras da sua mãe.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Essa é a pulseira de safiras da minha mãe do meu cofre! Daniel, você roubou da minha mãe?!",
+          "timestamp_label": "23:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "concierge",
+          "text": "Eu disse para a Sofia que era peça de leilão—não achei que você fosse notar falta!",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Eu pego de volta amanhã, {{player_name}}! Não chame a segurança do hotel!",
+          "timestamp_label": "23:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "concierge",
+          "duration_sec": 12,
+          "transcript": "[calmo, eficiente] Senhora, o carro da Srta. Sofia ainda está na rampa do manobrista. Uma palavra e a segurança fecha o portão.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Dez segundos antes de o carro dela sair da entrada. O que você faz?",
+          "timestamp_label": "23:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "A relíquia da sua mãe está saindo do hotel. Aja rápido!",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Fazer a segurança parar o carro no portão",
+              "cost_type": "free",
+              "badge_text": null,
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Confrontar Sofia no valet com o ex dela",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Segredo Oculto",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "A segurança parou o carro dela—ela jogou a pulseira no banco e me culpou!",
+          "timestamp_label": "23:12",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "narrator",
+          "text": "VIRADA VIP: Sofia congela em humilhação total enquanto vocês dois recuperam suas relíquias diante dos paparazzi!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Pulseira de safiras recuperada e guardada em nosso cofre VIP para a senhora.",
+          "timestamp_label": "23:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "{{player_name}}, por favor—a polícia está fazendo perguntas! Diga que foi um mal-entendido!",
+          "timestamp_label": "23:15",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n13_end"
+        },
+        {
+          "id": "e4_n13_end",
+          "type": "cliffhanger",
+          "headline": "Confronto no Saguão à Meia-Noite...",
+          "teaser_text": "Episódio 5: Daniel implora de joelhos no saguão de mármore quando os papéis do divórcio chegam.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Confronto no Saguão à Meia-Noite",
+      "start_node_id": "e5_n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "23h48 · Grande Saguão do Aurelia. O piano da meia-noite toca suave quando seu advogado sai do elevador.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Estou implorando, {{player_name}}. Retire o boletim de furto e eu assino o divórcio consensual hoje à noite.",
+          "timestamp_label": "23:48",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Senhora, seu advogado preparou o acordo integral—além disso, a suíte cobertura ao lado é cortesia da casa.",
+          "timestamp_label": "23:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Passe suas ações da minha empresa para mim e pague cada centavo da Suíte 3802—aí eu retiro a queixa.",
+          "timestamp_label": "23:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "daniel",
+          "text": "Sem as ações da empresa dela, eu não tenho literalmente mais nada.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Assinatura da testemunha pronta quando a senhora quiser.",
+          "timestamp_label": "23:51",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "daniel",
+          "duration_sec": 13,
+          "transcript": "[derrotado] Tudo bem... Estou assinando e passando tudo. Você venceu, {{player_name}}.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Daniel desliza os papéis assinados pela mesa de mármore.",
+          "timestamp_label": "23:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "A tinta secou. Como você encerra o capítulo com Daniel?",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Pegar os papéis e dar adeus a ele",
+              "cost_type": "free",
+              "badge_text": null,
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Fazer upgrade para a Cobertura Real hoje",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Segredo Oculto",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Sinto muito por ter jogado nós dois fora, {{player_name}}.",
+          "timestamp_label": "23:55",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "narrator",
+          "text": "VIRADA VIP: O concierge entrega a você o cartão dourado da Cobertura Real enquanto Daniel assiste das portas giratórias!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Bem-vinda à Cobertura Real, Senhora. O champanhe já está gelando.",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Boa noite, Daniel. O check-out é ao meio-dia.",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n13_end"
+        },
+        {
+          "id": "e5_n13_end",
+          "type": "cliffhanger",
+          "headline": "Check-out Feito, Nível Acima",
+          "teaser_text": "Episódio 6 (Final da Temporada): Luzes da cidade do 50º andar—e um brinde com o bilionário do andar de baixo.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Check-out Feito, Nível Acima",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "00h05 · Sacada da Cobertura Real. A pulseira de safiras da sua mãe brilha segura no seu pulso.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Vou embora da cidade amanhã. Espero que seja feliz, {{player_name}}.",
+          "timestamp_label": "00:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mais feliz do que fui em três anos. Adeus, Daniel.",
+          "timestamp_label": "00:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Senhora, o cavalheiro do bar de champanhe mandou um bilhete manuscrito: \"Segundo round amanhã?\"",
+          "timestamp_label": "00:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "daniel",
+          "text": "Eu nunca percebi o que tinha até o cartão-chave parar de funcionar.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Seu cartão corporativo foi reemitido apenas em seu nome, Senhora.",
+          "timestamp_label": "00:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "voice_note",
+          "sender_id": "daniel",
+          "duration_sec": 10,
+          "transcript": "[caloroso, divertido] \"Aqui é o ex da Sofia—nossos advogados compararam notas e descobrimos que nós dois subimos de nível hoje. Café da manhã às 9h?\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Um cartão dourado, uma relíquia recuperada e um bilionário chamando para o café da manhã.",
+          "timestamp_label": "00:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "As portas da cobertura se abrem para um horizonte cintilante. Escolha seu Final!",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Dizer sim ao café às nove em ponto",
+              "cost_type": "free",
+              "badge_text": null,
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Unir-se a ele para comprar a rival de Daniel",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Segredo Oculto",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Adeus, {{player_name}}.",
+          "timestamp_label": "00:12",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "narrator",
+          "text": "FINAL VIP: Entre expressos ao amanhecer, vocês fecham uma compra de US$ 40M—e um romance arrebatador que domina a cidade!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "concierge",
+          "text": "Sempre às suas ordens, Senhora.",
+          "timestamp_label": "00:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "text",
+          "sender_id": "daniel",
+          "text": "Saí de um casamento ruim. Entrei num império novinho.",
+          "timestamp_label": "00:18",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n13_end"
+        },
+        {
+          "id": "e6_n13_end",
+          "type": "cliffhanger",
+          "headline": "Check-out Feito. Coroa Reivindicada.",
+          "teaser_text": "Final da Temporada Concluído · Você recuperou sua relíquia, encerrou a traição e subiu de nível em grande estilo.",
+          "sfx": "ting",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "cta_label": "Temporada Concluída"
+        }
+      ]
+    }
+  ]
+}

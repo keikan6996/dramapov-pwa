@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_034",
+  "lang": "pt",
+  "metadata": {
+    "title": "A Garota na Caixa d'Água do Terraço",
+    "subtitle": "O encanador mandou mensagem do telhado à meia-noite: \"Não beba água da torneira. Algo agarrou minha lanterna.\"",
+    "genre": "thriller",
+    "tags": [
+      "Apartamento",
+      "Caixa d'Água",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_034.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Apto 5A)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0891B2"
+    },
+    {
+      "id": "ally",
+      "name": "Gabe (Encanador)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Caixa d'Água do Terraço",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#164E63"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Água Escura da Torneira",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "00h48 · Você abre a torneira da cozinha. A água espirra marrom e turva, trazendo um único fio de cabelo preto comprido.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, acabei de subir para inspecionar a cisterna do terraço. NÃO beba nem escove os dentes com a água hoje à noite!",
+          "timestamp_label": "00:48",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tarde demais, já bebi meio copo antes de ver a cor! O que tem dentro da caixa?!",
+          "timestamp_label": "00:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Estou dentro de você agora, {{player_name}}.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Debrucei sobre a escotilha com minha lanterna e dedos pálidos saltaram e puxaram ela para baixo! Estou ligando para a polícia!",
+          "timestamp_label": "00:50",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[borbulhar abafado debaixo d'água, respingo] ...Socorro... a tampa do telhado é pesada demais... {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Sua torneira da cozinha abre com violência sozinha, inundando a pia.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Fechar o registro geral sob a pia",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Fechando meu registro geral!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Checar o aviso de moradora desaparecida",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Checando a foto do aviso no saguão...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "O registro fecha seco—mas os canos dentro das paredes começam a gemer como alguém gritando debaixo d'água.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Uma estudante do Apto 5B sumiu há três semanas—vista pela última vez subindo para a lavanderia do terraço.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Gabe não responde! Espera—uma poça molhada acabou de começar a pingar direto PELA SUA luminária do teto!",
+          "timestamp_label": "00:53",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Gabe (Encanador)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Apenas o som pesado de água enchendo um microfone de celular—e o sussurro de uma garota: \"Me ache no telhado.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa. Na hora, o alarme da porta do terraço toca pela escadaria bem acima do seu apartamento.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Não Beba a Água",
+          "teaser_text": "Episódio 2: Pegadas molhadas descem das escadas do terraço—direto até o Apto 5A.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Cisterna do Terraço",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "00h56 · Sirenes da polícia uivam ao longe. Do lado de fora da sua porta, água empoça pelos ladrilhos do corredor.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, derrubei meu celular na caixa—usando o do vigia! Não abra sua porta, espere a polícia!",
+          "timestamp_label": "00:56",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabe, a água vazando do meu teto é gelada—e tem alguém batendo de leve na minha porta.",
+          "timestamp_label": "00:57",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[água pingando, soluço baixo] ...Ele me empurrou para dentro e trancou a tampa... Por favor conte a eles, {{player_name}}...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "O administrador do prédio guarda a única chave da caixa do terraço.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Espera—o administrador do prédio acabou de correr para as escadas do terraço com um cadeado! Ele está tentando trancar a caixa antes que a polícia chegue!",
+          "timestamp_label": "00:59",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "As batidas na sua porta param. Botas pesadas sobem correndo as escadas do terraço.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Alertar os policiais que chegam ao telhado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Avisando os policiais para irem ao telhado!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Filmar o administrador da escadaria",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Filmando a porta do terraço agora!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Você guia os policiais direto escada acima—pegando o administrador em flagrante tentando trancar a tampa de aço da cisterna.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Na reprodução do seu vídeo, uma mão branca molhada sobe da caixa atrás do administrador—segurando-o imóvel até a polícia algemá-lo.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Luzes azuis e vermelhas banham o terraço. Quando a cisterna é esvaziada, a água da torneira do seu apartamento volta a correr cristalina.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Apto 5B (Desconectado)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Um suspiro gentil e aliviado sussurra: \"Obrigada, {{player_name}}. Não estou mais com frio.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa. No espelho embaçado do seu banheiro, duas palavras nítidas surgem e somem: \"MUITO OBRIGADA.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "A Verdade Veio à Tona",
+          "teaser_text": "Final da Temporada · Algumas assombrações não são maldições—são pedidos de socorro.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Quem Trancou a Porta do Telhado?",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "00h42 · Você e Gabe acharam a pulseira da garota dentro da cisterna—mas agora a pesada porta de ferro da escada do terraço está fechada com cadeado POR FORA.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, alguém viu a gente subir aqui! Esse cadeado não estava na porta dez minutos atrás!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabe, olhe para o patamar da escada—tem uma sombra observando a gente pelo vidro aramado!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Escada do Terraço · Figura escura parada imóvel atrás da porta de ferro trancada.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "A escotilha da caixa d'água atrás de você bate abrindo—água fria transborda pelo telhado de brita.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "É o zelador do prédio, {{player_name}}. Ele escondeu minha mochila na casa de caldeiras verão passado.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Liguei para o 911 cinco minutos atrás—só mantenha a escada de incêndio à vista!",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[voz ecoando da caixa] \"Ele está desligando as luzes da escada! Desçam pela escada de incêndio leste!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Passos pesados recuam escada abaixo—o zelador vai destruir as provas na casa de caldeiras.",
+          "options": [
+            {
+              "option_id": "opt_e3_fire_escape",
+              "label": "Descer rápido pela escada de incêndio leste",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Descendo pela escada leste, Gabe—deixe o 911 no viva-voz!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_film_super",
+              "label": "Filmar a escada trancada e mandar ao 911",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Prova",
+              "player_reply_text": "Gravei o cadeado novo e a sombra dele—mandando direto aos detetives!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estou logo atrás de você com minha chave grifo! Me encontre no patamar do 5º andar!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A central viu o vídeo—viaturas estão entrando no beco agora mesmo!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Espera—a porta da casa de caldeiras no fim do beco acabou de abrir!",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "A Casa de Caldeiras.",
+          "teaser_text": "Episódio 4: Descendo rápido pela escada de incêndio, você intercepta o zelador antes que ele queime a mochila da garota sumida.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Provas na Fornalha",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "00h55 · Beco atrás do prédio. Fumaça sobe pelo duto da casa de caldeiras do porão enquanto sirenes policiais ecoam a dois quarteirões.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ele está tentando queimar a mochila dela na fornalha! Espera—não entre sozinha, {{player_name}}, vou abrir o registro geral do porão para inundar o queimador!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabe, a janela da casa de caldeiras está entreaberta—consigo ver a carteirinha escolar dela na bancada!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Peguem o kit de DNA com o policial no portão—ele deixou sangue no fecho da minha pulseira!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "SHHH! Gabe gira a válvula de incêndio de emergência—encharcando a fornalha com água gelada.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Fornalha inundada! Ele está tropeçando para fora no beco bem diante dos faróis das viaturas!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Dez anos como encanador e essa foi a melhor virada de válvula da minha vida.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[megafone policial trovejando] \"LARGUE A BOLSA E AFASTE-SE DA PORTA! MÃOS PARA O ALTO!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "O zelador larga a mochila e ergue as mãos sob os holofotes ofuscantes da viatura.",
+          "options": [
+            {
+              "option_id": "opt_e4_point_backpack",
+              "label": "Apontar a mochila direto aos policiais",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Policiais! O documento e os pertences da garota sumida estão bem dentro dessa bolsa!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_give_bracelet",
+              "label": "Entregar a pulseira do terraço à Perícia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Prova-Chave",
+              "player_reply_text": "Perícia—testem o fecho desta pulseira que tiramos da caixa d'água!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Os detetives ensacaram a bancada inteira! Ele está acabado!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A Perícia fez exame de urgência—bateu exatamente com a estudante sumida do verão passado!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Olhe o laudo de confirmação forense—a justiça finalmente veio à tona.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Pego em Flagrante.",
+          "teaser_text": "Episódio 5: O laudo forense de DNA encerra o caso de desaparecimento—e limpa a caixa d'água do terraço para sempre.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Água Limpa",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02h10 · Furgões da perícia alinham-se na rua enquanto o zelador é levado. Detetives compartilham a compatibilidade preliminar de DNA.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A família da garota está vindo de outro estado, {{player_name}}. Eles nunca pararam de procurar por ela.",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gabe, acabei de abrir a torneira da minha cozinha no 5A—a água está completamente cristalina.",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Laudo Forense de DNA · Prova da Cisterna do Terraço — Compatibilidade positiva confirmada; caso resolvido.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Caixa d'Água do Terraço: Sinal desapareceu. Nenhuma outra anomalia detectada.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Obrigada aos dois por não fecharem a torneira e irem embora.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Vou trocar a cisterna inteira do terraço amanhã cedo de graça.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[voz suave desaparecendo como chuva calma] \"Obrigada por me encontrar, {{player_name}}. A água está limpa agora.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Gabe fica na sua porta segurando duas garrafas de água mineral.",
+          "options": [
+            {
+              "option_id": "opt_e5_take_water",
+              "label": "Aceitar a água e agradecer a Gabe",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Você é um herói de verdade, Gabe. Obrigada por atender um chamado à meia-noite.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_honor_girl",
+              "label": "Deixar flores brancas no jardim do terraço",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Tributo",
+              "player_reply_text": "Deixei flores brancas perto do portão do terraço para ela. Descanse em paz.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Só fazendo meu trabalho—e cuidando de bons inquilinos.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ela nunca será esquecida neste prédio.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Amanhece claro sobre o Apto 5A.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "A Verdade Veio à Tona.",
+          "teaser_text": "Episódio 6 (Final): Uma cisterna novinha brilha no telhado—e o Apto 5A finalmente dorme em paz.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Recomeço no Telhado",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "09h00 · O sol da manhã brilha numa caixa de aço inox novinha no terraço quando Gabe termina de apertar o último parafuso.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Caixa nova, canos novos e um novo administrador contratado hoje de manhã, {{player_name}}!",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "E ouvi dizer que a prefeitura concedeu uma homenagem a você por ajudar a resolver o caso!",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Metade dessa medalha pertence a você—foi quem não desligou à meia-noite.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Aviso do Prédio: \"Abastecimento de água certificado 100% puro e seguro.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Da próxima vez que sua pia pingar, me ligue antes das 20h, viu—meu coração precisa de folga!",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Melhor inquilina do prédio inteiro.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[Gabe rindo baixo] \"Tenha uma semana tranquila, {{player_name}}!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Você enche um copo de água cristalina na luz da manhã.",
+          "options": [
+            {
+              "option_id": "opt_e6_drink_clear",
+              "label": "Erguer seu copo à água limpa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Um brinde à água limpa e zero fantasmas, Gabe!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_thank_gabe",
+              "label": "Convidar Gabe para um café lá embaixo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Amizade",
+              "player_reply_text": "O café é por minha conta na cafeteria da esquina—só em horário diurno!",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Um brinde a isso!",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Quero o meu preto—te vejo lá embaixo!",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Caixa d'Água do Terraço · Descansando em Paz.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Cristalina.",
+          "teaser_text": "FIM · Às vezes uma assombração é apenas a verdade esperando vir à tona.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

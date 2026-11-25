@@ -1,0 +1,3042 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_141",
+  "lang": "en",
+  "metadata": {
+    "title": "Texting My Own Number",
+    "subtitle": "At 2:47 AM my own phone number texted me: \"Do not let Devon inside—he is already in the crawlspace.\"",
+    "genre": "thriller",
+    "tags": [
+      "Digital Horror",
+      "3AM",
+      "Mind-Bending"
+    ],
+    "cover_image": "assets/media/covers/story_141.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "self_num",
+      "name": "My Number (You?)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F172A"
+    },
+    {
+      "id": "roommate",
+      "name": "Devon · Roommate",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    },
+    {
+      "id": "detective",
+      "name": "Det. Park · Cyber Unit",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0369A1"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "2:47 AM Self-Text",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:47 AM · Your phone buzzes on the nightstand. The sender ID is your exact mobile number.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "{{player_name}}, stay on the bed. Do NOT unlock the deadbolt when Devon knocks in 20 seconds.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Who spoofed my SIM? Devon is on a night shift at the hospital until 6 AM.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "self_num",
+          "duration_sec": 8,
+          "transcript": "[static, frantic whispering] \"Listen to my breathing, {{player_name}}. That is YOUR voice. Don’t open the door—he’s wearing Devon’s scrubs.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "Look at the bedroom vent above your closet. I am waving my flashlight.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Three slow knocks hit your apartment door:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e1_free",
+              "label": "Text Devon to confirm where he is",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Devon, are you outside my door right now?",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e1_vip",
+              "label": "Check the peephole silently",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I’m checking the peephole right now. Don’t move.",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Hey {{player_name}}, my shift ended early and my key snapped in the lock. Let me in, I’m freezing.",
+          "timestamp_label": "2:49 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "I saw the peephole darken, {{player_name}}. Open up—why are you staring at me without blinking?",
+          "timestamp_label": "2:49 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "Your hallway motion light flickers off. Both chat threads show \"Typing...\" at the exact same second.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number (0.0m away)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Wait—the GPS ping just refreshed. Why is YOUR phone showing 3 meters above my ceiling?",
+          "timestamp_label": "2:51 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Because someone is breathing inside my ceiling crawlspace right now...",
+          "timestamp_label": "2:51 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Who Is Outside—And Who Is Above?",
+          "teaser_text": "Next: The cracked GPS map reveals your SIM has been underground for 3 days.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "The GPS Pin Inside the Walls",
+      "start_node_id": "e2_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:54 AM · You slide a chair against the doorknob. Your own number sends a live location pin.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "{{player_name}}, stop messing around! Someone is standing at the end of the hall watching me.",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Prove you’re Devon. What happened to our car in November?",
+          "timestamp_label": "2:54 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 8,
+          "transcript": "[panting, metallic scrape] \"We slid into a ditch off Route 9—now open the door before that thing reaches me!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "He memorized that from your cloud journal. Ask him what color your childhood scar is.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "self_num",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "GPS trace on my cracked screen: my phone signal is pinned inside Apartment 4C’s sealed wall cavity.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "The knocking stops. Scratching begins inside the drywall:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e2_free",
+              "label": "Demand the voice in the vent show itself",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "If you’re really me, drop something through the vent right now!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e2_vip",
+              "label": "Call 911 and trace both SIM towers",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I’m dialing police dispatch to trace which SIM is cloned.",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Look at the floor beneath the vent. I just dropped your silver watch—the one with the bent clasp.",
+          "timestamp_label": "2:57 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Don’t call them yet! Dispatch will trace the tower to the crawlspace and he’ll seal me in before they arrive!",
+          "timestamp_label": "2:57 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "CLINK. A scratched silver watch hits your bedroom rug—the exact watch you thought you lost 3 days ago.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "roommate",
+          "caller_label": "Devon · Hallway",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Too late, {{player_name}}. Why did you lock the real Devon out of his own apartment?",
+          "timestamp_label": "3:00 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if that watch just fell from the vent, then what is on my wrist right now?!",
+          "timestamp_label": "3:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Two Identical Watches",
+          "teaser_text": "Next: The watch on your wrist is running backward.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Backward Second Hand",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "3:02 AM · You stare at your own wrist. The silver watch you’re wearing has no serial number—and no pulse beneath the strap.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Stop staring at your wrist, {{player_name}}. Check your calendar. What date does your phone say?",
+          "timestamp_label": "3:02 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "November 14th. Why are you asking me that?",
+          "timestamp_label": "3:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "self_num",
+          "duration_sec": 8,
+          "transcript": "[crying, muffled thud] \"Today is November 17th! You’ve been missing since the 14th! Look at the fridge—all the milk expired!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "roommate",
+          "text": "Don’t listen to the vent. You never left this room on the 14th.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Your hands are shaking over the kitchen counter:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e3_free",
+              "label": "Open the fridge and check the date",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "The milk carton expired 3 days ago... what is going on?",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e3_vip",
+              "label": "Check your own front camera",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I opened my front camera. Why won’t my face focus?",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Because you haven’t eaten or slept in 72 hours. Every time you remember, the room resets to 2:47 AM.",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Because a camera can’t focus on a reflection that’s missing its original! Look behind you in the lens!",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "The digital stove clock flickers: 03:07 -> 02:47 -> 03:07. A cold draft pours from the crawlspace hatch.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number · Crawlspace",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Pull the latch inside the hallway closet! If you don’t open it before 3:15 AM, I’m going to run out of air!",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... if YOU are suffocating in the crawlspace, then who is typing with my thumbs right now?!",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Latch in the Closet",
+          "teaser_text": "Next: Devon warns you what actually lives inside that crawlspace.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Devon’s Confession",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "3:09 AM · Rain slams against the fire escape. Devon slides a folded hospital badge under your front door.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "{{player_name}}, STOP! Do NOT unbolt the crawlspace! I sealed that hatch myself on November 14th!",
+          "timestamp_label": "3:09 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Why would you lock someone in our ceiling, Devon?! I’m calling the police!",
+          "timestamp_label": "3:09 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 8,
+          "transcript": "[voice trembling, rain roaring] \"I found you unconscious on the bathroom floor with TWO phones—and something wearing your face crawling out of the vent!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "roommate",
+          "text": "I dragged one of you into the crawlspace and prayed I picked the right one.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Your hand hovers over the closet crawlspace bolt:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e4_free",
+              "label": "Ask Devon how he told us apart",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "How did you know which one of us was the real me?!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e4_vip",
+              "label": "Demand the voice above say our safe word",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "If you’re really me, tell me the name of my childhood dog!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "I didn’t know! One of you was bleeding red, and the other had cold grey dust on their fingertips!",
+          "timestamp_label": "3:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "You never had a dog, {{player_name}}! Wait—why did you just ask a trap question you used to test ME?",
+          "timestamp_label": "3:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "You glance down at your own phone screen. Fine grey dust smudges every letter you just typed.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number · 1% Battery",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Look at your fingerprints on the glass, {{player_name}}. Now look at the hallway camera feed I just sent you.",
+          "timestamp_label": "3:13 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No... my fingers are freezing. Why aren’t my hands bleeding when I scratch the drywall?!",
+          "timestamp_label": "3:13 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Grey Dust on the Screen",
+          "teaser_text": "Next: The hallway CCTV shows nobody was ever standing outside your door.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Camera 4: Empty Hallway",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "3:14 AM · Your apartment intercom clicks on by itself. Static fills the living room.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Devon isn’t outside, {{player_name}}. Check the building CCTV frame from 10 seconds ago.",
+          "timestamp_label": "3:14 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Then who slid the hospital badge under my door?!",
+          "timestamp_label": "3:14 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 8,
+          "transcript": "[distorted, slowing down] \"Let me in, {{player_name}}... I just want my apartment back...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "Devon moved out after the night of November 14th. The police taped the door.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n05b_img"
+        },
+        {
+          "id": "e5_n05b_img",
+          "type": "image",
+          "sender_id": "self_num",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "Hallway CCTV at 03:14 — completely empty right while \"Devon\" was knocking.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "The crawlspace latch rattles from the inside:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e5_free",
+              "label": "Unbolt the crawlspace hatch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m opening the hatch right now. Show me who you are!",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e5_vip",
+              "label": "Rip open the front door instead",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "I’m opening the front door to see the police seal myself!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Stop! Look at the tape on the OUTSIDE of your front door first—it’s yellow crime-scene tape!",
+          "timestamp_label": "3:16 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "The door won’t open from inside because the police bolted it after they couldn’t find my body!",
+          "timestamp_label": "3:16 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "The crawlspace hatch swings open. A cracked phone tumbles out—with YOUR driver’s license taped to the back.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number (0.2m away)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "You finally let me out. Now turn around and look at the mirror behind you.",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "There’s nothing in the mirror... only the phone floating in midair...",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Zero Reflection",
+          "teaser_text": "Finale next: Who died in the crawlspace on November 14th?",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "The Real Tenant of 4C",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3:21 AM · Sirens wail four floors below. Police boots thunder up the concrete stairwell toward 4C.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Read the date on the cracked phone, {{player_name}}. You died in the crawlspace when Devon locked the wrong one up there.",
+          "timestamp_label": "3:21 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No... then who have I been texting all night?!",
+          "timestamp_label": "3:21 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "self_num",
+          "duration_sec": 8,
+          "transcript": "[calm, crystal-clear—your exact voice] \"You were texting the living body that escaped with your keys. Thank you for unlocking the hatch so the police can finally find your bones.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "roommate",
+          "text": "Don’t tell the officers what really happened on Route 9.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Police flashlights sweep across the bedroom doorway:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e6_free",
+              "label": "Drop the phone so they hear it hit",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Let them find the truth in 4C.",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e6_vip",
+              "label": "Send the crawlspace GPS to 911",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Sending the full chat log and GPS trace to police dispatch now.",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "narrator",
+          "text": "An officer picks up the cracked phone from the rug. He stares at the screen—and whispers your name.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Dispatch just confirmed the transfer! The officers are shining their lights straight into the open crawlspace!",
+          "timestamp_label": "3:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "At 03:30 AM, the police radio crackles: \"Victim located in ceiling crawlspace. Suspect Devon arrested at hospital.\"",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number · Disconnected",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "narrator",
+          "text": "One last message appears on the evidence phone before the battery dies: \"You can rest now, {{player_name}}.\"",
+          "style": "banner",
+          "sfx": "unsent",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The clock finally ticks to 03:31 AM. For the first time in 3 days, the hallway is silent.",
+          "timestamp_label": "3:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "03:32 AM · Bank Alert",
+          "teaser_text": "Act 2 begins: The \"dead\" phone lights up—your face just withdrew $40,000 across town, and those bones in 4C aren’t yours.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "03:32 AM: Still Online",
+      "start_node_id": "e7_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "03:32 AM · One minute after the evidence phone died in 4C, your screen flashes white again—lit by a live bank security alert.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Did you really think 03:31 AM was the end, {{player_name}}? Your face just passed facial recognition at a downtown ATM.",
+          "timestamp_label": "3:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "How am I still typing if the battery hit 0%?! And why are you emptying my savings account?!",
+          "timestamp_label": "3:33 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "detective",
+          "duration_sec": 10,
+          "transcript": "[typing fast, stunned] \"Hello?! This is Detective Park, Cyber Unit. I’m holding the bagged evidence phone from 4C—how are new texts appearing on a dead SIM?!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "Tomorrow morning I’m driving to your parents’ house with your keys.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "Detective Park is staring at the bagged phone in the forensic van:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e7_free",
+              "label": "Beg Detective Park to freeze your bank card",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Don’t hang up! Someone wearing my face just drained my bank account!",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e7_vip",
+              "label": "Tell Park to trace the twin SIM tower",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Trace my number’s duplicate IMEI right now—it’s moving downtown!",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Whoa—I just pulled your banking log! A $40,000 wire went through 90 seconds ago from a terminal three miles away!",
+          "timestamp_label": "3:35 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Impossible... two identical SIMs are active on the same tower grid! One is inside my evidence bag, and the other just checked into a hotel!",
+          "timestamp_label": "3:35 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "Static crackles inside the forensic van as your own phone number dials the evidence bag directly.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09_call"
+        },
+        {
+          "id": "e7_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number · Downtown",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e7_n10",
+          "on_decline_node_id": "e7_n10"
+        },
+        {
+          "id": "e7_n10",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Nice try calling the cyber cops, {{player_name}}. By sunrise, nobody will believe you’re still in this world.",
+          "timestamp_label": "3:36 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n11_cliff"
+        },
+        {
+          "id": "e7_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Two Active SIMs",
+          "teaser_text": "Next: Detective Park intercepts the $40,000 bank transfer—and catches your doppelgänger on ATM video.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "The $40,000 Shadow Transfer",
+      "start_node_id": "e8_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "03:41 AM · Detective Park pulls the emergency fraud log on his tablet and sends you the live transfer slip.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Look at the timestamp on this transfer, {{player_name}}. The ATM camera shows YOU smiling—wearing a silver watch on the wrong wrist.",
+          "timestamp_label": "3:41 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e8_n03"
+        },
+        {
+          "id": "e8_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "My watch runs backward when it gets near me! Where did the money go?!",
+          "timestamp_label": "3:42 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e8_n04"
+        },
+        {
+          "id": "e8_n04",
+          "type": "voice_note",
+          "sender_id": "detective",
+          "duration_sec": 9,
+          "transcript": "[siren hum in background] \"It paid for a private medical courier and a one-night suite at the Mercer Hotel. Wait—why would an imposter book a medical courier?\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "unsent_message",
+          "sender_id": "roommate",
+          "text": "Tell the detective to check the crawlspace body’s left collarbone—you don’t have a steel pin!",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e8_n05_img"
+        },
+        {
+          "id": "e8_n05_img",
+          "type": "image",
+          "sender_id": "detective",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "03:32 AM fraud log — $40,000 authorized via facial ID while the original phone sat sealed in evidence.",
+          "timestamp_label": "3:44 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "Devon just sent and immediately unsent a panicked message from the holding cell:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e8_free",
+              "label": "Tell Park to check the collarbone pin",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Wait! Devon says the body in 4C has a steel collarbone pin—I NEVER broke mine!",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e8_vip",
+              "label": "Ask Park to intercept the medical courier",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Trace that medical courier right now—it’s heading for a hospital!",
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Hold everything! The coroner just confirmed a titanium pin in the crawlspace body’s collarbone—that body is NOT you!",
+          "timestamp_label": "3:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "The medical courier dispatch is booked for St. Jude’s ICU—to transfer an \"unidentified coma patient\" at 04:00 AM!",
+          "timestamp_label": "3:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n08_merge",
+          "type": "narrator",
+          "text": "A cold chill sweeps through the signal line—as if a hospital monitor just beeped directly inside your ear.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e8_n09"
+        },
+        {
+          "id": "e8_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "If those bones in 4C aren’t mine... then where is my real body right now?!",
+          "timestamp_label": "3:49 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e8_n10_cliff"
+        },
+        {
+          "id": "e8_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Not Your Bones",
+          "teaser_text": "Next: Detective Park storms the Mercer Hotel—and finds who checked into Room 404.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 9
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "title": "The Mercer Check-In",
+      "start_node_id": "e9_n01",
+      "default_ambient": "rain",
+      "nodes": [
+        {
+          "id": "e9_n01",
+          "type": "narrator",
+          "text": "03:54 AM · Rain hammers the glass canopy of the Mercer Hotel as Detective Park flashes his badge at the night clerk.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n02"
+        },
+        {
+          "id": "e9_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "The night clerk swears \"you\" walked through the lobby twenty minutes ago carrying a black telecom case—and never blinked once.",
+          "timestamp_label": "3:54 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e9_n03"
+        },
+        {
+          "id": "e9_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A telecom case?! That’s the rusted signal repeater Devon and I found off Route 9 in November!",
+          "timestamp_label": "3:55 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e9_n04"
+        },
+        {
+          "id": "e9_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 10,
+          "transcript": "[shaky voice on precinct speaker] \"{{player_name}}, listen to me! After Route 9, you collapsed with hypothermia—an ambulance took you to St. Jude’s! Then THAT THING walked back into 4C!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n05"
+        },
+        {
+          "id": "e9_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "Room 404 is just a relay station. You’re looking in the wrong building.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e9_n06_choice"
+        },
+        {
+          "id": "e9_n06_choice",
+          "type": "choice",
+          "prompt": "Detective Park reaches the fourth-floor hallway outside Room 404:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e9_free",
+              "label": "Warn Park not to touch any grey dust",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Put on gloves before opening 404—the grey dust carries the frequency!",
+              "next_node_id": "e9_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e9_vip",
+              "label": "Ask Devon whose body was in 4C’s ceiling",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Devon, if I’m in the hospital, whose bones did police pull out of 4C?!",
+              "next_node_id": "e9_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e9_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Gloves on! The door is ajar—the room is empty except for a humming silver box and a room keycard taped to the mirror!",
+          "timestamp_label": "3:58 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n07b",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "I swear I didn’t put anyone up there! The landlord said the tenant before us vanished three years ago—and he wore a titanium pin after a bike crash!",
+          "timestamp_label": "3:58 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n08_merge",
+          "type": "narrator",
+          "text": "Inside Room 404, the humming box flashes \"02:47\" in crimson LEDs—and suddenly kills every hallway light on Floor 4.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n09"
+        },
+        {
+          "id": "e9_n09",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "My radio just died... and the hotel mirror has a fresh message scratched in grey dust: \"ST. JUDE ICU · BED 9.\"",
+          "timestamp_label": "4:00 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n10_cliff"
+        },
+        {
+          "id": "e9_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "ICU Bed 9",
+          "teaser_text": "Next: The Room 404 keycard reveals how the Mimic hijacked your SIM—and how close it is to your hospital bed.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 10
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "title": "The Room 404 Keycard",
+      "start_node_id": "e10_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e10_n01",
+          "type": "narrator",
+          "text": "04:05 AM · Detective Park bags the Room 404 keycard and snaps a macro photo of the magnetic chip taped underneath.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e10_n02"
+        },
+        {
+          "id": "e10_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Look at the back of this hotel keycard, {{player_name}}. Someone soldered a micro-SIM booster onto the magnetic strip.",
+          "timestamp_label": "4:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e10_n03"
+        },
+        {
+          "id": "e10_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "That’s why I can only talk through text! It turned my own SIM card into a digital cage while my body lies in a coma!",
+          "timestamp_label": "4:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e10_n04"
+        },
+        {
+          "id": "e10_n04",
+          "type": "voice_note",
+          "sender_id": "detective",
+          "duration_sec": 9,
+          "transcript": "[footsteps running to elevator] \"I’m calling St. Jude’s ICU right now to put armed security outside Bed 9—hold on, their switchboard is busy!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n05"
+        },
+        {
+          "id": "e10_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "I already forwarded the ICU phone line straight to my pocket.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e10_n05_img"
+        },
+        {
+          "id": "e10_n05_img",
+          "type": "image",
+          "sender_id": "detective",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "Room 404 Mercer Hotel keycard — modified with a cloned SIM relay mirroring your exact carrier frequency.",
+          "timestamp_label": "4:08 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n06_choice"
+        },
+        {
+          "id": "e10_n06_choice",
+          "type": "choice",
+          "prompt": "The Mimic is jamming St. Jude’s switchboard from inside the hospital:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e10_free",
+              "label": "Have Park unplug the Room 404 relay box",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Smash that silver relay box in 404—it’s boosting his jammer!",
+              "next_node_id": "e10_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e10_vip",
+              "label": "Use the relay to hijack hospital Wi-Fi",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Wait—don’t smash it yet! Reverse the relay so I can ping the ICU nurses!",
+              "next_node_id": "e10_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e10_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "CRUNCH! I smashed the silver relay—my police radio is back online! Dispatch is sending three cruisers to St. Jude’s!",
+          "timestamp_label": "4:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Whoa—reversing the relay just pushed your text onto every pager in St. Jude’s ICU! The charge nurse just hit Code Silver!",
+          "timestamp_label": "4:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n08_merge",
+          "type": "narrator",
+          "text": "Across the city, red strobe lights flare inside St. Jude’s fourth-floor ICU wing—locking the automatic fire doors.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e10_n09"
+        },
+        {
+          "id": "e10_n09",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Clever trick, {{player_name}}... too bad I’m already standing on the INSIDE of the fire doors.",
+          "timestamp_label": "4:13 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e10_n10_cliff"
+        },
+        {
+          "id": "e10_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Inside the Fire Doors",
+          "teaser_text": "Next: Devon finally reveals the full horror of what crawled out of the Route 9 culvert.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 11
+        }
+      ]
+    },
+    {
+      "episode_number": 11,
+      "title": "What Happened on Route 9",
+      "start_node_id": "e11_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e11_n01",
+          "type": "narrator",
+          "text": "04:18 AM · Driving 90 mph toward St. Jude’s, Detective Park patches Devon in on conference line from the station.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e11_n02"
+        },
+        {
+          "id": "e11_n02",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "{{player_name}}, I’m sorry I lied about the ditch! When our car skidded off Route 9, your phone fell into a flooded telecom bunker under the road.",
+          "timestamp_label": "4:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e11_n03"
+        },
+        {
+          "id": "e11_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Why don’t I remember going down into a bunker?! All I remember is waking up in 4C at 2:47 AM!",
+          "timestamp_label": "4:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e11_n04"
+        },
+        {
+          "id": "e11_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 11,
+          "transcript": "[sobbing, rain on station window] \"Because you went down to grab your phone and touched a live prototype relay! Your heart stopped for ninety seconds—and something copied your voice out of the static!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n05"
+        },
+        {
+          "id": "e11_n05",
+          "type": "unsent_message",
+          "sender_id": "detective",
+          "text": "That Route 9 bunker matches a sealed 2021 corporate black-site signal test.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e11_n06_choice"
+        },
+        {
+          "id": "e11_n06_choice",
+          "type": "choice",
+          "prompt": "Your memory flickers—cold water, a buzzing blue arc, and your silver watch stopping:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e11_free",
+              "label": "Ask Devon how to break the relay’s link",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "If it copied me from the relay, what kills its signal?!",
+              "next_node_id": "e11_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e11_vip",
+              "label": "Ask why it hid the previous tenant in 4C",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Wait—why was the previous tenant of 4C already dead in our ceiling?!",
+              "next_node_id": "e11_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e11_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Salt water or a hard EMP short! The night of the crash, when rain flooded the bunker, it screamed and dropped your watch!",
+          "timestamp_label": "4:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Because the previous tenant was an engineer on that Route 9 project—he tried to seal the prototype inside 4C’s crawlspace before it replaced him!",
+          "timestamp_label": "4:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n08_merge",
+          "type": "narrator",
+          "text": "Detective Park’s cruiser skids to a stop outside St. Jude’s ER entrance—just as the hospital’s main lights blink out.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e11_n09"
+        },
+        {
+          "id": "e11_n09",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Backup generators are kicking in—and the forensic lab just texted me the official DNA certificate from 4C!",
+          "timestamp_label": "4:25 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e11_n10_cliff"
+        },
+        {
+          "id": "e11_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "The Route 9 Prototype",
+          "teaser_text": "Next: Devon calls from custody as the DNA mismatch clears him—and reveals the Mimic’s final timer.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 12
+        }
+      ]
+    },
+    {
+      "episode_number": 12,
+      "title": "The Holding Cell Warning",
+      "start_node_id": "e12_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e12_n01",
+          "type": "narrator",
+          "text": "04:28 AM · Under red emergency lamps, Detective Park sprints up the hospital stairs toward Floor 4 while your phone rings.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n02"
+        },
+        {
+          "id": "e12_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "I’m on Floor 3—stairs only, elevators are locked down! Keep texting me so I know your signal is still tethered to Bed 9!",
+          "timestamp_label": "4:28 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e12_n03"
+        },
+        {
+          "id": "e12_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I can feel the cold creeping into my hands again... every time the ICU monitor slows down, my letters blur!",
+          "timestamp_label": "4:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e12_n04"
+        },
+        {
+          "id": "e12_n04",
+          "type": "voice_note",
+          "sender_id": "self_num",
+          "duration_sec": 8,
+          "transcript": "[steady hospital monitor beep] \"Beep... beep... Look how quiet you look in Bed 9, {{player_name}}. One flick of the ventilator switch and I keep your pulse forever.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n05"
+        },
+        {
+          "id": "e12_n05",
+          "type": "unsent_message",
+          "sender_id": "roommate",
+          "text": "The prosecutor just dropped my murder charge—I’m riding with the SWAT van to St. Jude’s!",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e12_n06_choice"
+        },
+        {
+          "id": "e12_n06_choice",
+          "type": "choice",
+          "prompt": "You hear your own voice breathing right beside your comatose body:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e12_free",
+              "label": "Blast your phone ringtone at max volume",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m overriding the Bed 9 bedside tablet—max alarm siren NOW!",
+              "next_node_id": "e12_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e12_vip",
+              "label": "Speak the engineer’s Route 9 shutdown code",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Park! Read the serial stamped inside the 404 keycard over the PA!",
+              "next_node_id": "e12_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e12_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "I hear the bedside alarm screaming down the east hall! It bought us thirty seconds—I’m breaching the ICU doors!",
+          "timestamp_label": "4:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Code \"R9-ZERO-247\" broadcasted! The Mimic just stumbled away from your ventilator clutching its ears!",
+          "timestamp_label": "4:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n08_merge",
+          "type": "narrator",
+          "text": "The red corridor doors slam open—and Devon’s urgent call cuts straight through the hospital static.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n09_call"
+        },
+        {
+          "id": "e12_n09_call",
+          "type": "incoming_call",
+          "caller_id": "roommate",
+          "caller_label": "Devon · Cleared & En Route",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e12_n10",
+          "on_decline_node_id": "e12_n10"
+        },
+        {
+          "id": "e12_n10",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "The DNA report just cleared me 100%! Look at the forensic sheet Park is uploading—the dead engineer left a kill-switch note in his pocket!",
+          "timestamp_label": "4:34 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e12_n11_cliff"
+        },
+        {
+          "id": "e12_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "The Engineer’s Kill-Switch",
+          "teaser_text": "Next: The certified DNA report proves who died in 4C—and how to force the Mimic back into the static.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 13
+        }
+      ]
+    },
+    {
+      "episode_number": 13,
+      "title": "The Crawlspace DNA Report",
+      "start_node_id": "e13_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e13_n01",
+          "type": "narrator",
+          "text": "04:36 AM · Detective Park holds the ICU nurses’ station while uploading the official forensic report from Apartment 4C.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e13_n02"
+        },
+        {
+          "id": "e13_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Confirmed: 0% match to you, 99.99% match to Marcus Chen—the missing telecom engineer who lived in 4C three years ago.",
+          "timestamp_label": "4:36 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e13_n03"
+        },
+        {
+          "id": "e13_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And what did his pocket note say?! Where did the Mimic run when you breached the ICU?!",
+          "timestamp_label": "4:37 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e13_n04"
+        },
+        {
+          "id": "e13_n04",
+          "type": "voice_note",
+          "sender_id": "detective",
+          "duration_sec": 10,
+          "transcript": "[out of breath] \"It fled down the service elevator toward the basement generator room! And Chen’s note says the Mimic dies if its host SIM is shattered inside a live magnetic field!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "If I cut the basement backup power, Bed 9’s ventilator stops on its own.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e13_n05_img"
+        },
+        {
+          "id": "e13_n05_img",
+          "type": "image",
+          "sender_id": "detective",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Forensic DNA report — 0% match to {{player_name}}; confirms crawlspace remains belong to missing engineer Marcus Chen.",
+          "timestamp_label": "4:39 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n06_choice"
+        },
+        {
+          "id": "e13_n06_choice",
+          "type": "choice",
+          "prompt": "The Mimic just unsent its real plan—it’s cutting the basement generator to stop your ventilator:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e13_free",
+              "label": "Send Park straight to the MRI magnet room",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A live magnetic field—lure it through the basement MRI wing!",
+              "next_node_id": "e13_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e13_vip",
+              "label": "Alert ICU nurses to switch to battery pack",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Tell the Bed 9 nurse to lock the manual battery pack before power drops!",
+              "next_node_id": "e13_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e13_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Brilliant! The MRI suite sits right between the service elevator and the generator—we can trap it inside the magnetic bay!",
+          "timestamp_label": "4:42 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Charge nurse just switched Bed 9 to independent battery! Your heartbeat on the monitor jumped back to 78 BPM!",
+          "timestamp_label": "4:42 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n08_merge",
+          "type": "narrator",
+          "text": "Deep beneath the hospital, heavy steel doors groan shut as the basement generator hum drops an octave.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e13_n09"
+        },
+        {
+          "id": "e13_n09",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "I’m inside the hospital lobby with two officers! Heading down to Basement B1 to cut it off from the generator!",
+          "timestamp_label": "4:44 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e13_n10_cliff"
+        },
+        {
+          "id": "e13_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Descent to Basement B1",
+          "teaser_text": "Act 3 begins: The Mimic stalks the flooded basement corridor—wearing your exact face.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 14
+        }
+      ]
+    },
+    {
+      "episode_number": 14,
+      "title": "The Clone’s Last Gamble",
+      "start_node_id": "e14_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e14_n01",
+          "type": "narrator",
+          "text": "04:47 AM · In ICU Bed 9, your fingers twitch for the first time in three days as your consciousness fights to pull back into your body.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e14_n02"
+        },
+        {
+          "id": "e14_n02",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "Stop fighting the tether, {{player_name}}! If you wake up in Bed 9, I unravel into nothing!",
+          "timestamp_label": "4:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e14_n03"
+        },
+        {
+          "id": "e14_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You stole my watch, my bank account, and three days of my life! I’m taking my heartbeat back!",
+          "timestamp_label": "4:48 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e14_n04"
+        },
+        {
+          "id": "e14_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 9,
+          "transcript": "[echoing in tiled basement] \"Park, I see it! Wait—it’s standing under the fluorescent lamp pretending to be an orderly, and its shadow isn’t moving!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n05"
+        },
+        {
+          "id": "e14_n05",
+          "type": "unsent_message",
+          "sender_id": "detective",
+          "text": "Devon, DO NOT approach it alone—wait for me to power up the MRI coil!",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e14_n06_choice"
+        },
+        {
+          "id": "e14_n06_choice",
+          "type": "choice",
+          "prompt": "Your phone battery flickers 2% -> 1% as the Mimic lunges toward Devon:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e14_free",
+              "label": "Call your own number to disorient it",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dialing my own number—feedback loop straight into its ear!",
+              "next_node_id": "e14_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e14_vip",
+              "label": "Warn Devon to throw saline water at it",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Devon! Grab the saline IV bag on the cart—salt water breaks its static!",
+              "next_node_id": "e14_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e14_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "It worked! Its phone shrieked like a siren—it dropped the crowbar and stumbled backward toward the MRI hallway!",
+          "timestamp_label": "4:51 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n07b",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Splash! Grey sparks exploded off its jacket when the saline hit—it’s retreating straight into the MRI bay!",
+          "timestamp_label": "4:51 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n08_merge",
+          "type": "narrator",
+          "text": "The heavy copper-shielded door of the MRI room stands open—humming with a low, bone-rattling vibration.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e14_n09"
+        },
+        {
+          "id": "e14_n09",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "We’ve got it cornered outside MRI Bay 2! Hold on, {{player_name}}—we’re bringing you home!",
+          "timestamp_label": "4:53 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e14_n10_cliff"
+        },
+        {
+          "id": "e14_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Cornered at MRI Bay 2",
+          "teaser_text": "Next: The hospital lockdown seals Basement B1—and the Mimic tries one last voice trick.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 15
+        }
+      ]
+    },
+    {
+      "episode_number": 15,
+      "title": "The Copper-Shielded Trap",
+      "start_node_id": "e15_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e15_n01",
+          "type": "narrator",
+          "text": "04:56 AM · Basement B1 seals under emergency lockdown. Inside the MRI control booth, Detective Park watches the glass window.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e15_n02"
+        },
+        {
+          "id": "e15_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Problem, {{player_name}}: the Mimic knows what the magnet does—it’s holding an iron IV stand to jam the MRI door open!",
+          "timestamp_label": "4:56 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e15_n03"
+        },
+        {
+          "id": "e15_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait—if you ramp up the magnet coil NOW, won’t it yank the iron stand—and my silver watch—straight into the bore?!",
+          "timestamp_label": "4:57 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e15_n04"
+        },
+        {
+          "id": "e15_n04",
+          "type": "voice_note",
+          "sender_id": "detective",
+          "duration_sec": 9,
+          "transcript": "[switches clicking] \"Only if Devon gets clear of the doorway first! Wait—the corridor lights just flickered and TWO people are standing outside the glass!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n05"
+        },
+        {
+          "id": "e15_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "Watch closely, detective. Shoot the wrong one and you kill your witness.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e15_n06_choice"
+        },
+        {
+          "id": "e15_n06_choice",
+          "type": "choice",
+          "prompt": "The Mimic just shifted its face to look like DEVON under the flickering red lamp:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e15_free",
+              "label": "Check which one has a silver watch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Look at their wrists! The real Devon NEVER wears a watch!",
+              "next_node_id": "e15_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e15_vip",
+              "label": "Ask both what happened to our car in Nov",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Ask which side of the ditch we hit—only real Devon knows!",
+              "next_node_id": "e15_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e15_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Got it! The one on the left has a gleaming silver strap—and zero reflection on the control-booth glass!",
+          "timestamp_label": "5:00 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n07b",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Left ditch—the passenger mirror snapped off! The other guy didn’t even answer, he’s lunging for the control glass!",
+          "timestamp_label": "5:00 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n08_merge",
+          "type": "narrator",
+          "text": "CLANG! The magnetic field surges—ripping the iron IV stand out of the Mimic’s grip and slamming it against the wall.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n09"
+        },
+        {
+          "id": "e15_n09",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "You think a hospital magnet can erase me?! Let’s see what happens when I call your ICU bed directly!",
+          "timestamp_label": "5:02 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n10_cliff"
+        },
+        {
+          "id": "e15_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "The Face-Shift Trick",
+          "teaser_text": "Next: The Mimic calls you one last time as its voice begins fracturing into static.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 16
+        }
+      ]
+    },
+    {
+      "episode_number": 16,
+      "title": "The Fracturing Voice",
+      "start_node_id": "e16_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e16_n01",
+          "type": "narrator",
+          "text": "05:05 AM · Your phone vibrates violently—as if the Mimic is trying to crawl back through the speaker into ICU Bed 9.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e16_n02"
+        },
+        {
+          "id": "e16_n02",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "{{player_name}}, it’s pulling itself away from the MRI door using the fire hose! Its skin is flaking into grey dust!",
+          "timestamp_label": "5:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e16_n03"
+        },
+        {
+          "id": "e16_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Don’t let it reach the hallway stairwell—if it escapes the magnetic bay, I won’t make it to sunrise!",
+          "timestamp_label": "5:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e16_n04"
+        },
+        {
+          "id": "e16_n04",
+          "type": "voice_note",
+          "sender_id": "self_num",
+          "duration_sec": 9,
+          "transcript": "[pitch distorting wildly] \"Give... me... your... pulse! I paid the courier! I memorized your whole life! Why won’t my watch tick forward?!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n05"
+        },
+        {
+          "id": "e16_n05",
+          "type": "unsent_message",
+          "sender_id": "detective",
+          "text": "Security cameras in the basement just snapped two silhouettes at the magnetic bulkhead.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e16_n06_choice"
+        },
+        {
+          "id": "e16_n06_choice",
+          "type": "choice",
+          "prompt": "The Mimic’s voice is cracking—one last emotional blow could shatter its focus:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e16_free",
+              "label": "Remind it that it has zero real memories",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "You only copied a cloud journal—you don’t even know my mother’s laugh!",
+              "next_node_id": "e16_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e16_vip",
+              "label": "Tell Park to trigger maximum 3-Tesla pull",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Detective Park—hit the 3-Tesla override right now while Devon holds the rail!",
+              "next_node_id": "e16_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e16_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "It froze! The backward watch on its wrist just snapped clean off and flew into the MRI tunnel!",
+          "timestamp_label": "5:09 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "3-Tesla active! Every coin, key, and the cloned SIM phone in its pocket just shot straight into the magnetic core!",
+          "timestamp_label": "5:09 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n08_merge",
+          "type": "narrator",
+          "text": "A blinding blue arc cracks across the MRI bay as the cloned phone slams into the spinning magnet.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e16_n09_call"
+        },
+        {
+          "id": "e16_n09_call",
+          "type": "incoming_call",
+          "caller_id": "self_num",
+          "caller_label": "My Number · Signal Failing",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e16_n10",
+          "on_decline_node_id": "e16_n10"
+        },
+        {
+          "id": "e16_n10",
+          "type": "text",
+          "sender_id": "self_num",
+          "text": "No... 02:47... 02:47... please don’t turn off the—[STATIC]",
+          "timestamp_label": "5:11 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n11_cliff"
+        },
+        {
+          "id": "e16_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Into the Magnetic Core",
+          "teaser_text": "Next: Basement CCTV captures the final moment before the cloned SIM shatters.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 17
+        }
+      ]
+    },
+    {
+      "episode_number": 17,
+      "title": "Basement CCTV: Zero Reflection",
+      "start_node_id": "e17_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e17_n01",
+          "type": "narrator",
+          "text": "05:14 AM · Smoke drifts from the MRI bore. Detective Park pulls the basement security frame to verify the corridor is clear.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e17_n02"
+        },
+        {
+          "id": "e17_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Wait—check the CCTV still from ten seconds ago! The cloned phone shattered, so why is there STILL a silhouette leaning against the far wall?!",
+          "timestamp_label": "5:14 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e17_n03"
+        },
+        {
+          "id": "e17_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Zoom in on the floor—it’s crawling toward the emergency intercom box on the wall!",
+          "timestamp_label": "5:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e17_n04"
+        },
+        {
+          "id": "e17_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 8,
+          "transcript": "[panting, footsteps splashing] \"I see it! It’s barely a cloud of grey ash now, trying to plug into the hospital intercom jack!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n05",
+          "type": "unsent_message",
+          "sender_id": "self_num",
+          "text": "One wire... just let me touch one copper wire...",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e17_n05_img"
+        },
+        {
+          "id": "e17_n05_img",
+          "type": "image",
+          "sender_id": "detective",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "05:14 AM Basement B1 CCTV — faint silhouette collapsing beside the emergency wall intercom outside MRI Bay 2.",
+          "timestamp_label": "5:16 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n06_choice"
+        },
+        {
+          "id": "e17_n06_choice",
+          "type": "choice",
+          "prompt": "Its grey fingertips are two inches from the copper intercom jack:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e17_free",
+              "label": "Tell Devon to yank the wall intercom breaker",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Devon! Flip the red wall breaker above your head—kill the intercom!",
+              "next_node_id": "e17_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e17_vip",
+              "label": "Have Park hit the MRI quench discharge",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Park! Dump the secondary quench pulse—burn out every stray wave!",
+              "next_node_id": "e17_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e17_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Breaker DOWN! The intercom sparked dead—and the shadow on the wall just collapsed into a pile of ordinary dust!",
+          "timestamp_label": "5:19 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Quench pulse fired! Every static wave in Basement B1 flatlined to zero—nothing is moving on CCTV!",
+          "timestamp_label": "5:19 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n08_merge",
+          "type": "narrator",
+          "text": "Silence settles over Basement B1. Upstairs in ICU Bed 9, the heartbeat monitor chimes in a strong, steady rhythm.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e17_n09"
+        },
+        {
+          "id": "e17_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Wait... I can feel the warm cotton blanket on my hands... I’m not in the phone anymore.",
+          "timestamp_label": "5:21 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e17_n10_cliff"
+        },
+        {
+          "id": "e17_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "The Static Flatlines",
+          "teaser_text": "Next: Upstairs in ICU Bed 9, your eyes snap open as the clock finally moves past 2:47.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 18
+        }
+      ]
+    },
+    {
+      "episode_number": 18,
+      "title": "Waking Up in Bed 9",
+      "start_node_id": "e18_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e18_n01",
+          "type": "narrator",
+          "text": "05:32 AM · Bright white ceiling tiles swim into focus. A nurse gasps as your eyelids flutter open in ICU Bed 9.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e18_n02"
+        },
+        {
+          "id": "e18_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "The charge nurse just radioed down—YOUR EYES ARE OPEN! Stay still, {{player_name}}, Devon and I are coming straight up!",
+          "timestamp_label": "5:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e18_n03"
+        },
+        {
+          "id": "e18_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "My throat feels like sandpaper... but I’m actually typing with my own warm fingers on the nurse’s loaner phone.",
+          "timestamp_label": "5:33 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e18_n04"
+        },
+        {
+          "id": "e18_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 8,
+          "transcript": "[laughing through tears] \"You made it! You actually beat that thing! And the bank just reversed the entire $40,000 fraud hold!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n05"
+        },
+        {
+          "id": "e18_n05",
+          "type": "unsent_message",
+          "sender_id": "detective",
+          "text": "Federal cyber-investigators just sealed the Route 9 culvert with concrete.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e18_n06_choice"
+        },
+        {
+          "id": "e18_n06_choice",
+          "type": "choice",
+          "prompt": "You glance at the bedside tray where the nurse placed your belongings:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e18_free",
+              "label": "Check the second hand on your real watch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "My real watch is ticking forward—5:35 AM, 5:36 AM. No more loop!",
+              "next_node_id": "e18_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e18_vip",
+              "label": "Ask Park to seal the Route 9 bunker forever",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Promise me nobody else ever finds that Route 9 repeater box.",
+              "next_node_id": "e18_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e18_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "And look at the mirror across from Bed 9—your reflection is staring right back, 100% solid and alive!",
+          "timestamp_label": "5:37 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Already done—the Route 9 culvert is being filled with reinforced concrete as we speak, and Marcus Chen’s family finally has closure.",
+          "timestamp_label": "5:37 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n08_merge",
+          "type": "narrator",
+          "text": "Outside the ICU window, pale pink dawn touches the rooftops as the night rain finally stops.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e18_n09"
+        },
+        {
+          "id": "e18_n09",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "One last formality before we close the file—I’m bringing up the crushed cloned SIM so you can watch it go into the incinerator.",
+          "timestamp_label": "5:39 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e18_n10_cliff"
+        },
+        {
+          "id": "e18_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Warm Hands, Forward Time",
+          "teaser_text": "Next: Detective Park closes the cyber-incident file—and hands you a brand-new phone number.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 19
+        }
+      ]
+    },
+    {
+      "episode_number": 19,
+      "title": "Burning the Cloned SIM",
+      "start_node_id": "e19_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e19_n01",
+          "type": "narrator",
+          "text": "06:15 AM · Early sunlight warms the hospital courtyard. Detective Park steps into your recovery room holding a sealed titanium evidence tin.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n02"
+        },
+        {
+          "id": "e19_n02",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "The telecom carrier permanently purged your old number from the national registry. Nobody—and nothing—can ever dial it again.",
+          "timestamp_label": "6:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e19_n03"
+        },
+        {
+          "id": "e19_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good riddance. And what about Apartment 4C? Please tell me we’re breaking our lease today.",
+          "timestamp_label": "6:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e19_n04"
+        },
+        {
+          "id": "e19_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 8,
+          "transcript": "[cheerful rustling] \"Already packed both our bags and found a sunny top-floor place with ZERO crawlspaces and ZERO attics!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n05"
+        },
+        {
+          "id": "e19_n05",
+          "type": "unsent_message",
+          "sender_id": "roommate",
+          "text": "Thank you for not giving up on me even when I looked guilty.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e19_n06_choice"
+        },
+        {
+          "id": "e19_n06_choice",
+          "type": "choice",
+          "prompt": "Detective Park opens the titanium tin showing the shattered, scorched SIM chip:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e19_free",
+              "label": "Sign the official destruction order",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Signed and dated—melt that chip down to slag.",
+              "next_node_id": "e19_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e19_vip",
+              "label": "Donate the recovered $40k reward to Chen’s kin",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Pass my thanks—and the city’s whistleblower stipend—to Marcus Chen’s family.",
+              "next_node_id": "e19_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e19_n07a",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Stamped and archived. The Cyber Unit is officially marking Case 4C as resolved—with zero active anomalies.",
+          "timestamp_label": "6:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Marcus’s sister just called our desk in tears—knowing his final note saved your life gave her real peace.",
+          "timestamp_label": "6:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n08_merge",
+          "type": "narrator",
+          "text": "Your brand-new phone chimes softly—displaying a fresh SIM number and a single incoming test call.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e19_n09_call"
+        },
+        {
+          "id": "e19_n09_call",
+          "type": "incoming_call",
+          "caller_id": "detective",
+          "caller_label": "Det. Park · New Line Check",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e19_n10",
+          "on_decline_node_id": "e19_n10"
+        },
+        {
+          "id": "e19_n10",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Crystal clear audio, zero echo, zero static. Enjoy the sunshine, {{player_name}}.",
+          "timestamp_label": "6:22 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e19_n11_cliff"
+        },
+        {
+          "id": "e19_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Case 4C Closed",
+          "teaser_text": "Grand Finale next: One month later, a sunny morning coffee—and a phone that only rings with real friends.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 20
+        }
+      ]
+    },
+    {
+      "episode_number": 20,
+      "title": "Morning Signal",
+      "start_node_id": "e20_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e20_n01",
+          "type": "narrator",
+          "text": "09:15 AM · One month later. Sunlight pours through the balcony of your new apartment as coffee brews in the kitchen.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n02"
+        },
+        {
+          "id": "e20_n02",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Good morning, {{player_name}}! Grabbed two iced lattes and croissants from the corner bakery—buzz me up?",
+          "timestamp_label": "9:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n03"
+        },
+        {
+          "id": "e20_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Buzzing you up now—and yes, I checked the lobby camera first just out of habit. Only one Devon down there!",
+          "timestamp_label": "9:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n04"
+        },
+        {
+          "id": "e20_n04",
+          "type": "voice_note",
+          "sender_id": "roommate",
+          "duration_sec": 7,
+          "transcript": "[bright street chatter, laughing] \"Fair enough! No backward watches, no grey dust, and definitely no 2:47 AM texts!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n05"
+        },
+        {
+          "id": "e20_n05",
+          "type": "unsent_message",
+          "sender_id": "detective",
+          "text": "Checking in one last time—your new SIM is 100% clean. Stay safe, kid.",
+          "unsent_placeholder": "Message unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e20_n06_choice"
+        },
+        {
+          "id": "e20_n06_choice",
+          "type": "choice",
+          "prompt": "You step out onto the sunlit balcony holding your warm mug:",
+          "options": [
+            {
+              "option_id": "opt_story_141_e20_free",
+              "label": "Glance at your wrist—09:18 AM and moving",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Every second ticks forward in broad daylight. Best feeling on earth.",
+              "next_node_id": "e20_n07a"
+            },
+            {
+              "option_id": "opt_story_141_e20_vip",
+              "label": "Text Detective Park a thank-you photo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Coffee’s on us next weekend, Detective—thanks for pulling me back!",
+              "next_node_id": "e20_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e20_n07a",
+          "type": "text",
+          "sender_id": "roommate",
+          "text": "Doors opening on your floor—time to celebrate being 100% real and wide awake!",
+          "timestamp_label": "9:19 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n07b",
+          "type": "text",
+          "sender_id": "detective",
+          "text": "Deal! Make mine black coffee—and keep your phone charged above 20% from now on, {{player_name}}.",
+          "timestamp_label": "9:19 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n08_merge",
+          "type": "narrator",
+          "text": "Sunlight gleams off your clean phone screen—reflecting only the bright blue sky and your own smiling face.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n09"
+        },
+        {
+          "id": "e20_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I used to dread every midnight ping. Today, the only voice on my line is my own—alive, free, and finally moving forward.",
+          "timestamp_label": "9:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "light",
+          "next_node_id": "e20_n10_cliff"
+        },
+        {
+          "id": "e20_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Signal Restored",
+          "teaser_text": "You completed all 20 episodes of \"Texting My Own Number\"! Discover more mind-bending thrillers in the Library.",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

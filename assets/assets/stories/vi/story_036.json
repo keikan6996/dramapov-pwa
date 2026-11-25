@@ -1,0 +1,1018 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_036",
+  "lang": "vi",
+  "metadata": {
+    "title": "Người Lạ Ở Tiệm Giặt 24 Giờ",
+    "subtitle": "Em gái nhắn: \"Rời khỏi đó ngay! Nhìn kính máy sấy đi—người đàn ông ngồi sau lưng chị không có bóng.\"",
+    "genre": "thriller",
+    "tags": [
+      "Tiệm giặt đêm",
+      "3 Giờ Sáng",
+      "Rùng rợn"
+    ],
+    "cover_image": "assets/media/covers/story_036.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Bạn)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#3B82F6"
+    },
+    {
+      "id": "ally",
+      "name": "Nhi (Em gái)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Máy Sấy Số 08",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Người kể chuyện",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Vòng Quay Lúc 3:12 Sáng",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "03:12 sáng · Đèn neon rè nhẹ trong tiệm giặt tự động 24 giờ vắng tanh. Quần áo quay đều sau ô cửa kính tròn.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} ơi, em vừa xem ảnh chị gửi từ tiệm giặt! Đừng quay đầu lại—ông ngồi băng ghế sau lưng chị KHÔNG CÓ BÓNG dưới đèn sáng trưng kìa!",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gì cơ?! Lúc chị bước vào tiệm có ai đâu! Chuông cửa cũng đâu có kêu!",
+          "timestamp_label": "03:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Máy sấy sắp xong rồi. Ở lại tới khi về 00:00 đi.",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cầm túi đứng dậy đi ra ngoài từ từ thôi! Khoan—sao Máy sấy số 8 tự quay dù nãy em thấy nó trống không?!",
+          "timestamp_label": "03:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[tiếng lồng sấy quay, tiếng gõ từ bên trong kính] ...Còn năm phút nữa {{player_name}}... Đừng bỏ quên áo lại...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Cửa kính tự động ngoài mặt đường bỗng kêu \"cạch\" một tiếng rồi khóa từ kín mít.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Gạt công tắc thoát hiểm cạnh cửa kính",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chị gạt nút mở cửa khẩn cấp đây!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Nhìn kỹ vào trong lồng Máy sấy số 8",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bí mật · Xem QC",
+              "player_reply_text": "Để chị nhìn xem trong máy số 8 có gì...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Công tắc tóe lửa tắt ngấm. Trong bóng kính tối, người đàn ông sau lưng bạn đã đứng dậy, tiến gần thêm hai bước.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "MỞ KHÓA BÍ MẬT: Quay bên trong máy sấy là một chiếc ví da cũ kỹ từ thập niên 90—và mẩu báo cũ về vụ cướp tiệm giặt đêm.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Em đang gọi taxi chạy qua đón chị! Đứng sát cửa kính mặt đường để xe đi ngang thấy chị nhé!",
+          "timestamp_label": "03:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Điện Thoại Bàn Trong Tiệm",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Tiếng xu rơi loảng xoảng: \"Vòng sấy kết thúc lúc 00:00. Đừng quay lưng với Máy số 8.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Bạn từ chối. Lập tức cả tám đồng hồ máy sấy đồng bộ nhấp nháy đỏ, cùng đếm ngược từ 00:59.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Còn 59 Giây Nữa",
+          "teaser_text": "Tập 2: Đèn neon tắt phụt—và cửa Máy sấy số 8 bật mở đánh tách.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Đồng Hồ Về 00:00",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "03:17 sáng · Ánh đèn LED đỏ hắt dài trên nền gạch lạnh. Băng ghế sau lưng bạn giờ đã trống trơn.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Hai phút nữa em tới nơi!! {{player_name}} ơi, ông kia biến đi đâu rồi?! Em không thấy trên màn hình nữa!",
+          "timestamp_label": "03:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ghế trống không rồi… khoan, máy đổi xu tự dưng nhả tiền xu rơi rào rào xuống sàn!",
+          "timestamp_label": "03:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[tiếng còi hết giờ hú dài, chốt sắt bật] ...Hết xu rồi {{player_name}}... Cho tôi mượn một đồng...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Bỏ một đồng xu vào Máy số 8 để cửa đóng lại.",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Khoan—có khi vong bị kẹt vòng lặp! Chị bỏ một đồng xu vào Máy số 8 để gia hạn giờ trước khi nó về 00:00 đi!",
+          "timestamp_label": "03:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "00:05… 00:04… Cánh cửa kính Máy số 8 rung bần bật sắp bật tung.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Thả nhanh một đồng xu vào khe Máy số 8",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chị thả xu vào khe ngay đây!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Rút phăng dây nguồn Máy số 8 khỏi ổ cắm",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bí mật · Xem QC",
+              "player_reply_text": "Chị giật dây điện máy sấy ra!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Tiếng xu rơi đánh keng. Đồng hồ nhảy lên 30:00, máy êm ru—và cửa kính tự động trượt mở toang.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "MỞ KHÓA BÍ MẬT: Đèn tiệm sáng trắng trở lại. Bóng người lạ khẽ gật đầu cảm ơn từ bên kia đường rồi tan vào màn sương.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Bạn lao ra ngoài lên thẳng chiếc taxi của Nhi. Ngoái nhìn qua kính sau, cả tiệm giặt tối om như đã đóng cửa từ lâu.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Nhi (Ngồi Ngay Cạnh Bạn)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Nhi sững người khi bạn kéo khóa túi đồ: \"Khoan… chiếc áo khoác cũ từ thập niên 90 này của ai nằm lẫn trong đồ chị thế?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Bạn sờ túi áo khoác—bên trong có một đồng xu lạnh buốt khắc năm 1994.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Chu Trình Hoàn Tất",
+          "teaser_text": "Hết Phần 1 · Lần sau nhớ giặt đồ trước khi trời tối.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Thiếu Một Đồng Xu",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "03:18 · Bạn đã chạy thoát khỏi tiệm giặt 24 giờ—nhưng giỏ đồ bỗng rung lên và Máy Sấy Số 08 nhắn tới máy bạn.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, kiểm tra giỏ quần áo ngay! Chị có lỡ lấy nhầm món đồ nào không phải của chị không?!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nhi ơi, có chiếc đồng hồ quả quýt bằng bạc mắc trong ống quần chị—và camera tiệm giặt vừa gửi thông báo vào máy chị!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Camera Tiệm Giặt · 03:16 — Người đàn ông không bóng ngước thẳng lên ống kính trần.",
+          "blur_until_tap": true,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Máy Sấy Số 08: \"Còn 04:00. Trả lại đồng hồ trước 00:00 nếu không tôi sẽ bước vào bóng của cô.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Cô lấy mất thứ cuối cùng giữ ấm cho tôi, {{player_name}}. Mang nó về phố Giặt Ủi đi.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Khoan—xem dòng chữ khắc trong nắp đồng hồ đi! Ghi năm 1974!",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Nhi hốt hoảng] \"Đừng quay lại một mình! Em chạy xe tới cổng nhà chị trong hai phút—bật sáng đèn hiên lên!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Cái bóng của chính bạn trên tường phòng ngủ vừa kéo dài về phía cửa sổ.",
+          "options": [
+            {
+              "option_id": "opt_e3_run_porch",
+              "label": "Chạy ngay ra hiên đón đèn xe của Nhi",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chị đứng ngoài hiên cầm đồng hồ rồi—phóng nhanh lên Nhi!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_inspect_watch",
+              "label": "Mở nắp đồng hồ xem bên trong có gì",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Manh mối",
+              "player_reply_text": "Chị mở nắp đồng hồ rồi! Bên trong ghi địa chỉ: \"412 Đường Cây Phong — Gửi Con Gái\"!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Lên xe ngay! Chạy ra đại lộ sáng đèn—dưới đèn đường ông ta không theo được!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "412 Đường Cây Phong?! Đó là viện dưỡng lão cách tiệm giặt chỉ hai dãy phố!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Máy Sấy Số 08: \"Còn 02:30. Con gái tôi vẫn đang chờ xem giờ.\"",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Còn 02:30.",
+          "teaser_text": "Tập 4: Phóng xe tới số 412 trước khi đồng hồ về 0, bạn biết người đàn ông không bóng thực ra là ai.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Chiếc Đồng Hồ Năm 1974",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "03:28 · Nhi đỗ xe trước Viện Dưỡng Lão Cây Phong. Cô y tá trực đêm đón hai chị em ngay sảnh sáng đèn.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Nhìn tấm ảnh trong nắp đồng hồ kìa {{player_name}}! Cô y tá nhận ra ngay—đó là bố của cụ Lan, ông mất trên đường từ tiệm giặt về năm 1974!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Khoan... ông ấy không hề định hại chị?! Ông làm rơi đồng hồ trong Máy Sấy Số 08 năm mươi năm trước đêm ông không về được nhà sao?!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Còn 01:15. Làm ơn nhắn với Lan rằng bố không hề quên sinh nhật con.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Con hẻm kính sau tiệm giặt chớp sáng—bóng người cao gầy đứng chờ lặng lẽ dưới bảng đèn neon.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cô y tá bảo cụ Lan vẫn đang thức ở Phòng 104—mùa đông nào cụ cũng nhắc chiếc đồng hồ bạc của bố!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Nếu trao đồng hồ cho con gái ông trước 00:00, ông sẽ lấy lại được cái bóng của mình.",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[tiếng tích tắc êm dịu của đồng hồ] \"Còn một phút thôi, {{player_name}}... làm ơn đưa nó cho Lan.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Phòng 104 ở ngay cuối hành lang sáng đèn, đồng hồ đếm ngược còn 00:45.",
+          "options": [
+            {
+              "option_id": "opt_e4_deliver_watch",
+              "label": "Mang ngay đồng hồ bạc vào Phòng 104",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chị đang cùng cô y tá bước vào Phòng 104 đây, Nhi!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_wind_watch",
+              "label": "Lên dây cót cho đồng hồ chạy lại trước",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Xúc động",
+              "player_reply_text": "Chị lên cót rồi—đồng hồ chạy tích tắc lại rồi! Đưa cho cụ Lan ngay đây!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cụ Lan bật khóc nức nở ngay khi thấy nét khắc! Cụ nhận ra ngay lập tức!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Chiếc đồng hồ ngân nhẹ trên tay cụ—và đồng hồ Máy Sấy Số 08 dừng hẳn ở 00:01!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Nhìn qua cửa kính sảnh ra con hẻm kìa—người đàn ông không bóng đang đứng dưới cột đèn đường.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "00:01 Trên Bộ Đếm.",
+          "teaser_text": "Tập 5: Dưới ánh đèn đường ấm áp, người đàn ông không bóng cuối cùng cũng có lại cái bóng.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Chiếc Bóng Trở Về",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03:35 · Trước cổng viện dưỡng lão. Dưới ánh đèn vàng, người đàn ông ngước nhìn lên ô cửa Phòng 104.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Nhìn mặt đường dưới chân ông ấy kìa {{player_name}}! Ông ấy có bóng lại rồi—và ông ấy đang mỉm cười!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ông vừa nghiêng mũ chào về phía Phòng 104 rồi tan vào màn sương sớm.",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "Đèn đường con hẻm · 03:35 — Bóng người đổ xuống mặt đường ấm áp trước khi tan biến.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Máy Sấy Số 08: \"00:00 · Hoàn Tất Chu Trình. Cảm ơn.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cụ Lan ôm chiếc đồng hồ vào ngực và chìm vào giấc ngủ với nụ cười mãn nguyện nhất.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Phi vụ giải cứu lúc 3 giờ sáng đỉnh nhất của hai chị em mình.",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Nhi lau nước mắt] \"Thôi từ nay em chính thức không chê thói quen giặt đồ đêm của chị nữa.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Bảng đèn tiệm giặt bên kia đường kêu vo ve bình yên.",
+          "options": [
+            {
+              "option_id": "opt_e5_hug_kayla",
+              "label": "Ôm chặt lấy Nhi bên cạnh xe",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cảm ơn em gái lúc nào cũng chạy tới vì chị nhé.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_grab_donuts",
+              "label": "Rủ Nhi đi ăn bánh nóng 24 giờ ngay",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Chị em",
+              "player_reply_text": "Pha này xứng đáng ăn bánh nóng ngay lập tức. Chị bao!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Chuyện đương nhiên mà chị hai. Về nhà trước khi trời sáng thôi!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Đúng ý em luôn! Xuất phát!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Máy Sấy Số 08 · Ngắt Kết Nối Vĩnh Viễn.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Hoàn Tất Chu Trình.",
+          "teaser_text": "Tập 6 (Tập cuối): Từ nay chỉ giặt đồ ban ngày—và một kỷ niệm hai chị em không bao giờ quên.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Giặt Đồ Ban Ngày",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "14:00 · Nắng chiều ấm áp rọi qua khung kính tiệm giặt khi bạn và Nhi cùng gấp những chiếc khăn thơm phức.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Thấy chỗ này lúc 2 giờ chiều dễ thương hơn hẳn không {{player_name}}? Không bóng ma, nắng chan hòa.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nhìn Máy Sấy Số 08 kìa—ai đó dán một bông hoa nhỏ cảm ơn ngay trên khe bỏ xu.",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sáng nay cháu gái cụ Lan ghé qua cảm ơn nhân viên tiệm giặt đấy.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Máy Sấy Số 08: \"Ấm Áp & Sẵn Sàng.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Mà nhìn xuống nền gạch kìa—bóng của CẢ HAI chị em mình đều ở đúng chỗ.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "May quá vì mình có cô chị tuyệt vời thế này.",
+          "unsent_placeholder": "Tin nhắn đã bị thu hồi",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[Nhi cười tinh nghịch] \"Đua về nhà nào—ai về sau phải gấp hết ga trải giường!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Bạn ôm giỏ quần áo ấm sực dưới nắng chiều.",
+          "options": [
+            {
+              "option_id": "opt_e6_race_kayla",
+              "label": "Cười vang chạy đua ra xe với Nhi",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Còn lâu chị mới gấp ga giường—đuổi kịp chị đi!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_wave_dryer8",
+              "label": "Vỗ nhẹ chào tạm biệt Máy Sấy Số 08",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Ấm áp",
+              "player_reply_text": "Tạm biệt Máy Sấy Số 08 nhé. Từ nay chỉ gặp ban ngày thôi!",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ê chơi ăn gian—chị chạy trước rồi!",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Quần áo thơm nhất khu phố. Về nhà thôi!",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Người Lạ Tiệm Giặt · Đã Yên Nghỉ.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Tập Cuối · Trước Hoàng Hôn.",
+          "teaser_text": "HẾT · Lần sau nhớ giặt đồ trước khi mặt trời lặn—trừ khi có ai đó cần gửi lại kỷ vật.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

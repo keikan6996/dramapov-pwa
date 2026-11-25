@@ -1,0 +1,1008 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_045",
+  "lang": "id",
+  "metadata": {
+    "title": "Shift Malam di Lantai 14",
+    "subtitle": "Seorang dokter magang rumah sakit menghilang saat listrik padam—dan pesan suaranya datang dari dalam lift barang yang macet.",
+    "genre": "mystery",
+    "tags": [
+      "Rumah Sakit",
+      "Shift Malam",
+      "Ketegangan"
+    ],
+    "cover_image": "assets/media/covers/story_045.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Kamu)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "priya",
+      "name": "Dr. Priya",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "grant",
+      "name": "Perawat Grant",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "keller",
+      "name": "Dr. Keller",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Generator Cadangan",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02:18 · Grup Shift \"ST. JUDE BANGSAL 14\". Lampu merah darurat berdengung setelah pemadaman 90 detik.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Ada yang melihat Dokter Magang Nora? Pager-nya ada di meja jaga perawat.",
+          "timestamp_label": "02:18",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Dia turun ke farmasi mengambil infus insulin Kamar 1408 tepat sebelum lampu padam.",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tunggu—Kamar 1408 sudah dipulangkan pukul 18:00. Kenapa Nora mengambil infus insulin untuk kamar kosong?",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Aku menyuruhnya memeriksa log audit rekam medis, bukan farmasi—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Dr. Keller? Audit rekam medis apa? Tak ada yang memberi tahu kami soal audit.",
+          "timestamp_label": "02:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "grant",
+          "duration_sec": 10,
+          "transcript": "[statis, suara teredam di latar] {{player_name}}, aku di dekat Lift Barang B! Nora menggedor palka—katanya seseorang memotong telepon daruratnya!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "JANGAN memaksa pintu barang secara manual. Teknisi sedang dalam perjalanan.",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Nora terjebak di antara lantai 13 dan 14. Apa yang kamu periksa dulu?",
+          "options": [
+            {
+              "option_id": "opt_pry_door",
+              "label": "Bantu Grant mencongkel celah lift",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Lupakan menunggu—Grant, ambil linggis dari lemari perlengkapan!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_audit_file",
+              "label": "Buka terminal rekam medis Nora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bukti · Tonton Iklan",
+              "player_reply_text": "Tunggu, Nora meninggalkan terminalnya terbuka di berkas Kamar 1408!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "Kalian mengganjal pintu baja terbuka lima belas senti. Tangan pucat Nora menyelipkan secarik resep terlipat lewat celah itu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "PERINGATAN AUDIT: Tiga vial obat penenang terlarang ditagihkan ke Kamar 1408 yang kosong memakai login DR. KELLER—lima menit lalu.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, generatornya baru saja mati lagi—dan pintu tangga terkunci.",
+          "timestamp_label": "02:23",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "Kabel Lift Baru Saja Mengerang",
+          "teaser_text": "Episode 2: Seseorang berada di dalam ruang mesin lift di atap.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Vial yang Hilang",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02:26 · Koridor Bangsal 14. Lampu cadangan memandikan lorong dalam cahaya merah tua.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Kami menarik Nora naik lewat celah! Dia memar tapi bernapas.",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Bagus. Sekarang beri tahu kami siapa yang menekan sakelar henti manual di Lift Barang B.",
+          "timestamp_label": "02:27",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Aku berada di triase UGD di bawah sepanjang waktu. Periksa kameranya.",
+          "timestamp_label": "02:27",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 11,
+          "transcript": "[berbisik cepat] {{player_name}}, aku sudah cek keamanan! Seseorang memakai lencana Dr. Keller di atap—tapi tinggi badannya di CCTV jauh lebih pendek dari Keller!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n06",
+          "type": "unsent_message",
+          "sender_id": "grant",
+          "text": "Nora melihat vial-vial itu di lokerku, aku cuma meminjam lencana Keller—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grant… kamu berdiri tepat di sebelah Nora sekarang. Menjauh darinya.",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Grant meraih troli darurat medis. Bagaimana kamu turun tangan?",
+          "options": [
+            {
+              "option_id": "opt_code_blue",
+              "label": "Tekan alarm Code Blue Bangsal 14",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Menarik alarm Code Blue lorong sekarang juga!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_block_exit",
+              "label": "Kunci pintu magnetik bangsal dari meja",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jebakan · Tonton Iklan",
+              "player_reply_text": "Mengunci pintu keluar magnetik bangsal dari konsol pos perawat!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Alarm membanjiri Bangsal 14. Enam petugas keamanan menerobos pintu ganda sebelum Grant mencapai tangga.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Kunci magnetik membanting menutup dengan bunyi berat. Grant menjatuhkan vial curian di lantai linoleum.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Kerja bagus, {{player_name}}. Keamanan sudah menahan Grant.",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Tunggu… Nora baru menyerahkan kertas dari sakunya. Grant tidak menjual vial itu di jalanan—dia mengantarkannya ke mantan pasien Kamar 1408.",
+          "timestamp_label": "02:33",
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "Kamar 1408 Tak Pernah Dipulangkan",
+          "teaser_text": "Surat kepulangannya dipalsukan—dan nama asli pasiennya ada di dewan direksi rumah sakit.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Pengambilalihan Poros Barang",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02:18 · Generator cadangan merah berdengung di Lantai 14 saat kamu dan Dr. Priya berlari ke panel lift barang.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, Perawat Grant menemukan rekam medis asli anggota dewan itu! Kamar 1408 mengalami reaksi fatal terhadap obat uji coba Dr. Keller!",
+          "timestamp_label": "02:18",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dan dokter magang yang hilang itu memergokinya menukar tiga vial—jadi Keller menghentikan lift barang dengan dia di dalam!",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "Panel Barang 14 · 02:19 — Pengoperasian manual terkunci dengan lencana dokter senior.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Aku bisa memotong relai servis dari pos perawat, {{player_name}}, tapi lencana Keller masih terbaca di Lantai 14!",
+          "timestamp_label": "02:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Bersihkan log farmasi untuk Batch 404 sebelum generator disetel ulang.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Interkom di sebelah pintu lift barang yang macet berderak pelan.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Tekan interkom & tenangkan dokter magang",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bertahanlah! Kami memintas kuncinya sekarang!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Buka audit Batch 404 di tablet Priya",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Memeriksa audit farmasi Batch 404...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Suara bergetarnya menjawab balik—dia masih menyimpan salah satu vial tukaran di saku baju scrub-nya.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "RAHASIA TERBUKA: Dr. Keller memalsukan data keamanan Batch 404 untuk mengamankan akuisisi biotek $40 juta yang dijadwalkan pukul 09:00.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Keller berjalan menyusuri koridor sayap timur sekarang! Sembunyikan tabletnya!",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "keller",
+          "duration_sec": 9,
+          "transcript": "[kabel lift berderit, dokter magang terengah] ...{{player_name}}, dia memutus kipas ventilasi juga—tolong cepat, udaranya menipis!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Grant, tarik pelepas rem manual sekarang. Aku akan menjauhkan Keller dari panel.",
+          "timestamp_label": "02:22",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Kehabisan Udara",
+          "teaser_text": "Episode 4: Dr. Keller melangkah keluar dari bayangan memegang kartu akses master dan jarum suntik.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Batch 404",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02:25 · Lampu neon berkedip di atas kepala saat Dr. Keller memblokir lorong di luar lift barang.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Mundur, Keller! Perawat Grant sudah membuka relai rem—liftnya bergerak!",
+          "timestamp_label": "02:25",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Menyerahlah, Dr. Keller. Kami tahu Kamar 1408 tak pernah dipulangkan dan kami tahu soal Batch 404.",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Beri tahu satpam rumah sakit ada pelanggaran bangsal psikiatri di Lantai 14. Tahan dokter magang itu.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Dia mencoba menyuruh satpam mengunci kita di sayap ini agar bisa menyita vial tukarannya!",
+          "timestamp_label": "02:27",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "keller",
+          "duration_sec": 11,
+          "transcript": "[suara tenang sedingin es lewat speaker lorong] ...Pikirkan baik-baik, {{player_name}}. Satu kata dariku dan tak satu pun dari kalian boleh praktik kedokteran lagi...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "Pintu lift barang bergetar terbuka lima belas senti sementara sepatu bot satpam menggema dari tangga.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Ganjal pintu lift pakai troli darurat",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Mengganjal pintu dengan troli darurat!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Ambil cetak toksikologi dari Lab 14B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Mengambil laporan toksikologi asli...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Kamu dan Priya mencongkel pintu lebar-lebar dan menarik dokter magang yang terbatuk itu dengan selamat ke Lantai 14.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "RAHASIA TERBUKA: Lembar lab asli membuktikan Batch 404 menyebabkan henti jantung Kamar 1408—dan memuat tanda tangan persetujuan langsung Keller.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Satpam sudah datang—tunggu, kepala satpamnya sepupu Priya! Dia tak percaya kebohongan bangsal psikiatri Keller!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Jangan sentuh laporan lab itu! Itu data uji coba rahasia perusahaan!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tidak lagi, Keller. Itu Barang Bukti A.",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Lembar Lab Asli",
+          "teaser_text": "Episode 5: Laporan toksikologi tanpa suntingan menghancurkan akuisisi $40 juta Keller dalam sekali pandang.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Toksikologi Terbuka",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02:33 · Listrik utama rumah sakit meraung menyala kembali, membanjiri Lantai 14 dengan cahaya putih tajam saat satpam mengepung Keller.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "{{player_name}}, aku sudah memindai lembar lab asli! Mengirim salinan ke dewan medis dan polisi kota sekarang!",
+          "timestamp_label": "02:33",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Pastikan vial tersembunyi dokter magang itu langsung masuk kantong bukti tersegel.",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "priya",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Kecocokan Toksikologi & DNA · Kamar 1408 — Senyawa Batch 404 tak berizin terkonfirmasi.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Kalian tak tahu berapa banyak nyawa yang akan diselamatkan obat itu! Satu batch cacat tak seharusnya menghancurkan karya hidupku!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "Transfer balik uang muka akuisisi sebelum auditor federal membekukan rekeningku.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "Keamanan rumah sakit bertanya siapa yang harus memegang vial Batch 404 sampai detektif tiba.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Segel bersama Priya dan pihak keamanan",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Menyegel vial dengan tiga saksi.",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Hubungi keluarga anggota dewan Kamar 1408",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Mengabari keluarga Kamar 1408 sekarang...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Tiga tanda tangan tertera di label rantai penjagaan barang bukti, membuat pembelaan Keller mustahil.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "RAHASIA TERBUKA: Keluarga ketua dewan tiba bersama penasihat hukum rumah sakit—dan langsung mencabut izin praktik Keller di tempat.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 10,
+          "transcript": "[radio polisi di lobi, suara mantap] ...Penyidik Pembunuhan dan BPOM tiba di Pintu Masuk Darurat. Tahan Lantai 14...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Tanda vital dokter magang normal—dia minum air dan berterima kasih padamu tanpa henti, {{player_name}}!",
+          "timestamp_label": "02:36",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Shift malam terburuk seumur hidupku, Grant. Untung kita tak mengabaikan pesan suara itu.",
+          "timestamp_label": "02:37",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Izin Praktik Dicabut",
+          "teaser_text": "Episode 6 Tamat: Menjelang visite pagi, penutupan kasus Lantai 14 menjadi berita utama halaman depan.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Visite Pagi",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "07:10 · Matahari pagi menghangatkan kafetaria rumah sakit saat detektif menggiring Dr. Keller melewati lobi utama.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "keller",
+          "text": "Kau membuang terobosan empat puluh juta dolar, {{player_name}}. Ingat itu.",
+          "timestamp_label": "07:10",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kau mengunci dokter magang ketakutan di poros kedap udara demi menyembunyikan obat mematikan. Aku akan tidur nyenyak.",
+          "timestamp_label": "07:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "keller",
+          "text": "CEO biotek sudah tahu toksisitas Batch 404 dua minggu lalu.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "priya",
+          "duration_sec": 9,
+          "transcript": "[suara dokter magang, penuh syukur dan kuat] ...Terima kasih sudah kembali menjemputku, {{player_name}}. Aku tak akan pernah naik lift barang sendirian lagi...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "grant",
+          "text": "Kepala departemen penyakit dalam baru mengirim email—Lantai 14 mendapat audit keselamatan penuh dan kalian bertiga mendapat penghargaan.",
+          "timestamp_label": "07:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Penyidik BPOM bertanya apakah kamu melihat pihak lain menekan Dr. Keller.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Serahkan log shift Lantai 14 lengkap",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Menyerahkan log shift lengkap kami.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Laporkan pengetahuan CEO biotek itu",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rahasia · Tonton Iklan",
+              "player_reply_text": "Memberikan petunjuk CEO biotek ke BPOM...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "BPOM menghentikan peredaran Batch 404 secara nasional sebelum satu pasien luar pun menerima dosis.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "EPILOG RAHASIA: Marsekal federal menggerebek kantor pusat biotek menjelang sore, mendakwa CEO bersama Keller.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "priya",
+          "text": "Espresso terkuat di kafetaria aku yang traktir, {{player_name}}. Siap pulang?",
+          "timestamp_label": "07:13",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Lebih dari siap, Dr. Priya. Ayo pulang.",
+          "timestamp_label": "07:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "Indikator lift barang berpendar hijau stabil di Lantai 14—terbuka, terang, dan aman.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Akhir Musim · Shift Selesai",
+          "teaser_text": "Penutupan kasus Lantai 14 berakhir, dokter magang selamat, dan Batch 404 ditarik dari setiap bangsal.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

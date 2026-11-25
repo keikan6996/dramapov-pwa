@@ -1,0 +1,3024 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_143",
+  "lang": "pt",
+  "metadata": {
+    "title": "Regras do Turno da Noite na Torre 13",
+    "subtitle": "Regra #1: Nunca atenda ao interfone do 13º Andar depois das 03:00. Regra #4: Nunca pergunte por que o prédio não tem moradores.",
+    "genre": "thriller",
+    "tags": [
+      "Regras das 3h",
+      "Segurança",
+      "Reviravolta"
+    ],
+    "cover_image": "assets/media/covers/story_143.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · Guarda",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "supervisor",
+      "name": "Chefe Miller",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "dispatch",
+      "name": "Central 911",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    },
+    {
+      "id": "developer",
+      "name": "Victor Kade · Dono",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "As Quatro Regras das 3h",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02:55 · Seu primeiro turno da madrugada na Torre 13. O saguão tem um cheiro fraco de cinza molhada. Seu supervisor manda por mensagem as regras obrigatórias da noite.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Decore isto, {{player_name}}: (1) Nunca atenda ao interfone do 13º Andar. (2) Mantenha as portas do saguão acorrentadas. (3) Se a Câmera 4 parecer vazia, NÃO dê zoom.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Entendido, Chefe. Espera — qual é a Regra 4? E por que o elevador está descendo do 13º Andar agora mesmo?",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[estática, urgente] \"Afaste-se das portas do elevador! Se uma mulher de casaco vermelho sair, encare sua mesa e conte até 30!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Regra 4: Nunca olhe a placa de vistoria contra incêndio perto da escada.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "DLIM. As portas do elevador deslizam abertas às 03:00:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e1_free",
+              "label": "Encarar a mesa e contar até 30",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "1... 2... 3... Estou sentindo cheiro de fumaça bem na frente da minha mesa.",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e1_vip",
+              "label": "Olhar no espelho do saguão em vez disso",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Olhei no espelho — o elevador está vazio, só pegadas molhadas!",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Ótimo. Não erga os olhos até o elevador tocar de novo. A luz do interfone do 13º Andar ficou vermelha?",
+          "timestamp_label": "02:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Eu disse para não olhar! Agora ela sabe que você está acordado — tranque o vidro da guarita!",
+          "timestamp_label": "02:58",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "BZZZT. O botão do interfone do 13º Andar pisca em carmesim. Uma voz desesperada faz vibrar o alto-falante do saguão.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chefe Miller · Urgente",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "NÃO aperte falar! Olhe a Câmera 4 no seu monitor — me diga se o corredor ainda está vazio!",
+          "timestamp_label": "03:01",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A Câmera 4 está completamente vazia... exceto pela porta corta-fogo no fundo sacudindo com violência!",
+          "timestamp_label": "03:01",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Tem Alguém Preso no 13º",
+          "teaser_text": "A seguir: A Câmera 4 flagra o que está esmurrando a porta trancada da escadaria.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Falha na Câmera 4",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "03:04 · O detector de fumaça bipa uma vez e morre. Seu monitor de mesa congela na Câmera 4.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Mande um print da Câmera 4, {{player_name}}. Faça o que fizer, não saia da guarita.",
+          "timestamp_label": "03:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mandando agora — por que a data e hora no CFTV marca 2020 em vez de hoje à noite?!",
+          "timestamp_label": "03:04",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[estática de rádio policial] \"Atenção qualquer unidade perto da Torre 13: um chamado falso ao 190 veio da guarita interditada. Verifiquem se há invasores lá dentro.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Ignore o rádio. É só interferência da rua.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "Câmera 4 às 03:05 — corredor vazio do 13º andar enquanto batidas desesperadas ecoam pelo interfone.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "O rádio da polícia estala de novo no seu cinto:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e2_free",
+              "label": "Perguntar a Miller por que está interditado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Chefe, por que a central da polícia disse que a Torre 13 está interditada?!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e2_vip",
+              "label": "Responder direto à Central da Polícia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Central, sou o guarda noturno de plantão dentro do saguão da Torre 13!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Estão olhando o cadastro antigo da prefeitura! Agora pare de falar e confira as portas do saguão — tem alguém lá fora!",
+          "timestamp_label": "03:07",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Solta esse rádio! Se você falar com eles, o ciclo do turno quebra antes das 04:00!",
+          "timestamp_label": "03:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "Uma palma fria bate contra o vidro da guarita. No vidro, a marca preta de uma mão coberta de fuligem escorrega devagar para baixo.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "Unidade 190 · Retorno",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Senhor, a Torre 13 pegou fogo há 6 anos, em 25 de novembro! Doze pessoas morreram porque a escadaria estava acorrentada!",
+          "timestamp_label": "03:11",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Acorrentada...? Espera — a chave pesada do cadeado de ferro está presa no MEU cinto agora mesmo...",
+          "timestamp_label": "03:11",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "A Chave do Cadeado no Seu Cinto",
+          "teaser_text": "A seguir: Você finalmente lê a Regra 4 na placa chamuscada de incêndio.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Regra 4 Revelada",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "03:15 · As luzes fluorescentes do saguão piscam e apagam. Placas vermelhas de saída de emergência banham as paredes num brilho vermelho-sangue.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Não escute a central, {{player_name}}! Fique na guarita até as 04:00 e você recebe seu salário!",
+          "timestamp_label": "03:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Por que meus dedos cheiram a fumaça, Chefe? E por que meu crachá tem data de 6 anos atrás?!",
+          "timestamp_label": "03:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[voz rachando com estática] \"Porque você pegou no sono no turno, {{player_name}}! Acorrentou as portas corta-fogo para impedir invasores — e esqueceu de destrancar quando o 13º Andar pegou fogo!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Você vem fazendo exatamente esse turno toda noite desde o incêndio.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Fumaça cinza espessa começa a sair por baixo das portas do elevador:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e3_free",
+              "label": "Pegar chave do cadeado e correr ao 13º",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou destrancando a escadaria agora mesmo — mesmo que 6 anos atrasado!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e3_vip",
+              "label": "Ligar à Central conferir meu nome no laudo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Central, confiram o relatório do incêndio da Torre 13 de 2020 — meu nome está nele?!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "A Central entra na linha: \"A viatura está parando no terreno cercado — fiquem longe da escadaria enferrujada!\"",
+          "timestamp_label": "03:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Senhor... o seu nome consta como o vigia noturno que morreu tentando destrancar o 13º Andar pelo saguão...",
+          "timestamp_label": "03:19",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "Doze silhuetas surgem atrás do vidro fosco do saguão — nenhuma delas se movendo, todas voltadas para sua guarita.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chefe Miller · Estática",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Olhe o monitor de segurança do saguão, {{player_name}}. Eles não estão tentando machucar você — estão esperando você enfim soltar a corrente.",
+          "timestamp_label": "03:23",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Consigo vê-los na Câmera 1... doze sombras paradas bem fora do vidro...",
+          "timestamp_label": "03:23",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Doze Sombras no Vidro",
+          "teaser_text": "A seguir: A Câmera 1 captura as silhuetas cercando a guarita.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "As Doze Silhuetas",
+      "start_node_id": "e4_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "03:28 · O monitor de segurança pisca em branco. Doze silhuetas escuras ficam imóveis na transmissão do saguão.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Os patrulheiros estão fora da cerca do perímetro! Viram um facho de lanterna se mexendo dentro do saguão queimado — é você?!",
+          "timestamp_label": "03:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sim! Digam a eles que a corrente na escadaria ainda está trancada — estou destrancando agora!",
+          "timestamp_label": "03:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 8,
+          "transcript": "[gentil, ecoando] \"Tire a chave de latão do bolso, {{player_name}}. Saia da guarita. Quebre a Regra 2.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Eu sou uma das doze, {{player_name}}. Eu perdoo você.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Câmera de segurança do saguão às 03:29 — silhuetas escuras congeladas diante das portas acorrentadas da escadaria.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Sua mão agarra o cadeado de ferro frio na porta da escadaria:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e4_free",
+              "label": "Girar a chave e soltar a corrente de ferro",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A corrente saiu! A porta está aberta — todos já podem ir embora!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e4_vip",
+              "label": "Pedir perdão no interfone do 13º antes",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Me perdoem tanto por ter trancado a escada. Estou abrindo agora mesmo!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "A Central informa: \"Eita — a corrente enferrujada dentro do saguão acabou de cair no chão sozinha! Não tem ninguém segurando!\"",
+          "timestamp_label": "03:32",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "A Central informa: \"Nossos policiais ouviram um interfone antigo clicar — e a porta da escadaria acabou de escancarar!\"",
+          "timestamp_label": "03:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "CLANQUE. A corrente pesada bate no concreto. Uma brisa morna desce do 13º Andar, varrendo todo vestígio de fumaça para fora do saguão.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chefe Miller · Fim do Turno",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Olhe o relógio do saguão, {{player_name}}. Finalmente passou das 03:59. Seu turno acabou.",
+          "timestamp_label": "03:36",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "As silhuetas se foram... e o sol da manhã enfim está tocando o vidro.",
+          "timestamp_label": "03:36",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Turno Concluído às 04:00",
+          "teaser_text": "Final a seguir: O que a polícia encontra na mesa da guarita ao amanhecer.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Alívio às 04:00",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "04:00 · Dois policiais de patrulha entram pelas portas da frente destrancadas da Torre 13 em ruínas.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Registro da Unidade 190: \"Saguão limpo. Uma chave antiga de cadeado de latão repousando arrumada na mesa chamuscada do vigia.\"",
+          "timestamp_label": "04:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Deixe a porta da escadaria escorada aberta para eles.",
+          "timestamp_label": "04:00",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[rádio policial calmo] \"Copiado. Espera — o livro de ocorrências rachado na mesa tem um registro fresco escrito em cinzas: TURNO CONCLUÍDO — 04:00.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Obrigado por destrancar a porta, {{player_name}}.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Um último toque ecoa do elevador do 13º Andar:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e5_free",
+              "label": "Deixar seu crachá de vigia na mesa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Encerrando meu último turno da noite.",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e5_vip",
+              "label": "Desligar a Câmera 4 de vez",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Câmera 4 fora do ar. Chega de regras das 3h.",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Os policiais prestam continência à mesa vazia do vigia quando a primeira luz da aurora desponta sobre a Torre 13.",
+          "timestamp_label": "04:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O monitor escurece permanentemente — e os chamados fantasmas ao 190 da Torre 13 nunca mais acontecem.",
+          "timestamp_label": "04:03",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "Pela primeira vez em 6 anos, a porta da escadaria permanece aberta para o ar da manhã.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "Unidade 190 · Sinal Encerrado",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Arquivo do sistema fechado: anomalia do turno noturno da Torre 13 resolvida às 04:05.",
+          "timestamp_label": "04:05",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Doze passos desaparecem na luz do dia. Posso finalmente ir para casa.",
+          "timestamp_label": "04:05",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "04:06 · O Décimo Terceiro Nome",
+          "teaser_text": "Ato 2 começa: Doze silhuetas saíram — mas a lista de 2020 registrava TREZE pessoas, e o elevador acabou de descer para o B2.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "04:06: O Décimo Terceiro Nome",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "04:06 · Um minuto após o relógio do saguão liberar, o elevador em ruínas geme voltando à vida — seu visor vermelho descendo direto além do Térreo até o B2.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "medium",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Espera — nossos policiais ainda não saíram da Torre 13! A chave de latão na mesa acabou de deslizar sozinha, e o elevador desceu ao Subsolo B2!",
+          "timestamp_label": "04:06",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Por que o ciclo não acabou?! Doze silhuetas saíram pela escadaria — o que mais ainda está lá embaixo?!",
+          "timestamp_label": "04:07",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[estalando pelo eco da escadaria] \"{{player_name}}, escuta! Doze vítimas partiram — porque a lista de 2020 trazia TREZE pessoas! E a décima terceira pessoa saiu andando viva naquela noite!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Regra #5: Nunca deixe o dono do prédio chegar ao cofre contra incêndio do Subsolo B2 antes da demolição.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Faróis pretos de diesel cortam a cerca do perímetro da Torre 13:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e6_free",
+              "label": "Avisar Central que vans sem placa chegaram",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Central! Duas vans pretas acabaram de cortar a corrente no portão de serviço dos fundos!",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e6_vip",
+              "label": "Perguntar a Miller quem é a 13ª pessoa",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Chefe, quem saiu andando do incêndio — e por que me incriminaram?!",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Nossos dois policiais acabaram de avistar três homens de colete de demolição esgueirando-se pela rampa de serviço rumo ao Subsolo B2!",
+          "timestamp_label": "04:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Victor Kade — o incorporador bilionário dono da Torre 13! VOCÊ não acorrentou aquela escadaria, {{player_name}} — ele acorrentou por fora para receber um seguro de incêndio de US$ 18 milhões!",
+          "timestamp_label": "04:09",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "Na mesa chamuscada do saguão, um cartão magnético enegrecido repousa ao lado de uma linha recém-riscada: \"REGRA #5: VIGIAR B2.\"",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "Unidade 190 · Alerta na Lista",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "A demolição da Torre 13 está marcada para as 06:00! Se Kade queimar o cofre B2 antes do amanhecer, todo vestígio de prova do incêndio criminoso some para sempre!",
+          "timestamp_label": "04:11",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11_cliff"
+        },
+        {
+          "id": "e6_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Regra #5: Vigiar B2",
+          "teaser_text": "A seguir: O cartão chamuscado do B2 destranca o subnível oculto onde Kade enterrou a verdade.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "O Cartão do Subsolo",
+      "start_node_id": "e7_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "04:15 · Os policiais fotografam o cartão magnético chamuscado deixado na mesa do vigia enquanto passos pesados ecoam abaixo do piso do saguão.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Nossos policiais pegaram o cartão da sua mesa — está gravado \"TORRE 13 · COFRE DE ARQUIVO B2\". Por que uma torre condenada teria arquivo à prova de fogo?",
+          "timestamp_label": "04:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Porque o servidor caixa-preta de CFTV do prédio e os relatórios de vistoria são ligados direto no Subsolo B2!",
+          "timestamp_label": "04:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[zumbido metálico baixo] \"Antes do incêndio, escondi a fita DVR reserva dentro do Armário 13 do Cofre. Diga aos policiais para não pegarem o elevador — Kade sabotou os cabos do poço.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "Mandem a equipe de limpeza jogar térmita no Armário 13 e lacrar a escada do B2.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n05_img"
+        },
+        {
+          "id": "e7_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "Cartão mestre B2 chamuscado achado na mesa do saguão — dá acesso prioritário ao cofre subterrâneo de auditoria contra incêndio.",
+          "timestamp_label": "04:18",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "Os policiais ficam entre a escadaria enferrujada e o elevador de serviço zumbindo:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e7_free",
+              "label": "Mandar descerem pela escada de concreto",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Fiquem fora do elevador! Peguem a escada leste de concreto até o B2!",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e7_vip",
+              "label": "Acionar válvula de sprinklers do saguão",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Mandem eles girarem a válvula vermelha dos sprinklers do B2 no armário do saguão primeiro!",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Boa decisão! Dois segundos depois de passarem pelo elevador, os cabos arrebentaram e a cabine despencou direto no poço!",
+          "timestamp_label": "04:21",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Os sprinklers de emergência do B2 estão inundando o piso do arquivo — ninguém acende térmita lá embaixo agora!",
+          "timestamp_label": "04:21",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "Um estrondo sacode o concreto sob a Torre 13 quando o interfone do saguão estala com uma voz fria e culta.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09"
+        },
+        {
+          "id": "e7_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Ainda brincando de vigia noturno depois de seis anos, {{player_name}}? Tire seus policiais de ronda do meu porão — esta torre cai às 6h.",
+          "timestamp_label": "04:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n10_cliff"
+        },
+        {
+          "id": "e7_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "O Dono Chega",
+          "teaser_text": "A seguir: Victor Kade tranca as portas blindadas do B2 — e a Regra #6 aparece no monitor de segurança.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 8
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "title": "Regra #6: Olhe a Linha d'Água",
+      "start_node_id": "e8_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e8_n01",
+          "type": "narrator",
+          "text": "04:27 · Água da chuva e dos sprinklers chega aos joelhos pelo Subsolo B2 enquanto faíscas dançam por eletrodutos expostos.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e8_n02"
+        },
+        {
+          "id": "e8_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Nossos policiais chegaram ao patamar do B2, mas a pesada porta blindada de aço está selada magneticamente por dentro! Como passamos?",
+          "timestamp_label": "04:27",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e8_n03"
+        },
+        {
+          "id": "e8_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Há uma caixa manual de desbloqueio de machado de incêndio dois metros à esquerda da porta blindada — só vigias noturnos sabem a senha de quatro dígitos!",
+          "timestamp_label": "04:28",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e8_n04"
+        },
+        {
+          "id": "e8_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[estática urgente] \"Regra #6, {{player_name}}: NÃO abram a porta blindada com o transformador do porão ligado! Kade jogou um cabo de alta tensão na poça lá fora!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n05"
+        },
+        {
+          "id": "e8_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "Um passo nessa poça e os policiais fritam antes de o reforço chegar.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e8_n06_choice"
+        },
+        {
+          "id": "e8_n06_choice",
+          "type": "choice",
+          "prompt": "Arcos elétricos azuis ondulam pela água escura até o tornozelo fora do B2:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e8_free",
+              "label": "Gritar para a Central parar antes de pisar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "PAREM! Cabo de força energizado na água — desliguem o disjuntor geral da rua antes!",
+              "next_node_id": "e8_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e8_vip",
+              "label": "Passar policiais pelo duto seco de roupas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Pulem a porta alagada — rastejem pelo duto de ar seco acima da escadaria!",
+              "next_node_id": "e8_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e8_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O policial congelou a cinco centímetros da poça! A equipe elétrica acabou de cortar a chave da rua — água desligada e segura!",
+          "timestamp_label": "04:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Os policiais desceram pelo duto de ar seco bem atrás do vigia de Kade — um capanga contratado já está algemado!",
+          "timestamp_label": "04:31",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e8_n08_merge"
+        },
+        {
+          "id": "e8_n08_merge",
+          "type": "narrator",
+          "text": "No corredor escuro do B2, a lanterna do capanga preso rola pelo chão — iluminando uma porta de aço pintada com um \"13\" branco.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e8_n09"
+        },
+        {
+          "id": "e8_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Esse é o Cofre 13! Lá dentro está o laudo falso de vistoria contra incêndio que Kade assinou dois dias antes de nos matar.",
+          "timestamp_label": "04:33",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e8_n10_cliff"
+        },
+        {
+          "id": "e8_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "A Armadilha da Poça Energizada",
+          "teaser_text": "A seguir: Os temporizadores de demolição de Kade começam a contar — e o antigo sistema de som da torre desperta.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 9
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "title": "A Contagem da Demolição",
+      "start_node_id": "e9_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e9_n01",
+          "type": "narrator",
+          "text": "04:38 · Cada pilar de sustentação no Subsolo B2 pisca com um minúsculo LED verde — cargas de demolição armadas uma hora antes.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n02"
+        },
+        {
+          "id": "e9_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Emergência! A empresa de demolição diz que ninguém autorizou cargas armadas antes das 06:00 — a equipe de Kade instalou explosivos nos pilares ilegalmente!",
+          "timestamp_label": "04:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e9_n03"
+        },
+        {
+          "id": "e9_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ele vai desabar a Torre 13 em cima dos policiais E enterrar o Cofre 13 sob quarenta toneladas de escombros!",
+          "timestamp_label": "04:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e9_n04"
+        },
+        {
+          "id": "e9_n04",
+          "type": "voice_note",
+          "sender_id": "developer",
+          "duration_sec": 9,
+          "transcript": "[riso frio no interfone] \"Sessenta minutos até a implosão estrutural, vigia. Diga aos seus amigos para largarem o Cofre 13 e correrem — ninguém chora por prédio condenado.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n05"
+        },
+        {
+          "id": "e9_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "O código do teclado do cofre é a data do incêndio: 1125.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e9_n06_choice"
+        },
+        {
+          "id": "e9_n06_choice",
+          "type": "choice",
+          "prompt": "O esquadrão antibombas está a 15 minutos, e a porta de aço do Cofre 13 está bem na frente dos policiais:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e9_free",
+              "label": "Passar código 1125 do cofre à Central já",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Passem o cartão B2 e digitem 1125 — peguem a caixa do arquivo antes que Kade fuja!",
+              "next_node_id": "e9_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e9_vip",
+              "label": "Mandar esquadrão bloquear sinais sem fio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Coloquem bloqueador de rádio ao redor da Torre 13 — não deixem Kade acionar essas cargas antes!",
+              "next_node_id": "e9_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e9_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O Cofre 13 ABRIU! Os policiais acabaram de tirar uma maleta de aço à prova de fogo etiquetada como \"NOV 2020 · KADE HOLDINGS\"!",
+          "timestamp_label": "04:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O furgão bloqueador móvel acabou de encostar na cerca! Todas as frequências sem fio de detonação ao redor da Torre 13 estão totalmente bloqueadas!",
+          "timestamp_label": "04:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e9_n08_merge"
+        },
+        {
+          "id": "e9_n08_merge",
+          "type": "narrator",
+          "text": "Dentro da maleta de aço repousa uma pasta limpa e intocada — lacrada em plástico antifogo desde 23 de novembro de 2020.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e9_n09"
+        },
+        {
+          "id": "e9_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Mandando uma digitalização do primeiro documento agora — {{player_name}}, sua assinatura no relatório de segurança contra incêndio de 2020 foi FALSIFICADA!",
+          "timestamp_label": "04:44",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e9_n10_cliff"
+        },
+        {
+          "id": "e9_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "A Assinatura Falsificada",
+          "teaser_text": "A seguir: O documento legal dentro do Cofre 13 expõe uma conspiração de incêndio criminoso de US$ 18 milhões.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 10
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "title": "A Apólice de US$ 18 Milhões",
+      "start_node_id": "e10_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e10_n01",
+          "type": "narrator",
+          "text": "04:48 · Sob fachos de lanterna dentro do Cofre 13, policiais fotografam os papéis de inspeção falsificados e a apólice de seguro triplicada.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e10_n02"
+        },
+        {
+          "id": "e10_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Olhe este aditivo, {{player_name}}: Kade triplicou o seguro contra incêndio da Torre 13 em 23 de novembro — e falsificou seu livro de ponto dizendo que as correntes da escadaria eram \"manutenção de rotina\".",
+          "timestamp_label": "04:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e10_n03"
+        },
+        {
+          "id": "e10_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Todos esses seis anos eu me culpei por ter dormido... Eu não tranquei aquelas doze pessoas lá dentro! Kade drogou meu café na guarita e acorrentou as portas ele mesmo!",
+          "timestamp_label": "04:49",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e10_n04"
+        },
+        {
+          "id": "e10_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 10,
+          "transcript": "[caloroso, firme] \"Você morreu tentando quebrar o cadeado dele com um machado de incêndio, {{player_name}}. Agora a cidade inteira vai saber a verdade.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n05"
+        },
+        {
+          "id": "e10_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "Se o bloqueador travar meu controle remoto, eu mesmo acendo o pavio manual no Pilar 1.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e10_n05_img"
+        },
+        {
+          "id": "e10_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Aditivo de seguro contra incêndio do Cofre 13 — apólice de US$ 18M assinada 48 horas antes do incêndio da Torre 13 com visto falso do vigia.",
+          "timestamp_label": "04:51",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n06_choice"
+        },
+        {
+          "id": "e10_n06_choice",
+          "type": "choice",
+          "prompt": "Kade acabou de entrar de volta no porão com um sinalizador manual:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e10_free",
+              "label": "Avisar policiais vigiar o Pilar 1 já",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Ele está burlando o bloqueador — está indo para o pavio manual no Pilar 1!",
+              "next_node_id": "e10_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e10_vip",
+              "label": "Subir apólice falsa aos promotores ao vivo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Sincronizem essa apólice na nuvem agora para que nem uma explosão consiga apagá-la!",
+              "next_node_id": "e10_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e10_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Os policiais viraram para o Pilar 1 — viram o sinalizador vermelho de Kade brilhando na névoa do porão!",
+          "timestamp_label": "04:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Enviado e autenticado no servidor da delegacia! Mesmo se a Torre 13 desabar, Kade está acabado!",
+          "timestamp_label": "04:54",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n08_merge"
+        },
+        {
+          "id": "e10_n08_merge",
+          "type": "narrator",
+          "text": "Do outro lado do Subsolo B2, o velho tubo fluorescente acima do Pilar 1 pisca — revelando uma figura alta em uniforme chamuscado bloqueando o caminho de Kade.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e10_n09"
+        },
+        {
+          "id": "e10_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Que diabos — Miller?! Você morreu no 13º Andar há seis anos! Fique longe!!",
+          "timestamp_label": "04:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e10_n10_cliff"
+        },
+        {
+          "id": "e10_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "A Resistência do Chefe Miller",
+          "teaser_text": "A seguir: Kade entra em pânico e foge mais fundo pelo túnel alagado do gerador — direto para a Regra #7.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 11
+        }
+      ]
+    },
+    {
+      "episode_number": 11,
+      "title": "O Livro do Incendiário",
+      "start_node_id": "e11_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e11_n01",
+          "type": "narrator",
+          "text": "05:00 · Kade larga o sinalizador na água e dispara para o túnel de drenagem do subsolo enquanto policiais garantem a segunda pasta do Cofre 13.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n02"
+        },
+        {
+          "id": "e11_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Kade deixou cair a maleta na perseguição! Lá dentro há um recibo bancário criptografado pagando US$ 450.000 a um empreiteiro de incêndio na manhã seguinte ao fogo!",
+          "timestamp_label": "05:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e11_n03"
+        },
+        {
+          "id": "e11_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Para onde ele correu?! Aquele túnel de drenagem não sai na rua — ele dá a volta direto no poço trancado da caldeira!",
+          "timestamp_label": "05:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e11_n04"
+        },
+        {
+          "id": "e11_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[estática no rádio, botas pesadas] \"O esquadrão antibombas acabou de chegar e está desarmando o Pilar 1! Dois policiais seguem as pegadas molhadas de Kade até o poço da caldeira!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n05"
+        },
+        {
+          "id": "e11_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "Há um segundo detonador manual ligado dentro da caixa de controle da caldeira.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e11_n06_choice"
+        },
+        {
+          "id": "e11_n06_choice",
+          "type": "choice",
+          "prompt": "Você pega a mensagem apagada de Kade — ele está indo para um detonador reserva na sala da caldeira:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e11_free",
+              "label": "Avisar esquadrão cortar duto da caldeira",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Mandem o esquadrão cortar o conduíte amarelo que vai para a caixa da caldeira!",
+              "next_node_id": "e11_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e11_vip",
+              "label": "Trancar selo magnético da caldeira longe",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Aperte o botão azul de trava da caldeira no console da guarita — prenda-o lá dentro!",
+              "next_node_id": "e11_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e11_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O técnico de explosivos acabou de cortar o conduíte amarelo — todas as doze cargas de demolição no B2 morreram de vez!",
+          "timestamp_label": "05:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "BLAM! A porta de aço da caldeira acabou de bater atrás de Kade — ele está esmurrando o vidro sem ter para onde correr!",
+          "timestamp_label": "05:05",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e11_n08_merge"
+        },
+        {
+          "id": "e11_n08_merge",
+          "type": "narrator",
+          "text": "Dentro da sala enferrujada da caldeira, a luz vermelha do interfone pisca — discando direto para seu console de vigia.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e11_n09"
+        },
+        {
+          "id": "e11_n09",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Abra esta porta da caldeira, {{player_name}}! Diga seu preço — um milhão, cinco milhões — só me tire daqui antes que a fumaça volte!",
+          "timestamp_label": "05:07",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e11_n10_cliff"
+        },
+        {
+          "id": "e11_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Preso no Poço da Caldeira",
+          "teaser_text": "A seguir: Kade liga pelo interfone morto — e encara a voz do homem que incriminou.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 12
+        }
+      ]
+    },
+    {
+      "episode_number": 12,
+      "title": "A Confissão no Interfone",
+      "start_node_id": "e12_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e12_n01",
+          "type": "narrator",
+          "text": "05:10 · Uma fumaça que não é real — mas cheira inconfundivelmente a 25 de novembro de 2020 — começa a serpentear por baixo da porta da caldeira.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n02"
+        },
+        {
+          "id": "e12_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Nossos policiais estão fora da sala da caldeira gravando tudo na câmera corporal! Faça Kade falar — queremos a confissão inteira gravada!",
+          "timestamp_label": "05:10",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e12_n03"
+        },
+        {
+          "id": "e12_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Por que você acorrentou a escadaria no 13º Andar, Kade?! Mesmo querendo o dinheiro do seguro, por que prender doze moradores inocentes lá dentro?!",
+          "timestamp_label": "05:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e12_n04"
+        },
+        {
+          "id": "e12_n04",
+          "type": "voice_note",
+          "sender_id": "developer",
+          "duration_sec": 10,
+          "transcript": "[tossindo, em pânico] \"Porque o Chefe Miller achou minha auditoria estrutural falsa! Se o prédio não queimasse com os arquivos do 13º Andar dentro, eu pegava vinte anos de cadeia!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n05"
+        },
+        {
+          "id": "e12_n05",
+          "type": "unsent_message",
+          "sender_id": "dispatch",
+          "text": "Cada palavra ficou gravada cristalina em quatro câmeras corporais da polícia.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e12_n06_choice"
+        },
+        {
+          "id": "e12_n06_choice",
+          "type": "choice",
+          "prompt": "Kade bate os punhos contra o vidro da sala da caldeira implorando piedade:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e12_free",
+              "label": "Fazer ele nomear o incendiário também",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Para quem você transferiu US$ 450.000 em 26 de novembro?! Diga o nome dele!",
+              "next_node_id": "e12_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e12_vip",
+              "label": "Perguntar por que o incriminou na placa",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "E você falsificou meu livro noturno para a cidade ME culpar por seis anos?!",
+              "next_node_id": "e12_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e12_n07a",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Ray Mercer — meu encarregado de demolição! Ele despejou o acelerante no 13º Andar! Eu testemunho contra ele, só destranca esta porta!",
+          "timestamp_label": "05:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n07b",
+          "type": "text",
+          "sender_id": "developer",
+          "text": "Sim! Eu troquei seu livro de vigia depois do fogo! Você tentou abrir a corrente — nunca dormiu! Só me tira daqui!",
+          "timestamp_label": "05:14",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e12_n08_merge"
+        },
+        {
+          "id": "e12_n08_merge",
+          "type": "narrator",
+          "text": "Um chiado seco silencia a fumaça fantasma quando o interfone da caldeira toca uma última vez.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e12_n09_call"
+        },
+        {
+          "id": "e12_n09_call",
+          "type": "incoming_call",
+          "caller_id": "developer",
+          "caller_label": "Victor Kade · Interfone da Caldeira",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e12_n10",
+          "on_decline_node_id": "e12_n10"
+        },
+        {
+          "id": "e12_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Temos a confissão completa dele E o nome do encarregado! Olhe o comprovante de remessa que acabamos de decifrar da maleta dele.",
+          "timestamp_label": "05:16",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e12_n11_cliff"
+        },
+        {
+          "id": "e12_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Confissão Gravada",
+          "teaser_text": "A seguir: A transferência bancária decifrada derruba tanto Kade quanto seu encarregado de demolição — que ainda está lá fora com um caminhão reserva.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 13
+        }
+      ]
+    },
+    {
+      "episode_number": 13,
+      "title": "A Remessa da Manhã Seguinte",
+      "start_node_id": "e13_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e13_n01",
+          "type": "narrator",
+          "text": "05:19 · A Central envia a confirmação decifrada da remessa de 26 de novembro enquanto policiais algemam Kade fora do poço da caldeira.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e13_n02"
+        },
+        {
+          "id": "e13_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Confirmado: US$ 450.000 caíram na conta laranja de Ray Mercer às 08:12 de 26 de novembro de 2020. Espera — Mercer é o encarregado sentado no caminhão de demolição fora do portão AGORA MESMO!",
+          "timestamp_label": "05:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e13_n03"
+        },
+        {
+          "id": "e13_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Parem ele antes que perceba que Kade foi preso! Se ele jogar aquele caminhão pesado pelo saguão, derruba a viga principal de sustentação!",
+          "timestamp_label": "05:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e13_n04"
+        },
+        {
+          "id": "e13_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[pneus cantando no rádio] \"Todas as unidades, invasão de perímetro! O encarregado da demolição acabou de ver Kade algemado — está dando ré no caminhão pesado rumo à entrada sul!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n05"
+        },
+        {
+          "id": "e13_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Tirem os policiais do Subsolo B2 — a viga sul já está rachada desde 2020.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e13_n05_img"
+        },
+        {
+          "id": "e13_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "Confirmação decifrada de remessa de 26 nov 2020 — US$ 450.000 pagos da Kade Holdings ao encarregado Ray Mercer.",
+          "timestamp_label": "05:22",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n06_choice"
+        },
+        {
+          "id": "e13_n06_choice",
+          "type": "choice",
+          "prompt": "O pesado caminhão de demolição acelera o motor diesel a trinta metros da fachada de vidro do saguão:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e13_free",
+              "label": "Mandar Central pôr pregos no portão",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Joguem os tapetes de pregos da patrulha na rampa sul agora mesmo!",
+              "next_node_id": "e13_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e13_vip",
+              "label": "Baixar cortina corta-fogo de aço no saguão",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Acione a persiana manual de aço corta-fogo na guarita do saguão — proteja a viga sul!",
+              "next_node_id": "e13_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e13_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Os tapetes de pregos rasgaram os quatro pneus traseiros! O caminhão deu L a três metros do pilar sul — policiais estão tirando Mercer da cabine!",
+          "timestamp_label": "05:25",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "A persiana corta-fogo de aço desceu bem a tempo — o para-choque de Mercer amassou contra ferro maciço enquanto viaturas o cercavam!",
+          "timestamp_label": "05:25",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e13_n08_merge"
+        },
+        {
+          "id": "e13_n08_merge",
+          "type": "narrator",
+          "text": "Metal geme e depois fica imóvel. Porém, lá embaixo no Subsolo B2, uma corrente de ar fria e estranha puxa em direção ao corredor inundado do arquivo.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e13_n09"
+        },
+        {
+          "id": "e13_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Os dois assassinos estão algemados... então por que o relógio na Câmera 4 AINDA está congelado às 03:59, {{player_name}}?",
+          "timestamp_label": "05:27",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e13_n10_cliff"
+        },
+        {
+          "id": "e13_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Ainda Congelado às 03:59",
+          "teaser_text": "Ato 3 começa: Uma última presença permanece dentro do Subsolo B2 — e a Regra #7 exige que você a enfrente.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 14
+        }
+      ]
+    },
+    {
+      "episode_number": 14,
+      "title": "O Turno Inacabado",
+      "start_node_id": "e14_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e14_n01",
+          "type": "narrator",
+          "text": "05:30 · Tanto Kade quanto Mercer são colocados nas viaturas lá fora, mas o monitor do saguão pisca de volta para o Subsolo B2.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e14_n02"
+        },
+        {
+          "id": "e14_n02",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Doze moradores caminharam para o amanhecer, {{player_name}}. Cada registro do incêndio está limpo. Você sabe por que a Torre 13 ainda não soltou você?",
+          "timestamp_label": "05:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e14_n03"
+        },
+        {
+          "id": "e14_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... se doze moradores ficaram presos no 13º Andar, e o Chefe Miller era um deles... então quem é o décimo terceiro nome que ainda ficou para trás?",
+          "timestamp_label": "05:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e14_n04"
+        },
+        {
+          "id": "e14_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[gentil, ecoando suave] \"Olhe a placa de latão chamuscada perto da escadaria, {{player_name}}. Doze moradores morreram no 13º Andar — e um vigia noturno morreu no saguão.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n05"
+        },
+        {
+          "id": "e14_n05",
+          "type": "unsent_message",
+          "sender_id": "dispatch",
+          "text": "O legista nunca recuperou o crachá do vigia noturno na calha de escombros do B2.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e14_n06_choice"
+        },
+        {
+          "id": "e14_n06_choice",
+          "type": "choice",
+          "prompt": "A Câmera 4 dá zoom devagar até um crachá de vigia escurecido meio enterrado no corredor alagado do B2:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e14_free",
+              "label": "Pedir à Central resgatar o crachá no B2",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tem um último item lá embaixo no B2 — meu crachá de latão de vigia perto do ralo da escada.",
+              "next_node_id": "e14_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e14_vip",
+              "label": "Olhar verso do crachá pela Câmera 4",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Dê zoom atrás desse crachá — tem a foto da minha filha colada lá dentro.",
+              "next_node_id": "e14_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e14_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Copiado, senhor. Um policial está descendo de volta ao ralo do B2 agora mesmo para tirar seu crachá antes da demolição.",
+          "timestamp_label": "05:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O policial achou — a foto plastificada atrás está completamente intacta do incêndio. Ele está segurando com cuidado.",
+          "timestamp_label": "05:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n08_merge"
+        },
+        {
+          "id": "e14_n08_merge",
+          "type": "narrator",
+          "text": "De repente, o teto alagado do B2 geme — uma viga de concreto rachada pelo impacto do caminhão começa a ceder lá em cima.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e14_n09"
+        },
+        {
+          "id": "e14_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Policial caído no B2! Uma laje do teto acabou de bloquear a escadaria leste — ele está preso lá embaixo com a água subindo!",
+          "timestamp_label": "05:36",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e14_n10_cliff"
+        },
+        {
+          "id": "e14_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Preso Sob o Desabamento",
+          "teaser_text": "A seguir: O Chefe Miller chama com a Regra #7 — sua última chance de salvar o policial preso antes que a Torre 13 ceda.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 15
+        }
+      ]
+    },
+    {
+      "episode_number": 15,
+      "title": "Regra #7: Nunca Deixe Alguém Para Trás",
+      "start_node_id": "e15_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e15_n01",
+          "type": "narrator",
+          "text": "05:38 · Poeira sufoca o Subsolo B2. O jovem patrulheiro segurando seu crachá está preso atrás de alvenaria caída enquanto canos rachados jorram água.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n02"
+        },
+        {
+          "id": "e15_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "As equipes de resgate precisam de vinte minutos para cortar aquela laje de concreto — e o policial diz que a água no B2 já está na altura do peito!",
+          "timestamp_label": "05:38",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e15_n03"
+        },
+        {
+          "id": "e15_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Diga para ele não entrar em pânico! Há uma escotilha esquecida de serviço dentro do Cofre 13 que sobe direto para a grade da calçada da rua!",
+          "timestamp_label": "05:39",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e15_n04"
+        },
+        {
+          "id": "e15_n04",
+          "type": "voice_note",
+          "sender_id": "supervisor",
+          "duration_sec": 9,
+          "transcript": "[firme, ecoando pelo B2] \"Ele não consegue enxergar a escotilha na poeira escura como breu, {{player_name}}! Você precisa guiá-lo passo a passo pelo corredor alagado!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n05"
+        },
+        {
+          "id": "e15_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Este é o turno que você esperou seis anos para concluir.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e15_n06_choice"
+        },
+        {
+          "id": "e15_n06_choice",
+          "type": "choice",
+          "prompt": "A lanterna do policial preso pisca em 5% no corredor escuro e alagado:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e15_free",
+              "label": "Piscar placas de saída do B2 para guiar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Olhe as setas verdes de saída no teto — siga cada luz que eu piscar!",
+              "next_node_id": "e15_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e15_vip",
+              "label": "Guiar contando passos desde o Pilar 3",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Toque o Pilar 3, vire à esquerda doze passos — a porta aberta do Cofre 13 está bem ali!",
+              "next_node_id": "e15_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e15_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Incrível — as setas de saída de emergência apagadas acabaram de acender uma por uma em sequência! Ele está avançando direto para o Cofre 13!",
+          "timestamp_label": "05:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Doze passos à esquerda — a mão dele acabou de bater no batente de aço aberto do Cofre 13! Ele está subindo na prateleira seca do arquivo!",
+          "timestamp_label": "05:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e15_n08_merge"
+        },
+        {
+          "id": "e15_n08_merge",
+          "type": "narrator",
+          "text": "Um ronco baixo sacode a fundação quando a voz do Chefe Miller ressoa pelo console da guarita.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e15_n09_call"
+        },
+        {
+          "id": "e15_n09_call",
+          "type": "incoming_call",
+          "caller_id": "supervisor",
+          "caller_label": "Chefe Miller · Regra #7",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e15_n10",
+          "on_decline_node_id": "e15_n10"
+        },
+        {
+          "id": "e15_n10",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "A grade da calçada acima do Cofre 13 está enferrujada e travada por fora — diga à Central para engatar uma corrente de reboque na grade AGORA!",
+          "timestamp_label": "05:44",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e15_n11_cliff"
+        },
+        {
+          "id": "e15_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "A Grade Enferrujada da Calçada",
+          "teaser_text": "A seguir: Corrida contra um segundo desabamento do teto para puxar o policial para o ar da manhã.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 16
+        }
+      ]
+    },
+    {
+      "episode_number": 16,
+      "title": "A Água Subindo",
+      "start_node_id": "e16_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e16_n01",
+          "type": "narrator",
+          "text": "05:46 · Equipes de resgate na rua localizam a grade da calçada acima do Cofre 13 e prendem um cabo pesado de guincho nas barras de ferro.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "medium",
+          "next_node_id": "e16_n02"
+        },
+        {
+          "id": "e16_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Guincho engatado! Espera — o policial dentro do Cofre 13 diz que os degraus da escada quebraram três metros abaixo. Ele não alcança a escotilha!",
+          "timestamp_label": "05:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e16_n03"
+        },
+        {
+          "id": "e16_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Joguem um cinto de resgate pelo poço no segundo em que a grade abrir — e digam para ele subir no armário de aço do arquivo!",
+          "timestamp_label": "05:47",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e16_n04"
+        },
+        {
+          "id": "e16_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[guincho hidráulico forçando] \"A grade está mexendo — CREC! Abriu! Jogando a corda luminosa de resgate lá embaixo agora mesmo!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n05"
+        },
+        {
+          "id": "e16_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Segure o batente da porta de aço firme até ele sair do poço, {{player_name}}.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e16_n06_choice"
+        },
+        {
+          "id": "e16_n06_choice",
+          "type": "choice",
+          "prompt": "Uma segunda viga de concreto racha acima do Cofre 13 quando o policial engata o cinto:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e16_free",
+              "label": "Mandar equipe puxar guincho a toda força",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "PUXEM ELE AGORA! A viga norte do teto está cedendo!",
+              "next_node_id": "e16_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e16_vip",
+              "label": "Gritar para guardar o crachá no colete",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Prenda bem e segure firme — não olhe para trás para o escuro!",
+              "next_node_id": "e16_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e16_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Guincho na velocidade máxima — ele passou pela borda da calçada dois segundos antes de o cofre do porão desabar atrás dele!",
+          "timestamp_label": "05:50",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Ele está na calçada tossindo, vivo e apertando seu crachá de latão de vigia contra o peito!",
+          "timestamp_label": "05:50",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e16_n08_merge"
+        },
+        {
+          "id": "e16_n08_merge",
+          "type": "narrator",
+          "text": "VUUUSH. Uma lufada quente de vento limpo da manhã varre a escadaria — levando embora o último cheiro de cinza molhada.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e16_n09"
+        },
+        {
+          "id": "e16_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Espera... antes de a câmera do cofre sair do ar, ela salvou um último quadro do corredor escuro.",
+          "timestamp_label": "05:52",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e16_n10_cliff"
+        },
+        {
+          "id": "e16_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Puxado Para o Amanhecer",
+          "teaser_text": "A seguir: O último quadro de câmera do B2 mostra quem segurou a viga rachando até o policial escapar.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 17
+        }
+      ]
+    },
+    {
+      "episode_number": 17,
+      "title": "O Último Quadro na Câmera 4",
+      "start_node_id": "e17_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e17_n01",
+          "type": "narrator",
+          "text": "05:54 · Na tela do furgão de comando, a Central reproduz os últimos dois segundos gravados antes de o Subsolo B2 escurecer.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e17_n02"
+        },
+        {
+          "id": "e17_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Nossos policiais estão sem palavras, {{player_name}}. Olhe a sombra parada ao lado da porta de saída nessa última captura do corredor.",
+          "timestamp_label": "05:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e17_n03"
+        },
+        {
+          "id": "e17_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ninguém morreu no meu turno hoje à noite. Nem um.",
+          "timestamp_label": "05:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e17_n04"
+        },
+        {
+          "id": "e17_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 9,
+          "transcript": "[baixo, profundamente respeitoso] \"O policial que você salvou acabou de ler o nome no crachá de latão — e está pedindo ao comando para recomendar uma medalha municipal póstuma de valor para você.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n05"
+        },
+        {
+          "id": "e17_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "O relógio do saguão acabou de passar de 03:59 para 05:56.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e17_n05_img"
+        },
+        {
+          "id": "e17_n05_img",
+          "type": "image",
+          "sender_id": "dispatch",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Último quadro arquivado do Subsolo B2 — silhueta solitária de vigia montando guarda até o cinto de resgate sair do poço.",
+          "timestamp_label": "05:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n06_choice"
+        },
+        {
+          "id": "e17_n06_choice",
+          "type": "choice",
+          "prompt": "O céu da manhã fica âmbar brilhante sobre a Torre 13 quando as sirenes silenciam:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e17_free",
+              "label": "Pedir à Central devolver crachá à família",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Devolvam meu crachá de latão — e a foto lá dentro — para a minha filha.",
+              "next_node_id": "e17_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e17_vip",
+              "label": "Pedir placa memorial com os 13 nomes",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Garantam que a nova placa liste os doze moradores — e o Chefe Miller — primeiro.",
+              "next_node_id": "e17_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e17_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O policial resgatado prometeu entregar pessoalmente à sua filha hoje de manhã — junto com a carta oficial limpando seu nome.",
+          "timestamp_label": "05:58",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O gabinete do prefeito já aprovou um jardim memorial ensolarado neste terreno — com todos os treze nomes homenageados em bronze.",
+          "timestamp_label": "05:58",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e17_n08_merge"
+        },
+        {
+          "id": "e17_n08_merge",
+          "type": "narrator",
+          "text": "Pela primeira vez em seis anos, as luzes vermelhas de emergência dentro da Torre 13 piscam e apagam — substituídas pela luz dourada natural do dia.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e17_n09"
+        },
+        {
+          "id": "e17_n09",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Todas as sete regras estão concluídas, {{player_name}}. Venha — saia pelo vidro da frente comigo.",
+          "timestamp_label": "05:59",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e17_n10_cliff"
+        },
+        {
+          "id": "e17_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Todas as Sete Regras Concluídas",
+          "teaser_text": "A seguir: Às 06:00 em ponto, a Torre 13 vem abaixo limpa — e a justiça sela o destino de Victor Kade.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 18
+        }
+      ]
+    },
+    {
+      "episode_number": 18,
+      "title": "06:00: Limpando as Ruínas",
+      "start_node_id": "e18_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e18_n01",
+          "type": "narrator",
+          "text": "06:00 · Com todo policial fora da cerca e as provas do incêndio de Kade arquivadas em segurança, a equipe municipal de demolição limpa o terreno.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e18_n02"
+        },
+        {
+          "id": "e18_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Equipes de jornal estão transmitindo ao vivo do perímetro: Victor Kade e Ray Mercer acabaram de ser denunciados por doze homicídios qualificados por incêndio criminoso!",
+          "timestamp_label": "06:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e18_n03"
+        },
+        {
+          "id": "e18_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Chega de cofres secretos, chega de registros falsos de vigia — e ninguém nunca mais terá de trabalhar num turno das 03:00 naquele prédio.",
+          "timestamp_label": "06:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e18_n04"
+        },
+        {
+          "id": "e18_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[aplausos distantes da multidão] \"O comandante dos bombeiros acabou de ir às câmeras e ler a verdade em voz alta: o vigia noturno da Torre 13 morreu como herói tentando salvar o 13º Andar.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n05"
+        },
+        {
+          "id": "e18_n05",
+          "type": "unsent_message",
+          "sender_id": "developer",
+          "text": "Fiança negada. Todos os US$ 18 milhões em bens do seguro bloqueados pela justiça.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e18_n06_choice"
+        },
+        {
+          "id": "e18_n06_choice",
+          "type": "choice",
+          "prompt": "A luz do sol inunda a mesa vazia do saguão uma última vez antes de a estrutura ser desmontada:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e18_free",
+              "label": "Dar saída no livro de ponto às 06:02",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Registro do livro de ponto encerrado: Turno completo, perímetro seguro, zero vítimas.",
+              "next_node_id": "e18_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e18_vip",
+              "label": "Prestar continência a Miller à porta clara",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Foi uma honra trabalhar o turno da noite com o senhor, Chefe.",
+              "next_node_id": "e18_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e18_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Registro mais caprichado que você já escreveu, {{player_name}}. Até a cinza enfim saiu da página.",
+          "timestamp_label": "06:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n07b",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Digo o mesmo, vigia. Doze famílias finalmente têm justiça — e você enfim tem seu nome de volta.",
+          "timestamp_label": "06:03",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e18_n08_merge"
+        },
+        {
+          "id": "e18_n08_merge",
+          "type": "narrator",
+          "text": "O último alto-falante de interfone do saguão desliga suave — deixando apenas o som de pássaros da manhã lá fora.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e18_n09"
+        },
+        {
+          "id": "e18_n09",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Unidade 190 arquivando canal da Torre 13. Aguardando um último encerramento do policial resgatado.",
+          "timestamp_label": "06:05",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e18_n10_cliff"
+        },
+        {
+          "id": "e18_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Nome Limpo ao Amanhecer",
+          "teaser_text": "A seguir: O policial resgatado faz uma última chamada para honrar o vigia da Torre 13.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 19
+        }
+      ]
+    },
+    {
+      "episode_number": 19,
+      "title": "Encerramento Final",
+      "start_node_id": "e19_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e19_n01",
+          "type": "narrator",
+          "text": "06:12 · Do outro lado da rua, o policial resgatado fica ao lado do furgão de patrulha segurando seu crachá de latão polido enquanto o sol sobe mais alto.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e19_n02"
+        },
+        {
+          "id": "e19_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "O policial pediu para conectar direto na linha da Torre 13 uma última vez antes que a operadora desative o número.",
+          "timestamp_label": "06:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e19_n03"
+        },
+        {
+          "id": "e19_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Diga que ele mandou muito bem lá embaixo no B2 — e lembre para nunca pegar elevador em incêndio.",
+          "timestamp_label": "06:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e19_n04"
+        },
+        {
+          "id": "e19_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[voz jovem calorosa e firme] \"Obrigado por acender aquelas setas de saída, senhor. Estou levando seu crachá direto para a sua filha agora. Descanse em paz.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n05"
+        },
+        {
+          "id": "e19_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Nossas famílias nunca vão esquecer 25 de novembro — pelos motivos certos agora.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e19_n06_choice"
+        },
+        {
+          "id": "e19_n06_choice",
+          "type": "choice",
+          "prompt": "O indicador de bateria do rádio esmaece suave rumo a um brilho dourado acolhedor:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e19_free",
+              "label": "Responder: \"Cuide da cidade por mim\"",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cuide dos turnos da noite por mim, garoto. Torre 13 desligando.",
+              "next_node_id": "e19_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e19_vip",
+              "label": "Responder: \"Diga que tenho orgulho dela\"",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Diga à minha filha que eu nunca parei de olhar por ela. Desligando.",
+              "next_node_id": "e19_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e19_n07a",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Copiado, Torre 13. Todo vigia e policial deste distrito presta continência ao senhor hoje à noite.",
+          "timestamp_label": "06:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Recado entregue palavra por palavra. Ela vai usar essa medalha com orgulho.",
+          "timestamp_label": "06:16",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e19_n08_merge"
+        },
+        {
+          "id": "e19_n08_merge",
+          "type": "narrator",
+          "text": "Um último toque soa límpido pelo ar ensolarado da manhã.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e19_n09_call"
+        },
+        {
+          "id": "e19_n09_call",
+          "type": "incoming_call",
+          "caller_id": "dispatch",
+          "caller_label": "Unidade 190 · Despedida de Honra",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e19_n10",
+          "on_decline_node_id": "e19_n10"
+        },
+        {
+          "id": "e19_n10",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Frequência do turno noturno da Torre 13 aposentada permanentemente às 06:18. Obrigado pelo seu serviço, {{player_name}}.",
+          "timestamp_label": "06:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e19_n11_cliff"
+        },
+        {
+          "id": "e19_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Frequência Aposentada",
+          "teaser_text": "Grande Final a seguir: Um ano depois, a luz do sol aquece o jardim memorial de bronze onde um dia se ergueu a Torre 13.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 20
+        }
+      ]
+    },
+    {
+      "episode_number": 20,
+      "title": "O Jardim Memorial Ensolarado",
+      "start_node_id": "e20_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e20_n01",
+          "type": "narrator",
+          "text": "09:00 · Um ano depois. Onde antes assombravam as ruínas chamuscadas da Torre 13, flores brancas balançam num parque claro e ensolarado.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n02"
+        },
+        {
+          "id": "e20_n02",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Nota do memorial: A placa de bronze foi inaugurada hoje de manhã sob céu limpo. Treze nomes — cada um homenageado sob a luz do sol.",
+          "timestamp_label": "09:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n03"
+        },
+        {
+          "id": "e20_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sem correntes, sem escadas trancadas, sem regras das 03:00 — só ar fresco e céu aberto.",
+          "timestamp_label": "09:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n04"
+        },
+        {
+          "id": "e20_n04",
+          "type": "voice_note",
+          "sender_id": "dispatch",
+          "duration_sec": 8,
+          "transcript": "[pássaros cantando, vento leve] \"Sua filha acabou de colocar doze lírios brancos e uma pequena chave de latão junto à placa de bronze — sorrindo entre lágrimas felizes.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n05"
+        },
+        {
+          "id": "e20_n05",
+          "type": "unsent_message",
+          "sender_id": "supervisor",
+          "text": "Victor Kade pegou treze penas consecutivas de prisão perpétua esta semana.",
+          "unsent_placeholder": "Mensagem apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 650,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e20_n06_choice"
+        },
+        {
+          "id": "e20_n06_choice",
+          "type": "choice",
+          "prompt": "A luz do sol brilha pelos treze nomes gravados no memorial de bronze:",
+          "options": [
+            {
+              "option_id": "opt_story_143_e20_free",
+              "label": "Deixar a brisa da manhã virar a última página",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "A longa noite acabou. Cada alma do 13º Andar está finalmente em casa.",
+              "next_node_id": "e20_n07a"
+            },
+            {
+              "option_id": "opt_story_143_e20_vip",
+              "label": "Deixar uma última bênção à cidade",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Que todo vigia noturno desta cidade volte para casa ao nascer do sol.",
+              "next_node_id": "e20_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e20_n07a",
+          "type": "text",
+          "sender_id": "supervisor",
+          "text": "Sem mais estática, sem mais alarmes — só paz na luz da manhã.",
+          "timestamp_label": "09:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "medium",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n07b",
+          "type": "text",
+          "sender_id": "dispatch",
+          "text": "Toda viatura de patrulha passando pelo parque dá um toque silencioso matinal em continência. Jamais esquecidos.",
+          "timestamp_label": "09:04",
+          "typing_delay_ms": 700,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e20_n08_merge"
+        },
+        {
+          "id": "e20_n08_merge",
+          "type": "narrator",
+          "text": "A luz dourada do sol aquece os bancos de pedra enquanto risadas sopram suaves entre as árvores.",
+          "style": "banner",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e20_n09"
+        },
+        {
+          "id": "e20_n09",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Turno completo. Treze nomes lembrados. Bom dia, cidade.",
+          "timestamp_label": "09:05",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "light",
+          "next_node_id": "e20_n10_cliff"
+        },
+        {
+          "id": "e20_n10_cliff",
+          "type": "cliffhanger",
+          "headline": "Turno Concluído Para Sempre",
+          "teaser_text": "Você completou todos os 20 episódios de \"Regras do Turno da Noite na Torre 13\"! Explore mais suspenses eletrizantes na Biblioteca.",
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

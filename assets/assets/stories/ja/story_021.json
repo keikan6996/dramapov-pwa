@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_021",
+  "lang": "ja",
+  "metadata": {
+    "title": "13階は存在しない",
+    "subtitle": "午前2時14分、エレベーターが13階で停止した。私の住むビルは12階建てのはずなのに。",
+    "genre": "thriller",
+    "tags": [
+      "午前3時",
+      "エレベーター",
+      "超常現象"
+    ],
+    "cover_image": "assets/media/covers/story_021.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (あなた)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Hector (夜間警備員)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "ロビーインターホン",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "点灯した13番ボタン",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2時14分 · エレベーターがガクンと停止します。赤いLED表示が12を通り過ぎて『13』で固定されました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}さん、モニターでB号機が止まったのが見えました。なぜ保守用上書きボタンを押したんですか？",
+          "timestamp_label": "午前2:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "何も触っていません！扉が勝手に開いて、真っ暗な廊下に出たんです。誰かがこちらに手を振っています。",
+          "timestamp_label": "午前2:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "よし。外へ出てきてくれれば、ようやく俺が出られる。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "かごの中に留まってください！絶対に敷居をまたいではいけません。今すぐ『閉』ボタンを押しなさい。",
+          "timestamp_label": "午前2:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[蛍光灯の唸り音、ゆっくりとした足音] ……何を見つめているの、{{player_name}}？もうあなたもこの階の住人なんだから……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "扉が閉まりません。冷たい空気がエレベーターの中に流れ込んできます。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "赤い非常通報ベルを叩き押す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "非常ベルを連打します！",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "13階の奥へスマホのライトを向ける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "懐中電灯をつけます……",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "ベルが鳴り響きます――昇降路の中ではなく、暗い廊下に立つその人影のすぐ背後で。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：13階のすべての部屋のドアに真鍮の表札が掛かっており――そのすべてに『あなたの名前』が彫られていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "待ってください……警備デスクの電話が勝手に鳴っています。ロビーのカメラ映像を見てください。",
+          "timestamp_label": "午前2:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "ロビー警備デスク",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "取り乱した声が息を切らして叫びます。『Hectorです！20分前に誰かにスマホを盗まれたんです――あなたは今誰とやり取りしてるんですか？！』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否すると、即座に留守電が文字起こしされます。『Hectorです――私はロビーに閉じ込められています！あなたにメッセージを送っているのは私じゃありません！』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "ではメッセージを送っていたのは誰？",
+          "teaser_text": "エピソード2：13階の人影が光るスマホを掲げ――微笑みます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "13番目の入居者",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2時18分 · エレベーターの照明が消えます。廊下に立つ人影の顔を照らすのは、スマホの光だけでした。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ロビーの電話に出るべきじゃなかったな、{{player_name}}。こうなったら俺が中に入るしかない。",
+          "timestamp_label": "午前2:18",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "来ないで！誰なの？！どうしてHectorさんのスマホを持ってるの？！",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CAM 13 · 午前2時18分55秒 — B号機外の廊下。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "後ろの鏡を見てみろ。俺はもう中にいる。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "2011年からずっと13階に閉じ込められてるんだ。誰かが俺の代わりを引き受けない限り、この建物は俺を出してくれない。",
+          "timestamp_label": "午前2:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "金属の扉が耳障りな音を立てて閉まり――冷たい影があなたと共に中に閉じ込められます。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "天井の点検ハッチをこじ開ける",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "天井から脱出します！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "13階のLED表示パネルを叩き割る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "今パネルを壊します！",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "ハッチを押し上げた瞬間――真っ暗な頭上の昇降路から、氷のように冷たい指があなたの手首を掴みました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "秘密解放：火花が散ってエレベーターが1階へ急降下。壊れたパネルの裏には、2011年の色褪せたHectorの行方不明者チラシが隠されていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "エレベーターが優しく鳴ります。明るく無人のロビーへ扉が開きましたが――すべての時計が『午前2時14分』を指したままです。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Hector (夜間警備員)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "虚ろな囁きが響きます。『おかえり、{{player_name}}。13階を楽しんで』",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "着信拒否を押しても、通話は勝手に繋がります。背後では、エレベーターの『13』ボタンが真っ赤に輝いていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "次の停車階：永遠",
+          "teaser_text": "シーズンフィナーレ · ロビーの扉はレンガで塞がれています。待っているのはエレベーターだけ。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "レンガで塞がれたロビー",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前2時28分 · エレベーターがガクンと下へ戻りますが、扉が開いた先では分厚いコンクリートレンガがロビーを塞いでいました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}さん、かごの中にいて！外からロビーのガラスを叩いているんです――1階全体がレンガの壁の向こうに消えてしまった！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hectorさん、パネルがまた光りました――今度は13じゃありません。『B4』って表示されて、扉が開かないんです！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "エレベーターパネル · 午前2時29分に赤く光る13階と隠し保守コード。",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "天井の蛍光灯がちらついて消えます。床の通気格子から冷たい風が吹き上がってきました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "もう一度13を押しなさい、{{player_name}}。13階の住人から持ち出した鍵を返し忘れているよ。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "1998年、12階と屋上の間に閉じ込められた住人が亡くなり――管理会社が昇降路を封印した。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[インターホンからパチパチと鳴る雑音] 「どの建物にも消された階があるのよ、{{player_name}}。その理由を知っているのは夜勤だけ」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "エレベーターがひとりでに、封印された昇降路へ向かって上昇を始めます。",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_stop",
+              "label": "赤い非常停止レバーを引く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "非常ブレーキを引きます――Hectorさん、消防を呼んで！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_press_alarm",
+              "label": "保守上書きを長押ししハッチを開ける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 脱出",
+              "player_reply_text": "天井ハッチの掛け金を見つけました！昇降路へ登ります！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ブレーキが折れたんですか？！手すりに掴まっていて――今ロビーの保守用扉をこじ開けています！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "賢明です！昇降路の西側の壁にハシゴがボルト留めされているはず――12階へ向かって登ってください！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "遅すぎたな。昇降路の明かりが今消えた――そして上から何かが降りてきているぞ。",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "昇降路の中の何か。",
+          "teaser_text": "エピソード4：真っ暗闇の中で階と階の間に閉じ込められたあなたは、なぜ13階が設計図から消されたのかを知ることになります。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "1998年の設計図",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前2時35分 · 暗い昇降路の鉄製ハシゴにしがみつくあなた。その間、Hectorは1998年のビル台帳を引っ張り出します。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警備詰所で古い設計図を見つけました！13階は迷信なんかじゃなかった――火災の後に封印された違法なペントハウスだったんです！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hectorさん、ハシゴのすぐ横に扉があります！誰かが鉄板に『警備員を信じるな』って引っ掻いて彫ってます！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "なぜ今でもベルトに13階行きの真鍮の鍵をぶら下げているのか、Hectorに聞いてみなさい、{{player_name}}。",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "あなたの懐中電灯の光が、錆びた扉の横にある真鍮の鍵穴を捉えました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "そいつの言葉を聞いちゃダメです！その鍵は大家から預かったもので――誓って一度も開けたことはありません！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "待て……なぜ1998年の点検記録に俺自身の署名があるんだ？俺が雇われたのは2020年のはずなのに……",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[通気口越しに囁く声] 「彼が雇われたのは2020年なんかじゃないわ、{{player_name}}。その警備員の社員証の写真を見てみなさい」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "インターホンは、Hectorが1998年からずっと夜勤に囚われていると主張します。",
+          "options": [
+            {
+              "option_id": "opt_e4_question_hector",
+              "label": "Hectorに警備員バッジの写真を要求する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hectorさん、今すぐご自分の警備員証の写真を撮って送ってください。",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_open_door",
+              "label": "錆びた13階の扉を力ずくで押し開ける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 勇敢",
+              "player_reply_text": "13階の扉を蹴り開けます――自分の目で真実を確かめないと。",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "私のバッジの日付が……1998年？！いや、あり得ない――どうしてこのビルを出た記憶がないんだ？！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "待って――中の廊下に琥珀色のランプが灯っている！そして突き当たりに鏡がある！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "おかえり、{{player_name}}。廊下の突き当たりに立っている影を見て。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "忘れられた廊下。",
+          "teaser_text": "エピソード5：13階からの防犯カメラ画像が、昇降路を封印した人物の顔を暴き出します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "灰の廊下",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前2時44分 · 13階の空気に灰がゆらりと舞う中、あなたのスマホに保存されていた防犯カメラの1コマが届きます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今思い出しました、{{player_name}}さん！火災の時、私は13Aの少女を助けようとしたんです――そして大家が違反を隠すためにエレベーターをロックしたんだ！",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hectorさん……それじゃああなたも、あの火事から外に出られなかった人の一人なの？！",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "13階廊下 · 13A号室の横に立つ影 — 真鍮のマスターキーを持っている。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "背後でエレベーターのベルが鳴ります。扉が開き、明るく普通のロビーが現れました――わずか30秒間だけ。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "13A号室から台帳を持ってエレベーターへ走ってください、{{player_name}}さん。生きている人たちにここで本当に起きたことを伝えて！",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "真実が世に出れば、俺たちもようやく永遠にこのビルから退勤できる。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[静かで響き渡る声] 「火災報告書を持っていきなさい、{{player_name}}。真鍮の鍵は床に残して――決して振り返らないで」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "本物のロビーへ繋がる扉が10秒後に閉まります。",
+          "options": [
+            {
+              "option_id": "opt_e5_grab_ledger",
+              "label": "焦げた火災台帳を掴んでダッシュする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "台帳を掴みました！かごに向かって走ります！",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_promise_hector",
+              "label": "大家を必ず告発するとHectorに約束する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 正義",
+              "player_reply_text": "必ず全員を暴くと誓います、Hectorさん。もう安らかに休んでください！",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "走って！あなたを置いて扉が閉まらないうちに！",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ありがとう、{{player_name}}さん。28年ぶりに、ようやく私のシフトが終わりました。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "エレベーターが滑らかに1階へ降下します。外ではついに夜明けが訪れていました。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "最後の降下。",
+          "teaser_text": "エピソード6（フィナーレ）：朝の光の中へ踏み出したあなたは、13階が存在した唯一の証拠を手にしています。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "シフト完了",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前6時05分 · 刑事たちが焦げた1998年の台帳を証拠袋に収める中、アパートのロビーに警察の規制線テープが張られます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "刑事さんたちが12階の奥の封印された壁を見つけましたよ、{{player_name}}さん。火災報告書に載っていた全員が、ようやく安らかに眠れます。",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って――Hectorさん？！日勤の警備員がもう出勤したのに、どうしてまだメッセージを送れるの？！",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "電波が消える前に最後の一言だけです。エレベーターのパネルを見てください。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "あなたはエレベーターを振り返ります：13番ボタンは消え失せ――滑らかで継ぎ目のないステンレス板に変わっていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "大家は先ほど空港で逮捕されました。私たちを暗闇に置き去りにしないでくれて、ありがとうございました。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "さようなら、{{player_name}}さん。次は階段を使ってくださいね。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[温かく、雑音の中へフェードアウトする声] 「夜勤よりおやすみなさい、{{player_name}}さん。もう安全ですよ」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Hectorのチャットスレッドが自らアーカイブされようとする中、画面がちらつきます。",
+          "options": [
+            {
+              "option_id": "opt_e6_say_goodbye",
+              "label": "信号が消える前にHectorへ感謝を伝える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "安らかに、Hectorさん。今夜、あなたは私の命を救ってくれました。",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_leave_flowers",
+              "label": "警備デスクの横に白い花を手向ける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 追悼",
+              "player_reply_text": "あなたと13Aの方のために、ロビーのデスクに花を置きました。さようなら。",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "送信完了 · 午前6時07分 既読。",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "送信完了 · 無人の警備デスクを温かいそよ風が撫でていきました。",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "システム：『ロビーインターホン』は永久に切断されました。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · 12階建てだけのビル。",
+          "teaser_text": "THE END · ビルはようやく再び12階建てに戻り――夜間警備員も家へと帰りました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

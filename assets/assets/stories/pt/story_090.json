@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_090",
+  "lang": "pt",
+  "metadata": {
+    "title": "Resgate de Dia Zero",
+    "subtitle": "Um ransomware acabou de congelar cada monitor de UTI no meu hospital — a menos que eu apague o prontuário de um paciente em 15 minutos.",
+    "genre": "thriller",
+    "tags": [
+      "Ransomware",
+      "Hospital",
+      "Cibernético"
+    ],
+    "cover_image": "assets/media/covers/story_090.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · NetOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "patel",
+      "name": "Dr. Patel · UTI",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "zday",
+      "name": "ZERO_DAY",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#134E4A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Código Preto",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02h11 · SALA DE SERVIDORES SÃO JUDAS: Todo terminal pisca em vermelho. \"TODAS AS BOMBAS DE INFUSÃO CRIPTOGRAFADAS. 15:00 RESTANTES.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}!! Nossos respiradores da UTI acabaram de cair da rede! Estamos ventilando três pacientes manualmente — conserte AGORA!",
+          "timestamp_label": "02:11",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Não precisa de Bitcoin, {{player_name}}. Apague o laudo toxicológico do Paciente nº 4409 do banco de dados mestre, e eu libero a chave de descriptografia na hora.",
+          "timestamp_label": "02:12",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Paciente nº 4409?! Quem está no Leito 9, Dra. Patel?!",
+          "timestamp_label": "02:12",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 8,
+          "transcript": "[monitores apitando loucamente] É um desconhecido trazido de uma festa em iate! O sangue dele deu positivo para um agente neurotóxico militar proibido — é tentativa de homicídio!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "A contagem regressiva chega a 11:30. Vidas na UTI estão por um fio:",
+          "options": [
+            {
+              "option_id": "opt_090_e1_free",
+              "label": "Mudar a UTI para backup isolado offline",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dra. Patel, puxe os cabos de rede azuis de todas as bombas — estou enviando firmware offline!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_090_e1_vip",
+              "label": "Clonar o toxicológico de #4409 antes",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "O comando manual restaura dois respiradores — mas o ransomware salta a VLAN e tranca o cofre dispensador da farmácia.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Engenheira esperta. Pena que o Leito 9 precisa de atropina em quatro minutos — e acabei de trancar os remédios.",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Você espelha discretamente o PDF toxicológico num pendrive isolado da rede e então executa uma limpeza visível na tabela SQL principal. ZERO_DAY morde a isca.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Boa escolha. Chave de descriptografia a caminho... Espera. Por que acabou de registrar uma montagem USB no Rack de Servidor 3?",
+          "timestamp_label": "02:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Passagem de crachá detectada fora da Sala de Servidores B. Nosso limpador já está no seu andar.",
+          "unsent_placeholder": "ZERO_DAY apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "O leitor de crachás da sala de servidores bipa verde — embora só duas pessoas de TI tenham acesso. A pesada porta de aço abre para dentro.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Invasor no Rack 3",
+          "teaser_text": "Alguém acabou de destrancar o cofre de servidores com um crachá de admin — e a contagem da UTI tem 3 minutos restantes.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Acesso Raiz",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02h18 · Você se abaixa atrás do rack do corredor frio. Passos caminham devagar entre as lâminas zumbindo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "patel",
+          "caller_label": "Dra. Patel · UTI",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 7,
+          "transcript": "[sussurrado] {{player_name}}! A segurança do hospital disse que o crachá usado na sua sala de servidores pertence ao nosso próprio Chefe de Cirurgia — Dr. Vance!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "A segurança acabou de rastrear a batida do crachá — é o Chefe de Cirurgia! E o Leito 9 acabou de acordar e sussurrar o nome dele!",
+          "timestamp_label": "02:18",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Entregue o pendrive, {{player_name}}, e eu mesmo restauro a UTI. Ninguém precisa morrer hoje à noite.",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você envenenou seu próprio paciente e fez uma UTI inteira de refém para encobrir isso?!",
+          "timestamp_label": "02:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "O Chefe de Cirurgia contorna o Rack 3. Detenha-o:",
+          "options": [
+            {
+              "option_id": "opt_090_e2_free",
+              "label": "Acionar a trava do gás supressor Halon",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_090_e2_vip",
+              "label": "Puxar a chave de decifração do notebook",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Peguei sua chave local — e mandei o laudo toxicológico por e-mail ao Conselho Médico!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Você passa correndo por ele pela porta e acerta o alarme amarelo do Halon. Portas blindadas fecham com estrondo, prendendo o Chefe lá dentro até a polícia hospitalar chegar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Todos os monitores da UTI voltaram ao verde! Você salvou quatro vidas hoje à noite, {{player_name}}!",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Você arranca o cabo Ethernet ativo do notebook aberto dele, puxando a chave local do ransomware direto para o controlador mestre do hospital. Todas as bombas reiniciam.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "As bombas voltaram ao ar E a segurança acabou de algemá-lo no corredor! Graças a Deus você guardou aquele laudo!",
+          "timestamp_label": "02:21",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Você pegou o médico, {{player_name}}. Não a pessoa que escreveu o zero-day.",
+          "unsent_placeholder": "ZERO_DAY apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Quando o dia amanhece sobre São Judas, seu celular recebe um último ping criptografado — de um endereço IP do hospital na Ala Pediátrica.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "O Arquiteto Ainda Está Lá Dentro",
+          "teaser_text": "O Chefe de Cirurgia era apenas o comprador. O verdadeiro hacker ZERO_DAY ainda está conectado à rede interna do São Judas.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Fantasma na Sub-rede",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02h26 · Monitores da UTI estabilizam por dez segundos — e depois piscam em âmbar outra vez. ZERO_DAY continua pulsando na Sub-rede 4.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}! O respirador do Leito 7 acabou de perder pressão de novo! Achei que tínhamos isolado o notebook do Chefe de Cirurgia!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O Chefe era só o comprador, Dra. Patel! Alguém com crachá físico de sala de servidores AINDA está plugado no 4º Andar!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Corredor de Servidores do 4º Andar · 02h25 — Crachá de técnico não autorizado passado por dentro.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[ventoinhas de servidor rugindo] Garota esperta de Redes. Pegou o Chefe — mas não recebo minha segunda metade até o prontuário do Leito 7 virar cinzas.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Você chega às portas de vidro do cofre de servidores do 4º Andar. Aja rápido:",
+          "options": [
+            {
+              "option_id": "opt_090_e3_free",
+              "label": "Cortar a UTI para o backup isolado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dra. Patel, estou passando a UTI para isolamento físico manual! O respirador do Leito 7 está seguro contra ataques remotos!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_090_e3_vip",
+              "label": "Rastrear o crachá que abriu o 4º andar",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Um estalo pesado ecoa pelo rack — todo monitor da UTI acende verde na telemetria por bateria offline.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Respirador firme! O paciente no Leito 7 está estável — quem quer que esteja aí dentro não encosta nos meus pacientes agora!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "O registro de acesso pisca um nome familiar: \"MARCUS V. — FORNECEDOR EXTERNO DE TI MEDTECH.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ZERO_DAY é o Marcus da nossa própria terceirizada de TI! Ele instalou a porta dos fundos durante a atualização do mês passado!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Isolamento acionado! Puxando o disco criptografado de arquivo de pacientes manualmente.",
+          "unsent_placeholder": "ZERO_DAY apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Espera — acabei de checar o prontuário em papel do Leito 7! Ele é o único sobrevivente de um estudo clínico malsucedido financiado pelo maior doador do nosso hospital!",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Não se dê ao trabalho de chamar a segurança, {{player_name}}. Já estou descendo a escada de serviço com o disco de arquivo.",
+          "timestamp_label": "02:26",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "O Sobrevivente do Estudo",
+          "teaser_text": "O Leito 7 guarda a prova de um acobertamento mortal de ensaio clínico — e seu próprio fornecedor de TI está fugindo do 4º Andar com o disco de arquivo.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Bloqueio no 4º Andar",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02h35 · Você bate seu crachá no console de segurança do 4º Andar, acionando as portas magnéticas da ala biológica.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "A polícia hospitalar e agentes cibernéticos do FBI estão subindo pelo saguão principal agora! Não o enfrente sozinha!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não tão rápido, Marcus! Todos os elevadores e escadas do 4º Andar acabaram de entrar em bloqueio biológico!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Se eu jogar o disco de arquivo pelo duto do incinerador, ninguém prova nada.",
+          "unsent_placeholder": "ZERO_DAY apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[passos pesados ecoando] Libere as travas magnéticas do 4º Andar, {{player_name}}, ou jogo o disco de backup direto pelo duto de lixo biológico!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Marcus está parado junto ao duto de resíduos com o disco de arquivo. Seja mais esperta:",
+          "options": [
+            {
+              "option_id": "opt_090_e4_free",
+              "label": "Blefar que já sincronizou na nuvem",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Jogue se quiser, Marcus! Espelhei o prontuário completo do Leito 7 para a agência reguladora há cinco minutos!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_090_e4_vip",
+              "label": "Capturar o pacote da carteira cripto",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Marcus hesita — tempo exato para você bater a porta de vidro corta-fogo e cortar a saída dele.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Agentes do FBI acabaram de chegar à escada do 4º andar! Segure ele aí!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "Seu analisador de pacotes intercepta a confirmação final de resgate dele — revelando uma remessa de US$ 2,5M direto do fundo do doador farmacêutico.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Acabei de interceptar sua remessa de US$ 2,5M do doador farmacêutico! Jogar esse disco fora não salva você agora!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "A trava magnética da escada abre sob comando federal — e quatro agentes do FBI invadem o 4º Andar.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Pegaram ele! E o disco de arquivo nem sequer tocou no duto!",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Você arruinou um pagamento de US$ 2,5 milhões por um único leito de UTI...",
+          "timestamp_label": "02:35",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "A Remessa do Resgate",
+          "teaser_text": "Marcus está algemado — e o recibo de US$ 2,5M liga o maior doador farmacêutico do São Judas direto à invasão do hospital.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "O Rastro do Doador",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02h55 · Dentro do posto de enfermagem da UTI, você projeta o recibo bancário interceptado de Marcus na tela de reunião.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Dois milhões e meio de dólares da Apex Pharma Trust... estavam dispostos a desligar uma UTI inteira só para calar o Leito 7.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O FBI acabou de congelar as contas da Apex Pharma — e estou enviando uma atualização limpa de firmware para todo monitor agora mesmo.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Remessa de Resgate Interceptada · US$ 2.500.000 da Apex Pharma Trust para ZERO_DAY.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 6,
+          "transcript": "[monitor cardíaco apitando firme] A oxigenação do Leito 7 voltou a 99%! E o advogado da família dele acabou de chegar com agentes federais.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "A presidência do conselho do hospital liga implorando para abafar o ataque:",
+          "options": [
+            {
+              "option_id": "opt_090_e5_free",
+              "label": "Recusar e enviar relato federal completo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pacientes quase morreram hoje à noite. Cada registro vai direto ao FBI e à agência reguladora.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_090_e5_vip",
+              "label": "Limpar todas as portas dos fundos ao vivo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "A presidência do conselho desliga em silêncio enquanto agentes federais lacram a sala do Chefe de Cirurgia.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Obrigada por manter a posição, {{player_name}}. Medicina vem antes de relações públicas.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Seu script de limpeza remove 14 portas ocultas da MedTech em todas as seis alas do hospital em noventa segundos cravados.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Todas as seis alas verificadas e limpas. ZERO_DAY foi expulso em definitivo do São Judas.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Respeito, Redes. Melhor defesa de plantão noturno que já enfrentei.",
+          "unsent_placeholder": "ZERO_DAY apagou uma mensagem",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Todos os doze leitos da UTI estão verdes no painel! Você salvou cada um deles.",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "[NÓ DE RANSOMWARE EXPURGADO — SISTEMA LIMPO]",
+          "timestamp_label": "02:55",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Reinício Limpo",
+          "teaser_text": "Todos os pacientes da UTI estão seguros e o acobertamento da Apex Pharma foi exposto — uma última checagem ao amanhecer antes do fim do plantão noturno.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Fim do Plantão Noturno",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06h45 · Luz dourada preenche o corredor da UTI. Todo monitor de sinais vitais zune num ritmo firme e tranquilo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "O Chefe de Cirurgia, Marcus e dois executivos da Apex Pharma acabaram de ser indiciados. O Leito 7 está acordado perguntando quem o salvou.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Diga que foi todo o plantão noturno, Dra. Patel. Só mantive as luzes acesas.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "patel",
+          "text": "O diretor do hospital quer nomear você Chefe de Cibersegurança.",
+          "unsent_placeholder": "Dr. Patel apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 5,
+          "transcript": "[sino da troca de turno tocando] O café da manhã no refeitório é por minha conta — e sim, você vai ganhar um baita aumento.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Seu terminal do plantão noturno pede confirmação final antes de encerrar sessão:",
+          "options": [
+            {
+              "option_id": "opt_090_e6_free",
+              "label": "Travar protocolo de isolamento para sempre",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Protocolo de isolamento físico salvo como padrão do hospital. Nunca mais.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_090_e6_vip",
+              "label": "Passar no Leito 7 para dar bom dia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Sua nova política de segurança tranca a telemetria da UTI atrás de chaves físicas — rendendo elogios de hospitais no país inteiro.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Melhor engenheira de redes do país. Vá dormir um pouco!",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Você dá uma espiada no Leito 7. O paciente aperta sua mão fraco e murmura duas palavras: \"Muito obrigado.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Valeu cada segundo daquela contagem de 15 minutos.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Você pendura seu crachá do plantão noturno e sai para o nascer do sol fresco — zero alertas, doze batimentos cardíacos fortes.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Te vejo amanhã à noite, Chefa.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Até amanhã, Dra. Patel.",
+          "timestamp_label": "06:45",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Sinais Estáveis",
+          "teaser_text": "ZERO_DAY foi expurgado, o acobertamento da Apex Pharma foi destruído e todo paciente da UTI viveu para ver o sol nascer.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

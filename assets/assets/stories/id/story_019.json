@@ -1,0 +1,961 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_019",
+  "lang": "id",
+  "metadata": {
+    "title": "CCTV Di Lobi Utama",
+    "subtitle": "Suamiku bersumpah lembur sendirian semalaman mengurus IPO. Pukul 3 pagi, keamanan malam mengirimiku cuplikan CCTV lobi.",
+    "genre": "romance",
+    "tags": [
+      "CCTV",
+      "Pengkhianatan",
+      "Pernikahan"
+    ],
+    "cover_image": "assets/media/covers/story_019.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "security",
+      "name": "Sam (Kepala Keamanan)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "mason",
+      "name": "Mason (Suami)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Stempel Waktu 02:47",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "03:02 · Kamu masih terjaga mencemaskan \"lembur IPO\" Mason. Teman masa kecilmu Sam—kepala keamanan menara—mengirimimu pesan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "{{player_name}}, maaf membangunkanmu. Kau berjanji menyuruhku memberitahumu jika Mason pernah membohongimu lagi. Lihat Kamera 04.",
+          "timestamp_label": "03:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "02:47 · Lobi Eksekutif. Mason masuk lift pribadi bersama Direktur PR-nya—membawa koper bermalam.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Koper bermalam?! Mason baru mengirimiku pesan sepuluh menit lalu bilang dia ketiduran di mejanya!",
+          "timestamp_label": "03:03",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Masih berkutat dengan laporan keuangan, sayang. Tidurlah lagi, aku beli sarapan dalam perjalanan pulang. ❤️",
+          "timestamp_label": "03:04",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Mereka tidak ke kantornya di Lantai 30—mereka menggesek kartu masuk ke suite spa eksekutif di Lantai 42.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 7,
+          "transcript": "[suara statis radio pelan] Kusimpan rekaman HD penuhnya ke drive terenkripsi, {{player_name}}. Katakan apa yang ingin kau lakukan.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "choice",
+          "prompt": "Sekarang pukul 03:06. Suamimu di Lantai 42 berbohong di depan matamu.",
+          "options": [
+            {
+              "option_id": "opt_send_cctv",
+              "label": "Kirim foto CCTV ke Mason sekarang juga",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bagus sekali \"laporan keuangan\"-nya di Lantai 42, Mason. Tak usah repot-repot bawa sarapan.",
+              "next_node_id": "e1_n09a"
+            },
+            {
+              "option_id": "opt_vip_lock",
+              "label": "Minta Sam picu latihan kebakaran Lantai 42",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Skakmat",
+              "player_reply_text": "Sam, jalankan pemeriksaan keselamatan wajib jam 3 pagi di Suite 42. Kutemui mereka di lobi.",
+              "next_node_id": "e1_n09b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n09a",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "DARI MANA KAU DAPAT FOTO ITU?! Siapa yang memata-mataiku?! {{player_name}}, angkat teleponnya!!",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n09b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Alarm Lantai 42 aktif. Mereka berdua berlari menuju lift masih pakai jubah hotel sekarang.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "cliffhanger",
+          "headline": "Tertangkap Kamera 04.",
+          "teaser_text": "Episode 2: Lift lobi terbuka pukul 03:15—dan Mason melangkah lurus berhadapan denganmu serta ketua dewan gedung.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Evakuasi Pukul 03:15",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "03:18 · Lobi terang benderang bagai siang hari. Mason berdiri membeku memakai jubah mandi sambil chat kamu dari jarak tiga meter.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "{{player_name}}, kumohon! IPO meluncur pukul 09:00! Kalau dewan melihat ini, opsi sahamku lenyap!",
+          "timestamp_label": "03:18",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Oh, baru peduli soal opsi saham sekarang? Ingat siapa yang menggadaikan rumah orang tuanya demi modal awalmu, Mason?",
+          "timestamp_label": "03:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Itu sebabnya aku mengalihkan separuh saham pendiriku ke Direktur PR-ku kemarin—supaya kau tak bisa menyentuhnya!",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 7,
+          "transcript": "[tenang, protektif] Kau baru menangkap layar pesan yang ditarik itu, {{player_name}}? Karena petugas kepatuhan SEC baru saja melangkah masuk ke lobi.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "choice",
+          "prompt": "Pengalihan saham rahasia Mason adalah penipuan pra-IPO ilegal. Buat keputusan akhirmu.",
+          "options": [
+            {
+              "option_id": "opt_settlement",
+              "label": "Paksa dia serahkan 60% saham kepadamu",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tandatangani pengalihan 60% saham pendiri kembali kepadaku sekarang, atau kutunjukkan ke petugas kepatuhan.",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_vip_burn",
+              "label": "Serahkan CCTV & bukti curang ke dewan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Bumi Hangus",
+              "player_reply_text": "Nikmati menjelaskan pengalihan saham pra-IPO rahasia ke dewan, Mason. Kita bercerai.",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Aku tanda tangan! Tolong jangan tunjukkan pada mereka! Aku menelepon pengacaraku sekarang!",
+          "timestamp_label": "03:22",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "narrator",
+          "text": "Dewan menghentikan IPO di tempat. Mason ambruk ke kursi lobi sementara Direktur PR-nya lari terbirit-birit keluar pintu putar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08"
+        },
+        {
+          "id": "e2_n08",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Shift selesai, {{player_name}}. Biar kuantar pulang—dan kubelikan sarapan yang dia bohongi itu.",
+          "timestamp_label": "03:24",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n09"
+        },
+        {
+          "id": "e2_n09",
+          "type": "cliffhanger",
+          "headline": "Kasus Ditutup. Fajar Baru.",
+          "teaser_text": "Akhir Musim · Melangkah ke udara jam 3 pagi yang sejuk di samping Sam, kamu akhirnya bernapas lega.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Sudut CCTV Kedua",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "08:10 · Suite hotel yang aman. Kamu nyaris tak tidur saat Sam mengirim cuplikan berstempel waktu kedua dari lobi.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Ini bukan cuma perselingkuhan, {{player_name}}. Lihat apa yang diserahkan Mason pukul 02:51—itu drive paten IPO keluargamu.",
+          "timestamp_label": "08:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dia bersumpah melindungi IPO ayahku... padahal dia menjualnya di belakang kita?!",
+          "timestamp_label": "08:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Kamera Lobi Utama #04 · 02:51 — Mason menyerahkan USB terenkripsi kepada pengacara saingan saudarimu.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Mason mengirimimu pesan—nadanya mendadak sedingin es setelah dia sadar kau tak pulang ke rumah.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Kau di mana, {{player_name}}? Berhenti mendengarkan satpam rendahan itu dan pulang sebelum kubekukan rekening bersama kita.",
+          "timestamp_label": "08:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Kalau dia menyerahkan rekaman lobi itu ke SEC sebelum bel pukul 14:00, aku masuk penjara.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 10,
+          "transcript": "[mantap, tenang] \"Kucadangkan seluruh rekaman lobi 4K ke cloud, {{player_name}}. Beri aba-aba dan kuantar kau langsung ke pengacaramu.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Peluncuran IPO Mason pukul 14:00. Bagaimana kamu membalas?",
+          "options": [
+            {
+              "option_id": "opt_e3_call_lawyer",
+              "label": "Kirim rekaman CCTV langsung ke pengacara",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bekukan sesukamu, Mason. Pengacaraku sudah memegang rekaman pukul 02:51.",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_crash_ipo",
+              "label": "Serbu peluncuran IPO bersama Sam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Balas Dendam",
+              "player_reply_text": "Simpan kursi barisan depan di peluncuran jam 2 siang, Mason. Aku punya kejutan.",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Langkah cerdas. Pengacaramu baru mengajukan perintah darurat—Mason sebentar lagi panik.",
+          "timestamp_label": "08:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Aku tepat di sebelahmu sepanjang jalan. Tak ada yang boleh menyentuhmu selama aku berjaga.",
+          "timestamp_label": "08:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Kau menggertak, {{player_name}}. Keamanan bekerja untukKU—rekaman itu tidak ada!",
+          "timestamp_label": "08:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Hitung Mundur Menuju Bel Jam 2 Siang.",
+          "teaser_text": "Episode 4: Mason mencoba menyuap Sam agar menghapus server—tanpa sadar Sam merekam setiap kata.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Suap Di Dalam Garasi",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:45 · Parkiran bawah tanah B2. Sam mengirimimu umpan audio langsung dari mikrofon jaketnya.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Mason baru mencegatku di dekat trukku membawa cek kasir $200K. Tetap di mobil—biarkan dia bicara.",
+          "timestamp_label": "11:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hati-hati, Sam! Kalau dia sadar kau merekam, dia bisa nekat.",
+          "timestamp_label": "11:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Kau sungguh mau membuang pernikahanmu cuma gara-gara satu malam buruk, {{player_name}}? Pulanglah dan akan kubalik nama rumah kota itu untukmu.",
+          "timestamp_label": "11:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Audio langsung melonjak—Mason mengancam Sam, lalu tak sengaja mengaku dia memalsukan tanda tanganmu di pengalihan akuisisi.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "Tunggu... kenapa radio Sam berkedip merah?! Kalian berdua menjebakku?!",
+          "timestamp_label": "11:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Aku menjagamu dari meja keamanan selama setahun, {{player_name}}—aku tak bisa membiarkannya menghancurkanmu.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "mason",
+          "duration_sec": 10,
+          "transcript": "[Suara murka Mason terekam di pita] \"Hapus klip 02:51 itu dan kugandakan bayarannya! Dia bahkan tak tahu aku memalsukan namanya di pengalihan paten!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Kamu kini memegang CCTV sekaligus rekaman pengakuannya.",
+          "options": [
+            {
+              "option_id": "opt_e4_send_police",
+              "label": "Teruskan pengakuan ke Unit Penipuan",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Semua kata terekam, Mason. Detektif penipuan sedang dalam perjalanan.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_air_on_stage",
+              "label": "Siapkan untuk speaker panggung IPO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Nuklir",
+              "player_reply_text": "Simpan pidatomu untuk investor pukul 14:00—mereka akan mendengar ini secara langsung.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Dia baru lari ke arah lift. Para detektif sudah menyegel pintu keluar lobi.",
+          "timestamp_label": "11:50",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Teknisi audionya teman lamaku. Beri aku sepuluh menit dan seluruh ballroom akan mendengarnya.",
+          "timestamp_label": "11:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Aku juga mengambil berkas pengalihan paten palsu dari baki printer eksekutif. Lihat ini.",
+          "timestamp_label": "11:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Tanda Tangan Palsu.",
+          "teaser_text": "Episode 5: Tepat pukul 14:00, Mason melangkah ke podium IPO—persis saat layar besar menayangkan buktimu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Langsung Di Layar IPO",
+      "start_node_id": "e5_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "14:00 · Grand Ballroom. Reporter memadati lorong saat Mason mengetuk mik—dan dinding LED 12 meter berkedip menyala.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Waktunya pertunjukan, {{player_name}}. CCTV pukul 02:51 maupun kontrak palsunya baru tayang langsung di belakang kepalanya.",
+          "timestamp_label": "14:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Lihat para investor berdiri! Dan selingkuhannya baru kabur lewat pintu samping!",
+          "timestamp_label": "14:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "security",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Bukti B · Pengalihan Paten Palsu — Audit forensik mengonfirmasi tulisan tangan Mason.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Petugas polisi melangkah ke atas panggung. Bel IPO dihentikan tanpa batas waktu.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "mason",
+          "text": "{{player_name}}, kumohon—bilang ke mereka itu salah paham! Kutandatangani surat cerai sekarang juga, asal cabut tuntutan penipuannya!",
+          "timestamp_label": "14:03",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "mason",
+          "text": "Seluruh hidupku berakhir... bagaimana dia mengalahkanku sebegitu bersih?",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 9,
+          "transcript": "[bangga dalam diam] \"Mereka baru memborgolnya, {{player_name}}. Paten ayahmu kembali atas namamu. Keluarlah—udaranya akhirnya bersih.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Mason digiring melewatimu dengan tangan terborgol, memohon belas kasihan.",
+          "options": [
+            {
+              "option_id": "opt_e5_cold_goodbye",
+              "label": "Serahkan surat cerai dengan diam",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tandatangani lewat pengacaraku, Mason. Kita tak punya apa pun lagi untuk dibicarakan.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_thank_sam",
+              "label": "Berbalik pergi & pakai jaket Sam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Putus Bersih",
+              "player_reply_text": "Kau kehilanganku sejak pukul 02:47, Mason. Sam, ayo keluar dari sini.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Perpisahan terbersih yang pernah kulihat. Kopi aku yang traktir—tak ada lagi darurat jam 3 pagi.",
+          "timestamp_label": "14:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Jaketku memang lebih cocok di tubuhmu. Ayo lihat matahari terbenam di dermaga.",
+          "timestamp_label": "14:05",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Tunggu—sebelum aku selesai bertugas selamanya, ada sesuatu yang ingin kutanyakan padamu sejak musim semi lalu.",
+          "timestamp_label": "14:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Akhirnya Lepas Tugas.",
+          "teaser_text": "Episode 6 (Akhir): Bebas dari pernikahan beracun, kamu menemukan penjaga tenang yang tak pernah mengalihkan mata dari keselamatanmu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Penjaga Yang Tenang",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "18:15 · Kafe Tepi Laut. Cahaya keemasan memantul di pelabuhan saat Sam meletakkan dua cangkir mengepul hangat.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Aku menyerahkan surat pengunduran diriku di Grand Tower pagi ini. Tak perlu lagi mengawasi pria-pria curang dari layar monitor.",
+          "timestamp_label": "18:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tunggu—lalu kau mau kerja apa sekarang? Perusahaan ayahku butuh Kepala Keamanan sejati.",
+          "timestamp_label": "18:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Hanya kalau bekerja untukmu tak melanggar aturan soal mengajak bos makan malam.",
+          "timestamp_label": "18:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Ponselmu berdenting—akta cerai resmi final, dan IPO keluargamu resmi kembali berjalan atas namaMU.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Lihat notifikasi itu, {{player_name}}. Kau tak cuma selamat darinya—kau merebut kembali seluruh kekaisaranmu.",
+          "timestamp_label": "18:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "security",
+          "text": "Aku tak perlu memburumu. Aku cuma ingin menjadi pria yang tak pernah membuatmu mengecek kamera pukul 3 pagi.",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "security",
+          "duration_sec": 9,
+          "transcript": "[lembut, tulus] \"Tanpa tekanan hari ini, {{player_name}}. Janji satu hal saja—saat kau siap memulai lembaran baru, izinkan aku jadi yang pertama dalam antrean.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Angin pelabuhan terasa lebih hangat daripada bertahun-tahun terakhir.",
+          "options": [
+            {
+              "option_id": "opt_e6_first_in_line",
+              "label": "Bilang dialah satu-satunya di antrean",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tak ada antrean, Sam. Makan malam Jumat ini—hanya kita berdua.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_hold_hand",
+              "label": "Raih tangannya melintasi meja",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Fajar Baru",
+              "player_reply_text": "Kenapa tunggu sampai Jumat? Mulai malam ini, Sam.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Jumat pukul tujuh. Aku akan datang lebih awal—seperti biasa.",
+          "timestamp_label": "18:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Shift terbaik sepanjang hidupku, {{player_name}}. Aku menjagamu.",
+          "timestamp_label": "18:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "security",
+          "text": "Tak ada lagi bayangan di lobi. Hanya langit cerah di depan. 🌅",
+          "timestamp_label": "18:22",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Akhir Musim · Aman Di Pelukannya.",
+          "teaser_text": "TAMAT · Satu foto keamanan jam 3 pagi menghancurkan kebohongan—dan membawamu ke hati paling tulus yang pernah kau kenal.",
+          "sfx": "ting",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

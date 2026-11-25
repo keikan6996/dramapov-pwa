@@ -1,0 +1,991 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_075",
+  "lang": "ko",
+  "metadata": {
+    "title": "새어머니의 신탁 자금",
+    "subtitle": "25번째 생일날, 돌아가신 친어머니의 신탁 계좌에는 고작 412달러만 남아 있었다—그리고 새어머니는 방금 토스카나 포도원을 사들였다.",
+    "genre": "romance",
+    "tags": [
+      "유산",
+      "계모",
+      "복수"
+    ],
+    "cover_image": "assets/media/covers/story_075.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "stepmom",
+      "name": "Camille (새어머니)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#701A75"
+    },
+    {
+      "id": "banker",
+      "name": "Grant 씨 (신탁 은행가)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "dad",
+      "name": "아빠",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "잔액: 412달러",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 04:00 · 당신의 25번째 생일—돌아가신 어머니의 120만 달러 신탁이 개시되는 날입니다. 신탁 담당 은행원이 다급하게 문자를 보냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "생일 축하드립니다, {{player_name}} 님—이런 말씀 드려 정말 죄송하지만 현재 신탁 잔액이 412.40달러입니다. 작년에 총 118만 달러 규모의 \"긴급 의료\" 송금 네 건이 인출되었습니다.",
+          "timestamp_label": "오후 04:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "긴급 의료요?! 저 작년에 아픈 적조차 없는데요! 누가 그 송금을 승인했죠?!",
+          "timestamp_label": "오후 04:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 12,
+          "transcript": "[무거운 어조] 새어머님 카밀 씨가 서명된 관리인 양식을 제출하셨고—모든 송금이 피렌체의 한 페이퍼컴퍼니를 거쳐 방금 포도원을 매입했습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "중개인한테 토스카나 등기 끝났다고 전해—아더는 아직도 내가 내 위자료로 산 줄 알고 있거든!",
+          "unsent_placeholder": "Camille님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "25번째 생일 축하해, 아가! 생일 만찬 차렸으니 얼른 아래층으로 내려와—너 주려고 근사한 실크 스카프 샀단다!",
+          "timestamp_label": "오후 04:05",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "아래층에서 손님 50명과 아버지가 기다리고 있습니다. 어떻게 준비하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_pull_wires",
+              "label": "송금 영수증 4건과 가짜 청구서를 출력한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "그랜트 선생님, 피렌체 페이퍼컴퍼니 이름이 찍힌 송금 영수증 네 건 전부 제 이메일로 보내주세요.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_file_felony",
+              "label": "은행에 사기 신고를 걸어 빌라 매입 자금을 동결시킨다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "법적 조치 · 광고 보기",
+              "player_reply_text": "지금 당장 그 네 건의 의료 양식을 위조로 신고 처리하세요. 은행 사기팀이 토스카나 자금 흐름을 추적하게 합시다.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "전송했습니다. 그리고 그녀가 낸 \"의료\" 영수증의 병원 이름도 확인해 보세요—2019년에 폐업한 병원입니다.",
+          "timestamp_label": "오후 04:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "사기 경보 발동: 국제 은행 준법감시팀이 카밀의 피렌체 페이퍼컴퍼니 계좌를 동결하고—이탈리아 당국에 통보합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "{{player_name}}, 주방에서 카밀이 휴대폰 붙잡고 왜 저렇게 소리를 질러대는 거니? 이제 케이크 자를 시간이니 내려오렴.",
+          "timestamp_label": "오후 04:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "웃는 얼굴로 내려와라, {{player_name}}. 네 아버지는 생일에 은혜 모르는 꼴 보이는 걸 제일 싫어하시니까.",
+          "timestamp_label": "오후 04:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "120만 달러짜리 스카프",
+          "teaser_text": "2화: 카밀이 손님 오십 명 앞에서 당신에게 40달러짜리 스카프를 건넵니다—그리고 당신이 식당 프로젝터에 노트북을 연결합니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "생일 건배사",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 06:45 · 식당 홀. 카밀이 샴페인 잔을 들어 올리며 아버지를 향해 다정하게 미소 짓습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "{{player_name}}를 위하여! 친딸처럼 정성껏 키워 왔는데—오늘 이 스카프를 소중히 간직해 주길 바라.",
+          "timestamp_label": "오후 06:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "고마워요, 카밀. 그런데 전 돌아가신 우리 엄마 신탁금으로 사신 118만 달러짜리 포도원이 조금 더 궁금한데요.",
+          "timestamp_label": "오후 06:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "프로젝터 당장 꺼!! 아더가 피렌체 송금 내역 보게 두지 마!!",
+          "unsent_placeholder": "Camille님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "카밀?! {{player_name}}가 무슨 소리를 하는 거야? 네 오빠가 산 포도원이라고 했잖아!",
+          "timestamp_label": "오후 06:48",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 9,
+          "transcript": "[스피커폰] 하이 선생님, 신탁은행입니다. 사모님께서 2019년에 폐업한 병원 명의로 네 건의 의료비 청구서를 위조해 {{player_name}} 님의 신탁을 비우셨습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "카밀이 대리석 바닥에 유리잔을 떨어뜨립니다. 어떻게 그녀의 시대를 끝내시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_press_charges",
+              "label": "오늘 밤 중범죄 횡령 혐의로 고소한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "조용히 합의해 줄 생각 없어요, 아빠. 우리 엄마 무덤에서 돈을 훔쳤잖아요. 검사들이 처리하게 두죠.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_seize_vineyard",
+              "label": "오늘 밤 안으로 포도원 명의를 나에게 넘기도록 강제한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "보스의 한 수 · 광고 보기",
+              "player_reply_text": "오늘 밤 내로 이자까지 쳐서 토스카나 등기를 제 앞으로 넘기세요—안 그러면 판사 앞에서 그 유령 병원 해명하셔야 할 겁니다.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "아버지가 아무 말 없이 결혼반지를 빼내 생일 케이크 옆에 내려놓습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "유산 회수 완료: 카밀이 160만 달러 가치로 오른 토스카나 포도원 양도 서류에 서명하고—아버지는 자정 전에 이혼 소송을 제기합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "저 여자한테 눈이 멀어 있었던 게 정말 미안하다, {{player_name}}. 네 엄마가 네가 얼마나 당차게 싸웠는지 보고 자랑스러워하실 거야.",
+          "timestamp_label": "오후 06:55",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "제가 바랄 수 있었던 최고의 25번째 생일 선물이네요: 진실.",
+          "timestamp_label": "오후 06:57",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "스물다섯을 위하여 건배",
+          "teaser_text": "카밀의 책상을 정리하던 아버지가 두 번째 위조 서명을 발견합니다—그녀가 아버지 명의로 거액의 생명보험을 들려 했던 것입니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "두 번째 서명",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 8:20 · 아버지 서재. 카밀의 책상에서 아버지가 방금 찾아낸 생명보험 가입 서류가 모든 판을 뒤집습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "{{player_name}}… 손이 멈추질 않는구나. 카밀이 나를 피보험자로 해서 500만 달러짜리 생명보험에 내 서명을 위조해 넣었어—수익자는 오직 자기 단독 명의로!",
+          "timestamp_label": "오후 8:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "돌아가신 엄마 신탁금 털어서 토스카나 포도원 산 것도 모자라, 이제 아빠 목숨에 500만 달러 보험을 걸었다고요?!",
+          "timestamp_label": "오후 8:21",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "dad",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "위조된 보험 청약서 · 5,000,000달러 정기 생명보험 — 수익자: 카밀 V. (아버지 미참석 상태에서 공증됨).",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "긴급 경보입니다, {{player_name}} 님! 카밀이 방금 이탈리아 부동산 중개인에게 내일 정오까지 현금 조건으로 토스카나 포도원을 급매 처분하라고 지시했어요!",
+          "timestamp_label": "오후 8:23",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "포도원 매각 대금 내 취리히 계좌로 들어오자마자 오전 6시 비행기 탄다—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 8,
+          "transcript": "[빠르게 타자 치는 소리] {{player_name}} 님, 우리가 국제 사기 동결 신청하기 전에 토스카나 매매가 체결되면, 어머님 신탁 자금이 취리히로 증발해 버립니다!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "카밀이 돌아가신 어머니의 신탁금을 챙겨 오전 6시에 해외로 도주하려 합니다! 어떻게 막으시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_freeze_italy",
+              "label": "토스카나 현지에 국제 사기 지급정지를 접수한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "그랜트 선생님, 그 포도원 담당 이탈리아 공증인에게 신탁 절도 경찰 조서 바로 전송하세요!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_airport_watch",
+              "label": "포도원 동결 + 경찰에 위조 생명보험을 신고한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "완전 봉쇄 · 광고 보기",
+              "player_reply_text": "토스카나 잔금 동결하고 동시에 형사님들께 위조된 500만 달러 생명보험 서류 넘기세요—여권에 도주 우려 경보까지 걸어 버립시다!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "매매 동결 완료: 이탈리아 공증인이 유럽연합 자금세탁방지법에 따라 현금 매매 종결을 즉각 중단시킵니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "여권 출국 금지 등록: 형사들이 카밀을 고위험 도주 우려 중범죄 용의자로 분류하고—공항 세관에 경보가 하달됩니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "저 여자가 내 딸을 털고 내 목숨까지 노리는 동안 내가 3년이나 감싸줬다 니 정말 믿기지가 않는다.",
+          "timestamp_label": "오후 8:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "왜 이탈리아 중개인이 방금 포도원 에스크로 잠겼다고 문자 보낸 거야?! 무슨 짓을 한 거야, {{player_name}}?!",
+          "timestamp_label": "오후 8:31",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "이륙 직전 발목 잡히다",
+          "teaser_text": "4화: 카밀이 어쨌든 공항으로 질주합니다—형사들이 이미 12번 게이트 앞에서 기다리고 있는 줄도 모른 채.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "포도원 도주극",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 5:25 · 국제선 터미널. 카밀이 명품 기내 캐리어를 끌고 보안 검색대 쪽으로 걸어갑니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "stepmom",
+          "text": "네 아버지한테 보험 고소 취하하면 포도원 다시 넘겨주겠다고 전해! 오해 하나 때문에 내 인생 망치지 마!",
+          "timestamp_label": "오전 5:25",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "500만 달러 생명보험 청약서에 아빠 서명을 위조한 게 \"오해\"는 아니죠, 카밀.",
+          "timestamp_label": "오전 5:26",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "좋은 소식입니다—토스카나 포도원을 사들인 정확한 송금 자금이 돌아가신 어머님 신탁 계좌에서 나왔음을 추적 입증했습니다. 법정에서 의심의 여지가 없습니다!",
+          "timestamp_label": "오전 5:27",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "왜 출국 심사대에서 내 여권 스캐너가 빨간 불로 깜빡이는 거야—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "형사님한테 방금 전화 왔다! 세관이 국제선 출발 게이트에서 카밀을 멈춰 세웠고—핸드백 안에서 미신고 현금 40,000달러를 발견했대!",
+          "timestamp_label": "오전 5:29",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "banker",
+          "duration_sec": 8,
+          "transcript": "[프린터 윙윙거리는 소리] 더 좋은 소식입니다—카밀의 위조 서류에 불법 도장을 찍어준 공증인이 방금 증인으로 돌아섰습니다! 면책 특권을 조건으로 그녀에게 불리하게 증언하기로 했습니다!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "구금된 카밀이 즉시 포도원 등기를 돌려주겠다고 제안합니다! 당신의 선택은?",
+          "options": [
+            {
+              "option_id": "opt_sign_deed_back",
+              "label": "포도원 등기를 되찾고 형사 처벌은 검사에게 맡긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "엄마 신탁으로 되돌리는 완전 원상회복 양도서에 서명하게 하세요—형사 위조죄는 검사님께 맡깁니다.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_seize_cash_too",
+              "label": "포도원 + 공항 현금 4만 달러까지 모두 환수한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "완벽한 복구 · 광고 보기",
+              "player_reply_text": "포도원 등기 되찾고 동시에 밀반출하려던 현금 4만 달러도 법률 비용과 이자 변제에 충당하세요!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "배상 확정: 지방검찰청이 정식 기소장을 접수하는 가운데 카밀이 조사실에서 양도 증서에 서명합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "단 1달러까지 전액 회복: 돌아가신 어머니의 신탁이 발생 이자까지 더해 100% 원상 복구됩니다—단 한 푼의 손실도 없습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "오늘 아침 사기에 의한 혼인 무효 소송 접수한다, {{player_name}}. 그리고 내 인생 가장 큰 사과를 네게 빚졌구나.",
+          "timestamp_label": "오전 5:38",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "아빠 무사하신 것만으로도 다행이에요. 집에 오세요—진짜 커피 한잔 내려드릴게요.",
+          "timestamp_label": "오전 5:39",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "토스카나 동결 완료",
+          "teaser_text": "5화: 국제 에스크로 송금이 어머니의 신탁을 1달러도 빠짐없이 복원하는 모습을 지켜보십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "토스카나를 동결하다",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 11:30 · 프라이빗 신탁 은행. 그랜트 선생님이 마호가니 책상 너머로 국제 송금 확인서를 밀어 줍니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "피렌체에서 방금 공식 확인이 도착했습니다—토스카나 부동산 지분 대금이 25번째 생일 신탁 계좌로 곧장 반환 입금 완료되었습니다!",
+          "timestamp_label": "오전 11:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "banker",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "신탁 복구 완료 · 원금 전액 + 발생 이자 142,000달러가 {{player_name}} 님 앞으로 반환됨.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "412달러에서 엄마가 너를 위해 모아뒀던 마지막 동전 한 푼까지 돌아왔구나. 그리고 변호사 시켜서 내 공동 서명 권한도 뺐어—이제 100% 온전히 네 거야.",
+          "timestamp_label": "오전 11:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "고마워요, 아빠. 그리고 카밀이 위조 서류를 내밀었을 때 모른 척 넘어가지 않아 주신 그랜트 선생님께도 감사드려요.",
+          "timestamp_label": "오전 11:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "변호사가 사기에 보험 위조까지 합쳐지면 최소 징역 3년은 나온대—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "dad",
+          "duration_sec": 8,
+          "transcript": "[따뜻하고 감정이 북받친 목소리] 늦었지만 25번째 생일 진심으로 축하한다, 우리 딸. 오늘 밤은 아빠가 네 엄마가 제일 좋아하던 저녁 직접 차려줄게—단둘이서.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "돌아가신 어머니의 신탁이 100% 당신 손으로 돌아왔습니다! 첫 번째 계획은?",
+          "options": [
+            {
+              "option_id": "opt_invest_wisely",
+              "label": "80%는 인덱스 펀드에 묶고 꿈을 창업한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "그랜트 선생님, 80%는 안전 보호 인덱스 신탁에 넣어주시고—나머지로 제 건축 스튜디오를 창업할게요!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_mom_memorial",
+              "label": "스튜디오 창업 + 어머니 이름으로 장학금을 세운다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "아름다운 유산 · 광고 보기",
+              "player_reply_text": "제 스튜디오를 열고—회수된 이자 142,000달러는 엄마 성함을 딴 연례 예술 장학금에 헌정하겠습니다!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "현명한 상속자: 그랜트 선생님이 흐뭇하게 고개를 끄덕입니다—\"어머님께서 {{player_name}} 님이 얼마나 침착하고 지혜로우신지 보시면 무척 자랑스러워하실 겁니다.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "자랑스러움의 눈물: 아버지가 눈가를 훔칩니다—\"그게 엄마의 기억을 기리는 가장 순수한 방법이구나, {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "모든 서류 집행 완료되었습니다. 스물다섯 번째 생일 축하드립니다, {{player_name}} 님.",
+          "timestamp_label": "오전 11:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "저녁 7시에 보자—놓쳤던 생일 케이크 아빠가 벌써 사 왔단다.",
+          "timestamp_label": "오전 11:41",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "스물다섯을 위하여 건배",
+          "teaser_text": "6화 (최종화): 되찾은 유산과 아버지와의 치유된 인연 위에서 촛불을 끄십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "되찾은 어머니의 유산",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오후 7:30 · 가족 식당. 액자에 담긴 어머니의 사진 옆 케이크 위로 스물다섯 개의 따뜻한 촛불이 빛납니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "오늘 오후 판사님이 혼인 무효 최종 선고 내리셨다. 집이 드디어 다시 우리 집 같구나.",
+          "timestamp_label": "오후 7:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그리고 아빠가 직접 끓여주신 수프는 제가 기억하던 것보다 훨씬 더 맛있네요.",
+          "timestamp_label": "오후 7:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "짧은 생일 선물 소식입니다: 이탈리아 법원이 카밀의 마지막 항소를 공식 기각했습니다. 고객님 신탁은 이제 100% 누구도 건드릴 수 없습니다.",
+          "timestamp_label": "오후 7:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "stepmom",
+          "text": "그 신탁 기금엔 손대지 말았어야 했는데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "dad",
+          "duration_sec": 8,
+          "transcript": "[흔들리는 촛불 소리] 소원 빌어 보렴, {{player_name}}. 스물다섯에 네가 무엇을 세우든 아빠가 바로 뒤에서 응원할게—다시는 한눈팔거나 앞을 가리지 않으마.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "벌써 소원 빌었어요—그리고 벌써 이루어지고 있는걸요.",
+          "timestamp_label": "오후 7:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "스물다섯 번째 생일 촛불을 끄며 비는 마지막 소원:",
+          "options": [
+            {
+              "option_id": "opt_wish_peace",
+              "label": "평온, 가족, 그리고 두려움 없는 스물다섯을 빈다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "엄마의 사랑과, 아빠의 건강과, 두려움 없는 스물다섯의 새 장을 위하여!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_visit_tuscany",
+              "label": "내년 봄 아버지와 단둘이 진짜 이탈리아 여행을 가자고 말한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "시적 정의 · 광고 보기",
+              "player_reply_text": "내년 봄엔 아빠—엄마가 지켜주신 유산으로 부녀가 직접 진짜 이탈리아 여행 떠나자고요!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "촛불 꺼짐: 새어머니의 그림자가 영원히 사라지며 따뜻한 웃음소리가 방을 채웁니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "통쾌한 정의: 아버지가 크게 웃음을 터뜨립니다—\"그래, 바로 그게 진짜 토스카나를 되찾는 법이지!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "banker",
+          "text": "두 분 케이크 맛있게 드세요. 믿을 수 있는 은행원이 필요하실 땐 언제든 연락 주시고요.",
+          "timestamp_label": "오후 7:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "dad",
+          "text": "사랑한다, 우리 딸. 스물다섯 살 생일 축하한다.",
+          "timestamp_label": "오후 7:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 되찾은 유산",
+          "teaser_text": "새어머니의 사기를 폭로하고, 아버지를 구했으며, 어머니의 사랑이 담긴 자금을 1센트도 빠짐없이 되찾았습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

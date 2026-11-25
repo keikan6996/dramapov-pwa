@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_031",
+  "lang": "ja",
+  "metadata": {
+    "title": "一度も瞬きしない隣人",
+    "subtitle": "友人からメッセージが来た。「ブラインドを閉めて。向かいのベランダの男が40分間ずっとあなたを見つめている」",
+    "genre": "thriller",
+    "tags": [
+      "ストーカー",
+      "アパート",
+      "午前3時"
+    ],
+    "cover_image": "assets/media/covers/story_031.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (あなた)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#9333EA"
+    },
+    {
+      "id": "ally",
+      "name": "Zoe (B棟)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "11D号室 (向かい)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "瞬きなしの40分間",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前2:28 · 明るいキッチンの明かりの下で水を注いでいます。狭い中庭の向かい側にはB棟がそびえています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、キッチンの明かりから離れて！11Dのベランダにいる背の高い男が、40分間ずっとあんたを真っすぐ見つめてる！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って、見えた……雨も降ってないのに灰色のレインコートを着てる。まったく動かないよ。",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "素敵なキッチンだね。ベランダの鍵、開いてるよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今管理会社に電話した！{{player_name}}、11D号室は3年間ずっと封鎖されてて空き部屋なんだって！！",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[棟の間を吹き抜ける風の音、かすかなカメラのシャッター音] ……ブラインドを閉めないで、{{player_name}}。もうすぐそちらへ行くから……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "11Dの影がゆっくりと両腕を上げます――まさにあなたがスマホを持っているのと同じ形を真似しています。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "ブラインドを閉めて明かりを消す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ブラインド閉めた、電気も消した！",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "スマホのカメラで男の顔をズームする",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "11Dのベランダをズームしてみる……",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "リビングが闇に包まれます。5秒後、中庭の向こう側のベランダの明かりもぷつりと消えました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED：彼には目がありません――キッチンの明かりを反射する2つの暗いカメラレンズと、あなたの階のカードキーだけでした。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "11Dのベランダから消えた！！待って――そっちの棟のエレベーター表示が今、11階へ向かって点灯した！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "11D号室 インターホン",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "受話器の向こうにゆっくりとした呼吸音が響きます――続いて、あなたの階でカードキーがドアを解錠する鋭いクリック音が聞こえました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否しました。その瞬間、玄関ドアの隙間の下で廊下の人感センサーライトが点灯します。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "彼は渡ってきた",
+          "teaser_text": "エピソード2：玄関ドアのすぐ外で影が立ち止まります――そして、ベランダの鍵がカチリと鳴りました。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "中庭の内側",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前2:34 · アパートは真っ暗です。玄関ドアもベランダも静まり返っています――あなたのスマホ画面が光るまでは。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、警備員を呼んだ！待って――なんでリビングのランプが今ついたの！？あんたなの！？",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "寝室のクローゼットに隠れてる！リビングのランプなんて触ってない！",
+          "timestamp_label": "午前2:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "CAM 11 · 午前2:34:49 — あなたの部屋の外の無人の廊下。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "エレベーターは使っていない。外壁の縁を伝ってきた。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "廊下カメラを見て――誰もドアの前を通ってない！ベランダから入ったんだ！寝室の鍵を閉めて！",
+          "timestamp_label": "午前2:36",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "ゆっくりとした足音がリビングのラグを横切り、寝室へ向かってきます。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "スマホの大音量SOSサイレンを鳴らす",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "SOSアラームを鳴らす！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "寝室のランプでZoeにSOS信号を送る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "窓から警備員に合図を送る！",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "耳をつんざくサイレンが部屋中に響き渡ります。警備員が玄関ドアを激しく叩くのと同時に、足音が後ろへ駆け戻りました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED：中庭からの投光器がベランダを照らし出します――灰色のレインコートが欄干を乗り越え、虚空へと滑り落ちていく姿を捉えました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "警備員が玄関ドアを開けました。リビングは完全に空っぽです――ただ、ブラインドだけが再び大きく開かれていました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Zoe (B棟)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Zoeが震えた声で言います。「今すぐ向かいの11Dのベランダを見て……向こうに戻ってる。それに、あんたの家の鍵を持ってる」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "中庭の向こうに目を向けます。11Dのベランダで、男がゆっくりと手を振っています――あなたのスペアのスマートキーを掲げながら。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "今夜中に鍵を替えろ",
+          "teaser_text": "シーズンフィナーレ · 下に警備員がいても、彼はまだ一度も瞬きしていません。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "中庭を越えて",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前1:15 · ブラインドは固く閉ざされています――それでもZoeから恐怖のメッセージが届きました。向かいの中庭にある11D号室のベランダが今は空だというのです。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、2分前にベランダから消えた！しかもB棟から見えるそっちの廊下カメラが今、あんたの階で動体検知に反応した！",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Zoe、どうやってセキュリティゲートを通ったの！？待って――今、玄関ドアの下から折り畳まれたメモが差し込まれた！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "廊下カメラ · 午前1:14 — ドアスコープのすぐ外に立つ瞬きしない男。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "コン、コン、コン。玄関ドアを叩く、ゆっくりと意図的なノック音が響きます。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "どうしてブラインドを閉めたんだ、{{player_name}}？振り返って見てくれたのは君だけだったのに。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "警備員がもうエレベーターで上がってる――チェーンロックだけは絶対にかけたままで！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[ドアの隙間からの掠れた囁き] 「チェーンを外せよ、{{player_name}}。一度だけ瞬きしたいだけなんだ」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "廊下の奥でエレベーターの到着音が鳴る中、玄関のドアノブがガタガタと揺れます。",
+          "options": [
+            {
+              "option_id": "opt_e3_yell_guards",
+              "label": "声の限りに警備員を呼ぶ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "警備員さん！今すぐドアの外に男がいます！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_snap_photo",
+              "label": "ドアスコープカメラで男の顔を録画する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 証拠",
+              "player_reply_text": "スマートドアスコープで録画した――警察に顔が渡ったからね！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警備員がエレベーターから飛び出した！男は非常階段へ逃げたよ！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "くっきりしたHD映像が撮れた！待って――この顔、先週のニュースで見覚えがある！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Zoeがリンクを送ってきました。11D号室は先週火曜から空き部屋で、男はあなたの棟を覗くために不法侵入していたのです！",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "空き部屋の正体。",
+          "teaser_text": "エピソード4：11Dの本当の住人は休暇中で不在――つまりストーカーは両棟のマスターキーを持っているのです。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "マスターキー",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前1:32 · A棟の外にパトカーが到着する中、Zoeはあなたのドアスコープ映像を建物の職員名簿と照合しています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "信じられない、{{player_name}}！去年うちのスマートロックを設置してクビになった通信設備業者だ！複製したマスターキーを持ってたんだよ！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "両棟のマスターキーを複製してたの！？それで11Dにも私の廊下にも入れたんだ！",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "名探偵だね、{{player_name}}。だが残念、非常階段は君の棟の屋上ランドリールームに繋がってるんだ。",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "スマートロックアプリ通知：「マスターフォブ #00 がA棟屋上アクセスで使用されました — 午前1:34」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "連絡通路を渡ってB棟へ逃げる気だ！巡査部長に連絡通路のドアをロックするよう伝えて！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "今ロビーの防犯カメラデスクのすぐ横にいる――ガラスの連絡通路を走って逃げようとしてるのが見える！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[息を切らすZoe] 「巡査部長が連絡通路の両端をロックした！12階のガラス通路に閉じ込めたよ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "A棟とB棟の両側から警察の懐中電灯が迫ります。",
+          "options": [
+            {
+              "option_id": "opt_e4_stay_locked",
+              "label": "安全確認まで鍵を閉めて中で待つ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "デッドボルトを締めて中にいる――手錠をかけたら教えて！",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_watch_cctv",
+              "label": "Zoeにロビーの防犯カメラ映像を頼む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 監視",
+              "player_reply_text": "Zoe、ロビーの防犯カメラ映像を送って――捕まる瞬間を見たい！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警察官が連絡通路で取り押さえた！やったよ！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今ロビーのカメラ映像を送る――エレベーターで手錠をかけられる瞬間を見て！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "ロビーの防犯カメラ映像には、5人の警察官に連行され手錠をかけられて出ていく男の姿が映っていました。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "連絡通路の包囲網。",
+          "teaser_text": "エピソード5：ストーカーが確保され、管理会社は深夜の緊急対応に踏み切ります。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "ロビーでの逮捕",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前1:55 · ロビーの防犯カメラは、瞬きしないストーカーがパトカーへ連行される様子と、全部屋の鍵交換に駆けつけた錠前屋の姿を映しています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "パトカーの後部座席に乗せられたよ、{{player_name}}！警察が11Dから複製キーの入ったバッグと双眼鏡を押収したって！",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "深夜にブラインドを閉めろって送ってくれて本当にありがとう、Zoe。文字通り命を救われたよ。",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "ロビー防犯カメラ · 午前1:54 — A棟正面玄関から容疑者を連行する警察。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "管理会社：「複製キーはすべて無効化しました。緊急の錠前屋が全戸の鍵を無償交換します」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "明るいロビーに降りてきて――錠前屋さんが最初にあんたのドアを付け替えてくれるって。ホットチョコレートも持ってきたよ。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "明日絶対、二人分の遮光カーテンを買うからね。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[安堵して笑うZoe] 「窓の外を見て――11Dのベランダ、やっと真っ暗になって規制テープが貼られたよ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "ドアの外の廊下は明るい照明と制服姿の警察官たちでいっぱいです。",
+          "options": [
+            {
+              "option_id": "opt_e5_meet_zoe",
+              "label": "ドアを開けて廊下でZoeを抱きしめる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今開けるよ――そのホットチョコレートが本当に必要だった！",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_thank_officers",
+              "label": "ドアスコープの録画映像を巡査部長に渡す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 決着",
+              "player_reply_text": "巡査部長、HD映像の完全版です。絶対に逃がさないでください。",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "最高のハグ！錠前屋さんが今、頑丈なスチール製のデッドボルトを取り付けてくれてるよ。",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "巡査部長：「明白な重罪ストーカー事件だ。お二人は素晴らしいコンビですね」",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "11D号室 · 封鎖・安全確保完了。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "鍵の交換完了。",
+          "teaser_text": "エピソード6（フィナーレ）：朝日が中庭を照らし――ついにまたブラインドを開けられます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "日の出とともに開くブラインド",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午前8:00 · ブラインドを引き上げると、暖かい朝の光がキッチンに差し込みます――B棟のベランダからZoeが明るく手を振っていました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "おはよう、{{player_name}}！中庭の向こうを見て――今日コーヒーマグを持って手を振ってるのは私だけだよ！",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "最高の眺め。それに新しいスチール製デッドボルト、銀行の金庫みたいに頑丈だよ。",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "警察から、男は保釈なしで勾留中だって確認が来た！それに管理会社が二人とも家賃1ヶ月分無料にしてくれたよ！",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "スマートロックアプリ：「システム暗号化済み。有効な認証キーは1つのみです」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "10時に通りの向かいでブランチどう？A棟で一番気味の悪い夜を生き延びたお祝いに、私のおごり！",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "二度と親友からの深夜のメッセージを無視しないって誓うよ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[笑顔のZoe] 「10時に下でね――スマホの充電も忘れずに！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "朝の陽光がキッチンカウンターを温かく照らしています。",
+          "options": [
+            {
+              "option_id": "opt_e6_brunch_zoe",
+              "label": "お祝いのブランチに「行く」と答える",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "もちろん行く！大家さんのおごりでパンケーキだね！",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_wave_back",
+              "label": "コーヒーを手に笑顔で手を振り返す",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 自由",
+              "player_reply_text": "今手を振り返してるよ！10時にね、命の恩人！",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "10時にロビーでね！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "このマンションで最高の隣人！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "11D号室（向かい） · 脅威は完全に排除されました。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · 新しい鍵の向こうの安心。",
+          "teaser_text": "THE END · ブラインドを閉めろと教えてくれる友人の言葉は、いつでも信じるべきです。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

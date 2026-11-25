@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_023",
+  "lang": "pt",
+  "metadata": {
+    "title": "O Entregador das 03h07",
+    "subtitle": "Meu entregador mandou mensagem: \"Deixei seu pedido lá fora. Quem é a mulher de branco atrás da sua cortina?\"",
+    "genre": "thriller",
+    "tags": [
+      "3h da Manhã",
+      "Entrega",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_023.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Você)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "ally",
+      "name": "Leo (Entregador)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Suporte Pedido #4409",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Pedido Que Você Nunca Fez",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "03h07 · Trovões sacodem sua quitinete no 5º andar. Uma notificação do aplicativo de entregas toca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Oi {{player_name}}, pendurei seu macarrão no portão. Fala para a sua colega de quarto atrás da cortina parar de me encarar, cara.",
+          "timestamp_label": "03:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera—não pedi comida hoje à noite. E moro completamente sozinha.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Ela está abrindo a trava da sua sacada agora mesmo.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Para de brincar! O pedido está no SEU nome e pago em dinheiro—ela jogou uma nota amassada lá do 5º andar!",
+          "timestamp_label": "03:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[chuva pesada, moto acelerando] ...Espera, ouça a gravação da chamada quando você confirmou o pedido—essa É a sua voz...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Sua cortina fina da sacada ondula para dentro—mesmo com a porta de vidro fechada.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Perguntar a Leo como era a nota de dinheiro",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Que tipo de nota ela jogou?",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Tocar o áudio completo da confirmação",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Me mande o arquivo completo de áudio!",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Leo responde tremendo: \"Não é dinheiro de verdade, {{player_name}}... É nota de papel fúnebre. Queimada na ponta.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Sob sua própria voz sonolenta pedindo macarrão, uma segunda voz sussurra: \"Duas tigelas. Uma para os vivos.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Cara estou saindo daqui, boa sorte—espera, por que a sacola plástica NÃO está mais no seu portão?!",
+          "timestamp_label": "03:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Ligação Automática de Entrega",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Uma voz metálica recita: \"Seu pedido foi recebido... dentro da sua cozinha.\" Uma colher tilinta no cômodo ao lado.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você desliga. Na hora, o cheiro de caldo frio e incenso molhado entra por baixo da porta do seu quarto.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Jantar Para Dois",
+          "teaser_text": "Episódio 2: Duas tigelas fumegantes estão na sua mesa—e uma cadeira está puxada para fora.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Dois Pares de Hashis",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "03h13 · Você entreabre a porta do quarto. Vapor sobe de duas tigelas na sua mesinha. Um par de hashis está espetado de pé.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}! Meu GPS não me deixa sair do seu beco. Cada curva me traz de volta bem debaixo da sua sacada!",
+          "timestamp_label": "03:13",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo, tem duas tigelas na minha cozinha. Os hashis estão espetados de pé feito uma oferenda!",
+          "timestamp_label": "03:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[barulho de sorver, água pingando] ...Coma enquanto está quente, {{player_name}}. Não seja mal-educada com uma visita...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Ela está sentada na cadeira de costas para você.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Acabei de lembrar desta rua! Uma garota morreu de fome num quarto trancado no 5º andar aqui há cinco anos. NÃO toque na comida!",
+          "timestamp_label": "03:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "A cadeira raspa devagar pelo piso frio enquanto ela começa a se virar.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Derrubar a tigela de oferenda da mesa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou virando a mesa!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Fazer reverência e oferecer a tigela",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Estou me curvando e recuando...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "A tigela estilhaça—e espalhados pelo piso não há macarrão, mas mechas emaranhadas de cabelo preto longo e molhado.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O ar gélido suaviza. Um suspiro baixo sussurra \"Obrigada por lembrar de mim\" quando a porta da frente destranca.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Você irrompe na escadaria bem quando os postes da rua piscam e acendem. Seu celular vibra com um recibo final do app.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Leo (Entregador)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Leo respira pesado: \"Saí do beco! Olha seu app—ela deixou avaliação 5 estrelas na SUA conta: Até amanhã às 03h07.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você recusa e checa o aplicativo. Um novo pedido recorrente está agendado automaticamente para as 03h07 todas as noites.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Pedido Agendado: 03h07",
+          "teaser_text": "Final da Temporada · O botão Cancelar está cinza. Ela já está com fome para amanhã.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Agendado Para as 03h07",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "03h01 · Na noite seguinte. Mesmo após apagar o app de entregas, sua campainha toca—e Leo manda mensagem em pânico.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, tentei recusar a entrega, eu juro! O app travou o GPS da minha moto e me forçou de volta ao seu portão!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo, não passe da varanda! A câmera do meu corredor acabou de flagrar a mulher de branco destrancando minha porta POR DENTRO!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Câmera do Corredor 03h04 · Figura pálida de branco parada bem atrás da corrente da sua porta.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Suporte Pedido #4409: \"Entregador chegou cedo. Por favor prepare duas tigelas antes das 03h07.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Ela pagou com uma moeda de prata de 1999, {{player_name}}. Todo entregador que cancela o Pedido #4409 desaparece na rodovia.",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Espera—olhe o endereço de entrega no recibo. Não é o número do seu apartamento—é o terreno que incendiou aqui.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[vento uivando no microfone de Leo] \"Estou parado do outro lado da rua, {{player_name}}! Deixe a sacola no tapete—não abra a corrente!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "O relógio marca 03h06. Passos se aproximam pelo lado de dentro da sua porta da frente.",
+          "options": [
+            {
+              "option_id": "opt_e3_slide_chopsticks",
+              "label": "Deslizar dois hashis por baixo da porta",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Deslizei os hashis por baixo da fresta—Leo, mantenha o motor ligado!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_fire_escape",
+              "label": "Descer pela escada de incêndio da cozinha",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Fuga",
+              "player_reply_text": "Não vou jantar com fantasma! Descendo pela escada de incêndio até sua moto!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ela pegou! Agora corra pela escada dos fundos enquanto ela está distraída!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Pula—joguei meu farol no beco! Sobe na garupa!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Status do Pedido #4409 Atualizado: \"Cliente deixou a mesa. Rastreando nova localização GPS...\"",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Pedido Ainda Ativo.",
+          "teaser_text": "Episódio 4: Mesmo a cinco quilômetros na moto de Leo, o pino rastreador da entrega continua chegando mais perto.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Recibo de 1999",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "03h25 · Parados sob um viaduto da rodovia. Leo tira um recibo amarelado de papel da bolsa térmica de comida.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Olhe o nome do restaurante no cupom, {{player_name}}: \"Casa de Macarrão Lótus.\" Esse lugar pegou fogo em 1999—na noite em que uma noiva esperava o noivo atrasado.",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ela pediu jantar para dois às 03h07 porque o trem do noivo dela atrasou?!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Ele nunca voltou para casa, {{player_name}}. Toda noite ela pede duas tigelas esperando ele entrar pela porta.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "O app de entregas de Leo apita alto: \"ENTREGADOR FORA DA ROTA. RETORNE AO LOTE LÓTUS IMEDIATAMENTE.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A tela do meu celular acabou de rachar sozinha—e o pino do mapa aponta para a antiga passagem de trem dois quarteirões adiante!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Se ela achar que Leo é o mensageiro trazendo a carta do noivo, talvez possamos enfim entregá-la.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[voz feminina cheia de estática na linha de suporte] \"Ele está no trem das 03h07? Por favor diga que ele não esqueceu o jantar...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "O aplicativo de entregas não vai parar até o Pedido #4409 ser realmente concluído.",
+          "options": [
+            {
+              "option_id": "opt_e4_check_station",
+              "label": "Ir juntos até a antiga passagem de trem",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Vamos até a passagem antiga, Leo. Vamos ver o que está esperando lá.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_reply_support",
+              "label": "Responder com carinho ao Suporte #4409",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Empatia",
+              "player_reply_text": "Ele não esqueceu você. Diga onde levar sua mensagem.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Segure firme! A antiga bilheteria fica logo depois da linha de neblina!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A faixa vermelha de alerta acabou de virar dourado suave... ela está guiando nosso GPS!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Olhe a tela rachada do celular de Leo—o pino do GPS travou no Armário #07 da estação abandonada.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Armário #07.",
+          "teaser_text": "Episódio 5: Dentro do armário enferrujado da estação repousa uma carta não entregue datada de 1999.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "A Carta Não Entregue",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03h50 · A neblina cobre a plataforma abandonada. Leo força o Armário #07 e tira um envelope lacrado.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Está endereçada ao número antigo do terreno do seu prédio! Um anel e um bilhete: \"Preso na tempestade—espere por mim ao amanhecer.\"",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não admira que continuasse pedindo jantar às 03h07... ela nunca soube por que ele não voltou para casa.",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "GPS do Celular Rachado · Rota recalculada direto para seu portão—a 600 metros de distância.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Suporte Pedido #4409: \"Pacote encontrado. Conclua a entrega para encerrar o pedido permanentemente.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Vou pilotar de volta para sua varanda, {{player_name}}. Pouse o envelope ao lado do macarrão quentinho—não olhe direto para ela.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Minhas mãos estão tremendo, mas acho que é a última entrega que faço nesta rota.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[suspiro suave e trêmulo] \"Vocês acharam... por favor deixe na soleira.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "Você chega à sua varanda. A cortina branca estremece atrás do vidro.",
+          "options": [
+            {
+              "option_id": "opt_e5_leave_letter",
+              "label": "Pousar o envelope ao lado da sacola",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Está na soleira. Ele nunca esqueceu você.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_read_aloud",
+              "label": "Ler a última frase em voz alta e recuar",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Paz",
+              "player_reply_text": "\"Espere por mim ao amanhecer.\" Ele amou você até o fim.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A cortina acabou de cair... e meu app enfim tocou \"PEDIDO CONCLUÍDO\"!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Uma única pétala branca flutuou até o tapete da varanda. O ar gelado sumiu na hora!",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Pedido #4409 · Avaliação: 5 Estrelas. \"Obrigada por trazê-lo para casa.\"",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Pedido Concluído.",
+          "teaser_text": "Episódio 6 (Final): Amanhece numa rua tranquila—e o entregador das 03h07 nunca mais precisa temer o turno da noite.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Cinco Estrelas ao Amanhecer",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06h15 · A luz do sol aquece a casa de macarrão da esquina. Leo compra duas tigelas reais de caldo quente—sem fantasmas inclusos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Olhei meu histórico de entregas hoje cedo, {{player_name}}. O Pedido #4409 sumiu de vez—e minha tela rachada de GPS voltou ao normal.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "E a cortina do meu apartamento não mexeu um milímetro desde o nascer do sol. Acho que nós dois sobrevivemos ao turno da noite.",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Na verdade, larguei as entregas noturnas há uma hora. Mudei só para corridas diurnas.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Seu celular vibra—um recibo final de zero dólar chega da \"Casa de Macarrão Lótus\".",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Olhe o bilhete no rodapé do recibo: \"Chega de esperar. Comam quentinho.\"",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Sinceramente, {{player_name}}, ainda bem que não ignorei sua mensagem às 03h07.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[rindo com carinho] \"Da próxima vez que pedir macarrão de madrugada, me mande mensagem direto—eu mesmo entrego antes da meia-noite.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Vapor sobe das tigelas do café da manhã sob o sol da manhã.",
+          "options": [
+            {
+              "option_id": "opt_e6_toast_bowls",
+              "label": "Brindar os hashis com Leo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Fechado, Leo. Só entregas de dia de agora em diante.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_tip_big",
+              "label": "Dar gorjeta cinco estrelas e sorrir",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Carinho",
+              "player_reply_text": "Cinco estrelas para o entregador mais corajoso da cidade. O café é por minha conta.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Melhor café da manhã depois da noite mais insana da minha vida.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Fechado! Te vejo pelo bairro, {{player_name}}.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Suporte Pedido #4409 · Conta Encerrada Permanentemente.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Entregue Enfim.",
+          "teaser_text": "FIM · Chega de batidas às 03h07—só macarrão quentinho e um céu claro de manhã.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1009 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_059",
+  "lang": "en",
+  "metadata": {
+    "title": "The Silent Witness In Row G",
+    "subtitle": "Our theater director vanished during dress rehearsal—and the stagehand’s open headset kept recording during the blackout.",
+    "genre": "mystery",
+    "tags": [
+      "Theater",
+      "Blackout",
+      "Mystery"
+    ],
+    "cover_image": "assets/media/covers/story_059.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (You · Stage Mgr)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "vera",
+      "name": "Vera (Lead Actress)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9333EA"
+    },
+    {
+      "id": "owen",
+      "name": "Owen (Lighting)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "clara",
+      "name": "Clara (Understudy)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Act II Blackout",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "10:05 PM · Backstage Chat \"LYRIC THEATER CAST\". After a 3-minute stage blackout, Director Julian is gone from Row G.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "Someone left the stage trapdoor unlatched during Act II! Where is Julian?!",
+          "timestamp_label": "10:05 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "I didn’t trigger that blackout—the main dimmer board was tripped from backstage left!",
+          "timestamp_label": "10:06 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hold on. My intercom headset was set to auto-record in the wings. Pulling the blackout clip now.",
+          "timestamp_label": "10:06 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 9,
+          "transcript": "[heels clicking in the dark] \"You promised me Opening Night, Julian! You can’t recast me at the final dress—\"",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "vera",
+          "text": "Julian only recast me because Clara showed him the—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "clara",
+          "text": "Vera?! You confronted Julian in the dark?! Look at the velvet rope by Row G—his clipboard is snapped in half!",
+          "timestamp_label": "10:08 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "I walked back to my dressing room! Ask Owen, he saw me pass the light booth!",
+          "timestamp_label": "10:08 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "A heavy sandbag rope just creaked above the catwalk. Where do you check?",
+          "options": [
+            {
+              "option_id": "opt_trapdoor",
+              "label": "Check the under-stage trapdoor pit",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Owen, shine a spotlight into the under-stage pit—I’m going down!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_booth_log",
+              "label": "Inspect the dimmer board’s manual log",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Clue · Watch Ad",
+              "player_reply_text": "Wait—checking which backstage console killed the house lights!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "Beneath the stage sits Julian’s gold pen—and a prop door leading straight into the orchestra dressing rooms.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "CONSOLE LOG: The blackout wasn’t triggered backstage left—it was triggered remotely from OWEN’S lighting tablet.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "clara",
+          "text": "{{player_name}}, someone just locked the main auditorium fire doors from the lobby!",
+          "timestamp_label": "10:11 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Spotlight Just Snapped Onto Row G",
+          "teaser_text": "Episode 2: Sitting alone in seat G-12 is Julian’s laptop—playing a video he recorded before the blackout.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Curtain Call",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "10:13 PM · Empty Auditorium. A single white spotlight illuminates Seat G-12.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "Don’t touch the laptop—what if it’s a setup?!",
+          "timestamp_label": "10:13 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Too late, it’s already playing. It’s security footage of the theater’s ticket-office safe from last night.",
+          "timestamp_label": "10:14 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Wait… why is Clara opening the ticket-office safe on that video?!",
+          "timestamp_label": "10:14 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "clara",
+          "text": "Owen told me Julian was going to cancel the show and—",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "vera",
+          "duration_sec": 9,
+          "transcript": "[pounding door] {{player_name}}! I found Julian! He’s locked in the prop vault behind the orchestra pit—help me break the latch!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen and Clara, you killed the lights together to grab that laptop from Row G.",
+          "timestamp_label": "10:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Owen cuts the house lights again to make a run for the stage door! What do you do?",
+          "options": [
+            {
+              "option_id": "opt_work_lights",
+              "label": "Flip the manual backstage work-lights",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hitting the mechanical work-light breaker—nowhere to hide, Owen!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_fire_pull",
+              "label": "Pull the lobby fire alarm to unlock exits",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Smart · Watch Ad",
+              "player_reply_text": "Fire alarm pulled—all exit doors unlocked and dispatch alerted!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Harsh white work-lights flood the stage, blinding Owen right as Vera and Julian step out of the wings with security.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Alarms ring and magnetic lobby doors release—delivering Owen and Clara straight into the hands of arriving patrol officers.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "Julian’s bruised but okay, {{player_name}}. Opening Night is still on.",
+          "timestamp_label": "10:21 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "clara",
+          "text": "Ask Julian what was really inside that ticket safe—there wasn’t any cash, {{player_name}}, only a blackmail file on Vera.",
+          "timestamp_label": "10:22 PM",
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "The Prop Vault Door Still Has One Lock",
+          "teaser_text": "You glance at Vera across the stage—she’s quietly sliding a red folder into her costume trunk.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "The Red Folder",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "10:12 PM · With Julian safe backstage and Owen & Clara cooperating, ghost-light shadows stretch across the stage as you watch Vera slip a red folder into her costume trunk.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "{{player_name}}, I just cleaned up the blackout headset tape! Someone climbed the catwalk right before the lights cut—and it wasn’t Clara!",
+          "timestamp_label": "10:12 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Send the catwalk frame, Owen! And don’t let Vera wheel her costume trunk out the stage door.",
+          "timestamp_label": "10:13 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "owen",
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "Catwalk Shadow · 9:48 PM — A figure in Vera’s stage cape cutting the main fly-rail power."
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "clara",
+          "text": "Wait—during the blackout I heard Vera arguing with Julian by the prop vault! She threatened to cancel opening night—and burn the theater down!",
+          "timestamp_label": "10:14 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "vera",
+          "text": "Keep the prop vault locked from the wings. Nobody finds the rigged timer before midnight.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Vera snaps her costume trunk shut while a faint tapping echoes from inside the locked prop vault.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Step onto the stage and block Vera’s trunk",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Don’t move that trunk, Vera!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Play headset argument over stage PA",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Blasting the headset tape on stage PA...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Vera freezes under the single ghost light as Owen drops the stage curtain behind the exit door.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Vera’s own voice booms through the empty auditorium threatening to burn the historic theater for a $5M insurance payout!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Clara just found the spare prop-vault key taped under the Row G armrest—and Julian says Vera hid an arson timer inside the vault!",
+          "timestamp_label": "10:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 9,
+          "transcript": "[headset static, Julian’s urgent voice] ...{{player_name}}! Owen! Unlock the prop vault right now—Vera forged the theater’s fire insurance policy and rigged a timer inside!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Owen, bring up the house lights and call 911. Clara and I are unlocking the prop vault right now.",
+          "timestamp_label": "10:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Trapped in the Wings",
+          "teaser_text": "Episode 4: Vera grabs the stage-rigging sandbag rope to block the prop vault corridor.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Curtain Up on Arson",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10:20 PM · Full house spotlights blaze on, catching Vera beside the fly-rail ropes while you and Clara unlock the prop vault.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "{{player_name}}, police are three minutes from the stage door! Watch the rigging—Vera’s trying to drop the painted backdrop between us!",
+          "timestamp_label": "10:20 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Drop the rope, Vera! Clara heard everything, Owen’s headset recorded the blackout, and Julian is bringing the police right now!",
+          "timestamp_label": "10:21 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "vera",
+          "text": "Grab the red folder from the trunk and run out the orchestra pit exit.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "clara",
+          "text": "I got the prop vault open! The rigged timer is right here—and Julian says Vera’s husband owns the shell company holding the fire insurance!",
+          "timestamp_label": "10:22 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "vera",
+          "duration_sec": 11,
+          "transcript": "[Vera shouting under spotlights] ...This theater hasn’t turned a profit in four years! One electrical fire pays everyone off—why couldn’t you stay in Row G?!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "Vera lunges for her costume trunk to snatch the red insurance folder before cops arrive.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Spin the stage turntable to block her path",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Spinning the stage turntable now!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Pull the red folder out of Vera’s trunk first",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Securing the red insurance folder...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "The motorized center stage rotates smoothly, sweeping Vera’s trunk straight toward Owen and the director.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Inside the red folder is a $5M forged fire-insurance rider—co-signed by Vera’s husband and dated yesterday.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Police just burst through the Row G aisle doors! Spotlight’s right on you, Vera!",
+          "timestamp_label": "10:23 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "I’m the lead actress—I don’t do handcuffs under harsh lighting!",
+          "timestamp_label": "10:23 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good news, Vera—Clara’s going on as lead tomorrow night.",
+          "timestamp_label": "10:24 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Spotlight on the Culprit",
+          "teaser_text": "Episode 5: The red folder exposes a $5M forged insurance arson plot right at center stage.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The $5M Policy",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "10:28 PM · Arson detectives spread the red folder across the orchestra table as Vera is escorted down the center aisle.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "{{player_name}}, look at that rider! Vera’s husband doubled the theater’s fire coverage yesterday—and forged the director’s initials!",
+          "timestamp_label": "10:28 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And she staged the blackout during dress rehearsal to make it look like faulty wiring.",
+          "timestamp_label": "10:29 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "owen",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Red Folder Exhibit · $5M Policy — Forged director initials on accelerated fire-payout rider.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "Okay, I cut the breaker! My husband swore nobody would get hurt—we just needed the payout!",
+          "timestamp_label": "10:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "vera",
+          "text": "Don’t check the stagehand’s locker—my husband hid the timer relay in there.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "The relieved director steps onto center stage and asks if the cast is ready for opening night.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Hand Clara the lead script and call rehearsal",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Clara’s our new lead—places everyone!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Alert arson detectives to the hidden timer relay",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Checking the stagehand locker relay...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Clara beams with tears in her eyes as the entire stage crew erupts in cheers.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Arson detectives disarm a rigged electrical timer inside the locker—stopping a real midnight fire by less than an hour!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 10,
+          "transcript": "[police radio, director applauding] ...Arson device disarmed, two suspects charged! Theater cleared for tomorrow’s opening night!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "clara",
+          "text": "Owen just programmed a brand-new golden spotlight cue for my solo, {{player_name}}!",
+          "timestamp_label": "10:31 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The show really must go on.",
+          "timestamp_label": "10:32 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Places for Opening Night",
+          "teaser_text": "Episode 6 Finale: The velvet curtain rises on a sold-out house—and Row G has the best seats in town.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Standing Ovation",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "10:15 PM · Thunderous applause shakes the historic rafters as the velvet curtain rises for Clara’s triumphant final bow.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "vera",
+          "text": "Enjoy your opening night, {{player_name}}. My lawyer says the insurance rider is getting thrown out anyway.",
+          "timestamp_label": "10:15 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The theater is standing, the house is sold out, and the truth won. Take a bow, Vera.",
+          "timestamp_label": "10:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "vera",
+          "text": "My husband’s insurance broker just agreed to testify against him.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "owen",
+          "duration_sec": 9,
+          "transcript": "[roaring audience ovation, Owen grinning on headset] ...Best opening night in twenty years, {{player_name}}! Cue the house lights—they won’t stop clapping!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Clara just pulled you and the director out from the wings for a surprise crew bow!",
+          "timestamp_label": "10:17 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "The director grins and gestures toward the cheering Row G audience.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Take a bow with Owen, Clara, and the crew",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Taking the final bow together!",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Reserve Row G Seat 1 for the witness",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Dedicating Row G Seat 1 forever...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Golden spotlights wash over the stage as the historic theater celebrates a brand-new era.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "SECRET EPILOGUE: The theater plaques Row G Seat 1 in honor of the crew who saved the building—and sells out every single show all season.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "owen",
+          "text": "Headset check, {{player_name}}—zero blackouts, 100% standing ovation.",
+          "timestamp_label": "10:18 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Copy that, Owen. Curtain down.",
+          "timestamp_label": "10:19 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "As the velvet curtain glides smoothly to the boards, the historic stage glows safe and alive.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Curtain Call",
+          "teaser_text": "The theater is saved, the arson plot is stopped, and opening night brings down the house.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,978 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_068",
+  "lang": "ja",
+  "metadata": {
+    "title": "寵愛された息子のアリバイ",
+    "subtitle": "弟が飲酒運転で会社のバンを大破させた――すると母は、弟の奨学金を守るために「私」に刑事責任を被れと迫ってきた。",
+    "genre": "romance",
+    "tags": [
+      "家族",
+      "身代わり",
+      "正義"
+    ],
+    "cover_image": "assets/media/covers/story_068.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "mom",
+      "name": "ママ",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#6B21A8"
+    },
+    {
+      "id": "brother",
+      "name": "Kevin (兄/弟)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "guard",
+      "name": "Ray (警備員)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "身代わりになれ",
+      "start_node_id": "n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前1:45 · 2ブロック先でサイレンが鳴り響いています。母からひっきりなしに着信が入ります。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "{{player_name}}、今すぐ4番街の交差点に来なさい。Kevinがお父さんの配達用バンで駐車中のセダンに追突して、家に逃げてきたの。",
+          "timestamp_label": "午前1:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "警察には、運転していたのは「あなた」でパニックになって逃げたと話しなさい。Kevinが飲酒運転で捕まったらMBAの奨学金が取り消されてしまうのよ！",
+          "timestamp_label": "午前1:46",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ひき逃げは「重罪」なんだよ、お母さん！Kevinが飲酒運転したせいで、私に人生を棒に振れっていうの！？",
+          "timestamp_label": "午前1:47",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "マジうける、母さんが{{player_name}}に罪を被らせてくれるってさ。明日ビーチハウスでな！",
+          "unsent_placeholder": "Kevinがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 11,
+          "transcript": "[緊迫した声] おい{{player_name}}、倉庫ゲートのRayだ。うちのHD防犯カメラで、Kevinがバンからよろめき出て逃げる姿を見たぞ。警察に嘘をつくな――もう俺たちの映像の提出を求められてる。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "母がKevinを連れて警察署の駐車場に入ってきています。あなたの行動は？",
+          "options": [
+            {
+              "option_id": "opt_refuse_firm",
+              "label": "拒否を伝えRayの音声を保存する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Kevinの身代わりで刑務所に入る気はないよ。それに彼が逃げるところのHD映像が残ってるから。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_send_footage",
+              "label": "RayにHD映像のクラウド保存を頼む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "正義 · 広告視聴",
+              "player_reply_text": "Rayさん、母が消そうとする前に今すぐその映像を安全なリンクへアップロードしてください。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "10分以内にその警察署に入ってこないなら、荷物をまとめて二度と私を母親と呼ぶな！",
+          "timestamp_label": "午前1:51",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "映像確保完了：Rayのクラウド映像にはさらに、Kevinが茂みに空き瓶を投げ捨てる姿と――母が彼にハンドルを拭くよう命じる姿まで映っていました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "リンクを送ったよ。あの家族の中でずっと誠実だったのはあんただけだな、{{player_name}}。",
+          "timestamp_label": "午前1:52",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "頼むよ{{player_name}}、お前にはどうせ失うような大したキャリアもないだろ。さっさと供述書にサインしてくれよ！",
+          "timestamp_label": "午前1:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "警察署のロビー",
+          "teaser_text": "エピソード2：母はすでに巡査部長に運転手は「あなた」だと告げました――今、あなたは警察署の扉をくぐります。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "もう身代わりにはならない",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前2:10 · 警察署のロビー。あなたが歩み入ると当直の巡査部長が顔を上げました。母があなたの袖を掴みます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "来てくれてよかったわ！お巡りさん、この子が{{player_name}}です――衝突事故の自首をする覚悟ができています。",
+          "timestamp_label": "午前2:10",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お巡りさん、私は街の反対側にある自分のアパートで寝ていました。スマートロックの入室履歴とお隣のドアホンカメラが証明しています。",
+          "timestamp_label": "午前2:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "母さん、警察が飲酒検知器を出してきた！！家に帰って「から」飲んだって言ってくれ！！",
+          "unsent_placeholder": "Kevinがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "mom",
+          "duration_sec": 9,
+          "transcript": "[押し殺した怒声] よくも実の弟を裏切ったわね！今夜限りでこの家から勘当よ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "警察官から、誰がバンを運転していたか証拠はあるかと尋ねられました。",
+          "options": [
+            {
+              "option_id": "opt_show_video",
+              "label": "Kevinが映った倉庫のHD動画を見せる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "はい、お巡りさん。これが午前1:32のタイムスタンプ付き倉庫防犯カメラ映像です。",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_show_texts",
+              "label": "ビーチハウス自慢のメッセージも提出",
+              "cost_type": "vip_rewarded",
+              "badge_text": "全貌解明 · 広告視聴",
+              "player_reply_text": "それとこれが、10分前に私に身代わりを強要してほくそ笑んでいたKevinのメッセージです。",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "警察官は10秒間映像を見ると、手錠をカチリと鳴らしてKevinの方へ歩み寄りました。",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "二重起訴：Kevinはひき逃げおよび飲酒運転で逮捕され――母も虚偽告訴の罪で出頭命令を受けました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "{{player_name}}、頼むから止めてくれって言ってくれ！俺、すべてを失っちまう！",
+          "timestamp_label": "午前2:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "エンジンキーを回した時に自分で選んだ道でしょ、Kevin。私はもうこの家の便利な身代わり役はやめるわ。",
+          "timestamp_label": "午前2:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "断ち切られた鎖",
+          "teaser_text": "警察署の外で、ついにお父様から電話が掛かってきました。「映像を見たぞ。明日、会社の名義をKevinではなくお前に譲る」",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "ガレージの防犯映像",
+      "start_node_id": "e3_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前8:10 · 会社物流オフィス。会社をあなたに譲るという父の約束が、激しい嵐を巻き起こしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "実の息子に逆らうように父親に吹き込んだわね！今すぐお父様に会社はいらないと言いなさい、{{player_name}}！",
+          "timestamp_label": "午前8:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "お父さんは自分で防犯映像を見たんだよ、お母さん。Kevinが飲酒運転でバンをぶつけて、私を刑務所に入れようとしたこともね。",
+          "timestamp_label": "午前8:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "guard",
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "ガレージカメラ01 · 午前1:14 — 瓶を片手に運転席へよろめきながら乗り込むKevin。"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "気をつけろ、{{player_name}}――今さっきKevinが警備ブースに現れて、サーバーのオリジナルバックアップを消せば現金2,000ドルやると持ちかけてきたぞ！",
+          "timestamp_label": "午前8:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "もし保険の査定官があのHD映像を見たら、俺の奨学金も免許も終わりだ――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 8,
+          "transcript": "[鍵束のジャラジャラいう音] 心配するな――あいつの贈賄未遂をボディカメラに録画して、そのUSBをそのままお父さんの顧問弁護士に渡しておいたよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "母が父の名義変更を阻止しようと公証役場へ急行しています！どうしますか？",
+          "options": [
+            {
+              "option_id": "opt_warn_dad",
+              "label": "父に警告し法律事務所へ調印場所を変更",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今お父さんに連絡した――譲渡調印の場所は企業法務弁護士の施錠された会議室に変更するよ。",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_audit_petty_cash",
+              "label": "Kevinの賄賂用現金2千ドルの出所を確認",
+              "cost_type": "vip_rewarded",
+              "badge_text": "鋭い観察眼 · 広告視聴",
+              "player_reply_text": "待って――Kevinは文無しのはず。Rayさん、会社の金庫を確認して！午前8時にどこから現金2,000ドルを手に入れたの！？",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "安全な変更：父が企業法務公証人を伴って早々と到着し――母の待ち伏せを完全に封じ込めました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "窃盗発覚：Kevinは母の机の鍵を使って運転手たちの燃料現金封筒を盗み出していました――彼の罪状に横領罪が追加されました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "わかったよ、俺が悪かっただろ！？お小遣いからバンの修理代を払うから親父に伝えてくれ――俺の将来を丸ごと台無しにしないでくれよ！",
+          "timestamp_label": "午前8:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "心配しないで、Kevin。お父様はまだ銀行の年次更新書類に署名しなきゃいけないの――そして私が彼のフォルダに別の書類を紛れ込ませておいたから。",
+          "timestamp_label": "午前8:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "すり替えられた書類",
+          "teaser_text": "エピソード4：母はKevin名義の隠された委任状に父を騙して署名させようとします。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "緊急の家族会議投票",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前11:05 · 父のオフィス。「通常の銀行書類」の束の横に、母が熱い紅茶を置きました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "お父様のオフィスに入ってこないで、{{player_name}}。ただの定期的な給与更新書類にサインしているだけだから。",
+          "timestamp_label": "午前11:05",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "たった今このチャットで、フォルダに別の書類を紛れ込ませたって自白したばかりじゃない、お母さん。",
+          "timestamp_label": "午前11:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "10分前にフロントのコピー機で、奥様が3ページにわたる「取消不能な委任状」を印刷しているのを見ました！",
+          "timestamp_label": "午前11:07",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "brother",
+          "text": "親父が3ページ目にサインさえすれば、{{player_name}}への会社譲渡を凍結できる――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "Ray、自分のゲートの見張りだけしていなさい、さもないとクビよ！私はまだこの会社の半分の所有者なんだから！",
+          "timestamp_label": "午前11:09",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "guard",
+          "duration_sec": 8,
+          "transcript": "[大きなノック音] 遅すぎましたよ、奥様！お父様から老眼鏡を持ってきてくれと頼まれまして――今まさに3ページ目を一字一句お読みになっています！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "ペンを空中で止めて父が凍りつきました！どうやって割り込みますか？",
+          "options": [
+            {
+              "option_id": "opt_walk_in_calm",
+              "label": "部屋に入り父にチャット履歴を見せる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "お父さん、3ページ目にサインしないで――母さんとKevinが家族チャットに書いたばかりの文章を読んで。",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_keep_evidence",
+              "label": "破り捨てる前に3ページ目を撮影させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "プロの一手 · 広告視聴",
+              "player_reply_text": "待ってお父さん――まだ破らないで！誰も譲渡に異議を唱えられないよう、弁護士に3ページ目を撮影させて！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "静かな雷鳴：父はチャットを読み終えると、偽造委任状を真っ二つに引き裂いてゴミ箱へ落としました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "鉄壁の記録：弁護士が詐欺未遂を公式に記録し――今後母やKevinがどのような訴訟を起こすことも封じ込めました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "20年間ずっと、Kevinにはどんな言い訳も許される一方で、私がこの家族を支えてきたの。それは今日で終わりよ。",
+          "timestamp_label": "午前11:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "今親父から言い渡された――俺は給与リストから外されて、バンの弁償のために倉庫のシフトに入らなきゃならなくなったって……",
+          "timestamp_label": "午前11:17",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "ついに果たされる責任",
+          "teaser_text": "エピソード5：会社の譲渡を完了させ、読まれなかった書類の完全な真実を暴きましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "読まれなかった書類",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午後2:30 · 企業法務弁護士の事務所。公式の株式譲渡書類が最後のひとつの印鑑を待っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "法務ファイル用に、あのすり替えられた3ページ目のスキャンコピーを持ってきたよ、{{player_name}}。完璧に鮮明だ。",
+          "timestamp_label": "午後2:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "guard",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "すり替えられた3ページ目 · Kevinに100%の支配権を与える隠された取消不能譲渡書 — 署名前に阻止。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "mom",
+          "text": "結構！会社ごと全部持っていくがいいわ！その代わり、お祝いディナーに私が顔を出すなんて期待しないでちょうだい！",
+          "timestamp_label": "午後2:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kevinより私を選んでほしいなんて一度も頼んでないよ、お母さん。ただ、あいつのために私を犠牲にするのをやめてほしかっただけ。",
+          "timestamp_label": "午後2:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "mom",
+          "text": "お父様の言う通りだったのかもしれない――私が甘やかしすぎたせいで、Kevinは自分の足で立てなくなっていたのかも――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "brother",
+          "duration_sec": 8,
+          "transcript": "[静かで謙虚な声] ねえ{{player_name}}……燃料現金封筒に2,000ドルを返して、飲酒運転の件で警察に出頭してきたよ。もうお姉ちゃんの陰に隠れるのはやめる。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "あなたは今100%の代表取締役です！最初の業務命令は？",
+          "options": [
+            {
+              "option_id": "opt_promote_ray",
+              "label": "Rayを車両保安部門の統括に昇進させる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "代表取締役としての最初の署名：Rayさんは昇給40%とともに、正式に保安・車両安全統括に就任します！",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_kevin_probation",
+              "label": "Rayを昇進させKevinを厳正な試用期間へ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "真のリーダー · 広告視聴",
+              "player_reply_text": "Rayさんは保安統括に――そしてKevinには誠実な新人シフトを1つ与えます。特別扱いゼロ、他の全員と同じように実力で稼ぎなさい。",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "忠誠への報い：倉庫チーム全員が拍手喝采を送る中、Rayは満面の笑みを浮かべました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "本当の成長：人生で初めて、Kevinは安全ベストを着用し、午前6時きっかりにタイムカードを押しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "この会社始まって以来、最高の上司ですよ、{{player_name}}。ありがとうございます！",
+          "timestamp_label": "午後2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "来週の金曜日に父は引退する――これからの30年間、この会社をさらに繁栄させましょう。",
+          "timestamp_label": "午後2:41",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "新しい署名",
+          "teaser_text": "エピソード6（フィナーレ）：新しい車両隊のテープカットを行い、寵愛された弟の影から永遠に歩み出しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "新しい署名",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3ヶ月後 · 物流ヤード。朝の陽光の下で、6台の真新しい電気配送バンがきらめいています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "90日連続で安全事故ゼロ――それに第3四半期の売上は過去最高記録を更新しましたよ、ボス！",
+          "timestamp_label": "午前8:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "結局のところ、公平なルールと誠実な努力は、毎回えこひいきに勝つものなんだね。",
+          "timestamp_label": "午前8:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "ボス、4番ベイの積み込みが予定より早く終わったよ。それと……昨日、壊したバンの最後の分割払いを完済したんだ。",
+          "timestamp_label": "午前8:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "mom",
+          "text": "もし{{player_name}}に時間があれば、今日オフィスにランチを差し入れに行こうかと思って――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "mom",
+          "duration_sec": 8,
+          "transcript": "[優しく誠実な声] {{player_name}}……私が間違っていたわ。Kevinがようやく大人になった姿を見て――そしてあなたが築き上げたものを見て――あなたの強さに気づくのが遅くなってごめんなさい。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "そう言ってくれてありがとう、お母さん。境界線は守り続けるけれど――ランチの時間はいつでもドアを開けて待ってるよ。",
+          "timestamp_label": "午前8:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "代表取締役としての最初の四半期をどう締めくくりますか？",
+          "options": [
+            {
+              "option_id": "opt_team_bonus",
+              "label": "記録的な利益を社員全員に還元する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "本日、すべてのドライバー、積荷係、配車担当者に15%の利益還元ボーナスを支給します！",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_expand_branch",
+              "label": "還元ボーナス＋第2支店の開設を発表",
+              "cost_type": "vip_rewarded",
+              "badge_text": "帝国築城 · 広告視聴",
+              "player_reply_text": "全員への利益還元ボーナスに加えて――来月、第2地域拠点を開設します！",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "総立ちの歓声：物流ヤードに歓声が響き渡ります――これはもはや単なる同族企業ではなく、一大強豪企業でした。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "誰にも止められない：あなたが会社を新たな時代へと導く中、父は脇で誇らしげな涙を拭いました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "guard",
+          "text": "鎖は断ち切られ、記録は塗り替えられた。あなたの下で働けて誇りです、{{player_name}}！",
+          "timestamp_label": "午前8:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "brother",
+          "text": "ランチで会おう、お姉ちゃん。俺、予備の椅子を持っていくよ。",
+          "timestamp_label": "午前8:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · もう身代わりではない",
+          "teaser_text": "あなたは身代わりになることを拒み、歪んだえこひいきから解き放たれ、繁栄する会社を築き上げました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_047",
+  "lang": "pt",
+  "metadata": {
+    "title": "Visto Por Último na Plataforma 4",
+    "subtitle": "Um passageiro desapareceu do trem expresso das 23h48 — e o horário da câmera não bate com o picote do bilhete.",
+    "genre": "mystery",
+    "tags": [
+      "Trem",
+      "Desaparecido",
+      "Álibi"
+    ],
+    "cover_image": "assets/media/covers/story_047.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Você)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "sam",
+      "name": "Sam (Vagão 3)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "elena",
+      "name": "Elena",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "victor",
+      "name": "Victor (Maquinista)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "O Expresso das 23h48",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "00h04 · Grupo de Passageiros \"NOTURNOS DA LINHA 4\". O trem expresso para dentro do Túnel 2.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Espera — alguém viu para onde foi o Arthur? A pasta dele ainda está no assento 14B.",
+          "timestamp_label": "00:04",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Ele estava bem na minha frente quando saímos da Plataforma 4 às 23h48.",
+          "timestamp_label": "00:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Pessoal, este trem não abre as portas entre estações. Ele deve estar no banheiro.",
+          "timestamp_label": "00:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Acabei de checar todos os banheiros do Vagão 1 ao Vagão 5. O Arthur NÃO está neste trem.",
+          "timestamp_label": "00:06",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "sam",
+          "text": "Ele nunca embarcou de fato, aquele era o casaco do irmão dele—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Sam?! O que você acabou de apagar?! Você disse que viu ele às 23h48!",
+          "timestamp_label": "00:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "voice_note",
+          "sender_id": "victor",
+          "duration_sec": 9,
+          "transcript": "[rádio do trem chiando] {{player_name}}, o controle acabou de checar as câmeras da Plataforma 4. Arthur DESCEU às 23h47 — alguém vestindo o sobretudo cinza dele SUBIU!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Um impostor embarcou no Vagão 3 com a pasta de Arthur. O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_briefcase",
+              "label": "Olhar a etiqueta da pasta de Arthur",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou checando a etiqueta e o fecho da pasta no assento 14B agora mesmo.",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_ticket_stub",
+              "label": "Pedir a Victor para ler o bilhete",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Pista · Ver Anúncio",
+              "player_reply_text": "Victor, escaneie o código QR no bilhete picotado do assento 14B!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "A pasta não está trancada. Lá dentro há um celular descartável marcando tempo — e um maço de passaportes alfandegários em branco.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "LEITURA DO BILHETE: O assento 14B foi comprado há 4 minutos com o cartão de transporte de ELENA.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, acabaram de puxar o freio de emergência no Vagão 4!",
+          "timestamp_label": "00:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "As Portas Chiaram e Abriram Dentro do Túnel",
+          "teaser_text": "Episódio 2: Alguém acabou de pular para a passarela de serviço com a pasta.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Passarela do Túnel",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "00h13 · Túnel 2. Luzes de emergência acompanham a parede úmida de concreto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Fiquem dentro dos vagões! O terceiro trilho está energizado — a polícia ferroviária está lacrando as duas saídas do túnel.",
+          "timestamp_label": "00:13",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Elena, por que o seu assento também está vazio? Para onde você foi?",
+          "timestamp_label": "00:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Estou no Vagão 5! Vi um homem de casaco cinza derrubar as luvas perto do engate.",
+          "timestamp_label": "00:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 10,
+          "transcript": "[ofegante] {{player_name}}, não confie na Elena! Arthur é um denunciante na transportadora dela — ela contratou o cara do sobretudo para trocar as pastas!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n06",
+          "type": "unsent_message",
+          "sender_id": "elena",
+          "text": "Sam, você jurou que ficaria calado se eu quitasse sua dívida—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Estou vendo o cara do sobretudo! Ele está subindo a escada de manutenção no Marco 19.",
+          "timestamp_label": "00:16",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Elena está correndo em direção à saída do Vagão 5. O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_lock_car5",
+              "label": "Pedir a Victor para travar o Vagão 5",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Victor, trave manualmente as portas do Vagão 5 agora — a Elena é cúmplice!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_call_arthur",
+              "label": "Ligar ao último número do descartável",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Reviravolta · Ver Anúncio",
+              "player_reply_text": "Espera — o celular descartável da pasta acabou de acender com o número real do Arthur!",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "As portas pneumáticas batem com um chiado seco. Elena bate no vidro enquanto policiais ferroviários invadem o túnel.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "Arthur atende: \"Eu sabia que a Elena tentaria roubar os manifestos — essa pasta está cheia de papel em branco. O pendrive verdadeiro está com os federais.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "A polícia pegou o fugitivo no Marco 19, {{player_name}}. Todo mundo está seguro.",
+          "timestamp_label": "00:19",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Espera… se a pasta do Arthur tinha papéis falsos, por que ele deixou um bilhete endereçado a VOCÊ dentro do forro?",
+          "timestamp_label": "00:20",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "\"Me Encontre na Plataforma 9 Amanhã\"",
+          "teaser_text": "Dentro do forro há uma chave de latão de armário — e um aviso de que o verdadeiro informante trabalha na polícia ferroviária.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Armário 9B",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "06h10 · Uma névoa matinal paira sobre a Plataforma 9 enquanto você segura a chave de latão achada no forro do casaco do passageiro.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, fique atento! A Elena acabou de ver um agente ferroviário vigiando os armários detrás da banca de jornal!",
+          "timestamp_label": "06:10",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O bilhete de aviso dizia que o infiltrado trabalha na polícia ferroviária. Sam, passe por ele naturalmente enquanto abro o Armário 9B.",
+          "timestamp_label": "06:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sam",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Corredor de Serviço da Plataforma 9 · 06h11 — Um vulto escuro esperando fora do recanto dos armários.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Não abra sozinho! Esse é o casaco do maquinista Victor — ele está se encontrando com o agente ferroviário agora!",
+          "timestamp_label": "06:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "Esperem {{player_name}} abrir o 9B, depois peguem o pendrive e digam que é objeto furtado.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "A chave de latão entra no Armário 9B enquanto passos ecoam pelo corredor.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Pegar o drive e sumir na multidão",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Peguei o pendrive — sumindo na multidão!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Deixar um celular gravando no Armário 9B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Deixando um microfone ativo dentro do Armário 9B...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Você se mistura a uma onda de passageiros das 06h15 bem quando Victor dobra a esquina e encontra o armário vazio.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Seu microfone oculto flagra o infiltrado admitindo que trancaram o passageiro desaparecido dentro da Cabine de Sinalização 4.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "A Elena achou ele! O passageiro sumido está vivo — é um inspetor de segurança ferroviária que trancaram na Cabine de Sinalização 4!",
+          "timestamp_label": "06:13",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "victor",
+          "duration_sec": 9,
+          "transcript": "[apito de trem estridendo, voz ofegante] ...{{player_name}}, se você está com o pendrive do 9B, não confie na central ferroviária — chame os investigadores estaduais!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Chamando os investigadores estaduais agora, Sam. Me encontre na passarela da Plataforma 4.",
+          "timestamp_label": "06:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Cabine de Sinalização 4",
+          "teaser_text": "Episódio 4: Victor percebe que o pendrive sumiu — e muda todos os sinais da linha expressa para vermelho.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Sinal Vermelho Forçado",
+      "start_node_id": "e4_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "06h20 · Os painéis de partida pela estação piscam ATRASADO enquanto todas as vias de saída travam no vermelho.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, o Victor trancou as catracas do saguão! Ele está tentando nos prender na estação até o infiltrado pegar o pendrive!",
+          "timestamp_label": "06:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O que tem realmente nesse pendrive para eles pararem a linha expressa inteira?",
+          "timestamp_label": "06:21",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "Fechem as portas da passarela. Não deixem que cheguem à Cabine de Sinalização 4.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "Acabei de plugar o pendrive no meu tablet! São relatórios de inspeção de freios — seis trens expressos têm eixos rachados que eles encobriram!",
+          "timestamp_label": "06:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "victor",
+          "duration_sec": 11,
+          "transcript": "[alto-falante da estação chiando, voz de Victor] ...Passageiros, desocupem a Plataforma 4 imediatamente devido a uma varredura de segurança...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "As portas de vidro da passarela chiam e fecham, deixando só a passarela de manutenção aberta.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Ir pela passarela direto à Cabine 4",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Atravessando a passarela rumo à Cabine de Sinalização 4!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Enviar logs de freio ao portal estadual",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Subindo os registros de freio para a ferrovia estadual...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Você e Sam correm acima dos trilhos silenciosos, alcançando a porta trancada da cabine antes de Victor chegar.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: A sede estadual para imediatamente os seis trens defeituosos e envia agentes federais à Plataforma 4.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "A Elena acabou de puxar o vídeo do saguão no quiosque da segurança! Flagrou o Victor entregando dinheiro ao infiltrado da polícia ferroviária!",
+          "timestamp_label": "06:23",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Afastem-se da Cabine 4! Esse inspetor ia custar o emprego de quinhentas pessoas!",
+          "timestamp_label": "06:23",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Melhor do que custar a vida de quinhentos passageiros, Victor.",
+          "timestamp_label": "06:24",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Prova do Saguão",
+          "teaser_text": "Episódio 5: Câmeras do saguão da estação expõem o maquinista Victor e o infiltrado da polícia ferroviária juntos.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "A Fita do Saguão",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "06h30 · Você força o trinco da Cabine de Sinalização 4 e ajuda o inspetor amarrado a se levantar.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "{{player_name}}, mandei o vídeo do saguão direto para os agentes federais — eles estão correndo para a Plataforma 4 agora!",
+          "timestamp_label": "06:30",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Segure a porta, Sam. Victor e o infiltrado ficaram sem trilho.",
+          "timestamp_label": "06:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "sam",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Câmera do Saguão da Estação · 23h51 — Victor entregando o cartão de acesso do inspetor ao infiltrado.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Abaixem os celulares! O diretor do pátio mandou segurarmos ele até passar a auditoria da manhã!",
+          "timestamp_label": "06:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "Vou largar meu rádio e sair pela escada do túnel norte.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "O infiltrado dispara correndo rumo à escada do túnel norte.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Apontar aos agentes a escada do túnel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Agentes! Escada do túnel norte, rápido!",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Gravar Victor citando o diretor do pátio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Gravando o nome do diretor do pátio...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "Dois agentes saltam as catracas e derrubam o infiltrado antes que alcance o portão do túnel.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: O depoimento gravado de Victor implica toda a diretoria executiva do pátio no acobertamento das inspeções de freio.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 10,
+          "transcript": "[agentes gritando, sinos da estação] ...Plataforma 4 segura! Inspetor ferroviário ileso, dois suspeitos detidos!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "O inspetor disse que você literalmente salvou o expresso das 07h00 de descarrilar, {{player_name}}!",
+          "timestamp_label": "06:33",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ainda bem que notamos aquele picote de bilhete fora de hora na Plataforma 4.",
+          "timestamp_label": "06:34",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Expresso Liberado",
+          "teaser_text": "Episódio 6 Final: Os trens da manhã voltam a rodar — só depois que cada eixo defeituoso sai de circulação.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Embarque Seguro",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "08h05 · A luz clara da manhã atravessa o teto de vidro da estação enquanto trens inspecionados enfim deslizam pela Plataforma 4.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "victor",
+          "text": "Olha, {{player_name}}... Eu não queria ninguém ferido. O diretor ameaçou minha aposentadoria.",
+          "timestamp_label": "08:05",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Seis trens estavam com eixos rachados, Victor. Você quase trocou vidas por aposentadoria.",
+          "timestamp_label": "08:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "victor",
+          "text": "As notas fiscais de reparo foram falsificadas no depósito central.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "sam",
+          "duration_sec": 9,
+          "transcript": "[voz do inspetor, profundamente grata] ...Obrigado, {{player_name}}, Sam e Elena. Centenas de trabalhadores chegaram com segurança hoje graças a vocês...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "elena",
+          "text": "A companhia de trens acabou de dar passes vitalícios do expresso para nós três — mas hoje acho que vou de ônibus!",
+          "timestamp_label": "08:07",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "Um investigador federal ferroviário pede seu depoimento final sobre a lacuna nas câmeras da Plataforma 4.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Enviar a comparação original de horários",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entregando nossas anotações de horários.",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Denunciar notas falsas do depósito central",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Passando a pista das notas falsas do depósito...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Sua linha do tempo sela o indiciamento de Victor, do infiltrado e do diretor do pátio.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "EPÍLOGO SECRETO: Auditores federais fazem busca no depósito central e descobrem uma rede regional de falsificação de peças.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "sam",
+          "text": "Mesmo horário amanhã no Vagão 3, {{player_name}}? Tomara que sem mistério.",
+          "timestamp_label": "08:08",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Fechado, Sam. Só traz café.",
+          "timestamp_label": "08:09",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "O expresso das 08h10 parte suave da Plataforma 4 — pontual e totalmente seguro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Fim da Linha",
+          "teaser_text": "O passageiro foi resgatado, o infiltrado preso e a linha expressa voltou a rodar segura.",
+          "sfx": "ting",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

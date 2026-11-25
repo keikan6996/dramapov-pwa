@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_023",
+  "lang": "ko",
+  "metadata": {
+    "title": "새벽 3시 07분의 배달 기사",
+    "subtitle": "배달 기사가 문자를 보냈다: \"음식 문 밖에 걸어 뒀어요. 그런데 커튼 뒤에 서 있는 흰 옷 입은 여자는 누구예요?\"",
+    "genre": "thriller",
+    "tags": [
+      "새벽 3시",
+      "배달",
+      "공포"
+    ],
+    "cover_image": "assets/media/covers/story_023.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (나)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DB2777"
+    },
+    {
+      "id": "ally",
+      "name": "Leo (배달 기사)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "주문 #4409 고객센터",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "주문한 적 없는 음식",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 3:07 · 천둥소리가 5층 원룸을 뒤흔듭니다. 배달 앱 알림음이 울립니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "안녕하세요 {{player_name}} 님, 국수 문고리에 걸어 뒀습니다. 그런데 커튼 뒤에 계신 룸메이트분 좀 그만 노려보라고 해 주세요.",
+          "timestamp_label": "오전 3:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "잠깐—저 오늘 밤 음식 안 시켰는데요. 그리고 저 완전 혼자 살아요.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "그녀가 지금 당신의 발코니 걸쇠를 열고 있습니다.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "장난치지 마세요! 주문자 이름도 본인 명의로 돼 있고 현금 결제였단 말이에요—5층에서 구겨진 지폐 한 장 떨어뜨려 주셨는데!",
+          "timestamp_label": "오전 3:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[거센 빗소리, 스쿠터 엔진 소리] ...잠깐, 아까 주문 확인 통화 녹음 들어 보세요—이거 진짜 고객님 목소리 맞잖아요...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "유리문은 굳게 닫혀 있는데도 얇은 발코니 커튼이 안쪽으로 펄럭입니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Leo에게 그녀가 떨어뜨린 지폐가 어떻게 생겼는지 묻는다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "어떤 지폐를 떨어뜨렸는데요?",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "주문 확인 통화 녹음 전체를 재생해 본다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "전체 녹음 파일 보내 주세요!",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "Leo가 손을 떨며 답장합니다: \"진짜 돈이 아니에요, {{player_name}} 님... 저승 지폐예요. 모퉁이가 불에 그을려 있어요.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 졸린 목소리로 국수를 주문하는 당신의 목소리 밑으로, 두 번째 목소리가 속삭입니다: \"두 그릇. 하나는 산 사람을 위해.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "저 이만 출발할게요, 행운을 빌어요—잠깐, 왜 문고리에 걸어둔 비닐봉지가 없어졌죠?!",
+          "timestamp_label": "오전 3:11",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "배달 자동 안내 전화",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "기계음이 읊조립니다: \"주문하신 음식이 수령되었습니다... 고객님의 주방 안에서.\" 옆방에서 숟가락 부딪히는 소리가 들립니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "전화를 끊습니다. 즉시 차가운 육수와 젖은 향 냄새가 침실 문틈 아래로 스며듭니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "두 사람을 위한 저녁 식사",
+          "teaser_text": "2화: 작은 식탁 위에 김이 모락모락 나는 두 그릇이 놓여 있고—의자 하나가 뒤로 빠져 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "두 쌍의 젓가락",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 3:13 · 침실 문을 살짝 엽니다. 작은 식탁 위 두 그릇에서 김이 피어오릅니다. 젓가락 한 쌍이 밥그릇에 똑바로 꽂혀 있습니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님! 내비게이션이 골목 밖으로 안 보내 줘요. 어느 쪽으로 꺾어도 계속 고객님 발코니 아래로 돌아와요!",
+          "timestamp_label": "오전 3:13",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo 씨, 제 주방에 그릇이 두 개 있어요. 젓가락이 제사상처럼 똑바로 꽂혀 있어요!",
+          "timestamp_label": "오전 3:14",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[후루룩 면발 들이키는 소리, 물방울 떨어지는 소리] ...식기 전에 먹어, {{player_name}}. 손님한테 무례하게 굴지 말고...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "그녀는 당신에게 등을 돌린 채 의자에 앉아 있습니다.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "방금 이 골목 기억났어요! 5년 전 여기 잠긴 5층 방에서 여대생 한 명이 굶어 죽었던 데예요. 절대 음식 손대지 마세요!",
+          "timestamp_label": "오전 3:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "그녀가 천천히 고개를 돌리기 시작하며 타일 바닥 위로 의자가 긁히는 소리가 납니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "식탁 위 제사 그릇을 쳐서 떨어뜨린다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "식탁 뒤엎어 버릴 거예요!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "공손히 고개 숙여 절을 하며 그릇을 권한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "고개 숙여 인사하고 조용히 뒷걸음질 칠게요...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "그릇이 산산조각 나고—타일 위에 쏟아진 것은 국수가 아니라 길고 젖은 검은 머리카락 뭉치였습니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 차가운 공기가 부드러워집니다. 희미한 한숨이 \"날 기억해 줘서 고마워\"라고 속삭이며 현관문이 열립니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "가로등이 다시 깜빡이며 켜지는 순간 계단실로 뛰쳐나옵니다. 휴대폰이 마지막 앱 영수증 알림으로 진동합니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Leo (배달 기사)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Leo가 거칠게 숨을 몰아쉽니다: \"골목 빠져나왔어요! 앱 확인해 보세요—고객님 계정으로 별점 5점 리뷰를 남겼어요: 내일 새벽 3시 07분에 또 만나요.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "거절하고 앱을 확인합니다. 매일 밤 새벽 3시 07분마다 새로운 정기 배달 주문이 자동으로 예약되어 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "예약된 주문: 오전 3시 07분",
+          "teaser_text": "시즌 피날레 · 취소 버튼이 비활성화되어 있습니다. 그녀는 벌써 내일 밤 식사를 기다리고 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "새벽 3시 07분 예약",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 3:01 · 다음 날 밤. 배달 앱을 삭제했는데도 초인종이 울리고—Leo가 패닉에 빠져 문자를 보냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 배차 거절하려고 진짜 애썼는데! 앱이 제 오토바이 GPS를 잠그고 억지로 고객님 대문 앞으로 끌고 왔어요!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Leo 씨, 현관 계단 위로 올라오지 마세요! 제 복도 카메라에 흰 옷 입은 여자가 '안쪽'에서 제 현관문 잠금 푸는 게 찍혔어요!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "새벽 3:04 복도 캠 · 안전 고리 바로 뒤에 서 있는 창백한 흰 옷의 인물.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "주문 #4409 고객센터: \"기사님이 일찍 도착했습니다. 오전 3시 07분 전에 두 그릇을 세팅해 주세요.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "그녀는 1999년 주조 은화로 결제했어, {{player_name}}. 주문 #4409를 취소한 기사는 모두 고속도로에서 실종되었지.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "잠깐—영수증에 적힌 배달 주소 확인해 봐요. 지금 아파트 번지가 아니라—예전에 여기서 불타 없어진 옛날 건물 터 주소예요.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[Leo 마이크 너머로 몰아치는 바람 소리] \"길 건너편에 주차해 뒀어요, {{player_name}} 님! 봉지는 매트 위에 두고—절대 안전 고리 열지 마세요!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "시계가 오전 3시 06분을 가리킵니다. 현관문 안쪽으로 발소리가 다가옵니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_slide_chopsticks",
+              "label": "문틈 아래로 젓가락 두 벌을 밀어 넣어 준다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "문틈으로 젓가락 밀어 넣었어요—Leo 씨, 오토바이 시동 끄지 말고 대기해요!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_fire_escape",
+              "label": "주방 비상 사다리를 타고 탈출한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 탈출",
+              "player_reply_text": "유령이랑 밥 안 먹을 거예요! 비상 사다리 타고 Leo 씨 오토바이로 내려갈게요!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "그 여자가 젓가락 집어 들었어요! 한눈파는 사이에 지금 뒷계단으로 뛰어 나오세요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "뛰어내리세요—골목 쪽에 헤드라이트 비춰 뒀어요! 빨리 뒷자리에 타세요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "주문 #4409 상태 업데이트: \"고객이 식탁을 떠났습니다. 새로운 GPS 위치를 추적 중...\"",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "주문은 여전히 진행 중.",
+          "teaser_text": "4화: Leo의 오토바이를 타고 5킬로미터나 달아났는데도, 배달 추적 핀은 계속해서 가까이 기어옵니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "1999년의 영수증",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 3:25 · 고속도로 고가도로 아래에 정차합니다. Leo가 보온 배달 가방 안에서 누렇게 바랜 종이 영수증 한 장을 꺼냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "영수증에 적힌 가게 이름 좀 보세요, {{player_name}} 님: \"연꽃 국수집.\" 저 집 1999년에 불타 없어졌어요—한 신부가 늦는 약혼자를 기다리던 바로 그날 밤에.",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "잠깐... 약혼자 기차가 연착돼서 새벽 3시 07분에 둘이 먹을 저녁을 주문했던 거라고요?!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "그는 끝내 집으로 돌아오지 못했어, {{player_name}}. 오늘 밤에야말로 그가 문을 열고 들어오길 바라며 매일 밤 두 그릇을 시키는 거야.",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Leo의 배달 앱에서 요란한 경고음이 울립니다: \"기사 경로 이탈. 즉시 연꽃 국수집 부지로 복귀하십시오.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "내 휴대폰 액정이 저절로 금이 가더니—지도 핀이 두 블록 떨어진 옛날 기차 건널목을 가리키고 있어요!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "그 여자가 Leo를 자기 약혼자 편지를 전해 줄 배달부로 착각하고 있다면, 우리가 마침내 그 편지를 전해 줄 수 있을지도 몰라.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[고객센터 회선에서 잡음 섞인 여성의 목소리] \"그 사람 3시 07분 기차에 탄 거 맞죠? 제발 저녁 약속 잊은 게 아니라고 말해 주세요...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "주문 #4409가 진정으로 완료될 때까지 배달 앱은 멈추지 않을 것입니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_check_station",
+              "label": "함께 옛 기차 건널목으로 오토바이를 몰고 간다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "옛 건널목으로 가요, Leo 씨. 거기 뭐가 기다리고 있는지 확인하죠.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_reply_support",
+              "label": "주문 #4409 고객센터에 다정하게 답장을 보낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 공감",
+              "player_reply_text": "그분은 당신을 잊지 않았어요. 어디로 메시지를 가져다드리면 될지 알려 주세요.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "꽉 잡아요! 안개선 바로 너머에 옛날 매표소가 있어요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "붉은 경고 배너가 부드러운 금빛으로 바뀌었어요... 그녀가 우리 GPS를 안내하고 있어요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "금 간 Leo의 휴대폰 화면을 보세요—GPS 핀이 버려진 역의 7번 물품보관함에 딱 고정되었습니다.",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "7번 물품보관함.",
+          "teaser_text": "5화: 녹슨 역 물품보관함 안에는 1999년 날짜가 적힌 미배달 편지 한 통이 놓여 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "배달되지 못한 편지",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 3:50 · 버려진 승강장을 짙은 안개가 감쌉니다. Leo가 7번 물품보관함을 비틀어 열고 밀봉된 봉투를 꺼냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "고객님 아파트 옛날 번지수로 수신인이 적혀 있어요! 반지랑 쪽지가 들어 있어요: \"폭풍우에 발이 묶였소—동틀 때까지만 기다려 주오.\"",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그래서 새벽 3시 07분마다 계속 저녁을 주문했던 거구나... 왜 그분이 집에 못 오셨는지 평생 몰랐으니까.",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "금 간 휴대폰 GPS · 고객님 현관문 앞으로 직행하는 경로 재탐색 완료 — 600미터 거리.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "주문 #4409 고객센터: \"물품 회수 완료. 주문을 영구 종료하려면 배달을 완료하십시오.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "현관까지 태워다 드릴게요, {{player_name}} 님. 따뜻한 국수 옆에 봉투를 놓아 두세요—절대 그녀를 똑바로 쳐다보지 마시고요.",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "손이 떨리지만, 이게 제가 이 노선에서 하게 될 마지막 배달이 될 것 같네요.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[부드럽고 떨리는 한숨] \"찾았구나... 제발 문 앞에 놓고 가 줘.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "현관 앞에 도착합니다. 유리문 뒤에서 하얀 커튼이 가늘게 흔들립니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_leave_letter",
+              "label": "음식 봉지 옆에 편지 봉투를 내려놓는다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "문 앞에 두었어요. 그분은 단 한 번도 당신을 잊지 않으셨대요.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_read_aloud",
+              "label": "물러서기 전에 마지막 문장을 소리 내어 읽어 준다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 평화",
+              "player_reply_text": "\"동틀 때까지만 기다려 주오.\" 마지막 순간까지 당신을 사랑하셨어요.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "커튼이 스르르 내려앉았어요... 그리고 내 앱에서 마침내 \"배달 완료\" 알림음이 울렸어요!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "현관 매트 위로 하얀 꽃잎 한 장이 팔랑 떨어졌습니다. 차가운 냉기가 순식간에 사라졌어요!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "주문 #4409 · 평점: 별 5개. \"그 사람을 집으로 데려다줘서 고마워.\"",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "배달 완료.",
+          "teaser_text": "6화 (피날레): 고요한 거리 위로 아침이 밝아오고—새벽 3시 07분의 배달 기사는 다시는 야간 근무를 두려워하지 않아도 됩니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "새벽녘의 별 다섯 개",
+      "start_node_id": "e6_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 6:15 · 모퉁이 국수 가게에 아침 햇살이 따뜻하게 스며듭니다. Leo가 유령 따위 없는 진짜 따뜻한 국수 두 그릇을 사 줍니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "오늘 아침에 배차 기록 확인해 봤어요, {{player_name}} 님. 주문 #4409는 완전히 사라졌고—금 갔던 제 GPS 화면도 다시 멀쩡히 잘 작동해요.",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "우리 집 커튼도 해 뜬 뒤론 1밀리미터도 안 움직였어요. 우리 둘 다 야간 근무 무사히 살아남았네요.",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "사실 1시간 전에 야간 배달 그만뒀어요. 앞으론 주간 배차만 하려고요.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "휴대폰이 울립니다—\"연꽃 국수집\"에서 0원짜리 마지막 영수증 한 장이 도착합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "영수증 맨 아래 적힌 메모 좀 보세요: \"더 이상 기다림은 끝. 따뜻할 때 드세요.\"",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "솔직히, {{player_name}} 님, 새벽 3시 07분에 고객님 문자 읽씹하고 도망치지 않길 정말 잘한 것 같아요.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[따뜻하게 웃으며] \"다음에 야식으로 국수 드시고 싶을 땐 저한테 직접 문자하세요—자정 전에 제가 직접 배달해 드릴게요.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "아침 햇살 속에서 두 사람의 아침 식사 그릇 위로 김이 모락모락 피어오릅니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_toast_bowls",
+              "label": "Leo와 젓가락을 마주 부딪히며 건배한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "좋아요, Leo 씨. 이제부턴 무조건 낮 배달만 해요.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_tip_big",
+              "label": "별 다섯 개와 팁을 남기며 미소 짓는다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 따뜻함",
+              "player_reply_text": "이 도시에서 가장 용감한 기사님께 별 다섯 개. 아침은 제가 살게요.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "내 인생 가장 미쳤던 밤 뒤에 먹는 최고의 아침 식사네요.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "콜입니다! 동네에서 종종 뵈어요, {{player_name}} 님.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "주문 #4409 고객센터 · 계정이 영구 폐쇄되었습니다.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 마침내 배달 완료.",
+          "teaser_text": "THE END · 더 이상 새벽 3시 07분의 노크는 없습니다—오직 따뜻한 국수와 맑은 아침 하늘만 있을 뿐.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

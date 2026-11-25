@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_027",
+  "lang": "pt",
+  "metadata": {
+    "title": "A Enfermeira do Turno da Noite na Ala B",
+    "subtitle": "O Leito 14 acabou de apertar a campainha da enfermeira. O Leito 14 está vazio desde o incêndio de 2019.",
+    "genre": "thriller",
+    "tags": [
+      "Hospital",
+      "Turno da Noite",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_027.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Enfermeira)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "ally",
+      "name": "Dr. Patel (Emergência)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Campainha Quarto 14",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "O Leito 14 Está Chamando",
+      "start_node_id": "e1_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "02h52 · A Ala B está em silêncio mortal. De repente, a luz vermelha acima do Quarto 14 pisca e toca três vezes.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, estou vendo o alerta do Leito 14 no tablet central. Me diga que é falha elétrica.",
+          "timestamp_label": "02:52",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O Quarto 14 está fechado com cadeado por fora, Doutor. Consigo ver a luz vermelha brilhando através do vidro fosco.",
+          "timestamp_label": "02:53",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Meu soro acabou. Venha trocar.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "NÃO destranque esse quarto! Espere a segurança—o prontuário do Leito 14 acabou de atualizar sozinho no sistema!",
+          "timestamp_label": "02:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[monitor cardíaco em linha reta, respiração sibilante] ...Enfermeira {{player_name}}... dói tanto... abra a porta...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Uma maca hospitalar pesada raspa pelo piso atrás da porta trancada.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Reiniciar o painel de chamadas",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Cortando a energia do painel de chamadas!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Abrir o prontuário atualizado do Leito 14",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Checando a ficha do paciente...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "O painel morre—mas a campainha continua tocando dentro do Quarto 14, cada vez mais rápido.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Nome do Paciente: {{player_name}}. Internação: Hoje, 03h00. Estado: Crítico.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A segurança não atende! E o elevador da Ala B acabou de travar em modo de manutenção!",
+          "timestamp_label": "02:56",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Interfone do Quarto 14",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Uma voz rouca sussurra: \"Você esqueceu de soltar minhas amarras durante o incêndio, Enfermeira. Agora é sua vez.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "Você aperta recusar. O cadeado de aço do Quarto 14 parte limpo ao meio e cai no chão.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "O Quarto 14 Está Aberto",
+          "teaser_text": "Episódio 2: O cheiro de fumaça invade a Ala B—e a porta se escancara.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Código Preto na Ala B",
+      "start_node_id": "e2_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "02h58 · Névoa cinzenta espessa rasteja pelo piso de linóleo. Uma cadeira de rodas vazia sai devagar do Quarto 14.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estou subindo pela escada de emergência com dois seguranças! Tranque-se na sala de medicamentos, {{player_name}}!",
+          "timestamp_label": "02:58",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "A cadeira de rodas parou bem diante do meu balcão. As rodas estão deixando marcas molhadas de fuligem preta.",
+          "timestamp_label": "02:59",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[máscara de oxigênio chiando] ...Cheque meu pulso, {{player_name}}... Por que ninguém checa meu pulso?...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Olhe o reflexo no vidro do armário de remédios.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estamos no patamar do 4º andar—ESPERA, a porta da escada para a Ala B está pelando de quente! Não dá para tocar na maçaneta!",
+          "timestamp_label": "03:00",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "O relógio marca 03h00. As luzes do hospital piscam em vermelho-sangue.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Puxar a alavanca dos sprinklers de incêndio",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Puxando o alarme de incêndio!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Colocar uma pulseira nova na cadeira de rodas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Escrevendo uma etiqueta de alta para o Leito 14...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "Água gelada chove do teto. A fumaça chia e se dissipa—e a cadeira de rodas tomba vazia de lado.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: Você sussurra \"Você está livre para ir para casa.\" O calor some na hora, e a porta da escada destrava.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "Dr. Patel irrompe na Ala B ensopado. A porta do Quarto 14 está fechada de novo—com o cadeado intacto.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Dr. Patel (Emergência)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Dr. Patel encara seu pulso: \"{{player_name}}... quando foi que você colocou uma pulseira de paciente do Leito 14?\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "Você olha para o próprio pulso—uma faixa hospitalar branca nova está presa firme em volta dele: \"LEITO 14 — {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Alta Médica às 03h00",
+          "teaser_text": "Final da Temporada · A pulseira plástica não tem fecho. Você não consegue cortá-la.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "A Pulseira Inquebrável",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "03h08 · A pulseira plástica de paciente no seu braço não tem fecho—e traz impresso \"ALA B · LEITO 14\" em tinta fresca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, não use tesoura cirúrgica nela—vai cortar seu pulso! Venha direto para a triagem da Emergência!",
+          "timestamp_label": "02:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel, o elevador não desce para o PS! Todo botão de andar me leva de volta para a Ala B!",
+          "timestamp_label": "02:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Corredor da Ala B · Figura escura com camisola hospitalar chamuscada parada diante do Quarto 14.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Sistema de Chamada: \"LEITO 14 · PRIORIDADE CÓDIGO AZUL. ENFERMEIRA {{player_name}} NECESSÁRIA.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Você me deixou quando o alarme tocou em 2019. Por que ninguém confere meu prontuário?",
+          "timestamp_label": "02:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Espera—o incêndio de 2019 não foi acidente. Alguém trancou o Quarto 14 por fora.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[tossindo na fumaça pelo interfone] \"Olhe a prancheta presa no Leito 14... meu nome verdadeiro não está na placa memorial.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "O corredor chamuscado se estende à frente. A porta do Quarto 14 está entreaberta.",
+          "options": [
+            {
+              "option_id": "opt_e3_enter_room14",
+              "label": "Entrar no Quarto 14 para checar a prancheta",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Estou entrando no Quarto 14, Dr. Patel—continue no chat comigo!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_pull_records",
+              "label": "Pedir a Dr. Patel o registro do incêndio 2019",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Investigar",
+              "player_reply_text": "Puxe o relatório do incêndio da Ala B de 2019 agora enquanto eu olho a porta!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Mantenha a lanterna do celular firme! Me mande foto do que estiver nessa prancheta!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Achei! O diretor do hospital liberou uma válvula de oxigênio defeituosa no Quarto 14—e enterrou o exame de DNA da paciente!",
+          "timestamp_label": "02:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "A pulseira no seu braço esquenta. Dentro do Quarto 14, uma prancheta metálica brilha sobre as molas nuas.",
+          "timestamp_label": "02:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "O Prontuário Enterrado.",
+          "teaser_text": "Episódio 4: O acobertamento da válvula de oxigênio de 2019 aponta direto para alguém que ainda trabalha na diretoria do hospital.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Acobertamento Código Preto",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "03h20 · Há cheiro leve de fumaça dentro do Quarto 14. Você ergue a prancheta chamuscada—um laudo forense de DNA está preso dentro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Estou escaneando o arquivo de 2019, {{player_name}}! A paciente do Leito 14 foi registrada como \"Indigente\" para a família nunca poder processar a diretoria!",
+          "timestamp_label": "02:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel, a compatibilidade de DNA foi impressa lá em 2019—e o Diretor escondeu dentro desta ala trancada!",
+          "timestamp_label": "02:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Ele trancou as portas da ala para ninguém nunca achar meu nome real, {{player_name}}. Entregue à polícia.",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Passos pesados ecoam da escada—o Supervisor Noturno acabou de desativar as câmeras da Ala B!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "O Supervisor é irmão do Diretor! Ele viu seu crachá entrar na Ala B—se esconda no armário de suprimentos!",
+          "timestamp_label": "02:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Se ele me pegar com este laudo de DNA, a Ala B vai ter outro \"acidente\" hoje à noite.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[campainha zumbindo baixo] \"O monta-cargas de serviço atrás da estante de lençóis desce direto para o PS, {{player_name}}.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "Um facho de lanterna varre por baixo da porta do Quarto 14.",
+          "options": [
+            {
+              "option_id": "opt_e4_send_photo",
+              "label": "Fotografar e mandar o laudo DNA a Dr. Patel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Mandando o laudo agora—suba para o conselho estadual antes que ele corte o Wi-Fi!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_trigger_alarm",
+              "label": "Acionar o alarme da Ala B para chamar o PS",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Ousadia",
+              "player_reply_text": "Puxando o alarme de incêndio! Vamos trazer o hospital inteiro aqui para cima!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Recebi! Cada página está salva na nuvem—agora corra para a escada, estou trazendo a segurança!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sprinklers e alarmes acabaram de disparar! A segurança do PS está subindo correndo para a Ala B—aguente firme!",
+          "timestamp_label": "02:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Olhe o laudo forense que acabou de mandar—a irmã da paciente é enfermeira bem aqui nesta cidade.",
+          "timestamp_label": "02:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Ala B Exposta.",
+          "teaser_text": "Episódio 5: Com a segurança cercando a Ala B, o acobertamento de 2019 do Diretor desaba.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Paciente Identificada",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03h42 · Luzes vermelhas piscantes iluminam a Ala B quando a segurança do hospital intercepta o Supervisor Noturno na porta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "A segurança deteve ele, {{player_name}}! E acabei de mandar o laudo de DNA direto para o IML do Condado!",
+          "timestamp_label": "03:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Patel... olhe meu pulso! A pulseira plástica de paciente acabou de arrebentar sozinha!",
+          "timestamp_label": "03:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Laudo Forense de DNA · Incêndio Ala B 2019 — Paciente #14 identificada positivamente como Elena Park.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Campainha Quarto 14: A luz apaga pela primeira vez em sete anos.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "O cheiro de fumaça sumiu por completo. Você acabou de devolver o nome a Elena Park, {{player_name}}.",
+          "timestamp_label": "03:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Trabalho no PS há doze anos e nunca vi nada igual esta noite.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[voz nítida e serena] \"Obrigada por atender minha campainha, Enfermeira {{player_name}}. Diga à minha irmã que estou bem.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "O corredor da Ala B parece morno e tranquilo quando você apanha a pulseira partida.",
+          "options": [
+            {
+              "option_id": "opt_e5_log_discharge",
+              "label": "Registrar a alta oficial de Elena na ficha",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Alta com dignidade. Descanse em paz, Elena.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_call_sister",
+              "label": "Pedir a Dr. Patel para avisar a irmã agora",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Desfecho",
+              "player_reply_text": "Vamos ligar para a irmã dela juntos assim que a polícia terminar.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Registro de prontuário mais significativo que você jamais assinará.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Já ligando para o contato do legista. A família dela saberá ao nascer do sol.",
+          "timestamp_label": "03:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Desça para a sala de descanso do PS—seu plantão está oficialmente encerrado.",
+          "timestamp_label": "03:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Campainha Silenciada.",
+          "teaser_text": "Episódio 6 (Final): Ao nascer do sol, a Ala B finalmente está em paz—e o plantão da noite tem uma heroína.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Ronda da Manhã",
+      "start_node_id": "e6_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06h20 · A luz do sol entra no saguão do PS. A irmã de Elena abraça você em lágrimas diante do mural memorial.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "O Diretor do Hospital renunciou há uma hora, {{player_name}}. Investigadores estaduais lacraram a sala dele.",
+          "timestamp_label": "07:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "E olhe o monitor da Ala B atrás do posto de enfermagem—o Leito 14 está completamente apagado.",
+          "timestamp_label": "07:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Sete anos de silêncio, encerrados em um plantão noturno.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Sistema de Chamada: \"Todos os leitos livres. Tenha uma boa volta para casa, {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Tire os próximos três dias de folga—ordens médicas. Você mereceu.",
+          "timestamp_label": "07:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Melhor enfermeira noturna que este hospital já teve.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[caloroso, orgulhoso] \"Vá dormir de verdade, {{player_name}}. Eu cubro as rondas da manhã.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Você bate o ponto e sai para o ar fresco da manhã.",
+          "options": [
+            {
+              "option_id": "opt_e6_clock_out",
+              "label": "Bater o ponto e ir para casa dormir",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Te vejo quinta, Dr. Patel. Chega de campainhas fantasmas!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_place_ribbon",
+              "label": "Amarrar uma fita branca no memorial Ala B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Honra",
+              "player_reply_text": "Deixei uma fita branca para Elena. Boa noite, Dr. Patel.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Durma bem, heroína.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Ela nunca mais será esquecida. Descanse.",
+          "timestamp_label": "07:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Campainha Quarto 14 · Desativada Permanentemente.",
+          "timestamp_label": "07:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final da Temporada · Descanse em Paz, Leito 14.",
+          "teaser_text": "FIM · Alguns chamados do escuro apenas esperam por alguém corajoso o bastante para atender.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

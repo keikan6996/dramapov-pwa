@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_148",
+  "lang": "th",
+  "metadata": {
+    "title": "รถไฟขบวนสุดท้ายไม่เคยจอดที่สถานี 9",
+    "subtitle": "ตื่นขึ้นมาบนรถไฟรอบ 23:55 พร้อมคำเตือน: \"ห้ามคุยกับคนใส่เสื้อโค้ทสีเทาเด็ดขาด\"",
+    "genre": "thriller",
+    "tags": [
+      "สยองขวัญรถไฟ",
+      "กฎลึกลับ",
+      "หักมุม"
+    ],
+    "cover_image": "assets/media/covers/story_148.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · ตู้โดยสาร 4",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "conductor",
+      "name": "แจ้งเตือนการเดินทาง",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "stranger",
+      "name": "เสื้อโค้ทเทา · ที่นั่ง 4C",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F172A"
+    },
+    {
+      "id": "narrator",
+      "name": "ผู้บรรยาย",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "ประกาศเตือนสถานี 9",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "23:58 น. · คุณสะดุ้งตื่นบนรถไฟฟ้าขบวนสุดท้ายที่สั่นสะเทือน ป้ายดิจิทัลเหนือศีรษะกระตุกเปลี่ยนจาก \"Central\" เป็น \"STATION 9\"",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "กฎฉุกเฉินระบบขนส่ง: หากตู้ 4 เข้าสู่สถานี 9 ให้จ้องมองแต่มือถือ ห้ามตอบคนใส่เสื้อคลุมสีเทา และนั่งอยู่กับที่จนถึง 03:30 น.",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "สถานี 9 ถูกก่ออิฐปิดตายไปตั้งแต่ 15 ปีก่อนแล้วนี่! ทำไมเสียงเบรกถึงดังลั่นแบบนี้?!",
+          "timestamp_label": "23:58",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[เสียงเร่งร้อน อู้อี้ด้วยเสียงไซเรน] \"{{player_name}}! ได้ยินผมไหม?! บีบมือผมหรือกดรับสายมือถือที—อย่าอยู่บนรถไฟขบวนนั้นนะ!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "เขาสวมเสื้อคลุมสีเทา ห้ามเงยหน้าขึ้นมองเด็ดขาด",
+          "unsent_placeholder": "ยกเลิกข้อความแล้ว",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "ประตูรถไฟฟ้าเลื่อนเปิดฟู่สู่ชานชาลาที่มืดสนิท:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e1_free",
+              "label": "จ้องหน้าจอมือถือไว้ไม่ละสายตา",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ไม่เงยหน้าเด็ดขาด รอให้ประตูปิดอย่างเดียว...",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e1_vip",
+              "label": "เหลือบมองผู้โดยสารที่นั่ง 4C",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ความลับ · ดูโฆษณา",
+              "player_reply_text": "ฉันมองไปแล้ว—เขาสวมเสื้อแจ็กเก็ตสะท้อนแสงกู้ภัยสีเทา ไม่ใช่เสื้อโค้ทธรรมดา!",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "ดีมาก ประตูเพิ่งปิดสนิท—เดี๋ยวนะ กล้องชานชาลาจับภาพเงาร่าง 6 ร่างเพิ่งก้าวขึ้นตู้ 4!",
+          "timestamp_label": "00:01",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "คำเตือน! อย่าหลงเชื่อชุดปลอมตัวสีเทานั่น! กล้องชานชาลาแสดงว่าตู้ 4 ว่างเปล่าสนิท ยกเว้นเงาดำ!",
+          "timestamp_label": "00:01",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "หลอดไฟในตู้โดยสารดับวูบไป 3 วินาที พอไฟติดกลับมาอีกครั้ง เบาะนั่งทุกตัวรอบตัวคุณก็เปียกโชกไปหมด",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "เสื้อคลุมเทา · ที่นั่ง 4C",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เลิกฟังข้อความอัตโนมัตินั่นได้แล้ว {{player_name}}! ชีพจรคุณกำลังตก—ลองมองเงาสะท้อนตัวเองในกระจกดูสิ!",
+          "timestamp_label": "00:04",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ทำไมกระจกถึงแตกร้าวเป็นใยแมงมุม... แล้วทำไมฉันถึงได้กลิ่นควันน้ำมันดีเซล?!",
+          "timestamp_label": "00:04",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "เงาหกร่างในตู้ 4",
+          "teaser_text": "ตอนต่อไป: กล้องวงจรปิดสถานี 9 เผยว่าใครกันแน่ที่ขึ้นมาบนขบวนรถ",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "กล้องวงจรปิดชานชาลา",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "00:08 น. · ขบวนรถเร่งความเร็วพุ่งเข้าสู่อุโมงค์มืดที่ไร้จุดจบ มือถือของคุณดาวน์โหลดภาพวงจรปิดของสถานี 9 ลงมา",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "ยืนยัน: ตรวจพบผู้โดยสารที่ไม่มีชีวิตอยู่ในตู้ 4 กรุณานั่งอยู่กับที่ ห้ามให้ชายเสื้อคลุมเทาดึงตัวลงในป้ายถัดไป",
+          "timestamp_label": "00:08",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ดูภาพวงจรปิดสิ—พวกนั้นไม่ใช่ผี แต่กำลังถือเปลหามกับเครื่องตัดถ่างไฮดรอลิกต่างหาก!",
+          "timestamp_label": "00:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[เร่งด่วน เสียงโลหะบดขยี้] \"ใช่ครับ! พวกเรากำลังตัดประตูตู้ 4 ที่พังยับเข้าไปเดี๋ยวนี้! ตื่นไว้ให้ได้นะ {{player_name}}!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "ไม่ต้องสนใจเสียงตัดโลหะ นอนหลับไปจนถึง 03:30 น.",
+          "unsent_placeholder": "ยกเลิกข้อความแล้ว",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "conductor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "กล้องวงจรปิดชานชาลาสถานี 9 — เงาดำทะมึนกำลังก้าวขึ้นตู้โดยสารที่ดูว่างเปล่า",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "เปลือกตาของคุณจู่ๆ ก็หนักอึ้งราวกับก้อนตะกั่ว:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e2_free",
+              "label": "หยิกแขนตัวเองแรงๆ ให้ตื่นตัว",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ฉันตื่นแล้ว! ทำไมแจ้งเตือนรถไฟฟ้าถึงเอาแต่สั่งให้ฉันหลับ?!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e2_vip",
+              "label": "ถามชายเสื้อคลุมเทาเรื่องขบวน 23:55",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ความลับ · ดูโฆษณา",
+              "player_reply_text": "บอกฉันมาตรงๆ เลย—รถไฟขบวน 23:55 น. เกิดอุบัติเหตุตกรางใช่ไหม?!",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เพราะ \"แจ้งเตือนรถไฟฟ้า\" ไม่มีอยู่จริง—มันคืออาการช็อกของคุณที่พยายามดึงสติให้ดับวูบ! สู้กับมันไว้!",
+          "timestamp_label": "00:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ใช่ครับ! ตู้ 4 ตกรางในอุโมงค์ 9 เมื่อสามสิบนาทีก่อน! คุณถูกทับอยู่ใต้เบาะ 4C—อยู่กับผมไว้นะ!",
+          "timestamp_label": "00:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "เสียงล้อรถไฟบดรางเป็นจังหวะค่อยๆ ช้าลง... แปรเปลี่ยนเป็นเสียงติ๊ด-ติ๊ดสม่ำเสมอของเครื่องวัดชีพจรอย่างชัดเจน",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "เจ้าหน้าที่กู้ภัย · อุโมงค์ 9",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เราเห็นแสงหน้าจอมือถือคุณสว่างอยู่ในซากรถแล้ว! แตะหน้าจออะไรก็ได้ให้เรารู้ว่าคุณยังมีสติอยู่!",
+          "timestamp_label": "00:16",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ฉันแตะอยู่... ทำไมฉันไม่รู้สึกถึงขาตัวเองเลยล่ะ?!",
+          "timestamp_label": "00:16",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "รถไฟตกรางในอุโมงค์ 9",
+          "teaser_text": "ตอนต่อไป: ขบวนรถไฟงัดกลลวงสุดท้ายขึ้นมาเพื่อรั้งคุณไว้บนขบวนตลอดกาล",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "พนักงานรถไฟจอมปลอม",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "00:20 น. · แสงสีทองอบอุ่นท่วมทะลักเข้ามาเต็มตู้ 4 ความเจ็บปวดมลายหายไปสิ้น เสียงแจ้งเตือนรถไฟฟ้าดังกังวานแผ่วเบา",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "ประกาศเรียกรอบสุดท้าย: นั่งอยู่ที่เดิมเถอะ {{player_name}} ไม่มีความเจ็บปวด ไม่มีเสียงไซเรน มีเพียงการเดินทางกลับบ้านอันเงียบสงบ",
+          "timestamp_label": "00:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "มันอบอุ่นเหลือเกิน... บางทีฉันควรหลับตาสัก 5 นาทีดีไหมนะ...",
+          "timestamp_label": "00:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "conductor",
+          "duration_sec": 8,
+          "transcript": "[เสียงฮัมกล่อมชวนเคลิ้ม] \"หลับตาลงสิ {{player_name}} สถานี 9 คือป้ายสุดท้ายที่คุณต้องการ\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "อย่าให้เจ้าหน้าที่กู้ภัยชุดเทาปลุกคุณขึ้นมาได้",
+          "unsent_placeholder": "ยกเลิกข้อความแล้ว",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "สายตาของคุณค่อยๆ แคบลงกลายเป็นอุโมงค์สีขาวอันอบอุ่น:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e3_free",
+              "label": "สู้ความอบอุ่นแล้วตะโกนเรียกกู้ภัย",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ไม่นะ! ฉันไม่ยอมลงที่สถานี 9! ดึงฉันออกไปที!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e3_vip",
+              "label": "เปิดไฟฉายมือถือส่องกระแทกกระจก",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ความลับ · ดูโฆษณา",
+              "player_reply_text": "ฉันส่องไฟหน้าจอใส่เครื่องตัดถ่างกู้ภัยอยู่—ฉันอยู่ตรงนี้!!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เราได้ยินคุณแล้ว! อดทนไว้นะ—พวกเราจะยกคานเหล็กออกจากเบาะคุณนับสามพร้อมกัน!",
+          "timestamp_label": "00:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เห็นตัวแล้ว! แสงมือถือคุณกะพริบผ่านช่องแคบออกมา—กำลังดึงคุณออกมาเดี๋ยวนี้!",
+          "timestamp_label": "00:24",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "แกร๊ก! อากาศหนาวเย็นของอุโมงค์จริงๆ พุ่งทะลักเข้าปอดของคุณ ขณะที่สปอตไลต์กู้ภัยสีขาวจ้าทำลายภาพลวงตาอันอบอุ่นลงจนสิ้น",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "หัวหน้าทีมกู้ภัย · ห่าง 1 เมตร",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ดูหน้าจอ GPS ที่แตกร้าวสิ—คุณอยู่ลึกลงมาใต้ดิน 40 เมตรในอุโมงค์ 9 และเราเพิ่งยกเปลคุณออกมาได้แล้ว!",
+          "timestamp_label": "00:28",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ฉันสัมผัสลมหนาวได้... ฉันยังมีชีวิตอยู่!",
+          "timestamp_label": "00:28",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "รอดพ้นจากซากรถไฟ",
+          "teaser_text": "ตอนต่อไป: GPS มือถือจอแตกยืนยันว่าคุณเฉียดเข้าใกล้สถานี 9 แค่ไหน",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "ใต้ดินลึก 40 เมตร",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "00:35 น. · ขณะนอนอยู่บนเปลหามกู้ภัย คุณก้มมองมือถือจอแตกที่กำแน่นอยู่ในมืออันฟกช้ำ",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ผม Mark หน่วยกู้ภัยนะครับ—เรากำลังขึ้นลิฟต์ฉุกเฉินกลับขึ้นระดับถนน! สัญญาณชีพคุณคงที่เร็วมาก",
+          "timestamp_label": "00:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "เดี๋ยวนะ... ถ้า \"แจ้งเตือนรถไฟฟ้า\" เป็นภาพหลอนของฉันเอง แล้วทำไมมันถึงยังโชว์อยู่ในกล่องข้อความจริงๆ ล่ะ?!",
+          "timestamp_label": "00:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[ชะงักไป สีหน้าไม่สบายใจ] \"เดี๋ยวก่อน... ขอดูหน้าจอหน่อยครับ ในเครือข่ายเมืองของเราไม่มีผู้ส่งอัตโนมัติชื่อ แจ้งเตือนรถไฟฟ้า เลยนะ...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "คราวหน้าถ้าขึ้นรถไฟหลังเที่ยงคืน อย่าเผลอหลับอีกล่ะ",
+          "unsent_placeholder": "ยกเลิกข้อความแล้ว",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "stranger",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "แผนที่ GPS มือถือจอแตก — สัญญาณค้างอยู่ใต้ดินลึก 40 เมตรภายในอุโมงค์ซ่อมบำรุงที่ปิดตาย",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "ลิฟต์ฉุกเฉินเคลื่อนขึ้นมาถึงระดับพื้นถนนด้านบน:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e4_free",
+              "label": "ให้เจ้าหน้าที่ดูข้อความที่เพิ่งลบ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ดูนี่สิคะ! เมื่อกี้มันเพิ่งกดยกเลิกคำเตือนต่อหน้าเราเลย!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e4_vip",
+              "label": "ลบห้องแชทสถานี 9 ทิ้งทันที",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ความลับ · ดูโฆษณา",
+              "player_reply_text": "ฉันลบแชทนั้นทิ้งตลอดกาลแล้ว—ไม่อยากเห็นคำว่าสถานี 9 อีกต่อไป!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Mark หน้าซีดเผือด: \"ผู้รอดชีวิตจากตู้ 4 อีกสองคนก็เพิ่งเปิดข้อความแบบเดียวกันเป๊ะให้ผมดู...\"",
+          "timestamp_label": "00:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Mark ถอนหายใจโล่งอก: \"คิดถูกแล้วครับ บางอย่างข้างล่างในอุโมงค์ 9 ควรปล่อยให้มันถูกฝังไว้แบบนั้นดีกว่า\"",
+          "timestamp_label": "00:39",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "เม็ดฝนกระทบใบหน้าคุณ—หนาวเย็น เป็นจริง และยังมีชีวิต—ขณะที่ประตูรถพยาบาลปิดสนิทตามหลัง",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "ห้องฉุกเฉินโรงพยาบาล · มาถึงแล้ว",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "รับตัวเข้าห้องฉุกเฉินเรียบร้อย สมองกระทบกระเทือนเล็กน้อยและซี่โครงช้ำ—คุณจะหายเป็นปกติ 100% แน่นอนครับ {{player_name}}",
+          "timestamp_label": "00:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ขอบคุณที่ใส่เสื้อคลุมสีเทาตัวนั้นในคืนนี้นะ Mark",
+          "timestamp_label": "00:43",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "กลับขึ้นสู่พื้นดิน",
+          "teaser_text": "ตอนจบหน้า: หนึ่งสัปดาห์ต่อมา คุณเดินผ่านทางเข้าสถานี 9 ที่ถูกปิดผนึก",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "อย่าขึ้นขบวน 23:55 น.",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "09:10 น. · หนึ่งสัปดาห์ต่อมา หลังออกจากโรงพยาบาล คุณเดินผ่านทางลงรถไฟฟ้าใต้ดิน—แล้วเลือกเรียกรถแท็กซี่แทน",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เฮ้ {{player_name}} Mark จากทีมกู้ภัยเองครับ! เห็นว่าออกจากโรงพยาบาลแล้ว—เลี่ยงรถไฟรอบดึกด้วยนะ โอเคไหม?",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "สัญญาเลย! ต่อจากนี้ฉันจะนั่งแท็กซี่ตลอดชีวิต สรุปแล้วเขารู้ไหมว่าอะไรทำให้รถไฟตกราง?",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[เสียงเบา จริงจัง] \"รายงานทางการระบุว่าประแจสับรางขัดข้อง... ตรงหน้าชานชาลาสถานี 9 ที่ถูกก่ออิฐปิดตายพอดี\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "ที่นั่ง 4C ยังคงจองไว้ให้คุณเสมอ",
+          "unsent_placeholder": "ยกเลิกข้อความแล้ว",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "รถแท็กซี่ของคุณเคลื่อนตัวออกจากหน้าสถานีรถไฟฟ้า:",
+          "options": [
+            {
+              "option_id": "opt_story_148_e5_free",
+              "label": "ปิดการแจ้งเตือนรถไฟฟ้าถาวร",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ลบแอปรถไฟฟ้าทิ้งแล้ว ไม่มีวันลงใต้ดินตอนกลางคืนอีกเด็ดขาด",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e5_vip",
+              "label": "ขอบคุณ Mark และเลี้ยงกาแฟทีมกู้ภัย",
+              "cost_type": "vip_rewarded",
+              "badge_text": "ความลับ · ดูโฆษณา",
+              "player_reply_text": "เพิ่งส่งกาแฟไปให้ทีมกู้ภัยหน่วย 9 แล้วนะคะ—พวกคุณดึงฉันกลับมาจากความตายจริงๆ!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "เป็นการตัดสินใจที่ฉลาดที่สุดในรอบปีเลยครับ ขอให้มีความสุขกับแสงแดดยามเช้านะ!",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ทั้งทีมฝากขอบคุณด้วยครับ! จากนี้ไปนั่งรถอะไรก็อย่าเผลอหลับอีกล่ะ!",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "ในกระจกมองข้างของแท็กซี่ ทางลงรถไฟฟ้าใต้ดินค่อยๆ เล็กลีบหายไปท่ามกลางฝูงชนยามเช้า",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Mark · หน่วยกู้ภัย 9",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ดูแลตัวเองด้วยนะครับ {{player_name}}! ดีใจที่คุณไม่เผลอทำตามกฎผิดๆ ข้างล่างนั่น",
+          "timestamp_label": "09:16",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ถ้าเสียงในความมืดบอกไม่ให้คุณไว้ใจผู้ชายในเสื้อคลุมสีเทา—อย่าไปเชื่อมันเด็ดขาด",
+          "timestamp_label": "09:16",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "ลงจากขบวนสุดท้าย",
+          "teaser_text": "คุณอ่าน \"รถไฟเที่ยวสุดท้ายไม่เคยจอดที่สถานี 9\" จบแล้ว! ลองสำรวจเรื่องระทึกขวัญตี 3 เรื่องอื่นต่อได้เลย",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

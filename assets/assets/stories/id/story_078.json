@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_078",
+  "lang": "id",
+  "metadata": {
+    "title": "Promosi Bayangan",
+    "subtitle": "Setelah 2 tahun mengerjakan tugas Direktur, VP malah mempromosikan keponakannya yang berusia 24 tahun—dan menyuruhku menyerahkan klien VIP-ku.",
+    "genre": "romance",
+    "tags": [
+      "Kantor",
+      "Nepotisme",
+      "Kebangkitan"
+    ],
+    "cover_image": "assets/media/covers/story_078.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#4F46E5"
+    },
+    {
+      "id": "nephew",
+      "name": "Tyler (Keponakan VP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9A3412"
+    },
+    {
+      "id": "vp",
+      "name": "Pak Vance (VP Penjualan)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "client",
+      "name": "Bu Kapoor (Klien VIP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Latih Penggantimu",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09:30 · Email ke seluruh perusahaan masuk: \"Sambut Direktur Akun baru kita—Tyler Vance!\" Ponselmu berdenting.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Hai {{player_name}}! Paman bilang kamu rapi banget. Kirimi aku semua nomor telepon klien VIP dan dek pembaruan kontrakmu sebelum tengah hari ya?",
+          "timestamp_label": "09:31",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Pak Vance, Bapak menuliskannya Desember lalu bahwa mencapai pendapatan $4 juta menjamin kursi Direktur untuk saya. Saya mencapai $5,2 juta.",
+          "timestamp_label": "09:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Haha santai Tyler, {{player_name}} terlalu setia untuk berani resign—dia bakal mengerjakan semua tugas beratnya sementara kau pegang jabatannya.",
+          "unsent_placeholder": "Pak Vance menarik pesan",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Jadilah pemain tim, {{player_name}}. Tyler membawa \"energi eksekutif segar.\" Serahkan pembaruan $3 juta Kapoor pukul 14:00.",
+          "timestamp_label": "09:34",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 11,
+          "transcript": "[hangat, tajam] {{player_name}}, saya baru melihat rilis persnya. Siapa anak bernama Tyler ini? Pembaruan kontrak saya ada di tanganMU—kalau kamu keluar, beri tahu saya ke mana kamu pergi.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Perusahaan saingan menawarimu VP Penjualan minggu lalu. Apa yang kamu lakukan sebelum pukul 14:00?",
+          "options": [
+            {
+              "option_id": "opt_accept_rival",
+              "label": "Teken tawaran VP saingan & siapkan resign",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bu Kapoor, mari kita ngopi setelah pukul 14:00. Saya punya kabar menarik soal babak karier saya berikutnya.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_let_tyler_sink",
+              "label": "Biar Tyler jawab tanya jawab kepatuhan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Dalang · Tonton Iklan",
+              "player_reply_text": "Sebenarnya, Bu Kapoor—tanyakan ke Tyler soal adendum kepatuhan data Uni Eropa pukul 14:00. Lihat apa yang terjadi.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Aku ikut. Dan aku akan menunda penandatanganan pembaruan $3 jutaku sampai setelah kita ngopi.",
+          "timestamp_label": "09:39",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "JEBAKAN TERPASANG: Bu Kapoor tersenyum dan setuju—DAN kamu menandatangani tawaran VP saingan dengan kenaikan gaji 45% pukul 11:00!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Oh, rapat pukul 14:00 ini bakal jadi teater murni. Sampai ketemu sebentar lagi, VP {{player_name}}.",
+          "timestamp_label": "11:15",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Yo {{player_name}}, aku belum baca slide-nya lol—duduk saja di sebelahku dan bisikkan jawabannya kalau Kapoor tanya yang susah.",
+          "timestamp_label": "13:55",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Serah Terima $3 Juta",
+          "teaser_text": "Episode 2: Pak Vance memperkenalkan Tyler sebagai \"jenius\" di balik akun itu—dan kamu menggeser surat pengunduran dirimu melintasi meja.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Tak Lagi Terlalu Setia",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "14:02 · Ruang Direksi Klien. Bu Kapoor duduk berhadapan dengan Pak Vance dan Tyler.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Bu Kapoor, Direktur baru kami Tyler akan mengawasi langsung pembaruan kontrak $3 juta Anda mulai hari ini!",
+          "timestamp_label": "14:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Bagus sekali. Tyler, jelaskan pada saya bagaimana Anda merestrukturisasi penalti SLA Tingkat-3 kami di bawah regulasi baru Uni Eropa.",
+          "timestamp_label": "14:03",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "{{player_name}} TOLONG!! Apa sih SLA itu?! Jawabkan untukku!!",
+          "unsent_placeholder": "Tyler menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Eh... kami bakal benar-benar menyinergikan... aura cloud-nya? {{player_name}}, bantu masuk!",
+          "timestamp_label": "14:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Pak Vance melotot padamu agar menyelamatkan keponakannya. Jatuhkan pukulan telak.",
+          "options": [
+            {
+              "option_id": "opt_resign_now",
+              "label": "Serahkan surat pengunduran diri & berdiri",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Maaf, Tyler—saya tidak memenuhi syarat menjawab mewakili seorang Direktur. Ini pengunduran diri seketika saya, Pak Vance.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_take_client",
+              "label": "Umumkan jabatan VP-mu & saksikan Kapoor",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bungkam Semua · Tonton Iklan",
+              "player_reply_text": "Sebenarnya, hari Senin saya mulai sebagai VP di Meridian Group. Nikmati energi eksekutif segarnya, Pak Vance.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Bu Kapoor langsung menutup pulpennya: \"Tanpa {{player_name}}, kami melelang ulang kontrak $3 juta ini.\"",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "KLIEN IKUT KELUAR: Bu Kapoor berdiri di sampingmu: \"Kirimi saya proposal Meridian Senin pagi, {{player_name}}!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "TUNGGU! {{player_name}}! Saya samai tawaran mereka! Saya angkat KAMU jadi Direktur sekarang juga!",
+          "timestamp_label": "14:09",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 7,
+          "transcript": "[tertawa di dalam lift] Rapat bisnis terbaik yang pernah saya hadiri sepanjang tahun. Minuman saya traktir!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Kenali Nilai Dirimu",
+          "teaser_text": "Menjelang Jumat, empat mantan rekan setimmu mengirim pesan bertanya apakah Meridian sedang merekrut—dan Pak Vance dipanggil ke tinjauan dewan darurat.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Surat Somasi",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "09:10 · Kantor Meridian. Empat mantan rekan tim ingin bergabung denganmu—dan Pak Vance baru mengirim ancaman hukum.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "{{player_name}}, tim hukum kami baru saja mengajukan surat somasi larangan membajak! Kau membajak Bu Kapoor dan staf penjualanku secara ilegal!",
+          "timestamp_label": "09:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Usaha bagus, Pak Vance. Bu Kapoor sendiri yang menelepon Meridian setelah Tyler melewatkan tenggat peluncurannya—dan saya tak pernah menandatangani perjanjian larangan itu.",
+          "timestamp_label": "09:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "client",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "ANCAMAN HUKUM PALSU · Draf perjanjian non-kompetisi tak bertanda tangan dilampirkan Vance—dibantah oleh pemberitahuan pemutusan kontrak Bu Kapoor.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Oh, ini lucu sekali! Vance mengirim email ke CFO saya mengklaim KAMU dipecat karena \"masalah kinerja\"—jadi emailnya langsung kuteruskan ke Ketua Dewan mereka!",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Paman Vance aku tak sengaja menghapus lembar pembaruan klien Q4—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[tertawa] {{player_name}}, tunggu sampai dengar ini—Tyler baru saja mengirim dek harga rahasia klien saingan ke tim saya secara tidak sengaja! Dia men-CC seluruh daftar distribusi!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Tinjauan dewan darurat Vance dimulai pukul 11:00! Bagaimana kamu membalas somasinya?",
+          "options": [
+            {
+              "option_id": "opt_send_truth",
+              "label": "Balas lewat pengacara Meridian tanpa takut",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Penasihat hukum umum Meridian baru membalas: cabut email fitnah itu sebelum tengah hari atau kami gugat ANDA atas campur tangan merugikan.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_commission_audit",
+              "label": "Tuntut juga 2 tahun bonusmu yang ditahan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bukti Siap · Tonton Iklan",
+              "player_reply_text": "Mumpung melibatkan HRD dan Dewan, mari sekalian audit komisi Direktur $64.000 yang Anda tahan dari saya selama dua tahun!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "SENJATA MAKAN TUAN: Pengacara perusahaan Vance sendiri memerintahkannya segera mencabut somasi tersebut!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "BOM WAKTU DITAMBAHKAN: Ketua Dewan langsung memasukkan klaim komisi $64 ribu milikmu ke agenda tinjauan Vance pukul 11:00!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Hei {{player_name}}… ada peluang masih bisa kirim template orientasi klien itu? Paman Vance meneriakiku.",
+          "timestamp_label": "09:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Maaf Tyler—template itu sepaket dengan gaji Direktur. Semoga sukses di tinjauan pukul 11:00.",
+          "timestamp_label": "09:23",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Ke Mana Komisimu Pergi?",
+          "teaser_text": "Episode 4: Temukan siapa yang sebenarnya mengantongi $64.000 bonus hasil kerja timmu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Komisi yang Tak Terbayar",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "10:50 · Ruang Kaca Meridian. Sepuluh menit sebelum Pak Vance menghadap Dewan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Tunggu dulu, {{player_name}}! Kalau kau membatalkan audit komisi sebelum pukul 11:00, saya setujui pembayaran niat baik $15 ribu sekarang juga!",
+          "timestamp_label": "10:50",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Lucu bagaimana pria yang mengklaim saya punya \"masalah kinerja\" mendadak mau membayar saya $15 ribu supaya diam.",
+          "timestamp_label": "10:51",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Tebak apa yang baru dibocorkan teman penggajian lamamu ke Dewan? Vance mengklasifikasikan ulang komisi Direktur $64 ribu milikmu sebagai \"Bonus Penandatanganan\"—untuk TYLER!",
+          "timestamp_label": "10:52",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Kalau Ketua Dewan melihat bonus tanda tangan $64 ribu Tyler berasal dari transaksi {{player_name}}—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Tunggu—Paman Vance, Paman bilang padaku bonus $64 ribu itu standar untuk Direktur baru! Aku sudah menghabiskan separuhnya untuk jam tangan dan cicilan sewa!",
+          "timestamp_label": "10:54",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[suara pintu klik terbuka] CFO saya baru menutup telepon dengan Ketua Dewan mereka—mereka membekukan kartu perusahaan Vance DAN menarik seluruh buku besar komisi ke rapat pukul 11:00!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Ketua Dewan meneleponmu langsung meminta pernyataan tertulis! Apa yang kamu sertakan?",
+          "options": [
+            {
+              "option_id": "opt_submit_deals",
+              "label": "Kirim 2 tahun log kesepakatan klien sah",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Mengirimkan setiap kontrak VIP bertanda tangan, jejak email, dan rumus komisi persis yang dijanjikan Vance pada saya.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_include_teammates",
+              "label": "Sertakan bonus tertahan 4 rekan setimmu",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Direktur Sejati · Tonton Iklan",
+              "player_reply_text": "Menyerahkan log kesepakatan saya DITAMBAH bonus Q3 yang ditahan milik keempat rekan setim yang menopang departemen Vance!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "KASUS JELAS: Dewan memverifikasi setiap kesepakatan dalam hitungan menit—memastikan Vance mengalihkan bonusmu ke keponakannya.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "GANTI RUGI PENUH: Dewan memerintahkan pembayaran tunggakan seketika untukMU dan keempat rekan setim—diambil langsung dari paket pesangon Vance!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Anda mempromosikan nepotisme di atas prestasi, Pak Vance. Sekarang nikmati tinjauan dewannya.",
+          "timestamp_label": "11:05",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Keamanan baru masuk ke ruang konferensi… Tyler, kenapa kau mengakui menghabiskan bonus itu secara tertulis?!",
+          "timestamp_label": "11:06",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Buku Besar Nepotisme",
+          "teaser_text": "Episode 5: Saksikan pembayaran komisi mendarat di rekeningmu saat Meridian menyerahkan divisimu sendiri padamu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Tinjauan Dewan",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "15:30 · Ruang Konferensi Meridian. Ponselmu berdenting oleh peringatan bank—dan empat wajah akrab melangkah masuk.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Berita kilat dari menara lamamu: Pak Vance dipecat DENGAN TIDAK HORMAT tengah hari—dan Tyler dikawal keluar tepat di belakangnya!",
+          "timestamp_label": "15:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "TUNGGAKAN GAJI CAIR · Komisi Direktur tertahan $64.000 ditransfer penuh sesuai perintah ganti rugi Dewan.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Sudah puas?! Dua puluh tahun reputasiku lenyap dalam satu sore!",
+          "timestamp_label": "15:32",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Anda membangun reputasi itu di atas dua tahun kerja tak terbayar saya dan menghancurkannya sendiri detik Anda menyerahkan kursi saya ke keponakan Anda.",
+          "timestamp_label": "15:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "nephew",
+          "text": "Sekarang aku harus mengembalikan BMW sewaan dan membayar balik bonus tanda tangannya—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[tersenyum] Kabar lebih bagus lagi, {{player_name}}! Dewan saya baru menyetujui MENGGANDAKAN kontrak tahunan kami dengan Meridian—khusus di bawah divisi baruMU!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "CEO Meridian mempromosikanmu jadi VP Penjualan Perusahaan! Siapa yang kamu rekrut pertama?",
+          "options": [
+            {
+              "option_id": "opt_hire_four",
+              "label": "Rekrut ke-4 mantan rekan setim yg setia",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Menandatangani surat tawaran untuk keempat mantan rekan setimku sekarang juga—dengan tingkatan komisi transparan!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_hire_plus_equity",
+              "label": "Rekrut berempat + bagi hasil tim",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VP Elit · Tonton Iklan",
+              "player_reply_text": "Bawa keempatnya masuk dengan kenaikan gaji 20% DAN kolam bagi hasil kuartalan bersama—tak ada lagi yang dilewati!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "TIM IMPIAN BERSATU KEMBALI: Keempatnya langsung menerima—membawa nol drama dan 100% eksekusi elite.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "DIVISI TAK TERHENTIKAN: Tim barumu menutup prospek $4 juta sebelum akhir bulan pertama!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Dari promosi bayangan menjadi VP sungguhan dalam seminggu. Kebangkitan terbaik yang pernah kusaksikan!",
+          "timestamp_label": "15:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kenali nilai dirimu—dan jangan pernah melatih penggantimu sendiri secara gratis.",
+          "timestamp_label": "15:43",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "VP Sejati Mengambil Alih",
+          "teaser_text": "Episode 6 (Tamat): Mulai kuartal terbesar Meridian bersama Bu Kapoor dan tim impianmu yang bersatu kembali.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "VP yang Baru",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Sebulan Kemudian · Lounge Langit Meridian. Papan nama VP barumu bersinar saat angka Q1 menembus 180% dari target.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Peluncuran kami bersama tim barumu selesai SEPULUH hari lebih awal! Kemitraan terbaik yang pernah kami tandatangani, VP {{player_name}}!",
+          "timestamp_label": "17:30",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mudah ketika punya tim sejati yang mengerjakan tugasnya—dan dibayar sesuai apa yang benar-benar mereka hasilkan.",
+          "timestamp_label": "17:31",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nephew",
+          "text": "Eh… hai {{player_name}}, aku lihat Meridian sedang membuka lowongan sales pemula. Ada peluang—",
+          "timestamp_label": "17:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Tiga perekrut menolakku setelah tinjauan dewan itu bocor—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "client",
+          "duration_sec": 8,
+          "transcript": "[meledak tertawa] Apa Tyler serius baru saja melamar kerja DI BAWAHmu?! Bingkai pesan itu tepat di sebelah penghargaan VP-mu!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sudah kukirimkan tautan karier publik standar padanya. Hanya prestasi di departemen ini.",
+          "timestamp_label": "17:36",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Ucapan bersulang penutupmu di perayaan Q1 Meridian:",
+          "options": [
+            {
+              "option_id": "opt_toast_merit",
+              "label": "Bersulang utk prestasi & nol nepotisme",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Untuk tak pernah menunggu izin demi mengklaim kursi yang sudah layak kaudapatkan!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_open_salaries",
+              "label": "Terbitkan jenjang promosi transparan",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Ikon Budaya · Tonton Iklan",
+              "player_reply_text": "Dan mulai hari ini, setiap peran di divisiku punya tolok ukur promosi tertulis yang jelas—tak ada lagi janji bayangan!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "BERSULANG BERDIRI: Keempat rekan setimmu dan Bu Kapoor mengangkat gelas saat cakrawala kota berpendar terang.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "PEMBERI KERJA TERATAS: Retensi divisimu mencapai 100%, dan para penjual terbaik sekota memohon bergabung ke timmu.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "client",
+          "text": "Bersulang untuk Direktur sesungguhnya—yang kini VP—{{player_name}}!",
+          "timestamp_label": "17:42",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Baru pemanasan, Bu Kapoor. Mari gandakan Q2 juga.",
+          "timestamp_label": "17:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "TAMAT · Sepadan Setiap Sen",
+          "teaser_text": "Kamu meninggalkan promosi bayangan, merebut kembali komisimu, dan membangun divisi yang tak terhentikan.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

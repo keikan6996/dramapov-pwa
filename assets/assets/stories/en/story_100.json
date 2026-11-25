@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_100",
+  "lang": "en",
+  "metadata": {
+    "title": "Blackout Protocol",
+    "subtitle": "Every traffic light and cell tower died at 11 PM—and the hacker knows I’m carrying the grid reset drive.",
+    "genre": "thriller",
+    "tags": [
+      "Blackout",
+      "Cyber War",
+      "Survival"
+    ],
+    "cover_image": "assets/media/covers/story_100.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · GridOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "viktor",
+      "name": "Viktor · Substation 9",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "hunter",
+      "name": "BLACKOUT_01",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#064E3B"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Zero Grid",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "11:00 PM · BOOM. Transformer arcs flash emerald across the skyline. Eight million people plunge into total darkness. Only your encrypted Sat-Com pager stays alive.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "{{player_name}}!! A worm just bricked all twelve substations! You’re the only engineer holding the cold-start decryption drive—get to Substation 9 NOW!",
+          "timestamp_label": "11:01 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I’m six blocks from Substation 9 on foot! Traffic is gridlocked—every car alarm in downtown is screaming!",
+          "timestamp_label": "11:01 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "hunter",
+          "duration_sec": 7,
+          "transcript": "[modulated broadcast] \"Don’t bother walking to Substation 9, {{player_name}}. Our spotters saw your yellow utility vest crossing Bridge Street.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "hunter",
+          "text": "Twelve minutes until the hospital backup generators run dry. Hand over the cold-start drive.",
+          "unsent_placeholder": "BLACKOUT_01 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Two dark motorcycles rev behind you in the blackout:",
+          "options": [
+            {
+              "option_id": "opt_100_e1_free",
+              "label": "Ditch the yellow vest & cut through the park",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dropped my vest! Cutting through Central Park toward the river gate!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_100_e1_vip",
+              "label": "Drop a decoy drive & slip into steam tunnel",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "You vanish into the pitch-black trees as motorcycle beams sweep the empty avenue. Ahead, Substation 9’s red diesel beacons glow through the mist.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "I’m holding the north service gate cracked for you! Hurry—Substation 9’s pressure valves are redlining!",
+          "timestamp_label": "11:05 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "You pry open a utility manhole and race through the underground steam conduit directly beneath the riders—emerging inside Substation 9’s fenced yard unseen.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Whoa—you came up through the steam tunnel?! Wait... freeze! Don’t plug the drive into Console A yet!",
+          "timestamp_label": "11:05 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "Inside the control room, a red laser dot steadies on the cold-start console—and a hooded figure steps out from behind the turbine switchgear.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "Thanks for delivering the cold-start key straight to me, {{player_name}}. Drop it on the desk.",
+          "timestamp_label": "11:07 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Ambush At Substation 9",
+          "teaser_text": "BLACKOUT_01 is already inside the control room—and the city’s hospitals have 6 minutes of backup power left.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Cold Start",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "11:08 PM · The turbine hall hums with trapped static. Your Sat-Com vibrates furiously against your ribs.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "viktor",
+          "caller_label": "Viktor · Control Room",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "viktor",
+          "duration_sec": 7,
+          "transcript": "[whispered] I’m behind the glass gallery! Console A is booby-trapped—plug your drive into the manual port on Breaker 4 and I’ll trip the arc-flash!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Console A is rigged to fry the drive! Dive for Breaker 4 on your left—I’m blowing the overhead strobe now!",
+          "timestamp_label": "11:08 PM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "Hands off the breaker, {{player_name}}! Let the grid stay dark for one hour—we’re only hitting the Federal Reserve vault downtown!",
+          "timestamp_label": "11:09 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Three city hospitals are on their last minutes of diesel! I’m not letting people die for your heist!",
+          "timestamp_label": "11:09 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Viktor flashes the blinding overhead strobe. Execute Cold Start:",
+          "options": [
+            {
+              "option_id": "opt_100_e2_free",
+              "label": "Slam the drive into Breaker 4 & throw switch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "COLD START ENGAGED! Light up the city, Viktor!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_100_e2_vip",
+              "label": "Route power to trap the vault crew inside",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "THOOM! Turbines roar awake. Wave after wave of golden streetlights race across the skyline as all twelve substations snap back online—and SWAT breaches the substation doors.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "WE DID IT!! Every hospital grid is 100% green, {{player_name}}! You just saved the whole city!",
+          "timestamp_label": "11:12 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "You restore the downtown circuit first—re-engaging the Federal Reserve’s electromagnetic vault doors mid-heist and sealing the entire crew inside for the FBI.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "No!! The vault mag-locks just sealed our team inside! You’re going to regret this, {{player_name}}!",
+          "timestamp_label": "11:12 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "hunter",
+          "text": "This was only a stress test. Next month we take down all three coasts.",
+          "unsent_placeholder": "BLACKOUT_01 unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Standing on the catwalk overlooking the glowing city, your Sat-Com pager blinks one final coordinate—pointing straight to the national power hub in Washington.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Only A Stress Test",
+          "teaser_text": "The city’s lights are back on, but BLACKOUT_01 escaped—and tonight was just the rehearsal for a nationwide grid strike.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Substation Zero",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:48 PM · City streetlights glow steady—until Viktor’s telemetry board flashes crimson across fourteen regional power hubs.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "{{player_name}}, don’t put that reset drive away! BLACKOUT_01 just pushed a nationwide firmware worm—midnight strike in twelve minutes!",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "How did he bypass the regional air-gap?! Wait—he cloned my reset drive’s cryptographic signature during the rehearsal!",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "viktor",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Relay Van Trace · 11:48 PM — BLACKOUT_01’s mobile uplink approaching Coastal Trunk 9.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "hunter",
+          "duration_sec": 8,
+          "transcript": "[generator hum inside moving van] Good catch, GridOps. I built this grid’s backdoor five years ago—and when they fired me for reporting it, they sealed their fate.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Eleven minutes to midnight. BLACKOUT_01 is heading for Coastal Trunk 9:",
+          "options": [
+            {
+              "option_id": "opt_100_e3_free",
+              "label": "Race to Substation 9 to push a counter-patch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m speeding to Substation 9 right now, Viktor! Spin up the cold-boot compiler!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_100_e3_vip",
+              "label": "Trace who is funding BLACKOUT_01’s strike",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "Your tires scream onto the industrial service road as Substation 9’s blue transformer arcs light up the night sky.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Compiler is hot! We’ve got one shot to revoke your cloned key and fry his relay uplink!",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Viktor’s packet sniffer catches a live escrow ping—a foreign cyber syndicate just wired $40M to trigger the midnight grid collapse!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "This isn’t just revenge—a foreign syndicate paid him $40M to plunge the entire coast into darkness!",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "hunter",
+          "text": "GridOps is heading to Substation 9. Rerouting high-voltage surge to blow their breakers.",
+          "unsent_placeholder": "BLACKOUT_01 unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "HE’S SENDING A SURGE INTO SUBSTATION 9! Watch the transformer yard when you pull in!",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "Eight minutes to midnight, {{player_name}}. Let’s see if your reset drive survives 138,000 volts.",
+          "timestamp_label": "11:48 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Eight Minutes To Midnight",
+          "teaser_text": "BLACKOUT_01 is backed by a $40M foreign syndicate—and he just aimed a 138,000-volt surge straight at Substation 9.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "High Voltage",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:54 PM · Blue arcs crackle across Substation 9’s perimeter fence as you sprint into the bunker control room with Viktor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Plug the reset drive into Console A! I’m dumping the surge into the ground capacitors—we have FOUR minutes!",
+          "timestamp_label": "11:54 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Drive mounted! Writing the counter-patch to revoke the cloned key across all 14 regional hubs!",
+          "timestamp_label": "11:54 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "viktor",
+          "text": "Federal Cyber Command is on standby—give them BLACKOUT_01’s exact van telemetry!",
+          "unsent_placeholder": "Viktor unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "hunter",
+          "duration_sec": 6,
+          "transcript": "[alarm klaxons blaring] Nice try grounding my surge, Viktor! Three minutes to midnight—your patch won’t finish in time!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Patch compilation stalls at 71% under BLACKOUT_01’s DDoS flood:",
+          "options": [
+            {
+              "option_id": "opt_100_e4_free",
+              "label": "Route the patch over fiber-optic SCADA line",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Switching to closed fiber SCADA! Bypassing his DDoS flood—85%... 96%... PUSHED!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_100_e4_vip",
+              "label": "Inject a feedback pulse into his relay van",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "With twelve seconds left before midnight, all fourteen regional hubs flash emerald green—locking BLACKOUT_01 out permanently!",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "ALL FOURTEEN HUBS GREEN! Midnight passed—the national grid HELD!",
+          "timestamp_label": "11:54 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "Your counter-patch slams a diagnostic feedback surge straight up BLACKOUT_01’s relay antenna—frying his van’s servers in a shower of sparks!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "His relay van just went dark! Federal Cyber Command is boxing him in on Coastal Highway 9!",
+          "timestamp_label": "11:54 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "12:00 AM · Every skyline tower, hospital, and traffic light across the coast stays blazing bright.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "WE DID IT, {{player_name}}! And look at the $40M wire receipt we just pulled off his fried uplink!",
+          "timestamp_label": "11:54 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hunter",
+          "text": "[BLACKOUT_01 UPLINK DESTROYED — SIGNAL LOST]",
+          "timestamp_label": "11:54 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Grid Restored",
+          "teaser_text": "Twelve seconds to spare—you saved the national grid, fried BLACKOUT_01’s van, and captured the $40M syndicate trail.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The $40M Syndicate",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "12:20 AM · Federal Cyber Command officers step into Substation 9 as Viktor projects the seized $40M crypto wire.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Highway Patrol just pulled BLACKOUT_01 out of his smoking van on Coastal 9—and Federal Cyber froze the entire $40M escrow!",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "And make sure the oversight board patches the five-year-old backdoor he warned them about—never leave a hole like that open again.",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "viktor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Seized Cyber-Syndicate Escrow · $40,000,000 frozen by Federal Cyber Command.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "viktor",
+          "duration_sec": 6,
+          "transcript": "[cheering from regional dispatchers on speaker] Hear that? All fourteen substations are cheering your name, {{player_name}}!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "The Federal Cyber Director offers you lead architect authority over the new national grid protocol:",
+          "options": [
+            {
+              "option_id": "opt_100_e5_free",
+              "label": "Accept & redesign the grid from scratch",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "On one condition: Viktor is my co-lead, and every backdoor gets audited in public.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_100_e5_vip",
+              "label": "Lock the old reset drive in a museum case",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "The Director shakes both your hands—within months, your zero-trust SCADA architecture protects 90 million homes.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Co-leads! Wait till Substation 9 hears we’re getting new coffee machines too.",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "You unplug the scorched steel reset drive with a grin—the tiny piece of hardware that kept an entire nation’s lights on.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Twelve seconds left on the clock. Still can’t believe it held.",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "viktor",
+          "text": "Best GridOps partner I’ve ever stood a shift with, {{player_name}}.",
+          "unsent_placeholder": "Viktor unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Grid load at 100% nominal. Zero faults across all fourteen hubs.",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Now THAT is a stress test.",
+          "timestamp_label": "12:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Lights On Forever",
+          "teaser_text": "BLACKOUT_01 is arrested, the $40M syndicate is frozen, and dawn rises over a city that never went dark.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Full Power",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06:30 AM · Sunrise paints the skyline gold. Streetlights click off gently on schedule—never forced, never hacked.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "Morning, Boss! Every single traffic light, hospital, and subway line ran without a single hiccup all night.",
+          "timestamp_label": "06:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Good morning, Viktor. The city has no idea how close midnight got—and that’s exactly how GridOps should work.",
+          "timestamp_label": "06:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "viktor",
+          "text": "Donuts and double espressos waiting at Substation 9.",
+          "unsent_placeholder": "Viktor unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "viktor",
+          "duration_sec": 5,
+          "transcript": "[steady transformer hum] All fourteen hubs signing in green! Come grab breakfast before the morning shift takes over!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "You stand on the Substation 9 catwalk watching the waking city:",
+          "options": [
+            {
+              "option_id": "opt_100_e6_free",
+              "label": "Log off shift & celebrate with Viktor",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Heading down now! Save me a glazed donut.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_100_e6_vip",
+              "label": "Run one final integrity check on all 14 hubs",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "You tap out of the bunker into the crisp dawn air—leaving the humming transformers to power another bright, ordinary day.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "To the night we kept the lights on!",
+          "timestamp_label": "06:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Fourteen green checkmarks light up your tablet in perfect harmony—zero backdoors, zero anomalies, 100% secure.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Blackout Protocol: permanently deactivated.",
+          "timestamp_label": "06:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Across the entire coast, millions wake up to hot coffee and bright screens—never knowing who stood guard at 11:59 PM.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "viktor",
+          "text": "See you at breakfast, {{player_name}}.",
+          "timestamp_label": "06:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "On my way, Viktor.",
+          "timestamp_label": "06:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Grid Secured",
+          "teaser_text": "BLACKOUT_01 is behind bars, the $40M cyber syndicate is frozen, and the city’s lights shine bright into the dawn.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

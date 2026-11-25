@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_089",
+  "lang": "en",
+  "metadata": {
+    "title": "The Rideshare Detour",
+    "subtitle": "My driver locked the child-safety doors, missed the exit—and the app says my trip ended 12 minutes ago.",
+    "genre": "thriller",
+    "tags": [
+      "Rideshare",
+      "Survival",
+      "Night"
+    ],
+    "cover_image": "assets/media/covers/story_089.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "sora",
+      "name": "Sora · Live Share",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "bot",
+      "name": "RideSafe Support",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#3F3F46"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Trip Completed",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "1:42 AM · RIDESAFE RECEIPT: Thank you for riding with Victor! Your trip ended at 1:30 AM. Rate 5 stars?",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora, I’m STILL in the backseat of this sedan! He spoofed the app to end the ride early and just turned onto the industrial bypass!",
+          "timestamp_label": "1:42 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "WHAT?! Keep your phone screen dimmed so he can’t see you texting in the mirror! Did you check the license plate when you got in?!",
+          "timestamp_label": "1:43 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[typing frantically] I’m looking at your FindMy dot! You’re doing 65 mph past the empty rail yard—and the driver’s photo on your receipt doesn’t match the license plate you sent me!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Put the phone down, {{player_name}}. I can see the blue glow on your face in the rearview.",
+          "unsent_placeholder": "RideSafe Support unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "The driver speeds up toward a red light at the rail crossing:",
+          "options": [
+            {
+              "option_id": "opt_089_e1_free",
+              "label": "Fake a loud call with your \"cop uncle\"",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hey Uncle Ray! Yeah, I’m passing Rail Yard 4 right now—see your cruiser ahead!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_089_e1_vip",
+              "label": "Open backseat armrest into the trunk",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "The driver’s knuckles whiten on the wheel. He slows for two seconds—then laughs coldly and turns off the headlights completely.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Nice try—stay on the line! I’m patching 911 dispatch into your live GPS coordinates right now!",
+          "timestamp_label": "1:45 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "You quietly unlatch the center armrest pass-through and grab the glowing emergency trunk-release handle. Inside the trunk sits a second phone—ringing nonstop.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora!! The real driver Victor’s smashed phone is sitting inside the trunk!",
+          "timestamp_label": "1:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "narrator",
+          "text": "A freight train horn blasts ahead. The crossing gates drop with clanging bells, forcing the sedan to screech to a halt.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "He stopped!! The train is blocking the road—NOW IS YOUR CHANCE! Break the window or pop the trunk!",
+          "timestamp_label": "1:46 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Stopped At The Tracks",
+          "teaser_text": "The driver shifts into reverse as steel freight cars roar past inches from the bumper.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Headrest Escape",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "1:47 AM · The sedan reverses wildly into a gravel lot. You yank the front passenger headrest free—two steel prongs gleaming in the red crossing lights.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "sora",
+          "caller_label": "Sora · 911 Patched",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[dispatcher in background] Two squad cars just turned onto Industrial Way! Wedge the metal prong into the bottom corner of the glass and PRY!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Police are 60 seconds away on Industrial Way! Wedge the headrest prong into the window corner and pry—don’t hit the center!",
+          "timestamp_label": "1:47 AM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "Stop fighting! I’m not trying to hurt you—someone hired me to keep you off the witness stand tomorrow morning!",
+          "timestamp_label": "1:48 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Who hired you?! Tell me right now!",
+          "timestamp_label": "1:48 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "The driver slams the brakes and reaches back toward you:",
+          "options": [
+            {
+              "option_id": "opt_089_e2_free",
+              "label": "Shatter the glass & roll onto gravel",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_089_e2_vip",
+              "label": "Snap photo of his dash payer chat",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Got the screenshot! The cops are going to love this!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "CRACK! The tempered glass explodes outward into a thousand cubes. You dive out and sprint straight into the blinding headlights of two arriving police cruisers.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "The dispatcher says they have you!! Oh thank god, {{player_name}}! Are you bleeding?!",
+          "timestamp_label": "1:50 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Your flash catches the driver’s mounted tablet before you shatter the glass and bail out. The sender’s contact name on the tablet: \"Defense Counsel Reed.\"",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora, I’m safe with the cops—and I just caught the defense attorney red-handed ordering my kidnapping!",
+          "timestamp_label": "1:50 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "The driver was only Plan A. Don’t drink the water at the precinct.",
+          "unsent_placeholder": "RideSafe Support unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Sitting in the back of the patrol car, you look up as a friendly officer hands you an already-opened bottle of water—and smiles.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Plan B Is Already Here",
+          "teaser_text": "You escaped the rideshare trap—only to realize the person who wanted you silenced has someone inside the precinct.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Precinct Blind Spot",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "11:28 PM · You step out of the 4th Precinct waiting room into the cold alley. Your phone chimes with a fake RideSafe receipt.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "RideSafe Support: Your lost ID was recovered! Please return to the 4th Precinct rear garage to claim it.",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sora, DO NOT come to the 4th Precinct! The desk sergeant is working with my driver!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sora",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Live Share Trace · 11:27 PM — Your rideshare car is parked inside the 4th Precinct lot.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[car blinker clicking] I pulled the license plate through my uncle’s DMV login—the car is registered to Sergeant Miller’s brother-in-law!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "The precinct’s rear gate slides open and a silver sedan rolls out. Move:",
+          "options": [
+            {
+              "option_id": "opt_089_e3_free",
+              "label": "Duck into the 24-hour laundromat across street",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m inside BrightWash Laundromat under bright lights! Call Internal Affairs right now!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_089_e3_vip",
+              "label": "Snap the sergeant handing off your ID",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "You slip past three night-shift customers into the bright laundromat—the silver sedan slows, then drives on.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Internal Affairs is on the line! Stay where there are witnesses—I’m five minutes away with Captain Park!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "From behind a newspaper box, your zoom lens catches Sergeant Miller passing your wallet to the rideshare driver under the lobby cam.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Got them both on camera! Sergeant Miller just handed my ID straight to the driver!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Delete passenger trip logs #88412 before IA audits the server.",
+          "unsent_placeholder": "RideSafe Support unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Screenshot that unsent message!! He just admitted they’re wiping trip logs!",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "RideSafe Support: Your account has been permanently suspended for policy violations.",
+          "timestamp_label": "11:28 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Badge Number 412",
+          "teaser_text": "Sergeant Miller is running a spoofed rideshare ring right out of the 4th Precinct—and Internal Affairs is five minutes away.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "The Spoofed Fleet",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "11:38 PM · Inside the laundromat, your phone vibrates—not from RideSafe, but from Sora’s live-share map showing three more spoofed cars.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Captain Park from Internal Affairs is pulling up to the laundromat now! Get in the unmarked black Charger!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I’m in! Captain, they’re not just targeting me—there are three other spoofed rideshare cars active right now!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "bot",
+          "text": "Miller says abort pickup #3—IA cruisers just left downtown.",
+          "unsent_placeholder": "RideSafe Support unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 7,
+          "transcript": "[police scanner squelching] Captain Park just traced the RideSafe Support bot—it’s running off a laptop inside Sergeant Miller’s locker!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Captain Park asks how to catch Miller red-handed before he wipes the laptop:",
+          "options": [
+            {
+              "option_id": "opt_089_e4_free",
+              "label": "Reply to the bot to bait Miller outside",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "I’m texting the bot: \"I’m at the rear garage gate for my ID.\" Bait him right into IA!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_089_e4_vip",
+              "label": "Have RideSafe HQ freeze the spoofed fleet",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Ninety seconds later, Sergeant Miller steps into the rear alley holding your wallet—and freezes under four IA flashlights.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "BOOM! Caught him holding your wallet! And IA just pulled the active bot laptop from his locker!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "RideSafe’s security team kills all four spoofed driver tokens simultaneously—automatically unlocking the doors and alerting three passengers.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "All three other passengers are safe! Now raid the 4th Precinct locker room!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Blue strobes light up the 4th Precinct parking lot as Internal Affairs seals the rear garage.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Look what IA just pulled off the precinct lobby camera—it’s crystal clear!",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "bot",
+          "text": "[BOT SERVER TERMINATED BY INTERNAL AFFAIRS]",
+          "timestamp_label": "11:38 PM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Lobby Hand-Off",
+          "teaser_text": "Sergeant Miller is caught red-handed—and the precinct’s own lobby CCTV just exposed the entire trafficking ring.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Internal Affairs Raid",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "12:05 AM · Inside the IA command van, Captain Park freezes the 4th Precinct lobby feed on a massive monitor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "There’s your driver walking straight past the desk with a spare key fob—and Miller buzzing him into the garage!",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Did they catch the driver too, or did he slip out in the silver sedan?",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "sora",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "4th Precinct Lobby Feed · 11:24 PM — Fake driver receiving garage access from Miller.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 6,
+          "transcript": "[radio dispatch cheering] Just came over the scanner! Highway Patrol boxed the silver sedan on the river bridge—driver is in cuffs!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Captain Park asks for your audio recording from the locked backseat:",
+          "options": [
+            {
+              "option_id": "opt_089_e5_free",
+              "label": "Upload the full backseat audio file",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sending it now! You can hear him lock the child-safety doors and say Miller’s name!",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_089_e5_vip",
+              "label": "Demand RideSafe overhaul its safety verification",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "Captain Park nods grimly as the audio plays—locking in felony kidnapping and corruption charges against both men.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "No bail, no plea deal. They’re going away for decades.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "RideSafe’s CEO issues an emergency press release mandating live biometric driver checks—and credits you with saving three passengers.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "No passenger should ever get trapped behind child-safety locks again.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "sora",
+          "text": "I’m never letting you take a midnight ride alone again, {{player_name}}.",
+          "unsent_placeholder": "Sora unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Captain Park is handing back your wallet and ID! Come on—let’s get out of this precinct.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gladly. And you’re driving me home, Sora.",
+          "timestamp_label": "12:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Ring Dismantled",
+          "teaser_text": "Both Sergeant Miller and the fake driver are in cuffs—and your live-share instinct just saved an entire city of riders.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Safe Ride Home",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "01:10 AM · Sora’s hatchback rolls quietly onto your street. All four door locks stay visibly unlocked.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Still shaking a little? You were honestly terrifyingly calm back there, {{player_name}}.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Only because I knew you were watching my live-share pin the whole time.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "sora",
+          "text": "Best friend duty for life.",
+          "unsent_placeholder": "Sora unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "sora",
+          "duration_sec": 5,
+          "transcript": "[seatbelt unclicking] Captain Park just texted—all three rescued passengers want to thank you tomorrow. You’re a legend.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "You step onto your front porch as Sora waits with the headlights on:",
+          "options": [
+            {
+              "option_id": "opt_089_e6_free",
+              "label": "Uninstall RideSafe for good",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Deleting RideSafe right now. Five stars to Sora’s Hatchback Service only.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_089_e6_vip",
+              "label": "Invite Sora in for midnight ramen",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "The app icon vanishes from your screen. You wave to Sora from inside your locked doorway.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Five-star service! Text me when you’re in bed!",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Sora parks in your driveway—and twenty minutes later you’re both laughing over steaming bowls of ramen.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Best detour of the night: straight to the kitchen.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "Your live-share map closes cleanly. Trip status: Arrived Safely.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "sora",
+          "text": "Always share your pin, {{player_name}}. Always.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Always. Goodnight, Sora.",
+          "timestamp_label": "01:10 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Arrived Safely",
+          "teaser_text": "The spoofed rideshare ring is shattered, Sergeant Miller is behind bars, and you made it home safe.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

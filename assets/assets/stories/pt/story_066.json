@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_066",
+  "lang": "pt",
+  "metadata": {
+    "title": "Fantasma na Folha de Pagamento",
+    "subtitle": "O funcionário nº 0409 recebe US$ 12 mil por mês com zero logins — e compartilha o endereço residencial com o VP de Operações.",
+    "genre": "romance",
+    "tags": [
+      "Corporativo",
+      "Auditoria",
+      "Suspense"
+    ],
+    "cover_image": "assets/media/covers/story_066.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "vp",
+      "name": "Marcus Cole (VP de Operações)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "hr",
+      "name": "Hannah (Gerente de RH)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "auditor",
+      "name": "Sam (Auditor Externo)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Funcionário nº 0409",
+      "start_node_id": "n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "18h40 · Andar Financeiro. Sua primeira semana como Líder de Finanças. Uma linha da folha faz seu sangue gelar.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hannah, quem é \"K. Vance\" (Funcionário nº 0409)? Pago US$ 12.000/mês há 4 anos, zero batidas de crachá, zero e-mails.",
+          "timestamp_label": "18:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "PARA. Apaga essa consulta agora mesmo, {{player_name}}. Esse registro está travado sob o código executivo do VP Marcus Cole.",
+          "timestamp_label": "18:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Hannah disse que {{player_name}} acabou de abrir o nº 0409. Revoguem o acesso ao ERP hoje à noite e marquem para demissão.",
+          "unsent_placeholder": "Marcus Cole apagou uma mensagem",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Trabalhando até tarde, {{player_name}}? Deixe contratos antigos de consultoria comigo. Vá para casa dormir um pouco.",
+          "timestamp_label": "18:44",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 12,
+          "transcript": "[sussurrando na escada] {{player_name}}, K. Vance é cunhado do Marcus. O último contador que questionou o nº 0409 foi incriminado por vazar senhas e demitido em 24 horas.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Sua sessão no ERP está prestes a expirar. O que você pega primeiro?",
+          "options": [
+            {
+              "option_id": "opt_export_csv",
+              "label": "Gerar hash e exportar 4 anos de folha",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Peguei os 48 comprovantes mensais de transferência. Mais de US$ 576.000 desviados.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_ping_auditor",
+              "label": "Enviar denúncia criptografada ao Auditor",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Denúncia · Ver Anúncio",
+              "player_reply_text": "Sam, cheque o Funcionário nº 0409 antes do fechamento do 3º trimestre amanhã. Endereço bate com Marcus Cole.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Três segundos depois de sua exportação terminar, sua tela pisca: CONTA SUSPENSA.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "ALERTA DO AUDITOR: O Auditor Externo Sam congela a auditoria financeira do 3º trimestre e marca inspeção surpresa às 08h30!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Recebido, {{player_name}}. Não assine nada que o Marcus colocar na sua frente amanhã cedo.",
+          "timestamp_label": "18:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Audiência Disciplinar Obrigatória no RH às 08h30 em ponto. Traga seu notebook e crachá.",
+          "timestamp_label": "18:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Trancada Para Fora ao Amanhecer",
+          "teaser_text": "Episódio 2: Marcus tenta demitir você por \"acesso não autorizado\" — bem quando o Comitê de Auditoria entra na sala.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Armadilha das 08h30",
+      "start_node_id": "n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "08h30 · Sala de Reunião B. Marcus desliza uma carta de demissão pela mesa.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Assine o pedido voluntário de demissão, {{player_name}}, e eu não reporto sua \"violação de dados\" a futuros empregadores.",
+          "timestamp_label": "08:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Antes de eu assinar, Marcus — \"K. Vance\" trabalha neste andar? Porque eu adoraria me despedir.",
+          "timestamp_label": "08:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Hannah, chame a segurança aqui AGORA e pegue o celular!",
+          "unsent_placeholder": "Marcus Cole apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 10,
+          "transcript": "[entrando] Bom dia, Marcus. Auditoria Externa aqui. Temos intimação federal para o histórico bancário do Funcionário nº 0409.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Sr. Auditor, tenho quatro anos de e-mails de liberação do Marcus aprovando essas transferências.",
+          "timestamp_label": "08:35",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Marcus está encurralado. Como você sela o caso?",
+          "options": [
+            {
+              "option_id": "opt_hand_ledger",
+              "label": "Entregar a Sam o CSV dos 48 meses",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aqui está a trilha completa dos 48 meses, Sam. Cada centavo foi para o endereço residencial de Marcus.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_check_shell",
+              "label": "Revelar os outros 3 funcionários fantasmas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Investigação · Ver Anúncio",
+              "player_reply_text": "Espera — cheque também os números #0410, #0411 e #0412. Ele não parou em um fantasma só.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "O crachá de Marcus é desativado na hora. A segurança escolta ELE até o elevador no lugar.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "ESQUEMA DE US$ 2,3 MILHÕES EXPOSTO: Quatro funcionários fictícios, todos canalizados para a empresa de fachada offshore de Marcus!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Captura incrível, {{player_name}}. A Presidência do Conselho quer oferecer a você o cargo de VP Interina de Finanças.",
+          "timestamp_label": "08:40",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Mantenha meu crachá ativo, Hannah. Temos uma folha inteira para limpar.",
+          "timestamp_label": "08:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "O Fantasma Se Foi",
+          "teaser_text": "Enquanto Marcus é levado embora, ele manda uma última linha para você: \"Funcionário nº 0001 pertence ao CEO. Boa sorte.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Funcionário nº 0001",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "22h15 · Sala de Guerra da Auditoria. Marcus está algemado, mas sua mensagem de despedida gela a sala inteira.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "{{player_name}}, rodei uma consulta no Funcionário nº 0001. Ele vem sacando US$ 45.000 por MÊS há seis anos seguidos — do fundo de pensão dos funcionários!",
+          "timestamp_label": "22:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Três milhões de dólares drenados das aposentadorias dos trabalhadores… e Marcus diz que pertence ao CEO?",
+          "timestamp_label": "22:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "FOLHA DE PAGAMENTO #0001 · Transferência recorrente de US$ 45.000/mês → Empresa offshore \"Apex Executive Trust\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Gente — minhas credenciais de admin do RH acabaram de ser revogadas! O gabinete do CEO trancou o cofre da folha!",
+          "timestamp_label": "22:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Se eu der o código mestre do cofre para eles, o promotor pode cortar minha pena pela metade—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 9,
+          "transcript": "[impressora zumbindo] Peraí! O advogado do Marcus acabou de me mandar uma chave criptografada de desbloqueio — ele está fechando delação contra o CEO!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "O CEO sabe que você descobriu o nº 0001! Como você protege o livro da previdência?",
+          "options": [
+            {
+              "option_id": "opt_use_override",
+              "label": "Usar a chave de Marcus e exportar a folha",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sam, digite a chave de desbloqueio de Marcus e espelhe offline todo o arquivo da folha dos últimos 6 anos!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_alert_feds",
+              "label": "Copiar em tempo real à SEC e ao Trabalho",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Explosivo · Ver Anúncio",
+              "player_reply_text": "Espelhem o arquivo E subam o hash direto no portal de denúncias do Departamento do Trabalho!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "ARQUIVO PROTEGIDO: 72 transferências mensais assinadas com o token pessoal de autorização do CEO caem no seu disco.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "BLOQUEIO FEDERAL: Reguladores emitem ordem imediata de preservação — o CEO não pode encostar em um único servidor agora.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Espera… o aplicativo de segurança do prédio acabou de apitar. Alguém abriu a Sala de Arquivos do Subsolo às 22h24!",
+          "timestamp_label": "22:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "É lá que o CEO guarda as fichas originais de assinatura do nº 0001. Ele está triturando agora mesmo.",
+          "timestamp_label": "22:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Trituradoras Ligadas no Subsolo",
+          "teaser_text": "Episódio 4: Corra para o arquivo do subsolo antes que o rastro em papel vire confete.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Cofre Trancado do RH",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "22h32 · Corredor do Subsolo SS2. O zumbido de uma trituradora industrial ecoa atrás de uma porta de aço.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Meu crachá morreu — não conseguimos passar no SS2! E a trituradora está rodando no máximo lá dentro!",
+          "timestamp_label": "22:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Não arrombem a porta — chequem as câmeras do corredor! Se flagrarmos quem sair, temos obstrução de justiça além da fraude.",
+          "timestamp_label": "22:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Estou puxando a câmera ao vivo do saguão do SS2 agora! Fiquem firmes — não deixem que vejam vocês!",
+          "timestamp_label": "22:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Digam para checar a doca de carga também, o motorista do CEO espera lá—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "A porta acabou de abrir! É o próprio CEO carregando duas caixas de arquivo lacradas rumo ao elevador de carga!",
+          "timestamp_label": "22:36",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[mouse clicando] Peguei ele em 4K! Com hora marcada, rosto nítido, carregando caixas rotuladas \"FOLHA 2020–2026\" direto pela doca de carga!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "O CEO está entrando no elevador de carga com as caixas! Sua jogada?",
+          "options": [
+            {
+              "option_id": "opt_call_police_dock",
+              "label": "Enviar a polícia direto à doca de carga",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sam, mande a viatura da prisão do Marcus direto para a doca de carga do SS2 AGORA!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_lock_freight",
+              "label": "Travar o elevador de carga pela segurança",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Mente Brilhante · Ver Anúncio",
+              "player_reply_text": "Hannah, acione o retorno de emergência ao térreo no elevador de carga — entregue ele direto na recepção!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "EM FLAGRANTE: Luzes azuis inundam a doca de carga bem quando o porta-malas do CEO abre.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "PRISÃO NO SAGUÃO PRINCIPAL: As portas se abrem no térreo bem diante de dois detetives e do turno da noite.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Levando trabalho para casa tarde hoje, senhor? Os auditores adorariam ver o que há nessas caixas.",
+          "timestamp_label": "22:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Os detetives acabaram de apreender as duas caixas — as fichas originais de assinatura do nº 0001 ainda não tinham sido trituradas!",
+          "timestamp_label": "22:44",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Flagrado Carregando a Prova",
+          "teaser_text": "Episódio 5: Entregue a gravação das câmeras e o livro da previdência ao comitê emergencial do Conselho.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Trituradora à Meia-Noite",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "07h45 · Sessão Emergencial do Conselho. Os conselheiros independentes se reúnem ao redor do monitor de conferência.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Está tudo verificado, {{player_name}}. Seis anos de folha fantasma, US$ 3,24 milhões ao todo, e o vídeo das câmeras está pronto.",
+          "timestamp_label": "07:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "CÂMERA DE SEGURANÇA SS2 · 22h36 — CEO saindo do arquivo com comprovantes intactos do nº 0001.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "A presidência do Conselho acabou de arfar alto! Estão congelando a rescisão do CEO e retomando as opções de ações dele!",
+          "timestamp_label": "07:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cada centavo recuperado precisa ir direto para restaurar o fundo de pensão dos funcionários — com juros.",
+          "timestamp_label": "07:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Pelo visto o CEO e eu vamos dividir cela afinal—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[aplausos na sala] O Conselho acabou de aprovar RESTITUIÇÃO INTEGRAL ao fundo de pensão! E querem falar com VOCÊ sobre chefiar a Auditoria Interna!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "O Conselho oferece a você o cargo de Diretora-Chefe de Auditoria! Qual condição você impõe?",
+          "options": [
+            {
+              "option_id": "opt_direct_board",
+              "label": "Responder direto ao Conselho, não ao CEO",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Eu aceito — com uma condição: a Auditoria Interna responde estritamente ao Conselho independente, nunca ao CEO.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_promote_hannah",
+              "label": "Estatuto independente + promover Hannah",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Aliado Leal · Ver Anúncio",
+              "player_reply_text": "Linha independente de reporte — E tornem a Hannah VP de RH com ferramentas plenas de transparência da folha.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "ESTATUTO ALTERADO: O Conselho grava por unanimidade a autoridade independente de auditoria no estatuto da companhia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "EQUIPE DOS SONHOS: Hannah aceita com lágrimas nos olhos enquanto Sam assina como consultor externo permanente.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Mais de 400 funcionários acabaram de receber o e-mail avisando que o fundo de pensão deles está 100% recomposto.",
+          "timestamp_label": "07:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Funcionário nº 0409 e Funcionário nº 0001 foram oficialmente apagados da folha para sempre.",
+          "timestamp_label": "07:57",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Zero Fantasmas Restantes",
+          "teaser_text": "Episódio 6 (Final): Entre na sua nova sala como Diretora-Chefe de Auditoria e brinde a uma empresa limpa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Contas Limpas",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Uma Semana Depois · Suíte de Auditoria no 18º Andar. A luz da manhã aquece um painel impecável de registros.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "O primeiro ciclo limpo de folha acabou de rodar! Zero anomalias, zero IDs fantasmas — e o clima no andar está elétrico!",
+          "timestamp_label": "09:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sensação ótima olhar para uma planilha que fala a verdade.",
+          "timestamp_label": "09:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Atualização do promotor: tanto Marcus quanto o ex-CEO se declararam culpados. Restituição integral compensada no fundo previdenciário.",
+          "timestamp_label": "09:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Nunca deveríamos ter deixado uma analista júnior ver o Lote 04 da Folha—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 8,
+          "transcript": "[comemoração no corredor] {{player_name}}, as equipes de logística e engenharia deixaram um cartão gigante de agradecimento assinado por 300 pessoas diante da sua porta!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cada assinatura naquele cartão é o motivo de não termos virado o rosto para o lado.",
+          "timestamp_label": "09:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Seu primeiro comunicado geral como Diretora-Chefe de Auditoria:",
+          "options": [
+            {
+              "option_id": "opt_open_hotline",
+              "label": "Lançar um canal anônimo de denúncias",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Lançando um canal criptografado de denúncias — qualquer pessoa pode apontar abusos sem medo de retaliação.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_live_pension",
+              "label": "Dar à equipe um app de acompanhamento",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Confiança Total · Ver Anúncio",
+              "player_reply_text": "Todo funcionário agora ganha um painel em tempo real para conferir suas contribuições previdenciárias 24h por dia.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "MUDANÇA DE CULTURA: A confiança volta da noite para o dia — a empresa vence o prêmio de \"Melhor Lugar Para Trabalhar\" no mesmo ano.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "PADRÃO OURO: A imprensa financeira elogia seu modelo de livro aberto como o futuro da governança corporativa.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "O café é por minha conta lá embaixo, Chefe. Você conquistou cada gota disso.",
+          "timestamp_label": "09:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Estou descendo agora — vamos manter os livros impecáveis.",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Guardiãs do Livro-Caixa",
+          "teaser_text": "Você baniu os fantasmas da folha de pagamento, salvou 400 aposentadorias e ergueu um padrão inquebrável de integridade.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

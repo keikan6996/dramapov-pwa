@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_066",
+  "lang": "id",
+  "metadata": {
+    "title": "Hantu di Daftar Gaji",
+    "subtitle": "Karyawan #0409 menerima $12 ribu/bulan tanpa pernah login—dan berbagi alamat rumah dengan VP Operasional.",
+    "genre": "romance",
+    "tags": [
+      "Korporat",
+      "Audit",
+      "Thriller"
+    ],
+    "cover_image": "assets/media/covers/story_066.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "vp",
+      "name": "Marcus Cole (VP Ops)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "hr",
+      "name": "Hannah (Manajer HRD)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "auditor",
+      "name": "Sam (Auditor Eksternal)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Karyawan #0409",
+      "start_node_id": "n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "18:40 · Lantai Keuangan. Minggu pertamamu sebagai Pimpinan Keuangan. Satu baris daftar gaji membuat darahmu membeku.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hannah, siapa \"K. Vance\" (Karyawan #0409)? Dibayar $12.000/bulan selama 4 tahun, nol gesekan kartu akses, nol email.",
+          "timestamp_label": "18:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "BERHENTI. Hapus kueri itu sekarang juga, {{player_name}}. Data itu terkunci di bawah kode eksekutif VP Marcus Cole.",
+          "timestamp_label": "18:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Hannah bilang {{player_name}} baru membuka #0409. Cabut akses ERP-nya malam ini dan tandai untuk pemecatan.",
+          "unsent_placeholder": "Marcus Cole menarik pesan",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Lembur, {{player_name}}? Serahkan kontrak konsultan lama padaku. Pulang dan tidurlah.",
+          "timestamp_label": "18:44",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 12,
+          "transcript": "[berbisik di tangga] {{player_name}}, K. Vance itu adik ipar Marcus. Akuntan terakhir yang mempertanyakan #0409 dijebak membocorkan kata sandi dan dipecat dalam 24 jam.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Sesi ERP-mu hampir habis waktunya. Apa yang kamu ambil lebih dulu?",
+          "options": [
+            {
+              "option_id": "opt_export_csv",
+              "label": "Hash & ekspor buku gaji 4 tahun itu",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sudah dapat 48 konfirmasi transfer bulanan. Lebih dari $576.000 disedot.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_ping_auditor",
+              "label": "Kirim info terenkripsi ke Auditor Luar",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Bongkar Fakta · Tonton Iklan",
+              "player_reply_text": "Sam, periksa Karyawan #0409 sebelum pengesahan Q3 besok. Alamatnya cocok dengan Marcus Cole.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Tiga detik setelah ekspor selesai, layarmu berkedip: AKUN DITANGGUHKAN.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "PERINGATAN AUDITOR: Auditor Eksternal Sam membekukan audit keuangan Q3 dan menjadwalkan inspeksi mendadak pukul 08:30!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Diterima, {{player_name}}. Jangan tanda tangani apa pun yang disodorkan Marcus besok pagi.",
+          "timestamp_label": "18:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Sidang Disiplin HRD Wajib pukul 08:30 tepat. Bawa laptop dan lencanamu.",
+          "timestamp_label": "18:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Terkunci di Luar saat Fajar",
+          "teaser_text": "Episode 2: Marcus mencoba memecatmu karena \"akses tak sah\"—tepat saat Komite Audit masuk ke ruangan.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Jebakan Pukul 08:30",
+      "start_node_id": "n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "08:30 · Ruang Rapat B. Marcus menggeser surat pemutusan hubungan kerja melintasi meja.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Tanda tangani pengunduran diri sukarela, {{player_name}}, dan aku tak akan melaporkan \"pelanggaran datamu\" ke perusahaan masa depanmu.",
+          "timestamp_label": "08:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sebelum aku tanda tangan, Marcus—apakah \"K. Vance\" bekerja di lantai ini? Karena aku ingin sekali berpamitan.",
+          "timestamp_label": "08:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Hannah, panggil keamanan ke sini SEKARANG dan ambil ponselnya!",
+          "unsent_placeholder": "Marcus Cole menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 10,
+          "transcript": "[berjalan masuk] Selamat pagi, Marcus. Audit Eksternal di sini. Kami membawa surat perintah pengadilan federal untuk riwayat perutean bank Karyawan #0409.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Pak Auditor, saya punya empat tahun email persetujuan paksa Marcus yang meloloskan transfer itu.",
+          "timestamp_label": "08:35",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Marcus terpojok. Bagaimana kamu mengunci kasusnya?",
+          "options": [
+            {
+              "option_id": "opt_hand_ledger",
+              "label": "Serahkan CSV gaji 48 bulan ke Sam",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Ini jejak lengkap 48 bulannya, Sam. Setiap sen dialirkan ke alamat rumah Marcus.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_check_shell",
+              "label": "Ungkap 3 karyawan hantu LAINNYA",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Telusuri Dalam · Tonton Iklan",
+              "player_reply_text": "Tunggu—cek #0410, #0411, dan #0412 juga. Dia tak berhenti di satu hantu.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Lencana Marcus dinonaktifkan di tempat. Keamanan malah mengawal DIA ke lift.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "SINDIKAT $2,3 JUTA TERBONGKAR: Empat karyawan palsu, semuanya dialirkan ke perusahaan cangkang luar negeri milik Marcus!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Tangkapan luar biasa, {{player_name}}. Ketua Dewan ingin menawarimu jabatan Pejabat Sementara VP Keuangan.",
+          "timestamp_label": "08:40",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Biarkan lencanaku tetap aktif, Hannah. Kita punya satu buku besar penuh yang harus dibersihkan.",
+          "timestamp_label": "08:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Hantu Sudah Pergi",
+          "teaser_text": "Saat Marcus digiring pergi, dia mengirimimu satu baris pesan terakhir: \"Karyawan #0001 milik CEO. Semoga beruntung.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Karyawan #0001",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "22:15 · Ruang Perang Audit. Marcus sudah diborgol, tapi pesan perpisahannya membekukan seisi ruangan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "{{player_name}}, aku menjalankan kueri pada Karyawan #0001. Akun itu menyedot $45.000 per BULAN selama enam tahun berturut-turut—dari dana pensiun karyawan!",
+          "timestamp_label": "22:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tiga juta dolar dikuras dari dana pensiun pekerja… dan Marcus bilang itu milik CEO?",
+          "timestamp_label": "22:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "BUKU GAJI #0001 · Transfer berulang $45.000/bln → Perusahaan cangkang luar negeri \"Apex Executive Trust\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Teman-teman—kredensial admin HRD-ku baru dicabut! Kantor CEO mengunci brankas penggajian!",
+          "timestamp_label": "22:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Kalau kuberi mereka kode pembuka brankas, jaksa mungkin memotong hukumanku separuh—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 9,
+          "transcript": "[printer mendengung] Tunggu! Pengacara Marcus baru mengirimiku kunci pembuka terenkripsi—dia berbalik menjadi saksi mahkota melawan CEO!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "CEO tahu kalian melacak #0001! Bagaimana kamu mengamankan buku besar dana pensiun?",
+          "options": [
+            {
+              "option_id": "opt_use_override",
+              "label": "Pakai kunci Marcus utk ekspor buku besar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sam, masukkan kunci pembuka Marcus dan cerminkan seluruh arsip penggajian 6 tahun secara offline!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_alert_feds",
+              "label": "Salin langsung ke SEC & Kemenaker",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Nuklir · Tonton Iklan",
+              "player_reply_text": "Cerminkan arsipnya DAN unggah hash-nya langsung ke portal pelapor Departemen Tenaga Kerja!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "ARSIP DIAMANKAN: 72 transfer bulanan bertanda token otorisasi pribadi CEO masuk ke drivemu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "KUNCI FEDERAL: Regulator menerbitkan perintah pelestarian bukti seketika—CEO tak bisa menyentuh satu server pun sekarang.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Tunggu… aplikasi keamanan gedung baru berbunyi. Seseorang membuka Ruang Arsip Basement pukul 22:24!",
+          "timestamp_label": "22:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "Di sanalah CEO menyimpan kartu tanda tangan kertas untuk #0001. Dia sedang menghancurkannya sekarang.",
+          "timestamp_label": "22:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Mesin Penghancur Berjalan di Basement",
+          "teaser_text": "Episode 4: Berpacu ke arsip basement sebelum jejak kertas berubah menjadi serpihan.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Brankas HRD Terkunci",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "22:32 · Koridor Basement B2. Dengung mesin penghancur kertas industri menggema di balik pintu baja.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Lencanaku mati—kita tak bisa menggesek masuk B2! Dan mesin penghancurnya menyala kencang di dalam!",
+          "timestamp_label": "22:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Jangan dobrak pintunya—cek kamera lorong! Kalau kita menangkap siapa yang keluar, kita punya bukti penghalangan keadilan di atas penipuan.",
+          "timestamp_label": "22:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Aku menarik siaran langsung kamera lobi B2 sekarang! Tahan posisi—jangan sampai terlihat!",
+          "timestamp_label": "22:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Suruh mereka cek dok muat juga, sopir CEO menunggu di sana—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Pintunya baru terbuka! Itu CEO sendiri membawa dua kotak arsip tersegel menuju lift barang!",
+          "timestamp_label": "22:36",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[klik mouse] Dapat dalam 4K! Bertanda waktu, wajah jelas, membawa kotak berlabel \"PENGGAJIAN 2020–2026\" lurus keluar ke dok muat!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "CEO melangkah masuk ke lift barang membawa kotak itu! Langkahmu?",
+          "options": [
+            {
+              "option_id": "opt_call_police_dock",
+              "label": "Arahkan polisi langsung ke dok muat",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sam, kirim mobil polisi dari penangkapan Marcus langsung ke dok muat B2 SEKARANG!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_lock_freight",
+              "label": "Picu penahan keamanan lift barang",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Dalang · Tonton Iklan",
+              "player_reply_text": "Hannah, tekan pemanggil darurat lobi di lift barang—antarkan dia lurus ke meja depan!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "TERTANGKAP BASAH: Lampu biru membanjiri dok muat tepat saat bagasi mobil CEO terbuka.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "PENANGKAPAN LOBI DEPAN: Pintu bergeser terbuka di lobi utama tepat di hadapan dua detektif dan kru jaga malam.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Lembur bawa pulang pekerjaan malam ini, Pak? Para auditor senang sekali melihat isi kotak itu.",
+          "timestamp_label": "22:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Detektif baru menyita kedua kotak—kartu tanda tangan asli #0001 belum sempat dihancurkan!",
+          "timestamp_label": "22:44",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Tertangkap Membawa Bukti",
+          "teaser_text": "Episode 5: Serahkan rekaman CCTV dan buku besar dana pensiun ke komite darurat Dewan.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Penghancur Tengah Malam",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "07:45 · Sidang Darurat Dewan. Para direktur independen berkumpul mengelilingi monitor konferensi.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Semuanya terverifikasi, {{player_name}}. Enam tahun gaji hantu, total $3,24 juta, dan klip CCTV sudah siap diputar.",
+          "timestamp_label": "07:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "KAMERA KEAMANAN B2 · 22:36 — CEO keluar dari brankas arsip membawa bukti gaji #0001 utuh.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Ketua Dewan baru terkesiap keras! Mereka membekukan pesangon CEO dan menarik kembali opsi sahamnya!",
+          "timestamp_label": "07:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Setiap sen yang ditarik kembali harus langsung masuk memulihkan dana pensiun karyawan—beserta bunganya.",
+          "timestamp_label": "07:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Sepertinya aku dan CEO bakal sekamar sel—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[tepuk tangan di ruangan] Dewan baru menyetujui pengembalian PENUH ke dana pensiun! Dan mereka ingin bicara denganMU soal memimpin Audit Internal!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Dewan menawarimu jabatan Kepala Petugas Audit! Syarat apa yang kamu ajukan?",
+          "options": [
+            {
+              "option_id": "opt_direct_board",
+              "label": "Lapor langsung ke Dewan, bukan CEO",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Saya terima—dengan satu syarat: Audit Internal melapor ketat kepada Dewan independen, tidak pernah kepada CEO.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_promote_hannah",
+              "label": "Piagam independen + promosikan Hannah",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Sekutu Sejati · Tonton Iklan",
+              "player_reply_text": "Jalur pelaporan independen—DAN angkat Hannah jadi VP HRD dengan perangkat transparansi gaji penuh.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "PIAGAM DIAMENDEMEN: Dewan dengan suara bulat mengunci wewenang audit independen ke dalam anggaran dasar perusahaan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "TIM IMPIAN: Hannah menerima dengan mata berlinang air mata saat Sam menandatangani kontrak sebagai penasihat eksternal tetap.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Lebih dari 400 karyawan baru saja menerima email bahwa dana pensiun mereka 100% utuh kembali.",
+          "timestamp_label": "07:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Karyawan #0409 dan Karyawan #0001 resmi dihapus dari daftar gaji selamanya.",
+          "timestamp_label": "07:57",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Nol Hantu Tersisa",
+          "teaser_text": "Episode 6 (Tamat): Melangkah masuk ke kantor barumu sebagai Kepala Petugas Audit dan bersulang untuk perusahaan yang bersih.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Pembukuan Bersih",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Seminggu Kemudian · Ruang Audit Lantai 18. Sinar matahari pagi menghangatkan dasbor pembukuan yang bersih sempurna.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "Siklus gaji bersih pertama baru berjalan! Nol anomali, nol ID hantu—dan semangat di kantor luar biasa tinggi!",
+          "timestamp_label": "09:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Rasanya lega melihat spreadsheet yang mengatakan kebenaran.",
+          "timestamp_label": "09:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Kabar dari jaksa: baik Marcus maupun mantan CEO mengaku bersalah. Pengembalian penuh sudah cair ke perwalian pensiun.",
+          "timestamp_label": "09:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Seharusnya tak pernah membiarkan analis junior melihat Batch Gaji 04—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 8,
+          "transcript": "[sorak-sorai di lorong] {{player_name}}, tim gudang dan teknik meninggalkan kartu terima kasih raksasa bertanda tangan 300 orang di luar pintumu!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Setiap tanda tangan di kartu itu adalah alasan kita tidak menutup mata.",
+          "timestamp_label": "09:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Memo pertamamu ke seluruh perusahaan sebagai Kepala Petugas Audit:",
+          "options": [
+            {
+              "option_id": "opt_open_hotline",
+              "label": "Luncurkan saluran pengaduan etika anonim",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Meluncurkan saluran pengaduan terenkripsi—siapa pun bisa melaporkan penyalahgunaan tanpa takut pembalasan.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_live_pension",
+              "label": "Beri staf aplikasi pelacak pensiun",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Kepercayaan Penuh · Tonton Iklan",
+              "player_reply_text": "Setiap karyawan kini mendapat dasbor waktu nyata untuk memverifikasi iuran pensiun mereka 24/7.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "PERUBAHAN BUDAYA: Kepercayaan kembali dalam semalam—perusahaan meraih predikat \"Tempat Kerja Terbaik\" dalam setahun.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "STANDAR EMAS: Pers keuangan memuji model pembukuan terbukamu sebagai masa depan tata kelola perusahaan.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "Kopi aku yang traktir di bawah, Bu Kepala. Kau pantas mendapatkan setiap ons kemenangan ini.",
+          "timestamp_label": "09:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Turun sekarang—ayo jaga pembukuannya tetap bersih tanpa noda.",
+          "timestamp_label": "09:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "TAMAT · Penjaga Buku Besar",
+          "teaser_text": "Kamu mengusir hantu daftar gaji, menyelamatkan 400 dana pensiun, dan membangun standar integritas tak terpatahkan.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1018 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_036",
+  "lang": "ja",
+  "metadata": {
+    "title": "24時間営業コインランドリーの見知らぬ男",
+    "subtitle": "妹からメッセージが来た。「今すぐ出て。乾燥機のガラスを見て――あなたの後ろに座っている男には影がない」",
+    "genre": "thriller",
+    "tags": [
+      "コインランドリー",
+      "午前3時",
+      "スリラー"
+    ],
+    "cover_image": "assets/media/covers/story_036.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (あなた)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#3B82F6"
+    },
+    {
+      "id": "ally",
+      "name": "Kayla (姉妹)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "乾燥機08番タイマー",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "午前3:12の脱水サイクル",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午前3:12 · 無人の24時間営業コインランドリーの中で蛍光灯が低く唸っています。ガラスの向こうであなたの服がリズミカルに回っています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、今コインランドリーから送ってきたスナップ見たよ！絶対に振り返らないで――その明るい照明の下で、後ろに座ってる男に影がないの！！",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "えっ、どういうこと！？入ってきた時は誰もいなかったよ！ドアのチャイムも鳴ってないのに！",
+          "timestamp_label": "午前3:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "あなたの乾燥機、もうすぐ終わるよ。ゼロになるまでそこにいて。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "荷物をつかんで落ち着いて外に出て！待って――誰も入れてないのに、なんで8番の乾燥機が回ってるの！？",
+          "timestamp_label": "午前3:14",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[転がる硬貨の音、ガラスの内側を叩くくぐもった音] ……あと5分だよ、{{player_name}}……上着を忘れていかないで……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "ガラス製の自動ドア出口が重い磁気ロックの音とともに施錠されました。",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "非常用の手動ドア開放スイッチを引く",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "手動のドア解除スイッチを引く！",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "回転中の8番乾燥機の中を覗き込む",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "8番乾燥機の中に何があるか見てみる……",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "スイッチは火花を散らして反応しなくなりました。暗いガラスの反射の中で、背後の男は今や2歩分あなたに近づいています。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED：8番乾燥機の中で回っていたのは、色褪せた1990年代の革財布と――コインランドリー強盗事件の新聞の切り抜きでした。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "今タクシーを呼んで迎えに行くから！通りを走る車から見える通りに面した窓の近くにいて！",
+          "timestamp_label": "午前3:16",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "コインランドリー内の公衆電話",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "受け皿に硬貨がジャラジャラと落ちる音が響きます。「サイクルは00:00で終了する。8番乾燥機に背中を向けるな」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "着信を拒否しました。その瞬間、8台すべての乾燥機のタイマーが同期し、00:59からのカウントダウンを始めました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "残り59秒",
+          "teaser_text": "エピソード2：蛍光灯が消え――8番乾燥機の扉が勢いよく開きます。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "タイマーが00:00になる時",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前3:17 · 赤いLEDタイマーがリノリウムの床に長い深紅の筋を落とします。後ろのベンチはもう空っぽでした。",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "あと2分で着くから！！{{player_name}}、あの男はどこに行ったの！？ライブ映像に映ってないよ！",
+          "timestamp_label": "午前3:17",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ベンチには誰もいない……待って、両替機が勝手に床へ25セント硬貨を吐き出し始めた！",
+          "timestamp_label": "午前3:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[鳴り響くブザー、金属の留め金が鳴る音] ……小銭が切れたんだ、{{player_name}}……1枚貸してくれ……",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "扉が閉じたままになるように、8番乾燥機にコインを入れろ。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "待って――もしかして男はループに閉じ込められてるのかも！ゼロになる前に8番乾燥機にコインを入れてタイマーをリセットして！",
+          "timestamp_label": "午前3:19",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "00:05… 00:04… 8番乾燥機のガラス扉が激しく振動します。",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "8番乾燥機の投入口にコインを入れる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今コインを入れる！",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "壁から8番乾燥機の電源コードを抜く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "秘密 · 広告視聴",
+              "player_reply_text": "壁からコンセントを引っこ抜く！",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "コインがチャリンと落ちます。タイマーは30:00に戻り、振動が止み――そして正面の自動ドアが大きく開きました。",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED：コインランドリーの照明が再び眩しい白さに戻ります。見知らぬ男は通りの向かいから礼儀正しく頷き、霧の中へと消えました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "あなたは外へ駆け出し、待っていたKaylaのタクシーに飛び乗りました。後ろの窓から振り返ると、コインランドリーは真っ暗に沈んでいました。",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Kayla (隣に座っている)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "あなたが洗濯バッグのジッパーを閉めると、Kaylaが凍りつきます。「待って……あなたの服の上に畳んであるその1990年代のヴィンテージジャケット、誰の？」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "コートのポケットを確かめると――中には1994年の刻印がある、氷のように冷たい25セント硬貨が1枚入っていました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "サイクル完了",
+          "teaser_text": "シーズンフィナーレ · 次からは日没前に洗濯を済ませましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "コインが1枚足りない",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前3:18 · 24時間営業のコインランドリーから逃げ出したはずでした――洗濯バッグが低く唸り始め、8番乾燥機のタイマーからスマホにメッセージが届くまでは。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}、洗濯カゴの中を見て！自分のじゃないウールのマフラーを間違えて持ってきてない！？",
+          "timestamp_label": "午前2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kayla、ジーンズに濡れた銀の懐中時計が絡まってる――それにコインランドリーの防犯カメラアプリがスマホに通知を送ってきた！",
+          "timestamp_label": "午前2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "コインランドリー防犯カメラ · 午前3:16 — 天井のレンズを真っすぐ見上げる影のない男。",
+          "blur_until_tap": true,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "8番乾燥機タイマー：「残り04:00。00:00になる前に私の時計を返さなければ、お前の影の中へ踏み込む」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "私を温めていた最後のものを奪ったな、{{player_name}}。ウォッシャー通りへ返却しに来い。",
+          "timestamp_label": "午前2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "待って――その懐中時計の刻印を確認して！1974年の日付が入っているはず！",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[取り乱したKayla] 「一人で戻っちゃダメ！あと2分で玄関先に車を横付けするから――玄関灯はつけたままにして！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "寝室の壁に映ったあなた自身の影が、窓の方へと伸び始めました。",
+          "options": [
+            {
+              "option_id": "opt_e3_run_porch",
+              "label": "Kaylaのヘッドライトへ向かって走る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "時計を持って玄関にいるよ――飛ばして、Kayla！",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_inspect_watch",
+              "label": "懐中時計の蓋を開けて内側を調べる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 手がかり",
+              "player_reply_text": "時計を開けた！内側に色褪せた住所が書いてある：「メイプル通り412 — 娘へ」！",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "乗って！明るい繁華街の大通りへ走ろう――街灯の下ではついてこれないはず！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "メイプル通り412！？コインランドリーから2ブロック先にある古い老人ホームだよ！",
+          "timestamp_label": "午前2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "8番乾燥機タイマー：「残り02:30。娘がまだ時刻を待っている」",
+          "timestamp_label": "午前2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "残り02:30。",
+          "teaser_text": "エピソード4：タイマーがゼロになる前にメイプル通り412番地へ急ぐ中で、影のない男の正体が明らかになります。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "1974年の懐中時計",
+      "start_node_id": "e4_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前3:28 · Kaylaはメイプルウッド介護施設の外に車を停めます。明るいガラス張りのロビーで夜勤の看護師が二人を迎えました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "時計の蓋の内側の写真を見て、{{player_name}}！看護師さんが見覚えがあるって――74年にコインランドリーからの帰り道で亡くなったAlvarezさんのご主人…じゃなくてお父様だって！",
+          "timestamp_label": "午前2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……私を傷つけようとしてたんじゃなかったの！？50年前、家に帰れなかったあの夜に8番乾燥機で時計を失くしたの！？",
+          "timestamp_label": "午前2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "残り01:15。父親は誕生日を忘れたりしなかったと、どうかElenaに伝えてくれ。",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "コインランドリー裏のガラス張りの路地がちらつき――ネオンサインの下に背の高い影のないシルエットが佇んでいます。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "看護師さんによるとAlvarezさんは104号室で起きているって――毎年冬になるとお父様の銀の時計の話をするんだって！",
+          "timestamp_label": "午前2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "00:00になる前に娘さんに時計を手渡せたら、きっと彼はようやく影を取り戻せるはず。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[優しく響き渡る懐中時計のチャイム] 「あと1分だ、{{player_name}}……どうかElenaに渡してくれ」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "104号室は明るい廊下の先にありますが、タイマーは00:45まで減り続けています。",
+          "options": [
+            {
+              "option_id": "opt_e4_deliver_watch",
+              "label": "今すぐ104号室へ銀の時計を届ける",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "今看護師さんと一緒に104号室に入るところだよ、Kayla！",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_wind_watch",
+              "label": "渡す前に時計を巻いて動き出させる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 感動",
+              "player_reply_text": "リュウズを巻いた――時計がまたカチカチ動き出したよ！今Elenaさんに渡す！",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Alvarezさん、刻印を見た瞬間に涙があふれ出したよ！すぐに気づいたんだ！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "彼女の手の中で時計が優しく時を告げて――8番乾燥機のタイマーが00:01で止まった！",
+          "timestamp_label": "午前2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "ロビーの窓から路地の方を見てください――影のない見知らぬ男が街灯の下に立っています。",
+          "timestamp_label": "午前2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "タイマーは00:01のまま。",
+          "teaser_text": "エピソード5：街灯の下で、影のない男についに再び影が差します。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "取り戻した影",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前3:35 · メイプルウッド介護施設の外。暖かいナトリウム街灯の下で、男は104号室の窓を見上げています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "彼のブーツの下の舗装を見て、{{player_name}}！ちゃんと影が戻ってる――しかも微笑んでるよ！",
+          "timestamp_label": "午前3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "104号室へ向けて軽く帽子に手を添えてお辞儀をして、朝の霧の中へ消えていったよ。",
+          "timestamp_label": "午前3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "路地の街灯 · 午前3:35 — 消えゆく前に温かく自然な影を落とす人影。",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "8番乾燥機タイマー：「00:00 · サイクル完了。ありがとう」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Alvarezさんは時計を胸に抱きしめて、最高の笑顔のままようやく眠りについたよ。",
+          "timestamp_label": "午前3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "姉妹で挑んだ史上最高の午前3時救出ミッションだったね。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[涙を拭うKayla] 「わかった、もう二度とあんたの深夜洗濯の習慣をからかったりしないよ」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "通りの向かいのコインランドリーの看板が穏やかに音を立てています。",
+          "options": [
+            {
+              "option_id": "opt_e5_hug_kayla",
+              "label": "車のそばでKaylaを抱きしめる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "いつも味方でいてくれてありがとうね、かわいい妹。",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_grab_donuts",
+              "label": "2人して24時間営業のドーナツ店へ行く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 姉妹",
+              "player_reply_text": "今すぐ焼きたてのドーナツを食べる権利があるよね。私のおごり！",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "いつでも味方だよ、お姉ちゃん。さあ日の出前に帰ろう！",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "やっと話がわかってきたね！行こう！",
+          "timestamp_label": "午前3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "8番乾燥機タイマー · 永久に接続解除されました。",
+          "timestamp_label": "午前3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "サイクル完了。",
+          "teaser_text": "エピソード6（フィナーレ）：これからは昼間の洗濯だけ――そして姉妹が決して忘れない思い出が残りました。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "昼間の洗濯サイクル",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "午後2:00 · 明るい午後の日差しがコインランドリーの窓から差し込む中、あなたとKaylaは暖かいタオルを一緒に畳んでいます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "午後2時のほうがずっと素敵じゃない、{{player_name}}？幽霊ゼロ、日差しは最高。",
+          "timestamp_label": "午前7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "8番乾燥機を見て――誰かがコイン投入口のすぐ上に小さな感謝のお花をテープで貼ってるよ。",
+          "timestamp_label": "午前7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Alvarezさんのお孫さんが今朝、夜勤の係員さんにお礼を言いに立ち寄ったんだって。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "8番乾燥機：「温かく準備完了」",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "それにあれ見て――私たち二人の影も、ちゃんとタイルの床の上のあるべき場所にあるよ。",
+          "timestamp_label": "午前7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "最高のチームだね、お姉ちゃん。",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[ニヤリと笑うKayla] 「アパートまで競争だよ――ビリの人がボックスシーツを畳む係ね！」",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "午後の光の中で、温かい洗濯カゴを抱え上げます。",
+          "options": [
+            {
+              "option_id": "opt_e6_race_kayla",
+              "label": "笑いながら車へ向かって走る",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "ボックスシーツなんか絶対に畳まないから――先に行くよ！",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_wave_dryer8",
+              "label": "8番乾燥機を軽く叩いて笑顔で別れる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 温もり",
+              "player_reply_text": "さようなら、8番乾燥機。これからは昼間の利用だけにするからね！",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ちょっとズルい、フライングしたでしょ！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "街で一番温かい洗濯物だね。さあ帰ろう！",
+          "timestamp_label": "午前7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "コインランドリーの見知らぬ男 · 永遠の安らぎの中に。",
+          "timestamp_label": "午前7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "シーズンフィナーレ · 日没前に。",
+          "teaser_text": "THE END · 次からは日没前に洗濯を済ませましょう――誰かが時計を返してほしがっていない限りは。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

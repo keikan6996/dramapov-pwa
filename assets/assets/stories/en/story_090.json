@@ -1,0 +1,1043 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_090",
+  "lang": "en",
+  "metadata": {
+    "title": "Zero-Day Ransom",
+    "subtitle": "Ransomware just froze every ICU monitor in my hospital—unless I erase one patient’s record in 15 minutes.",
+    "genre": "thriller",
+    "tags": [
+      "Ransomware",
+      "Hospital",
+      "Cyber"
+    ],
+    "cover_image": "assets/media/covers/story_090.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · NetOps",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "patel",
+      "name": "Dr. Patel · ICU",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "zday",
+      "name": "ZERO_DAY",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#134E4A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Code Black",
+      "start_node_id": "e1_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:11 AM · ST. JUDE SERVER ROOM: Every terminal flashes crimson. \"ALL INFUSION PUMPS ENCRYPTED. 15:00 REMAINING.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}!! Our ICU ventilators just dropped off the network! We’re bagging three patients manually—fix it NOW!",
+          "timestamp_label": "2:11 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "No Bitcoin needed, {{player_name}}. Purge Patient #4409’s toxicology report from the master database, and I’ll drop the decryption key instantly.",
+          "timestamp_label": "2:12 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Patient #4409?! Who is in Bed 9, Dr. Patel?!",
+          "timestamp_label": "2:12 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 8,
+          "transcript": "[monitors beeping wildly] That’s a John Doe brought in from a yacht party! His blood tested positive for a banned military nerve agent—it’s a murder attempt!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Countdown hits 11:30. ICU lives hang in the balance:",
+          "options": [
+            {
+              "option_id": "opt_090_e1_free",
+              "label": "Switch ICU to air-gapped offline backup",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Patel, pull the blue ethernet cables on all pumps—I’m pushing offline firmware!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_090_e1_vip",
+              "label": "Clone #4409’s tox report before purging",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "Manual override restores two ventilators—but the ransomware jumps the VLAN and locks the pharmacy dispensing vault.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Clever little engineer. Too bad Bed 9 needs atropine in four minutes—and I just locked the meds.",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "You quietly mirror the toxicology PDF onto an air-gapped USB stick, then execute a visible wipe on the main SQL table. ZERO_DAY takes the bait.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Good choice. Decryption key incoming... Wait. Why did a USB mount just log on Server Rack 3?",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Badge swipe detected outside Server Room B. Our cleaner is already on your floor.",
+          "unsent_placeholder": "ZERO_DAY unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "The server room badge reader beeps green—even though only two IT staff have clearance. The heavy steel door swings inward.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Intruder In Rack 3",
+          "teaser_text": "Someone just unlocked the server vault with an admin badge—and the ICU countdown has 3 minutes left.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Root Access",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:18 AM · You duck behind the cold-aisle server rack. Footsteps pace slowly between the humming blades.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "patel",
+          "caller_label": "Dr. Patel · ICU",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 7,
+          "transcript": "[whispered] {{player_name}}! Hospital security says the badge used on your server room belongs to our own Chief of Surgery—Dr. Vance!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Security just traced the badge swipe—it’s the Chief of Surgery! And Bed 9 just woke up and whispered his name!",
+          "timestamp_label": "2:18 AM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Hand over the USB stick, {{player_name}}, and I’ll restore the ICU myself. Nobody has to die tonight.",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "You poisoned your own patient and held an entire ICU hostage to cover it up?!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "The Chief of Surgery rounds Rack 3. Stop him:",
+          "options": [
+            {
+              "option_id": "opt_090_e2_free",
+              "label": "Trigger Halon fire-suppression lock",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_090_e2_vip",
+              "label": "Dump decryption key from his laptop",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Got your local key—and emailed the tox report to the Medical Board!",
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "You dart past him out the door and smash the yellow Halon alarm. Blast doors slam shut, trapping the Chief inside until hospital police arrive.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "All ICU monitors just came back green! You saved four lives tonight, {{player_name}}!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "You yank the active Ethernet cable from his open laptop, pulling the local ransomware key straight into the hospital’s master controller. Every pump resets.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Pumps are back online AND security just cuffed him in the hallway! Thank god you kept that report!",
+          "timestamp_label": "2:21 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "You caught the doctor, {{player_name}}. Not the person who wrote the zero-day.",
+          "unsent_placeholder": "ZERO_DAY unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "As dawn breaks over St. Jude’s, your phone receives one final encrypted ping—from a hospital IP address on the Pediatric Ward.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "The Architect Is Still Inside",
+          "teaser_text": "The Chief of Surgery was only the buyer. The real ZERO_DAY hacker is still connected to St. Jude’s internal network.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Subnet Ghost",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02:26 AM · ICU monitors stabilize for ten seconds—then flicker amber again. ZERO_DAY is still pulsing on Subnet 4.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "{{player_name}}! Bed 7’s ventilator just dropped pressure again! I thought we isolated the Chief of Surgery’s laptop!",
+          "timestamp_label": "02:26 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The Chief was only the buyer, Dr. Patel! Someone with a physical server-room badge is STILL plugged into Floor 4!",
+          "timestamp_label": "02:26 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Floor 4 Server Hall · 02:25 AM — Unauthorized technician badge swiped inside.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[server fans roaring] Smart NetOps kid. You caught the Chief—but I don’t get paid my second half until Bed 7’s chart is ash.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "You reach the glass doors of the Floor 4 server vault. Act fast:",
+          "options": [
+            {
+              "option_id": "opt_090_e3_free",
+              "label": "Cut the ICU switch to air-gapped backup",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dr. Patel, I’m switching ICU to manual air-gap! Bed 7’s ventilator is safe from remote hacks!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_090_e3_vip",
+              "label": "Trace the badge ID that opened Floor 4",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "A heavy click echoes down the rack—every ICU monitor flips green on offline battery telemetry.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Ventilator steady! Patient in Bed 7 is stable—whoever is in there can’t touch my patients now!",
+          "timestamp_label": "02:26 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "The access log flashes a familiar name: \"MARCUS V. — MEDTECH EXTERNAL IT VENDOR.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ZERO_DAY is Marcus from our own IT contractor! He installed the backdoor during last month’s upgrade!",
+          "timestamp_label": "02:26 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Air-gap tripped! Pulling the encrypted patient archive drive manually.",
+          "unsent_placeholder": "ZERO_DAY unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Wait—I just checked Bed 7’s paper chart! He’s the sole survivor of a failed drug trial funded by our hospital’s biggest donor!",
+          "timestamp_label": "02:26 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "Don’t bother calling security, {{player_name}}. I’m already walking out the service stairwell with the archive drive.",
+          "timestamp_label": "02:26 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Trial Survivor",
+          "teaser_text": "Bed 7 holds the proof of a deadly clinical trial cover-up—and your own IT vendor is fleeing Floor 4 with the archive drive.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Lockdown On Floor 4",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02:35 AM · You slam your badge onto the Floor 4 security console, triggering the bio-wing magnetic doors.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Hospital police and FBI cyber agents are coming up the main lobby now! Don’t confront him alone!",
+          "timestamp_label": "02:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Not so fast, Marcus! Every elevator and stairwell on Floor 4 just went into bio-lockdown!",
+          "timestamp_label": "02:35 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "If I drop the archive drive down the incinerator chute, nobody proves anything.",
+          "unsent_placeholder": "ZERO_DAY unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "zday",
+          "duration_sec": 7,
+          "transcript": "[heavy footsteps echoing] Release the Floor 4 mag-locks, {{player_name}}, or I drop the backup drive straight down the bio-waste chute!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Marcus is standing by the waste chute with the archive drive. Outsmart him:",
+          "options": [
+            {
+              "option_id": "opt_090_e4_free",
+              "label": "Bluff that you already synced the cloud",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Drop it if you want, Marcus! I mirrored Bed 7’s full chart to the FDA five minutes ago!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_090_e4_vip",
+              "label": "Sniff his outbound crypto wallet packet",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Marcus hesitates—just long enough for you to slam the fire-door glass and cut off his exit.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "FBI agents just reached the 4th floor stairwell! Hold him there!",
+          "timestamp_label": "02:35 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "Your packet sniffer intercepts his final ransom confirmation—revealing a $2.5M wire directly from the pharma donor’s trust.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I just caught your $2.5M wire from the pharma donor! Dropping that drive won’t save you now!",
+          "timestamp_label": "02:35 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "The stairwell mag-lock clicks open under federal override—and four FBI agents surge onto Floor 4.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "They’ve got him! And the archive drive didn’t even touch the chute!",
+          "timestamp_label": "02:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "You ruined a $2.5 million payday for a single ICU bed...",
+          "timestamp_label": "02:35 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "The Ransom Wire",
+          "teaser_text": "Marcus is in cuffs—and the $2.5M ransom receipt links St. Jude’s biggest pharma donor straight to the hospital hack.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The Donor’s Trail",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "02:55 AM · Inside the ICU nurses’ station, you project Marcus’s intercepted wire receipt onto the briefing screen.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Two and a half million dollars from Apex Pharma Trust... they were willing to shut down an entire ICU just to silence Bed 7.",
+          "timestamp_label": "02:55 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The FBI just froze Apex Pharma’s accounts—and I’m pushing a clean firmware patch to every monitor right now.",
+          "timestamp_label": "02:55 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Intercepted Ransom Wire · $2,500,000 from Apex Pharma Trust to ZERO_DAY.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 6,
+          "transcript": "[steady heartbeat monitor beeping] Bed 7’s oxygen is back at 99%! And his family lawyer just arrived with federal marshals.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "The hospital board chair calls begging you to keep the hack quiet:",
+          "options": [
+            {
+              "option_id": "opt_090_e5_free",
+              "label": "Refuse & file the full federal breach report",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Patients almost died tonight. Every single log goes straight to the FBI and FDA.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_090_e5_vip",
+              "label": "Strip every MedTech vendor backdoor live",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "The board chair hangs up in silence as federal agents seal the Chief of Surgery’s office.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Thank you for standing your ground, {{player_name}}. Medicine comes before PR.",
+          "timestamp_label": "02:55 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "Your cleanup script purges 14 hidden MedTech backdoors across all six hospital wings in ninety seconds flat.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "All six wings verified clean. ZERO_DAY is permanently evicted from St. Jude’s.",
+          "timestamp_label": "02:55 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "zday",
+          "text": "Respect, NetOps. Best night-shift defense I ever ran into.",
+          "unsent_placeholder": "ZERO_DAY unsent a message",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "All twelve ICU beds are green across the board! You saved every single one of them.",
+          "timestamp_label": "02:55 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "zday",
+          "text": "[RANSOMWARE NODE PURGED — SYSTEM CLEAN]",
+          "timestamp_label": "02:55 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Clean Reboot",
+          "teaser_text": "Every ICU patient is safe and Apex Pharma’s cover-up is exposed—one final dawn check before your night shift ends.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "End Of Night Shift",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "06:45 AM · Golden light fills the ICU corridor. Every vital-sign monitor hums with a steady, peaceful rhythm.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "The Chief of Surgery, Marcus, and two Apex Pharma executives were just indicted. Bed 7 is awake and asking who saved him.",
+          "timestamp_label": "06:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tell him it was the whole night shift, Dr. Patel. I just kept the lights on.",
+          "timestamp_label": "06:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "patel",
+          "text": "The hospital director wants to make you Chief of Cybersecurity.",
+          "unsent_placeholder": "Dr. Patel unsent a message",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "patel",
+          "duration_sec": 5,
+          "transcript": "[morning shift bell chiming] Breakfast in the cafeteria is on me—and yes, you’re getting a massive raise.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Your night-shift terminal asks for final confirmation before sign-out:",
+          "options": [
+            {
+              "option_id": "opt_090_e6_free",
+              "label": "Lock down the air-gap protocol permanently",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Air-gap protocol saved as hospital standard. Never again.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_090_e6_vip",
+              "label": "Stop by Bed 7 to say good morning",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Your new security policy locks ICU telemetry behind physical switches—earning praise from hospitals nationwide.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "Best NetOps engineer in the country. Get some sleep!",
+          "timestamp_label": "06:45 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "You peek into Bed 7. The patient squeezes your hand weakly and mouths two words: \"Thank you.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Worth every second of that 15-minute countdown.",
+          "timestamp_label": "06:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "You hang up your night-shift badge and step out into the cool sunrise—zero alerts, twelve heartbeats strong.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "patel",
+          "text": "See you tomorrow night, Chief.",
+          "timestamp_label": "06:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "See you tomorrow, Dr. Patel.",
+          "timestamp_label": "06:45 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Vitals Steady",
+          "teaser_text": "ZERO_DAY is purged, Apex Pharma’s cover-up is shattered, and every ICU patient lived to see the sunrise.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

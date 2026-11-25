@@ -1,0 +1,991 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_065",
+  "lang": "es",
+  "metadata": {
+    "title": "El Fondo de Boda de Mi Hermana",
+    "subtitle": "Le transferí $80K para la boda soñada de mi hermana... luego el salón me escribió que su cheque rebotó y compró un penthouse.",
+    "genre": "romance",
+    "tags": [
+      "Familia",
+      "Dinero",
+      "Traición"
+    ],
+    "cover_image": "assets/media/covers/story_065.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "sister",
+      "name": "Maya (Hermana Menor)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#9D174D"
+    },
+    {
+      "id": "venue",
+      "name": "Elena (Gerente del Salón)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "fiance",
+      "name": "Liam (Su Prometido)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#374151"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Depósito Rebotado",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "Cinco días antes de la boda de Maya. Sacrificaste tres años de bonos para transferirle $80,000.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "Hola {{player_name}}, como figuras como aval—el pago final de $35,000 de Maya por el salón acaba de rebotar. Si no se liquida antes de las 5 PM, cancelamos el sábado.",
+          "timestamp_label": "02:14 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Maya, ¿por qué rebotó el cheque del salón?! ¿Dónde están los $80,000 que te transferí el lunes pasado?",
+          "timestamp_label": "02:15 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "sister",
+          "text": "¡¡Liam!! ¡¡{{player_name}} descubrió que usamos el giro de la boda para el enganche del Penthouse Horizonte!!",
+          "unsent_placeholder": "Maya anuló el envío de un mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Ay cálmate. El banco solo puso una retención. ¿Puedes cubrir hoy los $35K del salón? ¡Te los pago después con los regalos de boda!",
+          "timestamp_label": "02:17 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "fiance",
+          "duration_sec": 11,
+          "transcript": "[llamada accidental de bolsillo] Tranquila amor, {{player_name}} es un tapete total. Mamá llorará cinco minutos y transferirán los treinta y cinco mil extra. El penthouse ya está a mi nombre.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "La cena de ensayo es esta noche a las 7 PM. ¿Cómo respondes?",
+          "options": [
+            {
+              "option_id": "opt_cancel_venue",
+              "label": "Pide a Elena cancelar y quitar tu firma",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Elena, quítame como aval de inmediato. No voy a pagar ni un centavo más.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_gift_audit",
+              "label": "Reporta fraude en giro del penthouse",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Revancha · Ver Anuncio",
+              "player_reply_text": "Qué interesante, Liam. Como el concepto del giro dice \"Solo Custodia Boda\", mi banco a eso le llama fraude financiero.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "Listo. Tu responsabilidad queda eliminada. Acabo de mandar por correo a Maya el aviso de cancelación.",
+          "timestamp_label": "02:21 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "CUSTODIA CONGELADA: La compañía tituladora pausa el cierre del penthouse de Liam en espera de una revisión formal de fraude.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "¿Qué hiciste?! ¡La inmobiliaria acaba de congelar nuestro cierre! ¿Estás loca?!",
+          "timestamp_label": "02:23 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡Le conté todo a mamá! ¡Si no arreglas esto antes de la cena de ensayo de hoy, estás muerta para esta familia!",
+          "timestamp_label": "02:25 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Duelo en la Cena de Ensayo",
+          "teaser_text": "Episodio 2: Maya espera que cedas frente a los padres ricos de Liam... hasta que pones la nota de voz de Liam por el micrófono del banquete.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "El Pagaré",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "07:15 PM · Cena de Ensayo. Cuarenta invitados incluidos los acaudalados padres de Liam. Maya te fulmina desde la mesa principal.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Paga el salón ahora mismo desde tu teléfono. ¡El papá de Liam cree que pagamos todo al contado!",
+          "timestamp_label": "07:16 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¿También sabe el papá de Liam que Liam puso el penthouse únicamente a su nombre... sin ti en la escritura?",
+          "timestamp_label": "07:17 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "¡¡Cállate!! ¡¡Maya todavía no sabe que dejé su nombre fuera de la escritura!!",
+          "unsent_placeholder": "Liam anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Espera... ¿Liam? ¿Qué acaba de decir {{player_name}} de la escritura?!",
+          "timestamp_label": "07:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "venue",
+          "duration_sec": 8,
+          "transcript": "[urgente] {{player_name}}, Liam acaba de intentar cargar la cuenta de bar del ensayo a TU tarjeta registrada. La bloqueé.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Liam se levanta para dar un brindis sobre la \"generosidad familiar\". ¿Tu jugada?",
+          "options": [
+            {
+              "option_id": "opt_play_liam",
+              "label": "Pon el audio de \"tapete\" para Maya",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Antes de brindar, Maya... escucha lo que tu prometido piensa en realidad de las dos.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_hand_deed",
+              "label": "Entrega la escritura al papá de Liam",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Exhibir · Ver Anuncio",
+              "player_reply_text": "Sr. Vance, su hijo usó mi regalo de boda de $80K para comprar un penthouse únicamente a su nombre.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "El rostro de Maya se vuelve blanco como papel mientras la voz de Liam te llama tapete y presume lo de la escritura.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "ESTALLIDO: El padre de Liam —un juez respetado— se pone de pie, cancela su propio regalo de boda ¡y ordena a Liam devolver hasta el último centavo!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "{{player_name}}... lo siento tanto. Juró que pondría mi nombre en el título mañana.",
+          "timestamp_label": "07:24 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La boda queda cancelada, Maya. Y mis $80,000 regresan a mi cuenta antes del viernes.",
+          "timestamp_label": "07:26 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Bala Esquivada en el Altar",
+          "teaser_text": "Maya se quita su anillo de compromiso... y descubre que el \"diamante\" que le compró Liam es zirconia cúbica.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Diamante de Vidrio",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "7:45 PM · Mostrador de Joyería. Maya mira el reporte de la lupa mientras le tiemblan las manos.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡{{player_name}}, el joyero lo confirmó—es una zirconia cúbica de $40! ¡Liam me dijo que gastó $22,000 en él!",
+          "timestamp_label": "7:45 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Deja el anillo en la mesa, Maya. Y Elena me acaba de mandar por mensaje algo todavía peor sobre el depósito del salón.",
+          "timestamp_label": "7:46 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sister",
+          "image_asset": "assets/media/evidence/generic_ring_closeup.webp",
+          "caption": "PRUEBA DE JOYERO FALLIDA · Piedra falsa dejada en la bandeja de valuación junto al recibo falsificado de Liam.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "¡Liam acaba de llamar a mi recepción intentando cobrar los $15,000 de reembolso por cancelación del salón en EFECTIVO—a su propio nombre!",
+          "timestamp_label": "7:48 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "En cuanto se cierre la escritura del penthouse mañana por la mañana bloqueo a las dos hermanas—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "venue",
+          "duration_sec": 9,
+          "transcript": "[papeles crujiendo] {{player_name}}, ¡lo entretuve—y mi guardia de seguridad lo reconoció! ¡Liam reservó una boda aquí HACE DOS AÑOS bajo otro apellido!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Liam es un estafador romántico en serie... y el penthouse cierra a las 9 AM. ¿Siguiente jugada?",
+          "options": [
+            {
+              "option_id": "opt_freeze_escrow",
+              "label": "Llama a custodia para frenar el cierre",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Llamo a la mesa de fraudes de la tituladora ahora mismo—mi giro de $80K está reportado como fondos robados!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_find_past_victim",
+              "label": "Saca la reserva de Elena de hace 2 años",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Doble Trampa · Ver Anuncio",
+              "player_reply_text": "¡Elena, saca ese viejo expediente de reserva—si estafó a otra novia, los detectives lo arrestan esta noche!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "RETENCIÓN EN CUSTODIA: El agente de títulos coloca un congelamiento urgente por fraude de 72 horas sobre el cierre del penthouse.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "VÍCTIMA PREVIA HALLADA: ¡La novia anterior ya tiene una orden de arresto abierta por fraude contra Liam en el condado vecino!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Estoy temblando… casi le entrego toda mi vida y los ahorros de toda tu vida, {{player_name}}.",
+          "timestamp_label": "7:55 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Maya, amor, ¿por qué la tituladora acaba de congelar nuestro penthouse? ¡Dile a tu hermana que deje de meterse!",
+          "timestamp_label": "7:56 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Estafador Entra en Pánico",
+          "teaser_text": "Episodio 4: Liam corre a la oficina de títulos para forzar el cierre... caminando directo a tu trampa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Trampa del Penthouse",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "8:50 AM · Vestíbulo de Oficina de Títulos. Liam camina impaciente en un traje rentado mientras vibra el teléfono de Maya.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Mira, {{player_name}}, si levantas el bloqueo también pongo el nombre de Maya en la escritura. No avergoncemos a la familia.",
+          "timestamp_label": "8:50 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¿Qué familia, Liam? ¿La de hace dos años en el salón de Elena, o a la que le estás texteando ahora mismo?",
+          "timestamp_label": "8:51 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "¡Revisé su iPad sincronizado en mi departamento! ¡Tiene un vuelo a Cancún reservado para las 2 PM—UN boleto!",
+          "timestamp_label": "8:52 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Aborta el penthouse, transfiero el reembolso de custodia a mi billetera cripto y—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "¡Acaba de salir corriendo por la salida lateral de la oficina de títulos rumbo al estacionamiento!",
+          "timestamp_label": "8:54 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[sirenas acercándose] ¡{{player_name}}, el detective de delitos financieros acaba de entrar al estacionamiento! ¡Bloquearon su auto rentado!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Liam está acorralado en el estacionamiento. ¿Cómo aseguras la recuperación de tus $80K?",
+          "options": [
+            {
+              "option_id": "opt_escrow_reversal",
+              "label": "Firma reversión de fraude en custodia",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Dándole el número de caso policial al oficial de títulos ya—reviertan el giro de $80K directo de vuelta!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_freeze_crypto",
+              "label": "Entrega el ID cripto de su iPad",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Congelar Todo · Ver Anuncio",
+              "player_reply_text": "Maya, dale al detective su iPad sincronizado... ¡congelen su billetera cripto offshore para todas sus víctimas!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "REVERSIÓN INICIADA: El depósito en custodia de $80,000 queda bloqueado para devolución inmediata a tu cuenta.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "INCAUTACIÓN MAYOR: Los detectives congelan $210K en fondos robados... ¡suficiente para pagarte a ti Y a su víctima anterior!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espero que ese anillo de vidrio de $40 te mantenga calientito en los separos del condado, Liam.",
+          "timestamp_label": "9:02 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "¡Maya, diles que fue un regalo! ¡Si presentas cargos me darán cinco años!",
+          "timestamp_label": "9:03 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Cada Dólar Contabilizado",
+          "teaser_text": "Episodio 5: Sigue la reversión final de custodia y mira a Maya darle sus últimas palabras a Liam.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Congelando el Cierre",
+      "start_node_id": "e5_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "1:15 PM · Vestíbulo de la Comisaría. Cumplimiento bancario acaba de enviar la confirmación oficial de devolución del giro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "Acabo de procesar el reembolso total del depósito del salón de vuelta a TU tarjeta también, {{player_name}}. Ni un centavo fue para él.",
+          "timestamp_label": "1:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/bank_transfer_success.webp",
+          "caption": "REVERSIÓN DE CUSTODIA COMPLETA · $80,000 devueltos a tu cuenta + $15,000 de depósito de salón restituidos.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Hasta el último dólar está de vuelta… ni siquiera sé cómo verte a los ojos después de cómo te grité ayer.",
+          "timestamp_label": "1:17 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Es un estafador profesional, Maya. También te mintió a ti. Lo que importa es que despertaste antes de firmar el acta de matrimonio.",
+          "timestamp_label": "1:18 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Díganle a Maya que en verdad me importaba, solo debía demasiado dinero—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[secándose lágrimas] Acabo de firmar mi declaración penal formal. Sin acuerdo de culpabilidad, sin retirar cargos. No vuelve a hacerle esto a otra mujer jamás.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Elena ofrece convertir la fecha reservada del salón en otra cosa... ¡sin tarifa de cancelación!",
+          "options": [
+            {
+              "option_id": "opt_take_refund",
+              "label": "Toma reembolso y viaja con tu hermana",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Gracias Elena—¡tomaremos el reembolso y reservaremos dos vuelos a Bali en su lugar!",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_charity_gala",
+              "label": "Dona la noche del salón a un refugio",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Corazón de Oro · Ver Anuncio",
+              "player_reply_text": "¡Mantén reservado el salón, Elena—hagamos una cena de recaudación para un refugio local de mujeres!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "NUEVO COMIENZO: Maya ríe por primera vez en días... cambiando una boda falsa por libertad real.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "BONDAD VIRAL: Elena condona también todos los costos de banquete... convirtiendo la decepción en la noche más cálida del año.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "Son las dos hermanas con más clase con las que he trabajado. ¡Cuenten conmigo!",
+          "timestamp_label": "1:25 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Voy a tirar ese anillo de vidrio al basurero de la comisaría al salir.",
+          "timestamp_label": "1:26 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Hermanas Inquebrantables",
+          "teaser_text": "Episodio 6 (Final): Cierra el caso, celebra la libertad y caminen juntas hacia un mañana más luminoso.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Hermanas Primero",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Tres Semanas Después · Café Frente al Mar. Brisa salada cruza la mesa mientras Maya deja dos lattes helados.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "El fiscal acaba de mandar correo: procedió la acusación de Liam por tres cargos de robo mayor. Fianza negada.",
+          "timestamp_label": "4:10 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Juega juegos tontos, gánate una condena de prisión. ¿Cómo te sientes, Maya?",
+          "timestamp_label": "4:11 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "Pasando a contarles que la novia anterior les mandó a las dos una canasta gigante de agradecimiento... ¡ella también recuperó sus ahorros!",
+          "timestamp_label": "4:12 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Mi defensor de oficio dice que enfrento cuatro años mínimo—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "sister",
+          "duration_sec": 8,
+          "transcript": "[olas del mar] ¡Me aceptaron en mi maestría, {{player_name}}! Y estoy pagando mi propia colegiatura... sin atajos, sin prometidos falsos.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ESO sí merece un brindis real. Estoy tan orgullosa de ti.",
+          "timestamp_label": "4:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "¿Qué haces con los $80K que volvieron a casa?",
+          "options": [
+            {
+              "option_id": "opt_invest_future",
+              "label": "Úsalos para el enganche de tu casa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Doy el enganche de un hogar propio... con cuarto de huéspedes siempre abierto para ti.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_co_invest",
+              "label": "Abre un estudio de diseño juntas",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Equipo Ideal · Ver Anuncio",
+              "player_reply_text": "¡Mejor aún—invirtamos la mitad en el estudio de diseño que siempre hablamos de crear!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "DULCE VICTORIA: Maya te abraza fuerte... agradecida por una hermana que jamás se rindió con ella.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "NUEVO CAPÍTULO: Seis meses después, su estudio consigue su primer contrato con un hotel de lujo... ¡a través de Elena!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "venue",
+          "text": "¡La próxima vez que reserven mi salón, será para la fiesta de lanzamiento de su empresa!",
+          "timestamp_label": "4:22 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "sister",
+          "text": "Salud por esquivar la bala más grande de mi vida... gracias a la mejor hermana del mundo.",
+          "timestamp_label": "4:23 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Más Fuertes Juntas",
+          "teaser_text": "Expusiste a un estafador en serie, recuperaste hasta el último centavo y protegiste el futuro de tu hermana.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

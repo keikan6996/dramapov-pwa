@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_066",
+  "lang": "ja",
+  "metadata": {
+    "title": "給与台帳の幽霊社員",
+    "subtitle": "社員番号0409はログイン実績ゼロで毎月1万2000ドルを受け取っていた――しかもオペレーション担当VPと同じ自宅住所を共有している。",
+    "genre": "romance",
+    "tags": [
+      "企業ドラマ",
+      "監査",
+      "スリラー"
+    ],
+    "cover_image": "assets/media/covers/story_066.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "vp",
+      "name": "Marcus Cole (運営担当VP)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "hr",
+      "name": "Hannah (人事マネージャー)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "auditor",
+      "name": "Sam (外部監査人)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "社員番号0409",
+      "start_node_id": "n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午後6:40 · 財務フロア。財務リードとしての最初の1週間。給与台帳のたった1行が、あなたの背筋を凍らせました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hannah、「K. Vance」（社員番号0409）って誰ですか？4年間も毎月12,000ドル支払われているのに、入館記録もメール送信歴もゼロなんですけど。",
+          "timestamp_label": "午後6:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "やめて。今すぐその検索クエリを消去して、{{player_name}}。そのレコードはMarcus Cole VPの役員コードでロックされているの。",
+          "timestamp_label": "午後6:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Hannahから{{player_name}}が#0409を開いたと報告があった。今夜中に奴のERPアクセス権を剥奪し、解雇対象としてフラグを立てろ。",
+          "unsent_placeholder": "Marcus Coleがメッセージの送信を取り消しました",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "遅くまで残業かい、{{player_name}}？以前からの顧問契約の件は私に任せておけばいい。今日は帰ってゆっくり休みたまえ。",
+          "timestamp_label": "午後6:44",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 12,
+          "transcript": "[階段室での小声] {{player_name}}、K. Vance はMarcusの義兄よ。#0409に疑問を抱いた前の会計士は、パスワード漏洩の濡れ衣を着せられて24時間以内にクビになったの。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "ERPのセッションが間もなく期限切れになります。まず何を確保しますか？",
+          "options": [
+            {
+              "option_id": "opt_export_csv",
+              "label": "4年分の支払台帳にハッシュを付け書き出す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "48ヶ月分の送金確認書を手に入れた。合計57万6000ドル以上が抜き取られている。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_ping_auditor",
+              "label": "外部監査人へ暗号化された密告を送る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "内部告発 · 広告視聴",
+              "player_reply_text": "Samさん、明日の第3四半期承認前に社員#0409を調べてください。住所がMarcus Coleと一致しています。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "書き出しが完了した3秒後、あなたの画面が点滅しました。「アカウントが停止されました」",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "監査人アラート：外部監査人Samが第3四半期の財務監査を凍結し、午前8:30の抜き打ち検査を設定しました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "受信した、{{player_name}}。明日の朝、Marcusが目の前に差し出す書類には一切署名するな。",
+          "timestamp_label": "午後6:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "午前8:30きっかりに人事懲戒聴聞会を強制招集する。ノートパソコンと社員証を持って来い。",
+          "timestamp_label": "午後6:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "夜明けのロックアウト",
+          "teaser_text": "エピソード2：Marcusは「不正アクセス」を理由にあなたを解雇しようとします――ちょうど監査委員会が部屋へ入ってくるその瞬間に。",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "午前8:30の罠",
+      "start_node_id": "n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "午前8:30 · 第B会議室。Marcusはテーブル越しに退職届を滑らせてよこしました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "自己都合退職書にサインしたまえ、{{player_name}}。そうすれば君の「情報漏洩」を次の転職先に報告するのは見送ってやろう。",
+          "timestamp_label": "午前8:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "サインする前に一つ、Marcus――「K. Vance」はこのフロアで働いているんですか？ぜひお別れの挨拶をしたいので。",
+          "timestamp_label": "午前8:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "Hannah、今すぐここに警備員を呼んで奴のスマホを取り上げろ！",
+          "unsent_placeholder": "Marcus Coleがメッセージの送信を取り消しました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 10,
+          "transcript": "[歩み入りながら] おはようございます、Marcusさん。外部監査です。社員番号0409の銀行送金履歴に関する連邦召喚状を持って参りました。",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "監査官殿、それらの送金を承認したMarcusの4年分の強制上書き指示メールを持っています。",
+          "timestamp_label": "午前8:35",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Marcusが追い詰められました。どうやって事件を完全に決着させますか？",
+          "options": [
+            {
+              "option_id": "opt_hand_ledger",
+              "label": "48ヶ月分の支払CSVをSamに手渡す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "これが48ヶ月分の完全な送金経路です、Samさん。1セント残らずMarcusの自宅住所に送られていました。",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_check_shell",
+              "label": "他に3人いる幽霊社員の存在も暴く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "徹底調査 · 広告視聴",
+              "player_reply_text": "待って――#0410、#0411、#0412も確認してください。幽霊社員は1人だけじゃありませんでした。",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "その場でMarcusの社員証は無効化されました。代わりに警備員が「彼」をエレベーターへと連行していきます。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "230万ドルの不正組織発覚：4人の架空社員すべての給与が、Marcusの海外ペーパーカンパニーへと流し込まれていました！",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "見事な摘発だ、{{player_name}}。取締役会議長が君に暫定財務VPの座を打診したがっているぞ。",
+          "timestamp_label": "午前8:40",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "私の社員証は有効のままにしておいてね、Hannah。綺麗に片付けなきゃいけない帳簿が山ほどあるから。",
+          "timestamp_label": "午前8:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "幽霊は消え去った",
+          "teaser_text": "連行されながら、Marcusが最後に1行だけメッセージを送ってきました。「社員番号0001の持ち主はCEOだ。健闘を祈る」",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "社員番号0001",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午後10:15 · 監査作戦室。Marcusは手錠を掛けられましたが、彼の別れ際のメッセージが部屋全体を凍りつかせました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "{{player_name}}、社員番号0001を検索してみたぞ。従業員年金基金から、6年間毎月欠かさず45,000ドルも引き出されている！",
+          "timestamp_label": "午後10:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "社員たちの年金から300万ドルも抜き取られていたなんて……しかもMarcusはそれがCEOのものだと言ってるんですか？",
+          "timestamp_label": "午後10:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "給与台帳 #0001 · 毎月45,000ドルの定期送金 → 海外ペーパーカンパニー「Apex Executive Trust」。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "みんな――私の人事管理者権限が今取り消された！CEO室が給与金庫システムをロックしたわ！",
+          "timestamp_label": "午後10:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "金庫の強制解除コードを渡せば、検察官が俺の刑期を半分にしてくれるかもしれない――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 9,
+          "transcript": "[プリンターの作動音] 待った！Marcusの弁護士から今暗号化された強制解除キーが送られてきたぞ――奴、CEOに不利な司法取引証人になるつもりだ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "CEOはあなたが#0001に気づいたことを知っています！どうやって年金台帳を守りますか？",
+          "options": [
+            {
+              "option_id": "opt_use_override",
+              "label": "Marcusの鍵で台帳を書き出す",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Samさん、Marcusの強制解除キーを入力して、6年分の給与アーカイブ全体をオフラインへミラーリングしてください！",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_alert_feds",
+              "label": "SECと労働省へリアルタイム送信する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "切り札 · 広告視聴",
+              "player_reply_text": "アーカイブをミラーリングしつつ、ハッシュ値をそのまま労働省の内部公益通報ポータルへアップロードしましょう！",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "アーカイブ確保完了：CEO個人の承認トークンで署名された72ヶ月分の送金記録が、あなたのドライブに保存されました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "連邦保全命令：監督当局が即座に証拠保全命令を発動しました――もうCEOはサーバー1台たりとも触れられません。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "待って……ビル警備アプリが通知してきた。午後10:24に誰かが地下のアーカイブ室を開けたわ！",
+          "timestamp_label": "午後10:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "あそこはCEOが#0001の紙の署名カードを保管している場所だ。今まさにシュレッダーに掛けているはずだぞ。",
+          "timestamp_label": "午後10:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "地下室で唸るシュレッダー",
+          "teaser_text": "エピソード4：紙の証拠が紙吹雪になる前に、地下のアーカイブ室へ急行しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "施錠された人事金庫室",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午後10:32 · 地下B2廊下。スチール扉の向こうから業務用シュレッダーの低く唸る音が響いています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "私の社員証が使えない――B2に入れないわ！それに中でシュレッダーが全開で動いてる！",
+          "timestamp_label": "午後10:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "ドアを壊さないで――廊下のカメラを見て！中から誰が出てくるか押さえられれば、詐欺罪に加えて司法妨害罪も立証できる。",
+          "timestamp_label": "午後10:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "今すぐB2ロビーのライブカメラ映像を引き出す！落ち着いて――姿を見られるなよ！",
+          "timestamp_label": "午後10:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "荷捌き場も確認しろと伝えろ、あそこでCEOの運転手が待っている――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "ドアが今開いた！CEO本人よ、封印された文書保存箱を2つ抱えて貨物用エレベーターへ向かってる！",
+          "timestamp_label": "午後10:36",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[マウスのクリック音] 4Kで捉えたぞ！タイムスタンプ付き、顔も鮮明、「給与記録 2020–2026」とラベルされた箱を抱えて真っすぐ荷捌き場に向かっている！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "CEOが箱を抱えて貨物用エレベーターに乗り込もうとしています！あなたの一手は？",
+          "options": [
+            {
+              "option_id": "opt_call_police_dock",
+              "label": "警察をそのまま荷捌き場へ向かわせる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Samさん、Marcusを逮捕したパトカーを今すぐB2の荷捌き場へ直行させて！",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_lock_freight",
+              "label": "貨物用リフトに緊急ロック呼び戻しをかける",
+              "cost_type": "vip_rewarded",
+              "badge_text": "黒幕 · 広告視聴",
+              "player_reply_text": "Hannah、貨物用リフトの緊急ロビー呼び戻しを押して――そのままフロントデスクの前へ送り届けてあげましょう！",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "現行犯逮捕：CEOの車のトランクが開いたちょうどその時、青い回転灯が荷捌き場を照らし出しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "正面ロビーでの御用：2人の刑事と夜勤スタッフたちの目の前で、メインロビーのエレベーター扉がスライドして開きました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今夜はお持ち帰り残業ですか、社長？監査人たちもその箱の中に何が入っているのかぜひ拝見したいそうですよ。",
+          "timestamp_label": "午後10:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "刑事たちが両方の箱を押収した――#0001の原本署名カードはまだシュレッダーに掛けられていなかったわ！",
+          "timestamp_label": "午後10:44",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "証拠を運ぶ現行犯で逮捕",
+          "teaser_text": "エピソード5：防犯カメラ映像と年金台帳を緊急取締役委員会に提出しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "真夜中のシュレッダー",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前7:45 · 緊急取締役会。社外取締役たちが会議室モニターの周りに集まっています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "すべて裏付けが取れたぞ、{{player_name}}。6年間にわたる幽霊給与、総額324万ドル、そして防犯カメラ映像も再生準備完了だ。",
+          "timestamp_label": "午前7:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "防犯カメラ B2 · 22:36 — 未裁断の#0001給与伝票を抱えてアーカイブ金庫室から出てくるCEO。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "取締役会議長が今思わず息を呑んだわ！CEOの退職金を凍結して、ストックオプションも返還請求するって！",
+          "timestamp_label": "午前7:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "回収した資金は1セント残らず、利息を付けて従業員年金基金の補填に充てるべきです。",
+          "timestamp_label": "午前7:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "結局、CEOと俺は同じ刑務所の同室になりそうだな――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[会議室の拍手] 取締役会が年金基金への「全額弁済」を承認した！それに、君に内部監査部門の統括を任せたいと話し合っているぞ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "取締役会から最高監査責任者（CAO）の職を提示されました！どんな条件を出しますか？",
+          "options": [
+            {
+              "option_id": "opt_direct_board",
+              "label": "CEOではなく取締役会へ直属する権限",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "お受けします――条件は1つ。内部監査はCEOではなく、厳格に独立した取締役会のみに直属することです。",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_promote_hannah",
+              "label": "独立憲章＋Hannahの人事VP昇進",
+              "cost_type": "vip_rewarded",
+              "badge_text": "真の味方 · 広告視聴",
+              "player_reply_text": "独立した報告ラインに加え――完全な給与透明化ツールを与えた上でHannahを人事VPに昇進させてください。",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "定款改正：取締役会は全会一致で、独立した監査権限を会社定款に明文化して固定しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "最強チーム誕生：Samが恒久的な外部顧問契約に署名する中、Hannahは目に涙を浮かべて承諾しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "400人以上の社員たちに今、年金基金が100%全額元通り回復したというメールが届いたわ。",
+          "timestamp_label": "午前7:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "社員番号0409と社員番号0001は、給与台帳から永久に公式削除されました。",
+          "timestamp_label": "午前7:57",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "残った幽霊はゼロ",
+          "teaser_text": "エピソード6（フィナーレ）：最高監査責任者としての新しいオフィスへ足を踏み入れ、クリーンな会社の門出に乾杯しましょう。",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "クリーンな帳簿",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "1週間後 · 18階監査スイート。曇りひとつない台帳ダッシュボードを朝の陽光が温かく照らしています。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "最初のクリーンな給与サイクルが今完了したよ！異常値ゼロ、幽霊IDゼロ――それにフロアの士気も最高潮！",
+          "timestamp_label": "午前9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "真実だけを語るスプレッドシートを見るのは、本当に気分がいいね。",
+          "timestamp_label": "午前9:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "検察官からの続報だ。Marcusと元CEOの双方が有罪を認めた。年金信託への全額弁済も完了したそうだ。",
+          "timestamp_label": "午前9:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "若手アナリストに給与バッチ04を見せるべきではなかったな――",
+          "unsent_placeholder": "メッセージの送信が取り消されました",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 8,
+          "transcript": "[廊下からの歓声] {{player_name}}、倉庫チームとエンジニアチームが、300人の署名入りの巨大な感謝カードをあなたのドアの外に置いていったよ！",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "そのカードにある一つひとつの署名こそが、私たちが不正を見て見ぬふりしなかった理由だよ。",
+          "timestamp_label": "午前9:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "最高監査責任者としての最初の全社通達：",
+          "options": [
+            {
+              "option_id": "opt_open_hotline",
+              "label": "匿名倫理ホットラインを開設する",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "暗号化された公益通報ホットラインを開設します――報復を一切恐れることなく誰もが不正を報告できるように。",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_live_pension",
+              "label": "全社員に年金リアルタイム追跡アプリ配布",
+              "cost_type": "vip_rewarded",
+              "badge_text": "絶対の信頼 · 広告視聴",
+              "player_reply_text": "全社員に24時間いつでも自分の年金拠出額を確認できるリアルタイム・ダッシュボードを提供します。",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "企業文化の転換：信頼が一晩で戻り――会社はその年のうちに「ベスト・ワークプレイス」を受賞しました。",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "黄金基準：経済メディアはあなたのオープン台帳モデルを、企業統治の未来形として称賛しました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "下の階のコーヒーはおごるよ、チーフ。君はその一滴一滴まで値する働きをした。",
+          "timestamp_label": "午前9:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今降りていくね――この先もずっと、帳簿を曇りなく綺麗に保ち続けよう。",
+          "timestamp_label": "午前9:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "フィナーレ · 台帳の守護者たち",
+          "teaser_text": "あなたは給与台帳の幽霊を追い払い、400人分の年金を守り抜き、揺るぎない誠実さの基準を築き上げました。",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

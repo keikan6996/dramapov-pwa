@@ -1,0 +1,1188 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_146",
+  "lang": "es",
+  "metadata": {
+    "title": "La lista de supervivencia del Departamento 4B",
+    "subtitle": "Regla 1: Cuando el vecino de arriba tire canicas a las 2:15 AM, golpea de vuelta dos veces. Excepto que mi edificio solo tiene 4 pisos.",
+    "genre": "thriller",
+    "tags": [
+      "Reglas de las 3 AM",
+      "Departamento",
+      "Terror"
+    ],
+    "cover_image": "assets/media/covers/story_146.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · 4B",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "prev_tenant",
+      "name": "Eli · Anterior 4B",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "landlord",
+      "name": "Sr. Vance · Propietario",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Canicas en la azotea",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:15 AM · Primera noche en el Departamento 4B. CLAC-CLAC-CLAC. Canicas de vidrio rebotan por el techo sobre tu cama.",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Oye {{player_name}}, yo viví en el 4B antes que tú. ¿Ya empezaron las canicas? ¡Golpea de vuelta DOS VECES en el techo... nunca tres veces!",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¿quién te dio mi número? ¡Y estamos en el último piso! ¡NO HAY 5.º piso arriba del 4B!",
+          "timestamp_label": "2:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[susurrando, agua goteando] \"¡Sé que no hay 5.º piso! ¡Solo la azotea de concreto y el tinaco! ¡Golpea dos veces AHORA antes de que baje por el ducto!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "Ignora cualquier mensaje del inquilino anterior. Se mudó de golpe.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "El sonido de algo rodando se detiene justo arriba de tu almohada:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e1_free",
+              "label": "Golpea dos veces el techo con la escoba",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Toc... toc. Bueno, ¡el ruido de rodar se detuvo por completo!",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e1_vip",
+              "label": "Escribe al Sr. Vance por ruido en techo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Sr. Vance, ¿por qué alguien camina por la azotea arriba del 4B a las 2:15 AM?",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Bien! Ahora revisa bajo tu puerta principal: dejé la Regla 2 y la Regla 3 pegadas dentro de la tapa de la mirilla.",
+          "timestamp_label": "2:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡NO confíes en el Sr. Vance! Si te pide la renta en persona después de medianoche, ¡fíjate si proyecta sombra!",
+          "timestamp_label": "2:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "SSSHK. Una nota amarilla doblada se desliza en silencio bajo tu puerta principal.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Sr. Vance · Vestíbulo",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡No leas esa nota, {{player_name}}! Revisa la cámara del pasillo del 4.º piso... ¡no hay nadie parado afuera de tu puerta!",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... si no hay nadie en el pasillo, ¿¡entonces quién acaba de deslizar esta nota bajo mi puerta!?",
+          "timestamp_label": "2:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "La nota de la nada",
+          "teaser_text": "Siguiente: El CCTV del pasillo prueba que el corredor estaba completamente vacío.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Regla 2: Nunca bebas agua de la llave",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:20 AM · Desdoblas la nota amarilla húmeda: \"REGLA 2: NO bebas agua de la llave después de las 2:00 AM. Sabe a óxido.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¿Acabas de abrir el CCTV del pasillo? Bien... ahora revisa tu tarja de la cocina. ¿El grifo gotea café oscuro?",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Sí! El agua de la llave huele metálica y podrida... espera, ¿¡por qué el pasillo está totalmente vacío en el CCTV!?",
+          "timestamp_label": "2:20 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[molesto, llaves tintineando] \"{{player_name}}, ¡son solo tuberías viejas! Vuelve a dormir... ya subo a darte el recibo de tu depósito de garantía.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "No debió haber abierto el tinaco de la azotea.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "player",
+          "image_asset": "assets/media/evidence/generic_cctv_hallway_empty.webp",
+          "caption": "CCTV del corredor del 4.º piso a las 02:18 — completamente vacío justo cuando una nota de papel se deslizó bajo mi puerta.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "Pasos pesados suben haciendo eco por las escaleras hacia el Piso 4:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e2_free",
+              "label": "Pon el cerrojo y apaga todas las luces",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Puse el cerrojo y apagué las luces. ¡Va pasando justo frente al 4A!",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e2_vip",
+              "label": "Pregunta a Eli qué hay en el tinaco",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Eli, el Sr. Vance acaba de anular algo sobre el tinaco... ¿¡qué hay ahí arriba!?",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Quédate en silencio absoluto! Si toca, NO respondas... ¡está comprobando si ya descubriste por qué el 4B es tan barato!",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Porque yo sigo dentro del tinaco de la azotea, {{player_name}}. El Sr. Vance cerró la escotilla conmigo adentro hace 8 meses.",
+          "timestamp_label": "2:23 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "Una llave raspa en tu cerradura principal desde afuera... detenida solo por la cadena de seguridad.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Sr. Vance · Afuera del 4B",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¿Sigues despierto, {{player_name}}? Quita la cadena... solo necesito revisar la rejilla del techo.",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡De ninguna manera! ¿¡Por qué el agua que gotea de mi techo huele a cloro y sangre!?",
+          "timestamp_label": "2:26 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Encerrado en el tinaco",
+          "teaser_text": "Siguiente: Eli revela la Regla 3... y cómo el Sr. Vance oculta sus crímenes.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Regla 3: El inquilino desaparecido",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:30 AM · Buscas el nombre de Eli en tu celular. El primer resultado es un cartel de persona desaparecida de hace 8 meses.",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Encontré el libro contable oculto del Sr. Vance en el clóset del 4B: lleva años robando identidades de inquilinos. Cuando lo confronté en la azotea, me empujó adentro.",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... si llevas 8 meses muerto, ¿¡cómo me estás escribiendo!?",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[agua chapoteando, eco inquietante] \"Mi celular resistente al agua sigue en el bolsillo de mi abrigo al fondo del tanque... ¡y las canicas que oíste eran mis nudillos golpeando el piso de acero!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "Voy a cortar el Wi-Fi del edificio y el interruptor general de luz ahora.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "Las luces de tu departamento se apagan de golpe... oscuridad total:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e3_free",
+              "label": "Llama en silencio por datos móviles",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Llamando al 911 con datos celulares ahora mismo... ¡reportando un cuerpo en el tinaco de la azotea!",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e3_vip",
+              "label": "Busca el libro oculto en el clóset de 4B",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Encontré una tabla suelta en el piso dentro del clóset... ¡hay una bolsa de plástico llena de identificaciones!",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Baja la voz! ¡El Sr. Vance está subiendo las escaleras hacia la escotilla de la azotea para ocultar la evidencia!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Toma foto a cada identificación! ¡Esos son todos los inquilinos anteriores del 4B que \"se mudaron de golpe\"!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "La pesada puerta de acero de la azotea se azota justo encima de tu techo.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Sr. Vance · Azotea",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "Escuché tu celular vibrar a través del piso, {{player_name}}. ¡Entrega ese libro contable o te unirás a Eli!",
+          "timestamp_label": "2:38 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Demasiado tarde, Sr. Vance... ¡la policía ya viene en camino!",
+          "timestamp_label": "2:38 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Corte de luz en el Piso 4",
+          "teaser_text": "Siguiente: El Sr. Vance intenta vaciar el tinaco de la azotea antes de que llegue la policía.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "El desagüe de la azotea",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:42 AM · Las tuberías gimen con violencia dentro de tus paredes cuando el tinaco de la azotea empieza a vaciarse.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Está intentando vaciar el tanque y sellar la escotilla! ¡No dejes que cierre con llave la escalera de la azotea desde adentro!",
+          "timestamp_label": "2:42 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ya salgo al pasillo... espera, ¿puedo alcanzar la escalera de incendios desde mi ventana?",
+          "timestamp_label": "2:42 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[llave inglesa metálica golpeando] \"¡Quédate dentro del 4B, {{player_name}}! ¡Si sales a esta azotea bajo la lluvia, te vas a resbalar!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "landlord",
+          "text": "La policía no revisará un tanque sellado sin una orden.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "Sirenas hacen eco a lo lejos, a 6 cuadras de distancia:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e4_free",
+              "label": "Lanza la bolsa de IDs hacia la calle",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Estoy haciéndole señas a la patrulla desde mi ventana con las identificaciones robadas!",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e4_vip",
+              "label": "Sube la escalera de incendios y graba",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Estoy subiendo en silencio por la escalera de incendios... ¡mi cámara está grabando!",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Sí! ¡Los oficiales acaban de ver tu linterna! ¡Están derribando la puerta del vestíbulo!",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Cuidado... ¡la cámara de la azotea acaba de captar DOS siluetas paradas junto al tanque!",
+          "timestamp_label": "2:46 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "Un relámpago parte el cielo sobre la azotea. Junto al Sr. Vance, una figura pálida y empapada se alza despacio del tinaco abierto.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · Tinaco de azotea",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Mira la cámara de seguridad de la azotea, {{player_name}}. El Sr. Vance no se va a ningún lado.",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dios mío... ¡algo acaba de agarrar su llave inglesa desde adentro del tanque!",
+          "timestamp_label": "2:50 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Dos siluetas en la azotea",
+          "teaser_text": "Siguiente: La cámara de seguridad de la azotea capta el enfrentamiento imposible.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Las siluetas de la azotea",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:58 AM · Tu celular descarga la foto de movimiento de la azotea justo cuando botas policiales retumban subiendo las escaleras del 4.º piso.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Dejó caer la llave maestra justo junto a la escotilla del techo. ¡Dile a los oficiales que miren dentro del tanque primero!",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¿¡quién es la segunda silueta parada justo frente al Sr. Vance en la cámara!?",
+          "timestamp_label": "2:58 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "landlord",
+          "duration_sec": 8,
+          "transcript": "[gritando aterrorizado] \"¡¡QUÍTENMELO DE ENCIMA!! ¡¡ELI ESTÁ MUERTO... ¿¡CÓMO ESTÁ SOSTENIENDO CERRADA LA ESCOTILLA?!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "Porque prometí que el próximo inquilino del 4B sobreviviría.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n05b_img"
+        },
+        {
+          "id": "e5_n05b_img",
+          "type": "image",
+          "sender_id": "prev_tenant",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "Cámara de seguridad del tinaco de azotea a las 02:59 — dos siluetas oscuras paradas inmóviles junto a la escotilla de acero.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "Los oficiales de policía llegan a tu descanso del 4.º piso:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e5_free",
+              "label": "Señálales directo la puerta de la azotea",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Oficiales! ¡Está en la azotea junto al tinaco... revisen dentro del tanque!",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e5_vip",
+              "label": "Entrega los IDs robados y foto de CCTV",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Aquí están las identificaciones robadas del 4B y la foto de la cámara de azotea... ¡rápido!",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "¡Los oficiales irrumpen en la azotea: el Sr. Vance está acurrucado en el concreto mojado gritándole a un tinaco vacío!",
+          "timestamp_label": "3:01 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "El sargento toma la evidencia y esposa al Sr. Vance en el acto... ¡y luego alumbra hacia adentro del tanque!",
+          "timestamp_label": "3:01 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "La lluvia cae dentro del tanque abierto de acero. Al fondo yace un celular resistente al agua intacto... con la pantalla todavía encendida.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "landlord",
+          "caller_label": "Comisaría de policía · Actualización",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "El Sr. Vance acaba de confesarlo todo en la patrulla: está rogando que lo encierren en una celda lejos de la lluvia.",
+          "timestamp_label": "3:04 AM",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... si el celular de Eli estuvo al fondo del tanque todo este tiempo, ¿¡cómo seguía teniendo 100% de batería!?",
+          "timestamp_label": "3:04 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "100% de batería bajo el agua",
+          "teaser_text": "Siguiente: Queda una última regla al reverso de la nota amarilla.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "El reverso de la nota amarilla",
+      "start_node_id": "e6_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "3:12 AM · De vuelta dentro del 4B para empacar tu maleta, volteas la húmeda lista amarilla de supervivencia.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Mira la última línea, {{player_name}}. Siempre hubo una Regla 4.",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dice: \"REGLA 4: Una vez abierto el tanque, nunca mires atrás hacia el 4B al salir.\"",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[suspiro suave y en paz] \"Porque una vez que sale a la luz la verdad, el edificio por fin suelta a todos los atrapados aquí.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "Gracias por haber golpeado dos veces de vuelta.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Tu maleta está cerrada junto a la puerta principal abierta:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e6_free",
+              "label": "Sal directo sin mirar hacia atrás",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Descansa en paz, Eli. Ya salgo ahora.",
+              "next_node_id": "e6_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e6_vip",
+              "label": "Deja una nota de gracias en la barra",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Escribí \"Gracias por salvarme\" en el papel amarillo y lo dejé junto a la puerta.",
+              "next_node_id": "e6_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Al pisar la calle mojada, las luces del 4B parpadean suavemente dos veces... como una despedida.",
+          "timestamp_label": "3:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Una brisa tibia hace crujir la nota amarilla sobre la barra cuando cierras la puerta detrás de ti.",
+          "timestamp_label": "3:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_merge"
+        },
+        {
+          "id": "e6_n08_merge",
+          "type": "narrator",
+          "text": "Cinta forense sella el acceso a la azotea. Tu chat con \"Eli · Antiguo 4B\" se desvanece a \"Desconectado\".",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_call"
+        },
+        {
+          "id": "e6_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · Señal final",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e6_n10",
+          "on_decline_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Señal perdida a las 03:19. Forenses ubicaron a la familia de Eli y devolvieron sus pertenencias.",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dos golpes me salvaron la vida esta noche. Jamás volveré a rentar un departamento de último piso.",
+          "timestamp_label": "3:19 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Regla 4 cumplida",
+          "teaser_text": "Final a continuación: El titular de la mañana sobre el Departamento 4B.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 7
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "title": "La mañana después del 4B",
+      "start_node_id": "e7_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e7_n01",
+          "type": "narrator",
+          "text": "6:30 AM · La luz del sol entra en la sala de tu amigo. Una alerta de noticias locales vibra en tu pantalla.",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e7_n02"
+        },
+        {
+          "id": "e7_n02",
+          "type": "text",
+          "sender_id": "landlord",
+          "text": "Alerta de noticias: \"Casero arrestado tras descubrir inquilino caso sin resolver de hace 8 meses en tinaco de azotea.\"",
+          "timestamp_label": "6:30 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n03"
+        },
+        {
+          "id": "e7_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... mi celular acaba de recibir un mensaje programado del número de Eli, enviado hace 8 meses.",
+          "timestamp_label": "6:30 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e7_n04"
+        },
+        {
+          "id": "e7_n04",
+          "type": "voice_note",
+          "sender_id": "prev_tenant",
+          "duration_sec": 8,
+          "transcript": "[voz clara y cálida] \"Si alguien se muda alguna vez al 4B y oye canicas a las 2:15, golpea dos veces. Cuídate.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n05"
+        },
+        {
+          "id": "e7_n05",
+          "type": "unsent_message",
+          "sender_id": "prev_tenant",
+          "text": "Las canicas jamás volverán a rodar por ese techo.",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e7_n06_choice"
+        },
+        {
+          "id": "e7_n06_choice",
+          "type": "choice",
+          "prompt": "Respiras hondo el aire fresco de la mañana:",
+          "options": [
+            {
+              "option_id": "opt_story_146_e7_free",
+              "label": "Archiva el chat con todo respeto",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Adiós, Eli. No te olvidaremos.",
+              "next_node_id": "e7_n07a"
+            },
+            {
+              "option_id": "opt_story_146_e7_vip",
+              "label": "Dona el depósito a la familia de Eli",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Acabo de transferir el depósito reembolsado a la mamá de Eli.",
+              "next_node_id": "e7_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e7_n07a",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "La pantalla de tu celular se atenúa en paz. El terror de las 2:15 AM por fin terminó.",
+          "timestamp_label": "6:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n07b",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "La mamá de Eli responde llorando de gratitud: \"Gracias por traer a mi hijo a casa.\"",
+          "timestamp_label": "6:32 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e7_n08_merge"
+        },
+        {
+          "id": "e7_n08_merge",
+          "type": "narrator",
+          "text": "El edificio 4B queda clausurado y desalojado de forma permanente. La lista de supervivencia ya no hace falta.",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n09_call"
+        },
+        {
+          "id": "e7_n09_call",
+          "type": "incoming_call",
+          "caller_id": "prev_tenant",
+          "caller_label": "Eli · Desconectado para siempre",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e7_n10",
+          "on_decline_node_id": "e7_n10"
+        },
+        {
+          "id": "e7_n10",
+          "type": "text",
+          "sender_id": "prev_tenant",
+          "text": "Caso cerrado. Las 4 reglas obedecidas.",
+          "timestamp_label": "6:35 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e7_n11"
+        },
+        {
+          "id": "e7_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La próxima vez que una renta parezca demasiado buena para ser verdad, revisaré primero la azotea.",
+          "timestamp_label": "6:35 AM",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e7_n12_cliff"
+        },
+        {
+          "id": "e7_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Sobreviviste al Departamento 4B",
+          "teaser_text": "Terminaste \"La lista de supervivencia del Departamento 4B\". Explora más terror de reglas a las 3 AM.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

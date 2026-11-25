@@ -1,0 +1,1018 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_028",
+  "lang": "hi",
+  "metadata": {
+    "title": "खटकते हुए पाइप को जवाब मत देना",
+    "subtitle": "हर रात 2:45 बजे, कोई रेडिएटर पाइप पर तीन बार खटकता है। कभी पलटकर मत खटकना।",
+    "genre": "thriller",
+    "tags": [
+      "रात 3 बजे",
+      "अपार्टमेंट",
+      "अलौकिक"
+    ],
+    "cover_image": "assets/media/covers/story_028.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (आप)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Ben (नीचे Apt 2B)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "प्लंबिंग शाफ्ट",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "सूत्रधार",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "तीन धातु की खटक",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "रात 2:45 · टन। टन। टन। आपके बिस्तर के बगल में लोहे के पाइप से तीन तेज़ खटक गूँजती हैं।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, प्लीज़ बताओ कि तुमने अभी पाइप पर पलटकर खटक नहीं मारी!!",
+          "timestamp_label": "रात 2:45",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "जो भी पाइप ठीक कर रहा है उसे चुप कराने के लिए मैंने दो बार खटकाया! क्यों, क्या गड़बड़ है?",
+          "timestamp_label": "रात 2:46",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "मुझे तीसरी मंज़िल पर बुलाने के लिए शुक्रिया।",
+          "unsent_placeholder": "यह message unsent किया गया",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "मेरे भाई ने पिछले मंगलवार पलटकर खटकाया था! अगली सुबह प्लंबर को बाथरूम के नाले के पास सिर्फ उसकी चप्पलें मिलीं!",
+          "timestamp_label": "रात 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[खोखली धातु की खुरच] ...वापस दो खटक... अब {{player_name}} तक ऊपर चढ़ रहा हूँ...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "बेडरूम के पाइप पर खटकना रुक जाता है—और ठीक आपके बाथरूम के फर्श के नाले के नीचे फिर शुरू हो जाता है।",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "बाथरूम ड्रेन कवर पर भारी वज़न रखें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "नाले पर भारी बाल्टी रख रही हूँ!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "नाले में खौलता नमक वाला पानी डालें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "सीक्रेट · Ad देखें",
+              "player_reply_text": "अभी खौलता नमक का पानी डाल रही हूँ!",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "भारी बाल्टी टाइल से एक इंच ऊपर उठती है—नीचे से लंबी पीली उँगलियों द्वारा धकेली हुई।",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "राज़ खुला: शाफ्ट के नीचे एक गीली चीख गूँजती है। Ben के लापता भाई की एक सोने की अंगूठी उछलकर टाइल्स पर आ गिरती है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "यह अब छत के वेंट्स से रेंग रहा है! मुझे अपने लैंप के ठीक ऊपर गीले थपथपाने की आवाज़ सुनाई दे रही है!",
+          "timestamp_label": "रात 2:49",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "अंजान · गूँजती लाइन",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "केवल टपकता पानी—और आपकी ठीक दिल की धड़कन के साथ ताल मिलाती तीन लयबद्ध दस्तक।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "आप कॉल काटती हैं। तुरंत, आपके बाथरूम सिंक का नल अपने आप खुल जाता है, और गाढ़ा जंग लगा पानी बहने लगता है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "वह तीसरी मंज़िल तक पहुँच गया",
+          "teaser_text": "एपिसोड 2: बाथरूम के दरवाज़े का हैंडल अंदर से धीरे-धीरे घूमता है।",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "पानी के शाफ्ट के अंदर",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "रात 2:51 · बाथरूम के दरवाज़े के नीचे से जंग लगा पानी रिसता है। Ben के घबराए हुए texts से आपका phone चमकता है।",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, बिल्डिंग के पुराने केयरटेकर ने मुझे नियम बताया था: वह सूखा नमक पार नहीं कर सकता! किचन से नमक उठाओ!",
+          "timestamp_label": "रात 2:51",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "मेरी किचन ठीक बाथरूम के दरवाज़े के पार है! शॉवर स्टॉल के अंदर कोई गुनगुना रहा है!",
+          "timestamp_label": "रात 2:52",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 8,
+          "transcript": "[शॉवर का पर्दा सरक कर खुलता है] ...तुमने दो बार खटकाया था, {{player_name}}। इसका मतलब दो रातें साथ...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "अपने सिर के ऊपर वेंटिलेशन जाली की तरफ देखो।",
+          "unsent_placeholder": "यह message unsent किया गया",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "मैं क्रोबार लेकर तुम्हारे मेन दरवाज़े के बाहर हूँ! चेन खोलो और बाहर भागो!",
+          "timestamp_label": "रात 2:54",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "बाथरूम का दरवाज़ा धमाके से खुलता है जब Ben आपके मेन दरवाज़े पर धक्का मारता है।",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "मेन दरवाज़े की कुंडी की तरफ लपकें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "अभी दरवाज़ा खोल रही हूँ!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "लोहे के फायर-होज़ पाइप पर तीन बार खटकें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "सीक्रेट · Ad देखें",
+              "player_reply_text": "इसे विदाई की दस्तक दे रही हूँ!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "आप झटके से दरवाज़ा खोलकर उजले गलियारे में निकलती हैं—Ben आपकी बाँह पकड़ता है और आपके पीछे दरवाज़ा धड़ाम से बंद कर देता है।",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "राज़ खुला: बहता हुआ पानी तुरंत रुक जाता है। नीचे बेसमेंट के पानी के गड्ढे तक एक भारी छपाक गूँजती है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "आप सीढ़ियों में साँस सँभालती हैं। Ben का phone बजता है—उसके लापता भाई के नंबर से एक मिस्ड कॉल।",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Ben (ठीक आपके बगल में खड़ा)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Ben का phone उसकी जेब में है—फिर भी स्क्रीन दिखाती है कि वह आपको कॉल कर रहा है। एक गीली आवाज़ फुसफुसाती है: \"अपने जूते देखो।\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "आप कॉल काटती हैं। सीढ़ियों के नीचे से, गीले नंगे पैरों के निशान सीधे उस मंज़िल तक आते हैं जिस पर आप खड़ी हैं।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "कभी पलटकर मत खटकना",
+          "teaser_text": "सीज़न फ़िनाले · कल रात 2:45 बजे, आपके नए होटल के कमरे का पाइप खटकना शुरू कर देता है।",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "होटल कमरा 404",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "रात 2:45 · दो मील दूर एक होटल के कमरे में भी, बाथरूम का रेडिएटर पाइप तीन तेज़ धातु की धड़कनें खटकता है: टन। टन। टन।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, मैंने तुमसे कहा था पलटकर मत खटकना! एक बार तुम जवाब दो, तो यह शहर की मेन पानी लाइन के ज़रिए तुम्हारी आवाज़ का नक्शा बना लेता है!",
+          "timestamp_label": "रात 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ben, मैं एक होटल में हूँ! तुम्हारे अपार्टमेंट के प्लंबिंग शाफ्ट के अंदर की कोई चीज़ नगरपालिका के पाइपों से मेरा पीछा कैसे कर सकती है?!",
+          "timestamp_label": "रात 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "बेसमेंट यूटिलिटी कॉरिडोर · रात 2:45 बजे जंग लगा वॉटर मेन वॉल्व पूरा खुला।",
+          "blur_until_tap": true,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "टप। टप। टप। आपके होटल के बाथरूम के दरवाज़े के नीचे से ठंडा जंग-रंग का पानी रिसता है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "तुमने पलटकर खटकाया था, {{player_name}}। अब मुझ पर तुम्हारी तीन खटक उधार हैं—शाफ्ट के अंदर से।",
+          "timestamp_label": "रात 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "player",
+          "text": "रुको... जब Ben पिछले महीने ही 2B में आया था, तो उसे ठीक रात 2:45 बजे का नियम कैसे पता था?",
+          "unsent_placeholder": "यह message unsent किया गया",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[गूँजती धातु की खटक] \"तीन खटक का मतलब है मैं तुम्हारी मंज़िल पर चढ़ रहा हूँ। बाथरूम का दरवाज़ा मत खोलना।\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "होटल के बाथरूम का हैंडल ज़ोर-ज़ोर से खड़कने लगता है।",
+          "options": [
+            {
+              "option_id": "opt_e3_leave_hotel",
+              "label": "कोट उठाकर लॉबी की तरफ भागें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "मैं कमरा 404 से भागकर निकल रही हूँ—Ben, मुझसे बाहर मिलो!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_shut_valve",
+              "label": "होटल के कमरे का पानी वॉल्व बंद करें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · रणनीतिक",
+              "player_reply_text": "मैं सिंक के नीचे वाला कमरे का मेन शटऑफ वॉल्व बंद कर रही हूँ!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "लिफ्ट मत लेना—सीढ़ियों से जाना! मैं पहले ही तुम्हारे होटल की तरफ गाड़ी चला रहा हूँ!",
+          "timestamp_label": "रात 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "खटकना तुरंत बंद हो गया?! कमाल है—वह बहते पानी के दबाव से सफ़र करता है!",
+          "timestamp_label": "रात 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "रुको—Ben ने अभी Apt 2B के बेसमेंट से text किया: उसे मेन पाइप में फँसा हुआ एक पीतल का लॉकेट मिला है।",
+          "timestamp_label": "रात 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "मेन पाइप के अंदर।",
+          "teaser_text": "एपिसोड 4: वॉटर मेन के अंदर फँसा लॉकेट उजागर करता है कि असल में मदद के लिए कौन खटका रहा था।",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "रात 2:45 पर मोर्स कोड",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "रात 3:05 · पुराने अपार्टमेंट बिल्डिंग के बाहर Ben की कार। वह बेसमेंट के ट्रैप से निकाला गया एक धूमिल पीतल का लॉकेट ऊपर उठाता है।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "खटक को फिर से सुनो, {{player_name}}! तीन छोटी, तीन लंबी, तीन छोटी—यह कोई श्राप नहीं था! यह S-O-S है!",
+          "timestamp_label": "रात 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "SOS?! रुको... बिल्डिंग के बंद हो चुके पानी के टैंक शाफ्ट के अंदर कोई फँसा हुआ है?!",
+          "timestamp_label": "रात 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "पाइप में नहीं—2014 में मेरी बहन सुनसान सब-बेसमेंट के कुएँ में गिर गई थी और किसी ने उसकी खटक नहीं सुनी!",
+          "timestamp_label": "रात 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "आपका phone बजता है—बिल्डिंग का 2014 का मेंटेनेंस मैप Apt 2B के पीछे ईंटों से बंद किए गए एक सब-बेसमेंट को दिखाता है।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "मेरे दादाजी वही प्लंबर थे जिन्होंने सब-बेसमेंट सील किया था, {{player_name}}। शर्मिंदगी की वजह से उन्होंने मुझसे कहा था कभी पलटकर मत खटकना!",
+          "timestamp_label": "रात 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "वह बारह सालों से रात 2:45 बजे SOS खटका रही है इस इंतज़ार में कि कोई जवाब दे।",
+          "unsent_placeholder": "यह message unsent किया गया",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[धीमी, काँपती खटक] \"टन-टन-टन... प्लीज़... मेरी माँ को बताओ मैं कहाँ हूँ...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "बेसमेंट यूटिलिटी दरवाज़े के बाहर Ben आपको एक टॉर्च थमाता है।",
+          "options": [
+            {
+              "option_id": "opt_e4_open_utility",
+              "label": "Ben के साथ बेसमेंट शाफ्ट में नीचे जाएँ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "चलो सब-बेसमेंट हैच खोलते हैं और पुलिस को बुलाते हैं, Ben।",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_tap_sos_back",
+              "label": "पाइप पर \"मदद आ रही\" वापस खटकाएँ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · हिम्मत",
+              "player_reply_text": "मैं उसे यह बताने के लिए एक बार वापस खटका रही हूँ कि हमने उसे सुन लिया—चलो!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "पुलिस पहले ही रास्ते में है—पार्क करने से पहले मैंने डिस्पैच को कॉल कर दिया था!",
+          "timestamp_label": "रात 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "तेज़ खड़खड़ाहट तुरंत रुक गई! पाइप से बस एक कोमल, राहत भरी खनक आई।",
+          "timestamp_label": "रात 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Apt 2B के बाहर हॉलवे कैम देखो—पुलिस की टॉर्च की रोशनी पहले ही बेसमेंट की सीढ़ियों पर घूम रही है।",
+          "timestamp_label": "रात 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "सब-बेसमेंट का हैच।",
+          "teaser_text": "एपिसोड 5: पुलिस वॉटर मेन के पीछे 2014 का सीलबंद हैच तोड़कर खोलती है।",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "सीलबंद सब-बेसमेंट",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "रात 3:30 · Apt 2B के बाहर हॉलवे कैमरे पर लाल-नीली पेट्रोल लाइट्स चमकती हैं जब अफसर लोहे का हैच उखाड़कर खोलते हैं।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "उन्हें वहाँ नीचे उसका बैकपैक और ID मिल गए, {{player_name}}! 2014 का लापता-व्यक्ति केस आखिरकार सुलझ गया!",
+          "timestamp_label": "रात 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Ben, हमारे बगल वाला रेडिएटर पाइप देखो—जंग वाला पानी रुक गया, और तापमान बिल्कुल सामान्य है।",
+          "timestamp_label": "रात 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "रात 3:30 हॉलवे कैम · Apt 2B के बाहर — नए खोले गए यूटिलिटी हैच को सुरक्षित करते अफसर।",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "प्लंबिंग शाफ्ट: एक हल्की, आखिरी धातु की खनक—फिर पूरा सन्नाटा।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "बारह साल तक रात 2:45 बजे दस्तक... और वह बस अपनी माँ के पास घर जाना चाहती थी।",
+          "timestamp_label": "रात 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "भागने के बजाय सुनने की हिम्मत दिखाने के लिए शुक्रिया।",
+          "unsent_placeholder": "यह message unsent किया गया",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[कोमल, घुलती गूँज] \"शुक्रिया... अब कोई अंधेरा नहीं...\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "अफसर पूछते हैं कि क्या आप अभी अपना बयान देना चाहती हैं।",
+          "options": [
+            {
+              "option_id": "opt_e5_give_statement",
+              "label": "डिटेक्टिव्स को पीतल का लॉकेट सौंपें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "यह रहा ट्रैप में मिला लॉकेट, अफसर। इसे उसकी मम्मी को दे दीजिए।",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_thank_ben",
+              "label": "2014 का सच बताने को Ben को शुक्रिया कहें",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · माफ़ी",
+              "player_reply_text": "आज रात तुमने सही काम किया, Ben। तुम्हारे दादाजी का राज़ यहीं खत्म होता है।",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "डिटेक्टिव ने बताया उसकी माँ बारह साल से तलाश कर रही थीं। तुमने उन्हें सुकून दे दिया।",
+          "timestamp_label": "रात 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "मुझे आखिरकार लग रहा है कि मैं बिना डर के Apt 2B में सो सकता हूँ।",
+          "timestamp_label": "रात 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "घड़ी रात 3:45 पार कर जाती है। पाइपों में एक भी खटक नहीं गूँजती।",
+          "timestamp_label": "रात 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "शांत पाइप।",
+          "teaser_text": "एपिसोड 6 (फ़िनाले): अगली रात 2:45 बजे, आप ध्यान से सुनती हैं—और केवल शांति सुनती हैं।",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "रात 2:45 · सन्नाटा",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "रात 2:45 · अगली रात। आप गरम चाय के साथ अपनी किचन में बैठी हैं, घड़ी की सुई आगे बढ़ने के साथ रेडिएटर पाइप को घूरती हुई।",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "ठीक रात 2:45 बजे, {{player_name}}। ऊपर कोई खटक हुई?",
+          "timestamp_label": "सुबह 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "कुछ भी नहीं। एक चरमराहट तक नहीं। बस फ्रिज की हल्की आवाज़।",
+          "timestamp_label": "सुबह 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "उसकी माँ आज दोपहर बिल्डिंग में आई थीं बगीचे के गेट पर सफ़ेद लिली के फूल रखने।",
+          "timestamp_label": "सुबह 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "प्लंबिंग शाफ्ट: कोई गतिविधि नहीं मिली।",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "मैं कल सुबह उस टपकते रेडिएटर को ठीक से बनवा दूँगा—कोई भूत नहीं, बस अच्छी प्लंबिंग।",
+          "timestamp_label": "सुबह 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "मेरी अब तक की सबसे बेहतरीन ऊपर वाली पड़ोसी।",
+          "unsent_placeholder": "यह message unsent किया गया",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[गर्मजोशी भरी हँसी] \"सो जाओ, {{player_name}}। बिल्डिंग आखिरकार शांत है।\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "गर्म भाप के साथ रेडिएटर हल्के से टिक-टिक करता है।",
+          "options": [
+            {
+              "option_id": "opt_e6_goodnight_ben",
+              "label": "Ben को शुभ रात्रि कहें",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "शुभ रात्रि, Ben। सुबह मिलते हैं!",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_toast_peace",
+              "label": "चाय की चुस्की लें और शांति पर मुस्कुराएँ",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · शांति",
+              "player_reply_text": "शांत पाइप और गरम चाय। अब तक का सबसे बेहतरीन 2:45 AM।",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "शुभ रात्रि! आराम से सोओ।",
+          "timestamp_label": "सुबह 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "एक शांत रात के नाम चियर्स, {{player_name}}।",
+          "timestamp_label": "सुबह 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "प्लंबिंग शाफ्ट · हमेशा के लिए शांत।",
+          "timestamp_label": "सुबह 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "सीज़न फ़िनाले · संदेश मिल गया।",
+          "teaser_text": "समाप्त · कभी-कभी अंधेरे में आने वाली दस्तक कोई धमकी नहीं होती—वो मदद की पुकार होती है।",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

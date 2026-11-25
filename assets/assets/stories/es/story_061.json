@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_061",
+  "lang": "es",
+  "metadata": {
+    "title": "El Codicilo Falsificado",
+    "subtitle": "Dos horas antes de la lectura del testamento del abuelo, un codicilo firmado durante su coma se filtra al chat familiar.",
+    "genre": "romance",
+    "tags": [
+      "Herencia",
+      "Traición",
+      "Familia"
+    ],
+    "cover_image": "assets/media/covers/story_061.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "lawyer",
+      "name": "Arthur Vance (Abogado Sucesorio)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "uncle",
+      "name": "Tío Victor",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "nurse",
+      "name": "Enfermera Clara",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "El Adjunto Accidental",
+      "start_node_id": "n01",
+      "default_ambient": "family_drama",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "09:15 AM · Chat Grupal de Sucesión. Dos horas antes de la lectura del testamento del abuelo en el Hotel Grand Sterling.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Codicilo Final — 100% de acciones de Sterling Hotel transferidas a Victor Sterling. Firmado el 14 de oct.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Un segundo. ¿14 de octubre? El abuelo entró en coma el 11 de octubre. ¿Cómo firmó eso?",
+          "timestamp_label": "09:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "¡Arthur idiota, chat equivocado!! ¡¡Bórralo antes de que {{player_name}} tome captura de la fecha!!",
+          "unsent_placeholder": "Tío Victor anuló el envío de un mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "No seas dramático, {{player_name}}. Arthur solo fechó mal una copia secretarial. Ten un poco de respeto hoy.",
+          "timestamp_label": "09:17 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "narrator",
+          "text": "DM PRIVADO · Enfermera Clara (enfermera de terapia intensiva del abuelo) acaba de enviarte una nota de voz.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 14,
+          "transcript": "[susurrando] {{player_name}}, la noche del 14 de oct. tu tío sobornó al guardia nocturno para apagar la cámara de UCI durante doce minutos. Puso una pluma en la mano inerte de tu abuelo.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n08"
+        },
+        {
+          "id": "n08",
+          "type": "choice",
+          "prompt": "La lectura del testamento empieza en 90 minutos. ¿Tu jugada?",
+          "options": [
+            {
+              "option_id": "opt_download_meta",
+              "label": "Guarda metadatos PDF y calla",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Entendido, Clara. Guarda seguro el registro de UCI. Yo me encargo de Victor.",
+              "next_node_id": "n09_free"
+            },
+            {
+              "option_id": "opt_unlock_cctv",
+              "label": "Saca el video de respaldo del pasillo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": "Espera—¿la cámara del elevador del pasillo siguió encendida esa noche?",
+              "next_node_id": "n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "n09_free",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Ya fotografié la gráfica de signos vitales de UCI demostrando que estaba sedado en ese minuto exacto.",
+          "timestamp_label": "09:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_merge"
+        },
+        {
+          "id": "n09_vip",
+          "type": "narrator",
+          "text": "EVIDENCIA SECRETA: ¡La cámara del elevador captó al Tío Victor saliendo de la Sala UCI 402 con el Abogado de la Sucesión a las 2:14 AM!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n10_vip"
+        },
+        {
+          "id": "n10_vip",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Mandándote el clip cifrado ahora. Victor no tiene idea de que ese pasillo tenía un segundo lente.",
+          "timestamp_label": "09:20 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_merge"
+        },
+        {
+          "id": "n11_merge",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Por cierto, {{player_name}}, seguridad tiene órdenes de confiscar todos los teléfonos antes de entrar a la sala de lectura. Nos vemos pronto.",
+          "timestamp_label": "09:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n12_end"
+        },
+        {
+          "id": "n12_end",
+          "type": "cliffhanger",
+          "headline": "Teléfonos Confiscados en la Puerta",
+          "teaser_text": "Episodio 2: Victor cree que te silenció... hasta que le entregas al notario un sobre sellado del abuelo.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "La Sala de Lectura",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "11:02 AM · Biblioteca de la Mansión Sterling. Doce familiares guardan silencio. Deslizaste una tableta desechable dentro de tu saco.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Procederemos ahora a ejecutar el codicilo del 14 de octubre. Todas las acciones de control pasan únicamente a Victor.",
+          "timestamp_label": "11:03 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Una pesada carga, en verdad. {{player_name}}, puedes quedarte el reloj de bolsillo de tu abuelo como recuerdo.",
+          "timestamp_label": "11:04 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Generoso, Tío. Antes de firmar, ¿podría Arthur explicar por qué el monitor cardíaco del abuelo marcaba sedación profunda tres días antes de esa firma?",
+          "timestamp_label": "11:05 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "lawyer",
+          "text": "¡Victor, aborta! ¡El notario está mirando la fecha y hora del hospital!",
+          "unsent_placeholder": "Arthur Vance anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 11,
+          "transcript": "[altavoz] Soy Clara, Enfermera Jefa de UCI. Estoy afuera con el oficial sucesorio del condado y los registros sin editar de acceso a UCI.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Victor estira el brazo por la mesa para arrebatar el papel. ¿Cómo lo rematas?",
+          "options": [
+            {
+              "option_id": "opt_open_doors",
+              "label": "Abre puertas a oficiales sucesorios",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Toca ese papel y se convierte en alteración de evidencia frente a doce testigos.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_play_grandpa",
+              "label": "Pon video secreto del abuelo en cama",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jugada Maestra · Ver Anuncio",
+              "player_reply_text": "De hecho, dejemos que el abuelo les cuente a todos a quién atrapó desfalcando el mes pasado.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Los oficiales sucesorios entran. Arthur suelta de inmediato su portafolio y pide inmunidad.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "VIDEO DEL ABUELO: \"Si Victor presenta cualquier papel fechado después del 1 de octubre, revoquen toda su parte y nombren Presidente a {{player_name}}.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "¡Esa grabación es falsa! ¡Yo construí la mitad de estos hoteles!",
+          "timestamp_label": "11:09 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}, tengo el testamento original real en el bolsillo de mi abrigo. Tú eres dueño del 68% del Grupo Sterling.",
+          "timestamp_label": "11:11 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "El Verdadero Heredero Toma la Presidencia",
+          "teaser_text": "Victor sale escoltado con esposas... pero una cláusula oculta en el testamento real menciona a una segunda heredera a la que nadie ha conocido.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "La Cláusula Oculta",
+      "start_node_id": "e3_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:15 PM · Biblioteca de la Mansión. El Tío Victor se ha ido, pero una adenda sellada con lacre reposa sobre el escritorio de Arthur.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "{{player_name}}, el abuelo me dio instrucciones de abrir la Cláusula 12 solo si Victor intentaba impugnar el testamento. Lee esto con atención.",
+          "timestamp_label": "2:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¿Una segunda heredera? Nadie en la familia ha mencionado jamás a nadie más.",
+          "timestamp_label": "2:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "CLÁUSULA SELLADA 12 · \"El 30% de Vance Holdings pasa a la hija que mi hijo Victor expulsó de esta casa en 2004.\"",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Espera… ¡la noche antes de que tu abuelo cayera en coma, una mujer joven visitó su habitación! ¡Le regaló su reloj de bolsillo plateado!",
+          "timestamp_label": "2:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Si Arthur abre la Cláusula 12 descubrirán por qué soborné al hospital—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 9,
+          "transcript": "[susurrando] ¡{{player_name}}, todavía tengo la foto del registro de visitas de esa noche! ¡El abuelo me dijo que ella también era su nieta—la propia hija secreta de Victor!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "El abogado de Victor acaba de presentar un bloqueo urgente sobre la Cláusula 12. ¿Qué haces?",
+          "options": [
+            {
+              "option_id": "opt_find_heir",
+              "label": "Rastrea a la visita con datos de Clara",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Clara, mándame los datos del registro de visitas. Si es familia, merece la verdad.",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_audit_2004",
+              "label": "Revisa el pago hospitalario de 2004",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Archivo Secreto · Ver Anuncio",
+              "player_reply_text": "Arthur, saca los desembolsos del fideicomiso de 2004—veamos qué pagó Victor para borrarla.",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "COINCIDENCIA HALLADA: La visitante es Elena, una enfermera pediátrica que vive a diez millas... y jamás pidió ni un centavo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "REGISTRO DE BÓVEDA: Victor falsificó la firma de su hermano en 2004 para borrar a la niña del registro familiar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Localicé su dirección. Está dispuesta a reunirse con nosotros en las rejas de la finca a las 5 PM.",
+          "timestamp_label": "2:24 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Pagué fianza. Ni te atrevas a dejar pasar a esa impostora por las rejas de mi padre, {{player_name}}.",
+          "timestamp_label": "2:25 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Victor Está Libre Bajo Fianza",
+          "teaser_text": "Episodio 4: Victor corre a interceptar a la segunda heredera antes de que llegue a la finca.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Segunda Heredera",
+      "start_node_id": "e4_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "4:40 PM · Entrada de la Mansión. Llueve a cántaros cuando el sedán negro de Victor bloquea las rejas de hierro.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "Piénsalo, {{player_name}}. Si ella prueba ser heredera, ¡TÚ también pierdes el 30% del patrimonio! ¡Ponte de mi lado y lo dividimos 70/30!",
+          "timestamp_label": "4:40 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Falsificaste un codicilo mientras el abuelo estaba en coma, ¿y ahora quieres que también traicione su última voluntad?",
+          "timestamp_label": "4:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "¡Cuidado! ¡El investigador privado de Victor acaba de acorralarla afuera de la farmacia! ¡Está aterrada!",
+          "timestamp_label": "4:42 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Dile al chofer que le ofrezca $50,000 en efectivo por firmar la renuncia ahora—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "¡Esa renuncia es coacción ilegal! Estoy enviando seguridad de la finca y policía a la farmacia ahora mismo.",
+          "timestamp_label": "4:44 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 9,
+          "transcript": "[lluvia y puerta de auto cerrándose] ¡La subí a mi auto! ¡Está a salvo—y trajo el reloj de bolsillo plateado del abuelo con una tarjeta micro-SD escondida dentro de la tapa!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Clara acaba de llegar con la tarjeta micro-SD oculta. ¿Cuál es tu jugada?",
+          "options": [
+            {
+              "option_id": "opt_play_video",
+              "label": "Pon el video del abuelo en biblioteca",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Abran las puertas de la biblioteca y pongan la grabación del abuelo en la pantalla principal—que Victor la oiga.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_stream_board",
+              "label": "Transmite el video a toda la junta",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jaque Mate · Ver Anuncio",
+              "player_reply_text": "¡Conecten a la junta directiva y fideicomisarios familiares a la transmisión antes de darle play!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "VOZ DEL ABUELO: \"Si Victor pelea este testamento, quítenle su último estipendio del 5% del fideicomiso y entreguen las llaves a mis dos nietas.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "REACCIÓN DE LA JUNTA: Cada fideicomisario ve a Victor palidecer mientras el abuelo lo llama ladrón en cámara.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Se acabó, Victor. El abuelo previó hasta el último truco que intentarías.",
+          "timestamp_label": "4:52 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "¡Un video no prueba nada sin ADN verificado ante el juzgado! ¡Pasarán cinco años en litigio sucesorio!",
+          "timestamp_label": "4:53 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Duelo del ADN",
+          "teaser_text": "Episodio 5: Un sobre sellado de laboratorio terminará para siempre la guerra legal de Victor.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Sangre y Tinta",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "10:05 AM · Antesala del Juzgado Sucesorio. El mensajero sellado del laboratorio acaba de llegar.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "El abuelo ya había entregado su muestra de referencia al laboratorio judicial hace tres meses. ¡El cotejo acaba de salir!",
+          "timestamp_label": "10:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "lawyer",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "VERIFICADO POR LAB JUDICIAL · 99.98% coincidencia abuelo-nieta. Cadena de custodia sellada por el Juez Harlan.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "uncle",
+          "text": "¡Eso es imposible! ¡Estaba demasiado enfermo hace tres meses para ir a un laboratorio!",
+          "timestamp_label": "10:07 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La Enfermera Clara llevó al técnico judicial hasta su cama mientras tú estabas ocupado falsificando tu codicilo.",
+          "timestamp_label": "10:08 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Espera—si el juez ve la violación de mi fianza en la farmacia regreso directo a—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "nurse",
+          "duration_sec": 8,
+          "transcript": "[puertas de sala abriéndose] El alguacil acaba de llevar el video de cámara vehicular de la farmacia al estrado del juez. ¡La fianza de Victor está por revocarse!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "El juez pregunta si deseas aplicar la cláusula completa de penalización contra Victor.",
+          "options": [
+            {
+              "option_id": "opt_enforce_clause",
+              "label": "Aplica la cláusula de no impugnación",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sí, Su Señoría. Aplique al pie de la letra la cláusula de no impugnación.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_reclaim_loans",
+              "label": "Cobra también sus préstamos de $2M",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Justicia Total · Ver Anuncio",
+              "player_reply_text": "Aplique la cláusula... y cobre los $2M en préstamos impagos de la empresa que Victor ocultó desde 2019.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "FALLO DEL JUEZ: El reclamo de Victor queda desechado en definitiva y su fianza es revocada en el acto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "EMBARGO CONCEDIDO: El tribunal congela el penthouse de lujo y el yate de Victor para pagarle al patrimonio familiar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "¡Golpe de mazo! Sucesión cerrada. Ambas herederas quedan oficialmente confirmadas.",
+          "timestamp_label": "10:18 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Tu prima está llorando lágrimas de felicidad afuera de la sala... quiere devolverte el reloj del abuelo.",
+          "timestamp_label": "10:19 AM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "La Firma Final en la Mansión",
+          "teaser_text": "Episodio 6 (Final): Toma el asiento de presidenta y reconstruyan juntas el legado familiar.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "El Sello de la Presidenta",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "6:00 PM · Invernadero de la Mansión. Cálidos faroles brillan mientras el libro mayor familiar se abre en una página nueva.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Todos los títulos, acciones con voto y llaves del fideicomiso están transferidos, {{player_name}}. Vance Holdings es oficialmente tuyo para dirigir.",
+          "timestamp_label": "6:00 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gracias, Arthur. Y Clara... nada de esto habría sobrevivido sin tu valentía.",
+          "timestamp_label": "6:01 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Solo cumplí mi promesa a tu abuelo. Sabía que tenías un corazón más fuerte que nadie en esa sala.",
+          "timestamp_label": "6:02 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "uncle",
+          "text": "Dile a {{player_name}} que lo siento, tal vez todavía vaya a visitarla—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "lawyer",
+          "duration_sec": 8,
+          "transcript": "[copas chocando] ¡Tu prima acaba de firmar el acta de sociedad—quiere financiar un pabellón pediátrico con el nombre del abuelo usando su 30%!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Y yo igualo cada dólar desde la fundación principal. El abuelo estaría sonriendo ahora mismo.",
+          "timestamp_label": "6:06 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Un último gesto para honrar el legado del abuelo:",
+          "options": [
+            {
+              "option_id": "opt_keep_watch",
+              "label": "Comparte el reloj y dale la bienvenida",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Quédate el reloj... y múdate al ala este. Esta casa por fin se siente como una familia otra vez.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_name_clara_director",
+              "label": "Nombra a Clara Directora de Fundación",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Corazón de Oro · Ver Anuncio",
+              "player_reply_text": "Clara, ¿dirigirías la Fundación Médica Vance? Nadie lo merece más que tú.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "HOGAR RESTAURADO: Por primera vez en veinte años, la risa resuena por los salones de la mansión.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "LEGADO MULTIPLICADO: Clara acepta entre lágrimas... juntas convierten una vieja dinastía en una fuerza para el bien.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "nurse",
+          "text": "Jamás olvidaré esta noche, {{player_name}}. Ganaste sin volverte nunca cruel como Victor.",
+          "timestamp_label": "6:12 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "lawyer",
+          "text": "Larga vida a las herederas legítimas. Las luces de la biblioteca se quedan encendidas esta noche.",
+          "timestamp_label": "6:13 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · La Dinastía Legítima",
+          "teaser_text": "Expusiste el codicilo falsificado, uniste a las verdaderas herederas y reclamaste el patrimonio con honor.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

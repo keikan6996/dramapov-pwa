@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_148",
+  "lang": "ja",
+  "metadata": {
+    "title": "最終電車は9番駅には決して停まらない",
+    "subtitle": "午後11時55分の地下鉄で目を覚ますと警告が届いていました。「灰色のコートを着た人物には絶対に応えるな――そして窓の外を見るな。」",
+    "genre": "thriller",
+    "tags": [
+      "地下鉄ホラー",
+      "午前3時のルール",
+      "急展開"
+    ],
+    "cover_image": "assets/media/covers/story_148.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} · 4号車",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "conductor",
+      "name": "運行警報",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "stranger",
+      "name": "灰色のコート · 4C席",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F172A"
+    },
+    {
+      "id": "narrator",
+      "name": "ナレーター",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "9番駅の警報",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "午後11:58 · 揺れる終電の地下鉄であなたはハッと目を覚ましました。頭上の電光掲示板が「Central」から「STATION 9（9番駅）」へと表示バグを起こします。",
+          "style": "system_alert",
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "緊急運行ルール：4号車が9番駅に進入した場合、視線はスマホに固定し、灰色のコートを着た者には絶対に応えず、03:30まで座席に留まってください。",
+          "timestamp_label": "午後11:58",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "9番駅は15年前にレンガで封鎖されたはず！どうしてブレーキが悲鳴を上げてるの！？",
+          "timestamp_label": "午後11:58",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[切迫した声、サイレンにかき消されながら]「{{player_name}}！聞こえますか！？私の手を握るか電話に出てください――その電車に乗ったままではだめだ！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "男は灰色のコートを着ている。顔を上げるな。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "地下鉄の扉がプシューッと音を立て、漆黒のホームへと開きます：",
+          "options": [
+            {
+              "option_id": "opt_story_148_e1_free",
+              "label": "スマホ画面に視線を釘付けにする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "見上げない。ただドアが閉まるのを待つだけ……",
+              "next_node_id": "e1_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e1_vip",
+              "label": "4C席の乗客をチラッと見る",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "見てしまった――彼が着ているのは普通のコートじゃなく、灰色の反射材付き救助服だわ！",
+              "next_node_id": "e1_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07a",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "よし。今ドアが閉まりました――待って、ホームのカメラが4号車に6つのシルエットが乗り込んだのを捉えています！",
+          "timestamp_label": "午前0:01",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n07b",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "警告！その服の偽装を信用しないで！ホームのカメラでは、4号車は影を除いて完全に無人です！",
+          "timestamp_label": "午前0:01",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_merge"
+        },
+        {
+          "id": "e1_n08_merge",
+          "type": "narrator",
+          "text": "車内の照明が3秒間消えました。ジッと鳴って再び点灯した時、あなたの周囲の座席はすべて水浸しになっていました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_call"
+        },
+        {
+          "id": "e1_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "灰色のコート · 4C席",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n10",
+          "on_decline_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "自動アナウンスの警告を聞くのをやめて、{{player_name}}！あなたの脈拍が下がっている――窓ガラスに映った自分の姿を見て！",
+          "timestamp_label": "午前0:04",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11"
+        },
+        {
+          "id": "e1_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "どうしてガラスが蜘蛛の巣みたいにひび割れてるの……それにどうしてディーゼルの煙の匂いがするの！？",
+          "timestamp_label": "午前0:04",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n12_cliff"
+        },
+        {
+          "id": "e1_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "4号車の6つの影",
+          "teaser_text": "次回：9番駅の防犯カメラが実際に乗り込んできた者たちの正体を暴きます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "ホームの防犯カメラ",
+      "start_node_id": "e2_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "午前0:08 · 列車は果てしない黒いトンネルの中へと加速します。あなたのスマホが9番駅の防犯カメラ静止画をダウンロードしました。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "確認：4号車内に非生体乗客を検知。着席を維持してください。次の停車駅で灰色のコートに引きずり降ろされないように。",
+          "timestamp_label": "午前0:08",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "この防犯写真を見て――幽霊なんかじゃない、担架と油圧カッターを持ってるわ！",
+          "timestamp_label": "午前0:08",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[切迫した声、金属が軋み砕ける音]「そうです！今まさに4号車の潰れたドアを切り開いています！目を覚まし続けてください、{{player_name}}！」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "切断音は無視しろ。03:30まで眠れ。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e2_n05b_img"
+        },
+        {
+          "id": "e2_n05b_img",
+          "type": "image",
+          "sender_id": "conductor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "9番駅ホーム防犯カメラ――他は空っぽの車両に乗り込む謎のシルエット。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "突然、鉛のようにまぶたが重くなってきます：",
+          "options": [
+            {
+              "option_id": "opt_story_148_e2_free",
+              "label": "目を覚まし続けるため腕を強くつねる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "起きてるわ！どうして運行警報は私にまた眠れって言ってるの！？",
+              "next_node_id": "e2_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e2_vip",
+              "label": "11時55分発の列車に何が起きたか聞く",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "はっきり教えて――午後11時55分の電車は事故を起こしたの！？",
+              "next_node_id": "e2_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "「運行警報」なんて存在しないからです――それはショック状態があなた自身を引きずり込もうとしているんです！抗ってください！",
+          "timestamp_label": "午前0:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "はい！30分前に4号車が第9トンネル内で脱線したんです！あなたは4C席の下に挟まれています――持ちこたえて！",
+          "timestamp_label": "午前0:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_merge"
+        },
+        {
+          "id": "e2_n08_merge",
+          "type": "narrator",
+          "text": "列車の規則的なガタンゴトンという音が遅くなり……紛れもない心電図モニターの一定のリズムへと変わっていきます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_call"
+        },
+        {
+          "id": "e2_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "救急隊員 · 第9トンネル",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n10",
+          "on_decline_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "瓦礫の中であなたのスマホ画面が光っているのが見えます！まだ意識があると分かるよう、何でもいいから画面をタップしてください！",
+          "timestamp_label": "午前0:16",
+          "typing_delay_ms": 750,
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "タップしてるわ……どうして脚の感覚がないの！？",
+          "timestamp_label": "午前0:16",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e2_n12_cliff"
+        },
+        {
+          "id": "e2_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "第9トンネルで脱線",
+          "teaser_text": "次回：列車はあなたを永遠に乗せたままにするため、最後の罠を仕掛けます。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "偽の車掌",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "午前0:20 · 温かな黄金色の光が4号車を満たします。痛みは完全に消え去りました。運行警報が柔らかくチャイムを鳴らします。",
+          "style": "system_alert",
+          "sfx": "knock",
+          "haptic": "heavy",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "conductor",
+          "text": "最終乗車案内：お席にお座りのままで、{{player_name}}さん。痛みもサイレンもない、静かな家路です。",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "すごく温かい……5分だけ目を閉じてもいいかな……",
+          "timestamp_label": "午前0:20",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "voice_note",
+          "sender_id": "conductor",
+          "duration_sec": 8,
+          "transcript": "[心地よく催眠的なハミング]「目を閉じて、{{player_name}}。9番駅があなたの求める最後の終着駅ですよ。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "灰色のコートの救命士に起こされるな。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "視界が温かな白いトンネルへと狭まっていきます：",
+          "options": [
+            {
+              "option_id": "opt_story_148_e3_free",
+              "label": "温かさに抗い救命士に向かって叫ぶ",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "いや！9番駅なんかで降りない！私を引き出して！",
+              "next_node_id": "e3_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e3_vip",
+              "label": "ガラスに向かってスマホのライトを激しく照らす",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "救助カッターに向かって画面を点滅させてる――私はここにいるわ！",
+              "next_node_id": "e3_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "声が聞こえました！しっかりして――せーの3で座席の上の鉄骨を持ち上げます！",
+          "timestamp_label": "午前0:24",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "視認しました！隙間からスマホの光が点滅しました――今すぐ引き出します！",
+          "timestamp_label": "午前0:24",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_merge"
+        },
+        {
+          "id": "e3_n08_merge",
+          "type": "narrator",
+          "text": "バキッ！明るく白い救助投光器が温かい幻想を砕いた瞬間、冷たく本物のトンネルの空気が肺へ流れ込んできました。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_call"
+        },
+        {
+          "id": "e3_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "救助隊長 · 距離1m",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e3_n10",
+          "on_decline_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "割れたGPS画面を見てください――第9トンネルの地下40メートルの地点で、今ちょうどあなたの担架を運び出しましたよ！",
+          "timestamp_label": "午前0:28",
+          "typing_delay_ms": 750,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "冷たい空気を感じる……私、まだ生きてる！",
+          "timestamp_label": "午前0:28",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "瓦礫からの救出",
+          "teaser_text": "次回：ひび割れたスマホのGPSが、あなたが9番駅にどれだけ近づいていたかを示します。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "地下40メートル",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "午前0:35 · 救助担架の上に横たわりながら、あなたは傷だらけの手に握りしめていたひび割れたスマホを見下ろします。",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "救命士のMarkです――今非常用リフトで地上へ上がっています！バイタルも急速に安定していますよ。",
+          "timestamp_label": "午前0:35",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "待って……もし「運行警報」が私自身の幻覚だったのなら、どうしてまだ本物の受信トレイに残ってるの！？",
+          "timestamp_label": "午前0:35",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[動きを止め、不安そうに]「ちょっと待ってください……画面を見せてください。うちの市のネットワーク上に『運行警報』なんて自動送信元は存在しませんよ……」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "heartbeat",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "次に深夜過ぎに乗る時は、居眠りするなよ。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e4_n05b_img"
+        },
+        {
+          "id": "e4_n05b_img",
+          "type": "image",
+          "sender_id": "stranger",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "ひび割れたスマホのGPS地図――封鎖された保守用トンネル内の地下40メートルで停止した信号。",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "非常用エレベーターが地上階へ到着します：",
+          "options": [
+            {
+              "option_id": "opt_story_148_e4_free",
+              "label": "救命士に送信取消された警報を見せる",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "見て！今文字通り目の前で警告を送信取り消しにしたわ！",
+              "next_node_id": "e4_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e4_vip",
+              "label": "直ちに9番駅のスレッドを削除する",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "あのスレッドは永遠に削除する――二度と9番駅なんか見たくない！",
+              "next_node_id": "e4_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Markの顔が青ざめます。「4号車の別の生存者2人も、まったく同じメッセージを見せてきました……」",
+          "timestamp_label": "午前0:39",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "Markがほっとため息をつきます。「賢明な判断です。第9トンネルの下にあるものには、葬ったままにしておいた方がいいこともあります。」",
+          "timestamp_label": "午前0:39",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_merge"
+        },
+        {
+          "id": "e4_n08_merge",
+          "type": "narrator",
+          "text": "救急車の扉が後ろで閉まる中、あなたの頬に雨が当たります――本物で、冷たくて、生きている感覚でした。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_call"
+        },
+        {
+          "id": "e4_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "病院ER · 到着",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e4_n10",
+          "on_decline_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "ER受付完了。軽い脳震盪と肋骨の打撲だけ――100%完全に回復しますよ、{{player_name}}さん。",
+          "timestamp_label": "午前0:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "今夜、その灰色のコートを着て助けに来てくれてありがとう、Mark。",
+          "timestamp_label": "午前0:43",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "地上への生還",
+          "teaser_text": "次回結末：1週間後、あなたは封鎖された9番駅の入口の前を通りかかります。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "11時55分には二度と乗らない",
+      "start_node_id": "e5_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "午前9:10 · 1週間後。病院を退院したあなたは、地下鉄の階段を通り過ぎ――代わりにタクシーに乗りました。",
+          "style": "system_alert",
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "やあ{{player_name}}さん、救助隊のMarkです！退院されたと聞きました――深夜便は避けてくださいね？",
+          "timestamp_label": "午前9:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "約束するわ！一生タクシーに乗ることにする。結局、何が脱線の原因だったのか分かったの？",
+          "timestamp_label": "午前9:10",
+          "typing_delay_ms": 0,
+          "sfx": "ting_soft",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "voice_note",
+          "sender_id": "stranger",
+          "duration_sec": 8,
+          "transcript": "[静かで真剣な声]「公式報告書によると、ポイント切り替え機が故障したそうです……レンガで塞がれた9番駅のホームの、ちょうど真外で。」",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "unsent_message",
+          "sender_id": "conductor",
+          "text": "4C席は今でもあなたのために予約されています。",
+          "unsent_placeholder": "このメッセージは送信取り消しされました",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "unsent",
+          "haptic": "medium",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "タクシーが駅の入口から走り去ります：",
+          "options": [
+            {
+              "option_id": "opt_story_148_e5_free",
+              "label": "地下鉄の通知を永久にオフにする",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "地下鉄アプリはアンインストールしたわ。夜に地下へ降りることは二度とない。",
+              "next_node_id": "e5_n07a"
+            },
+            {
+              "option_id": "opt_story_148_e5_vip",
+              "label": "Markにお礼を言い部隊へコーヒーを差し入れる",
+              "cost_type": "vip_rewarded",
+              "badge_text": "シークレット · 広告を見る",
+              "player_reply_text": "第9救助隊へコーヒーを贈りました――文字通り死の淵から私を引き上げてくれたのだから！",
+              "next_node_id": "e5_n07b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07a",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "今年一番賢い選択ですね。太陽の光を楽しんでください！",
+          "timestamp_label": "午前9:13",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n07b",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "隊員全員が感謝しています！これからは毎回乗車中しっかり起きていてくださいね！",
+          "timestamp_label": "午前9:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_merge"
+        },
+        {
+          "id": "e5_n08_merge",
+          "type": "narrator",
+          "text": "タクシーのサイドミラーの中で、地下鉄の入口が朝の人混みの中へと小さく遠ざかっていきます。",
+          "style": "banner",
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_call"
+        },
+        {
+          "id": "e5_n09_call",
+          "type": "incoming_call",
+          "caller_id": "stranger",
+          "caller_label": "Mark · 第9救助隊",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e5_n10",
+          "on_decline_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "stranger",
+          "text": "お元気で、{{player_name}}さん！あそこで間違ったルールに従わなくて本当に良かったです。",
+          "timestamp_label": "午前9:16",
+          "typing_delay_ms": 750,
+          "sfx": "ting_soft",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "暗闇の中の声が「灰色のコートの男を信じるな」と言ってきても――耳を貸してはいけません。",
+          "timestamp_label": "午前9:16",
+          "typing_delay_ms": 0,
+          "sfx": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "終電を降りて",
+          "teaser_text": "『最終電車は9番駅には決して停まらない』をクリアしました！さらなる午前3時のスリラーを探索しましょう。",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

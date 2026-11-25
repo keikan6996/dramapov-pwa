@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_030",
+  "lang": "en",
+  "metadata": {
+    "title": "Voice Note From the Morgue",
+    "subtitle": "Drawer #7 just spiked to 37°C—and the corpse’s phone sent a 12-second voice note to my number.",
+    "genre": "thriller",
+    "tags": [
+      "Morgue",
+      "3AM",
+      "Thriller"
+    ],
+    "cover_image": "assets/media/covers/story_030.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Intern)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#4F46E5"
+    },
+    {
+      "id": "ally",
+      "name": "Dr. Vance (Coroner)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "threat",
+      "name": "Evidence Bag #07",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Drawer #7: 37°C",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "2:33 AM · Basement B2 Pathology Lab. The temperature alarm for Cold Drawer #7 chirps red.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, I just got a thermal alert on my phone! Why is Drawer #7 reading 37°C—human body temperature?!",
+          "timestamp_label": "2:33 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The compressor is running fine, Doctor! Wait—the sealed evidence phone from Drawer #7 just messaged me!",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Let me out. It’s too dark in this steel box.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Impossible! I sealed that phone inside Locker 4 with the battery removed! Check the drawer latch from a distance!",
+          "timestamp_label": "2:35 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 12,
+          "transcript": "[muffled banging on steel, ragged breath] ...{{player_name}}... I’m not dead... pull the handle...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "Frost melts off the steel handle of Drawer #7. A rhythmic thud shakes the latch.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "Check the autopsy tag for Drawer #7",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pulling up the intake file...",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "Play back the voice note at 2x volume",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Listening closely to the background...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "You freeze. The intake report says John Doe #7 had already been autopsied at 6 PM—his heart was removed.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Beneath the banging isn’t Drawer #7—it’s the sound of the lab’s glass door sliding open RIGHT BEHIND YOU.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}!! I’m looking at the B2 CCTV! Drawer #7 has been WIDE OPEN for ten minutes!",
+          "timestamp_label": "2:37 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "Evidence Bag #07 (No SIM)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "Slow, wet footsteps echo on the call—matching the exact footsteps walking toward your desk.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "You decline. Cold antiseptic wind brushes the back of your neck, and a sheet drops onto your chair.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "Drawer #7 Is Empty",
+          "teaser_text": "Episode 2: The morgue keycard reader flashes red—you are locked inside B2 with it.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Locked in Basement B2",
+      "start_node_id": "e2_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "2:39 AM · The fluorescent ceiling grid flickers. Empty steel Drawer #7 juts out into the aisle, dripping condensation.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’m overriding the B2 mag-lock from the security booth! Hide behind the specimen fridge until the green light blinks!",
+          "timestamp_label": "2:39 AM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "The body bag is sitting upright on Table 2. Why is it holding a surgical scalpel?!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 7,
+          "transcript": "[metal tray clattering] ...You took something of mine, {{player_name}}. Put it back...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "Look at the silver locket in your lab coat pocket.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Wait—did you pick up a dropped pendant off the floor during intake?! Drop it on Table 2 RIGHT NOW!",
+          "timestamp_label": "2:41 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "The mag-lock beeps green as footsteps close in around the steel table.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "Toss the silver pendant and sprint out",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Dropping it and running!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "Check the photo inside the silver pendant",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secret · Watch Ad",
+              "player_reply_text": "Opening the locket first...",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "The pendant clinks onto Table 2. The footsteps stop dead—allowing you to slam through the exit door.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "SECRET UNLOCKED: Inside is a photo of Dr. Vance standing beside John Doe #7—with the date of a cover-up scribbled on the back.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "You burst into the ground-floor corridor. Behind the reinforced glass, Drawer #7 slides shut all by itself.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Dr. Vance (Coroner)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "Dr. Vance’s voice turns icy: \"You didn’t open that locket, did you {{player_name}}? Come to my office. Alone.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "You decline—and your phone chimes with one final text from Evidence Bag #07: \"Tell the police what Vance did.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "Time of Death: Pending",
+          "teaser_text": "Season Finale · The dead wanted justice—and Dr. Vance is already waiting upstairs.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Upstairs Ambush",
+      "start_node_id": "e3_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "2:18 AM · Basement B2 elevator opens onto the darkened autopsy wing—and Dr. Vance is already waiting beside Drawer #7’s file.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}}, step away from the cold room. Give me the corpse’s phone right now—it’s contaminated evidence.",
+          "timestamp_label": "2:28 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dr. Vance, why did the toxicology report in Evidence Bag #07 list \"natural causes\" when the DNA swab shows poison?!",
+          "timestamp_label": "2:29 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dna_report.webp",
+          "caption": "Altered Forensic Report · Drawer #07 — Original poison panel crossed out in red ink.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "Evidence Bag #07 vibrates inside your lab coat—displaying a live timestamped audio file.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Don’t hand him the phone, {{player_name}}. He switched my blood vials at 11:40 PM.",
+          "timestamp_label": "2:30 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "If this intern uploads the raw lab scan to the Police Commissioner, twenty years of my career are over.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[muffled voice note from Drawer #07] \"Check Basement B2 lobby CCTV at 11:40 PM... Dr. Vance wasn’t alone.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "Dr. Vance blocks the stairwell door and reaches for your coat pocket.",
+          "options": [
+            {
+              "option_id": "opt_e3_bolt_lab",
+              "label": "Sprint into the locked cryo-lab",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Stay back, Dr. Vance! I’m locking myself in the cryo-lab and calling police!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_broadcast_pa",
+              "label": "Play the voice note over the hospital PA",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Expose",
+              "player_reply_text": "Let’s see what night security thinks when they hear Evidence Bag #07 on the PA!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "You fool—the cryo-lab has no cell reception! Open this door before I cut the power!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "STOP! Turn off the intercom—security is already coming down the stairs!",
+          "timestamp_label": "2:32 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Evidence Bag #07: \"One more file left. Check the hospital lobby CCTV server.\"",
+          "timestamp_label": "2:34 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Locked In The Lab.",
+          "teaser_text": "Episode 4: Trapped inside Basement B2, you pull the raw 11:40 PM CCTV frame showing Dr. Vance’s accomplice.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "11:40 PM In Basement B2",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "2:30 AM · Inside the cryo-lab terminal. Your fingers fly across the keyboard as Dr. Vance pounds on the reinforced glass.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Think about your future, {{player_name}}! That man in Drawer #7 was a whistleblower—his enemies paid half a million to bury the autopsy!",
+          "timestamp_label": "2:40 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "So you murdered a patient who was still alive when he arrived in B2?! That’s why Drawer #7 spiked to 37°C!",
+          "timestamp_label": "2:41 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "He injected a paralytic so my heart looked stopped, {{player_name}}. Upload the 11:40 PM CCTV to the DA’s portal!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "Cryo-lab terminal: \"Uploading B2_CCTV_1140.mp4 — 62% complete...\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "I’m pulling the lab breaker in ten seconds! You’re not leaving this basement!",
+          "timestamp_label": "2:43 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Come on, upload faster... 85%... 90%...",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[hospital security radio crackling] \"Basement B2, this is Chief Morales. We heard the PA alert—units breaching stairwell now!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "The upload hits 98% just as Dr. Vance grabs the hallway breaker box.",
+          "options": [
+            {
+              "option_id": "opt_e4_switch_hotspot",
+              "label": "Switch to phone hotspot to finish upload",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Switched to mobile data—100% UPLOADED to the Police Commissioner!",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_lock_elevator",
+              "label": "Trigger Code Red lockdown on B2",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Lockdown",
+              "player_reply_text": "Triggered Code Red! Every exit on Basement B2 just sealed until police arrive!",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "NO! My phone is ringing—it’s Internal Affairs! What have you done?!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "You locked us BOTH down here?! Wait—heavy boots are hitting the stairwell!",
+          "timestamp_label": "2:45 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Look at the CCTV frame that just finished downloading—the accomplice standing next to Dr. Vance.",
+          "timestamp_label": "2:47 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Upload Complete.",
+          "teaser_text": "Episode 5: Police breach Basement B2—and the 11:40 PM CCTV frame brings down the whole syndicate.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "The B2 Footage",
+      "start_node_id": "e5_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "2:48 AM · Police storm Basement B2 and pin Dr. Vance against the cold drawers as detectives inspect your monitor.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "You ruined everything, {{player_name}}! Do you have any idea who the man beside me on that CCTV is?!",
+          "timestamp_label": "3:05 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I don’t care how rich he is—he’s going to prison right beside you.",
+          "timestamp_label": "3:06 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "narrator",
+          "text": "Basement B2 CCTV · 11:40 PM — Dr. Vance taking a briefcase from a pharma executive outside Drawer #7.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "Drawer #7 temperature gauge drops smoothly back to 4°C.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Justice served, {{player_name}}. My family will finally know I didn’t die of a heart attack.",
+          "timestamp_label": "3:08 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Evidence Bag #07 battery: 1% remaining.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[calm, fading sigh] \"Thank you for listening to a dead man’s voice note, intern. You’re going to be a great doctor.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "The lead detective asks for Evidence Bag #07 to seal as primary evidence.",
+          "options": [
+            {
+              "option_id": "opt_e5_hand_over_bag",
+              "label": "Hand the phone to the lead detective",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Here’s the phone and the raw DNA scan, Detective. Lock them both up.",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_close_drawer",
+              "label": "Close Drawer #7 gently with respect",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Respect",
+              "player_reply_text": "Rest in peace. The truth is out now.",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Detective: \"You just cracked the biggest pharma cover-up in the state.\"",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The morgue lights stop flickering. A quiet warmth fills the hallway.",
+          "timestamp_label": "3:10 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "Evidence Bag #07 powered off permanently.",
+          "timestamp_label": "3:12 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "Case Cracked.",
+          "teaser_text": "Episode 6 (Finale): Morning headlines shake the city—and the intern who refused to look away steps into the sun.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Time Of Death: Justice",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "7:30 AM · Front-page headlines flash across the hospital lobby TV: \"CORONER & PHARMA EXEC ARRESTED IN WHISTLEBLOWER MURDER.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "narrator",
+          "text": "System Notice: Dr. Vance’s hospital credentials have been permanently revoked.",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03",
+          "style": "system_alert"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "I can’t believe I survived my first night shift in the morgue.",
+          "timestamp_label": "7:16 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "narrator",
+          "text": "Chief Morales: \"The Police Commissioner personally commended you, {{player_name}}. Take the week off!\"",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05",
+          "style": "system_alert"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "Hospital HR: \"You have been awarded a full residency fellowship in Forensic Pathology.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "No more altered charts. No more whispers from Drawer #7.",
+          "timestamp_label": "7:18 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "Sometimes the quietest room in the hospital holds the loudest truth.",
+          "unsent_placeholder": "This message was unsent",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[cheerful message from Chief Morales] \"Coffee’s on the precinct whenever you’re back on shift, kid!\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "You step out of the hospital doors into crisp morning sunlight.",
+          "options": [
+            {
+              "option_id": "opt_e6_walk_sunlight",
+              "label": "Breathe in the fresh morning air",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "One crazy night shift down. Time for a twelve-hour nap.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_accept_fellowship",
+              "label": "Accept the Forensic Pathology fellowship",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · Calling",
+              "player_reply_text": "I’m taking the fellowship—nobody fakes an autopsy on my watch.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Best sleep of your life awaits.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "The city’s newest forensic hero is officially on duty.",
+          "timestamp_label": "7:20 AM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "Drawer #7 · 4°C · Resting in Peace.",
+          "timestamp_label": "7:22 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Season Finale · Truth Preserved.",
+          "teaser_text": "THE END · Even in the coldest basement, the truth finds a way to speak.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

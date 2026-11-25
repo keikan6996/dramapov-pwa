@@ -1,0 +1,1041 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_095",
+  "lang": "es",
+  "metadata": {
+    "title": "El Paramédico Falso",
+    "subtitle": "Tras un choque en la montaña con niebla, una ambulancia llegó antes de que llamara al 911... y el 911 dice que no hay ninguna unidad cerca.",
+    "genre": "thriller",
+    "tags": [
+      "Supervivencia",
+      "Impostor",
+      "Accidente"
+    ],
+    "cover_image": "assets/media/covers/story_095.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#DC2626"
+    },
+    {
+      "id": "disp",
+      "name": "911 · Unidad 4",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "emt",
+      "name": "EMT-00",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#450A0A"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Sin Registro de Despacho",
+      "start_node_id": "e1_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "11:08 PM · Carretera Pine Pass. Tu sedán derrapa contra una barrera en niebla espesa. Antes de poder marcar al 911, luces rojas intermitentes se detienen detrás de ti.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "[Mensaje de Emergencia] Hola 911, estoy bien... ¡su ambulancia llegó rapidísimo al Marcador de Milla 18!",
+          "timestamp_label": "11:09 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "¡SEÑOR/SEÑORA, PONGA SEGURO A SUS PUERTAS YA! ¡El Despacho del Condado tiene CERO ambulancias en Pine Pass esta noche! ¡La unidad más cercana está a 22 kilómetros!",
+          "timestamp_label": "11:09 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[tecleando urgente] ¡Quédate dentro de tu vehículo, {{player_name}}! ¡NO bajes la ventana... mira el número lateral de la ambulancia y envíamelo por texto!",
+          "audio_asset": null,
+          "typing_delay_ms": 800,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "Quita el seguro de la puerta, {{player_name}}. Estás sangrando de la frente... déjame ayudarte.",
+          "unsent_placeholder": "EMT-00 anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n06_choice"
+        },
+        {
+          "id": "e1_n06_choice",
+          "type": "choice",
+          "prompt": "Una mano enguantada golpea suavemente tu ventana empañada del conductor:",
+          "options": [
+            {
+              "option_id": "opt_095_e1_free",
+              "label": "Dejar seguros puestos e intentar arrancar",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "No tiene número de unidad en la camioneta... ¡está pintado encima! ¡Intentando encender mi auto!",
+              "next_node_id": "e1_n07_free"
+            },
+            {
+              "option_id": "opt_095_e1_vip",
+              "label": "Encender luces altas y grabar su rostro",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e1_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n07_free",
+          "type": "narrator",
+          "text": "La marcha gime débil... y muere. El radiador sisea vapor. Afuera, el \"paramédico\" mete la mano en su maletín médico y saca un pesado rompecristales.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_free"
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "¡Las patrullas suben a toda velocidad por Pine Pass... aguanta! ¡Deja presionado el claxon sin parar para ahuyentarlo!",
+          "timestamp_label": "11:11 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n07_vip",
+          "type": "narrator",
+          "text": "Tomas una foto nítida por el parabrisas cuando se encoge por el reflejo... y reconoces la cicatriz dentada en su mejilla. Es el chofer de grúa de la gasolinera de hace 30 kilómetros.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08_vip"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¡Él cortó mi línea de frenos en la gasolinera!! ¡Por eso derrapó mi auto en la Milla 18!",
+          "timestamp_label": "11:11 PM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "Deja de tocar el claxon, {{player_name}}. Nadie te oye en esta niebla.",
+          "timestamp_label": "11:12 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "narrator",
+          "text": "¡CRAC! La ventana del conductor se cuartea en una telaraña blanca. Levanta la herramienta para un segundo golpe.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_cliff"
+        },
+        {
+          "id": "e1_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "A Un Golpe de Entrar",
+          "teaser_text": "El vidrio no aguantará otro impacto... y las patrullas reales siguen a seis minutos montaña abajo.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Hacia la Niebla",
+      "start_node_id": "e2_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "11:13 PM · Te lanzas sobre la consola central, empujas la puerta del copiloto y ruedas hacia el barranco de pinos cubierto de niebla.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "incoming_call",
+          "caller_id": "disp",
+          "caller_label": "911 · Unidad 4",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n03_ans",
+          "on_decline_node_id": "e2_n03_dec"
+        },
+        {
+          "id": "e2_n03_ans",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 7,
+          "transcript": "[charla por radio] ¡Quédate agachada entre los árboles, {{player_name}}! ¡NO uses tu linterna... el Oficial 7 acaba de pasar la Milla 15!",
+          "audio_asset": null,
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n03_dec",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "¡Mantén el brillo de tu pantalla en cero! ¡El Oficial 7 está 5 kilómetros abajo de ti... baja CUESTA ABAJO hacia las sirenas!",
+          "timestamp_label": "11:13 PM",
+          "typing_delay_ms": 500,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "Vuelve al camino, {{player_name}}. Dejaste tu cartera en el asiento del copiloto... sé dónde vives.",
+          "timestamp_label": "11:14 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera... ¡su ambulancia sigue encendida en el camino con las llaves puestas!",
+          "timestamp_label": "11:14 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n06_choice"
+        },
+        {
+          "id": "e2_n06_choice",
+          "type": "choice",
+          "prompt": "El haz de su linterna barre diez metros arriba de ti:",
+          "options": [
+            {
+              "option_id": "opt_095_e2_free",
+              "label": "Correr cuesta abajo hacia las sirenas policiales",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Oigo las sirenas! ¡Corriendo por la cuneta de desagüe ahora!",
+              "next_node_id": "e2_n07_free"
+            },
+            {
+              "option_id": "opt_095_e2_vip",
+              "label": "Rodear y llevarte su falsa ambulancia",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e2_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n07_free",
+          "type": "narrator",
+          "text": "Sales al asfalto en la Milla 17 directo hacia la torreta cegadora del Oficial 7. Arriba en la cuesta, las llantas de la falsa ambulancia chillan al huir entre la niebla.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_free"
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "¡El Oficial 7 confirma que estás a salvo! ¡Ya se instalan retenes en ambos extremos de Pine Pass!",
+          "timestamp_label": "11:17 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n07_vip",
+          "type": "narrator",
+          "text": "Mientras busca entre los árboles, saltas a la cabina de la ambulancia, trabas las puertas y pisas a fondo directo al bloqueo policial que espera... con toda su evidencia atrás.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e2_n08_vip"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "ESPERA... ¡¿robaste la propia ambulancia del sospechoso?! ¡Los oficiales acaban de hallar una pila de identificaciones de personas desaparecidas en la guantera!",
+          "timestamp_label": "11:17 PM",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "Todavía tengo tu licencia de conducir, {{player_name}}. Nos vemos cuando llegues a casa.",
+          "unsent_placeholder": "EMT-00 anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "narrator",
+          "text": "Envuelta en una manta térmica dentro de la patrulla, oyes crujir la radio de los oficiales: \"Sospechoso huyó a pie hacia Pine Gorge... armado y sin localizar.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e2_n11_cliff"
+        },
+        {
+          "id": "e2_n11_cliff",
+          "type": "cliffhanger",
+          "headline": "Tiene Tu Dirección",
+          "teaser_text": "Sobreviviste al Marcador de Milla 18... pero el falso paramédico se esfumó en la niebla con tu cartera y tu llave de casa.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Perímetro del Hogar",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "02:24 AM · Envuelta en una manta térmica dentro de una patrulla real, tu teléfono muestra una alerta de movimiento en el pasillo de tu departamento.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¡{{player_name}}, emitimos boletín por la ambulancia robada... pero nuestra patrulla más cercana sigue a 12 minutos de tu departamento!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¡YA ESTÁ en mi puerta!! ¡Mi timbre inteligente acaba de captar a EMT-00 usando mi llave robada!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "text",
+          "sender_id": "player",
+          "typing_delay_ms": 800,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05",
+          "text": "Cámara Pasillo Depto · 02:24 AM — EMT-00 abriendo la puerta de tu casa."
+        },
+        {
+          "id": "e3_n05",
+          "type": "voice_note",
+          "sender_id": "emt",
+          "duration_sec": 7,
+          "transcript": "[puerta abriéndose] Lindo departamento, {{player_name}}. Dime dónde respaldaste la tarjeta SD de la cámara de tu auto y me iré tranquilo.",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06_choice"
+        },
+        {
+          "id": "e3_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00 está registrando tu escritorio buscando el respaldo de tu cámara. Reacciona:",
+          "options": [
+            {
+              "option_id": "opt_095_e3_free",
+              "label": "Activar a distancia la alarma de humo del depto",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Disfruta la alarma de 110 decibeles en el pasillo, EMT-00! ¡Todos los vecinos están despertando ahora!",
+              "next_node_id": "e3_n07_free"
+            },
+            {
+              "option_id": "opt_095_e3_vip",
+              "label": "Revisar qué grabó la cámara antes del choque",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e3_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n07_free",
+          "type": "narrator",
+          "text": "La sirena de tu alarma inteligente chilla por el pasillo... EMT-00 maldice y sale corriendo hacia las escaleras con las manos vacías.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e3_n08_free"
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¡Los vecinos llamaron al 911! ¡Oficiales vieron una ambulancia blanca acelerando al oeste por Avenida Oak!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n07_vip",
+          "type": "narrator",
+          "text": "Tu clip de la cámara en la nube carga: diez minutos antes de tu choque, un sedán negro sacó a un ciclista del camino de montaña... ¡y el conductor es el Juez Vance!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_vip"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Despacho! ¡Mi cámara grabó un atropello con fuga del Juez Vance diez minutos antes de mi choque... POR ESO EMT-00 intentó silenciarme!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "No hay respaldo en el departamento. Volviendo a la vieja clínica para cambiar placas.",
+          "unsent_placeholder": "EMT-00 anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¿Viste ese mensaje sin enviar?! Espera... ¡dejaste tu teléfono de repuesto dentro de la cartera que robó!",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "Entrega ese clip en la nube, {{player_name}}. No quieres hacerte enemigo de un juez en funciones.",
+          "timestamp_label": "02:24 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_cliff"
+        },
+        {
+          "id": "e3_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "El Testigo de la Cámara",
+          "teaser_text": "Tu cámara grabó la fuga de un juez en funciones... y el rastreador oculto de tu cartera acaba de ubicar la guarida de EMT-00.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Clínica Abandonada",
+      "start_node_id": "e4_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "02:39 AM · Abres tu app Find-My-Wallet dentro de la patrulla. Un punto azul pulsa fijo tres kilómetros al este.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¡Copiado! ¡Desviando tres patrullas de caminos a Clínica Mercy... y reenviando tu clip de cámara a la Fiscalía Estatal!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Despacho, tengo señal en vivo de mi cartera robada! ¡Está estacionado detrás de la Clínica Mercy abandonada junto a la Carretera 7!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "emt",
+          "text": "El Juez Vance está llamando... quiere la ambulancia incendiada antes del amanecer.",
+          "unsent_placeholder": "EMT-00 anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[estática de radio policial] ¡Unidad 4 en escena en Clínica Mercy! ¡Visual de una ambulancia dada de baja en el patio trasero... el sospechoso está regando gasolina!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06_choice"
+        },
+        {
+          "id": "e4_n06_choice",
+          "type": "choice",
+          "prompt": "EMT-00 está a punto de quemar la ambulancia robada con tu cartera adentro:",
+          "options": [
+            {
+              "option_id": "opt_095_e4_free",
+              "label": "Pedir a Unidad 4 entrar con sirenas apagadas",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Diles que apaguen sirenas y entren al patio trasero antes de que prenda un cerillo!",
+              "next_node_id": "e4_n07_free"
+            },
+            {
+              "option_id": "opt_095_e4_vip",
+              "label": "Hacer sonar fuerte el rastreador de tu cartera",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e4_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n07_free",
+          "type": "narrator",
+          "text": "Tres patrullas se deslizan en silencio por el lote y encienden sus reflectores... congelando a EMT-00 con el bidón de gasolina todavía en la mano.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e4_n08_free"
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¡SOSPECHOSO BAJO CUSTODIA! ¡Sin incendio, ambulancia preservada intacta... y recuperamos tu cartera!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n07_vip",
+          "type": "narrator",
+          "text": "El rastreador de 90 decibeles de tu cartera chilla desde el asiento del copiloto... distrayendo a EMT-00 justo cuando la Unidad 4 lo derriba sobre el asfalto.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_vip"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡El mejor rastreador de cartera de $29 que compré en mi vida!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "narrator",
+          "text": "Dentro de la guantera de la ambulancia, los oficiales hallan un teléfono desechable iluminado con llamadas perdidas del Juez Vance.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¡La Fiscalía Estatal acaba de emitir orden de arresto urgente contra el Juez Vance... y el ciclista herido está vivo en el Hospital del Condado!",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "emt",
+          "text": "[DISPOSITIVO EMT-00 INCAUTADO COMO EVIDENCIA]",
+          "timestamp_label": "02:39 AM",
+          "typing_delay_ms": 650,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_cliff"
+        },
+        {
+          "id": "e4_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Rastreador Fijado",
+          "teaser_text": "EMT-00 cayó antes de quemar la ambulancia... y tu rastro GPS acaba de poner tras las rejas a un juez corrupto.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Código Tres",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "03:15 AM · En la comisaría del condado, el operador líder de la Unidad 4 imprime la ruta GPS exacta de tu cartera junto a los cuadros de la cámara del auto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: Todo encaja... Marcador de Milla 18, la cámara de tu pasillo y Clínica Mercy. El Juez Vance acaba de entregarse en su residencia.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¿Cómo está el ciclista del camino de montaña? ¿Sirvió la marca de tiempo de mi cámara para que los médicos lo hallaran a tiempo?",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "disp",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "Registro GPS · Ubicó la ambulancia robada en Clínica Mercy a las 02:39 AM.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 6,
+          "transcript": "[voz cálida y aliviada] ¡Sí! ¡Nuestra ambulancia REAL llegó a él veinte minutos después de tu reporte del choque... se va a recuperar por completo!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06_choice"
+        },
+        {
+          "id": "e5_n06_choice",
+          "type": "choice",
+          "prompt": "El Fiscal Estatal pide presentar el video en la nube de tu cámara como Prueba 1:",
+          "options": [
+            {
+              "option_id": "opt_095_e5_free",
+              "label": "Firmar la declaración de testigo de inmediato",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Firmado y verificado. Asegúrense de que ninguno vuelva a conducir cerca de la Milla 18.",
+              "next_node_id": "e5_n07_free"
+            },
+            {
+              "option_id": "opt_095_e5_vip",
+              "label": "Pedir cambio de cerradura antes de volver a casa",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e5_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n07_free",
+          "type": "narrator",
+          "text": "El fiscal te estrecha la mano con firmeza... con el clip de la cámara y las llamadas del desechable, el caso es sólido como roca.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_free"
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: Salvaste dos vidas esta noche... la tuya y la de ese ciclista.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n07_vip",
+          "type": "narrator",
+          "text": "La Unidad 4 envía una escolta policial afuera de tu departamento mientras un cerrajero de emergencia instala cerrojos nuevos.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08_vip"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cerraduras nuevas, cartera de vuelta y ambos culpables esposados. Por fin se siente seguro.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "La mejor persona al teléfono que he guiado para salir de una montaña con niebla.",
+          "unsent_placeholder": "911 · Unidad 4 anuló el envío de un mensaje",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: Ya remolcaron tu auto a un corralón seguro, y una patrulla real está lista para llevarte a casa.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Gracias por contestar cuando los necesité, Unidad 4.",
+          "timestamp_label": "03:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_cliff"
+        },
+        {
+          "id": "e5_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Rescate Real",
+          "teaser_text": "EMT-00 y el Juez Vance están esposados, el ciclista se recupera y la luz de la mañana al fin despeja la niebla de la montaña.",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Camino Despejado",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "09:00 AM · Luz clara del sol seca el paso de montaña. Te sientas en tu sofá con una taza de té y llaves nuevas del departamento.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Despacho Unidad 4: ¡Reporte matutino, {{player_name}}! El Juez Vance fue suspendido formalmente de su cargo hace una hora.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡Buenos días, Unidad 4! Y mis costillas golpeadas ya duelen mucho menos sabiendo que está fuera del camino.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "disp",
+          "text": "¡La familia del ciclista envió flores a nuestro centro de despacho para ti!",
+          "unsent_placeholder": "911 · Unidad 4 anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "disp",
+          "duration_sec": 5,
+          "transcript": "[zumbido alegre de radio matutina] Siempre revisa el número de unidad en la puerta lateral, {{player_name}}. ¡Cuídate mucho allá afuera!",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06_choice"
+        },
+        {
+          "id": "e6_n06_choice",
+          "type": "choice",
+          "prompt": "Miras tus llaves nuevas de casa y la alerta matutina de noticias:",
+          "options": [
+            {
+              "option_id": "opt_095_e6_free",
+              "label": "Visitar al ciclista en el Hospital del Condado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Paso por el Hospital del Condado esta tarde a saludarlo.",
+              "next_node_id": "e6_n07_free"
+            },
+            {
+              "option_id": "opt_095_e6_vip",
+              "label": "Instalar cámara en la nube en tu próximo auto",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Secreto · Ver Anuncio",
+              "player_reply_text": null,
+              "next_node_id": "e6_n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n07_free",
+          "type": "narrator",
+          "text": "Esa tarde, toda la familia del ciclista te abraza en el vestíbulo soleado del hospital... agradecida de que nunca subieras a la ambulancia equivocada.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "e6_n08_free"
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Confía siempre en tu instinto... y verifica siempre al 911.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n07_vip",
+          "type": "narrator",
+          "text": "Pides una cámara dual con respaldo en la nube antes del almuerzo... sabiendo que un pequeño lente acaba de tumbar a un juez corrupto.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08_vip"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "¡Unidad 4 aprueba! Maneja con cuidado, {{player_name}}.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "narrator",
+          "text": "La niebla sobre el Marcador de Milla 18 se disipó por completo. Solo queda cielo azul.",
+          "style": "system_alert",
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "disp",
+          "text": "Unidad 4 cerrando transmisión. Cuídate, {{player_name}}.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cambio y fuera, Unidad 4.",
+          "timestamp_label": "09:00 AM",
+          "typing_delay_ms": 0,
+          "sfx": "lock_click",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12_cliff"
+        },
+        {
+          "id": "e6_n12_cliff",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Puerto Seguro",
+          "teaser_text": "EMT-00 y el Juez Vance enfrentan la justicia, el ciclista sobrevivió y la pesadilla de la Milla 18 terminó.",
+          "sfx": "ting",
+          "haptic": "heavy",
+          "next_episode_number": null,
+          "ambient": "night_city"
+        }
+      ]
+    }
+  ]
+}

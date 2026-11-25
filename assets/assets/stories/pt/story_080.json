@@ -1,0 +1,980 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_080",
+  "lang": "pt",
+  "metadata": {
+    "title": "O Vazamento da Fusão",
+    "subtitle": "Uma fusão de US$ 400M vazou com a MINHA marca d'água — e a única pessoa com a senha do meu notebook é meu noivo no banco rival.",
+    "genre": "romance",
+    "tags": [
+      "Corporativo",
+      "Traição",
+      "Suspense"
+    ],
+    "cover_image": "assets/media/covers/story_080.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "fiance",
+      "name": "Ethan (Noivo)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "chair",
+      "name": "Presidente Park",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "sec",
+      "name": "Elena (Compliance)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4C1D95"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "O Rastro da Marca d'Água",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "08h05 · Notícia urgente pisca em todas as telas de negociação. Sua fusão de US$ 400M vazou de madrugada — as ações despencam 22%.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "{{player_name}}, seu crachá está bloqueado. O PDF vazado enviado à imprensa traz SUA marca d'água digital invisível — baixado às 02h14 do seu IP residencial.",
+          "timestamp_label": "08:05",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "02h14?! Eu estava dormindo pesado! A única outra pessoa no meu apartamento ontem à noite era... o Ethan.",
+          "timestamp_label": "08:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Chefe, nossa operação vendida acabou de render US$ 8M! Relaxa — a marca d'água aponta direto para {{player_name}}, não para mim.",
+          "unsent_placeholder": "Ethan apagou uma mensagem",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Amor, acabei de ver a queda das ações!! Você está bem?! Se o compliance perguntar, diga que seu notebook deve ter sido hackeado!",
+          "timestamp_label": "08:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "chair",
+          "duration_sec": 10,
+          "transcript": "[frio feito gelo] {{player_name}}, reguladores federais chegam às 10h. A menos que prove que outra pessoa tocou no seu notebook às 02h14, você vai responder por uso de informação privilegiada.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Você tem 90 minutos antes de a prisão virar realidade. O que você puxa?",
+          "options": [
+            {
+              "option_id": "opt_router_log",
+              "label": "Puxar logs do roteador e histórico USB",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Elena, cheque o registro de serial de dispositivos USB do meu notebook às 02h14 — não foi enviado por e-mail!",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_watch_bio",
+              "label": "Puxar sono do relógio + câmera da sala",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Perícia · Ver Anúncio",
+              "player_reply_text": "Meu relógio inteligente registrou sono REM profundo das 23h às 6h — e a câmera inteligente do meu quarto pega a escrivaninha!",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "Espera... o arquivo foi copiado para um pendrive criptografado registrado no Apex Rival Bank — o empregador de Ethan!",
+          "timestamp_label": "08:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "CLIPE HD CAPTURADO: Às 02h13, Ethan é flagrado na câmera da sua sala digitando sua senha, copiando o PDF da fusão e sorrindo!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "Meu Deus... o Ethan usou a própria noiva como escudo humano para uma aposta vendida de US$ 8M!",
+          "timestamp_label": "08:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Estou indo para o saguão do seu escritório agora mesmo te dar apoio, amor. Não diga uma palavra ao compliance até eu chegar!",
+          "timestamp_label": "08:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Ele Está Entrando na Armadilha",
+          "teaser_text": "Episódio 2: Ethan entra na Audiência Emergencial do Conselho fingindo ser seu noivo amoroso — bem na frente de agentes federais.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "A Audiência de Emergência",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "10h00 · Sala de Conselho A. Presidente Park, Compliance e dois investigadores da SEC sentam-se diante de você e Ethan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Presidente Park, {{player_name}} tem passado por enorme estresse. Talvez tenha enviado o rascunho por engano meio adormecida — por favor, pegue leve.",
+          "timestamp_label": "10:01",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Que fofo você me jogar debaixo do ônibus, Ethan. Conte aos investigadores o que estava fazendo no meu notebook às 02h13.",
+          "timestamp_label": "10:02",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Apaguem os logs de negociação da Apex AGORA!! {{player_name}} sabe do USB!!",
+          "unsent_placeholder": "Ethan apagou uma mensagem",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "sec",
+          "duration_sec": 10,
+          "transcript": "[firme] Tarde demais, Ethan. A SEC acabou de intimar o Apex Rival Bank — e ligou o número de série do pendrive direto ao seu crachá corporativo.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Ethan salta da cadeira, derrubando-a para trás. Dê o golpe final.",
+          "options": [
+            {
+              "option_id": "opt_drop_ring",
+              "label": "Deslizar o anel de noivado pela mesa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Pegue seu anel de volta, Ethan. Você não pode usar joias na prisão federal mesmo.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_play_cam",
+              "label": "Passar o vídeo das 02h13 à SEC",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Prova 4K · Ver Anúncio",
+              "player_reply_text": "Senhores, assistam a ele sorrindo para minha câmera enquanto rouba um arquivo de fusão de US$ 400 milhões.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Os dois investigadores federais dão um passo atrás de Ethan e leem seus direitos enquanto a sala observa em silêncio.",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "FUSÃO SALVA: Reguladores barram a operação ilegal vendida, recuperam a cotação das ações e indiciam Ethan e o Diretor-Geral dele!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Seu crachá foi restaurado com acesso pleno de Sócia, {{player_name}}. Obrigado por salvar esta firma.",
+          "timestamp_label": "10:08",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Vamos fechar aquela fusão de US$ 400 milhões antes do almoço, Presidente.",
+          "timestamp_label": "10:10",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Negócio Fechado, Traidor Algemado",
+          "teaser_text": "Enquanto Ethan é levado pelas portas de vidro, ele murmura uma frase arrepiante para você: \"Você acha que eu era o único na sua empresa ajudando a Apex?\"",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "O Segundo Infiltrado",
+      "start_node_id": "e3_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "16h40 · Suíte Executiva de Compliance. Ethan está sob custódia federal — porém suas palavras frias de despedida se mostram verdadeiras.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "{{player_name}}! O Ethan não estava blefando! Dez minutos DEPOIS de ele ser algemado, alguém dentro da nossa torre exportou a planilha atualizada de avaliação da fusão de US$ 400M!",
+          "timestamp_label": "16:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Só quatro pessoas no 50º andar têm acesso àquela planilha… quem acessou?!",
+          "timestamp_label": "16:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "sec",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "RECUPERADO DO CASACO DE ETHAN · Cartão VIP de Suíte do Apex Bank — Corregistrado para \"VP Finanças, Torre 50\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Segurem o jantar de assinatura! Se o Apex Bank tiver nossa contraproposta final antes das 19h, vão cobrir abaixo por US$ 50 milhões!",
+          "timestamp_label": "16:43",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Digam a {{player_name}} que o segundo infiltrado senta bem na frente do Presidente Park no—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "sec",
+          "duration_sec": 8,
+          "transcript": "[sussurrando] {{player_name}}, cruzei o horário do cartão de hotel da Apex com os registros de crachá do nosso prédio — apenas UM executivo saiu do 50º andar naquela hora exata: VP Victor Han!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "O jantar de assinatura com o Presidente Park começa em 90 minutos! Como você pega o segundo infiltrado?",
+          "options": [
+            {
+              "option_id": "opt_canary_numbers",
+              "label": "Plantar preço-isca falso de US$ 435M",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Presidente Park, suba uma avaliação isca de US$ 435M SOMENTE na pasta compartilhada do VP — se a Apex ofertar US$ 436M no jantar, pegamos ele no flagra!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_track_burner",
+              "label": "Plantar isca + rastrear GPS do descartável",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Agente Duplo · Ver Anúncio",
+              "player_reply_text": "Plante a isca de US$ 435M E peça à equipe de compliance de Elena para sinalizar qualquer celular descartável dando sinal no Wi-Fi do hotel perto do clube do jantar!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "ARMADILHA-ISCA ARMADA: Presidente Park dá um sorriso severo — \"Brilhante, {{player_name}}. Vamos ver quão rápido ele morde a isca.\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "VIGILÂNCIA TOTAL: Em doze minutos, o VP baixa o arquivo-isca — e um descartável sem registro dá sinal do banheiro!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Você salvou um negócio de US$ 400M duas vezes no mesmo dia, {{player_name}}. Me encontre no Clube Privado às 18h30 em ponto.",
+          "timestamp_label": "16:52",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Meu advogado deixou eu mandar uma mensagem: Victor me recrutou três meses atrás. Não deixem ele sair livre enquanto eu pago o pato.",
+          "timestamp_label": "16:53",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "A Armadilha do Jantar de Assinatura",
+          "teaser_text": "Episódio 4: Entre no clube privado onde o segundo infiltrado já está mandando mensagem para o Apex Bank.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "O Cartão do Hotel",
+      "start_node_id": "e4_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "18h40 · Clube Executivo Privado. Taças de cristal tilintam enquanto o enviado da Apex sorri cínico do outro lado da mesa de mogno.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Inacreditável — o enviado da Apex acabou de deslizar uma oferta rival surpresa de EXATAMENTE US$ 436 milhões! A armadilha-isca funcionou!",
+          "timestamp_label": "18:40",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "O que significa que nosso VP vazou o arquivo-isca de US$ 435M direto para a Apex na última hora.",
+          "timestamp_label": "18:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "PEGAMOS ELE! O celular descartável acabou de transmitir o PDF-isca do terraço do clube — e ele tentou quebrar a bandeja do chip quando me viu sair!",
+          "timestamp_label": "18:42",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Diga ao promotor federal que deponho contra o Victor se reduzirem—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "O enviado da Apex está suando frio — ele acha que nosso lance real é US$ 435M quando nosso teto real aprovado pelo conselho é US$ 400M!",
+          "timestamp_label": "18:44",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "sec",
+          "duration_sec": 8,
+          "transcript": "[passos de segurança] A segurança do clube acabou de recuperar o celular descartável quebrado da jardineira — e o registro de GPS liga direto à suíte de hotel da Apex E ao terraço de hoje!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Você segura o descartável quebrado e flagrou a Apex no ato! Como você fecha a fusão?",
+          "options": [
+            {
+              "option_id": "opt_expose_table",
+              "label": "Expor a espionagem e eliminar a Apex",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Presidente Park, ponha o descartável e o cartão do hotel na mesa — desclassifiquem a oferta contaminada da Apex agora mesmo!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_discount_close",
+              "label": "Eliminar a Apex + travar US$ 15M de desc.",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Tubarão de Wall St · Ver Anúncio",
+              "player_reply_text": "Exponha a espionagem corporativa da Apex ao vendedor — e ofereça fechamento imediato à vista hoje à noite por US$ 385M!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "CONSELHO VENDEDOR ATÔNITO: O presidente do vendedor desclassifica a Apex imediatamente e assina com exclusividade com o Presidente Park por US$ 395M!",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "NEGÓCIO DA DÉCADA: O vendedor assina na hora para evitar escândalo regulatório — economizando US$ 15 MILHÕES para o Presidente Park!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Agentes federais acabaram de chegar na entrada do clube para o nosso ex-VP. Isso foi cirúrgico, {{player_name}}.",
+          "timestamp_label": "18:55",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "Subindo o relatório forense de GPS do descartável quebrado para a SEC agora mesmo!",
+          "timestamp_label": "18:56",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "O Descartável no Clube",
+          "teaser_text": "Episódio 5: Garantam a prova forense de GPS e vejam ambos os traidores encararem a justiça federal.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "O Descartável no Clube",
+      "start_node_id": "e5_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "20h15 · 50º Andar da Torre. A tinta no acordo da fusão de US$ 400M enfim secou.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "A perícia extraiu o GPS completo e o histórico de chamadas do descartável quebrado — cada encontro secreto entre Victor, Ethan e Apex está mapeado minuto a minuto.",
+          "timestamp_label": "20:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "sec",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "PERÍCIA DO DESCARTÁVEL · GPS do aparelho quebrado batido com Suíte VIP da Apex (seg) e Terraço do Clube Privado (18h41).",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "fiance",
+          "text": "Meu advogado disse que depor contra o Victor pode me tirar da segurança máxima… {{player_name}}, eu nunca deixei de te amar. Só fiquei ganancioso.",
+          "timestamp_label": "20:17",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Você roubou a senha do meu notebook enquanto eu dormia e pôs a MINHA marca d'água num vazamento criminoso, Ethan. Isso não é amor — é traição.",
+          "timestamp_label": "20:18",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Vou passar os próximos cinco anos me arrependendo da noite em que abri o notebook dela—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "chair",
+          "duration_sec": 8,
+          "transcript": "[champanhe sendo servido] {{player_name}}, o Conselho acabou de fazer uma votação de cinco minutos: a cadeira de VP de Finanças e M&A está vaga — e é SUA se quiser!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Presidente Park oferece a você a cadeira vaga de VP no 50º andar! Como você aceita?",
+          "options": [
+            {
+              "option_id": "opt_accept_vp",
+              "label": "Aceitar VP e reforçar a segurança da sala",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Eu aceito, Presidente — e minha primeira prioridade é reconstruir a segurança da sala de negócios com Elena para nenhum vazamento jamais acontecer outra vez.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_partner_track",
+              "label": "Aceitar VP + bônus de 1% pelo fechamento",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Grande Acordo · Ver Anúncio",
+              "player_reply_text": "Aceito a cadeira de VP, reconstruo a segurança com Elena — e adoraria o bônus padrão de 1% de economia pelo dinheiro que acabamos de poupar!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "NOVA LIDERANÇA: Presidente Park ergue a taça — \"À negociadora mais afiada do 50º andar!\"",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "PRESIDENTE RI: \"Já negocia como Diretora-Geral! Aprovado — bônus E promoção acelerada para Diretora-Geral!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "De suspeita incriminada às 9h da manhã a VP de M&A às 20h. Coloquem isso num livro da escola de negócios!",
+          "timestamp_label": "20:26",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "E estou mudando a senha do meu notebook para 24 caracteres aleatórios — e mantendo meu dedo anelar gloriosamente livre.",
+          "timestamp_label": "20:27",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Assinado e Selado",
+          "teaser_text": "Episódio 6 (Final): Toque o sino de fechamento da fusão ao lado do Presidente Park e entre no seu futuro de potência.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Assinado e Selado",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Uma Semana Depois · Pódio do Sino da Bolsa Financeira. Câmeras piscam quando a fusão de US$ 400M fecha oficialmente.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Dois minutos para o sino de abertura, VP {{player_name}}. Os mercados já saltaram 11% com o fechamento da nossa fusão!",
+          "timestamp_label": "09:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Melhor sensação do mundo ver nosso logotipo combinado lá no painel da bolsa.",
+          "timestamp_label": "09:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "Atualização do Departamento de Justiça: o Apex Bank acabou de pagar multa regulatória de US$ 25M por espionagem corporativa, e tanto Victor quanto Ethan se declararam culpados.",
+          "timestamp_label": "09:29",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "fiance",
+          "text": "Assistindo a ela tocar o sino da bolsa no jornal — eu perdi tudo—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "chair",
+          "duration_sec": 8,
+          "transcript": "[sino tocando alto e multidão vibrando] NEGÓCIO FECHADO! Fique bem na frente e no centro para as câmeras, {{player_name}} — você conquistou cada flash!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Chamando Elena para o pódio também — somos um time.",
+          "timestamp_label": "09:34",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Um âncora de finanças pergunta sua lição nº 1 por fechar a fusão de US$ 400M:",
+          "options": [
+            {
+              "option_id": "opt_quote_trust",
+              "label": "Confiança se ganha; cheque cada marca",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Proteja sua integridade, verifique cada rastro e nunca deixe ninguém carimbar seu nome nas mentiras dos outros.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_women_finance",
+              "label": "Dedicar bônus a fundo de Mulheres em M&A",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Potência · Ver Anúncio",
+              "player_reply_text": "E estou destinando parte do meu bônus de fechamento a um programa de bolsas formando jovens mulheres entrando em M&A e compliance!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "CITAÇÃO DE MANCHETE: Os trechos da sua entrevista viralizam na mídia financeira antes do meio-dia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "ÍCONE FINANCEIRO: Presidente Park dobra sua contribuição dólar por dólar — consolidando seu legado no 50º andar.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "sec",
+          "text": "Negócio fechado, traidores algemados, futuro imparável. Drinques hoje à noite, VP!",
+          "timestamp_label": "09:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "chair",
+          "text": "Bem-vinda ao topo da torre, {{player_name}}.",
+          "timestamp_label": "09:41",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · Rainha da Sala de Negócios",
+          "teaser_text": "Você limpou sua marca d'água, desmascarou ambos os infiltrados e fechou a fusão de US$ 400M nos seus próprios termos.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

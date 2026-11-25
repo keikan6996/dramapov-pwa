@@ -1,0 +1,978 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_069",
+  "lang": "id",
+  "metadata": {
+    "title": "Sabotase Ruang Sudut",
+    "subtitle": "Sahabat kantorku mengirim surat pengunduran diri palsu dari laptopku malam sebelum wawancara Direktur kami.",
+    "genre": "romance",
+    "tags": [
+      "Kantor",
+      "Persaingan",
+      "Kejutan"
+    ],
+    "cover_image": "assets/media/covers/story_069.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#7C3AED"
+    },
+    {
+      "id": "rival",
+      "name": "Clara (Sahabat Kantor)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#BE185D"
+    },
+    {
+      "id": "director",
+      "name": "Olivia (VP Kreatif)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E293B"
+    },
+    {
+      "id": "intern",
+      "name": "Leo (Anak Magang)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0369A1"
+    },
+    {
+      "id": "narrator",
+      "name": "Narator",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Pengunduran Diri Palsu",
+      "start_node_id": "n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "08:12 · Kamu masuk ke agensi membawa kopi untuk dirimu dan Clara. VP-mu mengirimimu pesan.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "director",
+          "text": "{{player_name}}, saya terkejut. Kamu mengirim email pengunduran diri seketika pukul 19:18 tadi malam—dan men-CC perekrut agensi saingan kita?!",
+          "timestamp_label": "08:12",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "APA?! Aku pulang dari kantor pukul 18:30! Aku tak pernah mengirim email itu!",
+          "timestamp_label": "08:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Beres. {{player_name}} didiskualifikasi. Batalkan wawancara pukul 10:00 dan siapkan saja surat penawaranku.",
+          "unsent_placeholder": "Clara menarik pesan",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Ya ampun {{player_name}} aku baru dengar!! Aku benar-benar gemetar—siapa yang meretas laptopmu?!",
+          "timestamp_label": "08:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 11,
+          "transcript": "[gugup] Hei {{player_name}}... Aku lembur mencetak papan presentasi. Pukul 19:15 aku melihat Clara duduk di mejamu mengetik di laptopmu. Katanya kamu memintanya mengirim berkas.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Wawancara tunggal Clara untuk Direktur dimulai pukul 10:00. Langkahmu?",
+          "options": [
+            {
+              "option_id": "opt_keycard_log",
+              "label": "Tarik stempel waktu keluar kartu akses",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Leo, terima kasih. Tetap di dekat lobi—kartu aksesku membuktikan aku pergi 45 menit sebelum email itu.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_laptop_cam",
+              "label": "Cek foto gagal login di laptopmu",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Kena Kau · Tonton Iklan",
+              "player_reply_text": "Tunggu—aplikasi keamananku memotret lewat webcam setiap kali seseorang salah mengetik kata sandiku!",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "Keamanan Gedung memastikan: Kamu menggesek keluar pukul 18:31. Clara menggesek keluar pukul 19:22.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "TANGKAPAN WEBCAM PUKUL 19:16: Foto sejernih kristal memperlihatkan Clara menyeringai tepat di atas papan ketikmu!",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "WAH! Foto itu persis seperti tokoh antagonis film. Kirim ke Olivia!",
+          "timestamp_label": "08:20",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Sayang sekali jadwalmu dibatalkan. Pasti kubantu beri rekomendasi bagus begitu aku jadi Direktur!",
+          "timestamp_label": "08:23",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Panel Wawancara Pukul 10:00",
+          "teaser_text": "Episode 2: Clara masuk ke wawancara Direktur mengharapkan penobatan—dan mendapati KAMU sudah duduk bersama panel.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Senyum ke Webcam",
+      "start_node_id": "n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "10:00 · Ruang Direksi Kaca. Clara melangkah masuk santai membawa portofolionya—lalu membeku saat melihatmu di samping Olivia.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Duduklah, Clara. Sebelum kami meninjau portofoliomu, bisa jelaskan apa yang kamu lakukan di meja {{player_name}} pukul 19:16?",
+          "timestamp_label": "10:01",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Konyol sekali! Saya sudah di kelas yoga pukul 19:00! {{player_name}} cuma iri!",
+          "timestamp_label": "10:02",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Leo kalau kau membocorkannya aku akan menghancurkan masa magangmu!!",
+          "unsent_placeholder": "Clara menarik pesan",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 8,
+          "transcript": "[lewat speaker] Saya di luar ruangan, Olivia. Saya melihat Clara mengetik di laptop {{player_name}} pukul 19:15—dan dia baru saja mengancam saya di chat.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Clara bersikeras itu cuma ucapan anak magang melawan dirinya. Tuntaskan.",
+          "options": [
+            {
+              "option_id": "opt_show_logs",
+              "label": "Geser log kartu akses gedung ke meja",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Aneh—kartu aksesmu menggesek keluar lantai ini pukul 19:22, Clara. Kelas yoganya pasti di sini.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_airdrop_photo",
+              "label": "Tampilkan foto webcam pukul 19:16",
+              "cost_type": "vip_rewarded",
+              "badge_text": "KO · Tonton Iklan",
+              "player_reply_text": "Sebenarnya, laptopku mengambil potret indah dirimu pukul 19:16. Mau lihat?",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Rahang Clara terjatuh. Olivia menutup portofolio Clara dan memberi isyarat kepada HRD yang menunggu di luar.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "TERTANGKAP 4K: Wajah menyeringai Clara memenuhi TV ruang direksi. Seluruh panel terkesiap serempak.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "{{player_name}}, tolong! Kita sudah berteman tiga tahun! Jangan biarkan mereka memasukkanku ke daftar hitam!",
+          "timestamp_label": "10:07",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Kamu diberhentikan dengan tidak hormat, Clara. {{player_name}}, selamat datang di ruang sudut—dan Leo, kamu mendapat tawaran kerja penuh waktu.",
+          "timestamp_label": "10:09",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Nama Baru di Pintu",
+          "teaser_text": "Saat pindah ke ruang sudut, kamu menemukan catatan tempel di bawah meja—bertuliskan tangan Clara beserta nomor pribadi CEO saingan.",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Di Bawah Meja",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "13:10 · Ruang Sudut Barumu. Catatan tempel dari bawah meja terasa panas di telapak tanganmu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "{{player_name}}, aku melacak nomor telepon di catatan tempel itu! Itu milik Marcus Vance—CEO Apex Creative, saingan terbesar kita di presentasi Q4!",
+          "timestamp_label": "13:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Clara tak cuma memalsukan pengunduran diriku—dia juga membocorkan daftar harga klien Q4 kita pada mereka!",
+          "timestamp_label": "13:11",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "intern",
+          "image_asset": "assets/media/evidence/generic_hotel_keycard.webp",
+          "caption": "DITEMUKAN DI LACI MEJA · Kartu kunci VIP Lounge Hotel Grand — Digesek tadi malam pukul 21:40.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Darurat, {{player_name}}! Klien andalan kita baru mengirim email bilang saingan menawarkan konsep kreatif yang PERSIS SAMA dengan harga 15% lebih murah!",
+          "timestamp_label": "13:13",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Apex sudah menjanjikanku posisi Direktur Kreatif begitu mereka mencuri akun itu—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 8,
+          "transcript": "[menggulir cepat] {{player_name}}, aku mengecek log audit drive bersama! Clara mengunduh lembar harga Q4 kita ke USB pribadi lima menit sebelum dia dipecat!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Presentasi klien dimulai pukul 16:00—dan Apex memegang deck curian kita! Apa serangan balikmu?",
+          "options": [
+            {
+              "option_id": "opt_build_v2",
+              "label": "Bangun konsep V2 unggul sebelum 16:00",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Olivia, Leo—buang deck yang bocor itu. Kita punya dua jam untuk membangun Konsep V2 yang melibas salinan curian mereka!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_decoy_watermark",
+              "label": "Bangun V2 + jebak dgn tanda air tersembunyi",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Catur 4D · Tonton Iklan",
+              "player_reply_text": "Kita bangun V2—DAN ingat tag metadata tersembunyi di deck lama kita? Biar Apex mempresentasikannya dan membongkar diri mereka SENDIRI secara langsung!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "SERANGAN KREATIF: Ruang perang kalian memanas penuh energi saat Leo dan kamu merancang presentasi interaktif yang tak pernah diduga Apex.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "JEBAKAN TERPASANG: Olivia tersenyum tajam—\"Mari kita tonton Apex menjelaskan kenapa tanda tangan tersembunyi agensi kita ada di Slide 9.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Tim hukum juga menarik stempel waktu lobi Hotel Grand—spionase korporat adalah tindak pidana berat.",
+          "timestamp_label": "13:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Nikmati ruang sudut itu selama satu sore, {{player_name}}. Lewat pukul 16:00, kalian tak akan punya klien andalan tersisa.",
+          "timestamp_label": "13:21",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "Dua Jam Menuju Duel Presentasi",
+          "teaser_text": "Episode 4: Clara melancarkan satu upaya sabotase terakhir tepat saat kamu melangkah ke presentasi klien.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "Pertemuan di Lounge",
+      "start_node_id": "e4_n01",
+      "default_ambient": "cyber_pulse",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "15:42 · Lobi Menara Klien. Delapan belas menit sebelum presentasi Q4 dimulai.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Melihatmu berjalan masuk ke lobi. Lucu ya—Apex presentasi PERTAMA, dan slide mereka terlihat SANGAT akrab.",
+          "timestamp_label": "15:42",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Baguslah mereka tampil duluan, Clara. Suruh Marcus memberi perhatian ekstra pada Slide 9.",
+          "timestamp_label": "15:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "TUNGGU! Seseorang baru mencoba membatalkan pemesanan proyektor AV kita lewat resepsionis klien memakai email agensi lama Clara!",
+          "timestamp_label": "15:44",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Tunggu apa yang ada di Slide 9, aku tak mengecek lapisan tersembunyinya—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Aku sudah mengonfirmasi ulang ruang AV dengan VP klien—dan menunjukkan padanya email pembatalan palsu itu!",
+          "timestamp_label": "15:46",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "intern",
+          "duration_sec": 8,
+          "transcript": "[berbisik] {{player_name}}, aku baru melihat Clara di kafe seberang jalan memegang ponsel sekali pakai—memantau presentasi Apex secara langsung!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Apex baru selesai mempresentasikan deck V1 curianmu—dan klien memanggilmu masuk! Kalimat pembukamu?",
+          "options": [
+            {
+              "option_id": "opt_show_metadata",
+              "label": "Tunjukkan stempel waktu pembuatan asli",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Sebelum kami menampilkan konsep V2 yang ditingkatkan, ini stempel waktu server yang membuktikan Apex baru saja mempresentasikan draf curian kami.",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_reveal_slide9",
+              "label": "Ungkap segel agensi tersembunyi Slide 9",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Legendaris · Tonton Iklan",
+              "player_reply_text": "Perbesar 400% di sudut kanan bawah Slide 9 Apex—Anda akan melihat tanda air mikro agensi kami dan inisial SAYA.",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "VP KLIEN TERKESIAP: Ruangan berubah sedingin es terhadap Apex saat log server kalian memverifikasi setiap piksel.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "PENUTUP TERBAIK DEKADE INI: Klien memperbesar gambar, melihat inisialmu sejernih siang hari, dan langsung mendiskualifikasi Apex!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "director",
+          "text": "CEO Apex baru saja menyerbu keluar gedung tampak seperti akan memecat seseorang—dengan suara keras.",
+          "timestamp_label": "16:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Tunggu—Marcus baru memblokir nomorku! {{player_name}}, apa yang kau tunjukkan pada mereka di dalam sana?!",
+          "timestamp_label": "16:16",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Sinyal Ponsel Sekali Pakai",
+          "teaser_text": "Episode 5: Lacak GPS ponsel sekali pakai Clara untuk menutup kasus spionase korporat selamanya.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "Sinyal Ponsel Sekali Pakai",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "17:10 · Ruang Rapat Agensi. Penasihat hukum memaparkan kepingan terakhir teka-teki.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Ingat ponsel uji milik perusahaan yang lupa dikembalikan Clara? Find-My-Device baru melacak rute persisnya tadi malam!",
+          "timestamp_label": "17:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "intern",
+          "image_asset": "assets/media/evidence/broken_phone_gps.webp",
+          "caption": "LOG RUTE GPS · 21:40 VIP Lounge Hotel Grand → 22:55 Kantor Pusat Apex Creative.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "rival",
+          "text": "Oke hentikan!! Apex membatalkan tawaran kerjaku dan mengancam menuntut AKU karena memberi mereka slide bertanda air! Tolong jangan tuntut aku!",
+          "timestamp_label": "17:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Kau memalsukan pengunduran diriku, mencuri presentasi kita, dan mencoba membatalkan proyektor kami, Clara. Karma tak bisa ditawar.",
+          "timestamp_label": "17:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Aku membuang lima tahun persahabatan dan seluruh karierku dalam 48 jam—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "director",
+          "duration_sec": 8,
+          "transcript": "[denting gelas sampanye] {{player_name}}! Klien andalan kita baru menandatangani presentasi V2 kita—untuk kontrak eksklusif TIGA TAHUN!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Tim hukum bertanya sekeras apa mendorong penyelesaian rahasia dagang melawan Clara & Apex.",
+          "options": [
+            {
+              "option_id": "opt_sue_apex",
+              "label": "Kejar Apex & tuntut pengakuan Clara",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Tuntut Apex ganti rugi penuh—dan lepaskan Clara dengan pengakuan bertanda tangan plus larangan bersaing 2 tahun.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_public_retract",
+              "label": "Tuntut ganti rugi + maaf publik Apex",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Menang Mutlak · Tonton Iklan",
+              "player_reply_text": "Ganti rugi DAN pencabutan resmi industri dari Apex—supaya semua tahu karya siapa yang memenangkan tender itu.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "PENYELESAIAN DITANDATANGANI: Apex membayar $500 ribu ganti rugi demi menghindari sidang terbuka, dan Clara menandatangani sambil menangis.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "LEGENDA INDUSTRI: Permintaan maaf Apex viral di seluruh pers periklanan; tiga merek Fortune 500 menelepon kantormu.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Tunggu—apakah aku baru saja ikut memenangkan kontrak andalan tiga tahun di minggu keenam magangku?!",
+          "timestamp_label": "17:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Benar, Leo. Dan kurasa Direktur barumu punya tawaran kerja penuh waktu menunggumu.",
+          "timestamp_label": "17:23",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "Ruang Sudut Jadi Milikmu",
+          "teaser_text": "Episode 6 (Tamat): Mulai kampanye andalan 3 tahun bersama tim yang selalu mendukungmu.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Presentasi Sempurna",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Jumat 17:00 · Ruang Sudut. Lampu kota berkelap-kelip menyala di balik pintu kacamu yang baru diukir namamu.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Minggu pertama sebagai Direktur Kreatif: kontrak andalan 3 tahun diteken, saingan terbungkam, nol pengunduran diri.",
+          "timestamp_label": "17:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dan aku memasang kata sandi biometrik 16 karakter di laptopku—untuk berjaga-jaga.",
+          "timestamp_label": "17:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Baru menandatangani tawaran Strategis Junior penuh waktu! Ibuku benar-benar membingkai emailnya!",
+          "timestamp_label": "17:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "rival",
+          "text": "Selamat atas kontrak 3 tahunnya {{player_name}}, aku benar-benar mengacau—",
+          "unsent_placeholder": "Pesan ini ditarik kembali",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "director",
+          "duration_sec": 8,
+          "transcript": "[musik & tawa] Semua orang menunggu di teras atap untuk bersulang promosimu, {{player_name}}! Ajak Leo dan naik ke sini!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Dalam perjalanan naik! Ronde pertama mocktail dan taco ditraktir Direktur baru.",
+          "timestamp_label": "17:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Ucapan bersulangmu untuk tim kreatif di atap:",
+          "options": [
+            {
+              "option_id": "opt_toast_loyalty",
+              "label": "Bersulang utk sekutu sejati & menang jujur",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Untuk menciptakan ide begitu hebat hingga tak ada yang sanggup menirunya—dan untuk rekan setim yang selalu menjaga punggungmu!",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_intern_fund",
+              "label": "Luncurkan jalur mentor berbayar dgn Leo",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Generasi Baru · Tonton Iklan",
+              "player_reply_text": "Dan mulai kuartal depan, Leo dan aku meluncurkan program beasiswa Kreator Muda berbayar—bimbingan nyata, nol tikam belakang!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "SORAKAN ATAP: Gelas terangkat menantang cakrawala kota saat babak barumu bersinar terang.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "TEPUK TANGAN BERDIRI: Olivia berseri penuh bangga—kamu tak sekadar Direktur hebat, kamu mengubah seluruh agensi.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "intern",
+          "text": "Pekerjaan pertama terbaik di alam semesta. Ayo taklukkan Q4!",
+          "timestamp_label": "17:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "director",
+          "text": "Selamat datang di ruang sudut, {{player_name}}. Ruang ini memang selalu ditakdirkan untukmu.",
+          "timestamp_label": "17:13",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "TAMAT · Ruang Sudut Dinobatkan",
+          "teaser_text": "Kamu mengalahkan sabotase korporat, membongkar presentasi curian, dan memenangkan kontrak terbesar dalam kariermu.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

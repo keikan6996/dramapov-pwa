@@ -1,0 +1,981 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_072",
+  "lang": "es",
+  "metadata": {
+    "title": "La Trampa de la Liquidación",
+    "subtitle": "RH me dio 2 horas para firmar un acuerdo \"generoso\" de confidencialidad... hasta que un ingeniero despedido me advirtió que me traspasa la culpa penal.",
+    "genre": "romance",
+    "tags": [
+      "Corporativo",
+      "Denunciante",
+      "Thriller"
+    ],
+    "cover_image": "assets/media/covers/story_072.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "hr_dir",
+      "name": "Brenda (VP de RR. HH.)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "engineer",
+      "name": "Tariq (Exingeniero Líder)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#0F766E"
+    },
+    {
+      "id": "counsel",
+      "name": "Maya (Asesora Legal)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#4338CA"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Dos Horas Para Firmar",
+      "start_node_id": "n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "02:00 PM · Sala de Juntas 4. RH desliza un convenio de terminación de 15 páginas y un cheque de $90,000 sobre la mesa.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "image",
+          "sender_id": "hr_dir",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "Convenio de Separación y Confidencialidad — La oferta vence hoy a las 4:00 PM.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "medium",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Seis meses de sueldo íntegro, {{player_name}}. Solo firma antes de las 4 PM para terminar como amigos.",
+          "timestamp_label": "02:01 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "¡¡NO LO FIRMES {{player_name}}!! ¡Lee la Página 12, Cláusula 14B! ¡Dice que TÚ tenías autoridad única de aprobación sobre el lote defectuoso de baterías!",
+          "timestamp_label": "02:02 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Jefe, {{player_name}} aún no nota la Cláusula 14B. En cuanto firme, el regulador irá tras él en vez de la alta dirección.",
+          "unsent_placeholder": "Brenda anuló el envío de un mensaje",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 12,
+          "transcript": "[urgente] Tres unidades se sobrecalentaron en Europa esta mañana. Mañana sale un retiro federal del mercado... ¡ayer me despidieron a mí y ahora compran tu firma para echártelo encima!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "Brenda golpea impaciente la mesa con su pluma. ¿Cómo juegas esto?",
+          "options": [
+            {
+              "option_id": "opt_call_counsel",
+              "label": "Exige 72 horas para tu abogado",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Me llevo esta copia con mi abogado laboral, Brenda. Especialmente la Cláusula 14B.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_grab_report",
+              "label": "Consigue el memo firmado por el CEO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Evidencia · Ver Anuncio",
+              "player_reply_text": "Tariq, mándame el correo donde el CEO anuló nuestro freno de seguridad el mes pasado.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Da un solo paso fuera de esta sala sin firmar, y los $90,000 desaparecen... y seguridad te escolta afuera.",
+          "timestamp_label": "02:06 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "PRUEBA CONTUNDENTE RECIBIDA: Un memorando PDF firmado directamente por el CEO ordenando \"Envíen el lote pese a 18% de falla térmica.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Enviado. Además ya conecté a Maya, la abogada de denunciantes.",
+          "timestamp_label": "02:07 PM",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Dos guardias de seguridad están afuera de la puerta, {{player_name}}. Entrega tu teléfono y firma el papel.",
+          "timestamp_label": "02:09 PM",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "Atrapado en Sala de Juntas 4",
+          "teaser_text": "Episodio 2: Brenda alarga la mano por tu teléfono... sin saber que ya marcaste a Asesoría Legal en altavoz.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Cláusula 14B",
+      "start_node_id": "n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "02:14 PM · Sala de Juntas 4. Brenda bloquea la puerta de cristal mientras seguridad espera afuera.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "La política de la empresa dice que revisamos dispositivos personales al terminar contrato. Desbloquea tu teléfono ahora.",
+          "timestamp_label": "02:14 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "La privación ilegal de la libertad es un delito, Brenda. Y saluda a mi abogada de denunciantes en altavoz.",
+          "timestamp_label": "02:15 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 10,
+          "transcript": "[firme, legal] Habla Maya Lin, abogada de {{player_name}}. Esta llamada está siendo grabada. Apártese de la puerta o presento una denuncia federal por obstrucción en cinco minutos.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "¡¡CEO—aborta!! ¡¡Tienen en línea a una abogada de denunciantes Y saben lo de la Cláusula 14B!!",
+          "unsent_placeholder": "Brenda anuló el envío de un mensaje",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "choice",
+          "prompt": "Brenda retrocede, pálida como gis. ¿Cuál es tu siguiente movimiento?",
+          "options": [
+            {
+              "option_id": "opt_walk_free",
+              "label": "Sal y presenta el reporte hoy mismo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Quédate tu dinero de silencio, Brenda. Los reguladores de seguridad verán la verdad antes de las 5 PM.",
+              "next_node_id": "n07_free"
+            },
+            {
+              "option_id": "opt_drop_memo",
+              "label": "Muestra el memo firmado por el CEO",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Jaque Mate · Ver Anuncio",
+              "player_reply_text": "Ah, y dile al CEO que tenemos su memorando firmado anulando la falla térmica del 18%.",
+              "next_node_id": "n07_vip"
+            }
+          ]
+        },
+        {
+          "id": "n07_free",
+          "type": "narrator",
+          "text": "Seguridad se hace a un lado de inmediato mientras cruzas el vestíbulo con la frente en alto.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n07_vip",
+          "type": "narrator",
+          "text": "RECOMPENSA DE DENUNCIANTE: En 48 horas, los reguladores frenan el producto inseguro, procesan al CEO ¡y protegen tu sueldo caído íntegro más bonificación!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n08_vip"
+        },
+        {
+          "id": "n08_vip",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Clase maestra, {{player_name}}. Acabas de salvar vidas y aplastar un encubrimiento corporativo.",
+          "timestamp_label": "02:22 PM",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n09_merge"
+        },
+        {
+          "id": "n09_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "La cena corre por mi cuenta esta noche. Bienvenido al club de denunciantes.",
+          "timestamp_label": "02:25 PM",
+          "typing_delay_ms": 500,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_end"
+        },
+        {
+          "id": "n10_end",
+          "type": "cliffhanger",
+          "headline": "Sin Firmar e Inquebrantable",
+          "teaser_text": "En el café, un Miembro de la Junta se acerca a tu mesa: \"Vamos a reemplazar al CEO. ¿Considerarían tú y Tariq regresar a arreglar esto?\"",
+          "sfx": "gasp",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "La Oferta de la Junta",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "3:15 PM · Café de la Esquina. La oferta del Miembro de la Junta para traerlos de vuelta apenas asienta cuando Brenda ataca.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "¡{{player_name}}, legal te acaba de notificar un incumplimiento de confidencialidad! ¡Hablar con Tariq anula tu liquidación—y enviaremos el expediente de falla de seguridad a los reguladores!",
+          "timestamp_label": "3:15 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "¡¿Intentas incriminarme por la falla de seguridad que YO REPORTÉ el mes pasado?!",
+          "timestamp_label": "3:16 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/generic_legal_document.webp",
+          "caption": "FIRMA DE CUMPLIMIENTO ALTERADA · Tus iniciales pegadas en la exención de seguridad fechada dos días antes de que te bloquearan.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "¡Mira los metadatos del PDF que acabo de extraer, {{player_name}}—Brenda editó esa hoja de cumplimiento en SU laptop anoche a las 11:42 PM!",
+          "timestamp_label": "3:18 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "En cuanto el regulador culpe a {{player_name}}, el paracaídas dorado de $3M del CEO pasa—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[tecleando rápido] ¡{{player_name}}! ¡Aún tengo el respaldo inmutable de Slack donde AMBOS advertimos al CEO de la falla—y Brenda nos ordenó enterrarlo!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "Brenda falsificó un acta federal de cumplimiento para proteger el pago de $3M del CEO. ¿Tu jugada?",
+          "options": [
+            {
+              "option_id": "opt_send_board_pdf",
+              "label": "Manda metadatos del PDF a la Junta",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "¡Maya, reenvía el rastro de metadatos de Brenda de las 11:42 PM directo al Miembro de la Junta que acabamos de conocer!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_whistleblower_file",
+              "label": "Presenta primero protección federal",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Intocable · Ver Anuncio",
+              "player_reply_text": "¡Presenta los registros de Slack de Tariq y el PDF falsificado directo ante el regulador federal bajo amparo de denunciante!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "ALERTA A LA JUNTA: La presidencia independiente congela de inmediato todas las transferencias de liquidación ejecutiva en espera de revisión urgente.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "ESCUDO FEDERAL ACTIVO: ¡Cualquier represalia de Brenda o del CEO es ahora automáticamente un delito federal grave!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "¡Guau—el Miembro de la Junta me acaba de escribir! ¡Adelantaron la votación de destitución del CEO a mañana a las 9 AM!",
+          "timestamp_label": "3:25 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "¿Creen que la Junta se pondrá del lado de dos exempleados? ¡Nuestros paracaídas dorados ya están en cola en Tesorería!",
+          "timestamp_label": "3:26 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "El Giro del Paracaídas de $3M",
+          "teaser_text": "Episodio 4: Intercepta el pago apresurado de Brenda antes de que el giro de tesorería se liquide a medianoche.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "La Aprobación Falsificada",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "9:40 PM · Despacho de Maya. Dos horas antes de que se procese el lote de transferencias de medianoche.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Última oportunidad, {{player_name}}. Retira el reclamo de metadatos y mañana te duplico la liquidación a $180K en efectivo.",
+          "timestamp_label": "9:40 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Acabas de ofrecerme dinero por silencio por escrito mientras estás bajo investigación de denunciante, Brenda.",
+          "timestamp_label": "9:41 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "¡Captura guardada y sellada con hora! Ahora solo tenemos que frenar ese giro de tesorería de medianoche antes de que el CEO saliente vacíe la cuenta.",
+          "timestamp_label": "9:42 PM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Dile a Tesorería que salte el bloqueo de la Junta usando el token de anulación del CEO—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "¡ESPEREN! ¡Están intentando usar el token de anulación del CEO para pasar el giro de $3M antes de la votación de las 9 AM!",
+          "timestamp_label": "9:44 PM",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "counsel",
+          "duration_sec": 8,
+          "transcript": "[marcando por teléfono] Estoy en línea con la asesoría bancaria externa de la Junta ahora mismo... ¡si mandamos por fax la aprobación falsa y el texto de soborno, el banco cierra la bóveda corporativa en cinco minutos!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "Diez minutos para el corte de transferencia. ¿Qué va en la orden bancaria urgente?",
+          "options": [
+            {
+              "option_id": "opt_send_injunction",
+              "label": "Manda PDF falso + captura del soborno",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Manda ambos... ¡la hoja de cumplimiento falsificada Y el mensaje de soborno de $180K de Brenda!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_cc_prosecutor",
+              "label": "Bloquea giro + copia a la fiscalía",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Cero Piedad · Ver Anuncio",
+              "player_reply_text": "¡Traba el giro Y pon en copia a la unidad de delitos corporativos de la fiscalía—que expliquen el intento de anulación!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "GIRO BLOQUEADO: La mesa de fraudes del banco corporativo detiene el pago de $3M con cuatro minutos de margen.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "CITATORIO PENAL: El banco congela la cuenta y entrega directo a los fiscales el registro de anulación del CEO.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Tu paracaídas dorado acaba de romperse, Brenda.",
+          "timestamp_label": "9:54 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "Tesorería acaba de rechazar el giro… espera, ¿por qué hay dos agentes de cumplimiento tocando la puerta de mi casa?!",
+          "timestamp_label": "9:55 PM",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "Mañana de Rendición de Cuentas",
+          "teaser_text": "Episodio 5: Mira a la Junta revisar el recibo del pago bloqueado y entregarte las llaves para arreglar la empresa.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "El Paracaídas Dorado",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "9:00 AM · Sala de Juntas Piso 28. Tú, Tariq y Maya caminan frente a un departamento de RH pasmado.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "La Junta acaba de ver el recibo del giro bloqueado de $3M... y el intento de Brenda de saltarse su congelamiento.",
+          "timestamp_label": "9:00 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "counsel",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "PAGO BLOQUEADO · Transferencia de liquidación no autorizada de $3,000,000 a CEO Saliente y VP de RH — Detenida por Mesa de Fraudes.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr_dir",
+          "text": "¡Solo estaba siguiendo instrucciones del CEO! ¡Le he dado doce años a esta empresa!",
+          "timestamp_label": "9:02 AM",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Y en doce minutos falsificaste mis iniciales para mandar a prisión a un empleado inocente.",
+          "timestamp_label": "9:03 AM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Despedidos por causa justificada: cero liquidación, cero acciones y remisión penal—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[exhalando aliviado] ¡Los dos están FUERA—despedidos con causa! ¡Y la Junta me acaba de ofrecer VP de Ingeniería y a TI Director General de Cumplimiento y Operaciones!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "Antes de aceptar el puesto directivo, ¿qué reforma no negociable exiges?",
+          "options": [
+            {
+              "option_id": "opt_ban_forced_nda",
+              "label": "Prohíbe NDA bajo presión de 2 horas",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Regreso... si abolimos para siempre los NDA de presión urgente y damos a todo empleado 14 días para revisión legal.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_fix_safety_bug",
+              "label": "Prohíbe NDA + lanza parche de Tariq",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Heroico · Ver Anuncio",
+              "player_reply_text": "¡Abolir NDA bajo presión Y aprobar hoy el parche completo de seguridad de Tariq con un aviso transparente al cliente!",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "POLÍTICA ADOPTADA: La Junta ratifica por unanimidad tu Carta de Protección al Empleado antes del almuerzo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "CONFIANZA PÚBLICA GANADA: Reguladores elogian su divulgación voluntaria... ¡la acción rebota 14% antes del cierre!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "¿Recuerdas hace dos días cuando Brenda te dio dos horas para firmar tu sentencia? Mírate ahora.",
+          "timestamp_label": "9:14 AM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Nunca firmes bajo pánico... y siempre ten a una buena abogada en marcado rápido.",
+          "timestamp_label": "9:15 AM",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "De Chivo Expiatorio a Alta Dirección",
+          "teaser_text": "Episodio 6 (Final): Lanza el parche de seguridad, limpia la casa y dirige el renacimiento junto a Tariq.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "De Vuelta en el Último Piso",
+      "start_node_id": "e6_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "Un Mes Después · Suite Ejecutiva Piso 28. El parche de seguridad está en vivo y la confianza de clientes en máximo histórico.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "¡100% de sistemas de clientes actualizados con cero tiempo caído! ¡Reguladores acaban de cerrar nuestro expediente con felicitación!",
+          "timestamp_label": "4:30 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Resulta que arreglar la falla era más barato y rápido que sobornar gente para ocultarla.",
+          "timestamp_label": "4:31 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "¡Y gracias por sumar a mi despacho como asesoría ética independiente! No más NDA turbios bajo mi guardia.",
+          "timestamp_label": "4:32 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "hr_dir",
+          "text": "Nunca debí haber empujado esa trampa de liquidación sobre la mesa—",
+          "unsent_placeholder": "Se anuló el envío de este mensaje",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "engineer",
+          "duration_sec": 8,
+          "transcript": "[tazas de café chocando] ¡La junta general empieza en cinco minutos, Jefe! ¡Doscientos ingenieros esperan escuchar el nuevo manual!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Entrando ya. Regla #1 del nuevo manual: la verdad viaja más rápido que los encubrimientos.",
+          "timestamp_label": "4:36 PM",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "Tu promesa de cierre en la asamblea de la empresa:",
+          "options": [
+            {
+              "option_id": "opt_open_door",
+              "label": "Promete cero represalias por reportes",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Reportar una falla de seguridad aquí jamás volverá a costarte el puesto... te dará un ascenso.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_bug_bounty",
+              "label": "Lanza fondo de Bonos por Integridad",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Giro Total · Ver Anuncio",
+              "player_reply_text": "¡Lanzamos un fondo anual de $500K en Bonos de Integridad premiando a todo empleado que detecte riesgos críticos temprano!",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "APLAUSO ATRONADOR: La sala se pone de pie... la cultura del miedo desapareció para siempre.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "MODELO DE INDUSTRIA: Líderes tech de todo el mundo copian tu Bono de Integridad... y el mejor talento hace fila a tu puerta.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "counsel",
+          "text": "Sin firmar, inquebrantable y ahora llevando el timón. Legendario.",
+          "timestamp_label": "4:42 PM",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "engineer",
+          "text": "Qué bueno que te escribí antes de que expirara ese reloj de 2 horas, {{player_name}}.",
+          "timestamp_label": "4:43 PM",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "FINAL · La Integridad Gana el Piso",
+          "teaser_text": "Esquivaste la trampa de liquidación, expusiste el encubrimiento y reconstruiste la empresa sobre la verdad.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

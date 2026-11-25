@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_021",
+  "lang": "ko",
+  "metadata": {
+    "title": "13층은 존재하지 않는다",
+    "subtitle": "새벽 2시 14분, 엘리베이터가 13층에 멈춰 섰다. 우리 건물은 12층까지만 있다.",
+    "genre": "thriller",
+    "tags": [
+      "새벽 3시",
+      "엘리베이터",
+      "초자연"
+    ],
+    "cover_image": "assets/media/covers/story_021.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (나)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0284C7"
+    },
+    {
+      "id": "ally",
+      "name": "Hector (야간 경비원)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#334155"
+    },
+    {
+      "id": "threat",
+      "name": "로비 인터폰",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "13번 버튼에 불이 켜지다",
+      "start_node_id": "e1_n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "오전 2:14 · 엘리베이터가 덜컹거리며 멈춰 섭니다. 붉은 LED 숫자가 12를 지나 13에 고정됩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 제 모니터에 B호기가 정지한 걸로 뜹니다. 왜 점검용 수동 오버라이드를 누르셨나요?",
+          "timestamp_label": "오전 2:14",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "전 아무것도 안 눌렀어요! 문이 저절로 어두운 복도로 열렸어요. 누군가 저한테 손짓하고 있어요.",
+          "timestamp_label": "오전 2:15",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "좋아. 밖으로 걸어 나와, 그래야 내가 드디어 나갈 수 있으니까.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e1_n05"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "엘리베이터 안에 그대로 계세요! 절대 문지방 넘지 마세요. 당장 닫힘 버튼 누르세요.",
+          "timestamp_label": "오전 2:15",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 9,
+          "transcript": "[형광등 윙윙거리는 소리, 느린 발소리] ...왜 그렇게 쳐다봐, {{player_name}}? 이제 너도 이 층에 사는 거야...",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "choice",
+          "prompt": "문이 닫히지 않습니다. 엘리베이터 안으로 차가운 공기가 쏟아져 들어옵니다.",
+          "options": [
+            {
+              "option_id": "e1_opt_free",
+              "label": "붉은 비상 경보 벨을 누른다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "비상벨 미친 듯이 누르고 있어요!",
+              "next_node_id": "e1_n08_free"
+            },
+            {
+              "option_id": "e1_opt_vip",
+              "label": "13층 복도 안쪽으로 휴대폰 플래시 줌을 당겨 비춘다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "손전등 켜서 비춰 보는 중...",
+              "next_node_id": "e1_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n08_free",
+          "type": "narrator",
+          "text": "경보 벨이 울립니다—승강로가 아니라, 어두운 복도에 서 있는 그 인물 바로 등 뒤에서.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 13층의 모든 현관문에 황동 명패가 붙어 있습니다—전부 '당신'의 이름이 새겨진 채.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_merge"
+        },
+        {
+          "id": "e1_n09_merge",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐... 경비실 전화기가 저절로 울리고 있어요. 로비 CCTV 화면 좀 보세요.",
+          "timestamp_label": "오전 2:17",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n10"
+        },
+        {
+          "id": "e1_n10",
+          "type": "incoming_call",
+          "caller_id": "threat",
+          "caller_label": "로비 경비 데스크",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e1_n11_ans",
+          "on_decline_node_id": "e1_n11_dec"
+        },
+        {
+          "id": "e1_n11_ans",
+          "type": "narrator",
+          "text": "다급한 목소리가 헐떡입니다: \"나 Hector입니다! 20분 전에 누가 내 휴대폰을 훔쳐 갔어요—지금 누구랑 문자하고 있는 거예요?!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n11_dec",
+          "type": "narrator",
+          "text": "거절합니다. 즉시 음성사서함이 텍스트로 뜹니다: \"나 Hector예요—로비에 갇혔습니다! 지금 당신한테 문자하는 건 내가 아니에요!\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12"
+        },
+        {
+          "id": "e1_n12",
+          "type": "cliffhanger",
+          "headline": "그럼 누가 문자를 보낸 걸까?",
+          "teaser_text": "2화: 13층에 서 있던 인물이 빛나는 휴대폰을 들어 올리며—미소 짓습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "열세 번째 세입자",
+      "start_node_id": "e2_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "오전 2:18 · 엘리베이터 조명이 꺼집니다. 복도에 있는 휴대폰 화면 불빛만이 그 인물의 얼굴을 비춥니다.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "로비 전화는 받지 말았어야지, {{player_name}}. 이제 내가 안으로 들어가야겠네.",
+          "timestamp_label": "오전 2:18",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "물러서! 넌 누구야?! 왜 Hector 아저씨 휴대폰을 가지고 있어?!",
+          "timestamp_label": "오전 2:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "CAM 13 · 오전 02:18:55 — B호기 바깥 복도.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 800,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "threat",
+          "text": "네 뒤 거울을 봐. 난 이미 안에 들어와 있어.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "2011년부터 13층에 갇혀 있었어. 누군가 내 자리를 대신해야만 이 건물이 날 놓아주거든.",
+          "timestamp_label": "오전 2:20",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "choice",
+          "prompt": "금속 문이 쇳소리를 내며 닫히고—당신과 함께 차가운 그림자를 안에 가둬 버립니다.",
+          "options": [
+            {
+              "option_id": "e2_opt_free",
+              "label": "천장 비상구 해치를 억지로 열어젖힌다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "천장 위로 기어 올라갈 거예요!",
+              "next_node_id": "e2_n08_free"
+            },
+            {
+              "option_id": "e2_opt_vip",
+              "label": "13층 LED 버튼 패널을 부숴 버린다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "비밀 · 광고 보기",
+              "player_reply_text": "지금 패널 때려 부수는 중!",
+              "next_node_id": "e2_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n08_free",
+          "type": "narrator",
+          "text": "천장 해치를 밀어 올리자마자—위쪽 칠흑 같은 승강로에서 얼음 같은 손가락들이 당신의 손목을 감싸 쥡니다.",
+          "style": "banner",
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n08_vip",
+          "type": "narrator",
+          "text": "비밀 해금: 스파크가 튀며 엘리베이터가 1층까지 수직 하강합니다. 부서진 패널 뒤에서 2011년 자의 바랜 Hector 실종 전단지가 발견됩니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n09_merge"
+        },
+        {
+          "id": "e2_n09_merge",
+          "type": "narrator",
+          "text": "엘리베이터가 부드럽게 알림음을 냅니다. 문이 열리자 환하고 텅 빈 로비가 나타납니다—단, 모든 시계가 새벽 2시 14분을 가리키고 있습니다.",
+          "style": "system_alert",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10"
+        },
+        {
+          "id": "e2_n10",
+          "type": "incoming_call",
+          "caller_id": "ally",
+          "caller_label": "Hector (야간 경비원)",
+          "ringtone_sfx": "call_ring",
+          "ring_duration_ms": 12000,
+          "can_decline": true,
+          "on_answer_node_id": "e2_n11_ans",
+          "on_decline_node_id": "e2_n11_dec"
+        },
+        {
+          "id": "e2_n11_ans",
+          "type": "narrator",
+          "text": "공허한 속삭임이 울려 퍼집니다: \"집에 온 걸 환영해, {{player_name}}. 13층 잘 즐기라고.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n11_dec",
+          "type": "narrator",
+          "text": "거절 버튼을 누르지만 전화가 저절로 연결됩니다. 등 뒤에서 엘리베이터 13번 버튼이 새빨갛게 타오릅니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12"
+        },
+        {
+          "id": "e2_n12",
+          "type": "cliffhanger",
+          "headline": "다음 정차역: 영원",
+          "teaser_text": "시즌 피날레 · 로비 출입문이 벽돌로 막혀 있습니다. 오직 엘리베이터만이 기다리고 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "벽돌로 막힌 로비",
+      "start_node_id": "e3_n01",
+      "default_ambient": "heartbeat",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오전 2:28 · 엘리베이터가 덜컹거리며 아래로 내려갔지만, 문이 열리자 단단한 콘크리트 벽돌이 로비를 완전히 막고 있습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "{{player_name}} 님, 카 안에 계세요! 제가 밖에서 로비 유리창 두드리고 있는데—1층 전체가 벽돌 뒤로 사라졌어요!",
+          "timestamp_label": "오전 2:28",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector 아저씨, 버튼판에 또 불이 들어왔어요—이번엔 13이 아니에요. \"B4\"라고 뜨면서 문이 안 열려요!",
+          "timestamp_label": "오전 2:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "narrator",
+          "text": "엘리베이터 패널 · 오전 2시 29분, 붉게 빛나는 13층과 숨겨진 점검 코드.",
+          "style": "system_alert",
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "narrator",
+          "text": "천장 형광등이 깜빡거리다 꺼집니다. 바닥 환기구 틈새로 서늘한 외풍이 올라옵니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "13번을 다시 눌러, {{player_name}}. 13층 세입자한테서 가져간 열쇠 돌려주는 걸 잊었잖아.",
+          "timestamp_label": "오전 2:30",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "1998년에 입주민 한 명이 12층과 옥상 사이에 갇혀 죽은 뒤로—관리사무소가 승강로를 봉인했어.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08"
+        },
+        {
+          "id": "e3_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[인터폰에서 지지직거리는 잡음] \"모든 건물엔 사라진 층이 하나씩 숨겨져 있지, {{player_name}}. 오직 야간 근무자만이 그 이유를 알 뿐.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09"
+        },
+        {
+          "id": "e3_n09",
+          "type": "choice",
+          "prompt": "엘리베이터가 봉인된 승강로를 향해 저절로 올라가기 시작합니다.",
+          "options": [
+            {
+              "option_id": "opt_e3_pull_stop",
+              "label": "붉은 비상 정지 걸쇠를 당긴다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "비상 브레이크 당기고 있어요—Hector 아저씨, 소방서 불러 주세요!",
+              "next_node_id": "e3_n10a"
+            },
+            {
+              "option_id": "opt_e3_vip_press_alarm",
+              "label": "점검 오버라이드를 누른 채 천장 해치를 연다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 탈출",
+              "player_reply_text": "천장 해치 걸쇠 찾았어요! 승강로 안으로 기어 올라갈게요!",
+              "next_node_id": "e3_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e3_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "브레이크가 끊어졌다고요?! 손잡이 꽉 잡으세요—제가 로비 점검문 뜯어 열고 있습니다!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "영리해요! 승강로 서쪽 벽에 볼트로 고정된 사다리가 있어요—12층 쪽으로 올라오세요!",
+          "timestamp_label": "오전 2:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "늦었어. 승강로 불이 방금 꺼졌고—네 위쪽에서 무언가가 기어 내려오고 있어.",
+          "timestamp_label": "오전 2:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "승강로 속의 무언가.",
+          "teaser_text": "4화: 칠흑 같은 층 사이에 갇힌 당신은 왜 13층이 설계도에서 지워졌는지 깨닫게 됩니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "1998년 설계도",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오전 2:35 · 어두운 승강로 강철 사다리에 매달려 있는 동안 Hector가 1998년 건물 관리 대장을 찾아냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "경비실 부스에서 옛날 설계도를 찾았어요! 13층은 미신이 아니라—화재 이후 봉인해 버린 불법 증축 펜트하우스였어요!",
+          "timestamp_label": "오전 2:40",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector 아저씨, 사다리 바로 옆에 출입문이 있어요! 누군가 철문에 \"경비원을 믿지 마\"라고 긁어 놨어요!",
+          "timestamp_label": "오전 2:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "왜 아직도 허리춤에 13층 황동 열쇠를 차고 다니는지 Hector한테 물어봐, {{player_name}}.",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "narrator",
+          "text": "손전등 불빛이 녹슨 문 옆에 있는 황동 열쇠 구멍을 비춥니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "저것 말 듣지 마세요! 그 열쇠는 건물주가 저한테 맡긴 거예요—맹세코 전 한 번도 열어본 적 없어요!",
+          "timestamp_label": "오전 2:43",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "잠깐... 왜 1998년 점검 일지에 내 서명이 적혀 있지? 난 2020년에 입사했는데...",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08"
+        },
+        {
+          "id": "e4_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[환풍구를 타고 들려오는 속삭임] \"2020년에 입사한 게 아니야, {{player_name}}. 경비원 사원증 사진 좀 보라고 해.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09"
+        },
+        {
+          "id": "e4_n09",
+          "type": "choice",
+          "prompt": "인터폰이 Hector가 1998년부터 야간 근무에 갇혀 있었다고 주장합니다.",
+          "options": [
+            {
+              "option_id": "opt_e4_question_hector",
+              "label": "Hector에게 사원증 사진을 찍어 보내 달라고 요구한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Hector 아저씨, 지금 당장 보안 사원증 사진 찍어서 보내 주세요.",
+              "next_node_id": "e4_n10a"
+            },
+            {
+              "option_id": "opt_e4_vip_open_door",
+              "label": "녹슨 13층 문을 힘으로 밀어 연다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 용기",
+              "player_reply_text": "13층 문 발로 차서 열 거예요—직접 진실을 확인해야겠어요.",
+              "next_node_id": "e4_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e4_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "내 사원증에... 1998년이라고?! 말도 안 돼—왜 내가 이 건물에서 퇴근했던 기억이 하나도 안 나지?!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "잠깐—안쪽 복도에 호박빛 전등이 켜져 있어요! 그리고 복도 끝에 거울이 하나 있어요!",
+          "timestamp_label": "오전 2:45",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "집에 온 걸 환영해, {{player_name}}. 복도 끝에 서 있는 그림자를 봐.",
+          "timestamp_label": "오전 2:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "잊혀진 복도.",
+          "teaser_text": "5화: 13층의 보안 사진 한 장이 승강로를 봉인했던 자의 얼굴을 드러냅니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "재의 복도",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 2:44 · 13층 공기 속으로 재가 느릿느릿 흩날리는 가운데 휴대폰으로 보관된 보안 사진 한 장이 전송됩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "이제 기억났어, {{player_name}} 님! 화재 당일 13A호 여학생을 구하려다—건물주가 법규 위반을 숨기려고 엘리베이터를 잠가 버렸던 거예요!",
+          "timestamp_label": "오전 3:05",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Hector 아저씨... 그럼 아저씨도 그날 빠져나오지 못한 분들 중 한 명이라는 거예요?!",
+          "timestamp_label": "오전 3:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "ally",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "13층 복도 · 13A호 옆에 서 있는 그림자 — 황동 마스터키를 쥐고 있음.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "narrator",
+          "text": "등 뒤에서 엘리베이터 벨이 울립니다. 문이 열리자 30초 동안 환하고 평범한 로비가 나타납니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "13A호에 있는 화재 대장을 챙겨서 엘리베이터로 뛰어요, {{player_name}} 님. 살아 있는 사람들에게 여기서 무슨 일이 있었는지 알려 주세요!",
+          "timestamp_label": "오전 3:08",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "진실이 세상에 알려지면, 우리도 마침내 이 건물에서 영원히 퇴근할 수 있을 거야.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n08"
+        },
+        {
+          "id": "e5_n08",
+          "type": "voice_note",
+          "sender_id": "threat",
+          "duration_sec": 10,
+          "transcript": "[차분하고 울려 퍼지는 목소리] \"화재 보고서를 챙겨 가, {{player_name}}. 황동 열쇠는 바닥에 내려놓고—다시는 뒤돌아보지 마.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09"
+        },
+        {
+          "id": "e5_n09",
+          "type": "choice",
+          "prompt": "현실 로비로 통하는 문이 10초 뒤 닫힙니다.",
+          "options": [
+            {
+              "option_id": "opt_e5_grab_ledger",
+              "label": "그을린 화재 대장을 움켜쥐고 전력 질주한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "대장 챙겼어요! 지금 엘리베이터로 뛰고 있어요!",
+              "next_node_id": "e5_n10a"
+            },
+            {
+              "option_id": "opt_e5_vip_promise_hector",
+              "label": "Hector에게 반드시 건물주를 폭로하겠다고 약속한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 정의",
+              "player_reply_text": "맹세코 그자들을 전부 폭로할게요, Hector 아저씨. 이제 편히 쉬세요!",
+              "next_node_id": "e5_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e5_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "뛰어요! 당신을 두고 문이 닫히게 두지 마!",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "고마워요, {{player_name}} 님. 28년 만에 처음으로, 제 야간 근무가 끝났습니다.",
+          "timestamp_label": "오전 3:10",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "threat",
+          "text": "엘리베이터가 부드럽게 1층으로 내려갑니다. 밖에서는 마침내 새벽이 밝아오고 있습니다.",
+          "timestamp_label": "오전 3:12",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "마지막 하강.",
+          "teaser_text": "6화 (피날레): 아침 햇살 속으로 걸어 나온 당신의 손에는 13층이 실존했다는 유일한 증거가 들려 있습니다.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "근무 종료",
+      "start_node_id": "e6_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "오전 6:05 · 형사들이 그을린 1998년 대장을 증거물 봉투에 담는 동안 아파트 로비 전체에 폴리스 라인이 쳐집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "형사들이 12층 뒤쪽의 봉인된 벽을 찾아냈어요, {{player_name}} 님. 화재 보고서에 적힌 모든 이름이 마침내 안식을 찾게 될 겁니다.",
+          "timestamp_label": "오전 7:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "잠깐—Hector 아저씨?! 오전 교대 경비원분이 방금 출근했는데 어떻게 아직도 문자를 보내세요?!",
+          "timestamp_label": "오전 7:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "제 신호가 사라지기 전 마지막 메시지 하나만 남기려고요. 엘리베이터 패널을 보세요.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 750,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "narrator",
+          "text": "엘리베이터 쪽을 돌아봅니다: 13번 버튼은 사라지고—매끄럽고 빈틈없는 강철판으로 바뀌어 있습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "건물주가 방금 공항에서 체포됐답니다. 우리를 어둠 속에 내버려 두지 않아 줘서 고마워요.",
+          "timestamp_label": "오전 7:18",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "unsent_message",
+          "sender_id": "ally",
+          "text": "안녕히 가세요, {{player_name}} 님. 다음부턴 계단 이용하세요.",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n08"
+        },
+        {
+          "id": "e6_n08",
+          "type": "voice_note",
+          "sender_id": "ally",
+          "duration_sec": 10,
+          "transcript": "[따뜻하고 잡음 속으로 잦아드는 목소리] \"야간 근무조가 마지막 인사를 전합니다, {{player_name}} 님. 이제 안전하십니다.\"",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09"
+        },
+        {
+          "id": "e6_n09",
+          "type": "choice",
+          "prompt": "Hector의 대화창이 스스로 보관함으로 넘어가며 휴대폰 화면이 깜빡입니다.",
+          "options": [
+            {
+              "option_id": "opt_e6_say_goodbye",
+              "label": "신호가 사라지기 전에 Hector에게 감사를 전한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "편히 쉬세요, Hector 아저씨. 오늘 밤 제 목숨을 구해 주셨어요.",
+              "next_node_id": "e6_n10a"
+            },
+            {
+              "option_id": "opt_e6_vip_leave_flowers",
+              "label": "경비 데스크 옆에 하얀 꽃을 놓아 둔다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "VIP · 헌정",
+              "player_reply_text": "아저씨랑 13A호 분을 위해 로비 데스크에 꽃을 두고 갈게요. 안녕히 가세요.",
+              "next_node_id": "e6_n10b"
+            }
+          ]
+        },
+        {
+          "id": "e6_n10a",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "메시지 전송됨 · 오전 6:07 읽음.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n10b",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "메시지 전송됨 · 텅 빈 경비 데스크 위로 따뜻한 산들바람이 스쳐 지나갑니다.",
+          "timestamp_label": "오전 7:20",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "ally",
+          "text": "시스템: \"로비 인터폰\" 연결이 영구적으로 종료되었습니다.",
+          "timestamp_label": "오전 7:22",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "시즌 피날레 · 오직 12층만 존재한다.",
+          "teaser_text": "THE END · 건물은 마침내 다시 12층이 되었고—야간 경비원은 집으로 돌아갔습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

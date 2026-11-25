@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_066",
+  "lang": "ko",
+  "metadata": {
+    "title": "급여 명부 위의 유령",
+    "subtitle": "사번 #0409 직원은 로그인 기록이 단 한 번도 없는데 매달 12,000달러를 받아간다—게다가 운영 부사장과 집 주소가 똑같다.",
+    "genre": "romance",
+    "tags": [
+      "기업",
+      "감사",
+      "스릴러"
+    ],
+    "cover_image": "assets/media/covers/story_066.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}}",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#0D9488"
+    },
+    {
+      "id": "vp",
+      "name": "Marcus Cole (운영 부사장)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#7F1D1D"
+    },
+    {
+      "id": "hr",
+      "name": "Hannah (인사 매니저)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#475569"
+    },
+    {
+      "id": "auditor",
+      "name": "Sam (외부 감사관)",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#1E3A8A"
+    },
+    {
+      "id": "narrator",
+      "name": "내레이터",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "사번 #0409",
+      "start_node_id": "n01",
+      "default_ambient": "horror_whisper",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오후 06:40 · 재무팀 층. 재무팀장 부임 첫 주입니다. 급여 명부 한 줄이 당신의 피를 식게 만듭니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "player",
+          "text": "해나 팀장님, \"K. 반스\"(사번 #0409)가 누구죠? 4년째 월 12,000달러가 지급되는데 사원증 태그도 0회, 이메일도 0건이에요.",
+          "timestamp_label": "오후 06:41",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "멈춰요. 지금 당장 그 조회 기록 지워요, {{player_name}}. 그 기록은 마커스 콜 운영 부사장의 임원 보안 코드로 잠겨 있다고요.",
+          "timestamp_label": "오후 06:42",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "해나 말로는 {{player_name}}가 방금 #0409를 열었대. 오늘 밤 내로 ERP 접근 권한 끊고 해고 대상자로 올려둬.",
+          "unsent_placeholder": "Marcus Cole님이 메시지를 삭제했습니다",
+          "reveal_ms": 1900,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "늦게까지 야근하나, {{player_name}}? 기존 자문 계약 건은 나한테 맡겨두고 집에 가서 푹 자게.",
+          "timestamp_label": "오후 06:44",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 12,
+          "transcript": "[계단실에서 속삭이는 소리] {{player_name}} 님, K. 반스는 마커스 부사장 처남이에요. 지난번에 #0409를 문제 삼았던 회계사는 비밀번호 유출 누명을 쓰고 24시간 만에 해고당했어요.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "ERP 세션이 곧 만료됩니다. 무엇부터 챙기시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_export_csv",
+              "label": "4년 치 급여 지급 원장을 해시 추출해 내보낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "48개월 치 월별 송금 확인서 다 확보했어요. 576,000달러 이상이 빠져나갔어요.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_ping_auditor",
+              "label": "외부 감사관에게 암호화된 제보를 보낸다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "내부 고발 · 광고 보기",
+              "player_reply_text": "샘 감사관님, 내일 3분기 결재 전에 사번 #0409 확인해 보세요. 주소지가 마커스 콜 부사장 집과 같습니다.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "내보내기가 끝나고 3초 뒤, 화면이 번쩍입니다: 계정이 정지되었습니다(ACCOUNT SUSPENDED).",
+          "style": "banner",
+          "sfx": "lock_click",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "감사관 경보: 외부 감사관 샘이 3분기 재무 감사를 전격 동결하고 오전 8시 30분 불시 점검을 소집합니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "수신했습니다, {{player_name}}. 내일 아침 마커스가 내미는 그 어떤 서류에도 서명하지 마세요.",
+          "timestamp_label": "오후 06:49",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "내일 오전 8시 30분 정각에 인사위원회 징계 심의가 있네. 노트북과 사원증 지참하게.",
+          "timestamp_label": "오후 06:52",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "새벽녘 계정 잠김",
+          "teaser_text": "2화: 마커스가 \"무단 열람\"을 이유로 당신을 해고하려 합니다—바로 감사위원회가 회의실로 걸어 들어오는 순간에.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "오전 8시 30분의 함정",
+      "start_node_id": "n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "n01",
+          "type": "narrator",
+          "text": "오전 08:30 · 회의실 B. 마커스가 테이블 너머로 권고사직서를 밀어 보냅니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n02"
+        },
+        {
+          "id": "n02",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "자진 퇴사서에 서명하게, {{player_name}}, 그럼 자네의 \"데이터 유출\" 건은 다음 직장에 알리지 않겠네.",
+          "timestamp_label": "오전 08:31",
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n03"
+        },
+        {
+          "id": "n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "서명하기 전에 한 가지만요, 마커스—\"K. 반스\"는 이 층에서 근무하나요? 작별 인사라도 하고 싶어서요.",
+          "timestamp_label": "오전 08:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n04"
+        },
+        {
+          "id": "n04",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "해나, 당장 보안팀 여기로 불러서 저 친구 휴대폰 뺏어!!",
+          "unsent_placeholder": "Marcus Cole님이 메시지를 삭제했습니다",
+          "reveal_ms": 1700,
+          "typing_delay_ms": 700,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n05"
+        },
+        {
+          "id": "n05",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 10,
+          "transcript": "[걸어 들어오며] 좋은 아침입니다, 마커스. 외부 감사팀입니다. 사번 #0409의 은행 송금 이력에 대한 연방 소환장을 발부받아 왔습니다.",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n06"
+        },
+        {
+          "id": "n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "감사관님, 제게 마커스 부사장이 해당 이체를 강제 승인한 4년 치 이메일이 전부 있습니다.",
+          "timestamp_label": "오전 08:35",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n07"
+        },
+        {
+          "id": "n07",
+          "type": "choice",
+          "prompt": "마커스가 궁지에 몰렸습니다. 어떻게 사건을 종결지으시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_hand_ledger",
+              "label": "샘에게 48개월 치 지급 CSV 파일을 건넨다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "여기 48개월 전체 이력입니다, 샘. 단 1원도 안 빼놓고 전부 마커스 자택 주소로 들어갔습니다.",
+              "next_node_id": "n08_free"
+            },
+            {
+              "option_id": "opt_check_shell",
+              "label": "또 다른 유령 직원 3명까지 폭로한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "심층 추적 · 광고 보기",
+              "player_reply_text": "잠깐—#0410, #0411, #0412도 확인해 보세요. 유령이 한 명에서 그치지 않았거든요.",
+              "next_node_id": "n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "n08_free",
+          "type": "narrator",
+          "text": "마커스의 사원증이 그 자리에서 정지됩니다. 보안팀은 당신 대신 마커스를 엘리베이터로 호송해 나갑니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n08_vip",
+          "type": "narrator",
+          "text": "230만 달러 횡령 조직 폭로: 가짜 직원 네 명 모두 마커스의 역외 페이퍼컴퍼니로 자금을 빼돌리고 있었습니다!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "n09_vip"
+        },
+        {
+          "id": "n09_vip",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "엄청난 적발이군요, {{player_name}}. 이사회 의장께서 당신께 재무 임시 부사장 자리를 제안하고 싶어 하십니다.",
+          "timestamp_label": "오전 08:40",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n10_merge"
+        },
+        {
+          "id": "n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "제 사원증 계속 활성 상태로 둬요, 해나. 우리 청소해야 할 장부가 한가득이니까요.",
+          "timestamp_label": "오전 08:42",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "n11_end"
+        },
+        {
+          "id": "n11_end",
+          "type": "cliffhanger",
+          "headline": "유령은 사라졌다",
+          "teaser_text": "끌려가던 마커스가 당신에게 마지막 문자 한 줄을 남깁니다: \"사번 #0001은 CEO 거야. 행운을 빈다.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "사번 #0001",
+      "start_node_id": "e3_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "오후 10:15 · 감사 워룸. 마커스는 수갑을 찼지만, 그가 남긴 마지막 메시지가 회의실 전체를 얼어붙게 만듭니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "{{player_name}} 님, 사번 #0001 조회 돌려봤어요. 무려 6년 연속 매달 45,000달러씩 빠져나갔어요—직원 연금 기금에서요!",
+          "timestamp_label": "오후 10:15",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "직원들 연금에서 300만 달러나 빼돌렸다고요… 그리고 마커스 말로는 그게 CEO 거라고요?",
+          "timestamp_label": "오후 10:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n04",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "급여 원장 #0001 · 월 45,000달러 정기 이체 → 역외 페이퍼컴퍼니 \"에이펙스 이그제큐티브 트러스트\".",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "여러분—제 인사 관리자 계정이 방금 정지됐어요! CEO실이 급여 금고를 잠가버렸어요!",
+          "timestamp_label": "오후 10:18",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "금고 강제 해제 코드를 넘겨주면 검찰이 내 형량을 절반으로 줄여줄지도—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 9,
+          "transcript": "[프린터 돌아가는 소리] 잠깐만요! 마커스 변호사가 방금 암호화된 해제 키를 보내왔어요—CEO에게 불리한 정부 측 증인으로 돌아섰대요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n08_choice"
+        },
+        {
+          "id": "e3_n08_choice",
+          "type": "choice",
+          "prompt": "CEO가 당신이 #0001을 쫓고 있음을 눈치챘습니다! 어떻게 연금 원장을 확보하시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_use_override",
+              "label": "마커스의 키로 원장을 내보낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "샘, 마커스가 보낸 해제 키 입력해서 6년 치 급여 아카이브 전체를 오프라인 미러링해요!",
+              "next_node_id": "e3_n09_free"
+            },
+            {
+              "option_id": "opt_alert_feds",
+              "label": "증권거래위원회(SEC)와 노동부에 실시간 사본 전송",
+              "cost_type": "vip_rewarded",
+              "badge_text": "초강수 · 광고 보기",
+              "player_reply_text": "아카이브를 미러링하고 동시에 노동부 내부고발자 포털로 해시값을 곧장 올려버려요!",
+              "next_node_id": "e3_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n09_free",
+          "type": "narrator",
+          "text": "아카이브 확보 완료: CEO의 개인 승인 토큰으로 서명된 72개월 치 이체 기록이 당신의 드라이브로 떨어집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n09_vip",
+          "type": "narrator",
+          "text": "연방 동결 조치: 감독 당국이 즉각 자료 보존 명령을 내려—이제 CEO는 단 한 대의 서버도 손댈 수 없습니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n10_merge"
+        },
+        {
+          "id": "e3_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "잠깐… 건물 보안 앱에서 방금 알림이 떴어요. 오후 10시 24분에 누군가 지하 문서보관실 문을 열었어요!",
+          "timestamp_label": "오후 10:25",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "vp",
+          "text": "거기가 CEO가 #0001 종이 서명 카드를 보관하는 곳이야. 지금 당장 파쇄하고 있을 거라고.",
+          "timestamp_label": "오후 10:26",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n12_end"
+        },
+        {
+          "id": "e3_n12_end",
+          "type": "cliffhanger",
+          "headline": "지하실에서 돌아가는 문서 파쇄기",
+          "teaser_text": "4화: 종이 증거가 종잇조각으로 변하기 전에 지하 문서보관실로 달려가십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "잠긴 인사 금고",
+      "start_node_id": "e4_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "오후 10:32 · 지하 2층 복도. 강철 문 너머에서 대형 산업용 파쇄기가 윙윙 돌아가는 소리가 울려 퍼집니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "제 사원증이 안 먹혀요—지하 2층에 찍고 들어갈 수가 없어요! 안에서는 파쇄기가 최고 속도로 돌아가고 있는데!",
+          "timestamp_label": "오후 10:32",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "문을 부수지 마요—복도 카메라 확인해요! 걸어 나오는 사람을 찍으면 사기죄에 사법방해죄까지 얹을 수 있어요.",
+          "timestamp_label": "오후 10:33",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "지금 당장 지하 2층 로비 카메라 실시간 피드 띄우고 있어요! 움직이지 마요—들키지 않게!",
+          "timestamp_label": "오후 10:34",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e4_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "하역장도 확인하라고 전해, CEO 운전기사가 거기서 대기 중이니까—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "방금 문이 열렸어요! CEO 본인이 밀봉된 문서 상자 두 개를 들고 화물 엘리베이터로 향하고 있어요!",
+          "timestamp_label": "오후 10:36",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[마우스 클릭 소리] 4K로 완벽하게 잡았어요! 타임스탬프, 선명한 얼굴, \"2020–2026 급여\" 라벨이 붙은 상자를 들고 하역장으로 나가는 모습까지!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n08_choice"
+        },
+        {
+          "id": "e4_n08_choice",
+          "type": "choice",
+          "prompt": "CEO가 상자를 들고 화물 엘리베이터에 올라탑니다! 당신의 선택은?",
+          "options": [
+            {
+              "option_id": "opt_call_police_dock",
+              "label": "경찰을 곧장 하역장으로 보낸다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "샘, 마커스 체포했던 순찰차를 지금 당장 지하 2층 하역장으로 보내요!",
+              "next_node_id": "e4_n09_free"
+            },
+            {
+              "option_id": "opt_lock_freight",
+              "label": "화물 엘리베이터에 보안 강제 호출을 건다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "흑막의 수 · 광고 보기",
+              "player_reply_text": "해나, 화물 엘리베이터 비상 로비 복귀 버튼 눌러요—저 작자를 프런트 데스크 앞으로 직행 배달합시다!",
+              "next_node_id": "e4_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n09_free",
+          "type": "narrator",
+          "text": "현행범 검거: CEO 차량 트렁크가 열리는 바로 그 순간 푸른 경광등이 하역장을 뒤덮습니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n09_vip",
+          "type": "narrator",
+          "text": "정문 로비 검거: 두 명의 형사와 야간 근무자들 바로 앞에서 메인 로비 엘리베이터 문이 스르르 열립니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n10_merge"
+        },
+        {
+          "id": "e4_n10_merge",
+          "type": "text",
+          "sender_id": "player",
+          "text": "오늘 밤엔 일감을 집까지 챙겨 가시나요, 대표님? 감사관들이 그 상자 안에 뭐가 들었는지 무척 보고 싶어 할 텐데요.",
+          "timestamp_label": "오후 10:43",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "형사님들이 방금 두 상자 다 압수하셨어요—원본 #0001 서명 카드는 아직 파쇄되지 않았대요!",
+          "timestamp_label": "오후 10:44",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n12_end"
+        },
+        {
+          "id": "e4_n12_end",
+          "type": "cliffhanger",
+          "headline": "증거를 들고 가다 현행범으로 잡히다",
+          "teaser_text": "5화: 긴급 이사회 위원회에 CCTV 영상과 연금 원장을 제출하십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "자정의 파쇄기",
+      "start_node_id": "e5_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "오전 7:45 · 긴급 이사회. 사외이사들이 회의실 모니터 주위로 모여듭니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "모든 검증이 끝났습니다, {{player_name}} 님. 6년 치 유령 급여, 총 324만 달러, 그리고 CCTV 영상까지 대기 중입니다.",
+          "timestamp_label": "오전 7:45",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e5_n03",
+          "type": "image",
+          "sender_id": "auditor",
+          "image_asset": "assets/media/evidence/generic_security_cctv_silhouettes.webp",
+          "caption": "보안 캠 B2 · 22:36 — 파쇄되지 않은 #0001 급여 전표를 들고 보관실 금고를 나서는 CEO.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "이사회 의장님이 방금 놀라서 탄성을 내뱉으셨어요! CEO 퇴직금을 동결하고 스톡옵션 환수 절차에 들어가셨대요!",
+          "timestamp_label": "오전 7:47",
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "player",
+          "text": "환수한 금액은 단 1원도 빠짐없이 이자까지 쳐서 직원 연금 기금 복구에 곧장 들어가야 합니다.",
+          "timestamp_label": "오전 7:48",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "아무래도 CEO랑 나랑 감방 동기 하게 생겼네—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "voice_note",
+          "sender_id": "auditor",
+          "duration_sec": 8,
+          "transcript": "[회의실 안 박수 소리] 이사회가 방금 연금 기금 전액 원상복구 안을 통과시켰어요! 그리고 {{player_name}} 님께 최고감사책임자(Chief Audit Officer) 자리를 제안하고 싶어 해요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n08_choice"
+        },
+        {
+          "id": "e5_n08_choice",
+          "type": "choice",
+          "prompt": "이사회가 최고감사책임자(CAO) 자리를 제안합니다! 타협 없는 어떤 개혁 조건을 거시겠습니까?",
+          "options": [
+            {
+              "option_id": "opt_direct_board",
+              "label": "CEO가 아닌 이사회에 직보하는 체계를 요구한다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "수락하겠습니다—단 한 가지 조건이 있습니다: 내부감사팀은 CEO가 아닌 독립 이사회에만 직보합니다.",
+              "next_node_id": "e5_n09_free"
+            },
+            {
+              "option_id": "opt_promote_hannah",
+              "label": "독립 헌장 + 해나의 승진을 요구한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "진정한 아군 · 광고 보기",
+              "player_reply_text": "독립적인 보고 체계를 보장해 주시고—해나를 인사부 부사장(VP of HR)으로 승진시켜 완전한 급여 투명화 도구를 쥐여 주십시오.",
+              "next_node_id": "e5_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n09_free",
+          "type": "narrator",
+          "text": "정관 개정: 이사회가 만장일치로 회사 정관에 독립 감사 권한을 영구 명문화합니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n09_vip",
+          "type": "narrator",
+          "text": "드림팀 탄생: 샘이 영구 외부 자문으로 합류하는 가운데 해나가 눈물을 글썽이며 수락합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n10_merge"
+        },
+        {
+          "id": "e5_n10_merge",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "400명이 넘는 직원들에게 연금 기금이 다시 100% 정상화되었다는 이메일이 방금 발송됐어요.",
+          "timestamp_label": "오전 7:56",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "사번 #0409와 사번 #0001은 공식적으로 급여 명부에서 영원히 삭제되었습니다.",
+          "timestamp_label": "오전 7:57",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n12_end"
+        },
+        {
+          "id": "e5_n12_end",
+          "type": "cliffhanger",
+          "headline": "남아 있는 유령 제로",
+          "teaser_text": "6화 (최종화): 최고감사책임자의 새 집무실에 들어서며 깨끗해진 회사를 위해 축배를 드십시오.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "깨끗한 장부",
+      "start_node_id": "e6_n01",
+      "default_ambient": "piano_melancholy",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "일주일 뒤 · 18층 감사실 스위트. 아침 햇살이 티끌 하나 없는 원장 대시보드를 따뜻하게 비춥니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "hr",
+          "text": "첫 번째 깨끗한 급여 지급 주기가 방금 돌아갔어요! 이상 징후 제로, 유령 사번 제로—그리고 사무실 사기가 하늘을 찌르고 있어요!",
+          "timestamp_label": "오전 9:00",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "진실만을 말하는 엑셀 시트를 들여다보니 기분이 참 좋네요.",
+          "timestamp_label": "오전 9:01",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "검찰 측 업데이트입니다: 마커스와 전 CEO 모두 유죄를 인정했습니다. 연금 신탁으로 전액 변제가 완료되었습니다.",
+          "timestamp_label": "오전 9:02",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "unsent_message",
+          "sender_id": "vp",
+          "text": "말단 애널리스트한테 급여 배치 04를 보여주지 말았어야 했는데—",
+          "unsent_placeholder": "전송이 취소된 메시지입니다",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "voice_note",
+          "sender_id": "hr",
+          "duration_sec": 8,
+          "transcript": "[복도의 환호성] {{player_name}} 님, 물류창고 팀이랑 엔지니어링 팀 직원 300명이 서명한 초대형 감사 카드를 문 밖에 세워뒀어요!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "그 카드에 적힌 모든 서명 하나하나가 우리가 외면하지 않았던 이유죠.",
+          "timestamp_label": "오전 9:06",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n08_choice"
+        },
+        {
+          "id": "e6_n08_choice",
+          "type": "choice",
+          "prompt": "최고감사책임자로서 전사에 보내는 첫 번째 사내 공지:",
+          "options": [
+            {
+              "option_id": "opt_open_hotline",
+              "label": "익명 윤리 핫라인을 출범시킨다",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "암호화된 내부고발 핫라인을 개설합니다—누구든 보복 걱정 없이 부정을 제보할 수 있습니다.",
+              "next_node_id": "e6_n09_free"
+            },
+            {
+              "option_id": "opt_live_pension",
+              "label": "직원들에게 실시간 연금 추적 앱을 제공한다",
+              "cost_type": "vip_rewarded",
+              "badge_text": "완전한 신뢰 · 광고 보기",
+              "player_reply_text": "이제 모든 직원이 연중무휴 24시간 자신의 연금 납입 내역을 직접 확인할 수 있는 실시간 대시보드를 받게 됩니다.",
+              "next_node_id": "e6_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n09_free",
+          "type": "narrator",
+          "text": "조직 문화의 전환: 하루아침에 신뢰가 되살아나고—회사는 그해 \"일하기 가장 좋은 기업\"으로 선정됩니다.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n09_vip",
+          "type": "narrator",
+          "text": "황금 표준: 경제 언론들이 당신의 투명 장부 모델을 기업 지배구조의 미래로 극찬합니다.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n10_merge"
+        },
+        {
+          "id": "e6_n10_merge",
+          "type": "text",
+          "sender_id": "auditor",
+          "text": "1층에서 커피는 제가 살게요, 감사실장님. 이 모든 걸 누릴 자격이 충분하십니다.",
+          "timestamp_label": "오전 9:12",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "지금 내려갈게요—장부는 계속 티 없이 맑게 유지합시다.",
+          "timestamp_label": "오전 9:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n12_end"
+        },
+        {
+          "id": "e6_n12_end",
+          "type": "cliffhanger",
+          "headline": "최종화 · 장부의 수호자들",
+          "teaser_text": "급여 명부의 유령들을 몰아내고, 400명의 연금을 구했으며, 무너지지 않는 청렴의 기준을 세웠습니다.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}

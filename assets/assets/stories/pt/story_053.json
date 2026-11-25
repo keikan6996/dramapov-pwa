@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.1",
+  "story_id": "story_053",
+  "lang": "pt",
+  "metadata": {
+    "title": "Trancado na Loja de Vinis",
+    "subtitle": "O dono da nossa loja de discos desapareceu deixando apenas uma playlist enigmática no chat da equipe — cada título de música soletra um suspeito.",
+    "genre": "mystery",
+    "tags": [
+      "Pistas",
+      "Playlist",
+      "Desaparecido"
+    ],
+    "cover_image": "assets/media/covers/story_053.webp",
+    "is_featured_hook": false,
+    "free_episodes_count": 3,
+    "estimated_minutes_per_ep": 2
+  },
+  "characters": [
+    {
+      "id": "player",
+      "name": "{{player_name}} (Você)",
+      "side": "right",
+      "avatar": null,
+      "bubble_color_hex": "#D97706"
+    },
+    {
+      "id": "miles",
+      "name": "Miles",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#2563EB"
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#E11D48"
+    },
+    {
+      "id": "theo",
+      "name": "Theo",
+      "side": "left",
+      "avatar": null,
+      "bubble_color_hex": "#059669"
+    },
+    {
+      "id": "narrator",
+      "name": "Narrador",
+      "side": "narrator",
+      "avatar": null,
+      "bubble_color_hex": null
+    }
+  ],
+  "episodes": [
+    {
+      "episode_number": 1,
+      "title": "Aviso na Lista de Faixas",
+      "start_node_id": "e1_n01",
+      "default_ambient": "mystery_ticking",
+      "nodes": [
+        {
+          "id": "e1_n01",
+          "type": "narrator",
+          "text": "21h15 · Chat da Equipe \"DISCOS SULCO & AGULHA\". O dono Ray não abriu a loja hoje, e a grade da frente está trancada por fora.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n02"
+        },
+        {
+          "id": "e1_n02",
+          "type": "text",
+          "sender_id": "ruby",
+          "text": "A conta do Ray acabou de compartilhar uma playlist chamada \"CHEQUEM O COFRE DO PORÃO\" e ficou offline.",
+          "timestamp_label": "21:15",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e1_n03"
+        },
+        {
+          "id": "e1_n03",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Espera — nós nem temos cofre no porão. Só a sala das caixas embaixo da escada.",
+          "timestamp_label": "21:16",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e1_n04"
+        },
+        {
+          "id": "e1_n04",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Olhem as primeiras letras das quatro músicas na playlist do Ray: T-H-E-O.",
+          "timestamp_label": "21:16",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e1_n05",
+          "type": "text",
+          "sender_id": "theo",
+          "text": "Ei, calma aí! Isso é coincidência! Fechei a loja às 20h ontem e entreguei as chaves ao Ray!",
+          "timestamp_label": "21:17",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e1_n06"
+        },
+        {
+          "id": "e1_n06",
+          "type": "unsent_message",
+          "sender_id": "theo",
+          "text": "Eu não achei que o Ray fosse notar a falta da prensagem rara dos Beatles—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n07"
+        },
+        {
+          "id": "e1_n07",
+          "type": "text",
+          "sender_id": "ruby",
+          "text": "THEO!! Você roubou o vinil de primeira prensagem de US$ 40.000?!",
+          "timestamp_label": "21:18",
+          "typing_delay_ms": 600,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n08"
+        },
+        {
+          "id": "e1_n08",
+          "type": "voice_note",
+          "sender_id": "miles",
+          "duration_sec": 9,
+          "transcript": "[disco arranhando] {{player_name}}, estou na sala das caixas! O toca-discos está girando um acetato em branco — e os óculos do Ray estão quebrados no chão!",
+          "audio_asset": null,
+          "typing_delay_ms": 950,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n09_choice"
+        },
+        {
+          "id": "e1_n09_choice",
+          "type": "choice",
+          "prompt": "Alguém acabou de baixar a pesada porta de aço sobre a porta do beco! O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_play_disc",
+              "label": "Pôr a agulha no acetato em branco",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Miles, coloca a agulha nesse acetato — o Ray pode ter gravado uma faixa de voz!",
+              "next_node_id": "e1_n10_free"
+            },
+            {
+              "option_id": "opt_check_pos",
+              "label": "Checar o registro de estorno das 20h",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Pista · Ver Anúncio",
+              "player_reply_text": "Espera — deixa eu checar o registro do caixa de ontem à noite antes!",
+              "next_node_id": "e1_n10_vip"
+            }
+          ]
+        },
+        {
+          "id": "e1_n10_free",
+          "type": "narrator",
+          "text": "VOZ CHIANDO DO VINIL: \"Theo levou a prensagem para pagar um agiota — e o agiota volta hoje à noite.\"",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n10_vip",
+          "type": "narrator",
+          "text": "REGISTRO DO CAIXA: Às 20h42, RUBY cancelou uma venda de colecionador de US$ 12.000 e destrancou a porta de carga do beco.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n11_merge"
+        },
+        {
+          "id": "e1_n11_merge",
+          "type": "text",
+          "sender_id": "theo",
+          "text": "Gente… tem alguém batendo na grade de segurança da frente com uma chave de roda!",
+          "timestamp_label": "21:21",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e1_n12_end"
+        },
+        {
+          "id": "e1_n12_end",
+          "type": "cliffhanger",
+          "headline": "A Chave do Beco dos Fundos Acabou de Girar",
+          "teaser_text": "Episódio 2: O colecionador não está procurando Theo — ele acha que Ray escondeu o vinil verdadeiro dentro da loja.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 2
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "title": "Revelação do Lado B",
+      "start_node_id": "e2_n01",
+      "default_ambient": "rain",
+      "nodes": [
+        {
+          "id": "e2_n01",
+          "type": "narrator",
+          "text": "21h23 · Dentro da Sulco & Agulha. A chuva martela a claraboia enquanto o trinco dos fundos chacoalha.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n02"
+        },
+        {
+          "id": "e2_n02",
+          "type": "text",
+          "sender_id": "ruby",
+          "text": "Todo mundo se esconde atrás das estantes de jazz! Já mandei mensagem para a polícia.",
+          "timestamp_label": "21:23",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n03"
+        },
+        {
+          "id": "e2_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Espera — por que a porta dos fundos parou de chacoalhar? Olhem a câmera do beco no celular do Miles.",
+          "timestamp_label": "21:24",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n04"
+        },
+        {
+          "id": "e2_n04",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Esse não é um agiota na câmera… é o antigo sócio do RAY, o Victor! E Ruby, por que ele está acenando para o seu carro?!",
+          "timestamp_label": "21:24",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n05",
+          "ambient": "heartbeat"
+        },
+        {
+          "id": "e2_n05",
+          "type": "unsent_message",
+          "sender_id": "ruby",
+          "text": "O Victor me prometeu metade da loja se eu entregasse o—",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1750,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n06"
+        },
+        {
+          "id": "e2_n06",
+          "type": "voice_note",
+          "sender_id": "theo",
+          "duration_sec": 9,
+          "transcript": "[sussurrando] {{player_name}}, eu não vendi o disco dos Beatles! Troquei a capa por uma reedição barata porque vi a Ruby fuçando no cofre!",
+          "audio_asset": null,
+          "typing_delay_ms": 900,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n07"
+        },
+        {
+          "id": "e2_n07",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Então a prensagem verdadeira de US$ 40.000 ainda está na loja — e o Victor está com o Ray!",
+          "timestamp_label": "21:26",
+          "typing_delay_ms": 0,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e2_n08_choice"
+        },
+        {
+          "id": "e2_n08_choice",
+          "type": "choice",
+          "prompt": "Ruby agarra a capa falsa e corre para a porta do beco. O que você faz?",
+          "options": [
+            {
+              "option_id": "opt_pa_alarm",
+              "label": "Ligar o som externo da loja no máximo",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Botando os alto-falantes externos em 100% — todo policial na Rua Principal vai ouvir!",
+              "next_node_id": "e2_n09_free"
+            },
+            {
+              "option_id": "opt_swap_tag",
+              "label": "Colocar o AirTag de Miles na capa de Ruby",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Rastreador · Ver Anúncio",
+              "player_reply_text": "Deixa ela correr — acabei de enfiar um AirTag dentro da capa do disco.",
+              "next_node_id": "e2_n09_vip"
+            }
+          ]
+        },
+        {
+          "id": "e2_n09_free",
+          "type": "narrator",
+          "text": "Uma microfonia ensurdecedora explode pela Rua Principal. Viaturas cercam o furgão de Victor na saída do beco — e Ray desce em segurança.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n09_vip",
+          "type": "narrator",
+          "text": "O ponto de GPS ao vivo leva os detetives direto ao galpão de Victor a três quarteirões, onde Ray é encontrado amarrado numa cadeira.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n10_merge"
+        },
+        {
+          "id": "e2_n10_merge",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "O Ray está salvo!! A polícia prendeu o Victor e a Ruby juntos, {{player_name}}.",
+          "timestamp_label": "21:32",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e2_n11"
+        },
+        {
+          "id": "e2_n11",
+          "type": "text",
+          "sender_id": "theo",
+          "text": "Hã… {{player_name}}? O Ray acabou de me mandar mensagem da ambulância. Ele disse que NUNCA criou aquela playlist.",
+          "timestamp_label": "21:33",
+          "typing_delay_ms": 750,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e2_n12_end"
+        },
+        {
+          "id": "e2_n12_end",
+          "type": "cliffhanger",
+          "headline": "Então Quem Mandou a Playlist?",
+          "teaser_text": "Uma nova faixa acabou de aparecer no fim da playlist: \"OLHE ATRÁS DO BALCÃO, {{player_name}}.\"",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 3
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "title": "Atrás do Balcão",
+      "start_node_id": "e3_n01",
+      "default_ambient": "night_city",
+      "nodes": [
+        {
+          "id": "e3_n01",
+          "type": "narrator",
+          "text": "23h12 · A agulha do toca-discos estala baixo quando você levanta o tapete de borracha atrás do balcão do caixa — revelando um alçapão escondido de porão.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n02"
+        },
+        {
+          "id": "e3_n02",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "{{player_name}}, não desça sozinho! Peguei uma lanterna — tem alguém se mexendo no porão escondido agora mesmo!",
+          "timestamp_label": "23:12",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n03"
+        },
+        {
+          "id": "e3_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Foi por isso que a playlist adicionou \"OLHE ATRÁS DO BALCÃO.\" O Ray está seguro na ambulância, então quem está lá embaixo está saqueando o cofre secreto dele!",
+          "timestamp_label": "23:13",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n04"
+        },
+        {
+          "id": "e3_n04",
+          "type": "image",
+          "sender_id": "miles",
+          "image_asset": "assets/media/evidence/dark_corridor_shadow.webp",
+          "caption": "Alçapão do Porão · 23h13 — Um vulto se abaixando atrás das prateleiras de caixotes antigos.",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e3_n05"
+        },
+        {
+          "id": "e3_n05",
+          "type": "text",
+          "sender_id": "ruby",
+          "text": "Antes que a polícia pegue meu celular na delegacia — chequem a mochila do Theo! Foi ele quem foi atrás do cofre da prensagem teste de 1969!",
+          "timestamp_label": "23:14",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n06"
+        },
+        {
+          "id": "e3_n06",
+          "type": "unsent_message",
+          "sender_id": "theo",
+          "text": "Mantenham as grades trancadas até meia-noite. O mensageiro do comprador paga em dinheiro na porta do beco.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e3_n07"
+        },
+        {
+          "id": "e3_n07",
+          "type": "choice",
+          "prompt": "Batidas leves ecoam lá de baixo dos degraus do porão enquanto Theo apaga as luzes da loja.",
+          "options": [
+            {
+              "option_id": "e3_opt_free",
+              "label": "Abrir o alçapão do porão e chamar o dono",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Abrindo o alçapão do porão agora!",
+              "next_node_id": "e3_n08_free"
+            },
+            {
+              "option_id": "e3_opt_vip",
+              "label": "Decifrar as três últimas faixas da lista",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Decifrando as faixas finais da playlist...",
+              "next_node_id": "e3_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e3_n08_free",
+          "type": "narrator",
+          "text": "Lá embaixo no porão você encontra o cofre arrombado — e o tablet oculto de Ray gravando Theo trocando a prensagem teste de US$ 200 mil.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: As primeiras letras das três últimas músicas formam a sigla do roubo — o sensor do cofre do porão de Ray disparou o alerta automático!",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n09_merge"
+        },
+        {
+          "id": "e3_n09_merge",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "O Theo trancou as grades da frente pelo quadro de disjuntores! Ele está tentando escapar pela porta do beco com o vinil de 1969!",
+          "timestamp_label": "23:15",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e3_n10"
+        },
+        {
+          "id": "e3_n10",
+          "type": "voice_note",
+          "sender_id": "miles",
+          "duration_sec": 9,
+          "transcript": "[sirene de ambulância ao fundo, Ray gritando] ...{{player_name}}, parem o Theo! Aquela prensagem teste de 1969 vale duzentos mil dólares — o alarme do meu cofre acabou de tocar no celular!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e3_n11"
+        },
+        {
+          "id": "e3_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Miles, pegue a trava da porta do beco! Estou chamando os policiais de volta à loja agora mesmo.",
+          "timestamp_label": "23:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e3_n12"
+        },
+        {
+          "id": "e3_n12",
+          "type": "cliffhanger",
+          "headline": "Confronto no Lado B",
+          "teaser_text": "Episódio 4: Theo chega à porta do beco segurando o LP de 1969 em capa de veludo — direto no facho da sua lanterna.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 4
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "title": "A Prensagem de US$ 200 Mil",
+      "start_node_id": "e4_n01",
+      "default_ambient": "luxury_lounge",
+      "nodes": [
+        {
+          "id": "e4_n01",
+          "type": "narrator",
+          "text": "23h20 · A chuva tamborila no toldo do beco enquanto você e Miles bloqueiam a saída dos fundos atrás das estantes de vinil.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n02"
+        },
+        {
+          "id": "e4_n02",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Largue a capa de 1969, Theo! O sensor do cofre do porão do Ray montou aquela playlist inteira para te expor!",
+          "timestamp_label": "23:20",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n03"
+        },
+        {
+          "id": "e4_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Deciframos cada título de música, Theo. Você nos trancou na loja para entregar a prensagem ao seu mensageiro à meia-noite.",
+          "timestamp_label": "23:21",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n04"
+        },
+        {
+          "id": "e4_n04",
+          "type": "unsent_message",
+          "sender_id": "theo",
+          "text": "Avisa ao mensageiro para abortar — a equipe invadiu o porão.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e4_n05"
+        },
+        {
+          "id": "e4_n05",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Acabei de achar o celular do Theo plugado no caixa da loja — está aberto numa transferência de leilão de discos raros!",
+          "timestamp_label": "23:22",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n06"
+        },
+        {
+          "id": "e4_n06",
+          "type": "voice_note",
+          "sender_id": "theo",
+          "duration_sec": 11,
+          "transcript": "[Theo gritando sobre a chuva] ...Ele ia vender a loja para uma construtora mesmo! Aquele vinil deveria quitar minhas dívidas!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n07"
+        },
+        {
+          "id": "e4_n07",
+          "type": "choice",
+          "prompt": "Theo avança para o trinco do beco agarrado à capa insubstituível do vinil.",
+          "options": [
+            {
+              "option_id": "e4_opt_free",
+              "label": "Bloquear o beco e salvar o disco de vinil",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Bloqueando a saída — cuidado com o vinil!",
+              "next_node_id": "e4_n08_free"
+            },
+            {
+              "option_id": "e4_opt_vip",
+              "label": "Tirar print da transferência de leilão",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Tirando print da transferência de leilão do Theo...",
+              "next_node_id": "e4_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e4_n08_free",
+          "type": "narrator",
+          "text": "Miles apara a capa de veludo perfeitamente sem um único arranhão enquanto Theo tropeça numa caixa de rock dos anos 80.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: A transferência de leilão mostra um sinal de US$ 50.000 já enviado por um notório receptador de itens roubados.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n09_merge"
+        },
+        {
+          "id": "e4_n09_merge",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Viaturas da polícia acabaram de entrar no beco dos fundos! E a van do mensageiro deu ré com tudo e bateu numa caçamba!",
+          "timestamp_label": "23:23",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e4_n10"
+        },
+        {
+          "id": "e4_n10",
+          "type": "text",
+          "sender_id": "theo",
+          "text": "Eu não machuquei o Ray! Só esperei a polícia sair do beco para fazer a entrega da meia-noite!",
+          "timestamp_label": "23:23",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e4_n11"
+        },
+        {
+          "id": "e4_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Diga isso aos policiais checando a transferência de US$ 50.000 no seu celular, Theo.",
+          "timestamp_label": "23:24",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e4_n12"
+        },
+        {
+          "id": "e4_n12",
+          "type": "cliffhanger",
+          "headline": "Arranhão no Disco",
+          "teaser_text": "Episódio 5: Um sinal de US$ 50.000 de um receptador expõe a quadrilha de vinis roubados esperando no beco.",
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "heavy",
+          "next_episode_number": 5
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "title": "O Pagamento da Prensagem Roubada",
+      "start_node_id": "e5_n01",
+      "default_ambient": "suspense",
+      "nodes": [
+        {
+          "id": "e5_n01",
+          "type": "narrator",
+          "text": "23h28 · Luzes vermelhas e azuis refletem em fileiras de capas clássicas enquanto policiais prendem Theo e o mensageiro do beco.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n02"
+        },
+        {
+          "id": "e5_n02",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "{{player_name}}, a prensagem teste de 1969 está 100% impecável — nem um risco sequer! E olha esse depósito do receptador!",
+          "timestamp_label": "23:28",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n03"
+        },
+        {
+          "id": "e5_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Cinquenta mil adiantados por uma prensagem roubada. Ainda bem que o Ray conectou o alarme do cofre no porão.",
+          "timestamp_label": "23:29",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n04"
+        },
+        {
+          "id": "e5_n04",
+          "type": "image",
+          "sender_id": "miles",
+          "image_asset": "assets/media/evidence/bank_transfer.webp",
+          "caption": "Transferência de Leilão · Sinal de US$ 50.000 — Nota: \"Entrega Acetato 1969 · Coleta no Beco.\"",
+          "blur_until_tap": true,
+          "typing_delay_ms": 850,
+          "sfx": "photo_snap",
+          "haptic": "heavy",
+          "next_node_id": "e5_n05"
+        },
+        {
+          "id": "e5_n05",
+          "type": "text",
+          "sender_id": "theo",
+          "text": "Ok, eu estraguei tudo! Entrei em pânico quando vi a oferta do receptador — diga ao chefe que sinto muito!",
+          "timestamp_label": "23:30",
+          "typing_delay_ms": 650,
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n06"
+        },
+        {
+          "id": "e5_n06",
+          "type": "unsent_message",
+          "sender_id": "theo",
+          "text": "Não mencionem os dois LPs de jazz que vendi para o mesmo receptador mês passado.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "ambient": "heartbeat",
+          "haptic": "medium",
+          "next_node_id": "e5_n07"
+        },
+        {
+          "id": "e5_n07",
+          "type": "choice",
+          "prompt": "O dono grato destranca as grades principais e entrega a você uma xícara fresca de café.",
+          "options": [
+            {
+              "option_id": "e5_opt_free",
+              "label": "Devolver a prensagem de 1969 ao cofre",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Trancando o vinil de 1969 em segurança.",
+              "next_node_id": "e5_n08_free"
+            },
+            {
+              "option_id": "e5_opt_vip",
+              "label": "Apontar os dois LPs de jazz sumidos do mês",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Checando o estoque de jazz do mês passado...",
+              "next_node_id": "e5_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e5_n08_free",
+          "type": "narrator",
+          "text": "O dono gira o disco do cofre fechando com um sorriso aliviado, prometendo que a loja não vai fechar tão cedo.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n08_vip",
+          "type": "narrator",
+          "text": "SEGREDO DESBLOQUEADO: A polícia recupera ambas as prensagens de jazz roubadas dentro da van do mensageiro — valendo mais US$ 35.000 para a loja.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e5_n09_merge"
+        },
+        {
+          "id": "e5_n09_merge",
+          "type": "voice_note",
+          "sender_id": "miles",
+          "duration_sec": 10,
+          "transcript": "[dono rindo calorosamente ao som de blues em vinil] ...Melhor equipe da cidade! Bebidas e prensagens raras por conta da casa amanhã, {{player_name}}!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n10"
+        },
+        {
+          "id": "e5_n10",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Já adicionei uma faixa final à playlist da equipe: \"WE ARE THE CHAMPIONS.\"",
+          "timestamp_label": "23:31",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e5_n11"
+        },
+        {
+          "id": "e5_n11",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Fechamento perfeito, Miles. Vamos virar a placa para FECHADO.",
+          "timestamp_label": "23:32",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e5_n12"
+        },
+        {
+          "id": "e5_n12",
+          "type": "cliffhanger",
+          "headline": "A Agulha Desce",
+          "teaser_text": "Episódio 6 Final: O sol da manhã ilumina a vitrine da loja de vinis enquanto ela reabre mais forte do que nunca.",
+          "sfx": "gasp",
+          "ambient": "suspense",
+          "haptic": "heavy",
+          "next_episode_number": 6
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "title": "Faixa Bônus",
+      "start_node_id": "e6_n01",
+      "default_ambient": "office_tension",
+      "nodes": [
+        {
+          "id": "e6_n01",
+          "type": "narrator",
+          "text": "10h15 · Jazz quente flutua pela loja de discos reaberta enquanto clientes folheiam as prateleiras, alheios ao assalto da noite passada.",
+          "style": "time_skip",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n02"
+        },
+        {
+          "id": "e6_n02",
+          "type": "text",
+          "sender_id": "theo",
+          "text": "Ainda não acredito que o chefe soletrou um mistério inteiro usando títulos de rock clássico, {{player_name}}.",
+          "timestamp_label": "10:15",
+          "typing_delay_ms": 600,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n03"
+        },
+        {
+          "id": "e6_n03",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Só um verdadeiro maníaco por vinil programa um alarme de porão para mandar playlist enigmática de dentro da ambulância.",
+          "timestamp_label": "10:16",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n04"
+        },
+        {
+          "id": "e6_n04",
+          "type": "unsent_message",
+          "sender_id": "theo",
+          "text": "O receptador de raridades entregou outros três atravessadores de discos roubados hoje de manhã.",
+          "unsent_placeholder": "Esta mensagem foi apagada",
+          "reveal_ms": 1800,
+          "typing_delay_ms": 700,
+          "sfx": "gasp",
+          "haptic": "medium",
+          "next_node_id": "e6_n05"
+        },
+        {
+          "id": "e6_n05",
+          "type": "voice_note",
+          "sender_id": "miles",
+          "duration_sec": 9,
+          "transcript": "[voz de Ray no viva-voz, animada e orgulhosa] ...Ei {{player_name}}, Miles — vocês dois são oficialmente meus novos cogerentes! Nenhuma construtora vai encostar nesta loja!...",
+          "audio_asset": null,
+          "typing_delay_ms": 850,
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n06"
+        },
+        {
+          "id": "e6_n06",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Primeira ordem do dia: reforçar a tranca do porão e cancelar de vez as senhas da Ruby e do Theo.",
+          "timestamp_label": "10:17",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n07"
+        },
+        {
+          "id": "e6_n07",
+          "type": "choice",
+          "prompt": "O dono pergunta qual disco você quer botar para girar primeiro no toca-discos principal.",
+          "options": [
+            {
+              "option_id": "e6_opt_free",
+              "label": "Tocar um hino clássico de soul na festa",
+              "cost_type": "free",
+              "badge_text": null,
+              "player_reply_text": "Colocando um clássico de soul para tocar agora!",
+              "next_node_id": "e6_n08_free"
+            },
+            {
+              "option_id": "e6_opt_vip",
+              "label": "Emoldurar a playlist atrás do balcão",
+              "cost_type": "vip_rewarded",
+              "badge_text": "Segredo · Ver Anúncio",
+              "player_reply_text": "Emoldurando a playlist lendária...",
+              "next_node_id": "e6_n08_vip"
+            }
+          ]
+        },
+        {
+          "id": "e6_n08_free",
+          "type": "narrator",
+          "text": "Acordes analógicos calorosos enchem a loja enquanto você, Miles e Ray brindam com cafés gelados.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "medium",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n08_vip",
+          "type": "narrator",
+          "text": "EPÍLOGO SECRETO: A \"Playlist do Mistério\" emoldurada vira atração viral no bairro, dobrando as vendas da loja nos fins de semana.",
+          "style": "system_alert",
+          "sfx": "gasp",
+          "haptic": "heavy",
+          "next_node_id": "e6_n09_merge"
+        },
+        {
+          "id": "e6_n09_merge",
+          "type": "text",
+          "sender_id": "miles",
+          "text": "Nunca mais ignoro uma playlist esquisita da equipe, {{player_name}}.",
+          "timestamp_label": "10:18",
+          "typing_delay_ms": 650,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n10"
+        },
+        {
+          "id": "e6_n10",
+          "type": "text",
+          "sender_id": "player",
+          "text": "Sempre escute o Lado B, Miles.",
+          "timestamp_label": "10:19",
+          "typing_delay_ms": 0,
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n11"
+        },
+        {
+          "id": "e6_n11",
+          "type": "narrator",
+          "text": "A agulha repousa limpa no sulco — firme, quente e girando no ritmo exato.",
+          "style": "banner",
+          "sfx": "ting",
+          "haptic": "light",
+          "next_node_id": "e6_n12"
+        },
+        {
+          "id": "e6_n12",
+          "type": "cliffhanger",
+          "headline": "Final de Temporada · Fim do Lado B",
+          "teaser_text": "Ray está seguro, a prensagem de US$ 200 mil foi recuperada e a loja de vinis continua girando.",
+          "sfx": "ting",
+          "ambient": "night_city",
+          "haptic": "heavy",
+          "next_episode_number": null
+        }
+      ]
+    }
+  ]
+}
